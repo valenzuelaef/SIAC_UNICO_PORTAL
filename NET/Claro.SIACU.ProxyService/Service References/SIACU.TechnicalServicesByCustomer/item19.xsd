@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entmet="http://claro.com.pe/esb/data/commonBusinessEntities/metric/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/metric/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:complexType name="MetricDefinition">
+    <xs:annotation>
+      <xs:documentation>A set of basic facts that defines, or specifies, what a metric is, such as its name, description, and so forth.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period of time for which the use of the MetricDefinition is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the MetricDefinition.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which a MetricDefinition is known and distinguished from other MetricDefinitions.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains in detail what the MetricDefinition is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="metricDefinitionStatus" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The condition of the MetricDefinition::
+
+o	Active: the metric is a current and valid metric
+
+o	Deprecated: the metric is no longer active; its use has been discontinued
+
+o	Delete: the metric is not active; its may have been an erroneous entry</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="entryDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The date when MetricDefintion was defined or added.  It is meant to provide an indication of how old the MetricDefinition is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="lastUsed" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The date when the MetricDefinition was last used (in a report, study, and so forth).  This attribute provides a quick reference as to how useful the metric is over time.  If the lastUsed data is many years old, then the suggestion is that the MetricDefinition may not be as useful as it once was.  No value means no use of this MetricDefinition has been made thus far, thus making it more of a hypothetical MetricDefintion whose utility has not been demonstrated.
+
+
+
+This is derived based on its use as described above.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="metricLevel" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A number assigned to a MetricDefnition based on the importance enterprise-wide.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="perspective" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The point of view for the MetricDefMeasure, such as a single user instance or an aggregation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="collectionType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The type of the collection such as: gauge, commulative, status inspection. Indicators can be produced using these methods.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_metricDefMeasure" type="entmet:MetricDefMeasure" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MetricDefMeasure">
+    <xs:annotation>
+      <xs:documentation>A MetricDefMeasure specifies a measure of a specific aspect of an entity, such as lost packets or dealer sales target achievement, defined for a MetricDefinition that may trigger consequence (s) (MetricDefMeasureConsequence) if a threshold (MetricDefMeasureThreshold) is crossed.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="unitOfMeasure" type="entbastyp:Quantity">
+        <xs:annotation>
+          <xs:documentation>The unit of measure for the Metric values associated with a MetricDefMeasure, such as meters, cubic yards, kilograms [ISO 1000].</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="accuracy" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>The number of digits of accuracy captured for Metrics associated with a MetricDefMeasure.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="capturePeriod" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period during which Metrics associated with a MetricDefMeasure are captured.
+
+
+
+
+
+Note:  This may be replaced by a set of entities similar to the Performance Monitoring ABEs.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A kind of value that the Metric value associated with a MetricDefMeasure can take on, such as numeric, text, and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="captureMethod" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The method used to capture the Metrics associated with a MetricDefMeasure.
+
+
+
+
+
+Note:  This may be replaced by a set of entities similar to the Performance Monitoring ABEs.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="captureFrequency" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The frequency of capture for the MetricDefMeasure.
+
+
+
+Note:  This may be replaced by a set of entities similar to the Performance Monitoring ABEs.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the MetricDefMeasure is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_metricMeasure" type="entmet:MetricMeasure" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_metricDefinition" type="entmet:MetricDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MetricMeasure">
+    <xs:annotation>
+      <xs:documentation>A numerical value or text determined for a MetricDefMeasure that may be collected for a RootEntity, such as a connection or a dealer.
+
+A MetricMeasure might be part of a group of MetricMeasures realized at a specific moment (MetricMeasureGroup).
+
+For example, a value of .005 ms that represents average packet delay.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A discrete value determined for the Metric.
+
+.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_metricDefMeasure" type="entmet:MetricDefMeasure" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MetricMeasurementObservation">
+    <xs:annotation>
+      <xs:documentation>A MetricMeasurementObservation represents the contextual information of a measurement such as the observation period, the MetricMeasurementJob used,  the requester of the observation and the scope of the observation through the related MonitoredMetricObjectCriterion.
+
+The MonitoredMetricObjectCriterion related to MetricMeasurementObservation has to be equal to or a sub-set of the one related to the concerned MetricMeasurementJob.
+
+A MetricMeasurementObservation also specifies the MectricMeasures resulting from this observation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="observationPeriod" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>Period during wich the observation (measurements) are done.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_metricMeasure" type="entmet:MetricMeasure" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

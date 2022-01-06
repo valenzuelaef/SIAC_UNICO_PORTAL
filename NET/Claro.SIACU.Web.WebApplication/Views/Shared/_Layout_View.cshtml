@@ -1,0 +1,53 @@
+﻿@using System.Web.Optimization;
+<!DOCTYPE html>
+<html class="Html">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>-</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/font-awesome.min.css")" rel="stylesheet" />
+    @Styles.Render("~/bundles/content/bootstrap-addon-css")
+    @Styles.Render("~/bundles/jquery-addon-css")
+    @Styles.Render("~/bundles/Site-css")
+    @RenderSection("styles", required: false)
+
+    
+    <style type="text/css" media="print">
+        media print {
+            page {
+            margin: 0;
+        }
+
+        body {
+            margin: 1.6cm;
+        }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body >
+    <div id="navbar-contenedor" >
+
+        <div id="navbar-body">
+            @RenderBody()
+        </div>
+ 
+
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery-addon")
+    @Scripts.Render("~/bundles/datepicker")
+    @Scripts.Render("~/bundles/ContactoGrilla")
+    @Scripts.Render("~/bundles/moment-js")
+    @Scripts.Render("~/bundles/Claro")
+    @RenderSection("scripts", required: false)
+ 
+</body>
+</html>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

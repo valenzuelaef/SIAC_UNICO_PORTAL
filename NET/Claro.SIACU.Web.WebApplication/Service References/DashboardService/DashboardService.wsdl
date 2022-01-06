@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DashboardService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IDashboardService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetInvoice" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd3" namespace="Claro" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd4" namespace="AuditService" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomerInfo" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPostpaidProducts" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPostpaidLines" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPrepaidProducts" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getConsultaLineaCuenta" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomer" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetRedirectSession" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.InsertRedirectCommunication" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.ValidateRedirectCommunication" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetInstants" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomerName" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetInvoiceFtp" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.File" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetFileInvoice" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetReceiptNumber" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetTypeMIME" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.File.GetFileDefaultImpersonation" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetEmployeByUser" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.ReadOptionsByUser" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd28" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.CheckingUser" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd29" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFlagAjuste" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd30" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStateEquipo" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd31" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd32" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetReasonCancelInvoice" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd33" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.CancelInvoice" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd34" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.EvaluateAmount" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd35" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDegradationTobe" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd36" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetBalanceConsumption.Response" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd37" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetUserProfile" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd38" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetListaBloqueoDesbloqueo.Request" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd39" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetListaBloqueoDesbloqueo.Response" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDashboardService_GetIdOnBase_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdOnBase" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetIdOnBase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdOnBaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetCustomerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetCustomerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetPostpaidProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostpaidProducts" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetPostpaidProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostpaidProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetPostpaidLines_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostpaidLines" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetPostpaidLines_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostpaidLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetPrepaidProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrepaidProducts" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetPrepaidProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrepaidProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetRedirectSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRedirectSession" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetRedirectSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRedirectSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_InsertRedirectCommunication_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRedirectCommunication" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_InsertRedirectCommunication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRedirectCommunicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_ValidateRedirectCommunication_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateRedirectCommunication" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_ValidateRedirectCommunication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateRedirectCommunicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetInstants_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstants" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetInstants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetCustomerName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerName" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetCustomerName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetInvoiceFtp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceFtp" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetInvoiceFtp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceFtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetFileInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetFileInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetReceiptNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReceiptNumber" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetReceiptNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReceiptNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetTypeMIME_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeMIME" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetTypeMIME_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeMIMEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetCustomerForInstMasive_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerForInstMasive" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetCustomerForInstMasive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerForInstMasiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetFileAjusteV3_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileAjusteV3" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetFileAjusteV3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileAjusteV3Response" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetFileAjuste_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileAjuste" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetFileAjuste_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileAjusteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetEmployeByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeByUser" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetEmployeByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_ReadOptionsByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadOptionsByUser" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_ReadOptionsByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadOptionsByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_CheckingUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckingUser" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_CheckingUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckingUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetFlagAjuste_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlagAjuste" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetFlagAjuste_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlagAjusteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetParameterByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParameterByCode" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetParameterByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParameterByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetStateEquipo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStateEquipo" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetStateEquipo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStateEquipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetReasonCancelInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReasonCancelInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetReasonCancelInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReasonCancelInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_CancelInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_CancelInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetTyficationList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTyficationList" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetTyficationList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTyficationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetEvaluateAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEvaluateAmount" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetEvaluateAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEvaluateAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetBalancePostpaidConsumerB2ELegacyDegradation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalancePostpaidConsumerB2ELegacyDegradation" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetBalancePostpaidConsumerB2ELegacyDegradation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalancePostpaidConsumerB2ELegacyDegradationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetProfileUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileUser" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetProfileUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetListaBloqueoDesbloqueo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaBloqueoDesbloqueo" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetListaBloqueoDesbloqueo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaBloqueoDesbloqueoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetBalanceFijaTobe_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceFijaTobe" />
+  </wsdl:message>
+  <wsdl:message name="IDashboardService_GetBalanceFijaTobe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceFijaTobeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDashboardService">
+    <wsdl:operation name="GetIdOnBase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetIdOnBase" message="tns:IDashboardService_GetIdOnBase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetIdOnBaseResponse" message="tns:IDashboardService_GetIdOnBase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetCustomerInfo" message="tns:IDashboardService_GetCustomerInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetCustomerInfoResponse" message="tns:IDashboardService_GetCustomerInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpaidProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetPostpaidProducts" message="tns:IDashboardService_GetPostpaidProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetPostpaidProductsResponse" message="tns:IDashboardService_GetPostpaidProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpaidLines">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetPostpaidLines" message="tns:IDashboardService_GetPostpaidLines_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetPostpaidLinesResponse" message="tns:IDashboardService_GetPostpaidLines_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrepaidProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetPrepaidProducts" message="tns:IDashboardService_GetPrepaidProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetPrepaidProductsResponse" message="tns:IDashboardService_GetPrepaidProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetCustomer" message="tns:IDashboardService_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetCustomerResponse" message="tns:IDashboardService_GetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRedirectSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetRedirectSession" message="tns:IDashboardService_GetRedirectSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetRedirectSessionResponse" message="tns:IDashboardService_GetRedirectSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRedirectCommunication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/InsertRedirectCommunication" message="tns:IDashboardService_InsertRedirectCommunication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/InsertRedirectCommunicationResponse" message="tns:IDashboardService_InsertRedirectCommunication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRedirectCommunication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/ValidateRedirectCommunication" message="tns:IDashboardService_ValidateRedirectCommunication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/ValidateRedirectCommunicationResponse" message="tns:IDashboardService_ValidateRedirectCommunication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstants">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetInstants" message="tns:IDashboardService_GetInstants_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetInstantsResponse" message="tns:IDashboardService_GetInstants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetCustomerName" message="tns:IDashboardService_GetCustomerName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetCustomerNameResponse" message="tns:IDashboardService_GetCustomerName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceFtp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetInvoiceFtp" message="tns:IDashboardService_GetInvoiceFtp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetInvoiceFtpResponse" message="tns:IDashboardService_GetInvoiceFtp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetFileInvoice" message="tns:IDashboardService_GetFileInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetFileInvoiceResponse" message="tns:IDashboardService_GetFileInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetReceiptNumber" message="tns:IDashboardService_GetReceiptNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetReceiptNumberResponse" message="tns:IDashboardService_GetReceiptNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeMIME">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetTypeMIME" message="tns:IDashboardService_GetTypeMIME_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetTypeMIMEResponse" message="tns:IDashboardService_GetTypeMIME_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerForInstMasive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetCustomerForInstMasive" message="tns:IDashboardService_GetCustomerForInstMasive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetCustomerForInstMasiveResponse" message="tns:IDashboardService_GetCustomerForInstMasive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileAjusteV3">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetFileAjusteV3" message="tns:IDashboardService_GetFileAjusteV3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetFileAjusteV3Response" message="tns:IDashboardService_GetFileAjusteV3_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileAjuste">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetFileAjuste" message="tns:IDashboardService_GetFileAjuste_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetFileAjusteResponse" message="tns:IDashboardService_GetFileAjuste_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetEmployeByUser" message="tns:IDashboardService_GetEmployeByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetEmployeByUserResponse" message="tns:IDashboardService_GetEmployeByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadOptionsByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/ReadOptionsByUser" message="tns:IDashboardService_ReadOptionsByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/ReadOptionsByUserResponse" message="tns:IDashboardService_ReadOptionsByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckingUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/CheckingUser" message="tns:IDashboardService_CheckingUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/CheckingUserResponse" message="tns:IDashboardService_CheckingUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlagAjuste">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetFlagAjuste" message="tns:IDashboardService_GetFlagAjuste_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetFlagAjusteResponse" message="tns:IDashboardService_GetFlagAjuste_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetParameterByCode" message="tns:IDashboardService_GetParameterByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetParameterByCodeResponse" message="tns:IDashboardService_GetParameterByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStateEquipo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetStateEquipo" message="tns:IDashboardService_GetStateEquipo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetStateEquipoResponse" message="tns:IDashboardService_GetStateEquipo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReasonCancelInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetReasonCancelInvoice" message="tns:IDashboardService_GetReasonCancelInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetReasonCancelInvoiceResponse" message="tns:IDashboardService_GetReasonCancelInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/CancelInvoice" message="tns:IDashboardService_CancelInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/CancelInvoiceResponse" message="tns:IDashboardService_CancelInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTyficationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetTyficationList" message="tns:IDashboardService_GetTyficationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetTyficationListResponse" message="tns:IDashboardService_GetTyficationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEvaluateAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetEvaluateAmount" message="tns:IDashboardService_GetEvaluateAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetEvaluateAmountResponse" message="tns:IDashboardService_GetEvaluateAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalancePostpaidConsumerB2ELegacyDegradation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetBalancePostpaidConsumerB2ELegacyDegradation" message="tns:IDashboardService_GetBalancePostpaidConsumerB2ELegacyDegradation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetBalancePostpaidConsumerB2ELegacyDegradationResponse" message="tns:IDashboardService_GetBalancePostpaidConsumerB2ELegacyDegradation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetProfileUser" message="tns:IDashboardService_GetProfileUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetProfileUserResponse" message="tns:IDashboardService_GetProfileUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaBloqueoDesbloqueo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetListaBloqueoDesbloqueo" message="tns:IDashboardService_GetListaBloqueoDesbloqueo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetListaBloqueoDesbloqueoResponse" message="tns:IDashboardService_GetListaBloqueoDesbloqueo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceFijaTobe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDashboardService/GetBalanceFijaTobe" message="tns:IDashboardService_GetBalanceFijaTobe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDashboardService/GetBalanceFijaTobeResponse" message="tns:IDashboardService_GetBalanceFijaTobe_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDashboardService" type="tns:IDashboardService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IDashboardService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetIdOnBase">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetIdOnBase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpaidProducts">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetPostpaidProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpaidLines">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetPostpaidLines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrepaidProducts">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetPrepaidProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRedirectSession">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetRedirectSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRedirectCommunication">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/InsertRedirectCommunication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRedirectCommunication">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/ValidateRedirectCommunication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstants">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetInstants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerName">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetCustomerName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceFtp">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetInvoiceFtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInvoice">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetFileInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptNumber">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetReceiptNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeMIME">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetTypeMIME" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerForInstMasive">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetCustomerForInstMasive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileAjusteV3">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetFileAjusteV3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileAjuste">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetFileAjuste" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeByUser">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetEmployeByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadOptionsByUser">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/ReadOptionsByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckingUser">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/CheckingUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlagAjuste">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetFlagAjuste" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterByCode">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetParameterByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStateEquipo">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetStateEquipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReasonCancelInvoice">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetReasonCancelInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvoice">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/CancelInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTyficationList">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetTyficationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEvaluateAmount">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetEvaluateAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalancePostpaidConsumerB2ELegacyDegradation">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetBalancePostpaidConsumerB2ELegacyDegradation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUser">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetProfileUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaBloqueoDesbloqueo">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetListaBloqueoDesbloqueo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceFijaTobe">
+      <soap:operation soapAction="http://tempuri.org/IDashboardService/GetBalanceFijaTobe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DashboardService">
+    <wsdl:port name="BasicHttpBinding_IDashboardService" binding="tns:BasicHttpBinding_IDashboardService">
+      <soap:address location="http://localhost:9593/Dashboard/DashboardService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

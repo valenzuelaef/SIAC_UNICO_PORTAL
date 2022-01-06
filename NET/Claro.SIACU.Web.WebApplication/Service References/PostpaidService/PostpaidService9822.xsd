@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetBonusStatusFullClaro" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetBonusStatusFullClaro" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd34" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" />
+  <xs:complexType name="ConsultBonusStatusFullClaroRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageRequest" nillable="true" type="tns:ConsultBonusStatusFullClaroMessageRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultBonusStatusFullClaroRequest" nillable="true" type="tns:ConsultBonusStatusFullClaroRequest" />
+  <xs:complexType name="ConsultBonusStatusFullClaroMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:ConsultBonusStatusFullClaroBodyRequest" />
+      <xs:element minOccurs="0" name="Header" nillable="true" type="tns:ConsultBonusStatusFullClaroHeaderRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultBonusStatusFullClaroMessageRequest" nillable="true" type="tns:ConsultBonusStatusFullClaroMessageRequest" />
+  <xs:complexType name="ConsultBonusStatusFullClaroBodyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="coId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultBonusStatusFullClaroBodyRequest" nillable="true" type="tns:ConsultBonusStatusFullClaroBodyRequest" />
+  <xs:complexType name="ConsultBonusStatusFullClaroHeaderRequest">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="HeaderRequest" nillable="true" type="q2:HeaderRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultBonusStatusFullClaroHeaderRequest" nillable="true" type="tns:ConsultBonusStatusFullClaroHeaderRequest" />
+  <xs:complexType name="ConsultBonusStatusFullClaroResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageResponse" nillable="true" type="tns:ConsultBonusStatusFullClaroMessageResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultBonusStatusFullClaroResponse" nillable="true" type="tns:ConsultBonusStatusFullClaroResponse" />
+  <xs:complexType name="ConsultBonusStatusFullClaroMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:ConsultBonusStatusFullClaroBodyResponse" />
+      <xs:element minOccurs="0" name="Header" nillable="true" type="tns:ConsultBonusStatusFullClaroHeaderResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultBonusStatusFullClaroMessageResponse" nillable="true" type="tns:ConsultBonusStatusFullClaroMessageResponse" />
+  <xs:complexType name="ConsultBonusStatusFullClaroBodyResponse">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Fault" nillable="true" type="q3:Fault" />
+      <xs:element minOccurs="0" name="codigoEtiqueta1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoEtiqueta2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensajeError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensajeRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreEtiqueta1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreEtiqueta2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultBonusStatusFullClaroBodyResponse" nillable="true" type="tns:ConsultBonusStatusFullClaroBodyResponse" />
+  <xs:complexType name="ConsultBonusStatusFullClaroHeaderResponse">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="HeaderResponse" nillable="true" type="q4:HeaderResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultBonusStatusFullClaroHeaderResponse" nillable="true" type="tns:ConsultBonusStatusFullClaroHeaderResponse" />
+</xs:schema>

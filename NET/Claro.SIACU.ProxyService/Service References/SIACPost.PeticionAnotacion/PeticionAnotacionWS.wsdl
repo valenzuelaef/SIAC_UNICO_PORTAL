@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://claro.com.pe/eai/ws/postventa/peticionanotacionws/types/schema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://claro.com.pe/eai/ws/postventa/peticionanotacionws" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:types="http://claro.com.pe/eai/ws/postventa/peticionanotacionws/types" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" name="PeticionAnotacionWS" targetNamespace="http://claro.com.pe/eai/ws/postventa/peticionanotacionws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/peticionanotacionws">
+      <xsd:import schemaLocation="http://localhost:9723/PeticionAnotacionWS/ebsPeticionAnotacionWSSOAP11Port?xsd=2" namespace="http://claro.com.pe/eai/ws/postventa/peticionanotacionws/types" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarRequestMsg">
+    <wsdl:part name="request" element="types:consultarRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarResponseMsg">
+    <wsdl:part name="response" element="types:consultarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PeticionAnotacionWSPortType">
+    <wsdl:operation name="consultar">
+      <wsdl:input message="tns:consultarRequestMsg" />
+      <wsdl:output message="tns:consultarResponseMsg" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PeticionAnotacionWSPortTypeSOAP11Binding" type="tns:PeticionAnotacionWSPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultar">
+      <soap11:operation soapAction="http://claro.com.pe/eai/ws/postventa/peticionanotacionws/consultar" style="document" />
+      <wsdl:input>
+        <soap11:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PeticionAnotacionWSPortTypeSOAP12Binding" type="tns:PeticionAnotacionWSPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultar">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/peticionanotacionws/consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PeticionAnotacionWSService">
+    <wsdl:port name="PeticionAnotacionSOAP11Port" binding="tns:PeticionAnotacionWSPortTypeSOAP11Binding">
+      <soap11:address location="http://localhost:9723/PeticionAnotacionWS/ebsPeticionAnotacionWSSOAP11Port" />
+    </wsdl:port>
+    <wsdl:port name="PeticionAnotacionSOAP12Port" binding="tns:PeticionAnotacionWSPortTypeSOAP12Binding">
+      <soap12:address location="http://localhost:9723/PeticionAnotacionWS/ebsPeticionAnotacionWSSOAP12Port" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

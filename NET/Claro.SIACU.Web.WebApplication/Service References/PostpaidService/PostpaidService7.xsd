@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetContact" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetContact" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="ContactRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CSCTNCode" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+          <xs:element minOccurs="0" name="DocumentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SolinCode" type="xs:int" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContactRequestPostPaid" nillable="true" type="tns:ContactRequestPostPaid" />
+  <xs:complexType name="ContactResponsePostPaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddConst" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddEditConst" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvailableEmails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsultConst" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsultState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypeCEX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypeCFA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypeCIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypeDNI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypePAS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypeRUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditConst" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifyState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewState" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="lstContact" nillable="true" type="q2:ArrayOfContactPostPaid" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="lstContactFields" nillable="true" type="q3:ArrayOfContactFieldPostPaid" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="lstContactType" nillable="true" type="q4:ArrayOfContactTypePostPaid" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="lstDataType" nillable="true" type="q5:ArrayOfDataTypePostPaid" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="lstDocumentType" nillable="true" type="q6:ArrayOfDocumentTypePostPaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactResponsePostPaid" nillable="true" type="tns:ContactResponsePostPaid" />
+</xs:schema>

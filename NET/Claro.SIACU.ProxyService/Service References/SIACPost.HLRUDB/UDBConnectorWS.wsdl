@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:jcn="http://claro.com.pe/eai/ConnectorUdb/ws/Ejecucion" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://claro.com.pe/eai/ConnectorUdb/ws" xmlns:cn="http://claro.com.pe/eai/ConnectorUdb/ws/Consulta" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="UDBConnectorWS" targetNamespace="http://claro.com.pe/eai/ConnectorUdb/ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://claro.com.pe/eai/ConnectorUdb/ws/Consulta" location="http://limdeseaiv35.tim.com.pe:8909/UDBConnectorWS/UDBWSSOAP11Port?wsdl=1" />
+  <wsdl:import namespace="http://claro.com.pe/eai/ConnectorUdb/ws/Ejecucion" location="http://limdeseaiv35.tim.com.pe:8909/UDBConnectorWS/UDBWSSOAP11Port?wsdl=2" />
+  <wsdl:types />
+  <wsdl:portType name="UDBWSPortTypeSOAP11">
+    <wsdl:operation name="consultar">
+      <wsdl:input message="cn:BaseInput" />
+      <wsdl:output message="cn:BaseOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="ejecutar">
+      <wsdl:input message="jcn:BaseInput" />
+      <wsdl:output message="jcn:BaseOutput" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UDBWSPortTypeSOAP12">
+    <wsdl:operation name="consultar">
+      <wsdl:input message="cn:BaseInput" />
+      <wsdl:output message="cn:BaseOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="ejecutar">
+      <wsdl:input message="jcn:BaseInput" />
+      <wsdl:output message="jcn:BaseOutput" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UDBWSBindingSOAP11" type="tns:UDBWSPortTypeSOAP11">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultar">
+      <soap:operation soapAction="http://claro.com.pe/eai/ConnectorUdb/ws/Consulta" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ejecutar">
+      <soap:operation soapAction="http://claro.com.pe/eai/ConnectorUdb/ws/Ejecucion" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UDBWSBindingSOAP12" type="tns:UDBWSPortTypeSOAP12">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultar">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ConnectorUdb/ws/Consulta" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ejecutar">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ConnectorUdb/ws/Ejecucion" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UDBWSService">
+    <wsdl:port name="UDBWSSOAP11Port" binding="tns:UDBWSBindingSOAP11">
+      <soap:address location="http://limdeseaiv35.tim.com.pe:8909/UDBConnectorWS/UDBWSSOAP11Port" />
+    </wsdl:port>
+    <wsdl:port name="UDBWSSOAP12Port" binding="tns:UDBWSBindingSOAP12">
+      <soap12:address location="http://limdeseaiv35.tim.com.pe:8909/UDBConnectorWS/UDBWSSOAP12Port" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

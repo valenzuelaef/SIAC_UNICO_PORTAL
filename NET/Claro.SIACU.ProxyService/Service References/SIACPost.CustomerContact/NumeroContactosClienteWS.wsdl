@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://claro.com.pe/eai/ws/postventa/numerocontactosclientews" xmlns:types="http://claro.com.pe/eai/ws/postventa/numerocontactosclientews/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" name="NumeroContactosClienteWS" targetNamespace="http://claro.com.pe/eai/ws/postventa/numerocontactosclientews" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/numerocontactosclientews" />
+    <xsd:schema>
+      <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/NumeroContactosClienteWS/ebsNumeroContactosClienteSB11?xsd=2" namespace="http://claro.com.pe/eai/ws/postventa/numerocontactosclientews/types" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarNumerosRequestMsg">
+    <wsdl:part name="request" element="types:consultarNumerosRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarNumerosResponseMsg">
+    <wsdl:part name="response" element="types:consultarNumerosResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarNumerosRequestMsg">
+    <wsdl:part name="request" element="types:actualizarNumerosRequest" />
+  </wsdl:message>
+  <wsdl:message name="actualizarNumerosResponseMsg">
+    <wsdl:part name="response" element="types:actualizarNumerosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NumeroContactosClienteWSPortType">
+    <wsdl:operation name="consultarNumeros">
+      <wsdl:input message="tns:consultarNumerosRequestMsg" />
+      <wsdl:output message="tns:consultarNumerosResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarNumeros">
+      <wsdl:input message="tns:actualizarNumerosRequestMsg" />
+      <wsdl:output message="tns:actualizarNumerosResponseMsg" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NumeroContactosClientewsPortTypeSOAP11Binding" type="tns:NumeroContactosClienteWSPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarNumeros">
+      <soap:operation soapAction="http://claro.com.pe/eai/postventa/numerocontactosclientews/consultarNumeros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarNumeros">
+      <soap:operation soapAction="http://claro.com.pe/eai/postventa/numerocontactosclientews/actualizarNumeros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NumerocontactosclientewsPortTypeSOAP12Binding" type="tns:NumeroContactosClienteWSPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarNumeros">
+      <soap12:operation soapAction="http://claro.com.pe/eai/postventa/numerocontactosclientews/consultaNumeros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarNumeros">
+      <soap12:operation soapAction="http://claro.com.pe/eai/postventa/numerocontactosclientews/actualizarNumeros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NumeroContactosClienteWSService">
+    <wsdl:port name="ebsnumerocontactosclienteSB11" binding="tns:NumeroContactosClientewsPortTypeSOAP11Binding">
+      <soap:address location="http://limdeseaiv19.tim.com.pe:8909/NumeroContactosClienteWS/ebsNumeroContactosClienteSB11" />
+    </wsdl:port>
+    <wsdl:port name="ebsnumerocontactosclienteSB12" binding="tns:NumerocontactosclientewsPortTypeSOAP12Binding">
+      <soap12:address location="http://limdeseaiv19.tim.com.pe:8909/NumeroContactosClienteWS/ebsNumeroContactosClienteSB12" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

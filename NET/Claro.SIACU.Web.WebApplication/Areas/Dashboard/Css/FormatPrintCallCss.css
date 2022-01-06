@@ -1,0 +1,70 @@
+﻿
+body {font-family: Arial, Helvetica, sans-serif;  width:100%; }
+.container{
+width:90%;
+margin: 0px auto;
+
+}
+.center-logo{
+    width:25%; 
+    border:0px;
+    text-align:center;
+}
+.center-simple{
+    text-align:center;
+}
+.cell-body{
+    width:100%;border:0px;
+}
+
+.cell-head{
+    width:25%; border:0px;
+}
+.cell-center-head{
+    width:50%;border:0px;
+}
+.logo{
+       background: url('logo-claro.png') no-repeat;
+        width: 150px;
+        height: 70px;
+        background-position-x: right;
+}
+.field{
+    font-size: 10.5pt;
+    font-family: sans-serif;
+    font-weight: bolder;
+    padding-right:10px;
+}
+.data{
+    font-size: 10.5pt;
+    font-family: sans-serif;
+    padding-right:10px;
+}
+
+.head {
+	margin-left:12%;
+	margin-bottom:20px;
+}
+.hidden{
+    display:none;
+}
+.show{
+    display:block;
+}
+.not-borde{
+ border:0px;
+}
+ .head th,.head  td{
+	
+  border:0px;
+}
+ .table th {     font-size: 10px;     font-weight: normal;        background: #b9c9fe;
+  color: #039; }
+ .table td {    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;    background: #e8edff;     
+    color: #669;  font-size: 9px;  }
+
+.table tr:hover td { background: #d0dafd; color: #339; }
+.table,.table th,.table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

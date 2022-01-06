@@ -1,0 +1,68 @@
+﻿@using System.Web.Optimization
+
+<div id="ContainerHistoricalRecharge">
+    <div class="form-inline row">
+
+        <div class="form-group col-md-12 text-center">
+            <label class="control-label container-fluid" id="lblCicleBillingHistoricalRecharge">Ciclo de Facturacion:&nbsp;</label>
+        </div>
+    </div>
+    <div class="form-inline row">
+
+        <div class="form-group col-md-12 text-center">
+            <label class="control-label container-fluid" id="lblDateHistoricalRecharge">Fecha de Recarga:&nbsp;</label>
+            <label class="control-label container-fluid">Fecha Desde:</label>
+
+            <div class="input-daterange input-group" id="containerDateRangeInLine">
+                <input type="text" id="txtlblDateStartHistoricalRecharge" class="input-sm form-control" name="txtlblDateStartHistoricalRecharge" readonly />
+                <label class="input-group-addon btn" for="txtlblDateStartHistoricalRecharge">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </label>
+                <span class="input-group-addon"><label class="control-label">Hasta:</label></span>
+                <input type="text" id="txtlblDateEndHistoricalRecharge" class="input-sm form-control" name="txtlblDateEndHistoricalRecharge" readonly />
+                <label class="input-group-addon btn" for="txtlblDateEndHistoricalRecharge">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </label>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="form-inline row">
+        <div class="form-group col-md-6 text-right">
+            <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnSearchHistoricalRecharge" name="btnSearchHistoricalRecharge">Buscar</button>
+        </div>
+        <div class="form-group col-md-6 text-left">
+            <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnCleanHistoricalRecharge" name="btnCleanHistoricalRecharge">Limpiar</button>
+        </div>
+
+    </div>
+
+    <table id="tblHistoricalRecharge" class="table table-bordered table-condensed claro-modal-tabla">
+        <thead>
+            <tr class="claro-bg-primary">
+                <td class="text-center">Recarga S/.</td>
+                <td class="text-center">Canal</td>
+                <td class="text-center">Fecha de Recarga</td>
+
+
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div class="row">
+        <div class="col-md-12 text-center">
+
+            <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnComsumptionHistoricalRecharge" name="btnComsumptionHistoricalRecharge">Consulta Consumo Recarga</button>
+        </div>
+        <div class="col-md-12">
+
+            <div class="text-center"><label id="lblMensaje" class="label-red-service"></label></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidHistoricalRecharge")

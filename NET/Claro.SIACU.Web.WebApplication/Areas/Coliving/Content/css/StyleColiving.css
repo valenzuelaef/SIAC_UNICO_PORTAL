@@ -1,0 +1,10 @@
+﻿.line {
+    border-top: #dddddd 1px outset;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.items-center {
+    display: flex !important;
+    align-items: center !important;
+}

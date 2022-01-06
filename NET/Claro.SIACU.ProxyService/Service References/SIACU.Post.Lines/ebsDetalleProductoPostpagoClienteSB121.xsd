@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://claro.com.pe/eai/ws/postventa/detalleproductopostpagoclientews/types" xmlns:base="http://claro.com.pe/eai/ws/baseschema" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/detalleproductopostpagoclientews/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://limdeseaiv28.tim.com.pe:8909/DetalleProductoPostpagoClienteWS/ebsDetalleProductoPostpagoClienteSB12?xsd=1" namespace="http://claro.com.pe/eai/ws/baseschema" />
+  <xsd:element name="ConsultarDetalleProductoPostpagoRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="customerId" type="xsd:string" />
+        <xsd:element name="codigoProducto" type="xsd:string" />
+        <xsd:element name="idPlan" type="xsd:string" />
+        <xsd:element name="estado" type="xsd:string" />
+        <xsd:element name="origenDatos" type="xsd:string" />
+        <xsd:element name="tipoProducto" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ConsultarDetalleProductoPostpagoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element name="datosPostpagoResponse" type="datosPostpagoResponseType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="datosPostpagoResponseType">
+    <xsd:sequence>
+      <xsd:element name="origenDatos" type="xsd:string" />
+      <xsd:element name="listaServicios" type="listaServiciosType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="listaServiciosType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="servicio" type="servicioType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicioType">
+    <xsd:sequence>
+      <xsd:element name="coId" type="xsd:string" />
+      <xsd:element name="telefono" type="xsd:string" />
+      <xsd:element name="estado" type="xsd:string" />
+      <xsd:element name="fechaActivacion" type="xsd:dateTime" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,144 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataAccount.AccountPinPukModel
+@{
+    Layout = null;
+}
+
+    <html id="htmVIEW">
+    <head>
+        <title></title>
+        <link href="~/Areas/Dashboard/Css/FormatCss.css" rel="stylesheet" />
+        <script>
+            function printDiv(divName) {
+                
+
+                window.print();
+
+               
+            }
+            function Cerrar() {
+                window.close();
+            }
+
+        </script>
+        <style>
+            .claro-btn-info {
+                color: #003399;
+                background-color: #cadbf9;
+                border-color: #a3c0f3;
+                font-weight: bold;
+            }
+
+                .claro-btn-info:focus,
+                .claro-btn-info.focus {
+                    color: #003399;
+                    background-color: #eef3f5;
+                    border-color: #95b7f3;
+                    font-weight: bold;
+                }
+
+                .claro-btn-info:hover {
+                    color: #003399;
+                    background-color: #eef3f5;
+                    border-color: #95b7f3;
+                    font-weight: bold;
+                }
+        </style>
+    </head>
+    <body>
+      
+        <div id="ContenedorPinPuk">
+           
+            
+            <table class="Constancy">
+                <tr class="trHead">
+                    <td class="tdlef"></td>
+                    <td class="tdHeadtitle" colspan="2">
+                        <span> PIN y PUK Businness</span>
+                    </td>
+                    <td><img class="header-system-logo" alt="Claro" src="~/Areas/Dashboard/Css/logo-claro.png"></td>
+                </tr>
+                <tr><td class="tdtitle" colspan="4">&nbsp;</td></tr>
+                <tr>
+                    <td class="tdlef">Cliente:</td>
+                    <td colspan="1">@Model.BusinessName</td>
+                </tr>
+                <tr>
+                    <td class="tdlef">Cuenta:</td>
+                    <td colspan="1">@Model.Account</td>
+
+                </tr>
+                <tr>
+                    <td class="tdlef">Fecha (dd/mm/aaaa):</td>
+                    <td colspan="1">@Model.Date</td>
+                 </tr>
+                <tr>
+                    <td colspan="4" align="center" height="20%">
+                        <table class="Grid">
+                            <thead class="HeaderGrilla">
+                                <tr>
+                                    <th>ICC ID</th>
+                                    <th>IMSI</th>
+                                    <th>TELEFONO</th>
+                                    <th>PIN1</th>
+                                    <th>PUK1</th>
+                                </tr>
+                            </thead>
+                            <tbody class="ItemGrilla">
+                                @if (Model.lstAccountPinPuk != null)
+                    {
+                        foreach (var item in Model.lstAccountPinPuk)
+                        {
+                            <tr>
+                                <td class="col-sm-3">@item.ICC_IC</td>
+                                <td class="col-sm-3">@item.IMSI</td>
+                                <td class="col-sm-3">@item.MSISDN</td>
+                                <td class="col-sm-3">@item.PIN1</td>
+                                <td class="col-sm-3">@item.PUK1</td>
+                            </tr>
+                        }
+                    }
+                            </tbody>
+
+                        </table>
+                        Total de Registros : @Model.lstAccountPinPuk.Count
+                    </td>
+                </tr>
+               
+                <tr>
+                    <td colspan="4" class="tdNota">
+                        Por
+                        la presente doy fe que los datos personales antes consignados son verdaderos y
+                        autorizo a América Móvil Perú SAC,&nbsp;que en caso alguno de los datos
+                        proporcionados no sean válidos o no coincidan con los registros oficiales, se
+                        de por inválida esta solicitud.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdline">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td class="tdline">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="tdFirma">Firma del Cliente</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td class="tdFirma">Firma del Asesor</td>
+                </tr>
+            </table>
+        </div>
+        <div id="botonesConst" class="botonesConst" align="center">
+            <table>
+                <tr>
+                    <td height="50px">
+                        <input type="button" class="btn claro-btn-info btn-sm" onclick="printDiv('ContenedorPinPuk')" value=Imprimir />
+                        <input type="button" class="btn claro-btn-info btn-sm" onclick="Cerrar()" value=Cerrar />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+</html>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

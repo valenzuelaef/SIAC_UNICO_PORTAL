@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6aeb8cfd-d460-437e-aa6a-960b56e58378" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.17.26.118:20000/BloqDesbloqLineaPostpagoWS/ebsBloqDesbloqLineaPostpagoSB11?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BloqDesbloqLineaPostpagoWS.wsdl" MetadataType="Wsdl" ID="5284a04a-3e01-4d8e-a2bb-d6ba076e8b8a" SourceId="1" SourceUrl="http://172.17.26.118:20000/BloqDesbloqLineaPostpagoWS/ebsBloqDesbloqLineaPostpagoSB11?WSDL" />
+    <MetadataFile FileName="ebsBloqDesbloqLineaPostpagoSB11.xsd" MetadataType="Schema" ID="8f725fea-d0c7-4ca3-bbf7-81952b4e2caf" SourceId="1" SourceUrl="http://172.17.26.118:20000/BloqDesbloqLineaPostpagoWS/ebsBloqDesbloqLineaPostpagoSB11?xsd=2" />
+    <MetadataFile FileName="ebsBloqDesbloqLineaPostpagoSB111.xsd" MetadataType="Schema" ID="ea87744b-1a3a-41b9-a21b-da97482c9cfa" SourceId="1" SourceUrl="http://172.17.26.118:20000/BloqDesbloqLineaPostpagoWS/ebsBloqDesbloqLineaPostpagoSB11?xsd=1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

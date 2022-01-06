@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://claro.com.pe/eai/ws/postventa/documentosfisicows" xmlns:types="http://claro.com.pe/eai/ws/postventa/documentosfisicows/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" name="DocumentosFisicoWS" targetNamespace="http://claro.com.pe/eai/ws/postventa/documentosfisicows" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/documentosfisicows" />
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:20000/DocumentoFisicoWSV3/ebsDocumentosFisicoSB11?xsd=2" namespace="http://claro.com.pe/eai/ws/postventa/documentosfisicows/types" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenerDocumentoFisicoRequestMsg">
+    <wsdl:part name="request" element="types:obtenerDocumentoFisicoRequest" />
+  </wsdl:message>
+  <wsdl:message name="obtenerDocumentoFisicoResponseMsg">
+    <wsdl:part name="response" element="types:obtenerDocumentoFisicoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DocumentosFisicoWSPortType">
+    <wsdl:operation name="obtenerDocumentoFisico">
+      <wsdl:input message="tns:obtenerDocumentoFisicoRequestMsg" />
+      <wsdl:output message="tns:obtenerDocumentoFisicoResponseMsg" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DocumentosFisicoWSPortTypeSOAP11Binding" type="tns:DocumentosFisicoWSPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtenerDocumentoFisico">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/documentosfisicows/obtenerDocumentoFisico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DocumentosFisicoWSPortTypeSOAP12Binding" type="tns:DocumentosFisicoWSPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtenerDocumentoFisico">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/documentosfisicows/obtenerDocumentoFisico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DocumentosFisicoWSService">
+    <wsdl:port name="ebsDocumentosFisicoSB11" binding="tns:DocumentosFisicoWSPortTypeSOAP11Binding">
+      <soap:address location="http://localhost:20000/DocumentoFisicoWSV3/ebsDocumentosFisicoSB11" />
+    </wsdl:port>
+    <wsdl:port name="ebsDocumentosFisicoSB12" binding="tns:DocumentosFisicoWSPortTypeSOAP12Binding">
+      <soap12:address location="http://localhost:20000/DocumentoFisicoWSV3/ebsDocumentosFisicoSB12" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

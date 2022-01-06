@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="77167c0e-2958-44c1-b8c4-6ec79115cddf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9593/Cases/WipBinService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WipBinService2.xsd" MetadataType="Schema" ID="0ac75bac-e6cb-4dae-adfd-af6a60d1f594" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WipBinService61.xsd" MetadataType="Schema" ID="5e4be43b-0cb9-4205-a9de-af5af321e453" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd6" />
+    <MetadataFile FileName="WipBinService.disco" MetadataType="Disco" ID="54ed7d67-a103-4664-a60a-2cd759e1643b" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?disco" />
+    <MetadataFile FileName="WipBinService8.xsd" MetadataType="Schema" ID="d47029e2-6345-40d8-8d6e-02b52ba5814d" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd9" />
+    <MetadataFile FileName="WipBinService5.xsd" MetadataType="Schema" ID="ca9aa28d-e7cd-4169-aa12-6b594dd08c78" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd5" />
+    <MetadataFile FileName="WipBinService9.xsd" MetadataType="Schema" ID="da839e4c-096f-4c0d-9b30-12a7445997bd" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd10" />
+    <MetadataFile FileName="WipBinService3.xsd" MetadataType="Schema" ID="98a506e5-d7fb-4f32-b7a7-ce9f47beeda2" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WipBinService4.xsd" MetadataType="Schema" ID="8d57d5d5-bbcc-40cb-a1ed-b7f469d900d9" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WipBinService.xsd" MetadataType="Schema" ID="8c0fc692-fb86-4e0d-ae6c-a8db3cd54e5f" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd4" />
+    <MetadataFile FileName="WipBinService7.xsd" MetadataType="Schema" ID="0080d5bb-0874-425d-9191-162b724bc43c" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd8" />
+    <MetadataFile FileName="WipBinService91.xsd" MetadataType="Schema" ID="650a94e8-c9f5-44bc-8a19-3cecb20784b1" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd11" />
+    <MetadataFile FileName="WipBinService.wsdl" MetadataType="Wsdl" ID="ec5c405e-7b80-4569-a89e-89eaae1443f5" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?wsdl" />
+    <MetadataFile FileName="WipBinService1.xsd" MetadataType="Schema" ID="6ed8a3c2-9a89-4a71-9b34-1e0eaf831f5e" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd3" />
+    <MetadataFile FileName="WipBinService6.xsd" MetadataType="Schema" ID="a765489b-1a43-44d3-a252-c57de71dbe83" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd7" />
+    <MetadataFile FileName="WipBinService10.xsd" MetadataType="Schema" ID="d64238b6-4e85-4900-9e87-a5cd1fc3550d" SourceId="1" SourceUrl="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd12" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

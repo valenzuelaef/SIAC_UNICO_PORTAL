@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomers" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomers" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" />
+  <xs:complexType name="PreviousCustomersRequestPrePaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlagGetAll" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlagHistory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlagRegistry" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PreviousCustomersRequestPrePaid" nillable="true" type="tns:PreviousCustomersRequestPrePaid" />
+  <xs:complexType name="PreviousCustomersResponsePrePaid">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" minOccurs="0" name="listCustomer" nillable="true" type="q2:ArrayOfCustomerPrePaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PreviousCustomersResponsePrePaid" nillable="true" type="tns:PreviousCustomersResponsePrePaid" />
+</xs:schema>

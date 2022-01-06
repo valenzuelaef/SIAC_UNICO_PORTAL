@@ -1,0 +1,41 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataService.ActiveDaysModel
+
+<div id="modal-content">
+
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="col-lg-3">
+                <label class="control-label"> Días Activos</label>
+            </div>
+            <div class="col-lg-3 control-label"><p align="left">@Model.ActiveDays</p></div>
+
+
+        </div>
+        <div class="form-group">
+            <div class="col-lg-3">
+                <label class="control-label"> Días de bloqueo o suspención</label>
+            </div>
+            <div class="col-lg-3 control-label"><p align="left">@Model.DisableDays</p></div>
+
+        </div>
+
+    </form>
+    <div class="alert alert-danger" role="alert">
+
+        @Model.Message
+    </div>
+    @if (Model.StateMessageError)
+    {
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            @Model.MessageError
+        </div>
+    }
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+
+

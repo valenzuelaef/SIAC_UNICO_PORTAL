@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetCalls" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRecharges" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomer" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomers" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetValidateTelephone" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetService" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRecordTriationRFA" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetDetailTriationRFA" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetHistoricalBonds" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPinPuk" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetInstant" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPEL" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetSalesData" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetDebt" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.CreateContactNotUSer" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetConsumptionDataPacket" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRateState" />
+  <xs:element name="GetCalls">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetCalls" minOccurs="0" name="objCallsRequest" nillable="true" type="q1:CallsRequestPrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCallsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetCalls" minOccurs="0" name="GetCallsResult" nillable="true" type="q2:CallsResponsePrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecharges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRecharges" minOccurs="0" name="objRechargesRequest" nillable="true" type="q3:RechargesRequestPrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRechargesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRecharges" minOccurs="0" name="GetRechargesResult" nillable="true" type="q4:RechargesResponsePrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviousCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomer" minOccurs="0" name="objGetPreviousCustomerRequest" nillable="true" type="q5:PreviousCustomerRequestPrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviousCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomer" minOccurs="0" name="GetPreviousCustomerResult" nillable="true" type="q6:PreviousCustomerResponsePrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviousCustomers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomers" minOccurs="0" name="objPreviousCustomersRequest" nillable="true" type="q7:PreviousCustomersRequestPrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviousCustomersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomers" minOccurs="0" name="GetPreviousCustomersResult" nillable="true" type="q8:PreviousCustomersResponsePrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetValidateTelephone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetValidateTelephone" minOccurs="0" name="objValidateTelephoneRequest" nillable="true" type="q9:ValidateTelephoneRequestPrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetValidateTelephoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetValidateTelephone" minOccurs="0" name="GetValidateTelephoneResult" nillable="true" type="q10:ValidateTelephoneResponsePrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetService" minOccurs="0" name="objGetServiceRequest" nillable="true" type="q11:ServiceRequestPrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetService" minOccurs="0" name="GetServiceResult" nillable="true" type="q12:ServiceResponsePrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecordTriationRFA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRecordTriationRFA" minOccurs="0" name="objRecordTriationRFARequest" nillable="true" type="q13:RecordTriationRFARequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecordTriationRFAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRecordTriationRFA" minOccurs="0" name="GetRecordTriationRFAResult" nillable="true" type="q14:RecordTriationRFAResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDetailTriationRFA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetDetailTriationRFA" minOccurs="0" name="objDetailTriationRFARequest" nillable="true" type="q15:DetailTriationRFARequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDetailTriationRFAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetDetailTriationRFA" minOccurs="0" name="GetDetailTriationRFAResult" nillable="true" type="q16:DetailTriationRFAResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoricalBonds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetHistoricalBonds" minOccurs="0" name="objHistoricalBondsRequest" nillable="true" type="q17:HistoricalBondsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoricalBondsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetHistoricalBonds" minOccurs="0" name="GetHistoricalBondsResult" nillable="true" type="q18:HistoricalBondsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPinPuk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPinPuk" minOccurs="0" name="objPinPukRequest" nillable="true" type="q19:PinPukRequestPrepaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPinPukResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPinPuk" minOccurs="0" name="GetPinPukResult" nillable="true" type="q20:PinPukResponsePrepaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInstant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetInstant" minOccurs="0" name="objInstantRequest" nillable="true" type="q21:InstantRequestPrepaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInstantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetInstant" minOccurs="0" name="GetInstantResult" nillable="true" type="q22:InstantResponsePrepaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPEL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPEL" minOccurs="0" name="objPELRequest" nillable="true" type="q23:PELRequestPrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPELResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPEL" minOccurs="0" name="GetPELResult" nillable="true" type="q24:PELResponsePrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesDataPEL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetSalesData" minOccurs="0" name="objSalesDataRequest" nillable="true" type="q25:SalesDataRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesDataPELResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetSalesData" minOccurs="0" name="GetSalesDataPELResult" nillable="true" type="q26:SalesDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDebt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetDebt" minOccurs="0" name="objDebtRequest" nillable="true" type="q27:DebtPrepaidRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDebtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetDebt" minOccurs="0" name="GetDebtResult" nillable="true" type="q28:DebtPrepaidResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateContactNotUSer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.CreateContactNotUSer" minOccurs="0" name="objCreateContactNotUSerRequest" nillable="true" type="q29:CreateContactNotUSerRequestPrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateContactNotUSerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.CreateContactNotUSer" minOccurs="0" name="CreateContactNotUSerResult" nillable="true" type="q30:CreateContactNotUSerResponsePrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumptionDataPacket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetConsumptionDataPacket" minOccurs="0" name="objConsumptionDataPacketRequest" nillable="true" type="q31:ConsumptionDataPacketRequestPrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumptionDataPacketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetConsumptionDataPacket" minOccurs="0" name="GetConsumptionDataPacketResult" nillable="true" type="q32:ConsumptionDataPacketResponsePrePaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRateState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRateState" minOccurs="0" name="objRequest" nillable="true" type="q33:RateStateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRateStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRateState" minOccurs="0" name="GetRateStateResult" nillable="true" type="q34:RateStateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

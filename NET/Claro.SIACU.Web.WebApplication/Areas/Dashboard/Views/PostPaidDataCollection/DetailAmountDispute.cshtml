@@ -1,0 +1,134 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataCollection.CollectionDetailAmountDisputeModel
+
+@{
+    Layout = null;
+}
+
+<div id="PostpaidDetailAmountDispute">
+    <div>
+        <div class="panel-tabs">
+            <ul id="divTabDisputa" class="nav nav-tabs" role="tablist" data-tabs="tabs">
+                <li class="active"><a href="#tab01Disputa" role="tab" data-toggle="tab" data-parent="divTabDisputa"><span class="glyphicon "></span>Detalle de Monto en Disputa</a></li>
+                <li><a href="#tab02Disputa" role="tab" data-toggle="tab" data-parent="divTabDisputa"><span class="glyphicon "></span>Seguimiento de Casos</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab01Disputa" class="tab-pane active">
+                    <table class="table  table-hover  table-bordered claro-modal-tabla" id="tblDetailAmountDispute">
+                        <thead class="claro-bg-primary">
+                            <tr>
+                                <th class="col-sm-1">Documento de Ref.</th>
+                                <th class="col-sm-1">Fecha Emisión Doc. Ref.</th>
+                                <th class="col-sm-1">Monto Doc. Ref.</th>
+                                <th class="col-sm-1">Monto Reclamo</th>
+                                <th class="col-sm-1">Fecha Reclamo</th>
+                                <th class="col-sm-1">Estado Reclamo</th>
+                                <th class="col-sm-1">Motivo Reclamo</th>
+                                <th class="col-sm-1">Fecha Cierre Caso</th>
+                                <th class="col-sm-1">N&#176; Caso</th>
+                                <th class="col-sm-1">&#218;ltimo d&#237;a Exoneraci&#243;n</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (var item in Model.listDetailAmountDisputePast)
+                                {
+                                    <tr>
+                                        <td>@item.ReferenceDocument</td>
+                                        <td>@item.CreateDateReferenceDocument</td>
+                                        <td>@item.ReferenceDocumentAmount </td>
+                                        <td>@item.ClaimAmount</td>
+                                        <td>@item.ClaimDate</td>
+                                        <td>@item.ClaimStatus</td>
+                                        <td>@item.ClaimReason</td>
+                                        <td>@item.CaseClosingDate</td>
+                                        <td>@item.CaseNumber</td>
+                                        <td>@item.LastDayExoneration</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div id="tab02Disputa" class="tab-pane fade">
+                    <div class="panel panel-default ">
+                        <table class="table table-condensed form-horizontal">
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <span class="">
+                                                <input id="rbCaseId" type="radio" aria-label="..." />
+                                            </span>
+                                            <label class="control-label">Nro Caso</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control input-sm" id="txtCaseId" />
+                                    </div>
+                                    <div class="col-md-6"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <span class="">
+                                                <input id="rbCustomerAccount" type="radio" aria-label="..." />
+                                            </span>
+                                            <label class="control-label">Cuenta Cliente</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control input-sm" id="txtCustomerAccount" />
+                                    </div>
+                                    <div class="col-md-6"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <span class="">
+                                                <input id="rbDateFromTo" type="radio" aria-label="..." />
+                                            </span>
+                                            <label class="control-label">Fecha de Registro</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-daterange input-group" id="containerDateRange">
+                                            <input type="text" id="txtMonitoringCasesDateFrom" class="form-control" name="txtMonitoringCasesDateFrom" placeholder="Fecha Inicial" />
+                                            <label class="input-group-addon btn" for="txtMonitoringCasesDateFrom">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </label>
+                                            <span class="input-group-addon">A:</span>
+                                            <input type="text" id="txtMonitoringCasesDateTo" class="form-control" name="txtMonitoringCasesDateTo" placeholder="Fecha Final" />
+                                            <label class="input-group-addon btn" for="txtMonitoringCasesDateTo">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button type="button" class="btn btn-default btn-sm btn-sm pull-right" id="btnSearchDataMonitoringCases">
+                                            <span class="glyphicon  glyphicon-search" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button type="button" id="btnClean" 
+                                                class="btn claro-btn-info btn-sm pull-left">
+                                            Limpiar     
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div id="divDetailMonitoringCases"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataCollection/MonitoringCases")

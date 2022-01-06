@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entparord="http://claro.com.pe/esb/data/engagedParty/partyOrder/v2/" xmlns:entcusbil="http://claro.com.pe/esb/data/customer/customerBill/v2/" xmlns:entparint="http://claro.com.pe/esb/data/engagedParty/partyInteraction/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entaddparent="http://claro.com.pe/esb/data/engagedParty/additionalPartyEntities/v2/" xmlns:entprod="http://claro.com.pe/esb/data/product/product/v2/" xmlns:entcusbilcol="http://claro.com.pe/esb/data/customer/customerBillCollection/v2/" xmlns:entcus="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:entparrev="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" xmlns:entengparext="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" targetNamespace="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyInteraction/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Product_v2.xsd" namespace="http://claro.com.pe/esb/data/product/product/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerBill_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerBill/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=EngagedPartyExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Customer_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customer/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerBillCollection_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerBillCollection/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyOrder_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyOrder/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=AdditionalPartyEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/additionalPartyEntities/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="AccountBalancePM">
+    <xs:annotation>
+      <xs:documentation>AccountBalancePM defines possible payment method using CustomerAccountBalance as payment source.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entparrev:PaymentMethod">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerAccountBalance" type="entcusbil:CustomerAccountBalance" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AppliedPartyBillingProductCharge">
+    <xs:annotation>
+      <xs:documentation>A charge applied to a product.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_prodPriceCharge" type="entprod:ProdPriceCharge" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AppliedPartyBillingProductUsageRate">
+    <xs:annotation>
+      <xs:documentation>A rated usage event typically produced by a rating engine.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entparrev:AppliedPartyBillingProductCharge">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AppliedPartyBillingRate">
+    <xs:annotation>
+      <xs:documentation>A charge or a credit assigned to the party's account in the course or for the purpose of the billing process. Subclasses further define these elements.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="date" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>A date of creation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="quantity" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>A unit (for example, US Dollars) and number of the applied rate.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A textual description.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AppliedPartyBillingTaxRate">
+    <xs:annotation>
+      <xs:documentation>An amount of money levied on the price of a Product by a legislative body.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entparrev:AtomicAppliedPartyBillingRate">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="taxCategory" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A categorization of the tax rate.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AtomicAppliedPartyBillingRate">
+    <xs:annotation>
+      <xs:documentation>A single charge or a credit.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entparrev:AppliedPartyBillingRate">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Bank">
+    <xs:annotation>
+      <xs:documentation>Represent the general bank.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="bankName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The name of the bank.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="bankCodeType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The type of bank code, for example BIC(Bank Identifier Code).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="bankCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The bank code according to the bankCodeType.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_bankAccount" type="entparrev:BankAccount" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_bankExtension" type="entengparext:BankExtension" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_checkPM" type="entparrev:CheckPM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BankAccount">
+    <xs:annotation>
+      <xs:documentation>Represent the general bank account.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The type of bank account, for example IBAN (International Bank Account Number).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="bankAccountNumber" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The bank account according to the accountType.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the bank account is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_bankCardPM" type="entparrev:BankCardPM" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyPayment" type="entparrev:PartyPayment" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_bank" type="entparrev:Bank" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_checkPM" type="entparrev:CheckPM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BankCardPM">
+    <xs:annotation>
+      <xs:documentation>PaymentMethod used to pay with a bank card.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entparrev:PaymentMethod">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="cardNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The identification number of a bank card.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="nameOnCard" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The name of the person who owns the card.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="bankCardType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The type of the BankCard, such as VISA, MasterCard, UnionPay.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="expirationDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date of card expiration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="CVV" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The CVV(Card Verification Value) of the bank card.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_bankAccount" type="entparrev:BankAccount" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_bankCardPMExtension" type="entengparext:BankCardPMExtension" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CheckPM">
+    <xs:annotation>
+      <xs:documentation>Pay with a check.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entparrev:PaymentMethod">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="checkID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The identification number of a check.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_bankAccount" type="entparrev:BankAccount" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_bank" type="entparrev:Bank" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DunningScenario">
+    <xs:annotation>
+      <xs:documentation>A dunning scenario describes the company’s dunning strategy. It must be easily configurable to describe the dunning rules to apply to a case, the order in which applying them, the events that trigger dunning rules evaluation, the actions that must be done…
+
+If a DunningScenario is assigned to a PartyAcount, the DunningCase will follow this DunningScenario in case of debt; else it will follow a default DunningScenario.
+
+DunningScenario is assigned to a PartyAccount, depending on the Holder quality.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A short descriptive name for the DunningScenario.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isDefault" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>If true, indicates that the DunningScenario is the one to use by default if no specific DunningScenario is specified for the PartyAccount.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyAccount" type="entaddparent:PartyAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyBill">
+    <xs:annotation>
+      <xs:documentation>A total amount due from a PartyAccount for all products during the billing period.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="billNo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identification number of a bill.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="billAmount" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>A total party bill amount due.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyBillSpec" type="entparrev:PartyBillSpec" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyAccount" type="entaddparent:PartyAccount" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerBill" type="entcusbil:CustomerBill" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyDisputedAmount" type="entparint:PartyDisputedAmount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyBillSpec">
+    <xs:annotation>
+      <xs:documentation>A detailed description of a party's bill structure. The current version of this class is serving as a placeholder. It will be further developed in the next version of this document.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A short descriptive name.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains in detail the specification.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the PartyBillSpec is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyBill" type="entparrev:PartyBill" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyBillSpecExtension" type="entengparext:PartyBillSpecExtension" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyAccount" type="entaddparent:PartyAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyPayment">
+    <xs:annotation>
+      <xs:documentation>The PartyPayment represents the transfer of wealth from any Party to another one.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="amount" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>The monetary form of the PartyPayment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="paymentDate" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The date the PartyPayment was made</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="remainingAmount" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>The payment amount that has not been applied as payment item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="paymentDirection" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The direction of the payment seen by the company. It can be be inbound (payment mate to the company) or outbound (payment made by the company).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The payment might be either requested, accepted or rejected.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Description about the payment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyAccount" type="entaddparent:PartyAccount" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_bankAccount" type="entparrev:BankAccount" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_paymentMethod" type="entparrev:PaymentMethod" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerPayment" type="entcusbilcol:CustomerPayment" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyOrder" type="entparord:PartyOrder" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_paymentPlan" type="entparrev:PaymentPlan" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyPaymentExtension" type="entengparext:PartyPaymentExtension" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyPaymentItem" type="entparrev:PartyPaymentItem" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="partyOrderItem" type="entparord:PartyOrderItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyPaymentItem">
+    <xs:annotation>
+      <xs:documentation>PaymentItem is the application of PartyPayment. PaymentItem is applied to PartyBill or AppliedPartyBillingRate.
+
+--&gt;El artículo de pago es la aplicación del pago de la parte. El elemento de pago se aplica a la factura de la fiesta o a la tarifa de facturación de la parte aplicada.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="appliedAmount" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>The amount of money that has been applied to specific entity, such as PartyBill.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyBill" type="entparrev:PartyBill" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerPaymentItem" type="entcusbilcol:CustomerPaymentItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentMethod">
+    <xs:annotation>
+      <xs:documentation>PaymentMethod is the way in which party provides payment, for example cash ,credit,transfer.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Name that can be given to the PaymentMethod by the owner.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descriptionthat can be given to the PaymentMethod by the owner.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>Valid period for the PaymentMethod.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyPayment" type="entparrev:PartyPayment" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyRole" type="entpar:PartyRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_paymentPlan" type="entparrev:PaymentPlan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentPlan">
+    <xs:annotation>
+      <xs:documentation>PaymentPlan defines the plan for payment via its associations to the PaymentMethod and PaymentAccount.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>Valid period for the PaymentPlan.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxAmount" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>The maximum amount of the Payment when at least one PaymentMethod is declared so that the company generates each Payment. For example, with a due debt of $250, and a maxPaymentAmount of $100, 2 payments of $100 will be generated and the last one will be $50.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="totalAmount" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>The total amount that the PaymentPlan has to recover through payments.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="paymentDay" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The day chosen by the party for generating the payments</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="paymentPeriod" type="entbastyp:Duration">
+        <xs:annotation>
+          <xs:documentation>The period of time between two payments.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="priority" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The priority of the PaymentPlan amongst all the PaymentPlans agree with the same PartyRole.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A grouping of PaymentPlans that have strongly marked and readily defined similarities.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A PayemntPlan might be initialized, validated,in progress or closed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxTrialTimes" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Maximum number of trial to submit a payment if it has been rejected.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyPayment" type="entparrev:PartyPayment" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerAccount" type="entcus:CustomerAccount" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_paymentPlanExtension" type="entengparext:PaymentPlanExtension" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyAccount" type="entaddparent:PartyAccount" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_paymentMethod" type="entparrev:PaymentMethod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyBillingProductChargeSumBalance">
+    <xs:annotation>
+      <xs:documentation>An aggregation of all PartyAccount charges applied to a Product.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="productChargeSum" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>The party account charges applied to the Product sum.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

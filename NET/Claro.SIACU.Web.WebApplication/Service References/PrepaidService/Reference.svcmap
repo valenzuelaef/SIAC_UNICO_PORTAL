@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="37c47a89-934f-46ec-a512-cff638dacbb0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9593/Dashboard/PrepaidService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PrepaidService.xsd" MetadataType="Schema" ID="253233ed-8413-4881-9999-e2cc763d4480" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PrepaidService8.xsd" MetadataType="Schema" ID="af0b027d-acd2-490d-9d40-df5d2cd223fc" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd8" />
+    <MetadataFile FileName="PrepaidService10.xsd" MetadataType="Schema" ID="a112a7a3-fab6-4d3e-a422-a4a683659e4b" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd10" />
+    <MetadataFile FileName="PrepaidService22.xsd" MetadataType="Schema" ID="916d2adc-8722-4f42-b634-8ec93f883ee9" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd22" />
+    <MetadataFile FileName="PrepaidService16.xsd" MetadataType="Schema" ID="670a275b-85b4-4701-8685-969c50856a25" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd16" />
+    <MetadataFile FileName="PrepaidService15.xsd" MetadataType="Schema" ID="b314ff29-0925-480a-ad21-612da2c54b9c" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd15" />
+    <MetadataFile FileName="PrepaidService7.xsd" MetadataType="Schema" ID="8601977c-3eb7-4655-8819-ae190ca898eb" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd7" />
+    <MetadataFile FileName="PrepaidService2.xsd" MetadataType="Schema" ID="7ddf0cc4-d15b-4472-9d81-64f8915d4281" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PrepaidService19.xsd" MetadataType="Schema" ID="b2de7268-1852-4541-896f-fcd1c6fb178d" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd19" />
+    <MetadataFile FileName="PrepaidService6.xsd" MetadataType="Schema" ID="0d03213f-1759-46a8-a7ac-c62573826751" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd6" />
+    <MetadataFile FileName="PrepaidService18.xsd" MetadataType="Schema" ID="5d064696-4f37-4f55-95c4-efcf5cb7c0d1" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd18" />
+    <MetadataFile FileName="PrepaidService3.xsd" MetadataType="Schema" ID="10f633c9-6461-466d-b3b2-e92934fd1221" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PrepaidService1.xsd" MetadataType="Schema" ID="0883c9b7-1d72-44b7-a514-9e25d7bd753b" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PrepaidService9.xsd" MetadataType="Schema" ID="ee2efb2e-bf70-4736-9876-7ca1c94e3db1" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd9" />
+    <MetadataFile FileName="PrepaidService20.xsd" MetadataType="Schema" ID="60ad1e8e-d00b-4ef7-b41b-ccf018fbbc92" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd20" />
+    <MetadataFile FileName="PrepaidService4.xsd" MetadataType="Schema" ID="ab430b49-5e0e-4fda-93fc-6ec0eed818a2" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PrepaidService13.xsd" MetadataType="Schema" ID="5c6173e5-4cdc-45ff-b286-3cbf1ad63b9e" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd13" />
+    <MetadataFile FileName="PrepaidService232.xsd" MetadataType="Schema" ID="ef03a3e8-189b-4b2a-b0f8-a174be4e5ea6" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd23" />
+    <MetadataFile FileName="PrepaidService11.xsd" MetadataType="Schema" ID="c12922a5-0e07-4d7b-939a-2b77cb98f4c6" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd11" />
+    <MetadataFile FileName="PrepaidService14.xsd" MetadataType="Schema" ID="9dac6d1b-9207-41d3-aa08-a2ead4731137" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd14" />
+    <MetadataFile FileName="PrepaidService17.xsd" MetadataType="Schema" ID="26ec3417-d10b-45e4-9386-2ad3f78e4eae" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd17" />
+    <MetadataFile FileName="PrepaidService.wsdl" MetadataType="Wsdl" ID="6d3b01c7-468e-48ba-b1ec-d202525916f7" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?wsdl" />
+    <MetadataFile FileName="PrepaidService5.xsd" MetadataType="Schema" ID="850faab2-4f20-4206-bd07-451cabbf03c2" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd5" />
+    <MetadataFile FileName="PrepaidService21.xsd" MetadataType="Schema" ID="4e5cfa6c-99ac-4431-bceb-d362d40a147a" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd21" />
+    <MetadataFile FileName="PrepaidService12.xsd" MetadataType="Schema" ID="4ca50cea-61f6-4ffb-9a9f-431994fc77ca" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd12" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

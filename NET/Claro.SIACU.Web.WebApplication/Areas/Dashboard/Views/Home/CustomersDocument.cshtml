@@ -1,0 +1,28 @@
+﻿@using System.Web.Optimization;
+@{
+    Layout = null;
+}
+
+<div id="contenedor-customers-document" class="panel panel-default ">
+    <table id="tblCustomersDocument" class="table table-hover documents">
+        <thead class="claro-bg-primary">
+            <tr>
+                <th></th>
+                <th class="col-md-5">
+                    Nombres y Apellidos / Razón Social
+                </th>
+                <th class="col-md-3">
+                    Tipo Documento
+                </th>
+                <th class="col-md-3">
+                    Nro. De Documento
+                </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div id="dvMensajeSeleccion" class="form-group col-sm-12">
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Home/CustomersDocument")

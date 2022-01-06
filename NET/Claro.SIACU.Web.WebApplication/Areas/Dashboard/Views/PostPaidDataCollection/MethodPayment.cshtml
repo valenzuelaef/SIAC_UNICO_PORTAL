@@ -1,0 +1,102 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataCollection.CollectionMethodPaymentModel
+
+@{
+    Layout = null;
+}
+
+<div id="modal-content">
+    <div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-condensed ">
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-2">
+                                <label class="control-label">Estado</label>
+                            </div>
+                            <div class="col-md-2">@Model.StatusDescription</div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-2">
+                                <label class="control-label">Tipo de Debito</label>
+                            </div>
+                            <div class="col-md-2">@Model.DebitTypeDescription</div>
+                            <div class="col-md-2">
+                                <label class="control-label">Número de Cuenta</label>
+                            </div>
+                            <div class="col-md-2">@Model.CardAccountNumber</div>
+                            <div class="col-md-2">
+                                <label class="control-label">Vencimiento</label>
+                            </div>
+                            <div class="col-md-2">@Model.CardExpirationDate</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-2">
+                                <label class="control-label">Tipo Cuenta</label>
+                            </div>
+                            <div class="col-md-2">@Model.TypeAccountDescription</div>
+                            <div class="col-md-2">
+                                <label class="control-label">Moneda</label>
+                            </div>
+                            <div class="col-md-2">@Model.CurrencyDescription</div>
+                            <div class="col-md-2">
+                                <label class="control-label">Entidad</label>
+                            </div>
+                            <div class="col-md-2">@Model.EntityDescription</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-2">
+                                <label class="">Monto Máximo Débito</label>
+                            </div>
+                            <div class="col-md-2">@Model.MaximumDebitAmount</div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2"> </div>
+                            <div class="col-md-2"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-2">
+                                <label class="control-label">Fecha Solicitud</label>
+                            </div>
+                            <div class="col-md-2">@Model.RequestDate</div>
+                            <div class="col-md-2">
+                                <label class="control-label">Fecha Aprobación</label>
+                            </div>
+                            <div class="col-md-2">@Model.ApprovalDate</div>
+                            <div class="col-md-2">
+                                <label class="control-label">Fecha Desafiliación</label>
+                            </div>
+                            <div class="col-md-2">@Model.DisaffiliationDate</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-2">
+                                <label class="control-label">Motivo Rechazo</label>
+                            </div>
+                            <div class="col-md-2">@Model.RejectionReason</div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

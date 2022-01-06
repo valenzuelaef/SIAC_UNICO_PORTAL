@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entmarsalext="http://claro.com.pe/esb/data/marketSales/marketSalesExtension/v2/" xmlns:entmarcam="http://claro.com.pe/esb/data/marketSales/marketingCampaign/v2/" xmlns:entsalcha="http://claro.com.pe/esb/data/marketSales/salesChannel/v2/" xmlns:entprooff="http://claro.com.pe/esb/data/product/productOffering/v2/" targetNamespace="http://claro.com.pe/esb/data/marketSales/salesChannel/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=MarketSalesExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/marketSales/marketSalesExtension/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=MarketingCampaign_v2.xsd" namespace="http://claro.com.pe/esb/data/marketSales/marketingCampaign/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productOffering/v2/" />
+  <xs:complexType name="SalesChannel">
+    <xs:annotation>
+      <xs:documentation>A means by which a ServiceProvider makes available and sells ProductOfferings to the market. SalesChannels include DirectSalesForce, SalesAgents, TeleMarketers, and AlternateChannels.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOffering" type="entprooff:ProductOffering" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_marketingCampaign" type="entmarcam:MarketingCampaign" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_salesChannelExtension" type="entmarsalext:SalesChannelExtension" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

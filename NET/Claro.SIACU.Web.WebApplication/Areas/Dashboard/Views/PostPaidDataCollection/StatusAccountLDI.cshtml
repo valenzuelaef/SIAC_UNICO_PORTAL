@@ -1,0 +1,155 @@
+﻿@using System.Web.Optimization;
+<div id="modal-content">
+    <div id="PostpaidStatusAccountLDI">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-condensed ">
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-2">
+                                <label class="control-label">Código Cliente</label>
+                            </div>
+                            <div class="col-md-4">@Model.ClientId</div>
+                            <div class="col-md-2">
+                                <label class="control-label">Nombre/Razón Social</label>
+                            </div>
+                            <div class="col-md-4">@Model.NameClient</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <div class="row">
+                    <div class="col-md-6 panel-title claro-modal-contenido-titulo-texto">
+                        <a data-toggle="collapse" href="#DatosRentacollapse">FACTURAS</a>
+                    </div>
+                    <div class="col-md-6"><span id="tvFacturas" class="pull-right"></span></div>
+                </div>
+            </div>
+            <div id="DatosRentacollapse" class="panel-collapse collapse in table-responsive ">
+                <table class="table table-hover table-bordered claro-modal-tabla" id="tblBilling">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th class="col-sm-1">N°</th>
+                            <th class="col-sm-2">Detalle</th>
+                            <th class="col-sm-2">Factura Claro Asociada</th>
+                            <th class="col-sm-2">Factura LDI</th>
+                            <th class="col-sm-2">Operador Larga Distancia</th>
+                            <th class="col-sm-2">Fecha Registro</th>
+                            <th class="col-sm-2">Fecha Emisión</th>
+                            <th class="col-sm-2">Fecha Vencimiento</th>
+                            <th class="col-sm-2">Monto Facturado</th>
+                            <th class="col-sm-2">Monto No Exigible</th>
+                            <th class="col-sm-2">Importe Pendiente</th>
+                            <th class="col-sm-2">Transferido para Cobranza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.listBillStatusAccountLDIModel != null)
+                        {
+                            var num = 0;
+
+                            foreach (var item in Model.listBillStatusAccountLDIModel)
+                            {
+                                num += 1;
+                                <tr>
+                                    <td class="col-sm-1">@num</td>
+                                    <td class="col-sm-2">@item.Detalle</td>
+                                    <td class="col-sm-2">@item.ClaroBillId</td>
+                                    <td class="col-sm-2">@item.LdiBillId</td>
+                                    <td class="col-sm-2"></td>
+                                    <td class="col-sm-2">@item.RegistryDate</td>
+                                    <td class="col-sm-2">@item.EmittedDate</td>
+                                    <td class="col-sm-2">@item.MaturityDate</td>
+                                    <td class="col-sm-2">@item.BillTotal</td>
+                                    <td class="col-sm-2">@item.AmountNotRequired</td>
+                                    <td class="col-sm-2">@item.ImportePend</td>
+                                    <td class="col-sm-2">@item.Status</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default" style="padding:1% !important; text-align:center">
+                            <button data-toggle="modal" class="btn claro-btn-info btn-sm" id="btnExportBill" style="text-align:center">
+                                Exportar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <div class="row">
+                    <div class="col-md-6 panel-title claro-modal-contenido-titulo-texto">
+                        <a data-toggle="collapse" href="#DatosDepositocollapse">PAGOS</a>
+                    </div>
+                    <div class="col-md-6"><span id="tvPagos" class="pull-right"></span></div>
+                </div>
+            </div>
+            <div id="DatosDepositocollapse" class="panel-collapse collapse in table-responsive ">
+                <table class="table table-hover table-bordered claro-modal-tabla" id="tblPayment">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th class="col-sm-1">N°</th>
+                            <th class="col-sm-2">Detalle</th>
+                            <th class="col-sm-2">N° Ref</th>
+                            <th class="col-sm-2">Factura Claro Asociada</th>
+                            <th class="col-sm-2">Factura LDI</th>
+                            <th class="col-sm-2">Operador Larga Distancia</th>
+                            <th class="col-sm-2">Descripción Pago</th>
+                            <th class="col-sm-2">Fecha Registro</th>
+                            <th class="col-sm-2">Fecha Pago</th>
+                            <th class="col-sm-2">Importe Pago</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.listPaymentStatusAccountLDIModel != null)
+                        {
+                            var num = 0;
+
+                            foreach (var item in Model.listPaymentStatusAccountLDIModel)
+                            {
+                                num += 1;
+                                <tr>
+                                    <td class="col-sm-1">@num</td>
+                                    <td class="col-sm-2">@item.Payment</td>
+                                    <td class="col-sm-1"></td>
+                                    <td class="col-sm-1">@item.ClaroBillId</td>
+                                    <td class="col-sm-1">@item.LdiBillId</td>
+                                    <td class="col-sm-1"></td>
+                                    <td class="col-sm-1">@item.BankDesc</td>
+                                    <td class="col-sm-1">@item.RegistryDate</td>
+                                    <td class="col-sm-1">@item.PaymentDate</td>
+                                    <td class="col-sm-1">@item.AmountPen</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+
+                <br />
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default" style="padding: 1% !important; text-align: center">
+                        <button data-toggle="modal" class="btn claro-btn-info btn-sm" id="btnExportPayment" style="text-align:center">
+                            Exportar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataCollection/StatusAccountLDI")

@@ -1,0 +1,50 @@
+﻿@using System.Web.Optimization
+<div id="contentHistoryActions">
+        <div class=" col-sm-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-inline" align ="center">
+                        <label class="input-group">Fecha desde:</label>
+                        <div class="input-daterange input-group" id="containerDateRange">
+                            <input type="text" id="txtDateStart" class="input-sm form-control" name="start" />
+                            <label class="input-group-addon btn" for="txtDateStart">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                            <span class="input-group-addon">A:</span>
+                            <input type="text" id="txtDateEnd" class="input-sm form-control" name="end" />
+                            <label class="input-group-addon btn" for="txtDateEnd">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                            <button type="button" class="btn btn-default btn-sm btn-sm pull-right" id="btnSearchHistoryActions">
+                                <span class="glyphicon  glyphicon-search" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div id="contentHistoryActions" >
+
+        <table id="tblHistoryActions" class="table table-responsive claro-modal-tabla" >
+            <thead class="claro-bg-primary">
+                <tr class="claro-bg-primary">
+                    <th class="text-center col-sm-1">Nro</th>
+                    <th class="text-center col-sm-1">Contrato</th>
+                    <th class="text-center col-sm-3">Descripción</th>
+                    <th class="text-center col-sm-4">Servicio</th>
+                    <th class="text-center col-sm-1">Fecha</th>
+                    <th class="text-center col-sm-1">Hora</th>
+                    <th class="text-center col-sm-1">Usuario</th>
+                </tr>
+            </thead>
+        </table>
+        <div id="divHistoryActions">
+
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidHistoryActions")
+

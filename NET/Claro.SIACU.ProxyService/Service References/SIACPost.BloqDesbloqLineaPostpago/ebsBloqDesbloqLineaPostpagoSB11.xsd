@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://claro.com.pe/eai/ws/postventa/bloqdesbloqlineapostpagows/types" xmlns:base="http://claro.com.pe/eai/ws/baseschema" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/bloqdesbloqlineapostpagows/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://172.17.26.118:20000/BloqDesbloqLineaPostpagoWS/ebsBloqDesbloqLineaPostpagoSB11?xsd=1" namespace="http://claro.com.pe/eai/ws/baseschema" />
+  <xsd:element name="consultarBloDesbloRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="coId" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="consultarBloDesbloResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element maxOccurs="unbounded" name="listaCurConsulta" type="curConsultaType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="registrarBloqueoRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="coId" type="xsd:string" />
+        <xsd:element name="ticklerCode" type="xsd:string" />
+        <xsd:element name="longDesc" type="xsd:string" />
+        <xsd:element name="user" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="registrarBloqueoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="registrarDesbloqueoRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="coId" type="xsd:string" />
+        <xsd:element name="ticklerCode" type="xsd:string" />
+        <xsd:element name="longDesc" type="xsd:string" />
+        <xsd:element name="user" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="registrarDesbloqueoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="curConsultaType">
+    <xsd:sequence>
+      <xsd:element name="ticklerNumber" type="xsd:string" />
+      <xsd:element name="ticklerCode" type="xsd:string" />
+      <xsd:element name="ticklerStatus" type="xsd:string" />
+      <xsd:element name="createdBy" type="xsd:string" />
+      <xsd:element name="createdDate" type="xsd:string" />
+      <xsd:element name="closeBy" type="xsd:string" />
+      <xsd:element name="closeDate" type="xsd:string" />
+      <xsd:element name="shortDescription" type="xsd:string" />
+      <xsd:element name="longDescription" type="xsd:string" />
+      <xsd:element name="estado" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

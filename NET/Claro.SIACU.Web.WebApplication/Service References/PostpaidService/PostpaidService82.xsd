@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoryActions" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoryActions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="HistoryActionsRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Contract" type="xs:int" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TelephoneTOBE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="flagConvivencia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="plataform" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HistoryActionsRequestPostPaid" nillable="true" type="tns:HistoryActionsRequestPostPaid" />
+  <xs:complexType name="HistoryActionsResponsePostPaid">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="ListHistoryActions" nillable="true" type="q2:ArrayOfHistoryActionsPostPaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoryActionsResponsePostPaid" nillable="true" type="tns:HistoryActionsResponsePostPaid" />
+</xs:schema>

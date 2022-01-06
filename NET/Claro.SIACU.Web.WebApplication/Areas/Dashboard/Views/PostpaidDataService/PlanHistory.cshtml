@@ -1,0 +1,48 @@
+﻿@using System.Web.Optimization
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.Postpaid.DataLineServiceModel
+
+
+<div id="modal-content">
+    <div id="PospaidPlanHistory">
+        <div class="panel panel-default ">
+
+            <div class="table-responsive">
+                <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tbPost_PlanHistory">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th class="col-sm-2">Valido Desde</th>
+                            <th class="col-sm-2">Plan Tarifario</th>
+                            <th class="col-sm-2">Cambiado Por</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{if (Model.lstServices != null)
+                        {
+                            foreach (var item in Model.lstServices)
+                            {
+                                <tr>
+                                    <td>@item.ValidFrom</td>
+                                    <td>@item.PlanTariff</td>
+                                    <td>@item.ChangedBy</td>
+                                </tr>
+                            }
+                        }}
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PlanHistory")
+
+
+
+
+
+

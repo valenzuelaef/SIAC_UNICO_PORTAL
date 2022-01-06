@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f87107e1-4e16-494d-8b7f-40c3dbc45466" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55209/Audit.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Audit.wsdl" MetadataType="Wsdl" ID="6cec5dae-e197-4f42-9702-2d4eb0c4d3d2" SourceId="1" SourceUrl="http://localhost:55209/Audit.svc?wsdl" />
+    <MetadataFile FileName="Audit.xsd" MetadataType="Schema" ID="504996e9-4faa-472c-bb77-b7ea32f7a166" SourceId="1" SourceUrl="http://localhost:55209/Audit.svc?xsd=xsd2" />
+    <MetadataFile FileName="Audit1.xsd" MetadataType="Schema" ID="32d16c85-f63b-4a80-958c-43df9d326f69" SourceId="1" SourceUrl="http://localhost:55209/Audit.svc?xsd=xsd3" />
+    <MetadataFile FileName="Audit2.xsd" MetadataType="Schema" ID="02794a1d-0708-41c5-8238-e3aa832b9627" SourceId="1" SourceUrl="http://localhost:55209/Audit.svc?xsd=xsd0" />
+    <MetadataFile FileName="Audit3.xsd" MetadataType="Schema" ID="9637b5e3-f028-4c32-b235-6688bb41b8a5" SourceId="1" SourceUrl="http://localhost:55209/Audit.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

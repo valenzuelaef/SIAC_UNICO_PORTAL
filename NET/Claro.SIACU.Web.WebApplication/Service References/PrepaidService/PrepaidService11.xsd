@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetValidateTelephone" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetValidateTelephone" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:complexType name="ValidateTelephoneRequestPrePaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoResponse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProviderID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TFI" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidateTelephoneRequestPrePaid" nillable="true" type="tns:ValidateTelephoneRequestPrePaid" />
+  <xs:complexType name="ValidateTelephoneResponsePrePaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cadena" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTelephoneResponsePrePaid" nillable="true" type="tns:ValidateTelephoneResponsePrePaid" />
+</xs:schema>

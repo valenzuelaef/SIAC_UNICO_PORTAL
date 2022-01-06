@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entserext="http://claro.com.pe/esb/data/service/serviceExtension/v2/" targetNamespace="http://claro.com.pe/esb/data/service/serviceExtension/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ServiceExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of Service</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="numberServices" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>number of services per 1 account</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="totalServices" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Total Services</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="additionalInformation" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Used to get additonal information on the case subject</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

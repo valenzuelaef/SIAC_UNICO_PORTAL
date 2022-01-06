@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:enttrotic="http://claro.com.pe/esb/data/commonBusinessEntities/troubleTicket/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entcombusentext="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" xmlns:enttroorprob="http://claro.com.pe/esb/data/commonBusinessEntities/troubleOrProblem/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/troubleTicket/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CommonBusinessEntitiesExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=TroubleOrProblem_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/troubleOrProblem/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:complexType name="TroubleTicket">
+    <xs:annotation>
+      <xs:documentation>A record used for reporting and managing the resolution of resource problems.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:BusinessInteractionItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="troubleTicketState" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The current condition (state) of the TroubleTicket which is a composite of the ITU-X.790 Trouble Ticket state and status attributes. For example, open/active - testing.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="troubleDetectionDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date on which the trouble was discovered.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="serviceRestoredDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date on which the service was brought back to its original condition.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="troubleState" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>The condition of the TroubleTicket as defined by the ITU-X.790 TRState attribute. (deprecated)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_troubleTicketItem" type="enttrotic:TroubleTicketItem" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_problem" type="enttroorprob:Problem" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_troubleTicketExtension" type="entcombusentext:TroubleTicketExtension" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TroubleTicketItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:BusinessInteractionItem">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

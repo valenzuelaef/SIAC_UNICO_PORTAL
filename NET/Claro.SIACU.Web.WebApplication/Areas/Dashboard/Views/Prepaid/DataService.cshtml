@@ -1,0 +1,397 @@
+﻿@using System.Web.Optimization
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.Prepaid.DataServiceModel
+@{
+    Layout = null;
+}
+
+
+<div id="containerDataService" transaction="@Model.Transaction">
+
+            <table class="table table-condensed">
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Nro Celular
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_NumberCellphone">@Model.NumberCellphone</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Estado servicio
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_StateLine_2">@Model.StateLine_2</span></td>
+                    <td class="col-md-1"><span id="lblPre_StateSubscriber">@Model.StateSubscriber</span></td>
+                </tr>
+                @if (@Model.Answer != null)
+                {
+                <tr id="trStatePortability">
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Portabilidad
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_Answer">@Model.Answer</span></td>
+                    <td class="col-md-1">
+                        <button class="btn claro-btn-info btn-xs"
+                                data-toggle="modal" id="btnPortabilityConsultation">
+                            ...
+                        </button>
+                    </td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1"></td>
+                </tr>
+                }
+
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Provider ID
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_ProviderID">@Model.ProviderID</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Días Exp.
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_StateDays">@Model.StateDays</span></td>
+                    <td class="col-md-1"></td>
+                </tr>
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Plan tarifario
+                        </label>
+                    </td>
+                    <td class="col-md-2" colspan="2"><span id="lblPre_PlanRate">@Model.PlanRate</span></td>
+                    
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Fecha activación
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_DateActivation">@Model.DateActivation</span></td>
+                    <td class="col-md-1"></td>
+                </tr>
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Fec. Exp. Servicio
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_DateExpirationLine">@Model.DateExpirationLine</span></td>
+                    <td class="col-md-1"><span id="lblPre_Payment">@Model.Payment</span></td>
+                    <td class="col-md-2"><span id="lblPre_BalancePending">@Model.BalancePending</span></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1"></td>
+                </tr>
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Tecnología 4G
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_Technology4G">@Model.Technology4G</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1"></td>
+                </tr>
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Tecnología VoLTE
+                        </label>
+                    </td>
+                    <td class="col-md-2" @{ var color = "black";
+                                            if (Model.TechnologyVoLTE == "Desactivo")
+                                            {
+                                                color = "red";
+                                            }
+                    } ><span id="lblPre_TechnologyVoLTE" style="color:@color" >@Model.TechnologyVoLTE</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1"></td>
+                </tr>
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Tecnología VoWiFi
+                        </label>
+                    </td>
+                    <td class="col-md-2" @{ var color2 = "black"; if (Model.TechnologyVoWifi == "Desactivo") { color2="red" ; }}><span id="lblPre_TechnologyVoWifi" style="color:@color2">@Model.TechnologyVoWifi</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1"></td>
+                </tr>
+                @*<tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Promoción Fidelidad
+                        </label>
+                    </td>
+                    <td class="col-md-2" colspan="5"><span id="lblPre_PromotionFidelity">@Model.Segment</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1"></td>
+                </tr>*@
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            ICCID
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_ICCID">@Model.ICCID</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Banca Móvil
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_BankingMobile">@Model.BankingMobile</span></td>
+                    <td class="col-md-1"></td>
+                </tr>
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Saldo 
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_BalancePrincipal" class="label-red-service">@Model.BalancePrincipal</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2">
+                        <label class="control-label ">
+                            Vence
+                        </label>
+                    </td>
+
+                    <td class="col-md-2"><span id="lblPre_DateExpirationBalance" class="label-red-service">@Model.DateExpirationBalance</span></td>
+                    <td class="col-md-1"></td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Tarifa de Megas
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_RateMB" class="label-red-service">@Model.RateMB</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2">
+                        <label class="control-label ">
+                            
+                        </label>
+                    </td>
+
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="6" class="col-md-12">
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                                <div class="panel-title claro-modal-contenido-titulo-texto">
+                                    <a data-toggle="collapse" aria-expanded="false" data-parent="#accordion" href="#SaldoBolsaPrepaidCollapse" class="collapsed">
+                                        <span class="glyphicon glyphicon-th-list"></span>&nbsp;<b>Saldo Bolsa</b>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="SaldoBolsaPrepaidCollapse" class="panel-collapse table-responsive collapse" aria-expanded="false">
+                                <div class="panel-body">
+                                    <table class="table  table-striped table-hover claro-modal-tabla" id="tblPrepaidBalance">
+                                        <thead class="claro-bg-primary">
+                                            <tr>
+                                                <th>Grupo /Bono /Promoción</th>
+                                                <th>Nombre comercial de la bolsa</th>
+                                                <th>Destino</th>
+                                                <th>Saldo</th>
+                                                <th>Unidad</th>
+                                                <th>Vencimiento</th>
+                                                <th>Comprado /Regalado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (Model.listBalance != null)
+                                            {
+                                                foreach (var item in @Model.listBalance)
+                                                {
+                                                    <tr>
+                                                        <td>@item.Name</td>
+                                                        <td>@item.CommercialName</td>
+                                                        <td>@item.Destination</td>
+                                                        <td>@item.Balance</td>
+                                                        <td>@item.Unity</td>
+                                                        <td>@item.Expiration</td>
+                                                        <td>@item.NameCode</td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-center"><button id="btnHistorialBalance" type="button" class="btn claro-btn-info btn-xs">Historial</button></div>
+                                
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Intentos Recargas Fallidos
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_FailedAttemptsRefills">@Model.FailedAttemptsRefills</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Camb. Tarifa realizados
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_ExchangeRatesMade">@Model.ExchangeRatesMade</span></td>
+                    <td class="col-md-1"></td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Cantidad Trios
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_QuantityTrios">@Model.QuantityTrios</span></td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Tipo Triación
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_DescriptionTypeTriation">@Model.DescriptionTypeTriation</span></td>
+                    <td class="col-md-1"></td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Histórico de Triaciones
+                        </label>
+                    </td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1">
+                        <button id="btnHistoricalStriations" type="button" class="btn claro-btn-info btn-xs">
+                            ...
+                        </button>
+                    </td>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            Histórico de Bonos
+                        </label>
+                    </td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1">
+                        <button id="btnHistoricalBonds" type="button" class="btn claro-btn-info btn-xs" profile="SU_SIACA_HBOR">
+                            ...
+                        </button>
+                    </td>
+                </tr>
+                @if (Model.BondRFA != "N")
+                {
+                <tr>
+                    <td class="col-md-2">
+                        <label class="control-label">
+                            <span id="lblPre_BondRFA">Bono RFA Entregado</span>
+                        </label>
+                    </td>
+                    <td class="col-md-1"></td>
+                    <td class="col-md-1" id="tdPre_BondRFA_Amount">@Model.BondAmountRFA</td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1"></td>
+                </tr>
+                }
+
+
+                <tr>
+                    <td colspan="6" class="col-md-12">
+                        <div class="panel panel-info claro-modal-contenido-panel">
+                            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                                <div class="panel-title claro-modal-contenido-titulo-texto">
+                                    <a data-toggle="collapse" aria-expanded="false" data-parent="#accordion" href="#Trioscollapse" class="collapsed">
+                                        <span class="glyphicon glyphicon-th-list"></span>&nbsp;<b>Trios</b>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="Trioscollapse" class="panel-collapse table-responsive collapse" aria-expanded="false">
+                                <div class="panel-body">
+                                    <table class="table  table-striped table-hover table-responsive table-curved claro-modal-tabla" id="tblTrios">
+                                        <thead class="claro-bg-primary">
+                                            <tr>
+                                                <th>Detalle</th>
+                                                <th>Número</th>
+                                                <th>Portabilidad</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (Model.listTrio != null)
+                                            {
+                                                foreach (var item in @Model.listTrio)
+                                                {
+                                                    <tr>
+                                                        <td>@item.Detail</td>
+                                                        <td>@item.Number</td>
+                                                        <td>@item.Portability</td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-1">
+                        <label class="control-label">
+                            Estado
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_StatusIMSI">@Model.StatusIMSI</span></td>
+                    <td class="col-md-3"></td>
+                    <td class="col-md-1">
+                        <label class="control-label">
+                            @(Model.ReasonBlocking == null ? "" : "Motivo")
+                        </label>
+                    </td>
+                    <td class="col-md-2"><span id="lblPre_ReasonBlocking">@Model.ReasonBlocking</span></td>
+                    <td class="col-md-1"></td>
+                </tr>
+            </table>
+
+            <input type="hidden" id="hidStatus" value=@Model.StateLine />
+            <input type="hidden" id="hidIsTFI" value=@Model.IsTFI />
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default" style="padding:1% !important">
+                        <button id="btnPinkpuk" type="button" class="btn claro-btn-info btn-sm">Pin y Puk</button>
+                        <button id="btnSalesdues" type="button" class="btn claro-btn-info btn-sm">Venta en Cuotas</button>
+                        <button id="btnDatasale" type="button" class="btn claro-btn-info btn-sm">Datos Venta/ * PEL</button>
+                    </div>
+                </div>
+            </div>
+    
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Prepaid/ClaroValidate")
+@Scripts.Render("~/bundles/Dashboard/Prepaid/DataService")

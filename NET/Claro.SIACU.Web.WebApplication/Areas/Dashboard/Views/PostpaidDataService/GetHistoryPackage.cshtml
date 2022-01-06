@@ -1,0 +1,140 @@
+﻿@using System.Web.Optimization
+
+<div id="ContainerHistoricalPackage">
+
+    <div class="form-inline row">
+        <div class="form-group col-md-4 text-right"></div>
+        <div class="form-group col-md-8 text-left"><label class="control-label container-fluid" id="lblCustomerCodeHistoricalPackage">Código Cliente:&nbsp;</label></div>
+    </div>
+    <div class="form-inline row">
+        <div class="form-group col-md-4 text-right"></div>
+        <div class="form-group col-md-8 text-left"><label class="control-label container-fluid" id="lblNameCustomerHistoricalPackage">Nombres y Apellidos Cliente:&nbsp;</label></div>
+    </div>
+    <div class="form-inline row">
+        <div class="form-group col-md-4 text-right"></div>
+        <div class="form-group col-md-8 text-left"><label class="control-label container-fluid" id="lblNameContactHistoricalPackage">Nombre y Apellidos Contacto:&nbsp;</label></div>
+    </div>
+    <div class="form-inline row">
+        <div class="form-group col-md-4 text-right"></div>
+        <div class="form-group col-md-8 text-left"><label class="control-label container-fluid" id="lblClicleBillingHistoricalPackage">Ciclo de Facturación:&nbsp;</label></div>
+    </div>
+    <div id="hiddenDataBag">
+        <div class="form-inline row">
+            <div class="form-group col-md-4 text-right"></div>
+
+            <div class="form-group col-md-8 text-left">
+
+                <label class="control-label container-fluid" id="lblTotalMbHistoricalPackage">
+                    Total de MB
+                    adquiridos en el ciclo:&nbsp;
+                </label>
+            </div>
+        </div>
+        <div class="form-inline row">
+            <div class="form-group col-md-4 text-right"></div>
+            <div class="form-group col-md-8 text-left">
+
+                <label class="control-label container-fluid" id="lblBagAvailableHistoricalPackage">Dispone de&nbsp;</label>
+                <label class="control-label container-fluid" id="lbl">
+                    &nbsp;en
+                    la Bolsa de Datos.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-inline row">
+        <div class="form-group col-md-2 text-right">
+            <label class="control-label container-fluid" id="lblB2ETelephone">Fecha de Adquisición:&nbsp;</label>
+        </div>
+        <div class="form-group col-md-2 text-right">   <label class="control-label">Fecha Desde:</label></div>
+
+        <div class="form-group col-md-4 text-left">
+
+            <div class="input-daterange input-group" id="containerDateRangeHistoricalPackage">
+
+                <input type="text" id="txtDateStartHistoricalPackage" class="input-sm form-control" name="txtDateStartHistoricalPackage" readonly />
+                <label class="input-group-addon btn" for="txtDateStartHistoricalPackage">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </label>
+                <span class="input-group-addon"><label class="control-label">Hasta:</label></span>
+                <input type="text" id="txtDateEndHistoricalPackage" class="input-sm form-control" name="txtDateEndHistoricalPackage" readonly />
+                <label class="input-group-addon btn" for="txtDateEndHistoricalPackage">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </label>
+
+            </div>
+        </div>
+
+        <div class="form-group col-md-4 text-left">
+            <label class="control-label">Tipo de Paquete: </label>
+            <select id="cboHistoricalPackageType" class="form-control input-sm"></select>
+        </div>
+
+    </div>
+    <div class="form-inline row">
+        <div class="form-group col-md-6 text-right">
+            <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_SearchHistoricalPackage" name="btnPost_SearchHistoricalPackage">Buscar</button>
+        </div>
+        <div class="form-group col-md-6 text-left">
+            <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_CleanHistoricalPackage" name="btnPost_CleanHistoricalPackage">Limpiar</button>
+        </div>
+
+    </div>
+
+    <div id="tblHistoryAsis">
+        <table id="tblHistoricalPackage" class="table table-bordered table-condensed claro-modal-tabla">
+            <thead>
+                <tr class="claro-bg-primary">
+                    <td class="text-center">Bolsa</td>
+                    <td class="text-center">Vigencia - Fecha Vencimiento</td>
+                    <td class="text-center">Costo S/.</td>
+                    <td class="text-center">Tipo de Paquete</td>
+                    <td class="text-center">Fecha de Adquisición</td>
+                    <td class="text-center">Estado</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+
+    @*TOBE*@
+    <div id="tblHistoryTobe">
+        <table id="tblHistoricalPackageToBe" class="table table-bordered table-condensed claro-modal-tabla">
+            <thead>
+                <tr class="claro-bg-primary">
+                    <td class="text-center">Bolsa</td>
+                    <td class="text-center">Tipo de Paquete</td>
+                    <td class="text-center">Vigencia - Fecha Vencimiento</td>
+                    <td class="text-center">Costo S/.</td>
+                    <td class="text-center">Forma de Pago</td>
+                    <td class="text-center">Fecha de Adquisición</td>
+                    <td class="text-center">Estado</td>
+                    <td class="text-center">Saldo</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    @*TOBE*@
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <label class="control-label container-fluid" id="lblTotalRowsHistoricalPackage">Total de Registros:&nbsp;</label>
+        </div>
+        <div class="col-md-12">
+
+            <div class="text-center"><label id="lblMensaje" class="label-red-service"></label></div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidHistoricalPackage")
+
+
+
+

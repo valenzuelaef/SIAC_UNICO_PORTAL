@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetTypeDocumentDeubt" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetTypeDocumentDeubt" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="TypeDocumentDeubtRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="strCod_consulta" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="strDocLinea" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TypeDocumentDeubtRequestPostPaid" nillable="true" type="tns:TypeDocumentDeubtRequestPostPaid" />
+  <xs:complexType name="TypeDocumentDeubtResponsePostPaid">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="lstCustomer" nillable="true" type="q2:ArrayOfCustomerPostPaid" />
+      <xs:element minOccurs="0" name="out_err_msg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strout_err_code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TypeDocumentDeubtResponsePostPaid" nillable="true" type="tns:TypeDocumentDeubtResponsePostPaid" />
+</xs:schema>

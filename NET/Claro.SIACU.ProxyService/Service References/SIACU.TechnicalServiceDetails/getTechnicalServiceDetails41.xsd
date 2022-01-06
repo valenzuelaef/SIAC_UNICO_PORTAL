@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entparpro="http://claro.com.pe/esb/data/engagedParty/partyProfile/v2/" xmlns:entmarseg="http://claro.com.pe/esb/data/marketSales/marketSegment/v2/" xmlns:entagr="http://claro.com.pe/esb/data/engagedParty/agreement/v2/" xmlns:entprooff="http://claro.com.pe/esb/data/product/productOffering/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entprospe="http://claro.com.pe/esb/data/product/productSpecification/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entproext="http://claro.com.pe/esb/data/product/productExtension/v2/" xmlns:entprod="http://claro.com.pe/esb/data/product/product/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entparprospeandoff="http://claro.com.pe/esb/data/engagedParty/partyProductSpecificationAndOffering/v2/" xmlns:entsalcha="http://claro.com.pe/esb/data/marketSales/salesChannel/v2/" xmlns:entusa="http://claro.com.pe/esb/data/commonBusinessEntities/usage/v2/" targetNamespace="http://claro.com.pe/esb/data/product/productOffering/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productExtension/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Agreement_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/agreement/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=MarketSegment_v2.xsd" namespace="http://claro.com.pe/esb/data/marketSales/marketSegment/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyProductSpecificationAndOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyProductSpecificationAndOffering/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=SalesChannel_v2.xsd" namespace="http://claro.com.pe/esb/data/marketSales/salesChannel/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Usage_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/usage/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Product_v2.xsd" namespace="http://claro.com.pe/esb/data/product/product/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductSpecification_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productSpecification/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyProfile_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyProfile/v2/" />
+  <xs:complexType name="DistributionChannel">
+    <xs:annotation>
+      <xs:documentation>A distribution channel is the organization or entity by which a product catalog is presented to a customer.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the DistributionChannel.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The name of the DistributionChannel.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOffering" type="entprooff:ProductOffering" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductOffering">
+    <xs:annotation>
+      <xs:documentation>The presentation of one or more ProductSpecifications to the marketplace for sale, rental, or lease for a ProductOfferingPrice. A ProductOffering may target one or more MarketSegments, be included in one or more ProductCatalog, presented in support of one or more ProductStrategies, and made available in one or more Places. ProductOffering may represent a simple offering of a single ProductSpecification or could represent a bundling of one or more other ProductOffering.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the ProductOffering.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the ProductOffeirng is known and distinguished from other ProductOfferings.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains what the offering is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period during which the offering is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The condition in which the offering exists, such as planned, obsolete, active</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOffering" type="entusa:Usage" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyProfileType" type="entparpro:PartyProfileType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_product" type="entprod:Product" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_salesChannel" type="entsalcha:SalesChannel" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_distributionChannel" type="entprooff:DistributionChannel" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_businessInteractionItem" type="entbusint:BusinessInteractionItem" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_productSpecification" type="entprospe:ProductSpecification" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRoleProductOffering" type="entparprospeandoff:PartyRoleProductOffering" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyRole" type="entpar:PartyRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_marketSegment" type="entmarseg:MarketSegment" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOfferingTerm" type="entprooff:ProductOfferingTerm" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOfferingRelationship" type="entprooff:ProductOfferingRelationship" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOfferingPrice" type="entprooff:ProductOfferingPrice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductOfferingPrice">
+    <xs:annotation>
+      <xs:documentation>An amount, usually of money, that is asked for or allowed when a ProductOffering is bought, rented, or leased. The price is valid for a defined period of time and may not represent the actual price paid by a customer.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A short descriptive name such as "affinity discount" .</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains in detail the semantics of this component.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the price is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productPrice" type="entprod:ProductPrice" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_businessInteractionItemPrice" type="entbusint:BusinessInteractionItemPrice" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_productOfferingPriceExtension" type="entproext:ProductOfferingPriceExtension" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOffering" type="entprooff:ProductOffering" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductOfferingRelationship">
+    <xs:annotation>
+      <xs:documentation>A significant connection or similarity between two or more ProductOfferings. For example, the relationship between a provider's ProductOffering and a supplier/partner's ProductOffering used to fulfill the provider's ProductOffering; a service provider offers various photos for download and printing...a print shop prints them for the provider and considers one photo (ProductOffering) the same as any other from a pricing perspective...one partners' photo offering is related to many of the provider's photos.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A categorization of the relationship, such as supplier/partner equivalent, alternate, requires and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The period during which the relationship is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_productOffering" type="entprooff:ProductOffering" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductOfferingTerm">
+    <xs:annotation>
+      <xs:documentation>A condition under which a ProductOffering is made available to Customers. ProductOfferingTerm include ProductOfferingFinancialTerm, which includes such things as acceptable methods of payment, ShipmentTerm, and ServiceTerm.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_agreementTermOrCondition" type="entagr:AgreementTermOrCondition" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOffering" type="entprooff:ProductOffering" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

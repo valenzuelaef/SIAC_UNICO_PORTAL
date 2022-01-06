@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fa779a79-9afb-4ae8-a05f-a2095ce50c9b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.19.74.223:8909/ActivarVOLTEWS/ebsActivarVOLTESB11?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PlantillaWS.wsdl" MetadataType="Wsdl" ID="eddc6fb3-9065-4a8b-9502-0b69a9cb73e4" SourceId="1" SourceUrl="http://172.19.74.223:8909/ActivarVOLTEWS/ebsActivarVOLTESB11?WSDL" />
+    <MetadataFile FileName="ebsActivarVOLTESB11.xsd" MetadataType="Schema" ID="1e2c6f8d-be72-4b51-a60b-0862d35bbfb8" SourceId="1" SourceUrl="http://limdeseaiv28.tim.com.pe:8909/ActivarVOLTEWS/ebsActivarVOLTESB11?xsd=1" />
+    <MetadataFile FileName="ebsActivarVOLTESB111.xsd" MetadataType="Schema" ID="7a313dc4-5f60-4538-a418-a7bcab496203" SourceId="1" SourceUrl="http://limdeseaiv28.tim.com.pe:8909/ActivarVOLTEWS/ebsActivarVOLTESB11?xsd=2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

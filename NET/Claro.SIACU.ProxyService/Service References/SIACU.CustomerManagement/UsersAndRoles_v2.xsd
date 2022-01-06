@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entengparext="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entlogres="http://claro.com.pe/esb/data/resource/logicalResource/v2/" xmlns:entcus="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:entuseandrol="http://claro.com.pe/esb/data/commonBusinessEntities/usersAndRoles/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/usersAndRoles/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="../Resource/LogicalResource_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/logicalResource/v2/" />
+  <xs:import schemaLocation="../Customer/Customer_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customer/v2/" />
+  <xs:import schemaLocation="../EngagedParty/EngagedPartyExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" />
+  <xs:import schemaLocation="../EngagedParty/Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="InvolvementIdentification">
+    <xs:annotation>
+      <xs:documentation>A (concrete) base class for the PartyUser and ResourceUser actors entities representing the identity of an actor involved in a role, this class can also represent a user which its type (party or resource) is unknown.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_userNameResourceRole" type="entlogres:UserNameResourceRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_involvementIdentifictionRole" type="entuseandrol:InvolvementIdentifictionRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InvolvementIdentifictionRole">
+    <xs:annotation>
+      <xs:documentation>This class contains the point of integration with authorization (EIM team responsibility)
+The InvolvementIdentificationRole entity is used to represent the specific information (e.g. rights and restrictions) related to a point of integration of a given InvolvementIdentification instance in its  specific InvolvementRole</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_involvementIdentification" type="entuseandrol:InvolvementIdentification" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_involvementRole" type="entuseandrol:InvolvementRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InvolvementRole">
+    <xs:annotation>
+      <xs:documentation>All the association from InvolvementRole to the classes above are mutually exclusive, and exactly one of them should exist
+
+for every instance of InvolvementRole
+An abstract base class for all more specific classes representing associations of involvement type such as ProductInvolvemenRole. ServiceInvolvementRole and ProductInvolvementRole</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="involvementRole" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A part a business entity plays in its involvement with a product, service or resource</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period of time during which the business participant is involved with the product.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_involvementIdentifictionRole" type="entuseandrol:InvolvementIdentifictionRole" />
+      <xs:element minOccurs="0" maxOccurs="1" name="customerAccount" type="entcus:CustomerAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyUser">
+    <xs:annotation>
+      <xs:documentation>A specialization of the InvolvementIdentification entity used to indicate that he actor identified is a party (an individual or an organization).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entuseandrol:InvolvementIdentification">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_partyUserExtension" type="entengparext:PartyUserExtension" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_party" type="entpar:Party" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceUser">
+    <xs:annotation>
+      <xs:documentation>A specialization of the InvolvementIdentification entity used to indicate that he actor identified is a resource</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entuseandrol:InvolvementIdentification">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

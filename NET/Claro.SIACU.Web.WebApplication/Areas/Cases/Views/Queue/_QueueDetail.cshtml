@@ -1,0 +1,70 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.WipBinService.CasesByQueueUserResponse
+
+<div class="panel-heading claro-modal-contenido-titulo-panel row">
+    <h4 class="panel-title claro-modal-contenido-titulo-texto">
+        @ViewBag.Queue
+    </h4>
+</div>
+<div class="row">
+    <table id="queueDetailTable">
+        <thead class="claro-bg-primary">
+            <tr>
+                <td>Tipo</td>
+                <td>Id</td>
+                <td>Tipificación</td>
+                <td>Login agente</td>
+                <td>Nombre agente</td>
+                <td>Apellido agente</td>
+                <td>Fecha creación</td>
+                <td>Origen</td>
+                <td>Estado</td>
+                <td>Nro Reporte</td>
+                <td>Nro Reclamo</td>
+                <td>Condición</td>
+                <td>Resultado</td>
+                <td>Coordenadas 1</td>
+                <td>Coordenadas 2</td>
+                <td>Coordenadas 3</td>
+                <td>Detalle Incoveniente</td>
+                <td>Fase</td>
+                <td>Fecha Ult. Fase</td>
+                <td>Ver Notas</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Cases != null)
+            {
+                foreach (Claro.SIACU.Web.WebApplication.WipBinService.Case objCase in Model.Cases)
+                {
+                    <tr>
+                        <td>Caso</td>
+                        <td>@objCase.IdCase</td>
+                        <td>@objCase.Typification</td>
+                        <td>@objCase.Owner</td>
+                        <td>@objCase.AgentName</td>
+                        <td>@objCase.AgentLastName</td>
+                        <td>@objCase.CreationDate</td>
+                        <td>@objCase.Origin</td>
+                        <td>@objCase.State</td>
+                        <td>@objCase.Report</td>
+                        <td>@objCase.Complaint</td>
+                        <td>@objCase.Condition</td>
+                        <td>@objCase.Result</td>
+                        <td>@objCase.Coordinate1</td>
+                        <td>@objCase.Coordinate2</td>
+                        <td>@objCase.Coordinate3</td>
+                        <td>@objCase.InconvenientDetail</td>
+                        <td>@objCase.Phase</td>
+                        <td>@objCase.PhaseChangeDate</td>
+                        <td><a href="#" data-id="@objCase.IdCase" class="caseNote">Ver Detalle</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div id="queueCaseNotes" class="row">
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

@@ -1,0 +1,170 @@
+﻿@using System.Web.Optimization;
+@{
+    ViewBag.Title = "CriteriaSale";
+    Layout = null;
+}
+<style>
+    .control-label {
+        margin-top: 5px !important;
+    }
+
+    table > tbody > tr > td {
+        vertical-align: middle !important;
+    }
+
+        table > tbody > tr > td > span {
+            padding-left: 10px;
+        }
+
+    .modal {
+        padding-right: 0px !important;
+    }
+</style>
+<style>
+    @@media only screen and (max-width : 992px) {
+        .size-xs {
+            padding-right: 9px;
+            padding-left: 9px;
+        }
+    }
+
+    @@media only screen and (max-width : 768px) {
+        .size-xs {
+            padding-right: 3px;
+            padding-left: 3px;
+        }
+
+            .size-xs > div > div > button {
+                margin: 1px;
+            }
+    }
+
+    @@media only screen and (max-width : 480px) {
+        .size-xs {
+            padding-right: 3px;
+            padding-left: 3px;
+        }
+    }
+</style>
+<div id="divCriteriaSale" class="container">
+    <div hidden>
+        <input type="hidden" id="txtHdCustomerSubTypeId"/>
+        <input type="hidden" id="txtHdProductTypeId" />
+        <input type="hidden" id="txtHdstrPrepagoOlo" value="@ViewBag.strPrepagoOlo" />
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 1% !important; text-transform:uppercase">
+            <table class="table table-condensed claro-modal-tabla">
+                <tbody>
+                    <tr>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label class="control-label"> TIPO DE OPERACIÓN: </label>
+                        </td>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <select class="form-control input-sm" id="cboOperationType" style="text-transform:uppercase"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label class="control-label"> MODALIDAD: </label>
+                        </td>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <span id="lblModality"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label class="control-label"> TIPO CLIENTE: </label>
+                        </td>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <span id="lblCustomerType"></span>
+                        </td>
+                    </tr>
+                    <tr id="trCustomerSubType">
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label class="control-label"> SUB-TIPO CLIENTE: </label>
+                        </td>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <span id="lblCustomerSubType" style="display:none"></span>
+                            <select class="form-control input-sm" id="cboCustomerSubType" style="display:none"></select>
+                        </td>
+                    </tr>
+                    <tr id="trProductType">
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label class="control-label"> TIPO PRODUCTO: </label>
+                        </td>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <span id="lblProductType" style="display:none"></span>
+                            <select class="form-control input-sm" id="cboProductType" style="display:none"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label class="control-label"> TIPO DOC. IDENTIDAD: </label>
+                        </td>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <span id="lblTypeDocDescription"></span>
+                        </td>
+                    </tr>
+                    <tr id="trLineNumber">
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label class="control-label"> NRO. LÍNEA: </label>
+                        </td>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <span id="lblLineNumber"></span>
+                        </td>
+                    </tr>
+                    <tr id="trRatePlan">
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label class="control-label"> PLAN TARIFARIO: </label>
+                        </td>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <span id="lblRatePlan"></span>
+                        </td>
+                    </tr>
+                    <tr id="trSerialNumber" hidden>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label class="control-label">NRO SERIE: </label>
+                        </td>
+
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <input class="form-control input-sm" type="text" id="txtSerialNumber" />
+                        </td>
+                    </tr>
+                    <tr id="trSerialType" hidden>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></td>
+                        <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="radio col-lg-12 col-md-12 col-sm-21 col-xs-12" style="padding-left: 30px;">
+                                <label style="padding-left: 0px">
+                                    <input type="radio" name="rdSerialType" style="margin-top:0px"> IMEI
+                                </label>
+                                <label style="margin-left: 20px;">
+                                    <input type="radio" name="rdSerialType" style="margin-top:0px"> ICCID
+                                </label>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 size-xs">
+            <div class="panel panel-default col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center; padding-top: 1%; padding-bottom: 1%; padding-right: 0px; padding-left: 0px; margin-bottom: 0px !important;">
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button style="min-width:150px" class="btn claro-btn-info btn-sm btn-link" id="btnRedirectSale" type="button" data-toggle="modal">Continuar</button>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button style="min-width:150px" class="btn claro-btn-info btn-sm btn-link" id="btnClose" type="button" data-toggle="modal">Salir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Coliving/SearchCustomer/SIACU_CriteriaSale")
+
+

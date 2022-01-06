@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1ed4b4c6-7b4b-4d00-bfef-720b1a9f4c8f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\jchapeto\Desktop\ESQUEMAS Y CONTRATOS\BusquedaLineaCliente\obtenerDatosClienteColiving.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ClaroFault_v2.xsd" MetadataType="Schema" ID="5515ff63-7b61-4522-a261-8136a93ef22a" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ClaroFault_v2.xsd" />
+    <MetadataFile FileName="obtenerDatosClienteColiving.xsd" MetadataType="Schema" ID="9122bbaf-198b-4ec1-88d8-696ba260572c" SourceId="1" SourceUrl="file:///C:/Users/jchapeto/Desktop/ESQUEMAS Y CONTRATOS/esquemas/obtenerDatosClienteColiving.xsd" />
+    <MetadataFile FileName="obtenerDatosClienteColiving.wsdl" MetadataType="Wsdl" ID="5c345c1e-f865-4261-9ff7-e72d8002935b" SourceId="1" SourceUrl="file:///C:/Users/jchapeto/Desktop/ESQUEMAS Y CONTRATOS/BusquedaLineaCliente/obtenerDatosClienteColiving.wsdl" />
+    <MetadataFile FileName="CommonsException.xsd" MetadataType="Schema" ID="e9d2a549-75f5-4fde-88e8-ef8cdeab411b" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/servicios/esquemas/CommonsException.xsd" />
+    <MetadataFile FileName="ClaroGenericHeaders_v2.xsd" MetadataType="Schema" ID="757f5ac4-6d8e-486a-a323-3bfda821b4ed" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ClaroGenericHeaders_v2.xsd" />
+    <MetadataFile FileName="HeaderGeneric_v1.xsd" MetadataType="Schema" ID="1922783b-0eaf-49b9-a6dd-13c0f47947d8" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/servicios/esquemas/HeaderGeneric_v1.0.xsd" />
+    <MetadataFile FileName="ResponseStatus_v2.xsd" MetadataType="Schema" ID="184e6c1e-bd87-48c7-b305-9d18505f9d4a" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ResponseStatus_v2.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

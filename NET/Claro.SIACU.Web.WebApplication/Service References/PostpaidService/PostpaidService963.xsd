@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetReopenOfTheCase" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetReopenOfTheCase" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="ReopenOfTheCaseRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdCaso" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReopenOfTheCaseRequestPostPaid" nillable="true" type="tns:ReopenOfTheCaseRequestPostPaid" />
+  <xs:complexType name="ReopenOfTheCaseResponsePostPaid">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="Reclosures" nillable="true" type="q2:ArrayOfReclosuresPostPaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReopenOfTheCaseResponsePostPaid" nillable="true" type="tns:ReopenOfTheCaseResponsePostPaid" />
+</xs:schema>

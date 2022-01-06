@@ -1,0 +1,43 @@
+﻿@using System.Web.Optimization;
+@model  Claro.SIACU.Web.WebApplication.WipBinService.QueuesResponse
+
+<div id="container">
+    <div class="row">
+        <div id="binTree" class="panel panel-info col-md-3 col-xs-3 binTree">
+            <div id="tempId">
+                <label><span class="glyphicon glyphicon-folder-open"></span> Bandejas</label>
+                <ul class="treeView">
+                    <li>
+                        <input type='checkbox' id='checkbox-1' class='folder-checkbox sr-only' />
+                        <label for='checkbox-1' class='fancy-checkbox-label'>
+                            Mis Colas
+                        </label>
+                        <ul>
+                            @foreach (var q in Model.ListQueuesUser)
+                            {
+                                <li><a href="#" data-id="@q.Title">@q.Title</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <input type='checkbox' id='checkbox-2' class='folder-checkbox sr-only' />
+                        <label for='checkbox-2' class='fancy-checkbox-label'>
+                            Todas las Colas
+                        </label>
+                        <ul>
+                            @foreach (var q in Model.ListQueuesAll)
+                            {
+                                <li><a href="#" data-id="@q.Title">@q.Title</a></li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="queueTreeData" class="panel panel-info col-md-9 col-xs-9 queueTreeData">
+
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Cases/Queue/Queue")

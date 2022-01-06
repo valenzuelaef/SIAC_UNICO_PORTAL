@@ -1,0 +1,110 @@
+﻿@using System.Web.Optimization
+@model  List<Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataCall.CallDetailModel>
+@{
+    Layout = null;
+}
+
+<div id="contenedorDetailVisualizeCall" class="table">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table id="tblDetailVisualizeCall" class="table  table-striped table-hover table-responsive claro-modal-tabla table-bordered">
+                    <thead>
+                        <tr class="claro-bg-primary">
+                            <th>Fecha Operación</th>
+                            <th>Hora Operación</th>
+                            <th>Telefono Destino</th>
+                            <th>Consumo</th>
+                            <th>Costo (S/.)</th>
+                            <th>Saldo (S/.)</th>
+                            <th>Plan</th>
+                            <th>Promocion</th>
+                            <th>Tipo</th>
+                            <th>Destino</th>
+                            <th>Operador</th>
+                            <th>Horario</th>
+
+                            <th>Voz Fid Saldo</th>
+                            <th>Voz Fid Costo</th>
+                            <th>Voice 1 Saldo</th>
+                            <th>Voice 1 Costo</th>
+                            <th>SMS Fid Saldo</th>
+                            <th>SMS Fid Costo</th>
+                            <th>MMS Fid Saldo</th>
+                            <th>MMS Fid Costo</th>
+
+                            <th>GPRS Saldo</th>
+                            <th>GPRS Costo</th>
+                            <th>Promo Saldo (S/.)</th>
+                            <th>Promo Costo (S/.)</th>
+                            <th>SMS Saldo</th>
+                            <th>SMS Costo</th>
+
+                            <th>Voice 2 Saldo</th>
+                            <th>Voice 2 Costo</th>
+                            <th>Promo 1 Saldo (S/.)</th>
+                            <th>Promo 1 Costo (S/.)</th>
+                            <th>Promo 2 Saldo (S/.)</th>
+                            <th>Promo 2 Costo (S/.)</th>
+
+                            <th>Roaming</th>
+                            <th>Zona de Tarifa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataCall.CallDetailModel item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Date</td>
+                                    <td>@item.Hour</td>
+                                    <td>@item.PhoneDestination</td>
+                                    <td>@item.Consummation</td>
+                                    <td>@item.Cost</td>
+                                    <td>@item.Balance</td>
+                                    <td>@item.Plan</td>
+                                    <td>@item.Promotion</td>
+                                    <td>@item.Type</td>
+                                    <td>@item.Destination</td>
+                                    <td>@item.Operator</td>
+                                    <td>@item.Schedule</td>
+
+                                    <td>@item.VoiceFidelizarBalance</td>
+                                    <td>@item.VoiceFidelizarConsummation</td>
+                                    <td>@item.Voice1Balance</td>
+                                    <td>@item.Voice1Consummation</td>
+                                    <td>@item.SMSFidelizarBalance</td>
+                                    <td>@item.SMSFidelizarConsummation</td>
+                                    <td>@item.MMSBalance</td>
+                                    <td>@item.MMSConsummation</td>
+
+                                    <td>@item.GPRSBalance</td>
+                                    <td>@item.GPRSConsummation</td>
+                                    <td>@item.PromotionBalance</td>
+                                    <td>@item.PromotionConsummation</td>
+                                    <td>@item.SMSBalance</td>
+                                    <td>@item.SMSConsummation</td>
+
+                                    <td>@item.Voice2Balance</td>
+                                    <td>@item.Voice2Consummation</td>
+                                    <td>@item.Promotion1Balance</td>
+                                    <td>@item.Promotion1Consummation</td>
+                                    <td>@item.Promotion2Balance</td>
+                                    <td>@item.Promotion2Consummation</td>
+
+                                    <td>@item.Roaming</td>
+                                    <td>@item.ZoneTariff</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PrepaidDataCall/DetailVisualizeCall")

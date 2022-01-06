@@ -1,0 +1,54 @@
+﻿@using System.Web.Optimization;
+
+<style>
+    table > thead > tr > th {
+        text-align: center !important;
+        vertical-align: middle;
+    }
+
+    .modal-dialog {
+        min-width: 100px !important;
+    }
+
+    .control-label {
+        margin-top: 5px !important;
+    }
+
+    table > tbody > tr > td {
+        vertical-align: middle !important;
+        text-align: center;
+    }
+</style>
+
+<div id="divListService">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 table-responsive" style="padding: 1% !important; ">
+            <table class="table table-bordered claro-modal-tabla" id="tListService">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">TELEFONO/NRO SERVICIO</th>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">PLAN TARIFARIO</th>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">ESTADO</th>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></th>
+                    </tr>
+                </thead>
+                <tbody id="tbListService">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 size-xs">
+            <div class="panel panel-default col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center; padding-top: 1%; padding-bottom: 1%; padding-right: 0px; padding-left: 0px; margin-bottom: 0px !important;">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button style="min-width:150px" class="btn claro-btn-info btn-sm btn-link" id="btnSelectListService" type="button" data-toggle="modal">Seleccionar</button>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button style="min-width:150px" class="btn claro-btn-info btn-sm btn-link" id="btnClose" type="button" data-toggle="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Coliving/SearchCustomer/SIACU_ListService")

@@ -1,0 +1,96 @@
+﻿@using System.Web.Optimization
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.Postpaid.DataLineServiceModel
+
+
+<div id="modal-content">
+    <div id="PostpaidPhoneList">
+        <div class="panel panel-info">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                    <a data-toggle="collapse" href="#DatosBcollapse"> SERVICIO MÓVIL </a>
+                </h4>
+            </div>
+            <div id="DatosBcollapse" class="panel-collapse collapse in table-responsive">
+                <table id="tbServicePost" class="table  table-striped table-hover table-responsive claro-modal-tabla linkedPhoneList">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th class="col-sm-1">Sel</th>
+                            <th class="col-sm-2">Tel&#233;fono/Nro. Servicio</th>
+                            <th class="col-sm-2">Contrato</th>
+                            <th class="col-sm-1">Estado</th>
+                            <th class="col-sm-3">Plan Tarifario</th>
+                            <th class="hide">Producto</th>
+                            <th class="col-sm-2">Dirección Instalación</th>
+                            <th class="hide">CoidPubMg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.lstPostServices != null)
+                        {
+                            foreach (var item in Model.lstPostServices)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@item.CellPhone</td>
+                                    <td>@item.ContractID</td>
+                                    <td>@item.StateLine</td>
+                                    <td>@item.Plan</td>
+                                    <td class="hide">@item.TypeProduct</td>
+                                    <td><span class="glyphicon glyphicon-search btn" aria-hidden="true"></span></td>
+                                    <td class="hide">@item.coidpub</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <h4 class="panel-title  claro-modal-contenido-titulo-texto">
+                    <a data-toggle="collapse" href="#DatosLcollapse">CLARO HOGAR </a>
+                </h4>
+            </div>
+            <div id="DatosLcollapse" class="panel-collapse collapse in table-responsive">
+                @Html.Hidden("hdnContratId")
+                <table id="tbServiceHFC" class="table  table-striped table-hover table-responsive claro-modal-tabla linkedPhoneList">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th class="col-sm-1">Sel</th>
+                            <th class="col-sm-2">Contrato</th>
+                            <th class="col-sm-1">Estado</th>
+                            <th class="col-sm-2">Plan Tarifario</th>
+                            <th class="col-sm-1">Dirección Instalación</th>
+                            <th class="hide"></th>
+                            <th class="col-sm-1">Telefonía Fija</th>
+                            <th class="col-sm-1">Internet Fijo</th>
+                            <th class="col-sm-1">Cable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.lstHfcServices != null)
+                        {
+                            foreach (var item in Model.lstHfcServices)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@item.ContractID</td>
+                                    <td>@item.StateLine</td>
+                                    <td>@item.Plan</td>
+                                    <td class="direction"><span class="glyphicon glyphicon-search btn" aria-hidden="true"></span></td>
+                                    <td class="hide">@item.TypeProduct</td>
+                                    <td><span class="@item.Telephony btn" aria-hidden="true"></span></td>
+                                    <td><span class="@item.Internet glyphicon-center fa-lg" aria-hidden="true"></span></td>
+                                    <td><span class="@item.Cable glyphicon-center fa-lg" aria-hidden="true"></span></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidPhoneList")
+

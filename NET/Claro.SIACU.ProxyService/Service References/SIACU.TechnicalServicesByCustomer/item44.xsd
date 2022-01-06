@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entpro="http://claro.com.pe/esb/data/commonBusinessEntities/project/v2/" xmlns:entcal="http://claro.com.pe/esb/data/commonBusinessEntities/calendar/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/project/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Calendar_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/calendar/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="Project">
+    <xs:annotation>
+      <xs:documentation>A Project achieves a business goal and is a discrete unit of work</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpro:ProjectElement">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="versionNr" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>allows us to keep track of updates to the Project</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="title" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>a short description of the Project</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="projectNr" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>a unique identifier for the Project</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="assumptions" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Assumptions made when defining the Project (especially assumptions for success)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="constraints" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Constraints that may affect Project success</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="inclusions" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>items that the Project covers that are not obvious</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="exclusions" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>specific exclusions that may have been reasonably expected to be included in the Project</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A category of projects having common characteristics.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_projectSpec" type="entpro:ProjectSpec" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProjectElement">
+    <xs:annotation>
+      <xs:documentation>This is an abstract entity used to hold the attributes and associations common to Project, WBS Element and Activity.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BCWS" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>budgeted cost of work scheduled</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BCWP" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>budgeted cost of work performed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ACWP" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>actual cost of work scheduled</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="plannedDuration" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The duration expected during the planning process</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="actualDuration" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>the duration that actually occurred</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="currentDuration" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>the latest expected duration before the actual occurrence</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="scheduledDuration" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>the duration expected during the detailed scheduling process</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="lifecycleStatus" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>the current status</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="priority" type="xs:integer" />
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>descriptive text about the ProjectElement</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="timingConstraint" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="timingConstraintDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_projectElementSpec" type="entcal:ProjectElementSpec" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProjectSpec">
+    <xs:annotation>
+      <xs:documentation>Specifies characteristics that apply to types of Projects</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:ProjectElementSpec">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="specVersionNr" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_project" type="entpro:Project" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_wBSElementSpec" type="entpro:WBSElementSpec" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SimpleProject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpro:Project">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WBSElementSpec">
+    <xs:annotation>
+      <xs:documentation>Specifies characteristics that apply to types of WBS Elements
+--&gt;Especifica las características que se aplican a los tipos de elementos PEP</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:ProjectElementSpec">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_activitySpec" type="entcal:ActivitySpec" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_projectSpec" type="entpro:ProjectSpec" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WorkOrder">
+    <xs:annotation>
+      <xs:documentation>A formal signed document to authorize the usage of Products, Services, and Resources.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="requestedDeliveryDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date upon which the WorkOrder is desired to be completed.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="possibleDeliveryDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date upon which the WorkOrder may be completed.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_workOrderItem" type="entpro:WorkOrderItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WorkOrderItem">
+    <xs:annotation>
+      <xs:documentation>The purpose for the WorkOrder expressed in terms of a ProductSpecification, ProductOffering, ServiceSpecification or ResourceSpecification or may refer to a Product, Service, or Resource.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:BusinessInteractionItem">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,49 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.Postpaid.DataAccountModel
+
+<div id="ContentSubAccount">
+    <div id="modal-content">
+        @if (Model.lstPostDataAccount != null)
+        {
+            <div class="">
+                @*<div class="panel-heading panel panel-danger">*@
+                <h4 class="panel-title">
+                    @if (Model.lstPostDataAccount[0].AccountId == Model.AccountId)
+                    {
+                        <span data-toggle="collapse" href="#collapse1" class="glyphicon glyphicon-folder-open list-group-item">
+                            <label class="control-label ">@Model.lstPostDataAccount[0].AccountId => @Model.lstPostDataAccount[0].Name @Model.lstPostDataAccount[0].LastName</label>
+                        </span>
+
+                    }
+                    else
+                    {
+                        <span data-toggle="collapse" href="#collapse1" class="glyphicon glyphicon-folder-open list-group-item">
+                            <label class="control-label ">@Model.lstPostDataAccount[0].AccountId => @Model.lstPostDataAccount[0].Name @Model.lstPostDataAccount[0].LastName</label>
+                        </span>
+                    }
+                </h4>
+            </div>
+        }
+        <div id="collapse1" class="panel-collapse collapse ">
+            <div class="panel-body" style=" text-indent :10px;">
+
+                <div class="list-group">
+
+                    @for (var i = 1; i <= Model.lstPostDataAccount.Count() - 1; i++)
+{
+
+
+    <a class=" glyphicon glyphicon-folder-close list-group-item" href="javascript:void(0);" onclick="$('#ContentSubAccount').formSubAccount('load', '@Model.lstPostDataAccount[i].AccountId');">
+        @Model.lstPostDataAccount[i].AccountId => @Model.lstPostDataAccount[i].Name @Model.lstPostDataAccount[i].LastName
+    </a>
+
+
+
+}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataAccount/PostpaidSubAccount")

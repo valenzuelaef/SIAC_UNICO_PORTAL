@@ -1,0 +1,78 @@
+﻿
+@using System.Web.Optimization;
+
+@{
+    ViewBag.Title = "SIACU_type_Search_Customer";
+    Layout = null;
+}
+<style>
+    #modalTypeSearch {
+        margin:auto;
+        /*position: absolute !important;*/
+        /*float: left !important;*/
+        /*left: 50% !important;*/
+        top: 35% !important;
+        /*transform: translate(-50%, -52%);*/
+        border-radius: 10px;
+        vertical-align: middle;
+    }
+
+    .modal-backdrop.in {
+        /*background-color: black;*/
+        opacity: 0.7 !important;
+    }
+</style>
+<div id="divContainer">
+    <div class="modal fade modal-sm" id="modalTypeSearch" tabindex="-1" role="dialog" aria-labelledby="modalTypeSearchLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="width: 33%; min-width:300px;bottom: auto !important;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header claro-red ui-draggable-handle">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="self.window.close();">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalLabel">Búsqueda De Cliente</h5>
+
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="cboTypeId" class="col-form-label">Tipo de Identificador:</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <select class="form-control input-sm" id="cboTypeId">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row" id="divDocTypeId">
+                                <div class="col-lg-6">
+                                    <label for="cboDocTypeId" class="col-form-label">Tipo Doc. Identidad:</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <select class="form-control input-sm" id="cboDocTypeId">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="txtTypeDes" class="col-form-label" id="lblTypeDes">lblTypeDes</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control input-sm" id="txtTypeDes">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary pull-left" id="btnTypeConsult" data-toggle="modal">Consultar</button>
+                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" id="btnClose">Salir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Coliving/SearchCustomer/SIACU_TypeSearchCustomer")

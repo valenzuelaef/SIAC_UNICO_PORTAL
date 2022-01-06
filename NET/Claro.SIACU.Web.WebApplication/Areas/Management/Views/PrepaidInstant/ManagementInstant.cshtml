@@ -1,0 +1,210 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Management.Models.InstantModel
+@{
+    Layout = null;
+}
+
+
+
+<div id="contenedorManagementInstant">
+
+
+    <div class=" row">
+        <div class="col-md-12">
+            <div class="form-inline">
+                <input type="hidden" id="hdidinstant" value="@Model.objInstant.IdInstant">
+                <input type="hidden" id="hdoption" value="@Model.option">
+
+
+                <label class="text-primary">Descripcion:</label>
+
+                <textarea class="form-control" rows="5" cols="50" id="commentInstant">@Model.objInstant.Description</textarea>
+
+
+
+
+            </div>
+            <br />
+
+
+            <div class="form-inline" style="text-align: center;">
+
+                <label class="checkbox-inline"><input id="chkCuenta" type="checkbox" value="" disabled><label class="text-primary">Instantáneas por Cuenta</label></label>
+                <label class="checkbox-inline"><input id="chkLinea" type="checkbox" value="" checked disabled><label class="text-primary">Instantáneas por Línea</label></label>
+            </div>
+            <br />
+            <div class="form-inline">
+                <label style="float:left;" class="text-primary">Seleccione Color:</label>
+               
+                @if (Model.objInstant.Color == "strConsColor1" || Model.objInstant.Color == "" || Model.objInstant.Color == null)
+                {
+                    <div style="float:left;">
+                        <div style="background-color: red; width: 14px;height:12px; float: left;margin-top:3px;margin-right:3px;">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor1" checked></div>
+                    </div>
+                    <div style="float:left;"> <div style="background-color: green; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor2"></div></div>
+                    <div style="float:left;"> <div style="background-color: orange; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor3"></div></div>
+                    <div style="float:left;"> <div style="background-color: #3e8dd0; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor0"></div></div>
+
+                }
+
+                @if (Model.objInstant.Color == "strConsColor2")
+                {
+                    <div style="float:left;">
+                        <div style="background-color: red; width: 14px;height:12px; float: left;margin-top:3px;margin-right:3px;">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor1"></div>
+                    </div>
+                    <div style="float:left;"> <div style="background-color: green; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor2" checked></div></div>
+                    <div style="float:left;"> <div style="background-color: orange; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor3"></div></div>
+                    <div style="float:left;"> <div style="background-color: #3e8dd0; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor0"></div></div>
+                }
+
+
+                @if (Model.objInstant.Color == "strConsColor3")
+                {
+                    <div style="float:left;">
+                        <div style="background-color: red; width: 14px;height:12px; float: left;margin-top:3px;margin-right:3px;">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor1"></div>
+                    </div>
+                    <div style="float:left;"> <div style="background-color: green; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor2"></div></div>
+                    <div style="float:left;"> <div style="background-color: orange; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor3" checked></div></div>
+                    <div style="float:left;"> <div style="background-color: #3e8dd0; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor0"></div></div>
+
+                }
+
+                @if (Model.objInstant.Color == "strConsColor0")
+                {
+                    <div style="float:left;">
+                        <div style="background-color: red; width: 14px;height:12px; float: left;margin-top:3px;margin-right:3px;">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor1"></div>
+                    </div>
+                    <div style="float:left;"> <div style="background-color: green; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor2"></div></div>
+                    <div style="float:left;"> <div style="background-color: orange; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor3"></div></div>
+                    <div style="float:left;"> <div style="background-color: #3e8dd0; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;"><input type="radio" class="" name="rbColour" value="strConsColor0" checked></div></div>
+                }
+            </div>
+            <br />
+            <br />
+
+
+            <div class="form-inline">
+
+                <label class="text-primary">Vigente del:</label>
+
+
+                <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy" lang="es-pe" id="date">
+                    <input type="text" class="form-control" id="txtDateValidityStart" value="@Model.objInstant.DateValidityStart.ToString("dd/MM/yyyy")">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                <label class="text-primary">Hora:</label>
+                <input type="text" id="txthoursStart" class="input-sm form-control" name="start" value="@Model.StartHour" size="1" />
+                <label class="text-primary">:</label>
+                <input type="text" id="txtminutesStart" class="input-sm form-control" name="start" value="@Model.StartMinutes" size="1" />
+                <select class="input-sm form-control" id="cboTypeStart">
+                    @{
+                        if (Model.StartType.Equals("am"))
+                        {
+                            <option value="-1">Seleccionar</option>
+                            <option value="AM" selected>AM</option>
+                            <option value="PM">PM</option>
+                        }
+                        else if (Model.StartType.Equals("pm"))
+                        {
+                            <option value="-1">Seleccionar</option>
+                            <option value="AM">AM</option>
+                            <option value="PM" selected>PM</option>
+                        }
+                        else
+                        {
+                            <option value="-1" selected>Seleccionar</option>
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        }
+                    }
+
+                </select>
+                &nbsp;&nbsp;
+                <label class="text-primary">formato de horas => hh:mm AM/PM</label>
+
+            </div>
+            <div class="form-inline">
+
+                <label class="text-primary">Caduca del:</label>
+
+
+                <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy" lang="es-pe">
+                    <input type="text" class="form-control" id="txtDateValidityEnd" value="@Model.objInstant.DateValidityEnd.ToString("dd/MM/yyyy")">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                <label class="text-primary">Hora:</label>
+                <input type="text" id="txthoursEnd" class="input-sm form-control" name="start" value="@Model.EndHour" size="1" />
+                <label class="text-primary">:</label>
+                <input type="text" id="txtminutesEnd" class="input-sm form-control" name="start" value="@Model.EndMinutes" size="1" />
+                <select class="input-sm form-control" id="cboTypeEnd">
+                    @{
+                        if (Model.EndType.Equals("am"))
+                        {
+                            <option value="-1">Seleccionar</option>
+                            <option value="AM" selected>AM</option>
+                            <option value="PM">PM</option>
+                        }
+                        else if (Model.EndType.Equals("pm"))
+                        {
+                            <option value="-1">Seleccionar</option>
+                            <option value="AM">AM</option>
+                            <option value="PM" selected>PM</option>
+                        }
+                        else
+                        {
+                            <option value="-1" selected>Seleccionar</option>
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        }
+                    }
+                </select>
+                &nbsp;&nbsp;
+                <label class="text-primary">formato de horas => hh:mm AM/PM</label>
+
+
+            </div>
+            <div class="form-inline">
+
+                <br />
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+
+
+                <button id="btnManagementInstant" type="button" class="btn claro-btn-info btn-sm">Aceptar</button>
+                &nbsp;&nbsp;
+                <button id="btnCancel" type="button" class="btn claro-btn-info btn-sm">Cancelar</button>
+
+
+            </div>
+
+        </div>
+        <label class="text-primary">Leyenda:</label>
+        <ul id="divDashboardTabs" class="nav nav-tabs" role="tablist" data-tabs="tabs">
+            <li id="PostImportanceHight" style="border-bottom:0" class="active">
+
+                <div> <div style="background-color: red; width: 14px;height:12px; float: left;margin-top:3px;margin-right:3px;">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;">Importancia Alta</div></div>
+
+            </li>
+
+            <li id="PostImportanceMediumHight" class="active">
+
+                <div> <div style="background-color: green; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;">Importancia Media Alta</div></div>
+
+            </li>
+            <li id="PostImortanceMedium" class="active">
+
+                <div> <div style="background-color: orange; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;">Importancia Media</div></div>
+
+            </li>
+            <li id="PostDefault" class="active">
+
+                <div> <div style="background-color: #3e8dd0; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;">Default</div></div>
+
+            </li>
+        </ul>
+    </div>
+    @Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+  @Scripts.Render("~/bundles/Management/InstantManagement/InstantManagement")

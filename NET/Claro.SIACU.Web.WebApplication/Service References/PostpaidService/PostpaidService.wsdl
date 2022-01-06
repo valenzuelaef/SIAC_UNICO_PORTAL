@@ -1,0 +1,2618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PostpaidService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IPostpaidService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetProductosXCustomer" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd5" namespace="AuditService" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetService" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetCustomer" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetTypeProductDatOut" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetTypeProductDat.Common" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetTypeProductDat.Response" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getConsultaLineaCuenta" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetOfficeAddress" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetReceipt" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetActiveDays" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistorySIM" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoryEquipments" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetIMRConsult" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetContact" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetContactTypeByField" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.ContactSave" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetPaymentCollection" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDetailAmountDispute" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetAffiliationToDebit" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetMonitoringCases" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetAnnotations" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd28" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDetailAnnotation" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd29" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetAnnotationType" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd30" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd31" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetWarranty" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd32" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetSharedBag" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd33" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRelationPlans.RelationPlanMassive.GetTabPlanesMassivePost" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd34" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd35" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRelationPlans" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd36" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd37" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetPinPuk" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd38" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetSuspendedContract" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd39" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetSuspendedType" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd40" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetSubAccount" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd41" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetCreditLimit" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd42" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRelationPlanHFCLTE" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd43" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetCreditLimitDetail" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd44" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDetailLongDistance" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd45" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetInternationalRoamingDetail" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd46" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDebtDetail" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd47" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetAdditionalLocalTrafficDetail" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd48" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetConsumeLocalTrafficDetail" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd49" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDetailsOtherConcepts" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd50" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetTimServiceDetails" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd51" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoryInvoice" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd52" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetSMSDetails" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd53" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetContractedBusinessServices" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd54" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetPetitionsType" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd55" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetPetitions" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd56" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetTriaciones" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd57" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoricalStriations" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd58" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRecharges" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd59" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetBalance" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd60" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetComputerQuery" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd61" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetScheduledTransaction" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd62" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDueDocumentNumber" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd63" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStatusAccount" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd64" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHLR" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd65" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetAgreement" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd66" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStatusAccountLDI" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd67" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetLoanRentalType" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd68" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetLoanRental" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd69" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoryActions" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd70" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeDetailTimPro" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd71" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeDetailTimProOne" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd72" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeDetailTimProTwo" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd73" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeDetailTimMax" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd74" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeDetailTimMaxTwo" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd75" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDiscountFixedChargeDetail" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd76" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetPaymentCommitment" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd77" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeDetailTimProBag" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd78" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeDetailTimProBagOne" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd79" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeDetailTimProBagTwo" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd80" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeDetailTimProBagThree" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd81" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoricDelivery" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd82" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeTimProBagDetail" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd83" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeTimProBagDetailOne" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd84" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeTimProBagDetailTwo" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd85" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFixedChargeTimProBagDetailThree" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd86" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFeeEquipment" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd87" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetLocalTrafficDetailCallTP" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd88" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetLocalTrafficDetailCallTM" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd89" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetConsumeLocalTrafficDetailCallTP" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd90" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetConsumeLocalTrafficDetailCallTM" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd91" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoryHR" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd92" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetTypeService" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd93" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetCustomerInformation" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd94" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStockWarehouse" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd95" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetTrackingDetail" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd96" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetManagementOfClosures" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd97" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetReopenOfTheCase" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd98" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetMaterials" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd99" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetSubTableTracking" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd100" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetThirdTableTracking" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd101" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetBalanceCBIOS" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd102" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoricalRecharge" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd103" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetConsumptionHistoricalRecharge" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd104" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetTypeConsumption" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd105" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetTotalMbPurchasedPackage" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd106" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd107" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetTypePackage" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd108" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetMbBag" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd109" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GeTypeOrder" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd110" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetMotiveCancellation" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd111" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetParameterTerminalTPI" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd112" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRelationPlans.RelationPlanCorporate.GetSolicitude" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd113" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRelationPlans.RelationPlanCorporate.RegisterSolicitude" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd114" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRelationPlans.RelationPlanCorporate.GetDocumentSolicitude" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd115" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetBSS_StatusAccount" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd116" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetInteraction" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd117" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetTypeDocumentDeubt" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd118" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetBonusStatusFullClaro" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd119" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetBonusFullClaroClient" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd120" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetMiClaroApp" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd121" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetValidateCustomer" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd122" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetValidateLine" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPostpaidService_ObtenerBloqueosClaro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBloqueosClaro" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_ObtenerBloqueosClaro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBloqueosClaroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetProductosXCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductosXCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetProductosXCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductosXCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetServiceByCustomerCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceByCustomerCode" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetServiceByCustomerCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceByCustomerCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAddressOfficce_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressOfficce" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAddressOfficce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressOfficceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataServiceLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataServiceLine" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataServiceLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataServiceLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTelephoneByContractCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelephoneByContractCode" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTelephoneByContractCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelephoneByContractCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetLineDisableByContractCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLineDisableByContractCode" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetLineDisableByContractCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLineDisableByContractCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetInstallationAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstallationAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetInstallationAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstallationAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoryServiceLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryServiceLine" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoryServiceLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryServiceLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetActiveDisableDays_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveDisableDays" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetActiveDisableDays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveDisableDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistorySIM_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistorySIM" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistorySIM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistorySIMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoryEquipments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryEquipments" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoryEquipments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryEquipmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetIMRConsult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIMRConsult" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetIMRConsult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIMRConsultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContact" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetColumnsConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnsConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetColumnsConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnsConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_ContactSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:ContactSave" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_ContactSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ContactSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPaymentCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentCollection" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPaymentCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDetailAmountDispute_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailAmountDispute" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDetailAmountDispute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailAmountDisputeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAffiliationToDebit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAffiliationToDebit" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAffiliationToDebit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAffiliationToDebitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetMonitoringCases_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonitoringCases" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetMonitoringCases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonitoringCasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAnnotations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnotations" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAnnotations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnotationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDetailAnnotation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailAnnotation" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDetailAnnotation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailAnnotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAnnotationType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnotationType" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAnnotationType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnotationTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetWarranty_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWarranty" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetWarranty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWarrantyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSharedBag_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSharedBag" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSharedBag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSharedBagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetRelationPlans_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationPlans" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetRelationPlans_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationPlansResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPinPuk_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPinPuk" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPinPuk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPinPukResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSuspendedContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuspendedContract" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSuspendedContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuspendedContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSuspendedType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuspendedType" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSuspendedType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuspendedTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSubAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubAccount" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSubAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetCreditLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditLimit" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetCreditLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetRelationPlanHFCLTE_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationPlanHFCLTE" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetRelationPlanHFCLTE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationPlanHFCLTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetCreditLimitDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditLimitDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetCreditLimitDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditLimitDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDetailLongDistance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailLongDistance" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDetailLongDistance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailLongDistanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetInternationalRoamingDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInternationalRoamingDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetInternationalRoamingDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInternationalRoamingDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDebtDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebtDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDebtDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebtDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAdditionalLocalTrafficDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdditionalLocalTrafficDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAdditionalLocalTrafficDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdditionalLocalTrafficDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetConsumeLocalTrafficDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumeLocalTrafficDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetConsumeLocalTrafficDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumeLocalTrafficDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDetailsOtherConcepts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailsOtherConcepts" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDetailsOtherConcepts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailsOtherConceptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTimServiceDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimServiceDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTimServiceDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimServiceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoryInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoryInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_SMSDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SMSDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_SMSDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SMSDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAmountSMSDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmountSMSDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAmountSMSDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmountSMSDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPhoneContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhoneContract" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPhoneContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhoneContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetContractServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractServices" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetContractServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetServiceBSCS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceBSCS" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetServiceBSCS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceBSCSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPetitionsType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPetitionsType" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPetitionsType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPetitionsTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPetitions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPetitions" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPetitions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPetitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTriaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTriaciones" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTriaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTriacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoricalStriations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricalStriations" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoricalStriations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricalStriationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetRecharges_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecharges" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetRecharges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRechargesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalance" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetComputerQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerQuery" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetComputerQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetScheduledTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScheduledTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetScheduledTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScheduledTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_DueNumberDocumentOAC_InputMessage">
+    <wsdl:part name="parameters" element="tns:DueNumberDocumentOAC" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_DueNumberDocumentOAC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DueNumberDocumentOACResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_StatusAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatusAccount" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_StatusAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatusAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataLineHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataLineHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataLineHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataLineHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHLR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHLR" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHLR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHLRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetExistsAgreementOld_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistsAgreementOld" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetExistsAgreementOld_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistsAgreementOldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetExistAgreementNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistAgreementNew" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetExistAgreementNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistAgreementNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_StatusAccountLDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatusAccountLDI" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_StatusAccountLDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatusAccountLDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetLoanRentalType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanRentalType" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetLoanRentalType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanRentalTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetLoanRentalListWarehouseArea_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanRentalListWarehouseArea" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetLoanRentalListWarehouseArea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanRentalListWarehouseAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_LoanRental_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoanRental" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_LoanRental_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoanRentalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoryActions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryActions" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoryActions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimPro_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimPro" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimPro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProOne" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProTwo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProTwo" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProTwo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProTwoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimMax_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimMax" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimMax_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimMaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimMaxTwo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimMaxTwo" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimMaxTwo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimMaxTwoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDiscountFixedChargeDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiscountFixedChargeDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDiscountFixedChargeDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiscountFixedChargeDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPaymentCommitment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentCommitment" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetPaymentCommitment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentCommitmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProBag_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProBag" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProBag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProBagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProBagOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProBagOne" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProBagOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProBagOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProBagTwo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProBagTwo" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProBagTwo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProBagTwoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProBagThree_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProBagThree" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeDetailTimProBagThree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeDetailTimProBagThreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoricDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoricDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeTimProBagDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeTimProBagDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeTimProBagDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeTimProBagDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeTimProBagDetailOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeTimProBagDetailOne" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeTimProBagDetailOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeTimProBagDetailOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeTimProBagDetailTwo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeTimProBagDetailTwo" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeTimProBagDetailTwo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeTimProBagDetailTwoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeTimProBagDetailThree_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeTimProBagDetailThree" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetFixedChargeTimProBagDetailThree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedChargeTimProBagDetailThreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_FeeEquipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:FeeEquipment" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_FeeEquipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FeeEquipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_LocalTrafficDetailCallTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:LocalTrafficDetailCallTP" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_LocalTrafficDetailCallTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LocalTrafficDetailCallTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_LocalTrafficDetailCallTM_InputMessage">
+    <wsdl:part name="parameters" element="tns:LocalTrafficDetailCallTM" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_LocalTrafficDetailCallTM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LocalTrafficDetailCallTMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_ConsumeLocalTrafficDetailCallTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsumeLocalTrafficDetailCallTP" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_ConsumeLocalTrafficDetailCallTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsumeLocalTrafficDetailCallTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_ConsumeLocalTrafficDetailCallTM_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsumeLocalTrafficDetailCallTM" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_ConsumeLocalTrafficDetailCallTM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsumeLocalTrafficDetailCallTMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoryHR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryHR" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoryHR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryHRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataLine" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_ValidateTypeService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTypeService" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_ValidateTypeService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTypeServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetCustomerInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerInformation" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetCustomerInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetStockWarehouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetStockWarehouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTrackingDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrackingDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTrackingDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrackingDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetManagementOfClosures_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManagementOfClosures" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetManagementOfClosures_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManagementOfClosuresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetReopenOfTheCase_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReopenOfTheCase" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetReopenOfTheCase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReopenOfTheCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataServiceLineHFC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataServiceLineHFC" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataServiceLineHFC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataServiceLineHFCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetMaterials_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterials" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetMaterials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSubTableTracking_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubTableTracking" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSubTableTracking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubTableTrackingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetThirdTableTracking_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThirdTableTracking" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetThirdTableTracking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThirdTableTrackingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetBalanceCBIOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceCBIOS" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetBalanceCBIOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceCBIOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataBalanceShared_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataBalanceShared" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataBalanceShared_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataBalanceSharedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoricalRecharge_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricalRecharge" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoricalRecharge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricalRechargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetConsumptionHistoricalRecharge_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumptionHistoricalRecharge" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetConsumptionHistoricalRecharge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumptionHistoricalRechargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTypeConsumption_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeConsumption" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTypeConsumption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeConsumptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataJanusPackage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataJanusPackage" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataJanusPackage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataJanusPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataOnePackage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataOnePackage" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataOnePackage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataOnePackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoricalPackage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricalPackage" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetHistoricalPackage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricalPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTypePakage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypePakage" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTypePakage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypePakageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetMbBag_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMbBag" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetMbBag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMbBagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTotalMbPurchasedPackageResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalMbPurchasedPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTotalMbPurchasedPackageResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalMbPurchasedPackageResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTypeOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTypeOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetMotiveCancellation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMotiveCancellation" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetMotiveCancellation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMotiveCancellationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetStatusTechnologyVo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusTechnologyVo" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetStatusTechnologyVo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusTechnologyVoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetParameterTerminalTPI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParameterTerminalTPI" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetParameterTerminalTPI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParameterTerminalTPIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSolicitude_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSolicitude" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetSolicitude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSolicitudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_RegisterSolicitude_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterSolicitude" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_RegisterSolicitude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterSolicitudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDocumentSolicitude_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentSolicitude" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDocumentSolicitude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentSolicitudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAnnotationWS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnotationWS" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetAnnotationWS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnotationWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetBSS_StatusAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBSS_StatusAccount" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetBSS_StatusAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBSS_StatusAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetInteraction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInteraction" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetInteraction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInteractionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_getDataHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDataHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_getDataHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDataHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTypeDocumentDeubt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeDocumentDeubt" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetTypeDocumentDeubt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeDocumentDeubtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetBonusStatusFullClaro_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBonusStatusFullClaro" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetBonusStatusFullClaro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBonusStatusFullClaroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataCustomer2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataCustomer2" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetDataCustomer2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataCustomer2Response" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetBonusStatusFullClaroClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBonusStatusFullClaroClient" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetBonusStatusFullClaroClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBonusStatusFullClaroClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetMiClaroApp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMiClaroApp" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetMiClaroApp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMiClaroAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_obtenerListaBloDesblo_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerListaBloDesblo" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_obtenerListaBloDesblo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerListaBloDesbloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetValidateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetValidateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetValidateLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidateLine" />
+  </wsdl:message>
+  <wsdl:message name="IPostpaidService_GetValidateLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidateLineResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPostpaidService">
+    <wsdl:operation name="ObtenerBloqueosClaro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/ObtenerBloqueosClaro" message="tns:IPostpaidService_ObtenerBloqueosClaro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/ObtenerBloqueosClaroResponse" message="tns:IPostpaidService_ObtenerBloqueosClaro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductosXCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetProductosXCustomer" message="tns:IPostpaidService_GetProductosXCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetProductosXCustomerResponse" message="tns:IPostpaidService_GetProductosXCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceByCustomerCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetServiceByCustomerCode" message="tns:IPostpaidService_GetServiceByCustomerCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetServiceByCustomerCodeResponse" message="tns:IPostpaidService_GetServiceByCustomerCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDataCustomer" message="tns:IPostpaidService_GetDataCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDataCustomerResponse" message="tns:IPostpaidService_GetDataCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressOfficce">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetAddressOfficce" message="tns:IPostpaidService_GetAddressOfficce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetAddressOfficceResponse" message="tns:IPostpaidService_GetAddressOfficce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDataInvoice" message="tns:IPostpaidService_GetDataInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDataInvoiceResponse" message="tns:IPostpaidService_GetDataInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataServiceLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDataServiceLine" message="tns:IPostpaidService_GetDataServiceLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDataServiceLineResponse" message="tns:IPostpaidService_GetDataServiceLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelephoneByContractCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetTelephoneByContractCode" message="tns:IPostpaidService_GetTelephoneByContractCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetTelephoneByContractCodeResponse" message="tns:IPostpaidService_GetTelephoneByContractCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLineDisableByContractCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetLineDisableByContractCode" message="tns:IPostpaidService_GetLineDisableByContractCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetLineDisableByContractCodeResponse" message="tns:IPostpaidService_GetLineDisableByContractCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallationAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetInstallationAddress" message="tns:IPostpaidService_GetInstallationAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetInstallationAddressResponse" message="tns:IPostpaidService_GetInstallationAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryServiceLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoryServiceLine" message="tns:IPostpaidService_GetHistoryServiceLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoryServiceLineResponse" message="tns:IPostpaidService_GetHistoryServiceLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveDisableDays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetActiveDisableDays" message="tns:IPostpaidService_GetActiveDisableDays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetActiveDisableDaysResponse" message="tns:IPostpaidService_GetActiveDisableDays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistorySIM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHistorySIM" message="tns:IPostpaidService_GetHistorySIM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHistorySIMResponse" message="tns:IPostpaidService_GetHistorySIM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryEquipments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoryEquipments" message="tns:IPostpaidService_GetHistoryEquipments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoryEquipmentsResponse" message="tns:IPostpaidService_GetHistoryEquipments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMRConsult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetIMRConsult" message="tns:IPostpaidService_GetIMRConsult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetIMRConsultResponse" message="tns:IPostpaidService_GetIMRConsult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetContact" message="tns:IPostpaidService_GetContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetContactResponse" message="tns:IPostpaidService_GetContact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnsConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetColumnsConfiguration" message="tns:IPostpaidService_GetColumnsConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetColumnsConfigurationResponse" message="tns:IPostpaidService_GetColumnsConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ContactSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/ContactSave" message="tns:IPostpaidService_ContactSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/ContactSaveResponse" message="tns:IPostpaidService_ContactSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetPaymentCollection" message="tns:IPostpaidService_GetPaymentCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetPaymentCollectionResponse" message="tns:IPostpaidService_GetPaymentCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailAmountDispute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDetailAmountDispute" message="tns:IPostpaidService_GetDetailAmountDispute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDetailAmountDisputeResponse" message="tns:IPostpaidService_GetDetailAmountDispute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAffiliationToDebit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetAffiliationToDebit" message="tns:IPostpaidService_GetAffiliationToDebit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetAffiliationToDebitResponse" message="tns:IPostpaidService_GetAffiliationToDebit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoringCases">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetMonitoringCases" message="tns:IPostpaidService_GetMonitoringCases_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetMonitoringCasesResponse" message="tns:IPostpaidService_GetMonitoringCases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnotations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetAnnotations" message="tns:IPostpaidService_GetAnnotations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetAnnotationsResponse" message="tns:IPostpaidService_GetAnnotations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailAnnotation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDetailAnnotation" message="tns:IPostpaidService_GetDetailAnnotation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDetailAnnotationResponse" message="tns:IPostpaidService_GetDetailAnnotation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnotationType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetAnnotationType" message="tns:IPostpaidService_GetAnnotationType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetAnnotationTypeResponse" message="tns:IPostpaidService_GetAnnotationType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWarranty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetWarranty" message="tns:IPostpaidService_GetWarranty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetWarrantyResponse" message="tns:IPostpaidService_GetWarranty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSharedBag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetSharedBag" message="tns:IPostpaidService_GetSharedBag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetSharedBagResponse" message="tns:IPostpaidService_GetSharedBag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationPlans">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetRelationPlans" message="tns:IPostpaidService_GetRelationPlans_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetRelationPlansResponse" message="tns:IPostpaidService_GetRelationPlans_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPinPuk">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetPinPuk" message="tns:IPostpaidService_GetPinPuk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetPinPukResponse" message="tns:IPostpaidService_GetPinPuk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuspendedContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetSuspendedContract" message="tns:IPostpaidService_GetSuspendedContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetSuspendedContractResponse" message="tns:IPostpaidService_GetSuspendedContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuspendedType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetSuspendedType" message="tns:IPostpaidService_GetSuspendedType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetSuspendedTypeResponse" message="tns:IPostpaidService_GetSuspendedType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetSubAccount" message="tns:IPostpaidService_GetSubAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetSubAccountResponse" message="tns:IPostpaidService_GetSubAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetCreditLimit" message="tns:IPostpaidService_GetCreditLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetCreditLimitResponse" message="tns:IPostpaidService_GetCreditLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationPlanHFCLTE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetRelationPlanHFCLTE" message="tns:IPostpaidService_GetRelationPlanHFCLTE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetRelationPlanHFCLTEResponse" message="tns:IPostpaidService_GetRelationPlanHFCLTE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditLimitDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetCreditLimitDetail" message="tns:IPostpaidService_GetCreditLimitDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetCreditLimitDetailResponse" message="tns:IPostpaidService_GetCreditLimitDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailLongDistance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDetailLongDistance" message="tns:IPostpaidService_GetDetailLongDistance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDetailLongDistanceResponse" message="tns:IPostpaidService_GetDetailLongDistance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInternationalRoamingDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetInternationalRoamingDetail" message="tns:IPostpaidService_GetInternationalRoamingDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetInternationalRoamingDetailResponse" message="tns:IPostpaidService_GetInternationalRoamingDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDebtDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDebtDetail" message="tns:IPostpaidService_GetDebtDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDebtDetailResponse" message="tns:IPostpaidService_GetDebtDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdditionalLocalTrafficDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetAdditionalLocalTrafficDetail" message="tns:IPostpaidService_GetAdditionalLocalTrafficDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetAdditionalLocalTrafficDetailResponse" message="tns:IPostpaidService_GetAdditionalLocalTrafficDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumeLocalTrafficDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetConsumeLocalTrafficDetail" message="tns:IPostpaidService_GetConsumeLocalTrafficDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetConsumeLocalTrafficDetailResponse" message="tns:IPostpaidService_GetConsumeLocalTrafficDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailsOtherConcepts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDetailsOtherConcepts" message="tns:IPostpaidService_GetDetailsOtherConcepts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDetailsOtherConceptsResponse" message="tns:IPostpaidService_GetDetailsOtherConcepts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimServiceDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetTimServiceDetails" message="tns:IPostpaidService_GetTimServiceDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetTimServiceDetailsResponse" message="tns:IPostpaidService_GetTimServiceDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoryInvoice" message="tns:IPostpaidService_GetHistoryInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoryInvoiceResponse" message="tns:IPostpaidService_GetHistoryInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SMSDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/SMSDetails" message="tns:IPostpaidService_SMSDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/SMSDetailsResponse" message="tns:IPostpaidService_SMSDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountSMSDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetAmountSMSDetails" message="tns:IPostpaidService_GetAmountSMSDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetAmountSMSDetailsResponse" message="tns:IPostpaidService_GetAmountSMSDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetPhoneContract" message="tns:IPostpaidService_GetPhoneContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetPhoneContractResponse" message="tns:IPostpaidService_GetPhoneContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractServices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetContractServices" message="tns:IPostpaidService_GetContractServices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetContractServicesResponse" message="tns:IPostpaidService_GetContractServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceBSCS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetServiceBSCS" message="tns:IPostpaidService_GetServiceBSCS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetServiceBSCSResponse" message="tns:IPostpaidService_GetServiceBSCS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPetitionsType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetPetitionsType" message="tns:IPostpaidService_GetPetitionsType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetPetitionsTypeResponse" message="tns:IPostpaidService_GetPetitionsType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPetitions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetPetitions" message="tns:IPostpaidService_GetPetitions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetPetitionsResponse" message="tns:IPostpaidService_GetPetitions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTriaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetTriaciones" message="tns:IPostpaidService_GetTriaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetTriacionesResponse" message="tns:IPostpaidService_GetTriaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalStriations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoricalStriations" message="tns:IPostpaidService_GetHistoricalStriations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoricalStriationsResponse" message="tns:IPostpaidService_GetHistoricalStriations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecharges">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetRecharges" message="tns:IPostpaidService_GetRecharges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetRechargesResponse" message="tns:IPostpaidService_GetRecharges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetBalance" message="tns:IPostpaidService_GetBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetBalanceResponse" message="tns:IPostpaidService_GetBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetComputerQuery" message="tns:IPostpaidService_GetComputerQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetComputerQueryResponse" message="tns:IPostpaidService_GetComputerQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetScheduledTransaction" message="tns:IPostpaidService_GetScheduledTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetScheduledTransactionResponse" message="tns:IPostpaidService_GetScheduledTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DueNumberDocumentOAC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/DueNumberDocumentOAC" message="tns:IPostpaidService_DueNumberDocumentOAC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/DueNumberDocumentOACResponse" message="tns:IPostpaidService_DueNumberDocumentOAC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/StatusAccount" message="tns:IPostpaidService_StatusAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/StatusAccountResponse" message="tns:IPostpaidService_StatusAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataLineHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDataLineHistory" message="tns:IPostpaidService_GetDataLineHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDataLineHistoryResponse" message="tns:IPostpaidService_GetDataLineHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHLR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHLR" message="tns:IPostpaidService_GetHLR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHLRResponse" message="tns:IPostpaidService_GetHLR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExistsAgreementOld">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetExistsAgreementOld" message="tns:IPostpaidService_GetExistsAgreementOld_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetExistsAgreementOldResponse" message="tns:IPostpaidService_GetExistsAgreementOld_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExistAgreementNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetExistAgreementNew" message="tns:IPostpaidService_GetExistAgreementNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetExistAgreementNewResponse" message="tns:IPostpaidService_GetExistAgreementNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusAccountLDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/StatusAccountLDI" message="tns:IPostpaidService_StatusAccountLDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/StatusAccountLDIResponse" message="tns:IPostpaidService_StatusAccountLDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanRentalType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetLoanRentalType" message="tns:IPostpaidService_GetLoanRentalType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetLoanRentalTypeResponse" message="tns:IPostpaidService_GetLoanRentalType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanRentalListWarehouseArea">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetLoanRentalListWarehouseArea" message="tns:IPostpaidService_GetLoanRentalListWarehouseArea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetLoanRentalListWarehouseAreaResponse" message="tns:IPostpaidService_GetLoanRentalListWarehouseArea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoanRental">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/LoanRental" message="tns:IPostpaidService_LoanRental_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/LoanRentalResponse" message="tns:IPostpaidService_LoanRental_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryActions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoryActions" message="tns:IPostpaidService_GetHistoryActions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoryActionsResponse" message="tns:IPostpaidService_GetHistoryActions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimPro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimPro" message="tns:IPostpaidService_GetFixedChargeDetailTimPro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProResponse" message="tns:IPostpaidService_GetFixedChargeDetailTimPro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProOne" message="tns:IPostpaidService_GetFixedChargeDetailTimProOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProOneResponse" message="tns:IPostpaidService_GetFixedChargeDetailTimProOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProTwo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProTwo" message="tns:IPostpaidService_GetFixedChargeDetailTimProTwo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProTwoResponse" message="tns:IPostpaidService_GetFixedChargeDetailTimProTwo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimMax">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimMax" message="tns:IPostpaidService_GetFixedChargeDetailTimMax_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimMaxResponse" message="tns:IPostpaidService_GetFixedChargeDetailTimMax_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimMaxTwo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimMaxTwo" message="tns:IPostpaidService_GetFixedChargeDetailTimMaxTwo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimMaxTwoResponse" message="tns:IPostpaidService_GetFixedChargeDetailTimMaxTwo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiscountFixedChargeDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDiscountFixedChargeDetail" message="tns:IPostpaidService_GetDiscountFixedChargeDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDiscountFixedChargeDetailResponse" message="tns:IPostpaidService_GetDiscountFixedChargeDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentCommitment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetPaymentCommitment" message="tns:IPostpaidService_GetPaymentCommitment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetPaymentCommitmentResponse" message="tns:IPostpaidService_GetPaymentCommitment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProBag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBag" message="tns:IPostpaidService_GetFixedChargeDetailTimProBag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBagResponse" message="tns:IPostpaidService_GetFixedChargeDetailTimProBag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProBagOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBagOne" message="tns:IPostpaidService_GetFixedChargeDetailTimProBagOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBagOneResponse" message="tns:IPostpaidService_GetFixedChargeDetailTimProBagOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProBagTwo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBagTwo" message="tns:IPostpaidService_GetFixedChargeDetailTimProBagTwo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBagTwoResponse" message="tns:IPostpaidService_GetFixedChargeDetailTimProBagTwo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProBagThree">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBagThree" message="tns:IPostpaidService_GetFixedChargeDetailTimProBagThree_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBagThreeResponse" message="tns:IPostpaidService_GetFixedChargeDetailTimProBagThree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricDelivery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoricDelivery" message="tns:IPostpaidService_GetHistoricDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoricDeliveryResponse" message="tns:IPostpaidService_GetHistoricDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeTimProBagDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetail" message="tns:IPostpaidService_GetFixedChargeTimProBagDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetailResponse" message="tns:IPostpaidService_GetFixedChargeTimProBagDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeTimProBagDetailOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetailOne" message="tns:IPostpaidService_GetFixedChargeTimProBagDetailOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetailOneResponse" message="tns:IPostpaidService_GetFixedChargeTimProBagDetailOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeTimProBagDetailTwo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetailTwo" message="tns:IPostpaidService_GetFixedChargeTimProBagDetailTwo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetailTwoResponse" message="tns:IPostpaidService_GetFixedChargeTimProBagDetailTwo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeTimProBagDetailThree">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetailThree" message="tns:IPostpaidService_GetFixedChargeTimProBagDetailThree_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetailThreeResponse" message="tns:IPostpaidService_GetFixedChargeTimProBagDetailThree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FeeEquipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/FeeEquipment" message="tns:IPostpaidService_FeeEquipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/FeeEquipmentResponse" message="tns:IPostpaidService_FeeEquipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalTrafficDetailCallTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/LocalTrafficDetailCallTP" message="tns:IPostpaidService_LocalTrafficDetailCallTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/LocalTrafficDetailCallTPResponse" message="tns:IPostpaidService_LocalTrafficDetailCallTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalTrafficDetailCallTM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/LocalTrafficDetailCallTM" message="tns:IPostpaidService_LocalTrafficDetailCallTM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/LocalTrafficDetailCallTMResponse" message="tns:IPostpaidService_LocalTrafficDetailCallTM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsumeLocalTrafficDetailCallTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/ConsumeLocalTrafficDetailCallTP" message="tns:IPostpaidService_ConsumeLocalTrafficDetailCallTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/ConsumeLocalTrafficDetailCallTPResponse" message="tns:IPostpaidService_ConsumeLocalTrafficDetailCallTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsumeLocalTrafficDetailCallTM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/ConsumeLocalTrafficDetailCallTM" message="tns:IPostpaidService_ConsumeLocalTrafficDetailCallTM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/ConsumeLocalTrafficDetailCallTMResponse" message="tns:IPostpaidService_ConsumeLocalTrafficDetailCallTM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryHR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoryHR" message="tns:IPostpaidService_GetHistoryHR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoryHRResponse" message="tns:IPostpaidService_GetHistoryHR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDataLine" message="tns:IPostpaidService_GetDataLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDataLineResponse" message="tns:IPostpaidService_GetDataLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTypeService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/ValidateTypeService" message="tns:IPostpaidService_ValidateTypeService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/ValidateTypeServiceResponse" message="tns:IPostpaidService_ValidateTypeService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetCustomerInformation" message="tns:IPostpaidService_GetCustomerInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetCustomerInformationResponse" message="tns:IPostpaidService_GetCustomerInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockWarehouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetStockWarehouse" message="tns:IPostpaidService_GetStockWarehouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetStockWarehouseResponse" message="tns:IPostpaidService_GetStockWarehouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetTrackingDetail" message="tns:IPostpaidService_GetTrackingDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetTrackingDetailResponse" message="tns:IPostpaidService_GetTrackingDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagementOfClosures">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetManagementOfClosures" message="tns:IPostpaidService_GetManagementOfClosures_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetManagementOfClosuresResponse" message="tns:IPostpaidService_GetManagementOfClosures_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReopenOfTheCase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetReopenOfTheCase" message="tns:IPostpaidService_GetReopenOfTheCase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetReopenOfTheCaseResponse" message="tns:IPostpaidService_GetReopenOfTheCase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataServiceLineHFC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDataServiceLineHFC" message="tns:IPostpaidService_GetDataServiceLineHFC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDataServiceLineHFCResponse" message="tns:IPostpaidService_GetDataServiceLineHFC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterials">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetMaterials" message="tns:IPostpaidService_GetMaterials_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetMaterialsResponse" message="tns:IPostpaidService_GetMaterials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubTableTracking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetSubTableTracking" message="tns:IPostpaidService_GetSubTableTracking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetSubTableTrackingResponse" message="tns:IPostpaidService_GetSubTableTracking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThirdTableTracking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetThirdTableTracking" message="tns:IPostpaidService_GetThirdTableTracking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetThirdTableTrackingResponse" message="tns:IPostpaidService_GetThirdTableTracking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceCBIOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetBalanceCBIOS" message="tns:IPostpaidService_GetBalanceCBIOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetBalanceCBIOSResponse" message="tns:IPostpaidService_GetBalanceCBIOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataBalanceShared">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDataBalanceShared" message="tns:IPostpaidService_GetDataBalanceShared_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDataBalanceSharedResponse" message="tns:IPostpaidService_GetDataBalanceShared_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalRecharge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoricalRecharge" message="tns:IPostpaidService_GetHistoricalRecharge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoricalRechargeResponse" message="tns:IPostpaidService_GetHistoricalRecharge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumptionHistoricalRecharge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetConsumptionHistoricalRecharge" message="tns:IPostpaidService_GetConsumptionHistoricalRecharge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetConsumptionHistoricalRechargeResponse" message="tns:IPostpaidService_GetConsumptionHistoricalRecharge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeConsumption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetTypeConsumption" message="tns:IPostpaidService_GetTypeConsumption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetTypeConsumptionResponse" message="tns:IPostpaidService_GetTypeConsumption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataJanusPackage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDataJanusPackage" message="tns:IPostpaidService_GetDataJanusPackage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDataJanusPackageResponse" message="tns:IPostpaidService_GetDataJanusPackage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataOnePackage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDataOnePackage" message="tns:IPostpaidService_GetDataOnePackage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDataOnePackageResponse" message="tns:IPostpaidService_GetDataOnePackage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalPackage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoricalPackage" message="tns:IPostpaidService_GetHistoricalPackage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetHistoricalPackageResponse" message="tns:IPostpaidService_GetHistoricalPackage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypePakage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetTypePakage" message="tns:IPostpaidService_GetTypePakage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetTypePakageResponse" message="tns:IPostpaidService_GetTypePakage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMbBag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetMbBag" message="tns:IPostpaidService_GetMbBag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetMbBagResponse" message="tns:IPostpaidService_GetMbBag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalMbPurchasedPackageResponse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetTotalMbPurchasedPackageResponse" message="tns:IPostpaidService_GetTotalMbPurchasedPackageResponse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetTotalMbPurchasedPackageResponseResponse" message="tns:IPostpaidService_GetTotalMbPurchasedPackageResponse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetTypeOrder" message="tns:IPostpaidService_GetTypeOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetTypeOrderResponse" message="tns:IPostpaidService_GetTypeOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMotiveCancellation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetMotiveCancellation" message="tns:IPostpaidService_GetMotiveCancellation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetMotiveCancellationResponse" message="tns:IPostpaidService_GetMotiveCancellation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusTechnologyVo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetStatusTechnologyVo" message="tns:IPostpaidService_GetStatusTechnologyVo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetStatusTechnologyVoResponse" message="tns:IPostpaidService_GetStatusTechnologyVo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterTerminalTPI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetParameterTerminalTPI" message="tns:IPostpaidService_GetParameterTerminalTPI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetParameterTerminalTPIResponse" message="tns:IPostpaidService_GetParameterTerminalTPI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSolicitude">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetSolicitude" message="tns:IPostpaidService_GetSolicitude_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetSolicitudeResponse" message="tns:IPostpaidService_GetSolicitude_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSolicitude">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/RegisterSolicitude" message="tns:IPostpaidService_RegisterSolicitude_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/RegisterSolicitudeResponse" message="tns:IPostpaidService_RegisterSolicitude_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentSolicitude">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDocumentSolicitude" message="tns:IPostpaidService_GetDocumentSolicitude_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDocumentSolicitudeResponse" message="tns:IPostpaidService_GetDocumentSolicitude_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnotationWS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetAnnotationWS" message="tns:IPostpaidService_GetAnnotationWS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetAnnotationWSResponse" message="tns:IPostpaidService_GetAnnotationWS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBSS_StatusAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetBSS_StatusAccount" message="tns:IPostpaidService_GetBSS_StatusAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetBSS_StatusAccountResponse" message="tns:IPostpaidService_GetBSS_StatusAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInteraction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetInteraction" message="tns:IPostpaidService_GetInteraction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetInteractionResponse" message="tns:IPostpaidService_GetInteraction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/getDataHistory" message="tns:IPostpaidService_getDataHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/getDataHistoryResponse" message="tns:IPostpaidService_getDataHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeDocumentDeubt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetTypeDocumentDeubt" message="tns:IPostpaidService_GetTypeDocumentDeubt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetTypeDocumentDeubtResponse" message="tns:IPostpaidService_GetTypeDocumentDeubt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBonusStatusFullClaro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetBonusStatusFullClaro" message="tns:IPostpaidService_GetBonusStatusFullClaro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetBonusStatusFullClaroResponse" message="tns:IPostpaidService_GetBonusStatusFullClaro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCustomer2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetDataCustomer2" message="tns:IPostpaidService_GetDataCustomer2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetDataCustomer2Response" message="tns:IPostpaidService_GetDataCustomer2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBonusStatusFullClaroClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetBonusStatusFullClaroClient" message="tns:IPostpaidService_GetBonusStatusFullClaroClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetBonusStatusFullClaroClientResponse" message="tns:IPostpaidService_GetBonusStatusFullClaroClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMiClaroApp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetMiClaroApp" message="tns:IPostpaidService_GetMiClaroApp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetMiClaroAppResponse" message="tns:IPostpaidService_GetMiClaroApp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaBloDesblo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/obtenerListaBloDesblo" message="tns:IPostpaidService_obtenerListaBloDesblo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/obtenerListaBloDesbloResponse" message="tns:IPostpaidService_obtenerListaBloDesblo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetValidateCustomer" message="tns:IPostpaidService_GetValidateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetValidateCustomerResponse" message="tns:IPostpaidService_GetValidateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPostpaidService/GetValidateLine" message="tns:IPostpaidService_GetValidateLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPostpaidService/GetValidateLineResponse" message="tns:IPostpaidService_GetValidateLine_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPostpaidService" type="tns:IPostpaidService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IPostpaidService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerBloqueosClaro">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/ObtenerBloqueosClaro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductosXCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetProductosXCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceByCustomerCode">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetServiceByCustomerCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDataCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressOfficce">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetAddressOfficce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataInvoice">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDataInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataServiceLine">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDataServiceLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelephoneByContractCode">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetTelephoneByContractCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLineDisableByContractCode">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetLineDisableByContractCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallationAddress">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetInstallationAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryServiceLine">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHistoryServiceLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveDisableDays">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetActiveDisableDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistorySIM">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHistorySIM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryEquipments">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHistoryEquipments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMRConsult">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetIMRConsult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnsConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetColumnsConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContactSave">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/ContactSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentCollection">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetPaymentCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailAmountDispute">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDetailAmountDispute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAffiliationToDebit">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetAffiliationToDebit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoringCases">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetMonitoringCases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnotations">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetAnnotations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailAnnotation">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDetailAnnotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnotationType">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetAnnotationType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWarranty">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetWarranty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSharedBag">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetSharedBag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationPlans">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetRelationPlans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPinPuk">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetPinPuk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuspendedContract">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetSuspendedContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuspendedType">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetSuspendedType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubAccount">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetSubAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditLimit">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetCreditLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationPlanHFCLTE">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetRelationPlanHFCLTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditLimitDetail">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetCreditLimitDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailLongDistance">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDetailLongDistance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInternationalRoamingDetail">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetInternationalRoamingDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDebtDetail">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDebtDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdditionalLocalTrafficDetail">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetAdditionalLocalTrafficDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumeLocalTrafficDetail">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetConsumeLocalTrafficDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailsOtherConcepts">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDetailsOtherConcepts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimServiceDetails">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetTimServiceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryInvoice">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHistoryInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSDetails">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/SMSDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountSMSDetails">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetAmountSMSDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneContract">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetPhoneContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractServices">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetContractServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceBSCS">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetServiceBSCS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPetitionsType">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetPetitionsType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPetitions">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetPetitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTriaciones">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetTriaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalStriations">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHistoricalStriations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecharges">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetRecharges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerQuery">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetComputerQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledTransaction">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetScheduledTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DueNumberDocumentOAC">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/DueNumberDocumentOAC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusAccount">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/StatusAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataLineHistory">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDataLineHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHLR">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHLR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExistsAgreementOld">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetExistsAgreementOld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExistAgreementNew">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetExistAgreementNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusAccountLDI">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/StatusAccountLDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanRentalType">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetLoanRentalType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanRentalListWarehouseArea">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetLoanRentalListWarehouseArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoanRental">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/LoanRental" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryActions">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHistoryActions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimPro">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimPro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProOne">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProTwo">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProTwo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimMax">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimMax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimMaxTwo">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimMaxTwo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiscountFixedChargeDetail">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDiscountFixedChargeDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentCommitment">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetPaymentCommitment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProBag">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProBagOne">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBagOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProBagTwo">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBagTwo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeDetailTimProBagThree">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeDetailTimProBagThree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricDelivery">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHistoricDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeTimProBagDetail">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeTimProBagDetailOne">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetailOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeTimProBagDetailTwo">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetailTwo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedChargeTimProBagDetailThree">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetFixedChargeTimProBagDetailThree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FeeEquipment">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/FeeEquipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalTrafficDetailCallTP">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/LocalTrafficDetailCallTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalTrafficDetailCallTM">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/LocalTrafficDetailCallTM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsumeLocalTrafficDetailCallTP">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/ConsumeLocalTrafficDetailCallTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsumeLocalTrafficDetailCallTM">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/ConsumeLocalTrafficDetailCallTM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryHR">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHistoryHR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataLine">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDataLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTypeService">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/ValidateTypeService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInformation">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetCustomerInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockWarehouse">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetStockWarehouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingDetail">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetTrackingDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagementOfClosures">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetManagementOfClosures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReopenOfTheCase">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetReopenOfTheCase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataServiceLineHFC">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDataServiceLineHFC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterials">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetMaterials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubTableTracking">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetSubTableTracking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThirdTableTracking">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetThirdTableTracking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceCBIOS">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetBalanceCBIOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataBalanceShared">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDataBalanceShared" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalRecharge">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHistoricalRecharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumptionHistoricalRecharge">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetConsumptionHistoricalRecharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeConsumption">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetTypeConsumption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataJanusPackage">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDataJanusPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataOnePackage">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDataOnePackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalPackage">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetHistoricalPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypePakage">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetTypePakage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMbBag">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetMbBag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalMbPurchasedPackageResponse">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetTotalMbPurchasedPackageResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeOrder">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetTypeOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMotiveCancellation">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetMotiveCancellation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusTechnologyVo">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetStatusTechnologyVo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterTerminalTPI">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetParameterTerminalTPI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSolicitude">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetSolicitude" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSolicitude">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/RegisterSolicitude" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentSolicitude">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDocumentSolicitude" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnotationWS">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetAnnotationWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBSS_StatusAccount">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetBSS_StatusAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInteraction">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetInteraction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataHistory">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/getDataHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeDocumentDeubt">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetTypeDocumentDeubt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBonusStatusFullClaro">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetBonusStatusFullClaro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCustomer2">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetDataCustomer2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBonusStatusFullClaroClient">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetBonusStatusFullClaroClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMiClaroApp">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetMiClaroApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaBloDesblo">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/obtenerListaBloDesblo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetValidateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateLine">
+      <soap:operation soapAction="http://tempuri.org/IPostpaidService/GetValidateLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PostpaidService">
+    <wsdl:port name="BasicHttpBinding_IPostpaidService" binding="tns:BasicHttpBinding_IPostpaidService">
+      <soap:address location="http://localhost:9593/Dashboard/PostpaidService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

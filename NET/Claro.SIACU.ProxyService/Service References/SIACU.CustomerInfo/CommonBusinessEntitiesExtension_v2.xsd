@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:entmet="http://claro.com.pe/esb/data/commonBusinessEntities/metric/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entcus="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:entcombusentext="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Metric_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/metric/v2/" />
+  <xs:import schemaLocation="RootBusinessEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" />
+  <xs:import schemaLocation="BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="../Customer/Customer_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customer/v2/" />
+  <xs:complexType name="CustomerMetric">
+    <xs:complexContent mixed="false">
+      <xs:extension base="entmet:MetricMeasure">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_customer" type="entcus:Customer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DisputedAmountExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="totalDisputedAmount" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Total Disputed Amount</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ActivityStatusExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="isComplete" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BusinessInteractionExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of BusinessInteraction</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="reasonCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>reason Code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="reason" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="notes" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="hour" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>Execution time</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="duration" type="entbastyp:Duration">
+        <xs:annotation>
+          <xs:documentation>Duration</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntitySpecAttachExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of EntitySpecAttach</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:RootEntity">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="additionalInfo" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="descriptionExtended" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>description Extended</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="emisionDate" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>EmisionDate</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="file" type="xs:byte">
+            <xs:annotation>
+              <xs:documentation>file</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="fileBase64" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="header" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="idDocRepository" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="idDocumentSystemOac" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>id Document System Oac</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="idDocumentSystemOrigin" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>id Document System Origin</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="idTemporalDoc" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="isClaimedBalance" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Flag indicating whether or not to show the documents that have disputed or claimed amount</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="isOutstandingbalance" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>flag indicating whether or not to display documents that have outstanding balance.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="isRequiredSignature" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="monthEmissionDocument" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>month Emission Document</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="monthExpirationDocument" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>month Expiration Document</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="queryFilter" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="signatureName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Status</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="templateName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="user" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>usuer</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="yearEmissionDocument" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>year Emission Document</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="yearExpirationDocument" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>year Expiration Document</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="sequence" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>sequence of AttachExtension</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="fileTxt" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+string of characters</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="serial" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="signatureStatus" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="amount" type="entbastyp:Money" />
+          <xs:element minOccurs="0" maxOccurs="1" name="saleAmount" type="entbastyp:Money" />
+          <xs:element minOccurs="0" maxOccurs="1" name="partAmount" type="entbastyp:Money" />
+          <xs:element minOccurs="0" maxOccurs="1" name="salesValue" type="entbastyp:Money">
+            <xs:annotation>
+              <xs:documentation>Value Total sale, Amount without taxes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="isElectronicSigned" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="isSent" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Flag that determines if the document was sent to OnBase.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="isDigitalSigned" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Determine if the document applies for digital signature or not.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="templateId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="receptionDay" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EventOccurenceExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="activityStatus" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="deliveryPriority" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="shortDescription" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="comment" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="priority" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusReason" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="subject" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExternalSystemCapabilityExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="user" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="message" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="messageId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Message Id</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Name</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GeographicAddressExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of GeographicAddress</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="dangerZone" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>danger Zone</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="department" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Name of department</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isRuralZone" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ubigeoPopulatedcenter" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="planCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Plane identifier.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="populatedCenterCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ubigeo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NotificationExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="from" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="isHtml" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="message" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="subject" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="templateId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="to" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PlaceExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="subAddressID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>subAddressID</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="blacklist" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ScheduledDurationExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="scheduleHoursRange" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Schedule Hours Range</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="availableDuration" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Available Duration</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TroubleTicketExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="solutionCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="solutionDescription" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="solutionEstimation" type="entbastyp:Duration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="solutionDate" type="entbastyp:TimePeriod" />
+      <xs:element minOccurs="0" maxOccurs="1" name="solutionNotificationDate" type="entbastyp:TimePeriod" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

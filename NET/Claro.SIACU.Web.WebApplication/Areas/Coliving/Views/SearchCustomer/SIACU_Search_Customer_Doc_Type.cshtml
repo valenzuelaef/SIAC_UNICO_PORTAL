@@ -1,0 +1,168 @@
+﻿@using System.Web.Optimization;
+<style>
+    .Title {
+        background-color: #a7a8aa;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        margin-left: 20px;
+        padding: 4px;
+    }
+
+    table {
+        text-transform: uppercase;
+    }
+
+    #TbServiciosPost, #TbServiciosPre > thead > tr > th {
+        vertical-align: middle !important;
+        text-align: center;
+    }
+
+    #TbServiciosPost, #TbServiciosPre > tbody > tr > td {
+        vertical-align: middle !important;
+        text-align: center;
+    }
+
+    .modal {
+        padding-right: 0px !important;
+    }
+
+        .modal.in.ui-draggable {
+            top: 50% !important;
+            margin: 0 auto;
+            left: 0px !important;
+        }
+</style>
+<div id="divSearchCustomerDocument">
+    <div id="ValorDefaul" hidden>
+        <input type="text" id="txtHdDocNumber" />
+        <input type="text" id="txtHdLineNumber" />
+        <input type="text" id="txtHdModality" />
+        <input type="text" id="txtHdAccountType" />
+        <input type="text" id="txtLineNumberListService" />
+        <input type="text" id="txtHdNumberAccount" />
+        <input type="text" id="txtHdMigrateOne" />
+        <input type="text" id="txtHdValidateMigration" />
+        <input type="text" id="txtHdActivaInactiva" />
+        <input type="hidden" id="txtHdNameLinkWebSpecial" value="@ViewBag.nameLinkWs" />
+        <input type="hidden" id="txtHdUrlWebSpecial" value="@ViewBag.urlWs" />
+        <input type="hidden" id="txtHdNameLinkPostVenta" value="@ViewBag.nameLinkPv" />
+        <input type="hidden" id="txtHdUrlPostVenta" value="@ViewBag.urlPv" />
+        <input type="hidden" id="txtHdstrPrepagoOlo" value="@ViewBag.strPrepagoOlo" />
+        <input type="hidden" id="txtHdKeyMigradoFullStack" value="@ViewBag.strKeyMigradoFullStack" />
+        <input type="text" id="txtHdTypeDocId" />
+
+
+        <input type="text" id="txtHdStatus" value="@ViewBag.estatus" />
+
+        <input type="hidden" id="txtHdUrlDestino" value="@ViewBag.UrlDestino" />
+    </div>
+    <div class="row">
+        <div class="col-xs-12 table-responsive">
+            <table class="table claro-modal-tabla">
+                <tr>
+                    <td class="col-xs-2">
+                        <label class="control-label">TIPO DOC.ID: </label>
+                    </td>
+                    <td class="col-xs-4">
+                        <span id="lblTypeDocDescription"></span>
+                    </td>
+                    <td class="col-xs-2">
+                        <label class="control-label">NRO DOC ID: </label>
+                    </td>
+                    <td class="col-xs-4">
+                        <span id="lblNumberDocument"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label">NOMBRES: </label>
+                    </td>
+                    <td colspan="3"><span id="lblNames"></span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label">DIRECCIÓN: </label>
+                    </td>
+                    <td colspan="3"><span id="lblAddress"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3 Title">
+            <span class="col-xs-12">
+                SERVICIO POSTPAGO
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 table-responsive">
+            <table class="table table-bordered claro-modal-tabla" id="TbServiciosPost">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="text-center">CUENTA</th>
+                        <th class="text-center">MIGRADO A ONE</th>
+                        <th class="text-center">MODALIDAD</th>
+                        <th class="text-center">TIPO DE CUENTA</th>
+                        <th class="text-center">LINEAS ACTIVAS</th>
+                        <th class="text-center">LINEAS INACTIVAS</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="TbServiciosPostBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-3 Title">
+            <span class="col-xs-12">
+                SERVICIO PREPAGO
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 table-responsive">
+            <table class="table table-bordered claro-modal-tabla" id="TbServiciosPre">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="text-center">LINEA</th>
+                        <th class="text-center">@ViewBag.migradoOne</th>
+                        <th class="text-center">ESTADO</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="TbServiciosPreBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 size-xs">
+            <div class="panel panel-default col-xs-12" style="text-align: center; padding-top: 1%; padding-bottom: 1%; padding-right: 0px; padding-left: 0px; margin-bottom: 0px !important;">
+
+                <div class="col-sm-3 col-xs-6">
+                    <button style="width:100%" class="btn claro-btn-info btn-sm btn-link" id="btnSale" type="button" data-toggle="modal">Venta</button>
+                </div>
+
+                <div class="col-sm-3 col-xs-6">
+                    <button style="width: 100%" class="btn claro-btn-info btn-sm btn-link" id="btnPostSale" type="button" data-toggle="modal">@ViewBag.nameLinkPv</button>
+                </div>
+
+                <div class="col-sm-3 col-xs-6">
+                    <button style="width: 100%" class="btn claro-btn-info btn-sm btn-link" id="btnTechnicalService" type="button" data-toggle="modal">Servicio Ténico</button>
+                </div>
+
+                <div hidden class="col-sm-3 col-xs-6">
+                    <button style="width: 100%" class="btn claro-btn-info btn-sm btn-link" id="btnSpecialCases" type="button" data-toggle="modal">@ViewBag.nameLinkWs</button>
+                </div>
+
+                <div class="col-sm-3 col-xs-6">
+                    <button style="width: 100%" class="btn claro-btn-info btn-sm btn-link" id="btnClose" type="button" data-toggle="modal">Salir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Coliving/SearchCustomer/SIACU_CustomerDocument")

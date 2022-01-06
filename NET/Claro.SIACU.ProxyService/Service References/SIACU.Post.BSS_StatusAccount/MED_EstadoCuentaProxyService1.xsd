@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://claro.com.pe/esb/data/generico/responseDataConsultar/v1/" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/esb/data/generico/responseDataConsultar/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="responseDataConsultar" type="tns:ResponseDataConsultarType">
+    <xsd:annotation>
+      <xsd:documentation>Esta estructura tiene por objetivo informar los datos de respuesta propios del servicio
+		  </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="ResponseDataConsultarType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="deudaNoVencida" type="tns:DeudaNoVencidaType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="deudaVencida" type="tns:DeudaVencidaType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="listaCobranzaDiferida" type="tns:ListaCobranzaDiferidaType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="listaReclamoPorRecibo" type="tns:ListaReclamoPorReciboType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DeudaNoVencidaType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="audit" type="tns:AuditType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="xEstadoCuenta" type="tns:XEstadoCuentaType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AuditType">
+    <xsd:sequence>
+      <xsd:element name="txId" type="xsd:string" />
+      <xsd:element name="errorCode" type="xsd:string" />
+      <xsd:element name="errorMsg" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="XEstadoCuentaType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="xDetalleEstadoCuentaCab" type="tns:XDetalleEstadoCuentaCabType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="XDetalleEstadoCuentaCabType">
+    <xsd:sequence>
+      <xsd:element name="xNombreCliente" type="xsd:string" />
+      <xsd:element name="xDeudaActual" type="xsd:string" />
+      <xsd:element name="xDeudaVencida" type="xsd:string" />
+      <xsd:element name="xTotalMontoDisputa" type="xsd:string" />
+      <xsd:element name="xFechaUltFactura" type="xsd:string" />
+      <xsd:element name="xFechaUtlPago" type="xsd:string" />
+      <xsd:element name="xCodCuenta" type="xsd:string" />
+      <xsd:element name="xCodCuentaAlterna" type="xsd:string" />
+      <xsd:element name="xDescUbigeo" type="xsd:string" />
+      <xsd:element name="xTipoCliente" type="xsd:string" />
+      <xsd:element name="xEstadoCuenta" type="xsd:string" />
+      <xsd:element name="xFechaActivacion" type="xsd:string" />
+      <xsd:element name="xCicloFacturacion" type="xsd:string" />
+      <xsd:element name="xLimiteCredito" type="xsd:string" />
+      <xsd:element name="xCreditScore" type="xsd:string" />
+      <xsd:element name="xTipoPago" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="xDetalleTrx" type="tns:XDetalleTrxType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="XDetalleTrxType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="xDetalleEstadoCuenta" type="tns:XDetalleEstadoCuentaType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="XDetalleEstadoCuentaType">
+    <xsd:sequence>
+      <xsd:element name="xTipoDocumento" type="xsd:string" />
+      <xsd:element name="xNroDocumento" type="xsd:string" />
+      <xsd:element name="xDescripDocumento" type="xsd:string" />
+      <xsd:element name="xEstadoDocumento" type="xsd:string" />
+      <xsd:element name="xFechaRegistro" type="xsd:string" />
+      <xsd:element name="xFechaEmision" type="xsd:string" />
+      <xsd:element name="xFechaVencimiento" type="xsd:string" />
+      <xsd:element name="xTipoMoneda" type="xsd:string" />
+      <xsd:element name="xMontoDocumento" type="xsd:string" />
+      <xsd:element name="xMontoFco" type="xsd:string" />
+      <xsd:element name="xMontoFinan" type="xsd:string" />
+      <xsd:element name="xSaldoDocumento" type="xsd:string" />
+      <xsd:element name="xSaldoFco" type="xsd:string" />
+      <xsd:element name="xSaldoFinan" type="xsd:string" />
+      <xsd:element name="xMontoSoles" type="xsd:string" />
+      <xsd:element name="xMontoDolares" type="xsd:string" />
+      <xsd:element name="xCargo" type="xsd:string" />
+      <xsd:element name="xAbono" type="xsd:string" />
+      <xsd:element name="xSaldoCuenta" type="xsd:string" />
+      <xsd:element name="xNroOperacionPago" type="xsd:string" />
+      <xsd:element name="xFechaPago" type="xsd:string" />
+      <xsd:element name="xFormaPago" type="xsd:string" />
+      <xsd:element name="xDocAnio" type="xsd:string" />
+      <xsd:element name="xDocMes" type="xsd:string" />
+      <xsd:element name="xDocAnioVenc" type="xsd:string" />
+      <xsd:element name="xDocMesVenc" type="xsd:string" />
+      <xsd:element name="xFlagCargoCta" type="xsd:string" />
+      <xsd:element name="xNroTicket" type="xsd:string" />
+      <xsd:element name="xMontoReclamado" type="xsd:string" />
+      <xsd:element name="xTelefono" type="xsd:string" />
+      <xsd:element name="xUsuario" type="xsd:string" />
+      <xsd:element name="xIdDocOrigen" type="xsd:string" />
+      <xsd:element name="xDescripExtend" type="xsd:string" />
+      <xsd:element name="xIdDocOAC" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DeudaVencidaType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="audit" type="tns:AuditType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="xEstadoCuenta" type="tns:XEstadoCuentaType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaCobranzaDiferidaType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="cobranzaDiferida" type="tns:CobranzaDiferidaType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CobranzaDiferidaType">
+    <xsd:sequence>
+      <xsd:element name="cuenta" type="xsd:string" />
+      <xsd:element name="razonSocial" type="xsd:string" />
+      <xsd:element name="nroOcc" type="xsd:string" />
+      <xsd:element name="factSeleccionada" type="xsd:string" />
+      <xsd:element name="periodos" type="xsd:string" />
+      <xsd:element name="importe" type="xsd:string" />
+      <xsd:element name="nombreOcc" type="xsd:string" />
+      <xsd:element name="comentario" type="xsd:string" />
+      <xsd:element name="fechaIngreso" type="xsd:string" />
+      <xsd:element name="cuentaContable" type="xsd:string" />
+      <xsd:element name="fechaValidez" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaReclamoPorReciboType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="reclamoPorRecibo" type="tns:ReclamoPorReciboType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ReclamoPorReciboType">
+    <xsd:sequence>
+      <xsd:element name="reclamo" type="xsd:string" />
+      <xsd:element name="creacion" type="xsd:string" />
+      <xsd:element name="interaccion" type="xsd:string" />
+      <xsd:element name="monto" type="xsd:string" />
+      <xsd:element name="estado" type="xsd:string" />
+      <xsd:element name="documento" type="xsd:string" />
+      <xsd:element name="caso" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

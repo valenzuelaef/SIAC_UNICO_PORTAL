@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b9248104-4819-4268-8dc3-e4f149340ac2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\jchapeto\Desktop\CustomerManagement-SearchCustomer\SearchCustomer\searchCustomer.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AppliedCustomerBillingRate_v2.xsd" MetadataType="Schema" ID="869a782a-afd6-44cb-a095-6d2d32a07ce8" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Customer/AppliedCustomerBillingRate_v2.xsd" />
+    <MetadataFile FileName="ManagementInformation_v2.xsd" MetadataType="Schema" ID="ee7491c9-4d89-4df7-8636-c26085ec50ab" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Resource/ManagementInformation_v2.xsd" />
+    <MetadataFile FileName="Agreement_v2.xsd" MetadataType="Schema" ID="c4770c4d-fd07-471c-8f12-13a45ba6443e" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/EngagedParty/Agreement_v2.xsd" />
+    <MetadataFile FileName="Usage_v2.xsd" MetadataType="Schema" ID="f102cf5e-d442-4aa8-8c55-cdad722cc461" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/Usage_v2.xsd" />
+    <MetadataFile FileName="CustomerBillCollection_v2.xsd" MetadataType="Schema" ID="e2298136-912c-4b3b-b80a-c7fb0149368a" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Customer/CustomerBillCollection_v2.xsd" />
+    <MetadataFile FileName="MarketingCampaign_v2.xsd" MetadataType="Schema" ID="51cc0583-945b-4553-9bc1-f7ba63d123ee" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/MarketSales/MarketingCampaign_v2.xsd" />
+    <MetadataFile FileName="SalesChannel_v2.xsd" MetadataType="Schema" ID="377e4539-cfda-4364-b8a6-d5aba61a149d" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/MarketSales/SalesChannel_v2.xsd" />
+    <MetadataFile FileName="bssCustomerManagement1.wsdl" MetadataType="Wsdl" ID="6f2f84b4-5838-426e-9c27-0f702e4841f9" SourceId="1" SourceUrl="file:///C:/Users/jchapeto/Desktop/CustomerManagement-SearchCustomer/SearchCustomer/searchCustomer.wsdl" />
+    <MetadataFile FileName="ServiceSpecification_v2.xsd" MetadataType="Schema" ID="66e8b26d-17b5-4fcb-a38c-9da11d431d8d" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Service/ServiceSpecification_v2.xsd" />
+    <MetadataFile FileName="CustomerExtension_v2.xsd" MetadataType="Schema" ID="ecfcfcae-deff-408a-9d7f-7b5c593a244a" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Customer/CustomerExtension_v2.xsd" />
+    <MetadataFile FileName="Customer_v2.xsd" MetadataType="Schema" ID="0654a518-57a8-4760-9e9e-c3e1ed465de0" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Customer/Customer_v2.xsd" />
+    <MetadataFile FileName="ClaroFault_v2.xsd" MetadataType="Schema" ID="717a4cc9-d819-43a9-a185-8db2be97b05f" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ClaroFault_v2.xsd" />
+    <MetadataFile FileName="PartyRevenue_v2.xsd" MetadataType="Schema" ID="fb074cd6-05ad-43f7-ade9-1f75d56cdf94" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/EngagedParty/PartyRevenue_v2.xsd" />
+    <MetadataFile FileName="Resource_v2.xsd" MetadataType="Schema" ID="8332b1d2-b88d-42d2-9d4b-be61b3de7c97" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Resource/Resource_v2.xsd" />
+    <MetadataFile FileName="BusinessInteraction_v2.xsd" MetadataType="Schema" ID="ff331911-347d-4fe1-bab1-009c21068b0f" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/BusinessInteraction_v2.xsd" />
+    <MetadataFile FileName="ResourceSpecification_v2.xsd" MetadataType="Schema" ID="2be41ffa-9b5d-43a9-b1f8-6c82c7000f17" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Resource/ResourceSpecification_v2.xsd" />
+    <MetadataFile FileName="Project_v2.xsd" MetadataType="Schema" ID="12cdd9b3-4f41-4448-90b1-7ff5efdb88c6" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/Project_v2.xsd" />
+    <MetadataFile FileName="ServiceExtension_v2.xsd" MetadataType="Schema" ID="aa00997b-fd02-43ef-82df-728723bde5dd" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Service/ServiceExtension_v2.xsd" />
+    <MetadataFile FileName="getScore.xsd" MetadataType="Schema" ID="e59727dc-bdf6-4419-a937-ceacaaff135f" SourceId="1" SourceUrl="file:///C:/Users/jchapeto/Desktop/CustomerManagement-SearchCustomer/esquemas/getScore.xsd" />
+    <MetadataFile FileName="CustomerBill_v2.xsd" MetadataType="Schema" ID="a8bc6abc-a273-4885-93ae-21844070702c" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Customer/CustomerBill_v2.xsd" />
+    <MetadataFile FileName="CommonBusinessEntitiesExtension_v2.xsd" MetadataType="Schema" ID="003202a1-016f-436f-ac21-8136830a2e83" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/CommonBusinessEntitiesExtension_v2.xsd" />
+    <MetadataFile FileName="PartyOrder_v2.xsd" MetadataType="Schema" ID="9f7a7f3b-6f2a-4d25-bac9-2b80b082ebb7" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/EngagedParty/PartyOrder_v2.xsd" />
+    <MetadataFile FileName="Calendar_v2.xsd" MetadataType="Schema" ID="41e34182-24af-4eba-b457-0d3f611ac0cd" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/Calendar_v2.xsd" />
+    <MetadataFile FileName="CustomerFacingService_v2.xsd" MetadataType="Schema" ID="923cec13-a7e5-4bcc-847f-38f03f01e569" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Service/CustomerFacingService_v2.xsd" />
+    <MetadataFile FileName="PartyProfile_v2.xsd" MetadataType="Schema" ID="6921487a-3c00-4834-a8ca-86874e9790ed" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/EngagedParty/PartyProfile_v2.xsd" />
+    <MetadataFile FileName="LogicalResource_v2.xsd" MetadataType="Schema" ID="e59311c7-12dc-4ffc-8da1-37c50eb61e75" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Resource/LogicalResource_v2.xsd" />
+    <MetadataFile FileName="ProductExtension_v2.xsd" MetadataType="Schema" ID="8270757e-2e71-492b-8560-30825d595a05" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Product/ProductExtension_v2.xsd" />
+    <MetadataFile FileName="Product_v2.xsd" MetadataType="Schema" ID="536b8278-6e71-4623-a63a-194f3f0c0b09" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Product/Product_v2.xsd" />
+    <MetadataFile FileName="CommonsException1.xsd" MetadataType="Schema" ID="2b7c2286-f4a3-4e8b-a9ef-f06ee3f44551" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/servicios/esquemas/CommonsException.xsd" />
+    <MetadataFile FileName="Service_v2.xsd" MetadataType="Schema" ID="3d46a36a-a8c7-4a03-b428-81e878eb399a" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Service/Service_v2.xsd" />
+    <MetadataFile FileName="Loyalty_v2.xsd" MetadataType="Schema" ID="eb9453a2-625e-4957-93db-3a9b30fac673" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Product/Loyalty_v2.xsd" />
+    <MetadataFile FileName="ResponseStatus_v2.xsd" MetadataType="Schema" ID="01856e7d-6d33-4361-9779-d0b615fb5f8f" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ResponseStatus_v2.xsd" />
+    <MetadataFile FileName="ServiceConfiguration_v2.xsd" MetadataType="Schema" ID="077140e8-62cd-4397-947c-c635c117cfc6" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Service/ServiceConfiguration_v2.xsd" />
+    <MetadataFile FileName="ServiceUsage_v2.xsd" MetadataType="Schema" ID="87b50024-ce19-4ccb-9105-b5f3f1d5da30" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Service/ServiceUsage_v2.xsd" />
+    <MetadataFile FileName="TroubleTicket_v2.xsd" MetadataType="Schema" ID="8532bda4-a368-430a-8f67-256aad6d95c3" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/TroubleTicket_v2.xsd" />
+    <MetadataFile FileName="MarketSegment_v2.xsd" MetadataType="Schema" ID="5e7afa8c-3ca1-4b2d-97d1-1ac757178d01" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/MarketSales/MarketSegment_v2.xsd" />
+    <MetadataFile FileName="PartyInteraction_v2.xsd" MetadataType="Schema" ID="99ed9025-e17d-4091-8ef1-8725a08d5412" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/EngagedParty/PartyInteraction_v2.xsd" />
+    <MetadataFile FileName="AdditionalPartyEntities_v2.xsd" MetadataType="Schema" ID="fbcbb1c1-6597-4777-b3a3-e55182fcb0ae" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/EngagedParty/AdditionalPartyEntities_v2.xsd" />
+    <MetadataFile FileName="ClaroGenericHeaders_v2.xsd" MetadataType="Schema" ID="1ae70c6e-50a5-4c85-bd66-6f635371a7fc" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ClaroGenericHeaders_v2.xsd" />
+    <MetadataFile FileName="PartyOrganization_v2.xsd" MetadataType="Schema" ID="1a4755e6-aec8-4976-a1c0-4410c80c71af" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/EngagedParty/PartyOrganization_v2.xsd" />
+    <MetadataFile FileName="ResourceOrder_v2.xsd" MetadataType="Schema" ID="74a2bd46-6898-49bb-8034-748a45ff37c7" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Resource/ResourceOrder_v2.xsd" />
+    <MetadataFile FileName="CustomerOrder_v2.xsd" MetadataType="Schema" ID="f6f65771-3e9d-4764-b2af-22ae08cb57a2" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Customer/CustomerOrder_v2.xsd" />
+    <MetadataFile FileName="RootBusinessEntities_v2.xsd" MetadataType="Schema" ID="d3252fd7-036f-4050-b96c-eea1c98918a6" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/RootBusinessEntities_v2.xsd" />
+    <MetadataFile FileName="BaseTypes_v2.xsd" MetadataType="Schema" ID="dadd614e-c40a-419b-a07b-f10991b351a2" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/BaseTypes_v2.xsd" />
+    <MetadataFile FileName="EnterpriseExtension_v2.xsd" MetadataType="Schema" ID="8cdd3dba-92e1-46a1-bfe2-2ecb315c043f" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Enterprise/EnterpriseExtension_v2.xsd" />
+    <MetadataFile FileName="ProductSpecification_v2.xsd" MetadataType="Schema" ID="7fb7e895-7bcb-4279-8ee6-ea87ef884427" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Product/ProductSpecification_v2.xsd" />
+    <MetadataFile FileName="Capacity_v2.xsd" MetadataType="Schema" ID="28df3218-59f9-4c68-8e71-7836fef28e81" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/Capacity_v2.xsd" />
+    <MetadataFile FileName="Performance_v2.xsd" MetadataType="Schema" ID="4206d8dd-7695-4b61-9a80-9aa037121067" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/Performance_v2.xsd" />
+    <MetadataFile FileName="EngagedPartyExtension_v2.xsd" MetadataType="Schema" ID="d4660dfe-f773-4d1c-b4e4-100087273aca" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/EngagedParty/EngagedPartyExtension_v2.xsd" />
+    <MetadataFile FileName="PartyProductSpecificationAndOffering_v2.xsd" MetadataType="Schema" ID="fb776983-4b15-4f97-9853-483bce8b7642" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/EngagedParty/PartyProductSpecificationAndOffering_v2.xsd" />
+    <MetadataFile FileName="ProductOffering_v2.xsd" MetadataType="Schema" ID="be536475-2e8c-4651-83ab-1fc28c93f826" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Product/ProductOffering_v2.xsd" />
+    <MetadataFile FileName="Party_v2.xsd" MetadataType="Schema" ID="0322c0a3-6f4f-4806-a451-b3f872d8f9a8" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/EngagedParty/Party_v2.xsd" />
+    <MetadataFile FileName="searchCustomer.xsd" MetadataType="Schema" ID="43eff849-bcdf-490c-9b0f-2f520d336917" SourceId="1" SourceUrl="file:///C:/Users/jchapeto/Desktop/CustomerManagement-SearchCustomer/esquemas/searchCustomer.xsd" />
+    <MetadataFile FileName="CustomerInteraction_v2.xsd" MetadataType="Schema" ID="e2690fb2-673b-4d97-875f-80b3f3dc233f" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Customer/CustomerInteraction_v2.xsd" />
+    <MetadataFile FileName="UsersAndRoles_v2.xsd" MetadataType="Schema" ID="8bd8ab5f-340f-47fa-a629-c600769a2a48" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/UsersAndRoles_v2.xsd" />
+    <MetadataFile FileName="EnterpriseRisk_v2.xsd" MetadataType="Schema" ID="c7d265d7-2dfb-4aa0-b3b2-a80808ee7caa" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Enterprise/EnterpriseRisk_v2.xsd" />
+    <MetadataFile FileName="TroubleOrProblem_v2.xsd" MetadataType="Schema" ID="0048b548-b90c-47f8-85d1-ac74b0335ab0" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/TroubleOrProblem_v2.xsd" />
+    <MetadataFile FileName="Location_v2.xsd" MetadataType="Schema" ID="d258e957-6bd3-4e22-9fa9-3bcfe9cd19c3" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/Location_v2.xsd" />
+    <MetadataFile FileName="MarketSalesExtension_v2.xsd" MetadataType="Schema" ID="fad9040a-1183-498d-81a8-bc06f4e703d1" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/MarketSales/MarketSalesExtension_v2.xsd" />
+    <MetadataFile FileName="Metric_v2.xsd" MetadataType="Schema" ID="faa5313e-c0f9-469a-a4ad-9acd5b9dff0c" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/Metric_v2.xsd" />
+    <MetadataFile FileName="HeaderGeneric_v11.xsd" MetadataType="Schema" ID="e77943c0-3920-45eb-a0bd-b0bf600cdfdb" SourceId="1" SourceUrl="file:///C:/tecnologia/framework/servicios/esquemas/HeaderGeneric_v1.0.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

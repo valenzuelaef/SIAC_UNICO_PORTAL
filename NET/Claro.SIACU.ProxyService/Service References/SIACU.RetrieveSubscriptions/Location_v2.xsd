@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entmarseg="http://claro.com.pe/esb/data/marketSales/marketSegment/v2/" xmlns:entres="http://claro.com.pe/esb/data/resource/resource/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entcombusentext="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" xmlns:entloc="http://claro.com.pe/esb/data/commonBusinessEntities/location/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/location/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="../MarketSales/MarketSegment_v2.xsd" namespace="http://claro.com.pe/esb/data/marketSales/marketSegment/v2/" />
+  <xs:import schemaLocation="CommonBusinessEntitiesExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" />
+  <xs:import schemaLocation="../Resource/Resource_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/resource/v2/" />
+  <xs:import schemaLocation="../EngagedParty/Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="AbsoluteLocalLocation">
+    <xs:annotation>
+      <xs:documentation>A LocalLocation that is defined using Cartesian coordinates that relate back to a LocalCoordinateSystem.
+
+The coordinate units are defined in the LocalCoordinateSystem.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="x" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The x Cartesian coordinate.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="y" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The y Cartesian coordinate.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="z" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The z Cartesian coordinate.
+
+
+
+Note: required for 3D representations</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_localContinuativeCoordSystem" type="entloc:LocalContinuativeCoordSystem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbsoluteLocalOrientation">
+    <xs:annotation>
+      <xs:documentation>The relative position of something measured independently and not in relation to something else.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="theta" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The angle between the z axis and the Z axis</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="pi" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The angle between the x axis and the N axis.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="psi" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The angle between the N axis and the X axis.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbstractGeographicAddress">
+    <xs:annotation>
+      <xs:documentation>An abstract (not a material) address from which others, such as GeogrphicAddress, inherit.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:GeographicPlace">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_localAddress" type="entloc:LocalAddress" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AdministrativeArea">
+    <xs:annotation>
+      <xs:documentation>Administrative Area represents the many areas that are controlled or managed by an Administration. Administrations could include councils, governments …
+
+This is an example of a concrete Geographic Location entity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:GeographicLocation">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>MUNICIPALITY, CENSUS DISTRICT, ELECTORAL AREA, COUNTY, PARISH or ...</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Country">
+    <xs:annotation>
+      <xs:documentation>This is an example of a concrete Geographic Location entity.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The name that the Country is known by.
+
+
+
+Notes: the standard name as defined in ISO-3166 should be used</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="iso2Code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ISO 2 letter country abbreviation.
+
+
+
+Notes: refer ISO-3166</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="iso3Code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ISO 3 letter country abbreviation
+
+
+
+Notes: refer ISO-3166</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The type of country.
+
+
+
+Permitted Values: COUNTRY or PRINCIPALITY
+
+
+
+Notes: this can be used to differentiate places like Holy See (Vatican city state) and Monaco if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_geographicArea" type="entloc:GeographicArea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GeographicAddress">
+    <xs:annotation>
+      <xs:documentation>A structured textual way of describing how to find a Geographic Location. It is usually composed of an ordered list of Geographic Location names based on context specific rulesIt is an abstract modeling concept that provides a linking point to other parts of the SID model.It holds attributes common to all Geographic Address subclasses.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:AbstractGeographicAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="country" type="entloc:Country">
+            <xs:annotation>
+              <xs:documentation>The country that the address is in.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="stateOrProvince" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The state or province that the address is in.
+
+
+
+Synonyms / Aliases:	province, territory</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_geographicLocation" type="entloc:GeographicLocation" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_geographicAddressExtension" type="entcombusentext:GeographicAddressExtension" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_streetSegment" type="entloc:StreetSegment" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_geographicSubAddress" type="entloc:GeographicSubAddress" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GeographicArea">
+    <xs:annotation>
+      <xs:documentation>This is a generic entity, used to represent areas defined on maps that relate to areas of settlement.This is an example of a concrete Geographic Location entity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:GeographicLocation">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The defined name of the GeographicArea.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Used if a standard code set has been defined for the GeographicArea type.
+
+
+
+Notes: see [ANSI T.253] for US codes</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The type of GeorgraphicArea, such as SUBURB, LOCALITY, CITY, TOWN or VILLAGE or BOROUGH or HAMLET, and so forth.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_country" type="entloc:Country" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyDemographic" type="entpar:PartyDemographic" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_geographicState" type="entloc:GeographicState" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_marketSegment" type="entmarseg:MarketSegment" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GeographicLocation">
+    <xs:annotation>
+      <xs:documentation>A defined place on or near the earth's surface. It is an abstract modeling concept that provides a linking point to other parts of the SID model.It holds attributes common to all Geographic Location subclasses.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:GeographicPlace">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="geometry" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The two dimensional graphical representation of the Location allowing it to be displayed on a map and to be used for spatial calculations.
+
+
+
+Notes: Since Geometry is abstract, the attribute will actually be one of the concrete subclasses</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="accuracy" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The accuracy of the GeographicLocation.  For example, this GPS measurement is accurate to +-20 metres. This attribute allows us to determine when two points close to each other could be the same point. Refer "[OGIS] Abstract Specification, Topic 9: Quality" for details of this complex subject.
+
+
+
+Notes: This should be provided if the geometry attribute is not null.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_geographicAddress" type="entloc:GeographicAddress" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_geographicLocationName" type="entloc:GeographicLocationName" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_localCoordinateSystem" type="entloc:LocalCoordinateSystem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GeographicLocationName">
+    <xs:annotation>
+      <xs:documentation>A word, term, or phrase by which a Geographic Location is known and distinguished from other Geographic Locations. A name is an informal way of identifying an object [Fowler]Separating Location Name from Location allows for a Location to have many names at the same time and for names to change over time.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The time period that the name is valid for.
+
+
+
+Permitted Values: Refer Time Period class</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The name that is used to refer to the location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="nameType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Indicates if this is the main name or a type of alternative name.
+
+
+
+Permitted Values: “MAIN” or “ALIAS” or …</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_geographicLocation" type="entloc:GeographicLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GeographicPlace">
+    <xs:annotation>
+      <xs:documentation>Allows us to determine where things are in relation to the earth's surface.
+
+It is an abstract modeling concept that provides a linking point to other parts of the SID model.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:Place">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GeographicPostcode">
+    <xs:annotation>
+      <xs:documentation>A postal delivery area used to speed and simplify the delivery of mail.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A descriptor for a postal delivery area used to speed and simplify the delivery of mail.
+
+
+
+Notes: also known as ZIP code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GeographicSite">
+    <xs:annotation>
+      <xs:documentation>A convenience class that allows us to easily refer to Places important to the Service Provider.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The name that the site is known by.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A code that may be used for some addressing schemes e.g. [ANSI T1.253-1999].</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The condition of the GeographicSite, such as active, inactive, planned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GeographicState">
+    <xs:annotation>
+      <xs:documentation>This is an example of a concrete Geographic Location entity.It can be used to represent States and their equivalents.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The standard state name.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An abbreviation for the name e.g. SA, NT, WA, QLD, NSW, VIC, TAS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The type of state.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_geographicArea" type="entloc:GeographicArea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GeographicSubAddress">
+    <xs:annotation>
+      <xs:documentation>A Geographic Sub Address "contains information in addition to that generally found in a standard single address [ANZLIC-STREET]It is an abstract modeling concept that provides a linking point to other parts of the SID model.It holds attributes common to all Geographic Sub Address subclasses.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:AbstractGeographicAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_geographicAddress" type="entloc:GeographicAddress" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocalAddress">
+    <xs:annotation>
+      <xs:documentation>A structured textual way of describing an internal location. It is an abstract modeling concept that provides a linking point to other parts of the SID model. It holds attributes common to all Local Address subclasses.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:LocalPlace">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The type of LocalAddress.
+
+
+
+Notes:e.g RACK, SUITE</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="positionNr" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The position within the type.
+
+
+
+Notes: often a number with a suffix, e.g. “5B”</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="fullAddress" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A denormalised string showing the type and position numbers up the hierarchy with separator characters.
+
+
+
+Notes:
+
+
+
+provide if required for performance purposes.
+
+e.g. SUITE 5 /  RACK 7B / SUBRACK 2 / CARD 3</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_abstractGeographicAddress" type="entloc:AbstractGeographicAddress" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocalContinuativeCoordSystem">
+    <xs:annotation>
+      <xs:documentation>A coordinate system for LocalLocations that are defined using floating point Cartesian coordinates</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:LocalCoordinateSystem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_absoluteLocalLocation" type="entloc:AbsoluteLocalLocation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocalCoordinateSystem">
+    <xs:annotation>
+      <xs:documentation>A local coordinate system allows us to position things in a small area where the curvature of the Earth can be ignored. It would commonly be used to define placement in an Exchange building (Central Office)
+
+It is an abstract entity that holds common attributes and relationships. 
+
+For continuative locations, the Units will usually be unity for a given measure (e.g. 1 metre). For grid coordinate systems, the unit will often be a non unity measure (e.g. 600mm)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="localOrientation" type="entloc:AbsoluteLocalOrientation">
+        <xs:annotation>
+          <xs:documentation>The orientation of the LocalCoordinateSystem, such as directional (north, south) or facing (front, back,side), angle of rotation from the axes of the LocalCoordinateSystem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="xUnits" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The unit for a number in the X direction in a local location.
+
+Notes: units could be metres, feet, inches …</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="yUnits" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The unit for a number in the Y direction in a local location.
+
+
+
+Notes: units could be metres, feet, inches …</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="zUnits" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The unit for a number in the Z direction in a local location.
+
+
+
+Notes: units could be metres, feet, inches …</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_geographicLocation" type="entloc:GeographicLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LocalPlace">
+    <xs:annotation>
+      <xs:documentation>Allows us to determine where things are in relation to a local coordinate system.It is an abstract modeling concept that provides a linking point to other parts of the SID model.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:Place">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_physicalResource" type="entres:PhysicalResource" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Place">
+    <xs:annotation>
+      <xs:documentation>Place answers the question "where ?"It is an abstract modeling concept that provides a linking point to other parts of the SID model.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier for Place.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The time period that the Place is valid for
+
+
+
+Permitted Values:  Refer Time Period class</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_resource" type="entres:Resource" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_placeExtension" type="entcombusentext:PlaceExtension" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Property">
+    <xs:annotation>
+      <xs:documentation>A piece of land with defined legal boundaries.This is an example of a concrete Geographic Location entity.
+
+
+
+Synonyms / Aliases:	Land Parcel</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="lotNr" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A number assigned to a Property lot that is used to identify it.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="landUse" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A series of operations on land, carried out by humans, with the intention to obtain products and/or benefits through using land resources. [Land Use Database]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="landCover" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The vegetation (natural or planted) or man made constructions (buildings, etc.) which occur on the earth surface. Water, ice, bare rock, sand and similar surfaces also count as land cover. [Land Use Database]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="elevation" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The height above sea level, in the indicated units</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The property name, if it exists.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_urbanPropertyAddress" type="entloc:UrbanPropertyAddress" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StreetSegment">
+    <xs:annotation>
+      <xs:documentation>Each of the parts into which Street is or may be divided.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="suburb" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An outlying district of a city, especially a residential one.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_geographicAddress" type="entloc:GeographicAddress" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UrbanPropertyAddress">
+    <xs:annotation>
+      <xs:documentation>An UrbanPropertyAddress is a structured textual way of describing how to find a Property in an urban area (country properties are often defined differently). It is usually composed of an ordered list of Location names based on context specific rulesThis is an example of a concrete Geographic Location entity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:GeographicAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="streetNrFirst" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A number identifying a specific property on a public street. It may be combined with streetNrLast for ranged addresses.
+
+
+
+Notes: A ranged address could be “26-28 XXX Street”</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="streetNrFirstSuffix" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The first street number suffix.
+
+
+
+Notes: e.g. “A” for address “101A”</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="streetNrLast" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The last number in a range of street numbers allocated to a property.
+
+
+
+Notes: only entered for ranged addresses, otherwise left blank</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="streetNrLastSuffix" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The last street number suffix for a ranged address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="streetName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The name of the street or other street type.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="streetType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The kind of street, such as alley, avenue, boulevard, brae, crescent, drive, highway, lane, terrace, parade, place, tarn, way, wharf.
+
+
+
+Notes: may need to store a set of abbreviations as well</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="streetSuffix" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A modifier denoting a relative direction
+
+
+
+Notes: e.g. CENTRAL, EAST, LOWER, NORTH, NORTH EAST, NORTH WEST, SOUTH, SOUTH EAST, SOUTH WEST, UPPER, WEST</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="locality" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>"An area of defined or undefined boundaries within a local authority or other legislatively defined area, usually rural or semi rural in nature." [ANZLIC-STREET], or a suburb "a bounded locality within a city, town or shire principally of urban character " [ANZLIC-STREET]</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="postcode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A descriptor for a postal delivery area, used to speed and simplify the delivery of mail.
+
+
+
+Notes: also known as ZIP code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_property" type="entloc:Property" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UrbanPropertySubAddress">
+    <xs:annotation>
+      <xs:documentation>An UrbanPropertySubAddress is used for addressing within a property in an urban area (country properties are often defined differently).. It may refer to a building, a building cluster, or a floor of a multistory building.This is an example of a concrete Geographic Location entity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entloc:GeographicSubAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="subUnitType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The type of subunit.
+
+
+
+Notes: e.g.BERTH, FLAT, PIER, SUITE, SHOP, TOWER, UNIT, WHARF</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="subUnitNr" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The discriminator used for the subunit.
+
+
+
+Notes: often just a sumple number e.g. FLAT 5, may also be a range</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="levelType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The level types within a building.
+
+
+
+Notes: e.g. BASEMENT, FLOOR, LOWER GROUND, LEVEL, MEZZANINE, UPPER GROUND</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="levelNr" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A number used where a level type may be repeated e.g. BASEMENT 1, BASEMENT 2.
+
+
+
+Notes: some level Types do not require a level Nr e.g.  BASEMENT, LOWER GROUND, MEZZANINE, UPPER GROUND</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="buildingName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A well known name for a building.
+
+
+
+Notes: e.g. Telstra house, Parliament house</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="privateStreetName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Private streets internal to a property (e.g. a university) may have internal names that are not recorded by the land title office.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

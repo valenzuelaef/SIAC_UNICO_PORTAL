@@ -1,0 +1,57 @@
+﻿@using System.Web.Optimization
+@model   Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.Prepaid.DataReloadModel
+    @{
+        Layout = null;
+    }
+
+    <div id="contenedorDetailVisualizeReload" class="table">
+        <input type="hidden" id="headers" value="@Model.Headers" />
+        <div class="row">
+            <div>
+                <div class="table-responsive">
+                    <table id="tblDetailVisualizeReload" class="table  table-striped table-hover claro-modal-tabla table-bordered">
+                        <thead>
+                            <tr class="claro-bg-primary">
+                                <th style="text-align:center;">Seleccionar</th>
+                                <th>Fecha Hora</th>
+                                <th>Tipo de Movimiento</th>
+                                <th>Tipo Recarga</th>
+                                <th>Monto</th>
+                                <th>Saldo</th>
+                                <th>Cr&eacute;dito / D&eacute;bito</th>
+                                <th>Bolsa</th>
+                                <th>Tipo de Saldo</th>
+                                <th>Descripci&oacute;n</th>
+                                <th>Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.listDataReloadModel.Count != null)
+                            {
+                                foreach (Claro.SIACU.Web.WebApplication.Areas.Dashboard.Helpers.Prepaid.DataReloadHerper.DataReload item in Model.listDataReloadModel)
+                                {
+                                    <tr>
+                                        <td style="text-align:center;"><input type="checkbox" alt="Seleccionar" class="SelectCopy" /></td>
+                                        <td>@item.DateTimeOperation</td>
+                                        <td>@item.Kindmovement</td>
+                                        <td>@item.kindReload</td>
+                                        <td>@item.NominalAmount</td>
+                                        <td>@item.Balance</td>
+                                        <td>@item.Credit</td>
+                                        <td>@item.Bag</td>
+                                        <td>@item.KindBalance</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.Detail</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+ @Scripts.Render("~/bundles/Dashboard/PrepaidDataReload/DetailVisualizeReload")

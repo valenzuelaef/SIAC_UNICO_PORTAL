@@ -1,0 +1,104 @@
+﻿@using System.Web.Optimization;
+@model  Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataCollection.CollectionFeeEquipmentModel
+@{
+    Layout = null;
+}
+<style>
+    .col-md-6 {
+        width: 100%;
+    }
+
+</style>
+<div id="modal-content">
+<div id="ContentFeeEquipment">
+    <div id="FeeEquipment">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-condensed ">
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-2">
+                                <label class="control-label">Código Cliente :</label>
+                            </div>
+                            <div class="col-md-2">@Model.ClientId</div>
+                            <div class="col-md-2">
+                                <label class="control-label">Nombre/Razón Social :</label>
+                            </div>
+                            <div class="col-md-2">@Model.NameClient</div>
+                            <div class="col-md-2">
+                                <label class="control-label">Nro. Claro/Servicio :</label>
+                            </div>
+                            <div class="col-md-2">@Model.NumberServices</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-2">
+                                <label class="control-label">Total Importe Original : </label>
+                            </div>
+                            <div class="col-md-2">@Model.ImportOrigin</div>
+                            <div class="col-md-2">
+                                <label class="control-label">Total Importe Pendiente :</label>
+                            </div>
+                            <div class="col-md-2">@Model.ImportPending</div>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="table">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table  table-hover claro-modal-tabla table-bordered" id="tblFeeEquipment">
+                                <thead class="claro-bg-primary">
+                                    <tr>
+                                        <th class="col-sm-1">Nro</th>
+                                        <th class="col-sm-1">Detalle</th>
+                                        <th class="col-sm-1">Documento</th>
+                                        <th class="col-sm-1">Descripción Pago</th>
+                                        <th class="col-sm-1">IMEI</th>
+                                        <th class="col-sm-1">Estado</th>
+                                        <th class="col-sm-1">Fec Emisión</th>
+                                        <th class="col-sm-1">Fec Venc</th>
+                                        <th class="col-sm-1">Importe Original</th>
+                                        <th class="col-sm-1">Importe Pendiente</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{                                        
+                                            var num = 0;
+                                            foreach (var item in Model.listFeeEquipmentModel)
+                                            {num += 1;
+                                                <tr><td>@num</td>
+                                                    <td>@item.Type</td>
+                                                    <td>@item.Document </td>
+                                                    <td>@item.NumberSisact</td>
+                                                    <td>@item.NumberIMEI</td>
+                                                    <td>@item.State</td>
+                                                    <td>@item.DateIssue</td>
+                                                    <td>@item.DateDue</td>
+                                                    <td>@item.ImportOrigin</td>
+                                                    <td>@item.ImportPending</td>
+                                                   
+                                                </tr>
+                                            }
+                                           
+                                        
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+    </div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataCollection/PostpaidFeeEquipment")

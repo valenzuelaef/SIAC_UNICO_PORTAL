@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entloc="http://claro.com.pe/esb/data/commonBusinessEntities/location/v2/" xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:entresspe="http://claro.com.pe/esb/data/resource/resourceSpecification/v2/" xmlns:entres="http://claro.com.pe/esb/data/resource/resource/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entprod="http://claro.com.pe/esb/data/product/product/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entlogres="http://claro.com.pe/esb/data/resource/logicalResource/v2/" xmlns:entser="http://claro.com.pe/esb/data/service/service/v2/" targetNamespace="http://claro.com.pe/esb/data/resource/resource/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../CommonBusinessEntities/BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="LogicalResource_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/logicalResource/v2/" />
+  <xs:import schemaLocation="ResourceSpecification_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/resourceSpecification/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/Location_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/location/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/RootBusinessEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:import schemaLocation="../Service/Service_v2.xsd" namespace="http://claro.com.pe/esb/data/service/service/v2/" />
+  <xs:import schemaLocation="../Product/Product_v2.xsd" namespace="http://claro.com.pe/esb/data/product/product/v2/" />
+  <xs:import schemaLocation="../EngagedParty/Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="API">
+    <xs:annotation>
+      <xs:documentation>An API, an abbreviation of application program interface, is a set of routines, protocols, and tools for building software applications.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_aPISpecification" type="entresspe:APISpecification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuthenticationEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="entlogres:SecurityInfo">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Card">
+    <xs:annotation>
+      <xs:documentation>This is based on the DEN Card class. It is defined as follows:
+
+This class represents a type of physical container that can be plugged into a Slot. It may represent a primary function (e.g., a networking card) or an auxiliary function (e.g., a memory card) that supports another card. All objects of this type are capable of carrying electrical and/or optical signals. They also provide a mounting point for other types of ManagedePhysicalElements, such as Chips or Cards.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="cardCompatibilityResults" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This is an attribute that is used to store the result of the negotiation process between a Card and its EquipmentHolder to see if they are compatible. This is the result of the isCompatible() method, with the Card being the source and the EquipmentHolder being the target, translated into a textual description.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="daughterCardInstallStatus" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an enumerated integer that defines the current installation status of this Card's daughter Cards. Note that this defines the status of daughter Cards as viewed by the hosting Card. Status values of individual daughter Cards are defined by attributes in the daughter card itself. Values include:
+
+ 0: Not Applicable (doesn't have any DaughterCards)
+ 1: All Daughter Cards are installed
+ 2: Some Daughter Cards are installed
+ 3: No Daughter Cards are installed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="daughterCardOperatingStatus" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an enumerated integer that defines the current operating status of this Card's daughter Cards. Note that this defines the operating status of daughter Cards as viewed by the hosting Card. Status values of individual daughter Cards are defined by attributes in the daughter card itself. 
+
+This attribute only defines the physical operating characteristics of the daughter card. It does not say whether the daughter Card is functioning correctly, as that is a logical attribute.
+
+Values include:
+
+ 0: Not Applicable (doesn't have any DaughterCards)
+ 1: All Daughter Cards are operating correctly
+ 2: Some Daughter Cards are operating incorrectly
+ 3: No Daughter Cards are operating correctly</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="daughterCardRequirements" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an enumerated integer that defines the relationship between this Card and all DaughterCards. Values include:
+
+ 1: No DaughterCard can be attached
+ 2: Requires 1 or more DaughterCards to function correctly
+ 3: Can optionally use 1 or more DaughterCards</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isConfigurablePhysically" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>This is a boolean attribute that, if TRUE, indicates that this Card has one or more options that can be physically configured. Each of these options has a distinct physical manifestation (e.g., additional memory, or faster CPU) that usually (but not always) results in occupying more room in the Card.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isMotherBoard" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>This is a Boolean attribute that, if TRUE, defines this Card as either a motherboard or another type of hosting board. When FALSE, it isn't.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isUniquePhysical" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>This is a boolean attribute that, if TRUE, defines this Card to be physically different from other Cards of the same type and therefore requires a special slot. The unique aspects of this Card are described in the UniqueRequirementsPhysical attribute. An example might be a different form factor than other Cards of its type, or the ability to set jumpers on the Card to control its functionality (e.g., clocking).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxDataWidth" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an integer that defines the maximum bus width of this Card. Values include:
+
+ 0: Unknown
+ 1: Special
+ 8: 8 bit data bus
+ 16: 16 bit data bus
+ 24: 24 bit data bus
+ 32: 32 bit data bus
+ 64: 64 bit data bus
+ 128: 128 bit data bus
+
+The value "1" can be used for any non-standard data bus width.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="slotLayout" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This is a free-form string that describes the positioning, spacing, typical usage, restrictions, and any other pertinent information that defines how the Card is to be positioned into the Slot.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="slotsRequired" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an integer that defines the number of slots required to hold this Card. Since this is usually 1, that value is assigned as its default value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="uniqueRequirementsPhysical" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This is a free-form string that contains the physically unique requirements of this Card. For example, it must go in a certain slot number because it has special dimensions. This attribute should only be filled in if the value of the IsUniquePhysical attribute is TRUE; otherwise, it should be NULL.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="hardwareVersion" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This is a string attribute that contains the hardware version number of this Card.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_physicalPort" type="entres:PhysicalPort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Hardware">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class that represents any type of hardware entity that exists as an atomic unit that is not a PhysicalLink or a PhysicalConnector. Hardware is defined as any component that has a distinct physical identity and can be a component of a PhysicalDevice. An object has a physical identity if it has a physical manifestation that enables it to be held and have a label attached to it. Thus, software, files, protocols, and policies are not physical objects.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entres:PhysicalResource">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="depth" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This attribute defines the depth of the ManagedComponent using the units specified in the MeasurementUnits attribute. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="height" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This attribute defines the height of the ManagedComponent using the units specified in the MeasurementUnits attribute. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="measurementUnits" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This attribute defines the MeasurementUnits for the Depth, Height, and Width attributes of this object. Values include:
+
+ 0: Unknown (or not measured)
+ 1: inches
+ 2: feet
+ 3: millimeters
+ 4: centimeters
+ 5: meters
+
+This is an optional attribute. However, if any of the Depth, Height, or Width attributes are defined, then this attribute is REQUIRED.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="weight" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This attribute defines the weight of the ManagedComponent using the units specified in the WeightUnits attribute. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="weightUnits" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This attribute defines the Units for the Weight attribute of this object. Values include:
+
+ 0: Unknown (Not Measured)
+ 1: ounces
+ 2: pounds
+ 3: grams
+ 4: kilograms
+
+This is an optional attribute. However, if Weight attribute is defined, then this attribute is REQUIRED.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="width" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This attribute defines the width of the ManagedComponent using the units specified in the MeasurementUnits attribute. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_physicalLink" type="entres:PhysicalLink" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_physicalConnector" type="entres:PhysicalConnector" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PhysicalConnector">
+    <xs:annotation>
+      <xs:documentation>This is a concrete class that represents any type of hardware unit that is used to connect to other hardware units and transmit signals and/or power between them.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="cableType" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an enumerated integer, and defines the particular type of cable that is attached to this connector. Values include:
+
+ 0: Unknown
+ 1: RS-232
+ 2: RS-422
+ 3: RS-423
+ 4: RS-449
+ 5: RS-485
+ 6: RS-530
+ 7: V.35
+ 8: X.21
+ 9: 9 um single-mode
+ 10: 62.5/125 um multi-mode
+ 11: USB
+
+to be continued, not done!
+
+This is a REQUIRED attribute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="gender" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an enumerated integer that defines the gender type of the connector. Values are:
+
+ 0: Unknown
+ 1: Not Applicable
+ 2: Male
+ 3: Female
+
+This is a REQUIRED attribute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="inUse" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>This is a boolean attribute that, if TRUE, indicates that this PhysicalConnector is in use by some other component of the system. This is an optional attribute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="pinDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This is a free-form string describing the pin configuration and signal usage of a PhysicalConnector.
+
+This is a REQUIRED attribute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="typeOfConnector" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an enumerated integer that defines the type of connector that this instance is. Values include:
+
+ 0: Unknown
+ 1: DB-9
+ 2: DB-15
+ 3: DB-25
+ 4: DB-36
+ 5: DB-60
+ 6: SC
+ 7: SG
+
+to be continued, not done!
+
+This is a REQUIRED attribute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_physicalPort" type="entres:PhysicalPort" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_hardware" type="entres:Hardware" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PhysicalDevice">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class for representing hardware devices that can be managed. This class represents a convenient aggregation point for combining different aspects of a device (e.g., the cables, connectors, cards, power supplies, and other objects that together make up the device). Thus, it enables the device itself to have a physical manifestation (e.g., the "Internet Gateway Router" can be identified as a PhysicalDevice). Examples of this class include routers and switches, computers, and other end-devices that are managed.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entres:PhysicalResource">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="backplaneIndependent" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>This is a boolean attribute that, if TRUE, indicates that this ManagedDevice has independent backplanes that can be managed separately. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="backplaneNumber" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This is an integer that defines the number of backplanes that this device has. This is an optional attribute.
+
+--&gt;Este es un número entero que define la cantidad de planos posteriores que tiene este dispositivo. Este es un atributo opcional.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="configurationOrder" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is a free-form string that provides any order-specific instructions for configuring the set of components that together constitute this PhysicalDevice. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="deviceGroupID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is a string, and is used to uniquely identify this device as a member of a group of devices. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="isComposite" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>This is a Boolean attribute that, if TRUE, means that this physical device is in reality made up of a set of physical devices, each of which can be individually managed. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="canMixPower" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>This is a Boolean attribute that, if TRUE, means that AC and/or DC power supplies can be used in this device. If it is false, then only one or the other can be used.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_hardware" type="entres:Hardware" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_physicalDeviceComposite" type="entres:PhysicalDeviceComposite" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PhysicalDeviceComposite">
+    <xs:annotation>
+      <xs:documentation>This is a concrete base class for representing hardware devices that can be managed that contains one or more sub-ordinate devices. In other words, this physical device is not a stand-alone physical device; rather, it represents an aggregation of physical devices. Each physical device in this aggregation can be managed.
+
+This class represents a convenient aggregation point for combining different aspects of a device (e.g., its physical composition as well as the set of services that it offers). It also enables the device itself to have a physical manifestation. Examples of this class include routers and switches, computers, and other end-devices that are managed.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="numberOfDevicesTotal" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This attribute defines the total number of PhysicalDevices aggregated by this PhysicalDeviceComposite object. Note that this aggregation is for that particular level of aggregation. Thus, if a PhysicalDeviceComposite, called A, contains another PhysicalDeviceComposite, called B, then B's instance of this attribute will define how many PhysicalDevices are aggregated by B, whereas A's instance of this attribute will defined how many PhysicalDevices are aggregated by A (which includes those aggregated by B).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="numberOfDevicesCurrent" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This attribute defines the current number of PhysicalDevices aggregated by this PhysicalDeviceComposite object that are active and manageable.
+
+Note that this aggregation is for that particular level of aggregation. Thus, if a PhysicalDeviceComposite, called A, contains another PhysicalDeviceComposite, called B, then B's instance of this attribute will define how many PhysicalDevices are aggregated by B, whereas A's instance of this attribute will defined how many PhysicalDevices are aggregated by A (which includes those aggregated by B).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_physicalDevice" type="entres:PhysicalDevice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PhysicalLink">
+    <xs:annotation>
+      <xs:documentation>This is a concrete class that represents the connecting or cabling together of hardware entities. This enables both wireless and connector-based communication to be modeled.
+
+--&gt;Esta es una clase concreta que representa la conexión o el cableado de las entidades de hardware. Esto permite modelar tanto la comunicación inalámbrica como la basada en conector.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entres:PhysicalResource">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="isWireless" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>This is a Boolean attribute that defines whether this link is a wireless connection or not. TRUE means that this is a wireless connection, and FALSE means that the connection uses one or more cables and connectors to communicate. This is a REQUIRED attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="currentLength" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is a string attribute that defines the current length of the PhysicalLink in feet. For some connections, such as wireless connections, this property may not be applicable and should be assigned the special value of NULL. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="maximumLength" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is a string attribute that defines the maximum allowable length of the PhysicalLink in feet. For some connections, such as wireless connections, this property may not be applicable and should be assigned the special value of NULL. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="mediaType" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This is an enumerated integer, and is used to define the particular type of media that is used to carry communication. Values include:
+
+ 0: Unknown
+ 1: Wireless
+ 2: Cat1
+ 3: Cat2
+ 4: Cat3
+ 5: Cat4
+ 6: Cat5
+ 7: 50-ohm Coaxial
+ 8: 75-ohm Coaxial
+ 9: 100-ohm Coaxial
+ 10: Fiber-optic
+ 11: UTP
+ 12: STP
+ 13: Ribbon Cable
+ 14: Twinaxial
+ 15: Optical 9um
+ 16: Optical 50um
+ 17: Optical 62.5um
+
+This is a REQUIRED attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_hardware" type="entres:Hardware" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PhysicalPort">
+    <xs:annotation>
+      <xs:documentation>This class represents an actual or potential end point of a topological (physical) link, and corresponds directly to a physical port on a topology map. PhysicalPorts are always contained by another physical object - they can't exist by themselves. The two most common examples are PhysicalPorts on a Card and on a Chassis.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="duplexMode" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an enumerated integer that defines the duplex mode of this port. Values are:
+
+ 0: Unknown
+ 1: Full Duplex
+ 2: Half Duplex
+
+This is a REQUIRED attribute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ifType" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an enumerated integer, and specifies the particular media type of the link. This attribute provides additional detail beyond that provided in the ifType of an ifEntry of a MIB (e.g., distinguishing between 10Base and 100Base ethernet). Values include:
+
+ 0: Unknown
+ 1: 10BaseT
+ 2: 100BaseT
+ 3: 10-100BaseT
+ 4: 1000BaseT
+ 5: 10000BaseT
+ 6: DS-0
+ 7: DS-1
+ 8: DS-3
+ 9: OC-3
+10: OC-12
+11: OC-48
+12: OC-192
+
+This is a REQUIRED attribute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="portNumber" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is a non-zero integer that uniquely identifies this PhysicalPort instance from all other instances. This is a REQUIRED attribute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="typeOfPPort" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an enumerated integer that defines the particular type of PhysicalPort this instance is. Values include:
+
+0: Unknown
+1: Ethernet
+2: FastEthernet
+3: Auto-Sensing
+4: GigabitEthernet
+5: FastGigabitEthernet
+6: DS-0
+7: DS-1
+8: DS-3
+9: T1
+10: T3
+11: E1
+12: E3
+13: OC-3
+14: OC-12
+15: OC-48
+16: OC-192
+17: RS-232C
+
+This is a REQUIRED attribute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="vendorPortName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This is a string that contains the vendor-specific name of this port. This is different from the commonName attribute, which represents a system-wide naming structure for all ManagedEntities.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_card" type="entres:Card" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_physicalConnector" type="entres:PhysicalConnector" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PhysicalResource">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class for describing different types of hardware that constitute a Product. It has two main purposes: (1) to collect common attributes and relationships for all hardware, and (2) to provide a convenient, single point where relationships with other managed objects can be defined.
+
+The HasWarrantyInfo association (not shown) describes warranty information of hardware.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entres:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="manufactureDate" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is a string attribute that defines the date of manufacture of this item in the fixed format "dd/mm/yyyy". This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="otherIdentifier" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is a string that is used to contain other important identifying data, such as a bar code, of the hardware item. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="powerState" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This is an enumerated integer that defines the current power status of the hardware item. Values include:
+
+ 0: Unknown
+ 1: Not Applicable
+ 2: No Power Applied
+ 3: Full Power Applied
+ 4: Power Save - Normal
+ 5: Power Save - Degraded
+ 6: Power Save - Standby
+ 7: Power Save - Critical
+ 8: Power Save - Low Power Mode
+ 9: Power Save - Unknown
+ 10: Power Cycle
+ 11: Power Warning
+ 12: Power Off
+
+Value 1 means that the hardware item doesn't require the direct application of power (e.g., a but or bolt). If the value for this item is 3, then the PowerCapability class will describe the particular power requirements of this item through the HasPower association.
+
+This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="serialNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is a string that represents a manufacturer-allocated number used to identify different instances of the same hardware item. The ModelNumber and PartNumber attributes are used to identify different types of hardware items. This is a REQUIRED attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="versionNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is a string that identifies the version of this object. This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_localPlace" type="entloc:LocalPlace" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="resourceFacingService" type="entser:ResourceFacingService" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_physicalResourceRole" type="entres:PhysicalResourceRole" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_product" type="entprod:Product" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PhysicalResourceRole">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class that defines the concept of various types of roles that can be associated with PhysicalResources.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_physicalResource" type="entres:PhysicalResource" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_physicalResourceSpec" type="entresspe:PhysicalResourceSpec" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Resource">
+    <xs:annotation>
+      <xs:documentation>This object class defines the attributes that are common to all resource objects.
+
+See R_TMF518_NRB_I_0001.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="usageState" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This is an enumerated integer that defines the current usage of the object. It includes the following values:
+
+ 0: Unknown
+ 1: Not Installed
+ 2: Installed
+ 3: Inactive
+ 4: Idle
+ 5: Active, but able to communicate
+ 6: Busy (Active and unable to communicate)
+
+Value 2 means that the object is installed (or otherwise activated) but no other information about its state is available. Values 3-6 imply that the object is Installed, and provide further information as to its state.
+
+This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_resourceFacingService" type="entser:ResourceFacingService" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_resourceSpecification" type="entresspe:ResourceSpecification" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_resourceCharacteristicValue" type="entres:ResourceCharacteristicValue" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_businessInteractionItem" type="entbusint:BusinessInteractionItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceCharacteristicValue">
+    <xs:annotation>
+      <xs:documentation>A value of a ResourceSpecCharacteristic chosen for a Resource that further defines what the Resource is.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A fact that describes an entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the characteristic value is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_resource" type="entres:Resource" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceCharacteristicValue" type="entser:ServiceCharacteristicValue" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_resourceSpecCharacteristic" type="entresspe:ResourceSpecCharacteristic" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_resourceSpecCharacteristicValue" type="entresspe:ResourceSpecCharacteristicValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResourceRole">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class that defines the concept of various types of roles associated with Resources (both physical and logical) in the model.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:EntityRole">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_resourceInteractionRole" type="entbusint:ResourceInteractionRole" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

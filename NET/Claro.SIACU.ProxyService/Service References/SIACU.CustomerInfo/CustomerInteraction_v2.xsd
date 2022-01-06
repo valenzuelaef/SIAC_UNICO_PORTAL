@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entappcusbilrat="http://claro.com.pe/esb/data/customer/appliedCustomerBillingRate/v2/" xmlns:entcusint="http://claro.com.pe/esb/data/customer/customerInteraction/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entcus="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:entcusbil="http://claro.com.pe/esb/data/customer/customerBill/v2/" targetNamespace="http://claro.com.pe/esb/data/customer/customerInteraction/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="AppliedCustomerBillingRate_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/appliedCustomerBillingRate/v2/" />
+  <xs:import schemaLocation="CustomerBill_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerBill/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:import schemaLocation="Customer_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customer/v2/" />
+  <xs:complexType name="CustomerDisputedAmount">
+    <xs:annotation>
+      <xs:documentation>CustomerDisputedAmount is a type of DisputedAmount which represents an amount of money in dispute between the enterprise and one of its customers</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:DisputedAmount">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_customerAccount" type="entcus:CustomerAccount" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_customerBill" type="entcusbil:CustomerBill" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_appliedCustomerBillingCredit" type="entappcusbilrat:AppliedCustomerBillingCredit" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CustomerInquiry">
+    <xs:annotation>
+      <xs:documentation>A request for information from a Customer.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

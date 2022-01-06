@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entmarsalext="http://claro.com.pe/esb/data/marketSales/marketSalesExtension/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" targetNamespace="http://claro.com.pe/esb/data/marketSales/marketSalesExtension/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:complexType name="SalesChannelExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

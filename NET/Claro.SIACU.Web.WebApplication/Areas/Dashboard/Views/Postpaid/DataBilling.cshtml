@@ -1,0 +1,224 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.Postpaid.DataBillingModel
+
+<div id="FormPostpaidDataBilling">
+    <table class="table table-condensed">
+        <tr>
+            <td class="col-md-2">
+                <label class="control-label">
+                    N° Ult. Factura
+                </label>
+            </td>
+            <td class="col-md-2"><span>@Model.InvoiceNumber</span></td>
+            <td class="col-md-1"></td>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Fecha Emisión
+                </label>
+            </td>
+            <td class="col-md-2"><span>@Model.EmissionDate</span> </td>
+            <td class="col-md-1"></td>
+        </tr>
+
+        <tr>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Monto (con IGV)
+                </label>
+            </td>
+            <td class="col-md-2"><span> @Model.TotalChargesMonth.ToString("N")</span></td>
+            <td class="col-md-1"></td>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Fecha Vencimiento
+                </label>
+            </td>
+            <td class="col-md-2" colspan="2"><span>@Model.ExpirationDate</span></td>
+            <td class="col-md-1"></td>
+        </tr>
+
+        <tr>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Cargo Fijo
+                </label>
+            </td>
+            <td class="col-md-2"><span>@Model.TotalAccess.ToString("N")</span></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs " profile="SU_ACP_CCF,SU_HFC_CCF,SU_IFI_CCF"
+                        data-toggle="modal" id="btnFixedChargedlg">
+                    ...
+                </button>
+            </td>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Tráfico Local
+                </label>
+            </td>
+            <td class="col-md-2"><span>@Model.LocalTrafficAdditional.ToString("N")</span></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs " profile="SU_ACP_CTT,SU_HFC_CTT,SU_IFI_CTT"
+                        data-toggle="modal" id="btnAdditionalLocalTrafficDetaildlg">
+                    ...
+                </button>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Tráfico Local Consumo
+                </label>
+            </td>
+            <td class="col-md-2"><span>@Model.LocalTrafficConsume.ToString("N")</span></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs " profile="SU_ACP_CTM,SU_HFC_CTM,SU_IFI_CTM"
+                        data-toggle="modal" id="btnConsumeLocalTrafficDetaildlg">
+                    ...
+                </button>
+            </td>
+            <td class="col-md-2">
+                <label class="control-label">
+                    LDN
+                </label>
+            </td>
+            <td class="col-md-2"><span>@Model.LongDistanceNational.ToString("N")</span></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs " profile="SU_ACP_CDN,SU_HFC_CDN,SU_IFI_CDN"
+                        data-toggle="modal" id="btnListNationalLongDistancedlg">
+                    ...
+                </button>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="col-md-2">
+                <label class="control-label">
+                    LDI
+                </label>
+            </td>
+            <td class="col-md-2"><span>@Model.LongDistanceInternational.ToString("N")</span></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs " profile="SU_ACP_CLD,SU_HFC_CLD,SU_IFI_CLD"
+                        data-toggle="modal" id="btnListInternationalLongDistancedlg">
+                    ...
+                </button>
+            </td>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Roaming
+                </label>
+            </td>
+            <td class="col-md-2"><span>@Model.RoamingInternational.ToString("N")</span></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs" profile="SU_ACP_CRO,SU_HFC_CRO,SU_IFI_CRO"
+                        data-toggle="modal" id="btnInternationalRoamingDetaildlg">
+                    ...
+                </button>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Servicios Adicionales
+                </label>                       
+            </td>
+            <td class="col-md-2"><span>@Model.TotalSubscription.ToString("N")</span></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs " profile="SU_ACP_CAA,SU_HFC_CAA,SU_IFI_CAA"
+                        data-toggle="modal"
+                        id="ListServiciosAdicionalesdlg">
+                    ...
+                </button>
+            </td>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Otros Cargos y Abonos
+                </label>
+            </td>
+            <td class="col-md-2"><span>@Model.TotalOCCs.ToString("N")</span></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs " profile="SU_ACP_COA,SU_HFC_COA,SU_IFI_COA"
+                        data-toggle="modal"
+                        id="ListOtrosCargosAbonosdlg">
+                    <!--data-target="#ListOtrosCargosAbonosdlg"-->
+                    ...
+                </button>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Deuda Cliente
+                </label>
+            </td>
+            <td class="col-md-2"></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs " profile="SU_ACP_DAC,SU_HFC_DAC,SU_IFI_DAC"
+                        data-toggle="modal" id="btnDebtDetaildlg">
+                    ...
+                </button>
+            </td>
+            <td class="col-md-2"></td>
+            <td class="col-md-2"></td>
+            <td class="col-md-1"></td>
+        </tr>
+
+
+        <tr>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Histórico de Entrega
+                </label>
+            </td>
+            <td class="col-md-2"></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs "
+                        data-toggle="modal" id="btnListHistoricoEntregadlg">
+                    ...
+                </button>
+            </td>
+            <td class="col-md-2">
+                <label class="control-label">
+                    Recibo por Correo Electrónico
+                </label>
+            </td>
+            <td class="col-md-2"></td>
+            <td class="col-md-1">
+                @*@Html.CheckBoxFor(m => m.SendMail, new { id = "1", @class = "magic-checkbox", @disabled = true })*@
+
+                
+                        <input type="checkbox" disabled="true" checked="@Model.SendMail"> 
+                   
+
+            </td>
+        </tr>
+
+
+    </table>
+
+    <input type="hidden" id="hidInvoiceNumber" value=@Model.InvoiceNumberOriginal />
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default" style="padding:1% !important">
+                <button id="btnShowInvoice" type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" data-target="#ListFacturaClientedlg" data-path="@Model.FilePath" data-filename="@Model.FileName" data-flagbill="@Model.FlagBill" data-nroinvoice="@Model.InvoiceNumber" profile="SU_ACP_CVF,SU_HFC_CVF,SU_IFI_CVF">Ver Factura</button>
+                <button id="btnHistoryInvoice" type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" data-target="#ListFacturaClientedlg" profile="SU_ACP_CFT,SU_HFC_CFT,SU_IFI_CFT">Hist. Facturas</button>
+                @if (Model.btnHistHR)
+                {
+                    <button id="btnHistoryHR" type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" data-target="#ListFacturaClienteHRdlg">Hist. HR</button>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Postpaid/PostpaidDataBilling")
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://claro.com.pe/eai/services/restrictethevelocws/ws/types/schema" xmlns:base="http://claro.com.pe/eai/services/baseschema" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/services/restrictethevelocws/ws/types/schema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="BaseSchema.xsd" namespace="http://claro.com.pe/eai/services/baseschema" />
+  <xsd:element name="consultarTetheDegVelocRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="msisdn" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="consultarTetheDegVelocResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element name="tethering" type="xsd:string" />
+        <xsd:element name="fechaT" type="xsd:string" />
+        <xsd:element name="velocidad" type="xsd:string" />
+        <xsd:element name="fechaV" type="xsd:string" />
+        <xsd:element name="error" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

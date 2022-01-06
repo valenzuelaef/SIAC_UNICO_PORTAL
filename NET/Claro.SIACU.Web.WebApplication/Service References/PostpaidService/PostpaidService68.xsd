@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetCustomer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetCustomer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetTypeProductDatOut" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="CustomerRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountCustomer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdTransaction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IpApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumCellphone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Plataform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeSearch" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserApplication" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetTypeProductDatOut" minOccurs="0" name="outOptional" nillable="true" type="q2:outTypeProductDat" />
+          <xs:element minOccurs="0" name="strTecnologia" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerRequestPostPaid" nillable="true" type="tns:CustomerRequestPostPaid" />
+  <xs:complexType name="CustomerResponsePostPaid">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="ObjCustomer" nillable="true" type="q3:CustomerPostPaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerResponsePostPaid" nillable="true" type="tns:CustomerResponsePostPaid" />
+</xs:schema>

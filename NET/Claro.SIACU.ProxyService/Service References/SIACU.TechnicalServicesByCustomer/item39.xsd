@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entser="http://claro.com.pe/esb/data/service/service/v2/" xmlns:entsercon="http://claro.com.pe/esb/data/service/serviceConfiguration/v2/" targetNamespace="http://claro.com.pe/esb/data/service/serviceConfiguration/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Service_v2.xsd" namespace="http://claro.com.pe/esb/data/service/service/v2/" />
+  <xs:complexType name="ServiceConfigSpec">
+    <xs:annotation>
+      <xs:documentation>The definition of how a Service operates or functions in terms of CharacteristicSpecification(s) and related ResourceSpec(s) and ServiceSpec(s).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceConfiguration" type="entsercon:ServiceConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_serviceSpecification" type="entser:ServiceSpecification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceConfiguration">
+    <xs:annotation>
+      <xs:documentation>A representation of how a  Service operates or functions in terms of characteristics and related Resource(s) and Service(s).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_serviceConfigSpec" type="entsercon:ServiceConfigSpec" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

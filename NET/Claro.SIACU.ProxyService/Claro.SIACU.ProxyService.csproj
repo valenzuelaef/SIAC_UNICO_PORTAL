@@ -1,0 +1,3097 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DFB4824-4372-400F-BFA8-F3C59359982A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Claro.SIACU.ProxyService</RootNamespace>
+    <AssemblyName>Claro.SIACU.ProxyService</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Audit.Redirect\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIAC.Claves\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SecurityService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIAC.ActivarVOLTE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIAC.ParamaetrosClarify\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIAC.ConsultaLineaCuenta\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIAC.Segment\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIAC.Seguridad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.AccountDue\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.CreditBalance\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.CustomerContact\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.CustomerHFC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.CustomerLTE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.Customer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.DatosSAP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.DetalleAjuste\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.DocumentoFisicoV3\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.DocumentoFisico\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.FinanceManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.HFC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.HLRUDB\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.IGVHFC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.IMR\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.LTE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.PackageRoaming\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.PeticionAnotacion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.PostpaidService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.RechargesM2M\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.RestricTethecVeloc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.Validate4GLTE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPost.BloqDesbloqLineaPostpago\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPre.BondTFI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPre.BSS_OperacionesINU\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPre.ConsultarDatosSIM\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPre.DataPrePost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPre.PaqueteDatos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACPre.Service2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACSecurity.Permissions\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.BusquedaLineaCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.CustomerInfo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.CustomerManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.Customers\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.Post.BSS_StatusAccount\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.Post.Lines\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.Post.Products\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.Pre.Products\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.RetrieveSubscriptions\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.TechnicalServiceDetails\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SIACU.TechnicalServicesByCustomer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CambioDatosSiacWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAP.Operations\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SIAC.HLRConsult\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SIAC.Post.DatosPrePost_V2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SIACPost.GetCustomerManagementFS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SIACPost.Recharges\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SIACPost.StateAccount\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SIACPre.Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SIACU.Interacciones\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Audit.Redirect\Claro.SIACU.ProxyService.Audit.Redirect.ListaResponseOpcional.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Audit.Redirect\Claro.SIACU.ProxyService.Audit.Redirect.ListaSesionesObtenidas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Audit.Redirect\Claro.SIACU.ProxyService.Audit.Redirect.obtenerSesionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Audit.Redirect\Claro.SIACU.ProxyService.Audit.Redirect.parametrosAuditResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Audit.Redirect\Claro.SIACU.ProxyService.Audit.Redirect.registrarComunicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Audit.Redirect\Claro.SIACU.ProxyService.Audit.Redirect.validarComunicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Audit.Redirect\ValidarCredencialesSUService.wsdl" />
+    <None Include="Service References\Audit.Redirect\ValidarCredencialesSUWSSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIAC.Claves\Claro.SIACU.ProxyService.SIAC.Claves.desencriptarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.Claves\ebsConsultaClavesSB11.wsdl" />
+    <None Include="Service References\SecurityService\Claro.SIACU.ProxyService.SecurityService.LogonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SecurityService\Claro.SIACU.ProxyService.SecurityService.OptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SecurityService\Security.wsdl" />
+    <None Include="Service References\SecurityService\Security.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\Security1.wsdl" />
+    <None Include="Service References\SecurityService\Security1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\Security2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\Security3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\Security4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\Security5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIAC.ActivarVOLTE\Claro.SIACU.ProxyService.SIAC.ActivarVOLTE.activaTecVolteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.ActivarVOLTE\Claro.SIACU.ProxyService.SIAC.ActivarVOLTE.activaTecVolteResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.ActivarVOLTE\Claro.SIACU.ProxyService.SIAC.ActivarVOLTE.consultarTecVoLTEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.ActivarVOLTE\Claro.SIACU.ProxyService.SIAC.ActivarVOLTE.consultarTecVoLTEResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.ActivarVOLTE\ebsActivarVOLTESB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIAC.ActivarVOLTE\ebsActivarVOLTESB111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIAC.ActivarVOLTE\PlantillaWS.wsdl" />
+    <None Include="Service References\SIAC.ConsultaLineaCuenta\Claro.SIACU.ProxyService.SIAC.ConsultaLineaCuenta.consultarLineaCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.ConsultaLineaCuenta\Claro.SIACU.ProxyService.SIAC.ConsultaLineaCuenta.consultarLineaCuentaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.ConsultaLineaCuenta\ConsultaLineaCuentaWS1.wsdl" />
+    <None Include="Service References\SIAC.ConsultaLineaCuenta\ebsConsultaLineaCuentaWSSB111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIAC.ParamaetrosClarify\Claro.SIACU.ProxyService.SIAC.ParamaetrosClarify.parametrosClarifyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.ParamaetrosClarify\ebsParametrosClarifySOAP11Port.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIAC.ParamaetrosClarify\ParametroClarifyWS.wsdl" />
+    <None Include="Service References\SIAC.Segment\Claro.SIACU.ProxyService.SIAC.Segment.ListaConsultaSegmHistorico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.Segment\ebsConsultaSegmento12SB.wsdl" />
+    <None Include="Service References\SIAC.Seguridad\Claro.SIACU.ProxyService.SIAC.Seguridad.leerOpcionesMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.Seguridad\Claro.SIACU.ProxyService.SIAC.Seguridad.menuType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.Seguridad\Claro.SIACU.ProxyService.SIAC.Seguridad.seguridadType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.Seguridad\Claro.SIACU.ProxyService.SIAC.Seguridad.verificaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIAC.Seguridad\ConsultaSeguridad.wsdl" />
+    <None Include="Service References\SIACPost.AccountDue\Claro.SIACU.ProxyService.SIACPost.AccountDue.AuditType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.AccountDue\Claro.SIACU.ProxyService.SIACPost.AccountDue.ClienteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.AccountDue\ConsultaDeudaCuenta.wsdl" />
+    <None Include="Service References\SIACPost.AccountDue\ConsultaDeudaCuenta.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\Claro.SIACU.ProxyService.SIACPost.BloqDesbloqLineaPostpago.consultarBloDesbloResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\Claro.SIACU.ProxyService.SIACPost.BloqDesbloqLineaPostpago.consultarBloDesbloResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\Claro.SIACU.ProxyService.SIACPost.BloqDesbloqLineaPostpago.registrarBloqueoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\Claro.SIACU.ProxyService.SIACPost.BloqDesbloqLineaPostpago.registrarBloqueoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\Claro.SIACU.ProxyService.SIACPost.BloqDesbloqLineaPostpago.registrarDesbloqueoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\Claro.SIACU.ProxyService.SIACPost.BloqDesbloqLineaPostpago.registrarDesbloqueoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.CreditBalance\ebsConsultaSaldo.wsdl" />
+    <None Include="Service References\SIACPost.CustomerContact\Claro.SIACU.ProxyService.SIACPost.CustomerContact.actualizarNumerosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.CustomerContact\Claro.SIACU.ProxyService.SIACPost.CustomerContact.consultarNumerosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.CustomerContact\ebsNumeroContactosClienteSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.CustomerContact\ebsNumeroContactosClienteSB111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.CustomerContact\NumeroContactosClienteWS.wsdl" />
+    <None Include="Service References\SIACPost.CustomerHFC\ebsClienteHFC.wsdl" />
+    <None Include="Service References\SIACPost.CustomerHFC\ebsClienteHFC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.CustomerLTE\ClienteLTEWS.wsdl" />
+    <None Include="Service References\SIACPost.CustomerLTE\ebsClientesLTESB12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.compromisoPago1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.ConsultaTriados1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.contrato1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.datosClienteResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.HistCambioSIMLinea1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.HistEstadosLinea1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.historicoAcciones1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.HistPlanLinea1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.ListaFechaFactura1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.ListaServicios1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.obtenerDatosBscsExtResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.penalidad_response1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\Claro.SIACU.ProxyService.SIACPost.Customer.ServiciosLinea1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Customer\SIACPostpagoConsultasWSServiceDefinitions.wsdl" />
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.consultaDEPORentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.consultaDeudaDealerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.consultaEquipoXIMEIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.consultaFacturaSAPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.consultaFchaVentaPorSerieResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.consultaNumerosZsansResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.consultaProductosClienteICCIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.consultaProductosClienteIMEIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.consultaProductosClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.consultaStockMaterialesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.listaMaterialesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZEIA_PACKS_HANDSETS_OCSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZEIA_RFC_PRODUCTOS_CLIENTE_OCSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZEIA_RFC_PROD_CLTE_ICCID_OCSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZEIA_RFC_PROD_CLTE_IMEI_OCSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZEIA_RFC_STOCK_MATERIAL_OCSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZGVN_RFC_CON_DEUDA_DEALERResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZSD_RFC_CON_FACT_SAPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZSD_RFC_CON_NUMTELFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZSIAC_RFC_CON_DESC_EQUI_X_IMEIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZSIAC_RFC_CON_DEV_GARANResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\Claro.SIACU.ProxyService.SIACPost.DatosSAP.ZSIAC_RFC_CON_FEC_VENTA_X_SERIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DatosSAP\EbsSWSAPServiceDefinitions.wsdl" />
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.consultarDetalleDocAjusteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.consultarDetalleDocAjusteResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.listarTipoDocRefResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.listarTipoDocRefResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.listarTipoDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.listarTipoDocResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.obtenerCACUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.obtenerCACUsuarioResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.obtenerDetalleDocRefResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.obtenerDetalleDocRefResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.obtenerSubcategoriasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.obtenerSubcategoriasResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.registrarCategoriasDBTOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.registrarCategoriasDBTOResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.registrarDetalleDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.registrarDetalleDocResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.validarAplicaAjusteDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\Claro.SIACU.ProxyService.SIACPost.DetalleAjuste.validarAplicaAjusteDocResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjuste.wsdl" />
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB1110.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB112.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB113.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB114.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB115.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB116.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB117.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB118.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DetalleAjuste\ebsDetalleDocAjusteSB119.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DocumentoFisicoV3\Claro.SIACU.ProxyService.SIACPost.DocumentoFisicoV3.obtenerDocumentoFisicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DocumentoFisicoV3\Claro.SIACU.ProxyService.SIACPost.DocumentoFisicoV3.obtenerDocumentoFisicoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DocumentoFisicoV3\DocumentosFisicoWS.wsdl" />
+    <None Include="Service References\SIACPost.DocumentoFisicoV3\ebsDocumentosFisicoSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DocumentoFisicoV3\ebsDocumentosFisicoSB111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DocumentoFisicoV3\ebsDocumentosFisicoSB112.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DocumentoFisico\Claro.SIACU.ProxyService.SIACPost.DocumentoFisico.obtenerDocumentoFisicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.DocumentoFisico\DocumentosFisicoWS.wsdl" />
+    <None Include="Service References\SIACPost.DocumentoFisico\ebsDocumentosFisicoSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DocumentoFisico\ebsDocumentosFisicoSB111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.DocumentoFisico\ebsDocumentosFisicoSB112.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.FinanceManagement\Claro.SIACU.ProxyService.SIACPost.FinanceManagement.balanceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.FinanceManagement\Claro.SIACU.ProxyService.SIACPost.FinanceManagement.changeBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.FinanceManagement\Claro.SIACU.ProxyService.SIACPost.FinanceManagement.eventProcessorOutputType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.FinanceManagement\Claro.SIACU.ProxyService.SIACPost.FinanceManagement.getBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.FinanceManagement\Claro.SIACU.ProxyService.SIACPost.FinanceManagement.getRechargeDenominationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.FinanceManagement\Claro.SIACU.ProxyService.SIACPost.FinanceManagement.rechargeDenominationOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.FinanceManagement\Claro.SIACU.ProxyService.SIACPost.FinanceManagement.rechargeOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.FinanceManagement\Claro.SIACU.ProxyService.SIACPost.FinanceManagement.rechargeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.FinanceManagement\Claro.SIACU.ProxyService.SIACPost.FinanceManagement.transferCreditResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.FinanceManagement\EbsFinanceManagementServiceDefinitions.wsdl" />
+    <None Include="Service References\SIACPost.HFC\ebsClienteHFC.wsdl" />
+    <None Include="Service References\SIACPost.HFC\ebsClienteHFC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.HLRUDB\Claro.SIACU.ProxyService.SIACPost.HLRUDB.consultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.HLRUDB\Claro.SIACU.ProxyService.SIACPost.HLRUDB.consultarResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.HLRUDB\Claro.SIACU.ProxyService.SIACPost.HLRUDB.ejecutarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.HLRUDB\Claro.SIACU.ProxyService.SIACPost.HLRUDB.ejecutarResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.HLRUDB\UDBConnectorWS.wsdl" />
+    <None Include="Service References\SIACPost.HLRUDB\UDBWSSOAP11Port.wsdl" />
+    <None Include="Service References\SIACPost.HLRUDB\UDBWSSOAP11Port.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.HLRUDB\UDBWSSOAP11Port1.wsdl" />
+    <None Include="Service References\SIACPost.IGVHFC\Claro.SIACU.ProxyService.SIACPost.IGVHFC.consultarIGVResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.IGVHFC\ConsultaIGV.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.IGVHFC\ConsultaIGV1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.IGVHFC\ConsultaIGVWS.wsdl" />
+    <None Include="Service References\SIACPost.IMR\Claro.SIACU.ProxyService.SIACPost.IMR.audiTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.IMR\ebsConsultaIMRSB11.wsdl" />
+    <None Include="Service References\SIACPost.LTE\ClienteLTEWS.wsdl" />
+    <None Include="Service References\SIACPost.LTE\ebsClientesLTESB12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.PackageRoaming\Claro.SIACU.ProxyService.SIACPost.PackageRoaming.actDesacPqtRoamingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PackageRoaming\Claro.SIACU.ProxyService.SIACPost.PackageRoaming.ejecutarProgPqtRoamingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PackageRoaming\Claro.SIACU.ProxyService.SIACPost.PackageRoaming.listarPaquetesRoamingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PackageRoaming\Claro.SIACU.ProxyService.SIACPost.PackageRoaming.listaServicioResetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PackageRoaming\Claro.SIACU.ProxyService.SIACPost.PackageRoaming.registrarProgResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PackageRoaming\Claro.SIACU.ProxyService.SIACPost.PackageRoaming.serviciosContratoZonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PackageRoaming\Claro.SIACU.ProxyService.SIACPost.PackageRoaming.validarProgPqtRoamingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PackageRoaming\ebsPaquetesRoamingSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.PackageRoaming\PaquetesRoamingWS.wsdl" />
+    <None Include="Service References\SIACPost.PeticionAnotacion\Claro.SIACU.ProxyService.SIACPost.PeticionAnotacion.consultarResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PeticionAnotacion\Claro.SIACU.ProxyService.SIACPost.PeticionAnotacion.consultarResponse11.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PeticionAnotacion\ebsPeticionAnotacionWSSOAP11Port.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.PeticionAnotacion\ebsPeticionAnotacionWSSOAP11Port1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.PeticionAnotacion\PeticionAnotacionWS.wsdl" />
+    <None Include="Service References\SIACPost.PostpaidService\Claro.SIACU.ProxyService.SIACPost.PostpaidService.consultaServicioEstadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PostpaidService\Claro.SIACU.ProxyService.SIACPost.PostpaidService.consultaServicioEstadoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PostpaidService\Claro.SIACU.ProxyService.SIACPost.PostpaidService.contratosTelefonoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PostpaidService\Claro.SIACU.ProxyService.SIACPost.PostpaidService.contratosTelefonoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PostpaidService\Claro.SIACU.ProxyService.SIACPost.PostpaidService.registraServicioComercialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PostpaidService\Claro.SIACU.ProxyService.SIACPost.PostpaidService.registraServicioComercialResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PostpaidService\Claro.SIACU.ProxyService.SIACPost.PostpaidService.serviciosBSCSServComercialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PostpaidService\Claro.SIACU.ProxyService.SIACPost.PostpaidService.serviciosBSCSServComercialResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PostpaidService\Claro.SIACU.ProxyService.SIACPost.PostpaidService.serviciosContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PostpaidService\Claro.SIACU.ProxyService.SIACPost.PostpaidService.serviciosContratoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.PostpaidService\ServiciosPostPagoWSServiceDefinitions.wsdl" />
+    <None Include="Service References\SIACPost.RechargesM2M\Claro.SIACU.ProxyService.SIACPost.RechargesM2M.consultarSaldoM2MResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.RechargesM2M\ebsPaqueteM2MWSPortTypeSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.RechargesM2M\ebsPaqueteM2MWSPortTypeSB111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.RechargesM2M\PaqueteM2MWS.wsdl" />
+    <None Include="Service References\SIACPost.RestricTethecVeloc\BaseSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\Claro.SIACU.ProxyService.SIACPost.RestricTethecVeloc.consultarTetheDegVelocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\Claro.SIACU.ProxyService.SIACPost.RestricTethecVeloc.consultarTetheDegVelocResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\Claro.SIACU.ProxyService.SIACPost.RestricTethecVeloc.HeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\Claro.SIACU.ProxyService.SIACPost.RestricTethecVeloc.HeaderResponseType1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\CommonsException.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\consultarTetheDegVeloc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\HeaderGeneric_v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\headers_v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\RestricTetheVelocWS.wsdl" />
+    <None Include="Service References\SIACPost.Validate4GLTE\Claro.SIACU.ProxyService.SIACPost.Validate4GLTE.validarLineaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Validate4GLTE\Claro.SIACU.ProxyService.SIACPost.Validate4GLTE.validarPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPost.Validate4GLTE\Validacion4GLTESB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.Validate4GLTE\Validacion4GLTESB111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.Validate4GLTE\Validacion4GLTEWS.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\BloqDesbloqLineaPostpagoWS.wsdl" />
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\ebsBloqDesbloqLineaPostpagoSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\ebsBloqDesbloqLineaPostpagoSB111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BondTFI\Claro.SIACU.ProxyService.SIACPre.BondTFI.consultarLineaINResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BondTFI\Claro.SIACU.ProxyService.SIACPre.BondTFI.consultarLineaINResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BondTFI\Claro.SIACU.ProxyService.SIACPre.BondTFI.ejecutarOperacionINResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BondTFI\Claro.SIACU.ProxyService.SIACPre.BondTFI.ejecutarOperacionINResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BondTFI\ebsOperacionesIN.wsdl" />
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\BSS_OperacionesINU.wsdl" />
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\Claro.SIACU.ProxyService.SIACPre.BSS_OperacionesINU.consultarTarifaAutomaticaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\Claro.SIACU.ProxyService.SIACPre.BSS_OperacionesINU.ConsultarTarifaAutomaticaResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\Claro.SIACU.ProxyService.SIACPre.BSS_OperacionesINU.consultarTarifaGranelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\Claro.SIACU.ProxyService.SIACPre.BSS_OperacionesINU.consultarTarifaGranelResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\Claro.SIACU.ProxyService.SIACPre.BSS_OperacionesINU.HeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\Claro.SIACU.ProxyService.SIACPre.BSS_OperacionesINU.modificarTarifaAutomaticaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\Claro.SIACU.ProxyService.SIACPre.BSS_OperacionesINU.ModificarTarifaAutomaticaResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\Claro.SIACU.ProxyService.SIACPre.BSS_OperacionesINU.modificarTarifaGranelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\Claro.SIACU.ProxyService.SIACPre.BSS_OperacionesINU.modificarTarifaGranelResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\MED_OperacionesINU9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\BSS_ConsultaDatosSIMPipelineProxyService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\BSS_ConsultaDatosSIMPipelineProxyService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\BSS_ConsultaDatosSIMPipelineProxyService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\BSS_ConsultaDatosSIMPipelineProxyService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\BSS_ConsultaDatosSIMPipelineProxyService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\BSS_ConsultaDatosSIMPipelineProxyService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\BSS_ConsultaDatosSIM_v1.wsdl" />
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\Claro.SIACU.ProxyService.SIACPre.ConsultarDatosSIM.consultarDatosSIMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\Claro.SIACU.ProxyService.SIACPre.ConsultarDatosSIM.consultarDatosSIMResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\Claro.SIACU.ProxyService.SIACPre.ConsultarDatosSIM.HeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\Claro.SIACU.ProxyService.SIACPre.ConsultarDatosSIM.HeaderResponseType1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.consultarConsumoRecargasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.consultarDatosInOdcsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.consultarDatosLineaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.consultarDatosPostpagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.consultarDatosPrepagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.ConsultarDetalleLlamadasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.ConsultarDetalleRecargasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.consultarFnFPrepagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.ConsultarHistorialComprasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.consultarHistoricoPaquetesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.consultarHistoricoRecargasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\Claro.SIACU.ProxyService.SIACPre.DataPrePost.ConsultarSaldosPrepagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\ConsultaDatosPrePostWS.wsdl" />
+    <None Include="Service References\SIACPre.DataPrePost\ebsConsultaDatosPrePostSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.DataPrePost\ebsConsultaDatosPrePostSB111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.PaqueteDatos\Claro.SIACU.ProxyService.SIACPre.PaqueteDatos.ComprarPaquetesDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.PaqueteDatos\Claro.SIACU.ProxyService.SIACPre.PaqueteDatos.ConsultarPaquetesAdquiridosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.PaqueteDatos\Claro.SIACU.ProxyService.SIACPre.PaqueteDatos.ConsultarPaquetesDisponiblesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.PaqueteDatos\Claro.SIACU.ProxyService.SIACPre.PaqueteDatos.ValidarComprarPaquetesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.PaqueteDatos\EbsPaqueteDatos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACPre.PaqueteDatos\EbsPaqueteDatosService.wsdl" />
+    <None Include="Service References\SIACPre.Service2\Claro.SIACU.ProxyService.SIACPre.Service2.EstadoSuscripcionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.Service2\Claro.SIACU.ProxyService.SIACPre.Service2.INDatosLineaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.Service2\Claro.SIACU.ProxyService.SIACPre.Service2.INDatosPrepagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.Service2\Claro.SIACU.ProxyService.SIACPre.Service2.INSaldosBolsasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACPre.Service2\EbsDatosPrepagoV2ServiceDefinitions.wsdl" />
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.AccesoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.AplicativoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.DireccionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.EmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.JerarquiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerAplicativosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerDatosEmpleadoPorAreaModalidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerDatosEmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerDatosUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerDireccionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerEmpleadosPorAreaModalidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerEmpleadosPorAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerJerarquiasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerModalidadesPorAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerOpcionesPorUsuarioPorAppResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerOpcionesPorUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerPaginaOpcionesPorUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerPerfilesPorAppResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerRangosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.leerUsuariosPorAppPerfilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.ModalidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.OpcionesUsuarioAppResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.OpcionesUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.PaginaOpcionesUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.PerfilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.RangosHLRResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.registroAuditoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.RegistroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\Claro.SIACU.ProxyService.SIACSecurity.Permissions.UsuariosAppPerfilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACSecurity.Permissions\EbsAuditoriaServiceDefinitions.wsdl" />
+    <None Include="Service References\SIACU.BusquedaLineaCliente\Claro.SIACU.ProxyService.SIACU.BusquedaLineaCliente.HeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\Claro.SIACU.ProxyService.SIACU.BusquedaLineaCliente.HeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\Claro.SIACU.ProxyService.SIACU.BusquedaLineaCliente.obtenerDatosClienteColivingMessageResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\ClaroFault_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\ClaroGenericHeaders_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\CommonsException.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\HeaderGeneric_v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\obtenerDatosClienteColiving.wsdl" />
+    <None Include="Service References\SIACU.BusquedaLineaCliente\obtenerDatosClienteColiving.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\ResponseStatus_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.Customers\Claro.SIACU.ProxyService.SIACU.Customers.ConsultarClienteUnificadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\AdditionalPartyEntities_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Agreement_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\AppliedCustomerBillingRate_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\BaseTypes_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\bssCustomerManagement.wsdl" />
+    <None Include="Service References\SIACU.CustomerInfo\BusinessInteraction_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Calendar_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Capacity_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Claro.SIACU.ProxyService.SIACU.CustomerInfo.GetCustomerInfoResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Claro.SIACU.ProxyService.SIACU.CustomerInfo.HeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Claro.SIACU.ProxyService.SIACU.CustomerInfo.HeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ClaroFault_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ClaroGenericHeaders_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\CommonBusinessEntitiesExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\CommonsException.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\CustomerBillCollection_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\CustomerBill_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\CustomerExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\CustomerFacingService_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\CustomerInteraction_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\CustomerOrder_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Customer_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\EngagedPartyExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\EnterpriseExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\EnterpriseRisk_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\getCustomerInfo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\HeaderGeneric_v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Location_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\LogicalResource_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Loyalty_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ManagementInformation_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\MarketingCampaign_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\MarketSalesExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\MarketSegment_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Metric_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\PartyInteraction_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\PartyOrder_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\PartyOrganization_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\PartyProductSpecificationAndOffering_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\PartyProfile_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\PartyRevenue_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Party_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Performance_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ProductExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ProductOffering_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ProductSpecification_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Product_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Project_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ResourceOrder_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ResourceSpecification_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Resource_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ResponseStatus_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\RootBusinessEntities_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\SalesChannel_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ServiceConfiguration_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ServiceExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ServiceSpecification_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\ServiceUsage_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Service_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\TroubleOrProblem_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\TroubleTicket_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\Usage_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerInfo\UsersAndRoles_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\AdditionalPartyEntities_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Agreement_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\AppliedCustomerBillingRate_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\BaseTypes_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\bssCustomerManagement1.wsdl" />
+    <None Include="Service References\SIACU.CustomerManagement\BusinessInteraction_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Calendar_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Capacity_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Claro.SIACU.ProxyService.SIACU.CustomerManagement.GetScoreResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Claro.SIACU.ProxyService.SIACU.CustomerManagement.HeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Claro.SIACU.ProxyService.SIACU.CustomerManagement.HeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Claro.SIACU.ProxyService.SIACU.CustomerManagement.SearchCustomerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ClaroFault_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ClaroGenericHeaders_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\CommonBusinessEntitiesExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\CommonsException1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\CustomerBillCollection_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\CustomerBill_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\CustomerExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\CustomerFacingService_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\CustomerInteraction_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\CustomerOrder_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Customer_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\EngagedPartyExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\EnterpriseExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\EnterpriseRisk_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\getScore.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\HeaderGeneric_v11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Location_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\LogicalResource_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Loyalty_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ManagementInformation_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\MarketingCampaign_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\MarketSalesExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\MarketSegment_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Metric_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\PartyInteraction_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\PartyOrder_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\PartyOrganization_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\PartyProductSpecificationAndOffering_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\PartyProfile_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\PartyRevenue_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Party_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Performance_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ProductExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ProductOffering_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ProductSpecification_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Product_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Project_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ResourceOrder_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ResourceSpecification_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Resource_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ResponseStatus_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\RootBusinessEntities_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\SalesChannel_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\searchCustomer.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ServiceConfiguration_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ServiceExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ServiceSpecification_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\ServiceUsage_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Service_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\TroubleOrProblem_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\TroubleTicket_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\Usage_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.CustomerManagement\UsersAndRoles_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.Post.BSS_StatusAccount\BSS_EstadoCuenta.wsdl" />
+    <None Include="Service References\SIACU.Post.BSS_StatusAccount\Claro.SIACU.ProxyService.SIACU.Post.BSS_StatusAccount.consultarResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.Post.BSS_StatusAccount\Claro.SIACU.ProxyService.SIACU.Post.BSS_StatusAccount.HeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.Post.BSS_StatusAccount\MED_EstadoCuentaProxyService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.Post.BSS_StatusAccount\MED_EstadoCuentaProxyService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.Post.BSS_StatusAccount\MED_EstadoCuentaProxyService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.Post.BSS_StatusAccount\MED_EstadoCuentaProxyService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\AdditionalPartyEntities_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Agreement_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\AppliedCustomerBillingRate_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\BaseTypes_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\BSS_SERVICEORDERING_v2.wsdl" />
+    <None Include="Service References\SIACU.RetrieveSubscriptions\BusinessInteraction_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Calendar_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Capacity_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Claro.SIACU.ProxyService.SIACU.RetrieveSubscriptions.HeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Claro.SIACU.ProxyService.SIACU.RetrieveSubscriptions.HeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Claro.SIACU.ProxyService.SIACU.RetrieveSubscriptions.RetrieveSubscriptionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ClaroFault_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ClaroGenericHeaders_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\CommonBusinessEntitiesExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\CommonsException.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\CustomerBillCollection_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\CustomerBill_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\CustomerExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\CustomerFacingService_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\CustomerInteraction_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\CustomerOrder_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Customer_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\EngagedPartyExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\EnterpriseExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\EnterpriseRisk_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\HeaderGeneric_v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Location_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\LogicalResource_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Loyalty_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ManagementInformation_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\MarketingCampaign_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\MarketSalesExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\MarketSegment_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Metric_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\PartyInteraction_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\PartyOrder_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\PartyOrganization_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\PartyProductSpecificationAndOffering_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\PartyProfile_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\PartyRevenue_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Party_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Performance_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ProductExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ProductOffering_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ProductSpecification_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Product_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Project_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ResourceOrder_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ResourceSpecification_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Resource_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ResponseStatus_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\retrieveSubscriptions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\RootBusinessEntities_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\SalesChannel_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ServiceConfiguration_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ServiceExtension_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ServiceSpecification_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\ServiceUsage_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Service_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\TroubleOrProblem_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\TroubleTicket_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Usage_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\UsersAndRoles_v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\BssServiceProblemManagement.wsdl" />
+    <None Include="Service References\SIACU.TechnicalServiceDetails\Claro.SIACU.ProxyService.SIACU.TechnicalServiceDetails.getTechnicalServiceDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\Claro.SIACU.ProxyService.SIACU.TechnicalServiceDetails.GetTechnicalServiceDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\Claro.SIACU.ProxyService.SIACU.TechnicalServiceDetails.HeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\Claro.SIACU.ProxyService.SIACU.TechnicalServiceDetails.HeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails39.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails40.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails44.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails45.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails46.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails47.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails48.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails49.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails50.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\getTechnicalServiceDetails9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\BssServiceProblemManagement.wsdl" />
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\Claro.SIACU.ProxyService.SIACU.TechnicalServicesByCustomer.getTechnicalServicesByCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\Claro.SIACU.ProxyService.SIACU.TechnicalServicesByCustomer.GetTechnicalServicesByCustomerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\Claro.SIACU.ProxyService.SIACU.TechnicalServicesByCustomer.HeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\Claro.SIACU.ProxyService.SIACU.TechnicalServicesByCustomer.HeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item39.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item40.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item44.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item45.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item46.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item47.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item48.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item49.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item50.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\item9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\actualizarCambioDireccionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\actualizarClientesCLFResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\actualizarDatosClientePCLUBResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\actualizarDatosMenoresResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\actualizarNombreClienteResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\CambioDatosSIACWS.wsdl" />
+    <None Include="Web References\CambioDatosSiacWS\ebsCambioDatosSIACSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\ebsCambioDatosSIACSB110.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\obtenerDataClientResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\obtenerDataHistoricaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CambioDatosSiacWS\registrarTransaccionSiacPoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\ConsultaDatosPrePostWS.wsdl" />
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\consultarConsumoRecargasResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\consultarDatosInOdcsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\consultarDatosLineaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\consultarDatosPostpagoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\consultarDatosPrepagoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\ConsultarDetalleLlamadasResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\ConsultarDetalleRecargasResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\consultarFnFPrepagoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\ConsultarHistorialComprasResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\consultarHistoricoPaquetesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\consultarHistoricoRecargasResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\ConsultarSaldoMASResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\ConsultarSaldosPostpagoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\ConsultarSaldosPrepagoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\ebsConsultaDatosPrePostSB11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\ebsConsultaDatosPrePostSB110.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIAC.Post.DatosPrePost_V2\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\item9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.GetCustomerManagementFS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SIACPost.Recharges\audiTypeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACPost.Recharges\ConsultasRecargas.wsdl" />
+    <None Include="Web References\SIACPost.Recharges\listaCamposOpcionalesCampoOpcional.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACPost.Recharges\Recargas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.Recharges\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SIACPost.Recharges\SaldoBolsasType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACPost.Recharges\SaldoPaqueteDatosType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACPost.StateAccount\AuditType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACPost.StateAccount\ConsultaEstadoCuenta.wsdl" />
+    <None Include="Web References\SIACPost.StateAccount\ConsultaEstadoCuenta.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACPost.StateAccount\DetalleEstadoCuentaCabType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACPost.StateAccount\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SIACPre.Service\EbsDatosPrepagoServiceDefinitions.wsdl" />
+    <None Include="Web References\SIACPre.Service\EstadoSuscripcionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACPre.Service\INDatosLineaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACPre.Service\INDatosPrepagoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACPre.Service\INSaldosBolsasResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACPre.Service\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SIACU.Interacciones\AuditType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIACU.Interacciones\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SIACU.Interacciones\TransaccionInteraccionesAsync.wsdl" />
+    <None Include="Web References\SIACU.Interacciones\TransaccionInteraccionesAsync.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SIACU.Interacciones\TransaccionInteraccionesAsync0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.172.139.60:7001/CambioDatosSIACWS/ebsCambioDatosSIACSB11%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CambioDatosSiacWS\</RelPath>
+      <UpdateFromURL>http://10.172.139.60:7001/CambioDatosSIACWS/ebsCambioDatosSIACSB11%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Claro_SIACU_ProxyService_CambioDatosSiacWS_CambioDatosSIACWSService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.74.139:8909/CRM_Services/Clarify/Transaction/TransaccionInteraccionesAsync%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SIACU.Interacciones\</RelPath>
+      <UpdateFromURL>http://172.19.74.139:8909/CRM_Services/Clarify/Transaction/TransaccionInteraccionesAsync%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Claro_SIACU_ProxyService_SIACU_Interacciones_TransaccionInteraccionesAsync</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.74.141:8901/OAC_Services/Inquiry/ConsultaEstadoCuenta%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SIACPost.StateAccount\</RelPath>
+      <UpdateFromURL>http://172.19.74.141:8901/OAC_Services/Inquiry/ConsultaEstadoCuenta%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Claro_SIACU_ProxyService_SIACPost_StateAccount_ConsultaEstadoCuenta</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.74.201:8903/HLRSiacWS/HlrSiacWS%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SIAC.HLRConsult\</RelPath>
+      <UpdateFromURL>http://172.19.74.201:8903/HLRSiacWS/HlrSiacWS%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Claro_SIACU_ProxyService_SIAC_HLRConsult_HlrSiacWSService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.74.202:8909/ConsultaDatosPrepagoWS/EbsDatosPrepago%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SIACPre.Service\</RelPath>
+      <UpdateFromURL>http://172.19.74.202:8909/ConsultaDatosPrepagoWS/EbsDatosPrepago%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Claro_SIACU_ProxyService_SIACPre_Service_EbsDatosPrepagoService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.74.218:8903/Postpaid_Services/Movil/Consultas/Recargas%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SIACPost.Recharges\</RelPath>
+      <UpdateFromURL>http://172.19.74.218:8903/Postpaid_Services/Movil/Consultas/Recargas%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Claro_SIACU_ProxyService_SIACPost_Recharges_ConsultasRecargasSOAP11BindingQSService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.74.222:8903/ConsultaDatosPrePostWS_V2/ebsConsultaDatosPrePostSB11%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SIAC.Post.DatosPrePost_V2\</RelPath>
+      <UpdateFromURL>http://172.19.74.222:8903/ConsultaDatosPrePostWS_V2/ebsConsultaDatosPrePostSB11%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Claro_SIACU_ProxyService_SIAC_Post_DatosPrePost_V2_ConsultaDatosPrePostWSService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.74.68:8909/SimcardsWS/ebsSimcards%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAP.Operations\</RelPath>
+      <UpdateFromURL>http://172.19.74.68:8909/SimcardsWS/ebsSimcards%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Claro_SIACU_ProxyService_SAP_Operations_ebsSimcards</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.19.91.185:10051/esb/ws/bss/Customer/CustomerManagementFS/V1/%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SIACPost.GetCustomerManagementFS\</RelPath>
+      <UpdateFromURL>http://172.19.91.185:10051/esb/ws/bss/Customer/CustomerManagementFS/V1/%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Claro_SIACU_ProxyService_SIACPost_GetCustomerManagementFS_CustomerManagementFS</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Audit.Redirect\" />
+    <WCFMetadataStorage Include="Service References\SIAC.Claves\" />
+    <WCFMetadataStorage Include="Service References\SecurityService\" />
+    <WCFMetadataStorage Include="Service References\SIAC.ActivarVOLTE\" />
+    <WCFMetadataStorage Include="Service References\SIAC.ConsultaLineaCuenta\" />
+    <WCFMetadataStorage Include="Service References\SIAC.ParamaetrosClarify\" />
+    <WCFMetadataStorage Include="Service References\SIAC.Segment\" />
+    <WCFMetadataStorage Include="Service References\SIAC.Seguridad\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.AccountDue\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.CreditBalance\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.CustomerContact\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.CustomerHFC\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.CustomerLTE\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.Customer\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.DatosSAP\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.DetalleAjuste\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.DocumentoFisicoV3\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.DocumentoFisico\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.FinanceManagement\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.HFC\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.HLRUDB\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.IGVHFC\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.IMR\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.LTE\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.PackageRoaming\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.PeticionAnotacion\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.PostpaidService\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.RechargesM2M\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.RestricTethecVeloc\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.Validate4GLTE\" />
+    <WCFMetadataStorage Include="Service References\SIACPost.BloqDesbloqLineaPostpago\" />
+    <WCFMetadataStorage Include="Service References\SIACPre.BondTFI\" />
+    <WCFMetadataStorage Include="Service References\SIACPre.BSS_OperacionesINU\" />
+    <WCFMetadataStorage Include="Service References\SIACPre.ConsultarDatosSIM\" />
+    <WCFMetadataStorage Include="Service References\SIACPre.DataPrePost\" />
+    <WCFMetadataStorage Include="Service References\SIACPre.PaqueteDatos\" />
+    <WCFMetadataStorage Include="Service References\SIACPre.Service2\" />
+    <WCFMetadataStorage Include="Service References\SIACSecurity.Permissions\" />
+    <WCFMetadataStorage Include="Service References\SIACU.BusquedaLineaCliente\" />
+    <WCFMetadataStorage Include="Service References\SIACU.CustomerInfo\" />
+    <WCFMetadataStorage Include="Service References\SIACU.CustomerManagement\" />
+    <WCFMetadataStorage Include="Service References\SIACU.Customers\" />
+    <WCFMetadataStorage Include="Service References\SIACU.Post.BSS_StatusAccount\" />
+    <WCFMetadataStorage Include="Service References\SIACU.Post.Lines\" />
+    <WCFMetadataStorage Include="Service References\SIACU.Post.Products\" />
+    <WCFMetadataStorage Include="Service References\SIACU.Pre.Products\" />
+    <WCFMetadataStorage Include="Service References\SIACU.RetrieveSubscriptions\" />
+    <WCFMetadataStorage Include="Service References\SIACU.TechnicalServiceDetails\" />
+    <WCFMetadataStorage Include="Service References\SIACU.TechnicalServicesByCustomer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.Segment\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.Segment\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.Segment\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Customers\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Customers\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Customers\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Pre.Products\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Pre.Products\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Pre.Products\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Post.Lines\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Post.Lines\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Post.Lines\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.LTE\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.LTE\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.LTE\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.HFC\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.HFC\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.HFC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.Customer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.Customer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.Customer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.CreditBalance\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.CreditBalance\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.CreditBalance\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.CustomerLTE\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.CustomerLTE\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.CustomerLTE\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.CustomerHFC\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.CustomerHFC\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.CustomerHFC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.DatosSAP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.DatosSAP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.DatosSAP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.AccountDue\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.AccountDue\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.AccountDue\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.BondTFI\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.BondTFI\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.BondTFI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.Service2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.Service2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.Service2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.IMR\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.IMR\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.IMR\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.FinanceManagement\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.FinanceManagement\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.FinanceManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.HLRUDB\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.HLRUDB\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.HLRUDB\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Post.Products\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Post.Products\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Post.Products\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Audit.Redirect\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Audit.Redirect\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Audit.Redirect\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.DataPrePost\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.DataPrePost\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.DataPrePost\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.PaqueteDatos\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.PaqueteDatos\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.PaqueteDatos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.Seguridad\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.Seguridad\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.Seguridad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACSecurity.Permissions\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACSecurity.Permissions\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACSecurity.Permissions\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.DetalleAjuste\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.DetalleAjuste\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.DetalleAjuste\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.RechargesM2M\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.RechargesM2M\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.RechargesM2M\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.Claves\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.Claves\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.Claves\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.RestricTethecVeloc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SecurityService\Security.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SecurityService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SecurityService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SecurityService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.ActivarVOLTE\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.ActivarVOLTE\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.ActivarVOLTE\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.BSS_OperacionesINU\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPre.ConsultarDatosSIM\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.ConsultaLineaCuenta\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.ConsultaLineaCuenta\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.ConsultaLineaCuenta\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.PeticionAnotacion\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.PeticionAnotacion\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.PeticionAnotacion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.ParamaetrosClarify\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.ParamaetrosClarify\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIAC.ParamaetrosClarify\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.CustomerManagement\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.CustomerManagement\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.CustomerManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.CustomerInfo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.CustomerInfo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.CustomerInfo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Post.BSS_StatusAccount\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Post.BSS_StatusAccount\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.Post.BSS_StatusAccount\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.RetrieveSubscriptions\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.BusquedaLineaCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.TechnicalServicesByCustomer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACU.TechnicalServiceDetails\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+<ItemGroup>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.BloqDesbloqLineaPostpago\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.DocumentoFisicoV3\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.DocumentoFisicoV3\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIACPost.DocumentoFisicoV3\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

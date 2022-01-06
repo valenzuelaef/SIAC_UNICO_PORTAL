@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://limdeseaiocsv01.tim.com.pe:8909/Postpaid_Services/Movil/Consultas/Recargas?SCHEMA%2FPostpaid+Services%2FMovil%2FConsultas%2FRecargas%2Fxsd%2FMovil-ConsultasRecargas" filename="Recargas.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://172.19.74.218:8903/Postpaid_Services/Movil/Consultas/Recargas?wsdl" filename="ConsultasRecargas.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

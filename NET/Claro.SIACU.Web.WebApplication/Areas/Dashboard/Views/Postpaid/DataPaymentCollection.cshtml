@@ -1,0 +1,232 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.Postpaid.DataPaymentCollectionModel
+<div id="PostpaidDataPaymentCollection">
+
+    <table class="table  table-condensed ">
+        <tbody>
+            <tr>
+                <td class="col-md-1">
+                    <label class="control-label">Forma de Pago</label>
+                </td>
+                <td class="col-md-1">@Model.PaymentForm</td>
+                <td class="col-md-5" colspan="4">
+                    <button data-toggle="modal" profile="SU_ACP_PFP,SU_HFC_PFP,SU_IFI_PFP"
+                            class="btn claro-btn-info btn-xs pull-left"
+                            id="MethodPaymentdlg">
+                        ...
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                @if (Model.Debt != null)
+                {
+                    <td class="col-md-1">
+                        <label class="control-label">Deuda</label>
+                    </td>
+                    <td class="col-md-1">@Model.Debt</td>
+                    <td class="col-md-1"></td>
+                }
+
+
+                <td class="col-md-1">
+                    <label class="control-label"> Monto de Disputa</label>
+                </td>
+                <td class="col-md-1">@(Model.AmoutDispute == "null" ? "0.00" : Model.AmoutDispute)</td>
+                <td class="col-md-5">
+                    <button data-toggle="modal" profile="SU_ACP_CMD,SU_HFC_CMD,SU_IFI_CMD"
+                            class="btn claro-btn-info btn-xs pull-left"
+                            id="DetailAmountDisputedlg">
+                        ...
+                    </button>
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                @if (Model.DaysPastDue != "")
+                {
+                    <td class="col-md-3">
+                        <label class="control-label"> D&iacute;as de Mora</label>
+                    </td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1"></td>
+                }
+                @if (Model.StatusCollection != "")
+                {
+                    <td class="col-md-3">
+                        <label class="control-label"> Estatus Cobranza</label>
+                    </td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1"></td>
+                }
+            </tr>
+            <tr>
+                @if (Model.ManagerCollection != "")
+                {
+                    <td class="col-md-3">
+                        <label class="control-label"> Gestor Cobranza</label>
+                    </td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-1" colspan="4"></td>
+                }
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="panel-tabs">
+        <ul id="divTabCobranza" class="nav nav-tabs" role="tablist" data-tabs="tabs">
+            @*<li ><a href="#tab01Cobranza" role="tab" data-toggle="tab" data-parent="divTabCobranza"><span class="glyphicon "></span>Anteriores Saldos</a></li>*@
+            <li class="active"><a href="#tab02Cobranza" role="tab" data-toggle="tab" data-parent="divTabCobranza"><span class="glyphicon "></span>Comportamiento de Pago</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab01Cobranza" class="tab-pane fade">
+                <table class="table table-condensed table-responsive">
+                    <tr>
+                        <td class="col-md-1">
+                            <label class="control-label">Actual</label>
+                        </td>
+                        <td class="col-md-2"></td>
+                        <td class="col-md-1"></td>
+                        <td class="col-md-1">
+                            <label class="control-label">S30d</label>
+                        </td>
+                        <td class="col-md-2"></td>
+                        <td class="col-md-1"></td>
+                        <td class="col-md-1">
+                            <label class="control-label">S60d</label>
+                        </td>
+                        <td class="col-md-2"></td>
+                        <td class="col-md-1"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1">
+                            <label class="control-label">S90d</label>
+                        </td>
+                        <td class="col-md-2"></td>
+                        <td class="col-md-1"></td>
+                        <td class="col-md-1">
+                            <label class="control-label">S120d</label>
+                        </td>
+                        <td class="col-md-2"></td>
+                        <td class="col-md-1"></td>
+                        <td class="col-md-1">
+                            <label class="control-label">S150d</label>
+                        </td>
+                        <td class="col-md-2"></td>
+                        <td class="col-md-1"></td>
+                    </tr>
+                </table>
+            </div>
+
+            @{
+                var strPaymentBehavior = Model.PaymentBehavior;
+                var strMes1  = "0";
+                var strMes2  = "0";
+                var strMes3  = "0";
+                var strMes4  = "0";
+                var strMes5  = "0";
+                var strMes6  = "0";
+                var strMes7  = "0";
+                var strMes8  = "0";
+                var strMes9  = "0";
+                var strMes10 = "0";
+                var strMes11 = "0";
+                var strMes12 = "0";
+                if (Model.PaymentBehavior != null)
+                {
+                    for (var i = 0; i < strPaymentBehavior.Length; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0: strMes1 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 1: strMes2 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 2: strMes3 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 3: strMes4 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 4: strMes5 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 5: strMes6 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 6: strMes7 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 7: strMes8 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 8: strMes9 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 9: strMes10 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 10: strMes11 = Model.PaymentBehavior.Substring(i, 1); break;
+                            case 11: strMes12 = Model.PaymentBehavior.Substring(i, 1); break;
+                        }
+                    }
+                  
+                
+                }
+               
+            }
+            <div id="tab02Cobranza" class="tab-pane active ">
+                <table class="table table-condensed table-responsive">
+                    <tr>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 1</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 2</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 3</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 4</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 5</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 6</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-2">@strMes1</td>
+                        <td class="col-md-2">@strMes2</td>
+                        <td class="col-md-2">@strMes3</td>
+                        <td class="col-md-2">@strMes4</td>
+                        <td class="col-md-2">@strMes5</td>
+                        <td class="col-md-2">@strMes6</td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 7</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 8</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 9</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 10</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 11</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label class="control-label">Mes 12</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-2">@strMes7</td>
+                        <td class="col-md-2">@strMes8</td>
+                        <td class="col-md-2">@strMes9</td>
+                        <td class="col-md-2">@strMes10</td>
+                        <td class="col-md-2">@strMes11</td>
+                        <td class="col-md-2">@strMes12</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default" style="padding:1% !important">
+                <button data-toggle="modal" class="btn claro-btn-info btn-sm" id="StatusAccountlg" profile="SU_ACP_PEC,SU_HFC_PEC,SU_IFI_PEC">Estado de Cuenta</button>
+                <button data-toggle="modal" class="btn claro-btn-info btn-sm" id="PaymentCommitment" profile="SU_ACP_PCP,SU_IFI_PCP">Compromiso de Pago</button>
+                <button data-toggle="modal" class="btn claro-btn-info btn-sm" id="StatusAccountHRlg" style="visibility: @Model.btnStatusAccountHR" profile="SU_ACP_ECHR,SU_IFI_ECHR">Estado de Cuenta HR</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Postpaid/PostpaidDataCollection")

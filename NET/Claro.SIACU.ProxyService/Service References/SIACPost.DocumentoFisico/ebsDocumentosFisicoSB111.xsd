@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://claro.com.pe/eai/ws/baseschemaws" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/baseschemaws" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="IdentificadorUsuarioRequestType">
+    <xsd:sequence>
+      <xsd:element name="email" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoDocumento" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="numeroDocumento" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

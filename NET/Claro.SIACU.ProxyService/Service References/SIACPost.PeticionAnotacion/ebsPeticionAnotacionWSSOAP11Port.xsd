@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://claro.com.pe/eai/ws/postventa/peticionanotacionws/types" xmlns:base="http://claro.com.pe/eai/ws/baseschema" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/peticionanotacionws/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://localhost:9723/PeticionAnotacionWS/ebsPeticionAnotacionWSSOAP11Port?xsd=1" namespace="http://claro.com.pe/eai/ws/baseschema" />
+  <xsd:element name="consultarRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="customer_id" type="xsd:string" />
+        <xsd:element name="co_id" type="xsd:string" />
+        <xsd:element name="cstype" type="xsd:string" />
+        <xsd:element name="tickler_number" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="consultarResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element name="listaPet_AnotacionResponse" type="listaPet_AnotacionType" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="listaPet_AnotacionType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="itmPet_Anotacion" type="itmPet_AnotacionType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="itmPet_AnotacionType">
+    <xsd:sequence>
+      <xsd:element name="cuenta" type="xsd:string" />
+      <xsd:element name="codigo_tickler" type="xsd:string" />
+      <xsd:element name="estado_anotacion" type="xsd:string" />
+      <xsd:element name="prioridad" type="xsd:string" />
+      <xsd:element name="descripcion_corta" type="xsd:string" />
+      <xsd:element name="usuario_seguimiento" type="xsd:string" />
+      <xsd:element name="fecha_seguimiento" type="xsd:string" />
+      <xsd:element name="accion_seguimiento" type="xsd:string" />
+      <xsd:element name="fecha_apertura" type="xsd:string" />
+      <xsd:element name="fecha_cierre" type="xsd:string" />
+      <xsd:element name="nro_tickler" type="xsd:string" />
+      <xsd:element name="estado" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

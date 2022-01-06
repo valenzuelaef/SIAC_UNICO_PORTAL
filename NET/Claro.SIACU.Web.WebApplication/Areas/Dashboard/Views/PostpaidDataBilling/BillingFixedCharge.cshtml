@@ -1,0 +1,259 @@
+﻿@using System.Web.Optimization;
+@{
+    Layout = null;
+}
+<div id="FormFixedChargeDetails">
+    <div class="panel panel-info " id="divFixedChargeDetailsTIM">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosFixedChargeDetailsTIMProcollapse"> Detalle Cargo Fijo TIM Pro </a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosFixedChargeDetailsTIMProcollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblFixedChargeDetailsTIMPro">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Nro. Celular</th>
+                        <th class="col-sm-1">Descripción</th>
+                        <th class="col-sm-1">Periodo de Servicio</th>
+                        <th class="col-sm-1">RTP+On Net</th>
+                        <th class="col-sm-1">Off Net</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPostpaidTP">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info " id="divFixedChargeDetailsTIMProOne">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosFixedChargeDetailsTIMProOnecollapse"> Detalle Cargo Fijo TIM Pro 1 </a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosFixedChargeDetailsTIMProOnecollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblFixedChargeDetailsTIMProOne">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Nro. Celular</th>
+                        <th class="col-sm-1">Descripción</th>
+                        <th class="col-sm-1">Periodo de Servicio</th>
+                        <th class="col-sm-1">RTP</th>
+                        <th class="col-sm-1">On Net</th>
+                        <th class="col-sm-1">Off RPT</th>
+                        <th class="col-sm-1">Off Net</th>
+                        <th class="col-sm-1">M. Texto</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPostpaidTP1">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info " id="divFixedChargeDetailsTIMProTwo">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosTIMProTwocollapse"> Detalle Cargo Fijo TIM Pro 2 </a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosTIMProTwocollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblFixedChargeDetailsTIMProTwo">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Nro. Celular</th>
+                        <th class="col-sm-1">Descripción</th>
+                        <th class="col-sm-1">Periodo de Servicio</th>
+                        <th class="col-sm-1">Minutos Libres</th>
+                        <th class="col-sm-1">M. Texto</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPostpaidTP2">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info " id="divFixedChargeDetailsTIMProBag">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosTIMProBagcollapse"> Detalle Cargo Fijo TIM Pro Bolsa </a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosTIMProBagcollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblFixedChargeDetailsTIMProBag">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Cant. Celular</th>
+                        <th class="col-sm-1">Descripción</th>
+                        <th class="col-sm-1">Periodo de Servicio</th>
+                        <th class="col-sm-1">RTP</th>
+                        <th class="col-sm-1">OFF RTP</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPostpaidBag">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info " id="divFixedChargeDetailsTIMProBagOne">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosTIMProBagOnecollapse"> Detalle Cargo Fijo TIM Pro Bolsa 1</a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosTIMProBagOnecollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblFixedChargeDetailsTIMProBagOne">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Cant. Celular</th>
+                        <th class="col-sm-1">Descripción</th>
+                        <th class="col-sm-1">Periodo de Servicio</th>
+                        <th class="col-sm-1">On Net</th>
+                        <th class="col-sm-1">Off Net</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPostpaidBag1">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info " id="divFixedChargeDetailsTIMProBagTwo">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosTIMProBagTwocollapse"> Detalle Cargo Fijo TIM Pro Bolsa 2</a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosTIMProBagTwocollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblFixedChargeDetailsTIMProBagTwo">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Cant. Celular</th>
+                        <th class="col-sm-1">Descripción</th>
+                        <th class="col-sm-1">Periodo de Servicio</th>
+                        <th class="col-sm-1">Minutos Libres</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPostpaidBag2">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info " id="divFixedChargeDetailsTIMProBagThree">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosTIMProBagThreecollapse"> Detalle Cargo Fijo TIM Pro Bolsa 3</a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosTIMProBagThreecollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblFixedChargeDetailsTIMProBagThree">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Cant. Celular</th>
+                        <th class="col-sm-1">Descripción</th>
+                        <th class="col-sm-1">Periodo de Servicio</th>
+                        <th class="col-sm-1">Soles Libres</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPostpaidBag3">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info " id="divFixedChargeDetailsTIMMax">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosDetailsTIMMaxcollapse"> Detalle Cargo Fijo TIM Max</a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosDetailsTIMMaxcollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblFixedChargeDetailsTIMMax">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Nro. Celular</th>
+                        <th class="col-sm-1">Descripción</th>
+                        <th class="col-sm-1">Periodo de Servicio</th>
+                        <th class="col-sm-1">Horacio Normal On Net</th>
+                        <th class="col-sm-1">Horacio Normal Off Net</th>
+                        <th class="col-sm-1">Horario Reducido On Net + Off Net</th>
+                        <th class="col-sm-1">Mensajes de Texto</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPostpaidTimMax">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info " id="divFixedChargeDetailsTIMMaxTwo">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosDetailsTIMMaxTwocollapse"> Detalle Cargo Fijo TIM Max 2</a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosDetailsTIMMaxTwocollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblFixedChargeDetailsTIMMaxTwo">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Nro. Celular</th>
+                        <th class="col-sm-1">Descripción</th>
+                        <th class="col-sm-1">Periodo de Servicio</th>
+                        <th class="col-sm-1">Minutos Libres</th>
+                        <th class="col-sm-1">Mensajes de Texto</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPostpaidTimMax2">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info " id="divDiscountFixedChargeDetails">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosDiscountFixedChargecollapse"> Detalle Descuento Cargo Fijo</a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosDiscountFixedChargecollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblDiscountFixedChargeDetails">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Nro. Celular</th>
+                        <th class="col-sm-1">Descripción</th>
+                        <th class="col-sm-1">Periodo de Servicio</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPostpaidDiscount">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataBilling/FixedCharge")

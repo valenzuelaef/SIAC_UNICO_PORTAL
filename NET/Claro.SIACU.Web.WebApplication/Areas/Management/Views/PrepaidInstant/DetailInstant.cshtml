@@ -1,0 +1,62 @@
+﻿@using System.Web.Optimization;
+@model  Claro.SIACU.Web.WebApplication.Areas.Management.Models.InstantModel
+@{
+    Layout = null;
+}
+
+<div id="contenedorDetailVisualizeCall" class="table">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+
+               
+                <table class="table  table-striped table-hover table-responsive claro-modal-tabla table-bordered" id="tblDetailVisualizeCall">
+                    <thead>
+                        <tr class="claro-bg-primary">
+                            <th>Selecciona</th>
+                            <th>Descripcion</th>
+                            <th>Fecha Inicio Vigencia</th>
+                            <th>Fecha Fin Vigencia</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @if (Model.listInstant != null)
+                        {
+                            foreach (Claro.SIACU.Web.WebApplication.Areas.Management.Models.InstantModel.DataInstant item in Model.listInstant)
+                            {
+
+                                <tr>
+                                    <td><label><input type="radio" class="" name="rbRowInstant" value="@item.IdInstant" ></label></td>
+
+
+                                    <td>@item.Description</td>
+                                    <td>@item.DateValidityStart</td>
+                                    <td>@item.DateValidityEnd</td>
+
+
+
+
+                                </tr>
+
+                            }
+
+                        }
+
+                    </tbody>
+                </table>
+                <label class="text-primary">Se encontraron @Model.NumberRegisters registros</label>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Management/DetailVisualizeInstant/DetailVisualizeInstant")
+
+
+
+
+

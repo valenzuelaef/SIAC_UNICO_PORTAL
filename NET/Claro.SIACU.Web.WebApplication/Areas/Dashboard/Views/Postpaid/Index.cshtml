@@ -1,0 +1,52 @@
+﻿@using System.Web.Optimization;
+@{
+    Layout = null;
+}
+
+<div id="contenedor">
+    <div id="scrollbudy">
+        <div class="panel-tabs">
+            <div class="tab-content">
+                <div id="divPostCustomerInfo" class="col-md-4">
+                </div>
+                <div class="col-md-8">
+                    <div class="alert alert-info" id="alertInfoPostpaid">
+                        <marquee>
+                            @*SE REALIZARA UNA AUDITORIA EL DIA 26/06/2016 A LAS 3 PM*@
+                            <span id="lblPost_BannerMessage"></span>
+                        </marquee>
+                    </div>
+                    <div class="panel-tabs">
+                        <ul id="divDashboardTabs" class="nav nav-tabs" role="tablist" data-tabs="tabs">
+                            <li id="PostAccountInfo" class="active"><a href="#divPostAccountInfo" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon glyphicon-th-large"></span> Datos de la Cuenta</a></li>
+                            <li id="PostLineInfo"><a href="#divPostLineInfo" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon glyphicon-earphone"></span> Datos del Servicio</a></li>
+                            <li id="PostBillingInfo"><a href="#divPostBillingInfo" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon glyphicon-tasks"></span> Datos de Facturación</a></li>
+                            <li id="PostPaymentInfo"><a href="#divPostPaymentInfo" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon glyphicon-usd"></span> Datos de Pagos y Cobranzas</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="divPostAccountInfo" class="tab-pane active">
+
+                            </div>
+
+                            <div id="divPostLineInfo" class="tab-pane fade">
+
+                            </div>
+
+                            <div id="divPostBillingInfo" class="tab-pane fade">
+
+                            </div>
+
+                            <div id="divPostPaymentInfo" class="tab-pane fade">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Postpaid/Postpaid")

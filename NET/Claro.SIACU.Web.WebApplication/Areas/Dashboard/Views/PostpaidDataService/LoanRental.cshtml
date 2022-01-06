@@ -1,0 +1,112 @@
+﻿@using System.Web.Optimization
+<div id="LoanRental">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="list-group-item-heading page-header text-info">EQUIPO</h5>
+            <div class="col-md-5">
+                <div class="input-daterange input-group" id="containerDateRange">
+                    <span class="input-group-addon"><label class="control-label">Desde:</label></span>
+                    <input type="text" id="txtDateStart" class="form-control" name="start" />
+                    <label class="input-group-addon btn" for="txtDateStart">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </label>
+                    <span class="input-group-addon"><label class="control-label">A:</label></span>
+                    <input type="text" id="txtDateEnd" class="form-control" name="end" />
+                    <label class="input-group-addon btn" for="txtDateEnd">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-3"><label for="nombrebusq">Número:</label></div>
+                <div class="col-md-9"><input type="text" class="form-control" id="NombreBusq" placeholder="opcional"></div>
+            </div>
+            <div class="col-md-2">
+                <select class="form-control" id="cboLoanRentalType" name="cboLoanRentalType"></select>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-default" id="btnSearchContract">
+                    <span class="glyphicon  glyphicon-search" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default" id="BtnExport">
+                    Exportar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label>La consulta muestra información de meses completos (5 como máximo), las fechas que se ingresen serán referenciales, solo considera</label>
+            <table id="tblLoanRental" class="table table-bordered table-condensed claro-modal-tabla">
+                <thead>
+                    <tr class="claro-bg-primary text-center">
+                        <td>Razón Social</td>
+                        <td>RUC</td>
+                        <td>Dirección</td>
+                        <td>Modelo</td>
+                        <td>IMEI</td>
+                        <td>Motivo SAP</td>
+                        <td>Modalidad SAP</td>
+                        <td>Nro. Clarify</td>
+                        <td>Fecha</td>
+                        <td>Nro. Pedido</td>
+                        <td>Denominación</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="errorLoanRental"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <br />
+            <h5 class="list-group-item-heading page-header text-info">STOCK DISPONIBLE PARA EXPOSICIÓN</h5>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label class="control-label container-fluid" id="lblZonaAlmacen">Zona de Almacén</label>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="cbowarehouseAreaType" name="cbowarehouseAreaType"></select>
+                    <label class="control-label container-fluid">Código de Material</label>
+                    <input type="text" class="form-control" id="txtmaterialcode">
+                </div>
+                <div class="form-group">
+                    <label class="control-label container-fluid">Descripción</label>
+                    <input type="text" class="form-control" id="txtDescription">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-default pull-right" id="btnSearchStock">
+                        <span class="glyphicon  glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-default pull-right" id="btnExaminar">
+                        Examinar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="warehouseArea" class="table table-bordered table-condensed claro-modal-tabla">
+                <thead>
+                    <tr class="claro-bg-primary text-center">
+                        <td>Código  Material</td>
+                        <td>Descripción Material</td>
+                        <td>Almacén</td>
+                        <td>Cantidad</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="errorWarehouseArea"></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidLoanRental")

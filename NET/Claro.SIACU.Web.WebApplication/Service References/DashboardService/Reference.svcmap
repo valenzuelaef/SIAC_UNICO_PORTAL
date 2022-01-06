@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dc43ca37-b22a-49d5-8416-3e4d2aa67c25" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9593/Dashboard/DashboardService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DashboardService.xsd" MetadataType="Schema" ID="5096ca3f-690a-434c-ba35-85010a652b03" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd24" />
+    <MetadataFile FileName="DashboardService1.xsd" MetadataType="Schema" ID="dc304fde-c455-4092-94f8-42fa49f3bc71" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd19" />
+    <MetadataFile FileName="DashboardService33.xsd" MetadataType="Schema" ID="d72b72af-21e8-48dd-af4a-0b08b77b9e39" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd39" />
+    <MetadataFile FileName="DashboardService29.xsd" MetadataType="Schema" ID="893af549-b364-42ce-b2a9-ed1e617c2e60" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd29" />
+    <MetadataFile FileName="DashboardService2.xsd" MetadataType="Schema" ID="270b5d31-079d-4c67-af13-068df9b01b7e" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd13" />
+    <MetadataFile FileName="DashboardService31.xsd" MetadataType="Schema" ID="2dabffd0-b489-4362-aca5-b160f23a31fa" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd33" />
+    <MetadataFile FileName="DashboardService3.xsd" MetadataType="Schema" ID="4dd00370-c636-4324-9fe8-2346d0c85ce9" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd23" />
+    <MetadataFile FileName="DashboardService4.xsd" MetadataType="Schema" ID="0b042335-d41b-497a-bbca-c6797cd2e2bc" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd16" />
+    <MetadataFile FileName="DashboardService5.xsd" MetadataType="Schema" ID="53636bf2-780d-4140-be5b-b13f26b993b4" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd27" />
+    <MetadataFile FileName="DashboardService6.xsd" MetadataType="Schema" ID="ca32bfab-a807-4be8-8bf2-be712484f14d" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DashboardService7.xsd" MetadataType="Schema" ID="ac9aad23-a127-4d62-9ce1-cf82bfadd78f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DashboardService8.xsd" MetadataType="Schema" ID="58277c98-0c20-47e3-9d95-c8eba0a25d47" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DashboardService9.xsd" MetadataType="Schema" ID="cf6b9265-4f40-47b8-86b0-55d4ed29fd1b" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd5" />
+    <MetadataFile FileName="DashboardService10.xsd" MetadataType="Schema" ID="78182c7a-b770-484c-803e-04072a9b75b9" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd4" />
+    <MetadataFile FileName="DashboardService11.xsd" MetadataType="Schema" ID="08a56675-2dc1-4c6d-b181-1bb8f07a96b6" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd7" />
+    <MetadataFile FileName="DashboardService12.xsd" MetadataType="Schema" ID="a350f6e9-f68f-4748-bf16-f44a75feec7f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd6" />
+    <MetadataFile FileName="DashboardService13.xsd" MetadataType="Schema" ID="1d07bbcd-e15d-4b14-805b-26796a392278" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd9" />
+    <MetadataFile FileName="DashboardService14.xsd" MetadataType="Schema" ID="f7acc204-2b24-42d2-8b8d-48db1784a896" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd8" />
+    <MetadataFile FileName="DashboardService15.xsd" MetadataType="Schema" ID="73890b83-402a-43dd-992e-173806d4c45f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DashboardService32.xsd" MetadataType="Schema" ID="54d1fe3e-4004-4913-bbc7-339f1309c1c7" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd36" />
+    <MetadataFile FileName="DashboardService16.xsd" MetadataType="Schema" ID="25c2a856-a6db-4d73-b99b-6555dbed6f40" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd15" />
+    <MetadataFile FileName="DashboardService.wsdl" MetadataType="Wsdl" ID="0709d7f4-5220-42f7-92e6-e96edb03ee27" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?wsdl" />
+    <MetadataFile FileName="DashboardService17.xsd" MetadataType="Schema" ID="7233d59f-57c6-4eb2-aef4-fa9105ed6ee2" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd10" />
+    <MetadataFile FileName="DashboardService30.xsd" MetadataType="Schema" ID="5d8ba29e-41a7-4703-8b1e-259a9cc569f3" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd30" />
+    <MetadataFile FileName="DashboardService18.xsd" MetadataType="Schema" ID="d8ac1f56-e4ea-41be-9cc8-014a36a80d0c" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd20" />
+    <MetadataFile FileName="DashboardService19.xsd" MetadataType="Schema" ID="b6846c2b-80cf-4ada-b15d-a22bc3f38021" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd17" />
+    <MetadataFile FileName="DashboardService321.xsd" MetadataType="Schema" ID="11894cc1-2fd1-4ec0-85ea-9abe15abacd6" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd37" />
+    <MetadataFile FileName="DashboardService20.xsd" MetadataType="Schema" ID="8d4bc25c-1329-43d0-8d68-6e29d40cc63c" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd26" />
+    <MetadataFile FileName="DashboardService21.xsd" MetadataType="Schema" ID="b970d0fb-4e4b-4dd6-bf43-a6745edff287" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd18" />
+    <MetadataFile FileName="DashboardService331.xsd" MetadataType="Schema" ID="5f38820f-89a4-4bf8-ac62-9267492cac60" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd38" />
+    <MetadataFile FileName="DashboardService22.xsd" MetadataType="Schema" ID="95f9dd39-545d-4739-89c6-9fd9f76f953a" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd28" />
+    <MetadataFile FileName="DashboardService322.xsd" MetadataType="Schema" ID="70f5a225-4567-4fcf-9dfe-acf45803f492" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd35" />
+    <MetadataFile FileName="DashboardService23.xsd" MetadataType="Schema" ID="066798c5-9c50-4afe-a6b1-cf5996ca7888" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd12" />
+    <MetadataFile FileName="DashboardService311.xsd" MetadataType="Schema" ID="6e591099-5562-4f43-8bf5-69f6c8d48253" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd32" />
+    <MetadataFile FileName="DashboardService24.xsd" MetadataType="Schema" ID="a98f0374-e0c6-4c92-baa9-b3b0120a984f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd22" />
+    <MetadataFile FileName="DashboardService25.xsd" MetadataType="Schema" ID="e56c849b-4074-412e-bcc8-7eace695f31f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd11" />
+    <MetadataFile FileName="DashboardService26.xsd" MetadataType="Schema" ID="fa7523a1-688e-4adc-ad91-4179d8ec02d0" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd25" />
+    <MetadataFile FileName="DashboardService301.xsd" MetadataType="Schema" ID="4ad1f033-841a-435e-a7f7-315886708d72" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd31" />
+    <MetadataFile FileName="DashboardService27.xsd" MetadataType="Schema" ID="0fadc0a2-c033-48f8-97e2-9e40e079ae2f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd21" />
+    <MetadataFile FileName="DashboardService.disco" MetadataType="Disco" ID="c07d4417-ac45-4f4f-a188-5bf61a0bbd3b" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?disco" />
+    <MetadataFile FileName="DashboardService28.xsd" MetadataType="Schema" ID="0eecf802-e3af-436d-a1b1-8b6e0e9ce569" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd14" />
+    <MetadataFile FileName="DashboardService323.xsd" MetadataType="Schema" ID="17440cfc-1cdf-4b4a-919b-8ea536c91835" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd34" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

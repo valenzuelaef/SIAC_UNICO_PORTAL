@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetWipBinListByUser" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetWipBinListByUser" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases" />
+  <xs:complexType name="WipBinListByUserRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WipBinListByUserRequest" nillable="true" type="tns:WipBinListByUserRequest" />
+  <xs:complexType name="WipBinListByUserResponse">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases" minOccurs="0" name="ListWipBin" nillable="true" type="q2:ArrayOfWipBin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WipBinListByUserResponse" nillable="true" type="tns:WipBinListByUserResponse" />
+</xs:schema>

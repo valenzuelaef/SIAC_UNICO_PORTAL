@@ -1,0 +1,51 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataBilling.BillingDetailLongDistanceModel
+@{
+    Layout = null;
+}
+<div class="panel panel-info ">
+    <div id="FormLongDistanceDetail">
+        <div class="table-responsive">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblDetailLongDistance">
+                <thead class="claro-bg-primary">
+                    @if (Model.TypeApplication == "HFC" || Model.TypeApplication == "LTE")
+                    {
+                        <tr>
+                            <th class="col-sm-1">Nro. Teléfono</th>
+                            <th class="col-sm-1">Destino</th>
+                            <th class="col-sm-1">Fecha</th>
+                            <th class="col-sm-1">Hora Inicio</th>
+                            <th class="col-sm-1">Duración</th>
+                            <th class="col-sm-1">Importe (S/.)</th>
+                            <th class="col-sm-1">Origen</th>
+                        </tr>
+                    }
+                    else if (Model.TypeApplication == "POSTPAID")
+                    {
+                        <tr>
+                            <th class="col-sm-1">Nro. Celular</th>
+                            @if (Model.DescriptionTypeCall == "National")
+                            {
+                                <th class="col-sm-1">Origen Llamada</th>
+                            }
+                            <th class="col-sm-1">Destino</th>
+                            <th class="col-sm-1">Operador Destino</th>
+                            <th class="col-sm-1">Nro. Destino</th>
+                            <th class="col-sm-1">Fecha</th>
+                            <th class="col-sm-1">Hora Inicio</th>
+                            <th class="col-sm-1">Duración</th>
+                            <th class="col-sm-1">Importe (S/.)</th>
+                        </tr>
+                    }
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPrepaid">
+                <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+            </div>
+        </div>
+        <input type="hidden" id="hidTypeCall" value=@Model.DescriptionTypeCall />
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataBilling/DetailLongDistance")

@@ -1,0 +1,1948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3C2364C-1F64-4DC0-B5DD-41DF34C55782}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Claro.SIACU.Web.WebApplication</RootNamespace>
+    <AssemblyName>Claro.SIACU.Web.WebApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>23f553c6</NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;CODE_ANALYSIS;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Framework\Binaries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Tools.Connections">
+      <HintPath>..\Framework\Binaries\Tools.Connections.dll</HintPath>
+    </Reference>
+    <Reference Include="Tools.Entity">
+      <HintPath>..\Framework\Binaries\Tools.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Tools.Helpers">
+      <HintPath>..\Framework\Binaries\Tools.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Tools.Traces">
+      <HintPath>..\Framework\Binaries\Tools.Traces.dll</HintPath>
+    </Reference>
+    <Reference Include="Tools.Utils">
+      <HintPath>..\Framework\Binaries\Tools.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Cases\Scripts\Queue\Queue.js" />
+    <Content Include="Areas\Cases\Scripts\Search\Search.js" />
+    <Content Include="Areas\Cases\Scripts\WipBin\WipBin.js" />
+    <Content Include="Areas\Coliving\Content\css\StyleColiving.css" />
+    <Content Include="Areas\Coliving\Scripts\SearchCustomer\CriteriaSale.js" />
+    <Content Include="Areas\Coliving\Scripts\SearchCustomer\ListService.js" />
+    <Content Include="Areas\Coliving\Scripts\SearchCustomer\ListTechnicalServiceOST.js" />
+    <Content Include="Areas\Coliving\Scripts\SearchCustomer\SearchCustomerAccount.js" />
+    <Content Include="Areas\Coliving\Scripts\SearchCustomer\SearchCustomerDocument.js" />
+    <Content Include="Areas\Coliving\Scripts\SearchCustomer\SearchCustomerLine.js" />
+    <Content Include="Areas\Coliving\Scripts\SearchCustomer\TypeSearchCustomer.js" />
+    <Content Include="Areas\Dashboard\Css\FormatCss.css" />
+    <Content Include="Areas\Dashboard\Css\FormatPrintCallCss.css" />
+    <Content Include="Areas\Dashboard\Css\logo-claro.png" />
+    <Content Include="Areas\Dashboard\Scripts\Home\CustomerAlert.js" />
+    <Content Include="Areas\Dashboard\Scripts\Home\CustomerProducts.js" />
+    <Content Include="Areas\Dashboard\Scripts\Home\CustomersBusinessNames.js" />
+    <Content Include="Areas\Dashboard\Scripts\Home\CustomersDocument.js" />
+    <Content Include="Areas\Dashboard\Scripts\Home\CustomerSearch.js" />
+    <Content Include="Areas\Dashboard\Scripts\Home\CustomersNames.js" />
+    <Content Include="Areas\Dashboard\Scripts\Home\Instants.js" />
+    <Content Include="Areas\Dashboard\Scripts\Home\ProductDetails.js" />
+    <Content Include="Areas\Dashboard\Scripts\Home\ValidateCustomer.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidAccountAnnotation.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidAccountAnnotationList.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidAccountContract.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidAccountCreditLimit.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidAccountPinPuk.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidAccountPinPukConstancy.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidAccountRelationPlan.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidAccountRelationPlanHFCLTE.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidAccountSharedBag.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidAccountWarranty.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataAccount\PostpaidSubAccount.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\ConsumeLocalTrafficDetail.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\ConsumeLocalTrafficDetailTM.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\ConsumeLocalTrafficDetailTP.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\DebtDetail.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\DetailLongDistance.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\AdditionalLocalTrafficDetail.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\FixedCharge.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\FixedChargeBagDetailThree.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\FixedChargeBagDetailTwo.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\FixedChargeBagDetailOne.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\FixedChargeBagDetail.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\HistoricDelivery.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\HistoryHR.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\HistoryInvoice.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\InternationalRoamingDetail.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\LocalTrafficDetailTM.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\LocalTrafficDetailTP.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\OtherCharges.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\PrintTimServiceDetail.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataBilling\SMSDetail.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\AssociatedClaims.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\CancelInvoice.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\ClosuresAndReclosures.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\DeferredCollections.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\ExpiredDebt.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\MonitoringCases.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\PaymentCommitment.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\DetailMonitoringCases.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\PostpaidFeeEquipment.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\StatusAccount.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\StatusAccountHR.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\StatusAccountLDI.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\TrackingDetail.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCollection\UnpaidDebt.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCustomer\AddressOffice.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCustomer\Contact.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCustomer\CustomerData.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataCustomer\CustomerSegment.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\ConsumptionHistoricalRecharge.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\Equipments.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\HistoricoSIM.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\LineHistory.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PlanHistory.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidBalanceCBIOS.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidBalanceShared.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidComputerQuery.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidConsulta4G.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidConsumptionBalance.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidConsumptionBalanceHFCLTE.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidExamineStock.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidFrequent.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidHistoricalPackage.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidHistoricalRecharge.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidHistoricalStriations.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidHistoryActions.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidHistoryFrequent.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidLoanRental.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidOrderConsumption.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidPetitions.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidPhoneList.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidPhoneListAlt.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidPhoneListAltHistory.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidPinPuk.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidScheduledTasks.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidServices.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidServicesBSCS.js" />
+    <Content Include="Areas\Dashboard\Scripts\PostpaidDataService\PostpaidStriations.js" />
+    <Content Include="Areas\Dashboard\Scripts\Postpaid\Postpaid.js" />
+    <Content Include="Areas\Dashboard\Scripts\Postpaid\PostpaidDataAccount.js" />
+    <Content Include="Areas\Dashboard\Scripts\Postpaid\PostpaidDataBilling.js" />
+    <Content Include="Areas\Dashboard\Scripts\Postpaid\PostpaidDataCollection.js" />
+    <Content Include="Areas\Dashboard\Scripts\Postpaid\PostpaidDataCustomer.js" />
+    <Content Include="Areas\Dashboard\Scripts\Postpaid\PostpaidDataService.js" />
+    <Content Include="Areas\Dashboard\Scripts\Postpaid\PostpaidDueNumberDocument.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCall\DataCall.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCall\DetailVisualizeCall.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCall\ExportExcelCall.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCall\InLineCall.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCall\PrintCall.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCall\VisualizeCall.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCustomer\CreateNotUser.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCustomer\CustomerPast.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCustomer\CustomerQuery.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCustomer\CustomerSegment.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataCustomer\DataCustomer.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataReload\ConsumptionDataPacket.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataReload\DataReload.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataReload\DetailVisualizeReload.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataReload\OnlineReload.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataReload\VisualizeReload.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataService\DataService.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataService\PinkpukSearch.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataService\PinPuk.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidDataService\Salesdues.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidHistoricalBalance\HistoricalBalance.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidHistoricalBonds\HistoricalBonds.js" />
+    <Content Include="Areas\Dashboard\Scripts\PrepaidHistoricalStriations\HistoricalStriations.js" />
+    <Content Include="Areas\Dashboard\Scripts\Prepaid\Prepaid.js" />
+    <Content Include="Areas\Management\Scripts\Banner\BannerList.js" />
+    <Content Include="Areas\Management\Scripts\Banner\Create.js" />
+    <Content Include="Areas\Management\Scripts\Banner\Deactivate.js" />
+    <Content Include="Areas\Management\Scripts\Banner\Modify.js" />
+    <Content Include="Areas\Management\Scripts\DetailVisualizeInstant.js" />
+    <Content Include="Areas\Management\Scripts\InstantManagement.js" />
+    <Content Include="Areas\Management\Scripts\ManagementInstant.js" />
+    <Content Include="Areas\Management\Scripts\MasiveInstantFail.js" />
+    <Content Include="Areas\Management\Scripts\MassiveInstant.js" />
+    <Content Include="Areas\Management\Scripts\VisualizeInstant.js" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\CancelInvoice.cshtml" />
+    <Content Include="Areas\Dashboard\Views\_ViewStart.cshtml" />
+    <None Include="Properties\PublishProfiles\perfilsiacu.pubxml" />
+    <None Include="Service References\ColivingService\ColivingService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService.disco" />
+    <None Include="Service References\DashboardService\configuration91.svcinfo" />
+    <None Include="Service References\DashboardService\configuration.svcinfo" />
+    <None Include="Service References\DashboardService\DashboardService221.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService232.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService251.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService252.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService301.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService311.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService321.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService322.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService323.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService331.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\Lib\BloqueoF12.js" />
+    <Content Include="Support\ShowFile.aspx" />
+    <Content Include="Content\css\bootstrap-multiselect.css" />
+    <Content Include="Content\css\bootstrap-select.min.css" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.css.map" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.css.map" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.min.css.map" />
+    <Content Include="Content\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\css\datepicker.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\Footer.css" />
+    <Content Include="Content\css\Header.css" />
+    <Content Include="Content\css\Header.min.css">
+      <DependentUpon>Header.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\isotope.css" />
+    <Content Include="Content\css\jquery-ui.css" />
+    <Content Include="Content\css\jquery.bar.css" />
+    <Content Include="Content\css\jquery.dataTables.min.css" />
+    <Content Include="Content\css\jquery.dataTables.select.css" />
+    <Content Include="Content\css\jquery.smartmenus.bootstrap.css" />
+    <Content Include="Content\css\magic-check.css" />
+    <Content Include="Content\css\MyContainer.css" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\css\SiteError.css" />
+    <Content Include="Content\css\stilo1.css" />
+    <Content Include="Content\css\TreeView.css" />
+    <Content Include="Content\Lib\bootstrap-datepicker.js" />
+    <Content Include="Content\Lib\bootstrap-multiselect.js" />
+    <Content Include="Content\Lib\bootstrap-select.min.js" />
+    <Content Include="Content\Lib\bootstrap.js" />
+    <Content Include="Content\Lib\bootstrap.min.js" />
+    <Content Include="Content\Lib\dataTables.bootstrap.min.js" />
+    <Content Include="Content\Lib\hoverIntent-touch.js" />
+    <Content Include="Content\Lib\jquery-1.8.3.min.js" />
+    <Content Include="Content\Lib\jquery-1.9.1.min.js" />
+    <Content Include="Content\Lib\jquery-2.0.0.js" />
+    <Content Include="Content\Lib\jquery-2.0.0.min.js" />
+    <Content Include="Content\Lib\jquery-2.0.0.min.map" />
+    <Content Include="Content\Lib\jquery-ui.js" />
+    <Content Include="Content\Lib\jquery.bar.js" />
+    <Content Include="Content\Lib\jquery.blockUI.js" />
+    <Content Include="Content\Lib\jquery.dataTables.min.js" />
+    <Content Include="Content\Lib\jquery.dataTables.select.js" />
+    <Content Include="Content\Lib\jquery.numeric.js" />
+    <Content Include="Content\Lib\jquery.scrollbar.js" />
+    <Content Include="Content\Lib\jquery.scrollbar.min.js" />
+    <Content Include="Content\Lib\jquery.smartmenus.bootstrap.js" />
+    <Content Include="Content\Lib\jquery.smartmenus.bootstrap.min.js" />
+    <Content Include="Content\Lib\jquery.smartmenus.js" />
+    <Content Include="Content\Lib\jquery.smartmenus.min.js" />
+    <Content Include="Content\Lib\jquery.sticky.js" />
+    <Content Include="Content\Lib\jquery.validate.js" />
+    <Content Include="Content\Lib\jquery.validate.min.js" />
+    <Content Include="Content\Lib\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Lib\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Lib\moment-es.js" />
+    <Content Include="Content\Lib\moment.js" />
+    <Content Include="Content\Lib\respond.js" />
+    <Content Include="Content\Lib\respond.matchmedia.addListener.js" />
+    <Content Include="Content\Lib\respond.matchmedia.addListener.min.js" />
+    <Content Include="Content\Lib\respond.min.js" />
+    <Content Include="Content\Scripts\ClaroLayoutPopup.js" />
+    <Content Include="Content\Scripts\plupload.full.min.js" />
+    <Content Include="Fonts\fontawesome-webfont.svg" />
+    <Content Include="Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\btn_Buscar.gif" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\cross.png" />
+    <Content Include="Images\cross_hover.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\details_close.png" />
+    <Content Include="Images\details_open.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\graf_ico_error.gif" />
+    <Content Include="Images\hm_tim.gif" />
+    <Content Include="Images\img_claro.png" />
+    <Content Include="Images\img_marca.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\loading2.gif" />
+    <Content Include="Images\logo-claro.png" />
+    <Content Include="Images\sort_asc.png" />
+    <Content Include="Images\sort_asc_disabled.png" />
+    <Content Include="Images\sort_both.png" />
+    <Content Include="Images\sort_desc.png" />
+    <Content Include="Areas\Dashboard\Views\web.config" />
+    <Content Include="Areas\Dashboard\Views\Prepaid\DataService.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Prepaid\DataCall.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Prepaid\DataReload.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Prepaid\Index.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataCustomer\CustomerSegment.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataCustomer\CustomerQuery.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataCustomer\CustomerPast.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Postpaid\DataCustomer.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Postpaid\DataAccount.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Postpaid\DataService.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Postpaid\DataBilling.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Postpaid\Index.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataCustomer\CustomerData.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataCustomer\AddressOffice.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataCustomer\CustomerSegment.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Prepaid\DataCustomer.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataCall\VisualizeCall.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataReload\DetailVisualizeReload.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataReload\VisualizeReload.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Home\Products.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Home\ProductDetails.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Home\Instants.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Postpaid\DataPaymentCollection.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataService\Pinkpuk.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataService\Salesdues.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataService\Datasale.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountWarranty.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountSuspendedContract.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountSharedBag.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountPinPuk.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountCreditLimit.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\PhoneList.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataService\PortabilityConsultation.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\DetailAmountDispute.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingDetailLongDistance.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Home\AlertCustomer.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\Services.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountSubAccount.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\MethodPayment.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataCall\DetailVisualizeCall.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\DetailMonitoringCases.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Home\InstantsPrepaid.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingOtherCharges.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\InstallationDirection.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\PhoneListAlt.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\PhoneListAltHistory.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\PhoneListAltHistorySearch.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\PhoneListAltSearch.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingPrintTimServiceDetail.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingInternationalRoamingDetail.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingDebtDetail.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataService\HistoricalStriations.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingHistoryInvoice.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataService\PinkpukSearch.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingSMSDetails.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingAdditionalLocalTrafficDetail.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingConsumeLocalTrafficDetail.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataService\HistoricalBonds.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\StatusAccount.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\DueNumberDocument.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\SearchDueNumberDocument.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\Petitions.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountAnnotation.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountDetailAnnotation.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Home\CustomersDocument.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\ServicesBSCS.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\PinPuk.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\LineHistory.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\ActiveDays.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\StatusAccountLDI.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountAnnotationList.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\Striations.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\HistoricalStriations.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\ConsumptionBalance.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\HistoryActions.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\LoanRental.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountRelationPlan.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingHistoricDelivery.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingFixedCharge.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\Paymentcommitment.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\Consulta_4G.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\Equipments.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\HistoricoSIM.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\PlanHistory.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Home\CustomersBusinessNames.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Home\CustomersNames.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\StatusAccountHR.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\AffiliationToDebit.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataCustomer\CreateNotUser.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\AccountPinPuk.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\AccountRelacionPlanConBolsa.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\AccountRelacionPlanSinBolsa.xlsx" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\RegRoaming.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\FeeEquipment.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingFixedChargeTimProBag.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingFixedChargeTimProBagOne.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingFixedChargeTimProBagThree.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingFixedChargeTimProBagTwo.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\ConsumptionBalanceHFCLTE.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Format\Postpaid\AccountPinPukConstancy.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\ComputerQuery.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataCall\ExportExcelCall.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Prepaid\ExportExcelCall.xlsx" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingTimProAdditionalLocalTrafficDetail.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingTimMaxAdditionalLocalTrafficDetail.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\StatusAccountHR.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\CollectionFeeEquipment.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Prepaid\ServiceHistoricalTriation.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\BillingHistoricDelivery.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Prepaid\ServiceDetailHistoricalTriation.xlsx" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingTimMaxConsumeLocalTrafficDetail.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingTimProConsumeLocalTrafficDetail.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataBilling\BillingHistoryHR.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\ScheduledTasks.xlsx" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\ScheduledTasks.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Format\Prepaid\PrintCall.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\StatusAccount.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\DueDocumentNumber.xlsx" />
+    <Content Include="Content\Scripts\ClaroOptionsDefault.js" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\StatusAccountLDI.xlsx" />
+    <Content Include="Areas\Management\Views\web.config" />
+    <Content Include="Areas\Management\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Management\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Management\Views\PrepaidInstant\Index.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountDetailCreditLimit.cshtml" />
+    <Content Include="Areas\Management\Views\PrepaidInstant\DetailInstant.cshtml" />
+    <Content Include="Areas\Management\Views\PrepaidInstant\ManagementInstant.cshtml" />
+    <Content Include="Areas\Management\Views\PrepaidInstant\MessageInstant.cshtml" />
+    <Content Include="Areas\Management\Views\Banner\BannerList.cshtml" />
+    <Content Include="Areas\Management\Views\Banner\Create.cshtml" />
+    <Content Include="Areas\Cases\Views\web.config" />
+    <Content Include="Areas\Cases\Views\WipBin\Index.cshtml" />
+    <Content Include="Areas\Cases\Views\Queue\Index.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataAccount\AccountRelationPlanHFCLTE.cshtml" />
+    <Content Include="Areas\Management\Views\MassiveInstant\Index.cshtml" />
+    <Content Include="Areas\Management\Views\MassiveInstant\MasiveInstantFail.cshtml" />
+    <Content Include="Areas\Cases\Views\WipBin\_BinDetail.cshtml" />
+    <Content Include="Areas\Cases\Views\Queue\_QueueDetail.cshtml" />
+    <Content Include="Areas\Cases\Views\Queue\_Notes.cshtml" />
+    <Content Include="Areas\Cases\Views\WipBin\_Notes.cshtml" />
+    <Content Include="Areas\Cases\Views\Search\Index.cshtml" />
+    <Content Include="Areas\Cases\Views\Search\_SearchResult.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\PortabilityConsultation.cshtml" />
+    <Content Include="Areas\Management\Views\Banner\Deactivate.cshtml" />
+    <Content Include="Areas\Management\Views\Banner\Modify.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataCustomer\Contact.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataCustomer\ContactGrid.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Prepaid\ExportExcelReload.xlsx" />
+    <Content Include="Fonts\fontawesome-webfont.eot" />
+    <Content Include="Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Fonts\fontawesome-webfont.woff" />
+    <Content Include="Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Fonts\FontAwesome.otf" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\TrackingDetail.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataService\SalesduesFormato.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\ClosuresAndReclosures.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\ExamineStock.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\HistoryTreason.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\Treason.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\AccountRelacionPlanSoloBolsaCab.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\AccountRelacionPlanSoloBolsaDet.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\HistoryFrequents.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\PrestamoAlquiler.xlsx" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataCall\InLineCall.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataReload\OnlineReload.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataReload\ConsumptionDataPacket.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Prepaid\ExportExcelConsumptionDataPacket.xlsx" />
+    <Content Include="Areas\Dashboard\Views\Home\ValidateCustomer.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PrepaidDataService\HistoricalBalance.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Prepaid\ExportExcelHistoricalBalance.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\StatusAccountLDIPayment.xlsx" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\GetBalanceCBIOS.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Prepaid\ExportExcelHistoricalBonds.xlsx" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\GetHistoryPackage.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\GetHistoryRecharge.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\GetQueryBalanceShared.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\GetConsumptionHistoricalRecharge.cshtml" />
+    <Compile Include="Areas\Coliving\ColivingAreaRegistration.cs" />
+    <Compile Include="Areas\Coliving\Controllers\CommonController.cs" />
+    <Compile Include="Areas\Coliving\Controllers\SearchCustomerController.cs" />
+    <Compile Include="Areas\Coliving\Controllers\SpecialCasesController.cs" />
+    <Compile Include="Areas\Coliving\Models\CustomerSearch\AccountCustomerModel .cs" />
+    <Compile Include="Areas\Coliving\Models\CustomerSearch\AccountSubscription.cs" />
+    <Compile Include="Areas\Coliving\Models\CustomerSearch\DocumentCustomerModel.cs" />
+    <Compile Include="Areas\Coliving\Models\CustomerSearch\LineCustomerModel.cs" />
+    <Compile Include="Areas\Coliving\Models\CustomerSearch\OstModel.cs" />
+    <Compile Include="Areas\Coliving\Models\CustomerSearch\PostPaidServiceModel.cs" />
+    <Compile Include="Areas\Coliving\Models\CustomerSearch\PrePaidServiceModel.cs" />
+    <Compile Include="Areas\Coliving\Models\CustomerSearch\SearchCustomerModel.cs" />
+    <Compile Include="Areas\Coliving\Models\CustomerSearch\SearchOstModel.cs" />
+    <Compile Include="Areas\Coliving\Models\CustomerSearch\SearchTypeModel.cs" />
+    <Compile Include="Areas\Coliving\Models\SalesCriteria\CriteriaSaleItems.cs" />
+    <Compile Include="Areas\Coliving\Models\SalesCriteria\CustomerSubType.cs" />
+    <Compile Include="Areas\Coliving\Models\SalesCriteria\DocumentType.cs" />
+    <Compile Include="Areas\Coliving\Models\SalesCriteria\FilterParametersModel.cs" />
+    <Compile Include="Areas\Coliving\Models\SalesCriteria\MigrationStatus.cs" />
+    <Compile Include="Areas\Coliving\Models\SalesCriteria\Modality.cs" />
+    <Compile Include="Areas\Coliving\Models\SalesCriteria\CustomerType.cs" />
+    <Compile Include="Areas\Coliving\Models\SalesCriteria\OperationType.cs" />
+    <Compile Include="Areas\Coliving\Models\SalesCriteria\ProductType.cs" />
+    <Compile Include="Areas\Coliving\Models\SpecialCases\CustomerModel.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountSharedBag\AccountSharedBagLine.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionFeeEquipment\CollectionFeeEquipmentMovil.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\DeferredCollectionsHelper\DeferredCollections.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\GetHistoricalPackage\HistoricalPackageHelper.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\GetHistoricalPackage\PackageODCSHelper.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\GetMbAvailable\MbAvailableHelper.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ConsumptionRecharge\ConsumptionRechargeHelper.cs" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\ExportExcelBalanceShared.xlsx" />
+    <Content Include="Areas\Dashboard\Views\PostpaidDataService\OrderConsumption.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\AssociatedClaims.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\DeferredCollections.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\UnpaidDebt.cshtml" />
+    <Content Include="Areas\Dashboard\Views\PostPaidDataCollection\ExpiredDebt.cshtml" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\CollectionFeeEquipmentMovil.xlsx" />
+    <Content Include="Areas\Dashboard\Template\Postpaid\DeferredCollections.xlsx" />
+    <Content Include="Areas\Coliving\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Coliving\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Coliving\Views\Web.config" />
+    <Content Include="Areas\Coliving\Views\SpecialCases\SIACU_CabeceraCasosEspeciales.cshtml" />
+    <Content Include="Areas\Coliving\Views\SearchCustomer\SIACU_Search_Customer_Line.cshtml" />
+    <Content Include="Areas\Coliving\Views\SearchCustomer\ListService.cshtml" />
+    <Content Include="Areas\Coliving\Views\SearchCustomer\SIACU_Search_Customer_Doc_Type.cshtml" />
+    <Content Include="Areas\Coliving\Views\SearchCustomer\SIACU_Search_Customer_Account.cshtml" />
+    <Content Include="Areas\Coliving\Views\SearchCustomer\SIACU_Criteria_Sale.cshtml" />
+    <Content Include="Areas\Coliving\Content\json\DataCriteriaSale.json" />
+    <Content Include="Areas\Coliving\Views\SearchCustomer\SIACU_Type_Search_Customer.cshtml" />
+    <Content Include="Areas\Coliving\Views\SearchCustomer\SIACU_ListTechnicalServiceOST.cshtml" />
+    <None Include="bundleconfig.json" />
+    <Content Include="Content\Scripts\ClaroAppCommon.js" />
+    <Content Include="Content\Scripts\ClaroLayout.js" />
+    <Content Include="Content\Scripts\ClaroModalLoad.js" />
+    <Content Include="Content\Scripts\ClaroRedirect.js" />
+    <Content Include="Content\Scripts\ClaroSession.js" />
+    <Content Include="Content\Scripts\ClaroValidate.js" />
+    <Content Include="Content\Scripts\ContactoGrilla.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Postpaid.Customer.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Prepaid.Customer.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.MembershipElectronic.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Prepaid.Segment.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Prepaid.Service.datasource" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Postpaid.OfficeAddress.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Segment1.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Prepaid.Portability.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Postpaid.Receipt.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.ClientWS.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Postpaid.DetailProductPost.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Postpaid.ProductPost.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Prepaid.Call.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Prepaid.ProductPre.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Common.CustomerSearch.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Postpaid.Service.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Postpaid.Parameter.datasource" />
+    <Content Include="Properties\DataSources\Claro.SIACU.Entity.Dashboard.Postpaid.Parameter.datasource" />
+    <None Include="Content\Lib\jquery-2.0.0.intellisense.js" />
+    <None Include="Content\Lib\jquery.validate-vsdoc.js" />
+    <None Include="Content\Lib\_references.js" />
+    <None Include="Properties\PublishProfiles\siacu-frontend.pubxml" />
+    <None Include="Service References\ColivingService\ColivingService.wsdl" />
+    <None Include="Service References\ColivingService\ColivingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ColivingService\ColivingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ColivingService\ColivingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ColivingService\ColivingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ColivingService\ColivingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ColivingService\ColivingService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ColivingService\ColivingService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ColivingService\ColivingService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ColivingService\ColivingService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ColivingService\ColivingService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService.wsdl" />
+    <None Include="Service References\CommonService\CommonService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService44.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService45.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService46.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\CommonService63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService.wsdl" />
+    <None Include="Service References\DashboardService\DashboardService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DashboardService\DashboardService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FileService\FileService.wsdl" />
+    <None Include="Service References\FileService\FileService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FileService\FileService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FileService\FileService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FileService\FileService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FileService\FileService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FileService\FileService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService.wsdl" />
+    <None Include="Service References\PostpaidService\PostpaidService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService39.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService40.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService44.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService45.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService46.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService47.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService48.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService49.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService50.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService59.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService60.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService65.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService66.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService67.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService68.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService69.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService70.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService71.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService72.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService73.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService74.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService75.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService76.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService77.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService78.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService79.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService80.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService82.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService83.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService84.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService85.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService86.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService87.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService88.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService89.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService90.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService91.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService92.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService93.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService94.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService95.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService951.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService96.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService961.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService962.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService963.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService97.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService98.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService981.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9810.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9811.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9812.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9813.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9814.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9815.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9816.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9817.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9818.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9819.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService982.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9820.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9821.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9822.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9823.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9824.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9825.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9826.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService9827.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService983.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService984.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService985.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService986.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService987.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService988.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService989.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\configuration91.svcinfo" />
+    <None Include="Service References\PrepaidService\configuration.svcinfo" />
+    <None Include="Service References\PrepaidService\PrepaidService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService231.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService232.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService.wsdl" />
+    <None Include="Service References\PrepaidService\PrepaidService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrepaidService\PrepaidService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityAudit\Audit.wsdl" />
+    <None Include="Service References\SecurityAudit\Audit.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityAudit\Audit1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityAudit\Audit2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityAudit\Audit3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\Security.disco" />
+    <None Include="Service References\SecurityService\configuration91.svcinfo" />
+    <None Include="Service References\SecurityService\configuration.svcinfo" />
+    <None Include="Service References\SecurityService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SecurityAudit\configuration91.svcinfo" />
+    <None Include="Service References\SecurityAudit\configuration.svcinfo" />
+    <None Include="Service References\SecurityAudit\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService.disco" />
+    <None Include="Service References\WipBinService\configuration91.svcinfo" />
+    <None Include="Service References\WipBinService\configuration.svcinfo" />
+    <None Include="Service References\WipBinService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CommonService\CommonService.disco" />
+    <None Include="Service References\CommonService\configuration91.svcinfo" />
+    <None Include="Service References\CommonService\configuration.svcinfo" />
+    <None Include="Service References\CommonService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PostpaidService\PostpaidService.disco" />
+    <None Include="Service References\PostpaidService\configuration91.svcinfo" />
+    <None Include="Service References\PostpaidService\configuration.svcinfo" />
+    <None Include="Service References\PostpaidService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\FileService\FileService.disco" />
+    <None Include="Service References\FileService\configuration91.svcinfo" />
+    <None Include="Service References\FileService\configuration.svcinfo" />
+    <None Include="Service References\FileService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ColivingService\configuration91.svcinfo" />
+    <None Include="Service References\ColivingService\configuration.svcinfo" />
+    <None Include="Service References\ColivingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Common.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Cases\CasesAreaRegistration.cs" />
+    <Compile Include="Areas\Cases\Controllers\QueueController.cs" />
+    <Compile Include="Areas\Cases\Controllers\SearchController.cs" />
+    <Compile Include="Areas\Cases\Controllers\WipBinController.cs" />
+    <Compile Include="Areas\Cases\Models\WipBinModel.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\FormatController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PostpaidController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PostpaidDataAccountController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PostpaidDataBillingController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PostPaidDataCollectionController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PostpaidDataCustomerController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PostpaidDataServiceController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PrepaidController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PrepaidDataCallController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PrepaidDataCustomerController.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\BalanceCBIOS\BalanceCBIOS.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionStatusAccountLDI\CollectionStatusAccountLDIPayment.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ConsumptionType\ConsumptionTypeHelper.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\GetMbTotal\MbTotalHelper.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\HistoricalRecharge\HistoricalRechargeHelper.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LoanRental\Materials.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\DataCallHelper\InLineHelper\EventType.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\DataReloadHerper\ConsumptionDataPacketHelper\ConsumptionDataPacket.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\DataReloadHerper\OnlineHelper\EventType.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\ExportExcelCallHelper\ExportExcelCall.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\ExportExcelHistoricalBondsHelper\HistoricalBondsHelper.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCollection\DeferredCollectionsModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\BalanceCBIOS.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\ConsumptionRechargeModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\HistoricalPackageModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\HistoricalRechargeModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\Materials.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PrepaidDataServiceController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PrepaidDataReloadController.cs" />
+    <Compile Include="Areas\Dashboard\DashboardAreaRegistration.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Home\CustomerHelper\Customer.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Home\CustomerHelper\OptionalObjectCustomer.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Home\Instant\Instant.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Home\PostpaidProductDetail\DetailProduct.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Home\ServicePostpaid\ServicePostpaid.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountAnnotation\Annotation.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountAnnotation\TypeAnnotation.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountCreditLimit\AccountCreditLimit.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountPinPukHelper\AccountPinPuk.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountRelationPlanHelper\AccountBag.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountRelationPlanHelper\AccountBagDetail.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountRelationPlanHelper\AccountCustomer.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountRelationPlanHelper\AccountRelationPlan.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountRelationPlanHFCLTE\Equiment.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountRelationPlanHFCLTE\RelationPlanHFCLTE.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountSharedBag\AccountSharedBag.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountSuspendedContract\AccountSuspendedContract.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountSuspendedContract\AccountTypeSuspended.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\AccountWarranty\AccountWarranty.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\BillingDebtDetail\ApadeceDebt.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\BillingHistoricDelivery\HisDelivery.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\BillingHistoryHR\HistoryHR.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\BillingHistoryInvoice\Invoice.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\BillingLocalTrafficDetail\GeneralLocalTrafficDetailConstants.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\BillingLocalTrafficDetail\LocalTrafficDetailConstants.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\BillingOtherCharges\OtherDetails.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionDetailAmountDispute\CollectionDetailAmountDispute.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionDueDocumentNumberModel\CollectionDueDocumentNumberModel.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionDueDocumentNumber\DocumentType.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionFeeEquipment\CollectionFeeEquipment.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionMonitoringCases\CollectionMonitoringCases.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionStatusAccountHelper\CollectionPaymentCommitment.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionStatusAccountLDI\CollectionStatusAccountLDI.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ConsumptionBalanceHelper\Account.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ConsumptionBalanceHelper\Recharge.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ConsumptionBalanceHelper\Service.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ConsumptionBalanceHelper\Trio.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ConsumptionBalanceHFCLTEHelper\Balance.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ConsumptionBalanceHFCLTEHelper\TelephoneType.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionStatusAccount\CollectionStatusAccount.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\Contact\AdditionalFields.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\Contact\Contact.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\Contact\ContactTypeByFielModel.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\Contact\ContactTypeFieldModel.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\Contact\ContactTypeModel.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\Contact\DataTypeModel.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\Contact\DocumentTypeModel.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ContractedBusinessServicesHelper\ContractServices.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ContractedBusinessServicesHelper\PhoneContract.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ContractedBusinessServicesHelper\BSCSService.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CustomerHistorySegment\CustomerHistorySegment.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\DataLineService\DataLineService.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\DecoHelper\DataDeco.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\DecoHelper\Deco.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\CollectionStatusAccountHR\CollectionStatusAccountHR.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\DiscountFixedChargeDetail.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeDetailTimMaxTwo.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeDetailTimMax.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeDetailTimProBagTwo.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeDetailTimProBagOne.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeDetailTimProBag.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeDetailTimProBagThree.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeTimProBagDetailThree.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeTimProBagDetailTwo.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeTimProBagDetailOne.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeTimProBagDetail.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeDetailTimProTwo.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeDetailTimProOne.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\FixedChargeHelper\FixedChargeDetailTimPro.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\HistoricalStriationHelper\HistoricalStriation.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\HistoryActions\HistoryActions.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\HistorySIM\HistorySIM.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LoanRental\LoandRentalType.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LoanRental\LoanRental.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LoanRental\LoanRentalNoClarify.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LoanRental\StockWarehouse.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LocalTrafficDetail\LocalTrafficDetail.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LocalTrafficDetail\LocalTrafficDetailCallTM.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LocalTrafficDetail\LocalTrafficDetailCallTP.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LongDistance\CallDetail.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LongDistance\CallDetailSMS.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\LongDistance\CallDetailTimService.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\PetitionsHelper\Petition.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\PetitionsHelper\PetitionType.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\QueryOAC\QueryOAC.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\Reclosures\Reclosures.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ScheduledTasksHelper\CacDacType.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ScheduledTasksHelper\ScheduledTransaction.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ScheduledTasksHelper\StateType.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\ScheduledTasksHelper\TransactionType.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Postpaid\StriationsHelper\Striations.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\CustomerCreateNotUseHelper\CreateNotUserItem.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\DataCallHelper\DataCall.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\DataReloadHerper\DataReload.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\DataReloadHerper\ExportExcelReloadDetailHelper.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\HistoricalTriationRFAHerlper\HistoricalTriationRFA.cs" />
+    <Compile Include="Areas\Dashboard\Helpers\Prepaid\PinkPukHelper\PinPuk.cs" />
+    <Compile Include="Areas\Dashboard\Models\Home\CustomerModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Home\InstantModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Home\PostpaidProductDetailModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Home\PostpaidProductModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Home\PrepaidProductModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Home\ProfileItemModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Home\SearchModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Home\SearchTypeModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataAccount\AccountAnnotationModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataAccount\AccountCreditLimitModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataAccount\AccountDetailAnnotationModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataAccount\AccountDetailCreditLimitModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataAccount\AccountPinPukModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataAccount\AccountRelationPlanHFCLTEModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataAccount\AccountRelationPlanModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataAccount\AccountSharedBagModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataAccount\AccountSuspendedContractModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataAccount\AccountWarrantyModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingDebtDetailModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingDetailLongDistanceModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingDiscountFixedChargeDetail.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeDetailTimMaxModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeDetailTimMaxTwoModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeDetailTimProBagModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeDetailTimProBagOneModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeDetailTimProBagThreeModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeDetailTimProBagTwoModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeDetailTimProModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeDetailTimProOneModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeDetailTimProTwoModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeTimProBagDetailModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeTimProBagDetailOneModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeTimProBagDetailThreeModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingFixedChargeTimProBagDetailTwoModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingHistoricDeliveryModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingHistoryHRModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingLocalTrafficDetailModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingHistoryInvoiceModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataBilling\BillingOtherChargesModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCollection\CollectionAffiliationToDebitModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCollection\CollectionDetailAmountDisputeModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCollection\CollectionDueDocumentNumberModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCollection\CollectionFeeEquipmentModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCollection\CollectionMonitoringCasesModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCollection\CollectionPaymentCommitmentModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCollection\CollectionStatusAccountLDIModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCollection\CollectionStatusAccountModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCollection\CollectionStatusAccountModelHR.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCustomer\ContactModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCustomer\CustomerHistorySegmentModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataCustomer\CustomerOfficeAddressModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\ActiveDaysModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\ConsumptionBalanceHFCLTEModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\ConsumptionBalanceModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\ContractedBusinessServicesModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\DecoModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\DecosModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\HistoricalStriationsModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\HistoryActionsModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\HLRModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\LoanRentalModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\PetitionsModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\PortabilityModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\QueryOACModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\ReclosuresModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\ScheduledTasksModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\StockWarehouseModal.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\StriationsModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PostpaidDataService\HistorySIMModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\DataAccountModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\DataBillingModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\DataCustomerModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\DataLineServiceModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\DataMotiveCancellationModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\DataParameterTPIModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\DataPaymentCollectionModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\Itm.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\ModelListaBloqueo.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\validarClienteModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Postpaid\validarLineaModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataCall\CallDetailModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataCall\ExportExcelCallModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataCall\GenericBagModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataCall\OnlineCallModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataCall\PrintCallModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataCall\VisualizeCallModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataCustomer\CustomerCreateNotUserModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataCustomer\CustomerPastModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataCustomer\CustomerSegmentModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataReload\ConsumptionDataPacketModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataReload\ExportExcelReloadModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataReload\OnlineReloadModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataReload\VisualizeReloadModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\AccountModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\BalanceModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\CanceledSaleDues.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\DataSaleModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\DataSalePELModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\DebtSaleDuesModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\HistoricalBalanceModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\HistoricalBondsModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\HistoricalTriationRFAModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\NumbersTriationModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\PendingSaleDues.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\PinkPukModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\PortabilityModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\PrepaidDataService\TrioModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Prepaid\DataCallModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Prepaid\DataCustomerModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Prepaid\DataReloadModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\Prepaid\DataServiceModel.cs" />
+    <Compile Include="Areas\Management\Controllers\BannerController.cs" />
+    <Compile Include="Areas\Management\Controllers\MassiveInstantController.cs" />
+    <Compile Include="Areas\Management\Controllers\PrepaidInstantController.cs" />
+    <Compile Include="Areas\Management\Helpers\BannerHelper\Banner.cs" />
+    <Compile Include="Areas\Management\Helpers\Instant\DataInstant.cs" />
+    <Compile Include="Areas\Management\ManagementAreaRegistration.cs" />
+    <Compile Include="Areas\Management\Models\BannerModel.cs" />
+    <Compile Include="Areas\Management\Models\InstantModel.cs" />
+    <Compile Include="Service References\DashboardService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Support\ShowFile.aspx.cs">
+      <DependentUpon>ShowFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Support\ShowFile.aspx.designer.cs">
+      <DependentUpon>ShowFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RedirectController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ColivingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CommonService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FileService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PostpaidService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PrepaidService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SecurityAudit\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SecurityService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WipBinService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\DialogTemplate.cshtml" />
+    <None Include="Service References\SecurityService\Security.wsdl" />
+    <None Include="Service References\SecurityService\Security.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\Security1.wsdl" />
+    <None Include="Service References\SecurityService\Security1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\Security2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\Security3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\Security4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Home\OptionsDefault.cshtml" />
+    <None Include="Service References\WipBinService\WipBinService.wsdl" />
+    <None Include="Service References\WipBinService\WipBinService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WipBinService\WipBinService91.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Shared\_Layout_View.cshtml" />
+    <Content Include="Views\Home\Popup.cshtml" />
+    <Content Include="Views\Shared\_LayoutPopup.cshtml" />
+    <Content Include="Views\Home\DialogDefault.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Cases\Views\Shared\" />
+    <Folder Include="Areas\Dashboard\Views\Shared\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Redirect\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ColivingService\" />
+    <WCFMetadataStorage Include="Service References\CommonService\" />
+    <WCFMetadataStorage Include="Service References\DashboardService\" />
+    <WCFMetadataStorage Include="Service References\FileService\" />
+    <WCFMetadataStorage Include="Service References\PostpaidService\" />
+    <WCFMetadataStorage Include="Service References\PrepaidService\" />
+    <WCFMetadataStorage Include="Service References\SecurityAudit\" />
+    <WCFMetadataStorage Include="Service References\SecurityService\" />
+    <WCFMetadataStorage Include="Service References\WipBinService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Claro.SIACU.Entity\Claro.SIACU.Entity.csproj">
+      <Project>{dd983e71-ed88-4257-bf9b-0cd4bff5be1c}</Project>
+      <Name>Claro.SIACU.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Claro.SIACU\Claro.SIACU.csproj">
+      <Project>{0b643a37-2757-48e9-a3e7-c15561aa1b86}</Project>
+      <Name>Claro.SIACU</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Claro.Entity\Claro.Entity.csproj">
+      <Project>{5b432611-cd37-4a2b-bcba-7509064e68ba}</Project>
+      <Name>Claro.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Claro.Helpers\Claro.Helpers.csproj">
+      <Project>{30d05e88-1f9b-4e7e-895c-df4cc60889a9}</Project>
+      <Name>Claro.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Claro.Web\Claro.Web.csproj">
+      <Project>{1630f11c-9caa-4a49-9bb2-7a3ccba1cd17}</Project>
+      <Name>Claro.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Claro\Claro.csproj">
+      <Project>{3126dd91-815a-4367-bb9e-8b241c73f4d0}</Project>
+      <Name>Claro</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19429</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:19429/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

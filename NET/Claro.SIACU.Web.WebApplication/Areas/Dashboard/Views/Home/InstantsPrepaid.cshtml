@@ -1,0 +1,229 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.InstantModel
+@{
+    Layout = null;
+    string flagcolor1 = "";
+    string flagcolor2 = "";
+    string flagcolor3 = "";
+    string flagcolor4 = "";
+    int counterTab1 = 0;
+    int counterTab2 = 0;
+    int counterTab3 = 0;
+    int counterTab4 = 0;
+}
+<div id="FormInstants">
+
+    @if (@Model.listInstant != null)
+    {
+            if (@Model.listInstant.Count >0 && @Model.listInstant[0].Description.IndexOf(@Model.TextFilter) != -1)
+            {
+
+                <div>
+                    <input type="hidden" value="" id="hdnCantReg" />
+                    <input type="hidden" value="@Model.listInstant[0].IdInstant" id="hdnIdInstants" />
+                    <input type="hidden" value="@Model.listInstant[0].Description" id="hdnDescriptionInstants" />
+
+                    @Model.listInstant[0].Description;
+                </div>
+            }
+            
+        else
+        {
+
+
+            foreach (var items in Model.listInstant)
+            {
+                if (items.Color == "strConsColor1") { counterTab1++; }
+                else if (items.Color == "strConsColor2") { counterTab2++; }
+                else if (items.Color == "strConsColor3") { counterTab3++; }
+                else { counterTab4++; }
+
+            }
+
+
+
+            <div class="panel-tabs divtabsinstant">
+                <input type="hidden" value="@counterTab1" id="hdnstr1" />
+                <input type="hidden" value="@counterTab2" id="hdnstr2" />
+                <input type="hidden" value="@counterTab3" id="hdnstr3" />
+                <input type="hidden" value="@counterTab4" id="hdnstr4" />
+                <input type="hidden" value="@Model.NumberRegisters" id="hdnCantReg" />
+
+                <ul id="divDashboardTabs" class="nav nav-tabs" role="tablist" data-tabs="tabs">
+                    <li id="PostImportanceHight" style="border-bottom:0" class=@flagcolor1>
+                        <a href="#divImportanceHight" role="tab" data-toggle="tab" data-parent="divDashboardTabs">
+                            <div> <div style="background-color: red; width: 14px;height:12px; float: left;margin-top:3px;margin-right:3px;">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;">Importancia Alta</div></div>
+                        </a>
+                    </li>
+                    <li id="PostImportanceMediumHight" class=@flagcolor2>
+                        <a href="#divImportanceMediumHight" role="tab" data-toggle="tab" data-parent="divDashboardTabs">
+                            <div> <div style="background-color: green; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;">Importancia Media Alta</div></div>
+                        </a>
+                    </li>
+                    <li id="PostImortanceMedium" class=@flagcolor3>
+                        <a href="#divImortanceMedium" role="tab" data-toggle="tab" data-parent="divDashboardTabs">
+                            <div> <div style="background-color: orange; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;">Importancia Media</div></div>
+                        </a>
+                    </li>
+                    <li id="PostDefault" class=@flagcolor4>
+                        <a href="#divDefault" role="tab" data-toggle="tab" data-parent="divDashboardTabs">
+                            <div> <div style="background-color: #3e8dd0; width: 14px; height: 12px; float: left; margin-top: 3px; margin-right: 3px; ">&nbsp;</div>&nbsp;&nbsp;<div style="float:left;">Default</div></div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+
+
+                    <div id="divImportanceHight" class="tab-pane bg-danger @flagcolor1">
+                        <table class="tablinstant" cellpadding="5">
+                            <tr><th>Descripción</th></tr>
+                            @{
+            int counter = 1;
+                            }
+                            @foreach (var item in Model.listInstant)
+                            {
+                                if (item.Color == "strConsColor1")
+                                {
+                                    if (counter % 2 == 0)
+                                    {
+                                        <tr class="trparinstant bg-danger"><td><div class="divparinstant bg-danger"> Alarma @counter: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                    }
+                                    else
+                                    {
+                                        <tr class="trimparinstant bg-danger"><td><div class="divimparinstant bg-danger"> Alarma @counter: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                    }
+
+                                    counter++;
+                                }
+                            }
+
+                        </table>
+                    </div>
+
+
+                    <div id="divImportanceMediumHight" class="tab-pane bg-success @flagcolor2">
+                        <table class="tablinstant" cellpadding="5">
+                            <tr><th>Descripción</th></tr>
+                            @{
+            int counter2 = 1;
+                            }
+                            @foreach (var item in Model.listInstant)
+                            {
+                                if (item.Color == "strConsColor2")
+                                {
+                                    if (counter2 % 2 == 0)
+                                    {
+                                        <tr class="trparinstant bg-success"><td><div class="divparinstant bg-success"> Alarma @counter2: @item.DateValidityStartFormat al @item.DateValidityEndFormat     @item.Description</div></td></tr>
+                                    }
+                                    else
+                                    {
+                                        <tr class="trimparinstant bg-success"><td><div class="divimparinstant bg-success"> Alarma @counter2: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                    }
+
+                                    counter2++;
+                                }
+                            }
+
+                        </table>
+
+                    </div>
+
+
+                    <div id="divImortanceMedium" class="tab-pane bg-warning @flagcolor3">
+                        <table class="tablinstant" cellpadding="5">
+                            <tr><th>Descripción</th></tr>
+                            @{
+            int counter3 = 1;
+                            }
+                            @foreach (var item in Model.listInstant)
+                            {
+                                if (item.Color == "strConsColor3")
+                                {
+                                    if (counter3 % 2 == 0)
+                                    {
+                                        <tr class="trparinstant bg-warning"><td><div class="divparinstant bg-warning"> Alarma @counter3: @item.DateValidityStartFormat al @item.DateValidityEndFormat     @item.Description</div></td></tr>
+                                    }
+                                    else
+                                    {
+                                        <tr class="trimparinstant bg-warning"><td><div class="divimparinstant bg-warning"> Alarma @counter3: @item.DateValidityStartFormat al @item.DateValidityEndFormat    @item.Description</div></td></tr>
+                                    }
+
+                                    counter3++;
+                                }
+                            }
+
+                        </table>
+                    </div>
+
+
+                    <div id="divDefault" class="tab-pane active bg-info @flagcolor4">
+                        <table class="tablinstant" cellpadding="5">
+                            <tr><th>Descripción</th></tr>
+                            @{
+            int counter4 = 1;
+                            }
+                            @foreach (var item in Model.listInstant)
+                            {
+
+                                if (item.Color == "strConsColor1")
+                                {
+                                    if (counter4 % 2 == 0)
+                                    {
+                                        <tr class="trparinstant bg-info" style="background-color: #f2dede"><td><div class="divparinstant bg-info" style="background-color: #f2dede"> Alarma @counter4: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                    }
+                                    else
+                                    {
+                                        <tr class="trimparinstant bg-info"><td><div class="divimparinstant bg-info" style="background-color: #f2dede"> Alarma @counter4: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                    }
+                                }
+                                else if (item.Color == "strConsColor2")
+                                {
+                                if (counter4 % 2 == 0)
+                                {
+                                        <tr class="trparinstant bg-info" style="background-color: #dff0d8"><td><div class="divparinstant bg-info" style="background-color: #dff0d8"> Alarma @counter4: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                }
+                                else
+                                {
+                                        <tr class="trimparinstant bg-info"><td><div class="divimparinstant bg-info" style="background-color: #dff0d8"> Alarma @counter4: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                    }
+                                }
+
+                                else if (item.Color == "strConsColor3")
+                                {
+                                    if (counter4 % 2 == 0)
+                                    {
+                                        <tr class="trparinstant bg-info" style="background-color: #fcf8e3"><td><div class="divparinstant bg-info" style="background-color: #fcf8e3"> Alarma @counter4: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                    }
+                                    else
+                                    {
+                                        <tr class="trimparinstant bg-info"><td><div class="divimparinstant bg-info" style="background-color: #fcf8e3"> Alarma @counter4: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                    }
+                                }
+
+                                else
+                                {
+                                    if (counter4 % 2 == 0)
+                                    {
+                                        <tr class="trparinstant bg-info" style="background-color: #d9edf7"><td><div class="divparinstant bg-info" style="background-color: #d9edf7"> Alarma @counter4: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                    }
+                                    else
+                                    {
+                                        <tr class="trimparinstant bg-info "><td><div class="divimparinstant bg-info" style="background-color: #d9edf7"> Alarma @counter4: @item.DateValidityStartFormat al @item.DateValidityEndFormat  @item.Description</div></td></tr>
+                                    }
+                                }
+
+                                counter4++;
+
+                            }
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Home/Instants")
+

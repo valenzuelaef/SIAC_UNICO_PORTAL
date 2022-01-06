@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetSharedBag" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetSharedBag" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="SharedBagRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlagQuery" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IPAplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdTransaction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MesageText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeCustomer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsrAplication" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SharedBagRequestPostPaid" nillable="true" type="tns:SharedBagRequestPostPaid" />
+  <xs:complexType name="SharedBagResponsePostPaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountSharedBag" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="ListSharedBag" nillable="true" type="q2:ArrayOfSharedBagPostPaid" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="ListSharedBagLine" nillable="true" type="q3:ArrayOfSharedBagPostPaid" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageTypeCustomer" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="ObjSharedBag" nillable="true" type="q4:SharedBagPostPaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SharedBagResponsePostPaid" nillable="true" type="tns:SharedBagResponsePostPaid" />
+</xs:schema>

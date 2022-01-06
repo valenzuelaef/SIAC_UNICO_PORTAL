@@ -1,0 +1,110 @@
+﻿@using System.Web.Optimization;
+@model  Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataCall.PrintCallModel
+@{
+    Layout = null;
+}
+<html id="htmVIEW">
+<head>
+    <title>Reporte de Llamadas</title>
+    <link href="~/Areas/Dashboard/Css/FormatPrintCallCss.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="ContenedorCall" class="container">
+        <input type="hidden" value="@Model.Headers" id="headers" />
+        <table class="general">
+            <tr>
+                <td class="not-borde cell-head center-logo">
+
+                    <img src="~/Images/logo-claro.png" />
+                </td>
+                <td class="not-borde cell-center-head">
+                    <table id="cabecera" class="head">
+                        <caption><h4>Reporte de Llamadas y Consumo</h4></caption>
+
+                        <tr>
+                            <td colspan="2" class="field center-simple">Teléfono:</td>
+                            <td colspan="2" class="data">@Model.DetCallTelephone</td>
+
+                        </tr>
+                        <tr>
+                            <td class="field">Trafico por Teléfono del: </td>
+                            <td class="data">@Model.DateFrom</td>
+                            <td class="field">al:</td>
+                            <td class="data">@Model.DateTo</td>
+                        </tr>
+
+                    </table>
+
+                </td>
+                <td class="not-borde cell-head"></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="not-borde cell-body">
+                    <table id="cuerpo"  class="table">
+                        <thead class="claro-bg-primary">
+                            <tr>
+                                <th>Fecha y Hora</th>
+                                <th>Teléfono Destino</th>
+                                <th>Tipo de Tráfico</th>
+                                <th>Duración</th>
+                                <th>Consumo</th>
+                                <th>Coprado / Regalado</th>
+                                <th>Saldo</th>
+                                <th>Bolsa ID</th>
+                                <th>Descripción</th>
+                                <th>Plan</th>
+                                <th>Promoción</th>
+                                <th>Destino</th>
+                                <th>Operador</th>
+                                <th>Grupo de Cobro</th>
+                                <th>Tipo de Red</th>
+                                <th>IMEI</th>
+                                <th>Roaming</th>
+                                <th>Zona Tarifaria</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (Claro.SIACU.Web.WebApplication.Areas.Dashboard.Helpers.Prepaid.DataCallHelper.DataCall item in Model.listCallDetailModel)
+                            {
+                                <tr>
+                                    <td>@item.CallDateTime</td>
+                                    <td>@item.CallTelephoneDestination</td>
+                                    <td>@item.CallTypeTraffic</td>
+                                    <td>@item.CallDuration</td>
+                                    <td>@item.CallUptake</td>
+                                    <td>@item.CallBoughtPresented</td>
+                                    <td>@item.CallBalance</td>
+                                    <td>@item.CallBagId</td>
+                                    <td>@item.CallDescription</td>
+                                    <td>@item.CallPlan</td>
+                                    <td>@item.CallPromotion</td>
+                                    <td>@item.CallDestination</td>
+                                    <td>@item.CallOperator</td>
+                                    <td>@item.CallCobroGroup</td>
+                                    <td>@item.CallNetworkType</td>
+                                    <td>@item.CallImei</td>
+                                    <td>@item.CallRoaming</td>
+                                    <td>@item.CallTariffArea</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>   
+    @Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/Dashboard/PrepaidDataCall/PrintCall")
+</body>
+</html>
+
+
+
+
+
+
+
+

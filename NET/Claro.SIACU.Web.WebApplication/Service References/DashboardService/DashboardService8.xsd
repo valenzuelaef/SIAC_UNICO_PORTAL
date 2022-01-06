@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetInvoice" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetInvoice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:complexType name="InvoiceRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cantNroRecibo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="listaOpcional" nillable="true" type="tns:ListaOpcional" />
+          <xs:element minOccurs="0" name="nroRecibo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvoiceRequest" nillable="true" type="tns:InvoiceRequest" />
+  <xs:complexType name="ListaOpcional">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaOpcional" nillable="true" type="tns:ListaOpcional" />
+  <xs:complexType name="InvoiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaemision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecharegistro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechavencimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idonbase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="listaOpcional" nillable="true" type="tns:ListaOpcional" />
+      <xs:element minOccurs="0" name="nroRecibo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="periodo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceResponse" nillable="true" type="tns:InvoiceResponse" />
+</xs:schema>

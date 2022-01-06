@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetActiveDays" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetActiveDays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:complexType name="ActiveDaysRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContratoID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActiveDaysRequestPostPaid" nillable="true" type="tns:ActiveDaysRequestPostPaid" />
+  <xs:complexType name="ActiveDaysResponsePostPaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActiveDays" type="xs:int" />
+      <xs:element minOccurs="0" name="DisableDays" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActiveDaysResponsePostPaid" nillable="true" type="tns:ActiveDaysResponsePostPaid" />
+</xs:schema>

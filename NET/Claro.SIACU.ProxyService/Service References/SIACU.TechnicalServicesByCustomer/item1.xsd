@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entappcusbilrat="http://claro.com.pe/esb/data/customer/appliedCustomerBillingRate/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entcusext="http://claro.com.pe/esb/data/customer/customerExtension/v2/" xmlns:entcusbil="http://claro.com.pe/esb/data/customer/customerBill/v2/" xmlns:entcus="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:entparrev="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" xmlns:entcusbilcol="http://claro.com.pe/esb/data/customer/customerBillCollection/v2/" targetNamespace="http://claro.com.pe/esb/data/customer/customerBill/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerBillCollection_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerBillCollection/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=AppliedCustomerBillingRate_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/appliedCustomerBillingRate/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerExtension/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyRevenue_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Customer_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customer/v2/" />
+  <xs:complexType name="CustomerAccountBalanceType">
+    <xs:annotation>
+      <xs:documentation>CustomerAccountBalanceTypeSpec describes and defines certain type of CustomerAccountBalance.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the CustomerAccountBalanceType.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Name of the CustomerAccountBalanceType.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An explanation of the CustomerAccountBalanceType.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the CustomerAccountBalanceType is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="balanceClass" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Class of the CustomerAccountBalance, such as prepayment, deposit, bonus.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerAccountBalance" type="entcusbil:CustomerAccountBalance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerBill">
+    <xs:annotation>
+      <xs:documentation>A total amount due from a CustomerAccount for all products during the billing period.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerAccount" type="entcus:CustomerAccount" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyBill" type="entparrev:PartyBill" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerBillSpec" type="entcusbil:CustomerBillSpec" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerPaymentItem" type="entcusbilcol:CustomerPaymentItem" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_appliedCustomerBillingRate" type="entappcusbilrat:AppliedCustomerBillingRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerBillingCycle">
+    <xs:annotation>
+      <xs:documentation>An occurrence of a billing cycle. Besides significant dates, it records who triggered the cycle.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="billingDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>A billing date.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="chargeDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>A date through which charges previously received by the billing system appear on the bill.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="creditDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>A date through which credits previously received by the billing system appear on the bill.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="mailingDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>A customer bill mailing date.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="paymentDueDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>A customer bill payment due date.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="productionReason" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The reason for this cycle run. Values may be SCHEDULE_RUN, PROVEIDER_REQUEST or others</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerBillSpec" type="entcusbil:CustomerBillSpec" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerBillingCycleExtension" type="entcusext:CustomerBillingCycleExtension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerBillSpec">
+    <xs:annotation>
+      <xs:documentation>A detailed description of a customer's bill structure. The current version of this class is serving as a placeholder. It will be further developed in the next version of this document.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A short descriptive name.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains in detail the specification.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the CustomerBillSpec is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerBillingCycle" type="entcusbil:CustomerBillingCycle" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerAccount" type="entcus:CustomerAccount" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerBill" type="entcusbil:CustomerBill" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerDiscount">
+    <xs:annotation>
+      <xs:documentation>A reduction to a CustomerBill that can be used by a CustomerAccount. An example of discount is $100 off granted by DiscountProdPriceAlteration. While customer is using the service the available discount is gradually reduced.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerDiscountExtension" type="entcusext:CustomerDiscountExtension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerAccountBalance">
+    <xs:annotation>
+      <xs:documentation>CustomerAccountBalance represents and tracks the amount remained or owed in certain account which is owned by certain customer.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the CustomerAccountBalance.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which CustomerAccountBalance is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="remainedAmount" type="entbastyp:Quantity">
+        <xs:annotation>
+          <xs:documentation>Remained or owed account balance amount. Here Quantity type represents both non-monetary balance and monetary balance. Non-monetary balance is applied to the service usage volume and monetary balance is applied to the monetary amount.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerAccount" type="entcus:CustomerAccount" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_accountBalancePM" type="entparrev:AccountBalancePM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerAccountBalanceExtension" type="entcusext:CustomerAccountBalanceExtension" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerPaymentItem" type="entcusbilcol:CustomerPaymentItem" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerAccountBalanceType" type="entcusbil:CustomerAccountBalanceType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

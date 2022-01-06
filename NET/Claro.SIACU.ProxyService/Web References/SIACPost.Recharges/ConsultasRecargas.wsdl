@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N0:definitions xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N1="http://claro.com.pe/eai/postpaidservices/Movil/Consultas/Recargas/" name="ConsultasRecargas" targetNamespace="http://claro.com.pe/eai/postpaidservices/Movil/Consultas/Recargas/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/">
+  <WL5G3N0:types>
+    <xsd:schema xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://limdeseaiocsv01.tim.com.pe:8909/Postpaid_Services/Movil/Consultas/Recargas?SCHEMA%2FPostpaid+Services%2FMovil%2FConsultas%2FRecargas%2Fxsd%2FMovil-ConsultasRecargas" namespace="http://claro.com.pe/eai/postpaidservices/Movil/Consultas/Recargas/" />
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="consultarSaldoClienteRequest">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:consultarSaldoCliente" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="consultarSaldoClienteResponse">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:consultarSaldoClienteResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="consultarBolsasRequest">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:consultarBolsas" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="consultarBolsasResponse">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:consultarBolsasResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="consultarSaldoBolsasRequest">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:consultarSaldoBolsas" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="consultarSaldoBolsasResponse">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:consultarSaldoBolsasResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="ConsultasRecargas">
+    <WL5G3N0:operation name="consultarSaldoCliente">
+      <WL5G3N0:input message="WL5G3N1:consultarSaldoClienteRequest" />
+      <WL5G3N0:output message="WL5G3N1:consultarSaldoClienteResponse" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="consultarBolsas">
+      <WL5G3N0:input message="WL5G3N1:consultarBolsasRequest" />
+      <WL5G3N0:output message="WL5G3N1:consultarBolsasResponse" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="consultarSaldoBolsas">
+      <WL5G3N0:input message="WL5G3N1:consultarSaldoBolsasRequest" />
+      <WL5G3N0:output message="WL5G3N1:consultarSaldoBolsasResponse" />
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="ConsultasRecargasSOAP11Binding" type="WL5G3N1:ConsultasRecargas">
+    <WL5G3N2:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WL5G3N0:operation name="consultarSaldoCliente">
+      <WL5G3N2:operation soapAction="http://claro.com.pe/eai/postpaidservices/Movil/Consultas/Recargas/consultarSaldoCliente" style="document" />
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="consultarBolsas">
+      <WL5G3N2:operation soapAction="http://claro.com.pe/eai/postpaidservices/Movil/Consultas/Recargas/consultarBolsas" style="document" />
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="consultarSaldoBolsas">
+      <WL5G3N2:operation soapAction="http://claro.com.pe/eai/postpaidservices/Movil/Consultas/Recargas/consultarSaldoBolsas" style="document" />
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="ConsultasRecargasSOAP11BindingQSService">
+    <WL5G3N0:port name="ConsultasRecargasSOAP11BindingQSPort" binding="WL5G3N1:ConsultasRecargasSOAP11Binding">
+      <WL5G3N2:address location="http://limdeseaiocsv01.tim.com.pe:8909/Postpaid_Services/Movil/Consultas/Recargas" />
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

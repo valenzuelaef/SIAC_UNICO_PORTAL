@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetInvoice" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomerInfo" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPostpaidProducts" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPostpaidLines" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPrepaidProducts" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomer" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetRedirectSession" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.InsertRedirectCommunication" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.ValidateRedirectCommunication" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetInstants" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomerName" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetInvoiceFtp" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetFileInvoice" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetReceiptNumber" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetTypeMIME" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.File.GetFileDefaultImpersonation" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetEmployeByUser" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.ReadOptionsByUser" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd28" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.CheckingUser" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd29" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFlagAjuste" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd30" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStateEquipo" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd32" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetReasonCancelInvoice" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd33" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.CancelInvoice" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd34" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.EvaluateAmount" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd35" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDegradationTobe" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd37" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetUserProfile" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd38" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetListaBloqueoDesbloqueo.Request" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd39" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetListaBloqueoDesbloqueo.Response" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:element name="GetIdOnBase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetInvoice" minOccurs="0" name="objRequest" nillable="true" type="q1:InvoiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdOnBaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetInvoice" minOccurs="0" name="GetIdOnBaseResult" nillable="true" type="q2:InvoiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomerInfo" minOccurs="0" name="oGetCustomerInfoRequest" nillable="true" type="q3:CustomerInfoRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomerInfo" minOccurs="0" name="GetCustomerInfoResult" nillable="true" type="q4:CustomerInfoResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostpaidProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPostpaidProducts" minOccurs="0" name="GetPostpaidProductsRequest" nillable="true" type="q5:PostpaidProductsRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostpaidProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPostpaidProducts" minOccurs="0" name="GetPostpaidProductsResult" nillable="true" type="q6:PostpaidProductsResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostpaidLines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPostpaidLines" minOccurs="0" name="GetPostpaidLinesRequest" nillable="true" type="q7:PostpaidLinesRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostpaidLinesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPostpaidLines" minOccurs="0" name="GetPostpaidLinesResult" nillable="true" type="q8:PostpaidLinesResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrepaidProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPrepaidProducts" minOccurs="0" name="GetPrepaidProductsRequest" nillable="true" type="q9:PrepaidProductsRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrepaidProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetPrepaidProducts" minOccurs="0" name="GetPrepaidProductsResult" nillable="true" type="q10:PrepaidProductsResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomer" minOccurs="0" name="objCustomerRequest" nillable="true" type="q11:CustomerRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomer" minOccurs="0" name="GetCustomerResult" nillable="true" type="q12:CustomerResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRedirectSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetRedirectSession" minOccurs="0" name="objRedirectSessionRequest" nillable="true" type="q13:RedirectSessionRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRedirectSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetRedirectSession" minOccurs="0" name="GetRedirectSessionResult" nillable="true" type="q14:RedirectSessionResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRedirectCommunication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.InsertRedirectCommunication" minOccurs="0" name="objInsertRedirectComRequest" nillable="true" type="q15:InsertRedirectComRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRedirectCommunicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.InsertRedirectCommunication" minOccurs="0" name="InsertRedirectCommunicationResult" nillable="true" type="q16:InsertRedirectComResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateRedirectCommunication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.ValidateRedirectCommunication" minOccurs="0" name="objValidateRedirectComRequest" nillable="true" type="q17:ValidateRedirectComRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateRedirectCommunicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.ValidateRedirectCommunication" minOccurs="0" name="ValidateRedirectCommunicationResult" nillable="true" type="q18:ValidateRedirectComResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInstants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetInstants" minOccurs="0" name="objInstantsRequest" nillable="true" type="q19:InstantsRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInstantsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetInstants" minOccurs="0" name="GetInstantsResult" nillable="true" type="q20:InstantsResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomerName" minOccurs="0" name="objCustomerNameRequest" nillable="true" type="q21:CustomerNameRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomerName" minOccurs="0" name="GetCustomerNameResult" nillable="true" type="q22:CustomerNameResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoiceFtp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetInvoiceFtp" minOccurs="0" name="objInvoiceFtpRequest" nillable="true" type="q23:InvoiceFtpRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoiceFtpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetInvoiceFtp" minOccurs="0" name="GetInvoiceFtpResult" nillable="true" type="q24:InvoiceFtpResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetFileInvoice" minOccurs="0" name="objFileInvoiceRequest" nillable="true" type="q25:FileInvoiceRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetFileInvoice" minOccurs="0" name="GetFileInvoiceResult" nillable="true" type="q26:FileInvoiceResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceiptNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetReceiptNumber" minOccurs="0" name="ReceiptNumberRequest" nillable="true" type="q27:ReceiptNumberRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceiptNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetReceiptNumber" minOccurs="0" name="GetReceiptNumberResult" nillable="true" type="q28:ReceiptNumberResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTypeMIME">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetTypeMIME" minOccurs="0" name="objGetTypeMIMERequest" nillable="true" type="q29:GetTypeMIMERequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTypeMIMEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetTypeMIME" minOccurs="0" name="GetTypeMIMEResult" nillable="true" type="q30:GetTypeMIMEResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerForInstMasive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomer" minOccurs="0" name="objCustomerRequest" nillable="true" type="q31:CustomerRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerForInstMasiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomer" minOccurs="0" name="GetCustomerForInstMasiveResult" nillable="true" type="q32:CustomerResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileAjusteV3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.File.GetFileDefaultImpersonation" minOccurs="0" name="objFileDefaultImpersonationRequest" nillable="true" type="q33:FileDefaultImpersonationRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileAjusteV3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.File.GetFileDefaultImpersonation" minOccurs="0" name="GetFileAjusteV3Result" nillable="true" type="q34:FileDefaultImpersonationResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileAjuste">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.File.GetFileDefaultImpersonation" minOccurs="0" name="objFileDefaultImpersonationRequest" nillable="true" type="q35:FileDefaultImpersonationRequestDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileAjusteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.File.GetFileDefaultImpersonation" minOccurs="0" name="GetFileAjusteResult" nillable="true" type="q36:FileDefaultImpersonationResponseDashboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmployeByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetEmployeByUser" minOccurs="0" name="objEmployeeRequest" nillable="true" type="q37:EmployeeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmployeByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetEmployeByUser" minOccurs="0" name="GetEmployeByUserResult" nillable="true" type="q38:EmployeeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadOptionsByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.ReadOptionsByUser" minOccurs="0" name="objReadOptionsByUserRequest" nillable="true" type="q39:ReadOptionsByUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadOptionsByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.ReadOptionsByUser" minOccurs="0" name="ReadOptionsByUserResult" nillable="true" type="q40:ReadOptionsByUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckingUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.CheckingUser" minOccurs="0" name="objCheckingUserRequest" nillable="true" type="q41:CheckingUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckingUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.CheckingUser" minOccurs="0" name="CheckingUserResult" nillable="true" type="q42:CheckingUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlagAjuste">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFlagAjuste" minOccurs="0" name="objFlagAjsuteRequest" nillable="true" type="q43:FlagAjsuteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlagAjusteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFlagAjuste" minOccurs="0" name="GetFlagAjusteResult" nillable="true" type="q44:FlagAjusteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParameterByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strIdSession" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTransaction" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Code" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParameterByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetParameterByCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStateEquipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStateEquipo" minOccurs="0" name="objRequest" nillable="true" type="q45:StateEquipoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStateEquipoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStateEquipo" minOccurs="0" name="GetStateEquipoResult" nillable="true" type="q46:StateEquipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReasonCancelInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetReasonCancelInvoice" minOccurs="0" name="objRequest" nillable="true" type="q47:ReasonCancelInvoiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReasonCancelInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetReasonCancelInvoice" minOccurs="0" name="GetReasonCancelInvoiceResult" nillable="true" type="q48:ReasonCancelInvoiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.CancelInvoice" minOccurs="0" name="objRequest" nillable="true" type="q49:CancelInvoiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.CancelInvoice" minOccurs="0" name="CancelInvoiceResult" nillable="true" type="q50:CancelInvoiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTyficationList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.CancelInvoice" minOccurs="0" name="objRequest" nillable="true" type="q51:TypificationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTyficationListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.CancelInvoice" minOccurs="0" name="GetTyficationListResult" nillable="true" type="q52:TypificationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEvaluateAmount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.EvaluateAmount" minOccurs="0" name="objRequest" nillable="true" type="q53:EvaluateAmountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEvaluateAmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.EvaluateAmount" minOccurs="0" name="GetEvaluateAmountResult" nillable="true" type="q54:EvaluateAmountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBalancePostpaidConsumerB2ELegacyDegradation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDegradationTobe" minOccurs="0" name="request" nillable="true" type="q55:GetDegradationRequestTobe" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBalancePostpaidConsumerB2ELegacyDegradationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetDegradationTobe" minOccurs="0" name="GetBalancePostpaidConsumerB2ELegacyDegradationResult" nillable="true" type="q56:GetDegradationResponseTobe" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfileUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetUserProfile" minOccurs="0" name="objRequest" nillable="true" type="q57:UserProfileRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfileUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetUserProfile" minOccurs="0" name="GetProfileUserResult" nillable="true" type="q58:UserProfileResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaBloqueoDesbloqueo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetListaBloqueoDesbloqueo.Request" minOccurs="0" name="objRequest" nillable="true" type="q59:RequestListaobtenerBloqueos" />
+        <xs:element xmlns:q60="Claro" minOccurs="0" name="objAuditoriaRequest" nillable="true" type="q60:AuditRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaBloqueoDesbloqueoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetListaBloqueoDesbloqueo.Response" minOccurs="0" name="GetListaBloqueoDesbloqueoResult" nillable="true" type="q61:ResponseListaObtenerBloqueos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBalanceFijaTobe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="Claro" minOccurs="0" name="objAudit" nillable="true" type="q62:AuditRequest" />
+        <xs:element minOccurs="0" name="strMsidn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="coIdPub" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBalanceFijaTobeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="GetBalanceFijaTobeResult" nillable="true" type="q63:ArrayOfBalancePostPaid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entaddparent="http://claro.com.pe/esb/data/engagedParty/additionalPartyEntities/v2/" xmlns:entparint="http://claro.com.pe/esb/data/engagedParty/partyInteraction/v2/" xmlns:entparrev="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" targetNamespace="http://claro.com.pe/esb/data/engagedParty/partyInteraction/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../CommonBusinessEntities/BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:import schemaLocation="PartyRevenue_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/RootBusinessEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" />
+  <xs:import schemaLocation="AdditionalPartyEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/additionalPartyEntities/v2/" />
+  <xs:complexType name="InquiryRequest">
+    <xs:annotation>
+      <xs:documentation>A Request for information.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:Request">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PartyDisputedAmount">
+    <xs:annotation>
+      <xs:documentation>PartyDisputedAmount is a type of DisputedAmount which represents an amount of money in dispute between the enterprise and one of its partys</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:DisputedAmount">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_partyAccount" type="entaddparent:PartyAccount" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_partyBill" type="entparrev:PartyBill" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_entitySpecificationAttachment" type="entroobusent:EntitySpecificationAttachment" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PartyInquiry">
+    <xs:annotation>
+      <xs:documentation>A request for information from a Party.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entparint:InquiryRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

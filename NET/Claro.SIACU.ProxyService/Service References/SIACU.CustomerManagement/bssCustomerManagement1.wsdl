@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://claro.com.pe/esb/customer/bssCustomerManagement/v2/" xmlns:hd="http://claro.com.pe/esb/data/commonBusinessEntities/claroGenericHeaders/v2/" xmlns:dp="http://claro.com.pe/generic/messageFormat/v1.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fl="http://claro.com.pe/esb/data/commonBusinessEntities/claroFault/v2/" xmlns:cusecuv2="http://claro.com.pe/esb/message/bssCustomerManagement/searchCustomer/v2/" xmlns:inp1="http://claro.com.pe/esb/message/bssCustomerManagement/getScore/v2/" name="bssCustomerManagement" targetNamespace="http://claro.com.pe/esb/customer/bssCustomerManagement/v2/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="../../../../../tecnologia/framework/servicios/esquemas/HeaderGeneric_v1.0.xsd" namespace="http://claro.com.pe/generic/messageFormat/v1.0/" />
+      <xsd:import schemaLocation="../../../../../tecnologia/framework/servicios/esquemas/CommonsException.xsd" namespace="http://claro.com.pe/eai/ebs/xsd/CommonsException" />
+      <xsd:import schemaLocation="../esquemas/getScore.xsd" namespace="http://claro.com.pe/esb/message/bssCustomerManagement/getScore/v2/" />
+      <xsd:import schemaLocation="../esquemas/searchCustomer.xsd" namespace="http://claro.com.pe/esb/message/bssCustomerManagement/searchCustomer/v2/" />
+      <xsd:import schemaLocation="../../../../../tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ClaroFault_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/claroFault/v2/" />
+      <xsd:import schemaLocation="../../../../../tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ClaroGenericHeaders_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/claroGenericHeaders/v2/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetScoreRequestMessage">
+    <wsdl:part name="getScoreRequest" element="inp1:GetScoreRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreResponseMessage">
+    <wsdl:part name="getScoreResponse" element="inp1:GetScoreResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="SearchCustomerRequestMessage">
+    <wsdl:part name="searchCustomerRequestMessage" element="cusecuv2:SearchCustomerRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="SearchCustomerResponseMessage">
+    <wsdl:part name="searchCustomerResponseMessage" element="cusecuv2:SearchCustomerResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="claroFault">
+    <wsdl:part name="claroFault" element="fl:claroFault" />
+  </wsdl:message>
+  <wsdl:message name="headerRequest">
+    <wsdl:part name="headerReq" element="hd:headerRequest" />
+    <wsdl:part name="HeaderRequest" element="dp:HeaderRequest" />
+  </wsdl:message>
+  <wsdl:message name="headerResponse">
+    <wsdl:part name="headerResp" element="hd:headerResponse" />
+    <wsdl:part name="HeaderResponse" element="dp:HeaderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BssCustomerManagementPort">
+    <wsdl:operation name="getScore">
+      <wsdl:input message="tns:GetScoreRequestMessage" />
+      <wsdl:output message="tns:GetScoreResponseMessage" />
+      <wsdl:fault name="claroFault" message="tns:claroFault" />
+    </wsdl:operation>
+    <wsdl:operation name="searchCustomer">
+      <wsdl:input message="tns:SearchCustomerRequestMessage" />
+      <wsdl:output message="tns:SearchCustomerResponseMessage" />
+      <wsdl:fault name="claroFault" message="tns:claroFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BssCustomerManagementSoap11Binding" type="tns:BssCustomerManagementPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getScore">
+      <soap:operation soapAction="http://claro.com.pe/esb/customer/bssCustomerManagement/v2/getScore" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:headerRequest" part="headerReq" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="tns:headerResponse" part="headerResp" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="claroFault">
+        <soap:fault use="literal" name="claroFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchCustomer">
+      <soap:operation soapAction="http://claro.com.pe/esb/customer/bssCustomerManagement/v2/searchCustomer" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:headerRequest" part="headerReq" use="literal" />
+        <soap:header message="tns:headerRequest" part="HeaderRequest" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="tns:headerResponse" part="headerResp" use="literal" />
+        <soap:header message="tns:headerResponse" part="HeaderResponse" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="claroFault">
+        <soap:fault use="literal" name="claroFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BssCustomerManagement">
+    <wsdl:port name="BssCustomerManagementPort" binding="tns:BssCustomerManagementSoap11Binding">
+      <soap:address location="http://www.example.com" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

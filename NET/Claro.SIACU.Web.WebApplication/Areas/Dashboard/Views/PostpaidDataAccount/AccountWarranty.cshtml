@@ -1,0 +1,87 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataAccount.AccountWarrantyModel
+
+<div id="ContentAccountWarranty">
+    <div id="modal-content">
+        <div class="panel panel-info">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                    <a data-toggle="collapse" href="#DatosRentacollapse"> Renta Adelantada</a>
+                </h4>
+
+            </div>
+            <div id="DatosRentacollapse" class="panel-collapse collapse in table-responsive ">
+
+
+                <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblRenta">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th class="col-sm-1">Nro DRA</th>
+                            <th class="col-sm-1">Fecha</th>
+                            <th class="col-sm-1">Estado</th>
+                            <th class="col-sm-1">Importe</th>
+                            <th class="col-sm-1">Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.lstCabAccountWarranty != null)
+                        {
+                                foreach (var item in Model.lstCabAccountWarranty)
+                                {
+                                        <tr>
+                                            <td class="col-sm-1">@item.Number</td>
+                                            <td class="col-sm-1">@item.Date</td>
+                                            <td class="col-sm-1">@item.State</td>
+                                            <td class="col-sm-1">@item.Amount</td>
+                                            <td class="col-sm-1">@item.Residue</td>
+                                        </tr>
+                                }
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="panel panel-info ">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                    <a data-toggle="collapse" href="#DatosDepositocollapse">Deposito en Garantia</a>
+                </h4>
+
+            </div>
+            <div id="DatosDepositocollapse" class="panel-collapse collapse in table-responsive ">
+                <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblDeposito">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th class="col-sm-1">Nro DEP</th>
+                            <th class="col-sm-1">Fecha</th>
+                            <th class="col-sm-1">Estado</th>
+                            <th class="col-sm-1">Importe</th>
+                            <th class="col-sm-1">Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.lstDebAccountWarranty != null)
+                        {
+                                foreach (var item in Model.lstDebAccountWarranty)
+                                {
+                                        <tr>
+                                            <td class="col-sm-1">@item.Number</td>
+                                            <td class="col-sm-1">@item.Date</td>
+                                            <td class="col-sm-1">@item.State</td>
+                                            <td class="col-sm-1">@item.Amount</td>
+                                            <td class="col-sm-1">@item.Residue</td>
+                                        </tr>
+                                }
+                        }
+                    </tbody>
+                </table>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataAccount/PostpaidAccountWarranty")
+

@@ -1,0 +1,196 @@
+﻿@using System.Web.Optimization;
+@{
+    ViewBag.Title = "SearchCustomerAccount";
+    Layout = null;
+}
+
+<style>
+    #tableLinesNumber > thead > tr > th {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    #tableLinesNumber > tbody > tr > td {
+        text-align: center;
+        vertical-align: middle;
+        text-transform: uppercase;
+    }
+
+    .control-label {
+        margin-top: 5px !important;
+    }
+
+    table > tbody > tr > td {
+        vertical-align: middle !important;
+    }
+
+    .modal {
+        padding-right: 0px !important;
+    }
+        .modal.in.ui-draggable {
+            top: 50% !important;
+            transform: translate(-51%, -50%);
+        }
+</style>
+<style>
+    @@media only screen and (max-width : 992px) {
+        .size-xs {
+            padding-right: 9px;
+            padding-left: 9px;
+        }
+    }
+
+    @@media only screen and (max-width : 768px) {
+        .size-xs {
+            padding-right: 3px;
+            padding-left: 3px;
+        }
+
+            .size-xs > div > div > button {
+                margin: 1px;
+            }
+    }
+
+    @@media only screen and (max-width : 480px) {
+        .size-xs {
+            padding-right: 3px;
+            padding-left: 3px;
+        }
+    }
+</style>
+
+<div id="divContainerSearchCustomerAccount">
+
+    <div class="row" hidden>
+        <input type="hidden" id="txtHdLineNumber" />
+        <input type="hidden" id="txtHdNameLinkWebSpecial" value="@ViewBag.nameLinkWs" />
+        <input type="hidden" id="txtHdUrlWebSpecial" value="@ViewBag.urlWs" />
+        <input type="hidden" id="txtHdNameLinkPostVenta" value="@ViewBag.nameLinkPv" />
+        <input type="hidden" id="txtHdUrlPostVenta" value="@ViewBag.urlPv" />
+        <input type="hidden" id="txtHdCustomerId" value="@ViewBag.CustomerId" />
+        <input type="hidden" id="txtHdstrPrepagoOlo" value="@ViewBag.strPrepagoOlo" />
+        <input type="hidden" id="txtHdNumberAccount" />
+        <input type="hidden" id="txtHdMigrateOne" />
+        <input type="hidden" id="txtHdTypeDocId" />
+        <input type="hidden" id="txtHdDocNumber" />
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 table-responsive" style="padding: 1% !important; ">
+            <table class="table table-condensed claro-modal-tabla" style="text-transform:uppercase;">
+                <tbody>
+                    <tr>
+                        <td class="col-md-1">
+                            <label class="control-label"> TIPO DOC.ID: </label>
+                        </td>
+                        <td class="col-md-2">
+                            <span id="lblTypeDocDescription"></span>
+                        </td>
+                        <td class="col-md-1"></td>
+
+                        <td class="col-md-1">
+                            <label class="control-label">NRO DOC. ID: </label>
+                        </td>
+                        <td class="col-md-1">
+                            <span id="lblNroDocId"></span>
+                        </td>
+                        <td class="col-md-1"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label">NRO CUENTA:</label>
+                        </td>
+                        <td>
+                            <span id="lblNroAccount"></span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label">NOMBRES:</label>
+                        </td>
+                        <td colspan="3"><span id="lblFullName"></span> </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label">DIRECCIÓN: </label>
+                        </td>
+                        <td colspan="3">
+                            <span id="lblAdress"></span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label">@ViewBag.migradoOne: </label>
+                        </td>
+                        <td><span id="lblMigrateToOne"></span></td>
+                        <td></td>
+                        <td>
+                            <label class="control-label">MODALIDAD:</label>
+                        </td>
+                        <td>
+                            <span id="lblModality"></span>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <tr id="trPostLineService_PinPuk">
+                        <td>
+                            <label class="control-label">TIPO DE CUENTA:</label>
+                        </td>
+                        <td><span id="lblTypeAccount"></span></td>
+                        <td></td>
+
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 table-responsive" style="padding: 1% !important;max-height: 550px;">
+            <table class="table table-bordered claro-modal-tabla" id="tableLinesNumber">
+                <thead class="claro-bg-primary">
+                    <tr><th>NRO. LÍNEA</th><th>PLAN TARIFARIO</th><th>ESTADO</th><th></th></tr>
+                </thead>
+                <tbody id="tbodyLineNumber"></tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 size-xs">
+            <div class="panel panel-default col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center; padding-top: 1%; padding-bottom: 1%; padding-right: 0px; padding-left: 0px; margin-bottom: 0px !important;">
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <button style="width:100%" class="btn claro-btn-info btn-sm btn-link" id="btnSale" type="button" data-toggle="modal">Venta</button>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <button style="width: 100%" class="btn claro-btn-info btn-sm btn-link" id="btnPostSale" type="button" data-toggle="modal">@ViewBag.nameLinkPv</button>
+                </div>
+
+                <div hidden class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                    <button style="width: 100%" class="btn claro-btn-info btn-sm btn-link" id="btnSpecialCases" type="button" data-toggle="modal">@ViewBag.nameLinkWs</button>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <button style="width: 100%" class="btn claro-btn-info btn-sm btn-link" id="btnClose" type="button" data-toggle="modal">Salir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Coliving/SearchCustomer/SIACU_SearchCustomerAccount")

@@ -1,0 +1,31 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataService.HLRModel
+
+@{
+    Layout = null;
+}
+
+<div id="modal-content">
+    <div id="Consulta_4G">
+
+
+
+        <div class="table-responsive">
+
+
+            <div class="table  table-striped table-hover table-responsive claro-modal-tabla table-bordered">
+
+                <div class="form-group col-md-12">
+                    <div><label>Tecnología 4G:</label> <span>@Model.strTechnology4G</span></div>
+                </div>
+                <div class="form-group col-md-12">
+                    <div><label>Tecnología VoLTE:</label> <span @{ var color = "black"; if (Model.strTechnologyVoLTE == "Desactivo") { color = "red"; }} style="color:@color">@Model.strTechnologyVoLTE</span></div>
+                </div>
+                <div class="form-group col-md-12">
+                    <div><label>Tecnología VoWiFi:</label> <span @{ color = "black"; if (Model.strTechnologyVoWifi == "Desactivo") { color = "red"; }} style="color:@color">@Model.strTechnologyVoWifi</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

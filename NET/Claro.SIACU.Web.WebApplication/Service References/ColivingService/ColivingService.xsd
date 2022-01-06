@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getListOST" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getListOST" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:complexType name="ListOSTRequestColiving">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdBusca" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdCAC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdCriterio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdEstado" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListOSTRequestColiving" nillable="true" type="tns:ListOSTRequestColiving" />
+  <xs:complexType name="ListOSTResponseColiving">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeResponse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescriptionResponse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="TechnicalServicesOSTType" nillable="true" type="tns:ArrayOfTechnicalServicesOSTType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOSTResponseColiving" nillable="true" type="tns:ListOSTResponseColiving" />
+  <xs:complexType name="ArrayOfTechnicalServicesOSTType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TechnicalServicesOSTType" nillable="true" type="tns:TechnicalServicesOSTType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTechnicalServicesOSTType" nillable="true" type="tns:ArrayOfTechnicalServicesOSTType" />
+  <xs:complexType name="TechnicalServicesOSTType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cac" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGeneracion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Imei" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idOst" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TechnicalServicesOSTType" nillable="true" type="tns:TechnicalServicesOSTType" />
+</xs:schema>

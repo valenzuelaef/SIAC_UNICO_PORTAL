@@ -1,0 +1,57 @@
+﻿@using System.Web.Optimization
+@using System.Collections.Generic
+@model List<Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataCustomer.CustomerPastModel>
+
+    @{
+        Layout = null;
+    }
+
+
+    <div id="contenedorCustomerPast">
+        <div id="modal-content">
+
+            <div class="panel panel-default ">
+
+                <div class="table-responsive">
+                    <table id="tblCustomerPast" class="table  table-striped table-hover table-responsive table-curved claro-modal-tabla">
+                        <thead class="claro-bg-primary">
+                            <tr>
+                                <th></th>
+                                <th>Customer Code</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Motivo</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model !=null )
+                            {
+                                foreach (Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataCustomer.CustomerPastModel item in Model)
+                                {
+                                    <tr>
+
+                                        <td></td>
+                                        <td>@item.CustomerCode</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Lastname</td>
+                                        <td>@item.Reason</td>
+                                        <td>@item.Date</td>
+                                    </tr>
+                                }
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-12"><label id="lbl_errorSegmento" class="text-danger">@Claro.ConfigurationManager.AppSettings("strMsgDiasHabilesMBLP")</label></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+    @Scripts.Render("~/bundles/Dashboard/PrepaidDataCustomer/CustomerPast")

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRelationPlans.RelationPlanMassive.GetTabPlanesMassivePost" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRelationPlans.RelationPlanMassive.GetTabPlanesMassivePost" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd34" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd36" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common" />
+  <xs:complexType name="MassiveRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AscDes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cycle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MessageRequest" nillable="true" type="tns:MassiveMessageRequest" />
+          <xs:element minOccurs="0" name="Order" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShBag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeSearch" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MassiveRequestPostPaid" nillable="true" type="tns:MassiveRequestPostPaid" />
+  <xs:complexType name="MassiveMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:MassiveBodyRequest" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Header" nillable="true" type="q2:HeadersRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MassiveMessageRequest" nillable="true" type="tns:MassiveMessageRequest" />
+  <xs:complexType name="MassiveBodyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MassiveBodyRequest" nillable="true" type="tns:MassiveBodyRequest" />
+  <xs:complexType name="MassiveResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageResponse" nillable="true" type="tns:MassiveMessageResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MassiveResponse" nillable="true" type="tns:MassiveResponse" />
+  <xs:complexType name="MassiveMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:MassiveBodyResponse" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Header" nillable="true" type="q3:HeadersResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MassiveMessageResponse" nillable="true" type="tns:MassiveMessageResponse" />
+  <xs:complexType name="MassiveBodyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responseDataObtenerTabPlanesMasivoPost" nillable="true" type="tns:ResponseDataGetTabPlanesMassivePostType" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common" minOccurs="0" name="responseStatus" nillable="true" type="q4:ResponseStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MassiveBodyResponse" nillable="true" type="tns:MassiveBodyResponse" />
+  <xs:complexType name="ResponseDataGetTabPlanesMassivePostType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="listaTabPlanesMasivoPost" nillable="true" type="tns:ListTabPlanesMassivePostType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseDataGetTabPlanesMassivePostType" nillable="true" type="tns:ResponseDataGetTabPlanesMassivePostType" />
+  <xs:complexType name="ListTabPlanesMassivePostType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tabPlanesMasivoPost" nillable="true" type="tns:ArrayOfTabPlanesMassivePostType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListTabPlanesMassivePostType" nillable="true" type="tns:ListTabPlanesMassivePostType" />
+  <xs:complexType name="ArrayOfTabPlanesMassivePostType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabPlanesMassivePostType" nillable="true" type="tns:TabPlanesMassivePostType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabPlanesMassivePostType" nillable="true" type="tns:ArrayOfTabPlanesMassivePostType" />
+  <xs:complexType name="TabPlanesMassivePostType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="acceso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="blackberry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bolsaServicios" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="campana" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cargoFactDet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="claroData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="claroDirecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="claroFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="clarobanca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="coId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoWf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="consultor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="consultorRenovacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="costoRpv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="costoRpvNac" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctaPersRecarga" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="custcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fBlackberry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fCampana" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fCargoFactDet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fClaroData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fClaroDirecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fClaroFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fClarobanca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fControlConsumoAdic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fCostoRpv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fCostoRpvNac" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fCtaPersRecarga" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fCustomerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fEjecutivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fFactDetModA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fFactDetallada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fGprs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fHabilitacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fLbs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fLdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fMms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fNivDeHab" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fPaqueteData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fPaqueteSms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fPrestamo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fReposicion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fRoamInt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fRpceIlimitado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fRpv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fRtp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fSeguro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fSms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fSmsMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fSolsms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fTimData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fTimFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fTimProConnexion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="factDetModA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="factDetallada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaActiv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaActivRenov" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaEquipoRenov" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gprs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="habilitacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lbs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ldi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="motivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nichoId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nivDeHab" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="paqueteData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="paqueteSms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="plan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prestamo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reposicion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="roamInt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rpceIlimitado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rpv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="seguro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="simCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="smsMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="solsms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="timData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="timFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="timProConnexion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="topeBolsaExacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="topeSolesAdic" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabPlanesMassivePostType" nillable="true" type="tns:TabPlanesMassivePostType" />
+</xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetParamaterClarify.GetDescriptions" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetParamaterClarify.GetDescriptions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity" />
+  <xs:complexType name="GetDescriptionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipoProceso" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDescriptionsRequest" nillable="true" type="tns:GetDescriptionsRequest" />
+  <xs:complexType name="GetDescriptionsResponse">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity" minOccurs="0" name="auditResponse" nillable="true" type="q2:AuditResponse" />
+      <xs:element minOccurs="0" name="datosParametroClarify" nillable="true" type="tns:ArrayOfDatosParametroSiacType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDescriptionsResponse" nillable="true" type="tns:GetDescriptionsResponse" />
+  <xs:complexType name="ArrayOfDatosParametroSiacType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatosParametroSiacType" nillable="true" type="tns:DatosParametroSiacType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatosParametroSiacType" nillable="true" type="tns:ArrayOfDatosParametroSiacType" />
+  <xs:complexType name="DatosParametroSiacType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datoEvalua" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parametro1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parametro2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoProceso" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatosParametroSiacType" nillable="true" type="tns:DatosParametroSiacType" />
+</xs:schema>

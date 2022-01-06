@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a279c0da-1a2a-49d9-a6d5-6ccb535d6376" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\SIACT UNICO\docs\tarifacion-y-contenido\order\servicios\restricTetheVeloc\contratos\consultarTetheDegVeloc.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="headers_v1.xsd" MetadataType="Schema" ID="a5f101a9-2e01-4c94-a123-2965f0457255" SourceId="1" SourceUrl="file:///C:/SIACT UNICO/docs/tarifacion-y-contenido/order/servicios/restricTetheVeloc/esquemas/headers_v1.xsd" />
+    <MetadataFile FileName="HeaderGeneric_v1.xsd" MetadataType="Schema" ID="51adaae1-d894-467d-8d8b-54581d69afe9" SourceId="1" SourceUrl="file:///C:/SIACT UNICO/docs/tarifacion-y-contenido/order/servicios/restricTetheVeloc/esquemas/HeaderGeneric_v1.0.xsd" />
+    <MetadataFile FileName="CommonsException.xsd" MetadataType="Schema" ID="cbda7a47-7d5e-4bba-b8ee-e4524a602d6c" SourceId="1" SourceUrl="file:///C:/SIACT UNICO/docs/tarifacion-y-contenido/order/servicios/restricTetheVeloc/esquemas/CommonsException.xsd" />
+    <MetadataFile FileName="BaseSchema.xsd" MetadataType="Schema" ID="e231479e-b8c4-448f-833c-0e7f453042f9" SourceId="1" SourceUrl="file:///C:/SIACT UNICO/docs/tarifacion-y-contenido/order/servicios/restricTetheVeloc/esquemas/BaseSchema.xsd" />
+    <MetadataFile FileName="RestricTetheVelocWS.wsdl" MetadataType="Wsdl" ID="5468323f-ece8-40c8-add2-44ada225d7e7" SourceId="1" SourceUrl="file:///C:/SIACT UNICO/docs/tarifacion-y-contenido/order/servicios/restricTetheVeloc/contratos/consultarTetheDegVeloc.wsdl" />
+    <MetadataFile FileName="consultarTetheDegVeloc.xsd" MetadataType="Schema" ID="7bf57e66-921d-4061-a3fb-92bf99103fb0" SourceId="1" SourceUrl="file:///C:/SIACT UNICO/docs/tarifacion-y-contenido/order/servicios/restricTetheVeloc/esquemas/consultarTetheDegVeloc.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.CancelInvoice" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.CancelInvoice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd31" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" />
+  <xs:complexType name="CancelInvoiceRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageRequest" nillable="true" type="tns:CancelInvoiceMessageRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CancelInvoiceRequest" nillable="true" type="tns:CancelInvoiceRequest" />
+  <xs:complexType name="CancelInvoiceMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:CancelInvoiceBodyRequest" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Header" nillable="true" type="q2:HeadersRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancelInvoiceMessageRequest" nillable="true" type="tns:CancelInvoiceMessageRequest" />
+  <xs:complexType name="CancelInvoiceBodyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoSistemaOrigen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="comentarios" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaContable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="interaccionConNivelType" nillable="true" type="tns:InteractionWithLevelType" />
+      <xs:element minOccurs="0" name="interaccionPlusType" nillable="true" type="tns:InteractionPlusType" />
+      <xs:element minOccurs="0" name="motivoAnulacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="periodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="puntoAtencion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuarioAtencion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancelInvoiceBodyRequest" nillable="true" type="tns:CancelInvoiceBodyRequest" />
+  <xs:complexType name="InteractionWithLevelType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="agente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="clase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="coId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codPlano" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contactObjId" type="xs:int" />
+      <xs:element minOccurs="0" name="flagCaso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hechoEnUno" type="xs:int" />
+      <xs:element minOccurs="0" name="inconven" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inconvenCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="metodoContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="notas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="resultado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="servafect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="servafectCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="siteObjId" type="xs:long" />
+      <xs:element minOccurs="0" name="subclase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoInter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usrProceso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InteractionWithLevelType" nillable="true" type="tns:InteractionWithLevelType" />
+  <xs:complexType name="InteractionPlusType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pAdjustmentAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pAdjustmentReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pAmountUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pBasket" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pBirthday" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClarifyInteraction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClaroLdn1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClaroLdn2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClaroLdn3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClaroLdn4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClaroNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClarolocal1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClarolocal2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClarolocal3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClarolocal4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClarolocal5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pClarolocal6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pContactPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pDniLegalRep" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pDocumentNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pExpireDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pFixedNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pFlagChangeUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pFlagLegalRep" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pFlagOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pFlagRegistered" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pFlagTitular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pIccid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pImei" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter10" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter11" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter12" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter13" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter14" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter15" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter16" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter17" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter18" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter19" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter20" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter21" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter22" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter23" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter24" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter25" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter26" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter27" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter28" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter29" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter30" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter7" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter8" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pInter9" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pLastnameRep" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pLdiNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pLotCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pModel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pNameLegalRep" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pNroInteraccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldClaroLdn1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldClaroLdn2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldClaroLdn3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldClaroLdn4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldClarolocal1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldClarolocal2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldClarolocal3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldClarolocal4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldClarolocal5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldClarolocal6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldDocNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldFixedNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldFixedPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOldLdiNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOperationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOstNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOtherDocNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOtherFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOtherLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pOtherPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pPhoneLegalRep" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pPlusInter2Interact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pReferencePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pRegistrationReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="paddress5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pchargeamount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pcity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pcontactsex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pdepartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pdistrict" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pemailconfirmation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pfax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pflagcharge" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pmaritalstatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="poccupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pposition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="preferenceaddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ptypedocument" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pzipcode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InteractionPlusType" nillable="true" type="tns:InteractionPlusType" />
+  <xs:complexType name="CancelInvoiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageResponse" nillable="true" type="tns:CancelInvoiceMessageResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancelInvoiceResponse" nillable="true" type="tns:CancelInvoiceResponse" />
+  <xs:complexType name="CancelInvoiceMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:CancelInvoiceBodyResponse" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Header" nillable="true" type="q3:HeadersResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancelInvoiceMessageResponse" nillable="true" type="tns:CancelInvoiceMessageResponse" />
+  <xs:complexType name="CancelInvoiceBodyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensajeRespuesta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancelInvoiceBodyResponse" nillable="true" type="tns:CancelInvoiceBodyResponse" />
+  <xs:complexType name="TypificationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="Claro" base="q4:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TELEPHONE_NUMBER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TRANSACTION_NAME" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TypificationRequest" nillable="true" type="tns:TypificationRequest" />
+  <xs:complexType name="TypificationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactSite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListTypification" nillable="true" type="tns:ArrayOfTypification" />
+      <xs:element minOccurs="0" name="ObjSite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjTypification" nillable="true" type="tns:Typification" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TypificationResponse" nillable="true" type="tns:TypificationResponse" />
+  <xs:complexType name="ArrayOfTypification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Typification" nillable="true" type="tns:Typification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTypification" nillable="true" type="tns:ArrayOfTypification" />
+  <xs:complexType name="Typification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CLASE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASE_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INTERACCION_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUBCLASE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUBCLASE_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_CODE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Typification" nillable="true" type="tns:Typification" />
+</xs:schema>

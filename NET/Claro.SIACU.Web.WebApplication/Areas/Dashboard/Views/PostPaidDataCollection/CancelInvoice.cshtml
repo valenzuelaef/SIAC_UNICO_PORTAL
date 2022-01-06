@@ -1,0 +1,21 @@
+﻿@using System.Web.Optimization;
+<div id="modal-content">
+    <div id="CancelInvoice">
+        <table width="300" style="margin-left:auto; margin-right:auto;">
+            <tr>
+                <td><label class="control-label">Motivo: </label></td>
+                <td><select id="cboReasonCancelInvoice" class="form-control input-sm"></select></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn btn-primary" id="btnCancelInvoice" value="Aceptar"></td>
+                <td height="70"><input type="button" class="btn btn-primary" id="btnClose" value="Cancelar"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<input id="nroDocumentInvoice" type="hidden" value="@ViewData["nroDocumentInvoice"]" />
+<input id="strCharge" type="hidden" value="@ViewData["charge"]" />
+<input id="strPayment" type="hidden" value="@ViewData["payment"]" />
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataCollection/CancelInvoice")

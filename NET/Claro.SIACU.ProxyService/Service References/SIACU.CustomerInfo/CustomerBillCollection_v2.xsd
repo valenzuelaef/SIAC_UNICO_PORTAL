@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entproloy="http://claro.com.pe/esb/data/product/loyalty/v2/" xmlns:entcusbil="http://claro.com.pe/esb/data/customer/customerBill/v2/" xmlns:entcusbilcol="http://claro.com.pe/esb/data/customer/customerBillCollection/v2/" xmlns:entcus="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:entparrev="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" xmlns:entcusord="http://claro.com.pe/esb/data/customer/customerOrder/v2/" targetNamespace="http://claro.com.pe/esb/data/customer/customerBillCollection/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../Product/Loyalty_v2.xsd" namespace="http://claro.com.pe/esb/data/product/loyalty/v2/" />
+  <xs:import schemaLocation="CustomerBill_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerBill/v2/" />
+  <xs:import schemaLocation="CustomerOrder_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerOrder/v2/" />
+  <xs:import schemaLocation="../EngagedParty/PartyRevenue_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" />
+  <xs:import schemaLocation="Customer_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customer/v2/" />
+  <xs:complexType name="CustomerPayment">
+    <xs:annotation>
+      <xs:documentation>CustomerPayment represents the transfer of wealth from a customer for a product or usage of product.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyPayment" type="entparrev:PartyPayment" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customerAccount" type="entcus:CustomerAccount" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customer" type="entcus:Customer" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerOrder" type="entcusord:CustomerOrder" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerPaymentItem" type="entcusbilcol:CustomerPaymentItem" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_loyaltyBurn" type="entproloy:LoyaltyBurn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerPaymentItem">
+    <xs:annotation>
+      <xs:documentation>CustomerPaymentItem is the application of CustomerPayment. CustomerPaymentItem is applied to CustomerBill or AppliedCustomerBillingRate.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerPayment" type="entcusbilcol:CustomerPayment" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerBill" type="entcusbil:CustomerBill" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerAccountBalance" type="entcusbil:CustomerAccountBalance" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyPaymentItem" type="entparrev:PartyPaymentItem" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

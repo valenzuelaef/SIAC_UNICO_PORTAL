@@ -1,0 +1,52 @@
+﻿@using System.Web.Optimization
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataReload.VisualizeReloadModel
+
+@{
+    Layout = null;
+}
+
+<div id="contenedorVisualizeReload">
+
+    <div class="panel panel-default ">
+        <div class="form-group col-sm-10">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-inline">
+                        <input type="hidden" value="@Model.strDetReloadTelephone" hidden="hidden" id="hidDetReloadTelephone" />
+                        <input type="hidden" value="@Model.strMovementType" hidden="hidden" id="hidMovementType" />
+                        <input type="hidden" value="@Model.strcreditoDebito" hidden="hidden" id="hidcreditoDebito" />
+
+                        <div class="input-daterange input-group" id="containerDateRange">
+                            <span class="input-group-addon"> <label class="control-label">Desde:</label> </span>
+                            <input type="text" id="txtDetailReloadDateFrom" class="input-sm form-control" name="txtDetailReloadDateFrom" value="@Model.strDateFrom" readonly />
+                            <label class="input-group-addon btn" for="txtDetailReloadDateFrom">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                            <span class="input-group-addon"><label class="control-label">A:</label></span>
+                            <input type="text" id="txtDetailReloadDateTo" class="input-sm form-control" name="txtDetailReloadDateTo" value="@Model.strDateTo" readonly />
+                            <label class="input-group-addon btn" for="txtDetailReloadDateTo">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                        </div>
+                        &nbsp;&nbsp;
+                        <button type="button" class="btn claro-btn-info btn-sm" id="btnSearchDataReload">Buscar</button>
+                        <button type="button" class="btn claro-btn-info btn-sm" id="btnClearDataReload">Limpiar</button>
+                        <button type="button" class="btn claro-btn-info btn-sm" id="btnCopyRowDataReload">Copiar al Portapapeles</button>
+                    </div>
+                    <div class="form-inline padding">
+                        <br />
+                        Tipo de Movimiento: <select id="ddlTipoMov" class="form-control input-sm"></select>
+
+                        Crédito / Débito: <select id="ddlCredDev" class="form-control input-sm"></select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="divDetailVisualizeReload" class="col-md-12">
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PrepaidDataReload/VisualizeReload")

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entprod="http://claro.com.pe/esb/data/product/product/v2/" xmlns:entcusfacser="http://claro.com.pe/esb/data/service/customerFacingService/v2/" xmlns:entser="http://claro.com.pe/esb/data/service/service/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" targetNamespace="http://claro.com.pe/esb/data/service/customerFacingService/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Service_v2.xsd" namespace="http://claro.com.pe/esb/data/service/service/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Product_v2.xsd" namespace="http://claro.com.pe/esb/data/product/product/v2/" />
+  <xs:complexType name="CustomerFacingService">
+    <xs:annotation>
+      <xs:documentation>A CustomerFacingService defines the properties of a particular related CustomerFacingServiceSpec (i.e. know-how) that represents a realization of a Product within an organization's infrastructure; This is in direct contrast to ResourceFacingServices, which support the network/infrastructure facing part of the service (i.e. the technical solution). For example, a VPN is an example of a CustomerFacingService, while the sub-services that perform different types of routing between network devices making up the VPN are examples of ResourceFacingServices. 
+
+
+
+CustomerFacingServices are directly related to Products as well as to ResourceFacingServices. ResourceFacingServices are indirectly related to Products through the relationship between Product and CustomerFacingServices. This enforces the relationship to Products while keeping Services that are not directly realized by Products (i.e., ResourceFacingServices) separated from Products.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entser:Service">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="cfsStatus" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This is an enumerated integer that defines the status of this particular CustomerFacingService. Values include:
+
+
+
+ 0: Operational and billable
+
+ 1: Degraded but billable
+
+ 2: In Violation and billable
+
+ 3: Operational but not billable
+
+ 4: In Test and not billable
+
+ 5: Being Deployed and not billable
+
+ 6: Failed
+
+
+
+Value 0 means that this CustomerFacingService is acting per specification, and is fully billable.
+
+
+
+Value 1 means that this CustomerFacingService is operational, but is currently in a degraded state. However, it has not violated any contractual specification and is fully billable.
+
+
+
+Value 2 means that this CustomerFacingService is operational, but is currently in violation of its associated contractual specification(s). Whether it is billable or not is determined by its associated Policy for handling service violations.
+
+
+
+Value 3 means that this CustomerFacingService is currently operational, but has not been enabled for this particular customer yet and is therefore not billable for this customer.
+
+
+
+Value 4 means that this CustomerFacingService is currently being tested, and is not yet ready to be enabled for this particular customer. Consequently, it is therefore not billable for this customer.
+
+
+
+Value 5 means that this CustomerFacingService is currently being deployed, and therefore has not been enabled for this particular customer yet. Consequently, it is therefore not billable for this customer.
+
+
+
+Value 6 means that this CustomerFacingService has currently failed. The set of actions that should be taken, as well as whether this service can still be billed or not, are determined by its associated Policy for handling service violations.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_product" type="entprod:Product" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_customerFacingServiceSpec" type="entser:CustomerFacingServiceSpec" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,73 @@
+﻿@using System.Web.Optimization;
+@{
+    Layout = null;
+}
+<div id="contentBanner">
+    <form class="form-horizontal" role="form">
+        <div class="form-group col-sm-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-inline">
+                        <label class="text-primary">Fecha desde:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="input-daterange input-group" id="containerDateRange">
+                            <input type="text" id="txtDate" class="input-sm form-control" name="start" />
+                            <label class="input-group-addon btn" for="txtDate">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                        </div>
+                        <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnSearchBanner">Buscar</button>
+                    </div>
+                    <br />
+                    <div class="form-inline">
+                        <label class="text-primary">Hora:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;
+                        <input type="text" id="txtHour" class="input-sm form-control" name="hour" style="width:37px" maxlength="2" /> <label class="text-primary">:</label>
+                        <input type="text" id="txtMinute" class="input-sm form-control" name="minute" style="width:37px" maxlength="2" />
+                        <select class="input-sm form-control" name="Periodo" id="cmbPeriod">
+                            <option selected>---</option>
+                            <option>AM</option>
+                            <option>PM</option>
+                        </select>
+                        &nbsp;
+                        <label class="text-primary">formato de horas => hh:mm AM/PM</label>
+                    </div>
+                    <br />
+                    <div class="form-inline">
+                        <label class="text-primary">Incluir Anulados:</label>&nbsp;
+                        <input name="chkIncludeCanceled" type="checkbox" id="chkIncludeCanceled" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-inline">
+                        <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnNewBanner">Nuevo</button>
+                        <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnModifyBanner" disabled>Modificar</button>
+                        <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnDeactivateBanner" disabled>Desactivar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br />
+    <table id="tblBanner" class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr class="claro-bg-primary">
+                <td class="text-center">Sel</td>
+                <td class="text-center">Mensaje</td>
+                <td class="text-center">Prioridad</td>
+                <td class="text-center">Fecha Inicio Vigencia</td>
+                <td class="text-center">Fecha Fin Vigencia</td>
+                <td class="text-center">Estado</td>
+                <td class="text-center">Usuario Registro</td>
+                <td class="text-center">Usuario Modificación</td>
+            </tr>
+        </thead>
+    </table>
+    <b><span class="text-danger" id="TotalRegistros"></span></b>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Management/Banner/BannerList")
+

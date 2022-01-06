@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entser="http://claro.com.pe/esb/data/service/service/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entcap="http://claro.com.pe/esb/data/commonBusinessEntities/capacity/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/capacity/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="../Service/Service_v2.xsd" namespace="http://claro.com.pe/esb/data/service/service/v2/" />
+  <xs:complexType name="CapacityDemand">
+    <xs:annotation>
+      <xs:documentation>The amount of capacity that is planned to be consumed or has been consumed.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="plannedOrActualDemand" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies whether the capacity demand is planned or actual.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="capacityDemandAmount" type="entbastyp:Quantity">
+        <xs:annotation>
+          <xs:documentation>A value and units that define the CapacityDemand, such as 10000 ea, 10B Mb.
+
+
+
+Instance values are mutually exclusive with From and To capacityDemandAmounts and range interval.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="capacityDemandAmountFrom" type="entbastyp:Quantity">
+        <xs:annotation>
+          <xs:documentation>The low range value that a CapacityDemand can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="capacityDemandAmountTo" type="entbastyp:Quantity">
+        <xs:annotation>
+          <xs:documentation>The upper range value that a CapacityDemand can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="rangeInterval" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies the inclusion or exclusion of the capacityDemandAmountFrom and capacityDemandAmountTo attributes.
+
+
+
+Possible values are "open", "closed", "closedBottom" and "closedTop".</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="priority" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The relative importance of the CapacityDemand.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceCapacityDemand">
+    <xs:annotation>
+      <xs:documentation>The amount of ServiceCapacity that is planned to be consumed or has been consumed.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcap:CapacityDemand">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_service" type="entser:Service" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

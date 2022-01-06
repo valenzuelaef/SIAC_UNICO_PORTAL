@@ -1,0 +1,43 @@
+﻿@using System.Web.Optimization
+@model List<Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataCustomer.CustomerSegmentModel>
+
+
+    @{
+        Layout = null;
+    }
+               <div id="contenedorCustomerSegment">
+                   <div id="modal-content">
+
+                       <div class="panel panel-default ">
+                           <div class="table-responsive">
+                               <table id="tblCustomerSegment" class="table  table-striped table-hover table-responsive table-curved claro-modal-tabla">
+                                   <thead class="claro-bg-primary">
+                                       <tr>
+                                           <th>Última Actualización</th>
+                                           <th>Documento de Identidad</th>
+                                           <th>Segmento</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody>
+                                        @if (Model != null) {
+                                       foreach (var item in Model)
+                                       {
+                                           <tr>
+                                               <td>@item.LastUpgrade</td>
+                                               <td>@item.DocumentIdentity</td>
+                                               <td>@item.Segment</td>
+                                           </tr>
+                                       }
+                                        }
+                                   </tbody>
+                               </table>
+
+                           </div>
+                           <div class="row">       
+                               @*<div class="col-md-12"><label id="lbl_errorSegmento" class="text-danger">Importante: Estimado usuario, recordarles que la información de los motivos de baja estarán disponibles a partir de la fecha siguiente: 01/08/2014 </label></div>*@
+                           </div>
+                       </div>
+                   </div>
+               </div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PrepaidDataCustomer/CustomerSegment")

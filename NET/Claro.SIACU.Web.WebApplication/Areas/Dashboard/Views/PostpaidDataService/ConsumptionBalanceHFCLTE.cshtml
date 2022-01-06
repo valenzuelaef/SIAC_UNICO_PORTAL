@@ -1,0 +1,30 @@
+﻿@using System.Web.Optimization
+<div id="containerConsumptionBalanceHFCLTE">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="list-group-item-heading page-header text-info">LISTADO DE CONSUMO/SALDO</h4>
+            <br />
+            <div class="form-inline row">
+                <label class="control-label container-fluid" id="lblCustomerId">Customer ID:&nbsp;</label>
+                <label class="control-label container-fluid" id="lblTelephone">Seleccione Teléfono:&nbsp;</label>
+            </div>
+            <table id="tblConsumptionBalanceHFCLTE" class="table table-bordered table-condensed claro-modal-tabla">
+                <thead>
+                    <tr class="claro-bg-primary text-center">
+                        <td>#</td>
+                        <td>Bolsa</td>
+                        <td>Consumo</td>
+                        <td>Saldo</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="errorConsumptionBalanceHFCLTE"></div>
+
+            <br />
+            <label class="control-label">Información Referencial</label>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidConsumptionBalanceHFCLTE")

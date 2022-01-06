@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" xmlns:base="http://claro.com.pe/eai/ws/baseschema" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=1" namespace="http://claro.com.pe/eai/ws/baseschema" />
+  <xsd:element name="obtenerCACUsuarioRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="codigoUsuario" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="obtenerCACUsuarioResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element name="listaCacUsuario" type="ListaCacUsuarioType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="ListaCacUsuarioType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="cacUsuario" type="CacUsuarioType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CacUsuarioType">
+    <xsd:sequence>
+      <xsd:element name="idUsuario" type="xsd:string" />
+      <xsd:element name="estado" type="xsd:string" />
+      <xsd:element name="idCac" type="xsd:string" />
+      <xsd:element name="cac" type="xsd:string" />
+      <xsd:element name="idTipo" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

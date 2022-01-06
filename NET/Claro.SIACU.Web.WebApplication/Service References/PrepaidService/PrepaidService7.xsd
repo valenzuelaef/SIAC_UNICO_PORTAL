@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" />
+  <xs:complexType name="PreviousCustomerRequestPrePaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlagRegistry" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdTransaction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IpApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserApplication" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PreviousCustomerRequestPrePaid" nillable="true" type="tns:PreviousCustomerRequestPrePaid" />
+  <xs:complexType name="PreviousCustomerResponsePrePaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeResponse" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" minOccurs="0" name="objCustomer" nillable="true" type="q2:CustomerPrePaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PreviousCustomerResponsePrePaid" nillable="true" type="tns:PreviousCustomerResponsePrePaid" />
+</xs:schema>

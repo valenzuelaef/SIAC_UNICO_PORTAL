@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entengparext="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entagr="http://claro.com.pe/esb/data/engagedParty/agreement/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entparprospeandoff="http://claro.com.pe/esb/data/engagedParty/partyProductSpecificationAndOffering/v2/" xmlns:entprooff="http://claro.com.pe/esb/data/product/productOffering/v2/" targetNamespace="http://claro.com.pe/esb/data/engagedParty/agreement/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productOffering/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyProductSpecificationAndOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyProductSpecificationAndOffering/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=EngagedPartyExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:complexType name="Agreement">
+    <xs:annotation>
+      <xs:documentation>A type of BusinessInteraction that represents a contract or arrangement, either written or verbal and sometimes enforceable by law.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:BusinessInteraction">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="agreementDocumentNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A reference number assigned to an Agreement that follows a prescribed numbering system.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="agreementStatementOfIntent" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>An overview and goals of the Agreement.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="agreementPeriod" type="entbastyp:TimePeriod">
+            <xs:annotation>
+              <xs:documentation>The time period during which the Agreement is in effect.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_agreementItem" type="entagr:AgreementItem" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_agreementExtension" type="entengparext:AgreementExtension" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_agreementTermOrCondition" type="entagr:AgreementTermOrCondition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AgreementItem">
+    <xs:annotation>
+      <xs:documentation>The purpose for an Agreement expressed in terms of a Product, Service, Resource, and/or their respective specifications, inherited from BusinessInteractionItem.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:BusinessInteractionItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_partyRoleProductOffering" type="entparprospeandoff:PartyRoleProductOffering" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_agreement" type="entagr:Agreement" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_agreementTermOrCondition" type="entagr:AgreementTermOrCondition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AgreementTermOrCondition">
+    <xs:annotation>
+      <xs:documentation>Aspects of the Agreement not formally specified elsewhere in the Agreement and that cannot be captured elsewhere in a formal notation, or automatically monitored and require a more human level of management.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="termOrConditionNumber" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique number assigned for reference.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Text that explains the AgreementTermOrCondition.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The period of time during which the AgreementTermOrCondition applies.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_agreementItem" type="entagr:AgreementItem" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_agreement" type="entagr:Agreement" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOfferingTerm" type="entprooff:ProductOfferingTerm" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

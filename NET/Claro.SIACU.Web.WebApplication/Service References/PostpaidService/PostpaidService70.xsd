@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetConsumeLocalTrafficDetailCallTP" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetConsumeLocalTrafficDetailCallTP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="ConsumeLocalTrafficDetailCallTPRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeCallTP" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsumeLocalTrafficDetailCallTPRequestPostPaid" nillable="true" type="tns:ConsumeLocalTrafficDetailCallTPRequestPostPaid" />
+  <xs:complexType name="ConsumeLocalTrafficDetailCallTPResponsePostPaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConsumeLocalTrafficQuantityCallTP" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="ListConsumeLocalTrafficDetailCallTP" nillable="true" type="q2:ArrayOfConsumeLocalTrafficDetailCallTP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsumeLocalTrafficDetailCallTPResponsePostPaid" nillable="true" type="tns:ConsumeLocalTrafficDetailCallTPResponsePostPaid" />
+</xs:schema>

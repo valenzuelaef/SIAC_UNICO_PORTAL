@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entengparext="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entparorg="http://claro.com.pe/esb/data/engagedParty/partyOrganization/v2/" targetNamespace="http://claro.com.pe/esb/data/engagedParty/partyOrganization/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=EngagedPartyExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="AtomicOrganization">
+    <xs:annotation>
+      <xs:documentation>A type of Organization that does not have any subordinate Organization. That is, an AtomicOrganization  is a leaf-level Organization.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpar:Organization">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_atomicOrganizationExtension" type="entengparext:AtomicOrganizationExtension" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

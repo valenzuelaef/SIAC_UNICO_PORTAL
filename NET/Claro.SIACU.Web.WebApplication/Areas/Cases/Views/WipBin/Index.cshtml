@@ -1,0 +1,23 @@
+﻿@using System.Web.Optimization;
+@model  Claro.SIACU.Web.WebApplication.WipBinService.WipBinListByUserResponse
+
+<div id="container" class="tabcontent">
+    <div class="row">
+        <div id="binTree" class="panel panel-info col-md-3 col-xs-3 binTree">
+            <div id="tempId">
+                <label><span class="glyphicon glyphicon-folder-open"></span> Bandejas</label>
+                <ul class="treeView">
+                    @foreach (var m in Model.ListWipBin)
+                    {
+                        <li><a href="#" data-id="@m.Inbox">@m.Inbox</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div id="binTreeData" class="binTreeData" class="panel panel-info col-md-9 col-xs-9">
+
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Cases/WipBin/WipBin")

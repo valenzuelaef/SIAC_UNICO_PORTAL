@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:data="http://claro.com.pe/esb/data/generico/responseDataConsultarTarifaAutomatica/v1/" xmlns:base="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FresponseDataConsultarTarifaAutomatica_v1" namespace="http://claro.com.pe/esb/data/generico/responseDataConsultarTarifaAutomatica/v1/" />
+  <xsd:element name="consultarTarifaAutomaticaRequest" type="base:ConsultarTarifaAutomaticaRequestType" />
+  <xsd:complexType name="ConsultarTarifaAutomaticaRequestType">
+    <xsd:sequence>
+      <xsd:element name="msisdn" type="xsd:string" />
+      <xsd:element name="offer" type="xsd:string" />
+      <xsd:element name="subscriberstatus" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="base:RequestOpcionalType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="consultarTarifaAutomaticaResponse" type="base:ConsultarTarifaAutomaticaResponseType" />
+  <xsd:complexType name="ConsultarTarifaAutomaticaResponseType">
+    <xsd:sequence>
+      <xsd:element name="responseStatus" type="base:ResponseStatus" />
+      <xsd:element name="responseDataConsultarTarifaAutomatica" type="data:ResponseDataConsultarTarifaAutomatica" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseStatus">
+    <xsd:sequence>
+      <xsd:element name="estado" type="xsd:int" />
+      <xsd:element name="codigoRespuesta" type="xsd:string" />
+      <xsd:element name="descripcionRespuesta" type="xsd:string" />
+      <xsd:element name="ubicacionError" type="xsd:string" />
+      <xsd:element name="fecha" type="xsd:dateTime" />
+      <xsd:element name="origen" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RequestOpcionalType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="requestOpcional">
+        <xsd:complexType>
+          <xsd:attribute name="campo" type="xsd:string" />
+          <xsd:attribute name="valor" type="xsd:string" />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:enttroorprob="http://claro.com.pe/esb/data/commonBusinessEntities/troubleOrProblem/v2/" xmlns:enttrotic="http://claro.com.pe/esb/data/commonBusinessEntities/troubleTicket/v2/" xmlns:entloc="http://claro.com.pe/esb/data/commonBusinessEntities/location/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/troubleOrProblem/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Location_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/location/v2/" />
+  <xs:import schemaLocation="TroubleTicket_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/troubleTicket/v2/" />
+  <xs:complexType name="Problem">
+    <xs:annotation>
+      <xs:documentation>General description of a problem that can be shared between service and customer. 
+A Problem is an indication that an entity is no longer functioning according to the agreement with its client(s).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="problemId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Identifier of the problem. Note that this identifier is local to the server side of the interface. 
+Only EntityIdentifier can be considered as global.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="originatingSytem" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Indicates where the problem was generated.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="impactImportanceFactor" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Impact Importance is characterized by an Impact Importance Factor: overall importance of the impact of all the affected services, e.g. 0 (zero impact) to 100 (worst impact). The Impact Importance is a calculated field which is set by the OSS determining the impact.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="priority" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>An indication varying from 1 to 10 of how important it is for the service provider to correct the Service Problem. The priority can be changed by the human operator while the impact importance can only be changed by the system which determines the impact.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Free form text describing the Service Problem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="firstAlert" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Text that indicates what first alerted the system to the problem. It is not the root cause of the Service Problem. 
+Examples: 
+ Threshold crossing alert: Service component causing the problem 
+Customer report: customer name (or TT id) reporting the problem</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="category" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="responsibleParty" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>person or organization responsible for handling this problem. This is text or structured text and not an association to a party object. The Who category from the ATIS Service Outage document can be used for this attribute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="problemEscalation" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Indicates if this service problem has been escalated or not. Possible values are 0 to 10. A value of zero means no escalation. 
+The meanings of values 1-10 are to be determined by the user of the interface, but they show increasing levels of escalation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="comments" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Comments on problem, as a list of comments.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="timeRaised" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Time the problem was raised</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="timeChanged" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Time the problem was last changed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="reason" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Free text or optionally structured text. It can be Unknown. The Why category of the ATIS Service Outage document can be used to fill this value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ackStatus" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Acknowledgement status</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="clearStatus" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Clear status of the problem. 
+Clearance of the resource RC alarm or of the underlying alarms or problems does not imply clearance of the problem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="activityStatus" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Activity status, indicates if the problem is historical or active</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="impactPattterns" type="enttroorprob:ImpactPatterns">
+        <xs:annotation>
+          <xs:documentation>Define the patterns of impact (optional) 
+- e.g. other service characteristics 
+- Used when defining impact through another pattern than the pre-defined attributes above 
+ 
+This field is extendable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="troubleTicket" type="enttrotic:TroubleTicket" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_geographicPlace" type="entloc:GeographicPlace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TrackingRecord">
+    <xs:annotation>
+      <xs:documentation>Tracking records allow the tracking of modifications on the Problem. 
+The tracking records should not be embedded in the problem to allow retrieving the problem without the tracking records.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Describes the action being done (ack,clear...)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="systemId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Describes the system Id from which the action was done.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="time" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Describes the time at which the action was done</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="userId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Describes the user id of the user doing the action.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ImpactPatterns">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

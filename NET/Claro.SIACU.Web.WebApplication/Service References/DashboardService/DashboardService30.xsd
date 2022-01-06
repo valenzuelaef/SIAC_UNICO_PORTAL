@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStateEquipo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStateEquipo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd31" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" />
+  <xs:complexType name="StateEquipoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageRequest" nillable="true" type="tns:StateEquipoMessageRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StateEquipoRequest" nillable="true" type="tns:StateEquipoRequest" />
+  <xs:complexType name="StateEquipoMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:StateEquipoBodyRequest" />
+      <xs:element minOccurs="0" name="Header" nillable="true" type="tns:StateEquipoHeaderRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateEquipoMessageRequest" nillable="true" type="tns:StateEquipoMessageRequest" />
+  <xs:complexType name="StateEquipoBodyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PI_LINEA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateEquipoBodyRequest" nillable="true" type="tns:StateEquipoBodyRequest" />
+  <xs:complexType name="StateEquipoHeaderRequest">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="HeaderRequest" nillable="true" type="q2:HeaderRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateEquipoHeaderRequest" nillable="true" type="tns:StateEquipoHeaderRequest" />
+  <xs:complexType name="StateEquipoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageResponse" nillable="true" type="tns:StateEquipoMessageResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateEquipoResponse" nillable="true" type="tns:StateEquipoResponse" />
+  <xs:complexType name="StateEquipoMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:StateEquipoBodyResponse" />
+      <xs:element minOccurs="0" name="Header" nillable="true" type="tns:StateEquipoHeaderResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateEquipoMessageResponse" nillable="true" type="tns:StateEquipoMessageResponse" />
+  <xs:complexType name="StateEquipoBodyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PO_CODERROR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PO_ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PO_MSJERROR" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateEquipoBodyResponse" nillable="true" type="tns:StateEquipoBodyResponse" />
+  <xs:complexType name="StateEquipoHeaderResponse">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="HeaderResponse" nillable="true" type="q3:HeaderResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateEquipoHeaderResponse" nillable="true" type="tns:StateEquipoHeaderResponse" />
+</xs:schema>

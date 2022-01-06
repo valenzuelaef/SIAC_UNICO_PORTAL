@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:entparord="http://claro.com.pe/esb/data/engagedParty/partyOrder/v2/" xmlns:entparprospeandoff="http://claro.com.pe/esb/data/engagedParty/partyProductSpecificationAndOffering/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entprod="http://claro.com.pe/esb/data/product/product/v2/" xmlns:entresspe="http://claro.com.pe/esb/data/resource/resourceSpecification/v2/" xmlns:entprospe="http://claro.com.pe/esb/data/product/productSpecification/v2/" xmlns:entcusord="http://claro.com.pe/esb/data/customer/customerOrder/v2/" xmlns:entprooff="http://claro.com.pe/esb/data/product/productOffering/v2/" targetNamespace="http://claro.com.pe/esb/data/product/productSpecification/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../CommonBusinessEntities/BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="../Resource/ResourceSpecification_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/resourceSpecification/v2/" />
+  <xs:import schemaLocation="../EngagedParty/PartyProductSpecificationAndOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyProductSpecificationAndOffering/v2/" />
+  <xs:import schemaLocation="ProductOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productOffering/v2/" />
+  <xs:import schemaLocation="../Customer/CustomerOrder_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerOrder/v2/" />
+  <xs:import schemaLocation="Product_v2.xsd" namespace="http://claro.com.pe/esb/data/product/product/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/RootBusinessEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" />
+  <xs:import schemaLocation="../EngagedParty/PartyOrder_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyOrder/v2/" />
+  <xs:complexType name="ProductCategory">
+    <xs:annotation>
+      <xs:documentation>A method used to group a set of ProductSpecifications that are classified together because of common characteristics.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:EntitySpecificationType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProductLine">
+    <xs:annotation>
+      <xs:documentation>A method used to group related ProductSpecifications that have some characteristics in common but others that are not. For example, health monitoring device product line whose ProductSpecifications have a number of common characteristics, but come in different colors and can be used to monitor a variety of bodily functions.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entprospe:ProductSpecificationType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProductSpecCharacteristic">
+    <xs:annotation>
+      <xs:documentation>A characteristic quality or distinctive feature of a ProductSpecification. The characteristic can be take on a discrete value, such as color, can take on a range of values, (for example, sensitivity of 100-240 mV), or can be derived from a formula (for example, usage time (hrs) = 30 - talk time *3). Certain characteristics, such as color, may be configured during the ordering or some other process.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the ProductSpecCharacteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the characteristic is known and distinguished from characteristics.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains the characteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="unique" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies if a value is unique for the specification.
+
+Possible values are; "unique while value is in effect" and "unique whether value is in effect or not"</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A kind of value that the characteristic can take on, such as numeric, text, and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="minCardinality" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The minimum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where zero is the value for the minCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxCardinality" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The maximum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where five is the value for the maxCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="extensible" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies that the values for the characteristic can be extended by adding new values when instantiating a characteristic for an Entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="derivationFormula" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A rule or principle represented in symbols, numbers, or letters, often in the form of an equation used to derive the value of a characteristic value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period of time for which a characteristic is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productSpecification" type="entprospe:ProductSpecification" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productCharacteristicValue" type="entprod:ProductCharacteristicValue" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productSpecCharacteristicValue" type="entprospe:ProductSpecCharacteristicValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductSpecCharacteristicValue">
+    <xs:annotation>
+      <xs:documentation>A number or text that can be assigned to a ProductSpecCharacteristic.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A kind of value that the characteristic can take on, such as numeric, text, and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="defaultValue" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Indicates if the value is the default value for a characteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A discrete value that the characteristic can take on.
+
+Either value or valueFrom and/or valueTo are required.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="unitOfMeasure" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A length, surface, volume, dry measure, liquid measure, money, weight, time, and the like. Iin general, a determinate quantity or magnitude of the kind designated, taken as a standard of comparison for others of the same kind, in assigning to them numerical values, as 1 foot, 1 yard, 1 mile, 1 square foot.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueFrom" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The low range value that a characteristic can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueTo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The upper range value that a characteristic can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="rangeInterval" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies the inclusion or exclusion of the valueFrom and valueTo attributes.
+
+Possible values are "open", "closed", "closedBottom" and "closedTop".</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The period of time for which a value is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_productSpecCharacteristic" type="entprospe:ProductSpecCharacteristic" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productCharacteristicValue" type="entprod:ProductCharacteristicValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductSpecification">
+    <xs:annotation>
+      <xs:documentation>A detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to Customers or other Parties playing a PartyRole. 
+
+The ProductSpecification represents a product specification as perceived by the business user and specifies what the marketing operator wants to sell at a functional level (i.e. what are the capacities, which usages are available…).
+
+It can represent:
+
+	• material goods (Terminal, phone, mobile, fax, modem)
+
+	• or non tangible goods (like an Anti-Spam service for email).
+
+When the ProductSpecification represents a tangible goods, it is realized as ResourceSpecification. Corresponding Resources are stored in warehouses or bought to a supplier on demand.
+
+When the ProductSpecification is a non-tangible goods, it is either realized as a CustomerFacingService (when the Service Provider is able to realize it) or bought as a ProductSpecification proposed by a Supplier (when the Service Provider is not able to realize it). For example, a Broadband know-how might be built or bought depending on the location of it.
+
+The ProductSpecification corresponds to a sub-set of the Service Provider’s know-how according to what marketing people want to sell. Therefore, a ProductSpecification is a restriction of CustomerFacingServiceSpecs.
+
+
+
+A ProductSpecification may consist of other ProductSpecifications supplied together as a collection. Members of the collection may be offered in their own right. ProductSpecifications may also exist within groupings, such as ProductCategories, ProductLines, and ProductTypes.
+
+
+
+Note: Since SID 16.0, ProductSpecification is a sub-class of EntitySpecification. Therefore it inherits from RootEntity's attributes (ID, name, description).
+
+That's why the previous attributes name, description and productNumber (corresponds to ID) have been removed from ProductSpecification.
+
+While the “description” attribute inherited from RootEntity is optional (not required in a SID implementation), in the case of ProductSpecification it is required.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:EntitySpecification">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="brand" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The manufacturer or trademark of the specification.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+            <xs:annotation>
+              <xs:documentation>The period for which the product specification is valid.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="lifecycleStatus" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The condition of the product specification, such as active, inactive, planned.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_productSpecificationType" type="entprospe:ProductSpecificationType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_productSpecCharacteristic" type="entprospe:ProductSpecCharacteristic" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerOrderItem" type="entcusord:CustomerOrderItem" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_product" type="entprod:Product" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRoleProductSpecification" type="entparprospeandoff:PartyRoleProductSpecification" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOffering" type="entprooff:ProductOffering" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyOrderItem" type="entparord:PartyOrderItem" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_resourceSpecification" type="entresspe:ResourceSpecification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProductSpecificationType">
+    <xs:annotation>
+      <xs:documentation>A ProductSpecificationType is a sub-class of EntitySpecificationType.
+
+A classification that groups ProductSpecifications that share common characteristics (this doesn’t necessarily refer to ProductSpecCharacterictis).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:EntitySpecificationType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_productSpecification" type="entprospe:ProductSpecification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,191 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataService.DataSaleModel
+@{
+    Layout = null;
+}
+
+<div class="modal-body">
+    <div id="modal-content">
+        <div class="panel panel-info">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                    <a data-toggle="collapse" href="#DatosPEL"> Datos *PEL</a>
+                </h4>
+
+            </div>
+            <div id="DatosPEL" class="panel-collapse  table-responsive ">
+                <div class="panel-body claro-modal-contenido-texto">
+                    <table class="table table-condensed">
+                        <tr>
+                            <td class="col-md-1">
+                                <label class="control-label">
+                                    Teléfono:
+                                </label>
+                            </td>
+                            <td class="col-md-2">@Model.objDataSalePELModel.TelephonePEL</td>
+                            <td class="col-md-3"></td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-1">
+                                <label class="control-label">
+                                    ICCID
+                                </label>
+                            </td>
+                            <td class="col-md-2">@(Model.objDataSalePELModel.Iccid == "null" ? "" : Model.objDataSalePELModel.Iccid)</td>
+                            <td class="col-md-3"></td>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Cod. Mat. ICCID
+                                </label>
+                            </td>
+                            <td class="col-md-2">@(Model.objDataSalePELModel.CodMatIccid == "null" ? "" : Model.objDataSalePELModel.CodMatIccid)</td>
+                            <td class="col-md-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-1">
+                                <label class="control-label">
+                                    IMEI
+                                </label>
+                            </td>
+                            <td class="col-md-2">@(Model.objDataSalePELModel.Imei == "null" ? "" : Model.objDataSalePELModel.Imei)</td>
+                            <td class="col-md-3"></td>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Cod. Mat. IMEI
+                                </label>
+                            </td>
+                            <td class="col-md-2">@(Model.objDataSalePELModel.CodMatImei == "null" ? "" : Model.objDataSalePELModel.CodMatImei)</td>
+                            <td class="col-md-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-1">
+                                <label class="control-label">
+                                    Oficina
+                                </label>
+                            </td>
+                            <td class="col-md-2">@(Model.objDataSalePELModel.Office == "null" ? "" : Model.objDataSalePELModel.Office)</td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Fecha Activación
+                                </label>
+                            </td>
+                            <td class="col-md-2">@(Model.objDataSalePELModel.DateActivation == "null" ? "" : Model.objDataSalePELModel.DateActivation)</td>
+                            <td class="col-md-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-1">
+                                <label class="control-label">
+                                    Procedencia
+                                </label>
+                            </td>
+                            <td class="col-md-2">@(Model.objDataSalePELModel.Origin == "null" ? "" : Model.objDataSalePELModel.Origin)</td>
+                            <td class="col-md-1"></td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-1"></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-info ">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                    <a data-toggle="collapse" href="#DatosVenta">Datos de Venta</a>
+                </h4>
+
+            </div>
+            <div id="DatosVenta" class="panel-collapse table-responsive">
+                <div class="panel-body claro-modal-contenido-texto">
+                    <table class="table table-condensed">
+                        <tr>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Teléfono
+                                </label>
+                            </td>
+                            <td class="col-md-2">@Model.Telephone</td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Punto de Venta
+                                </label>
+                            </td>
+                            <td class="col-md-2">@Model.PointSale</td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Vendedor / SDAC
+                                </label>
+                            </td>
+                            <td class="col-md-2">@Model.Seller</td>
+                            <td class="col-md-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Campaña
+                                </label>
+                            </td>
+                            <td class="col-md-2">@Model.Bell</td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Fec. compra
+                                </label>
+                            </td>
+                            <td class="col-md-2">@Model.DatePurchase</td>
+                            <td class="col-md-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    IMEI
+                                </label>
+                            </td>
+                            <td class="col-md-2">@Model.IMEI</td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Código Articulo
+                                </label>
+                            </td>
+                            <td class="col-md-2">@Model.ItemCode</td>
+                            <td class="col-md-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Marca/Modelo
+                                </label>
+                            </td>
+                            <td class="col-md-2">@Model.BrandModel</td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-2">
+                                <label class="control-label">
+                                    Detalle
+                                </label>
+                            </td>
+                            <td class="col-md-2">@Model.DescriptionSale</td>
+                            <td class="col-md-2"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Prepaid/DataService")

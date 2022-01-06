@@ -1,0 +1,93 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.Prepaid.DataReloadModel
+@{
+    Layout = null;
+}
+
+<div id="contenedorDataReload">
+    @{
+        if (Model.listDataReloadModel != null)
+        {
+            <input type="hidden" value="@Model.Headers" id="headers">
+            <div class="table-responsive">
+                <table id="tblDataReload" class="table  table-striped table-hover table-responsive claro-modal-tabla table-bordered">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th style="text-align:center;">Seleccionar</th>
+                            <th>Fecha Hora</th>
+                            <th>Tipo de Movimiento</th>
+                            <th>Tipo Recarga</th>
+                            <th>Monto</th>
+                            <th>Saldo</th>
+                            <th>Cr&eacute;dito / D&eacute;bito</th>
+                            <th>Bolsa</th>
+                            <th>Tipo de Saldo</th>
+                            <th>Descripci&oacute;n</th>
+                            <th>Detalle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.listDataReloadModel != null)
+                        {
+                            foreach (Claro.SIACU.Web.WebApplication.Areas.Dashboard.Helpers.Prepaid.DataReloadHerper.DataReload item in Model.listDataReloadModel)
+                            {
+                                <tr>
+                                    <td style="text-align:center;"><input type="checkbox" alt="Seleccionar" class="SelectCopy" /></td>
+                                    <td>@item.DateTimeOperation</td>
+                                    <td>@item.Kindmovement</td>
+                                    <td>@item.kindReload</td>
+                                    <td>@item.NominalAmount</td>
+                                    <td>@item.Balance</td>
+                                    <td>@item.Credit</td>
+                                    <td>@item.Bag</td>
+                                    <td>@item.KindBalance</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.Detail</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <input type="hidden" value="@Model.ReloadTelephoneCustomer" hidden="hidden" id="hidReloadTelephoneCustomer" />
+            <form class="form-group form-inline">
+                <div class="form-group">
+                    <label class="control-label">Desde:</label>
+                    <div class="input-daterange input-group" id="containerDateRange">
+                        <input type="text" id="txtReloadDateFrom" class="input-sm form-control" name="txtReloadDateFrom" value="@Model.ReloadDateFrom" readonly />
+                        <span class="input-group-addon"><label class="control-label">A:</label></span>
+                        <input type="text" id="txtReloadDateTo" class="input-sm form-control" name="txtReloadDateTo" value="@Model.ReloadDateTo" readonly />
+                    </div>
+                </div>
+                <button id="btnVisualizeReload" type="button" class="btn claro-btn-info btn-sm">Visualizar</button>
+                <button id="btnExcelReload" type="button" class="btn claro-btn-info btn-sm">Exportar</button>
+                <button id="btnCopyRow" type="button" class="btn claro-btn-info btn-sm">Copiar al Portapapeles</button>
+            </form>
+            <form class="form-group form-inline">
+                <div class="form-group">
+                    <label class="control-label">Tipo de Movimiento:</label>
+                    <select id="ddlTipoMov" class="input-sm form-control"></select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Crédito / Débito:</label>
+                    <select id="ddlCredDev" class="input-sm form-control"></select>
+                </div>
+            </form>
+            <form class="form-group form-inline">
+                <div class="form-group">
+                    <label class="control-label">Nro Lote:</label>
+                    <input id="txtReloadNumberLot" type="text" class="input-sm form-control" />
+                </div>
+                <button id="btnConsultReload" type="button" class="btn claro-btn-info btn-sm">Consultar</button>
+                <button id="btnChangeStateReload" type="button" class="btn claro-btn-info btn-sm" profile="SU_SIACA_MVOM">Cambiar Estado</button>
+                <button id="btnRechargeReload" type="button" class="btn claro-btn-info btn-sm" profile="SU_SIACA_RVOM">Recargar</button>
+                <button id="btnInLineRecharge" type="button" class="btn claro-btn-info btn-sm">En Linea</button>
+                <button id="btnConsumptionDataPacket" type="button" class="btn claro-btn-info btn-sm">Consumo paquete de Datos</button>
+            </form>
+        }
+    }
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Prepaid/DataReload")
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ApplicationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoPrecisado" />
+      <xs:enumeration value="Postpaid" />
+      <xs:enumeration value="Hfc" />
+      <xs:enumeration value="Lte" />
+      <xs:enumeration value="Prepaid" />
+      <xs:enumeration value="Dth" />
+      <xs:enumeration value="Ifi" />
+      <xs:enumeration value="Fixe" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ApplicationType" nillable="true" type="tns:ApplicationType" />
+</xs:schema>

@@ -1,0 +1,59 @@
+﻿@using System.Web.Optimization;
+@{
+    Layout = null;
+}
+<div id="FormAdditionalLocalTrafficDetail">
+    <div><input type="hidden" id="hidMsisdnTP" value="" /></div>
+    <div><input type="hidden" id="hidTypeCallTP" value="" /></div>
+    <div><input type="hidden" id="hidMsisdnTM" value="" /></div>
+    <div><input type="hidden" id="hidTypeCallTM" value="" /></div>
+    <div><input type="hidden" id="hidImportAllTP" value="" /></div>
+    <div><input type="hidden" id="hidImportAllTM" value="" /></div>
+    <div class="panel panel-info ">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosTimProAdditionalcollapse"> TIM PRO </a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosTimProAdditionalcollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblTimProAdditionalLocalTrafficDetail">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Nro. Teléfono</th>
+                        <th class="col-sm-1">RTP</th>
+                        <th class="col-sm-1">On Net</th>
+                        <th class="col-sm-1">Off Net a Fijo</th>
+                        <th class="col-sm-1">Off Net a Celular</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPrepaid1"></div>
+        </div>
+    </div>
+    <div class="panel panel-info ">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#DatosTimMaxAdditionalcollapse"> TIM MAX </a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in table-responsive" id="DatosTimMaxAdditionalcollapse">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblTimMaxAdditionalLocalTrafficDetail">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">Nro. Teléfono</th>
+                        <th class="col-sm-1">On Net</th>
+                        <th class="col-sm-1">Off Net</th>
+                        <th class="col-sm-1">On Net + Off<br />(Horario Reducido)</th>
+                        <th class="col-sm-1">Importe (S/.)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingPrepaid2"></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataBilling/AdditionalLocalTrafficDetail")

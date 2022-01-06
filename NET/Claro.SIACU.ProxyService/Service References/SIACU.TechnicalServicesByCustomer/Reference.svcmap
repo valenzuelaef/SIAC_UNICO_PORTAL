@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4286e5a8-e75b-48ce-a29f-0518f200de3b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://pc-ebarrientos:8585/?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="435d772a-b207-4f11-ba32-57fb50e7b0b4" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CommonBusinessEntitiesExtension_v2.xsd" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="8fa65c47-2487-4c4a-871f-8155321bd4a8" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerBill_v2.xsd" />
+    <MetadataFile FileName="BssServiceProblemManagement.wsdl" MetadataType="Wsdl" ID="e5694557-b059-45ef-a0db-2d3f38a8269a" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="00b02e07-98ae-4eef-ad68-d426cf05b41c" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=EnterpriseExtension_v2.xsd" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="85becb7c-283a-4744-9367-b560537091e5" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Calendar_v2.xsd" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="201a8cb2-2be4-4b7d-8f86-fd15ffd78056" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ServiceUsage_v2.xsd" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="b2d8fdfe-2dc1-47af-bf21-5b1923d17968" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" />
+    <MetadataFile FileName="item6.xsd" MetadataType="Schema" ID="684f8ca5-6b94-4d6d-bc03-afff3eb72bee" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=LogicalResource_v2.xsd" />
+    <MetadataFile FileName="item7.xsd" MetadataType="Schema" ID="16fa8617-6f52-4944-a29d-c9c58adb5768" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=UsersAndRoles_v2.xsd" />
+    <MetadataFile FileName="item8.xsd" MetadataType="Schema" ID="98c90143-a929-4549-9cba-cbf7658a3b86" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ClaroFault_v2.xsd" />
+    <MetadataFile FileName="item9.xsd" MetadataType="Schema" ID="a4c67f0c-0f67-4559-9f8c-e5c21bc27015" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Loyalty_v2.xsd" />
+    <MetadataFile FileName="item10.xsd" MetadataType="Schema" ID="2787d633-66c1-4d53-91e4-c7a1d6df5097" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ServiceExtension_v2.xsd" />
+    <MetadataFile FileName="item11.xsd" MetadataType="Schema" ID="bcaa275d-aac9-4a6c-b1a2-575433cbfa6b" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ServiceSpecification_v2.xsd" />
+    <MetadataFile FileName="item12.xsd" MetadataType="Schema" ID="6d1f44c8-fd06-4b98-a6cf-dd7e3c2e8493" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Location_v2.xsd" />
+    <MetadataFile FileName="item13.xsd" MetadataType="Schema" ID="51b15a5f-55eb-4d25-a5aa-906d94186671" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BusinessInteraction_v2.xsd" />
+    <MetadataFile FileName="item14.xsd" MetadataType="Schema" ID="f2bd85af-22cc-4476-93a4-c67098939412" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductExtension_v2.xsd" />
+    <MetadataFile FileName="item15.xsd" MetadataType="Schema" ID="ad6bc04f-5cdc-4fe4-83f6-22dd6c3a889e" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerExtension_v2.xsd" />
+    <MetadataFile FileName="item16.xsd" MetadataType="Schema" ID="d5ed05a8-1a5e-422e-9e12-5d712204a3f3" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ResourceOrder_v2.xsd" />
+    <MetadataFile FileName="item17.xsd" MetadataType="Schema" ID="c5bfe08a-ddda-48e1-8ac6-7a809044bb5d" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ResourceSpecification_v2.xsd" />
+    <MetadataFile FileName="item18.xsd" MetadataType="Schema" ID="d9804131-fda7-4686-b921-81ddab301086" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyOrder_v2.xsd" />
+    <MetadataFile FileName="item19.xsd" MetadataType="Schema" ID="074cf8f7-92c5-4e6b-8c3e-36d98025f5f6" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Metric_v2.xsd" />
+    <MetadataFile FileName="item20.xsd" MetadataType="Schema" ID="7058b3be-7f37-451d-9731-8ad0c87f3fb5" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerOrder_v2.xsd" />
+    <MetadataFile FileName="item21.xsd" MetadataType="Schema" ID="263b4c39-abb3-430c-884a-98b5bcfd43e7" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=getTechnicalServicesByCustomer.xsd" />
+    <MetadataFile FileName="item22.xsd" MetadataType="Schema" ID="4c799ebb-601f-44c0-96eb-541235bdddd5" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerBillCollection_v2.xsd" />
+    <MetadataFile FileName="item23.xsd" MetadataType="Schema" ID="c7d8a0e6-541f-43c8-87a3-4e8426767dee" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyRevenue_v2.xsd" />
+    <MetadataFile FileName="item24.xsd" MetadataType="Schema" ID="4e15cfb0-8851-4012-b0e2-b5a61efbce36" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductOffering_v2.xsd" />
+    <MetadataFile FileName="item25.xsd" MetadataType="Schema" ID="ba62774e-59d3-4a9f-b750-0c15cbbb260f" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Performance_v2.xsd" />
+    <MetadataFile FileName="item26.xsd" MetadataType="Schema" ID="fdab68bc-a940-41a2-a0ae-8bb03fbed334" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=RootBusinessEntities_v2.xsd" />
+    <MetadataFile FileName="item27.xsd" MetadataType="Schema" ID="1b574edc-bd3f-41ea-932f-0e59dd2f65f6" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CommonsException.xsd" />
+    <MetadataFile FileName="item28.xsd" MetadataType="Schema" ID="c25e0afd-c095-48a7-83fb-7dab9e460dfd" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductSpecification_v2.xsd" />
+    <MetadataFile FileName="item29.xsd" MetadataType="Schema" ID="06ee6ebc-447f-4ef2-9e22-24cb1c1790bf" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=EngagedPartyExtension_v2.xsd" />
+    <MetadataFile FileName="item30.xsd" MetadataType="Schema" ID="fc16b92b-7558-4c91-b51b-9eaa344e6360" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ManagementInformation_v2.xsd" />
+    <MetadataFile FileName="item31.xsd" MetadataType="Schema" ID="2c6d87ea-9af8-4cdf-8d84-3b06414b1240" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=TroubleTicket_v2.xsd" />
+    <MetadataFile FileName="item32.xsd" MetadataType="Schema" ID="40514851-a14b-444d-a5fc-67277acd979c" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Customer_v2.xsd" />
+    <MetadataFile FileName="item33.xsd" MetadataType="Schema" ID="6ab6f4d2-4d9f-4137-bdef-e5c4e7b4bf21" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=MarketSalesExtension_v2.xsd" />
+    <MetadataFile FileName="item34.xsd" MetadataType="Schema" ID="1ddd84ca-76bb-4a72-b2eb-210270af60a8" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Usage_v2.xsd" />
+    <MetadataFile FileName="item35.xsd" MetadataType="Schema" ID="ad944199-cd50-40e5-a7f1-0c6ef5b568c4" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=TroubleOrProblem_v2.xsd" />
+    <MetadataFile FileName="item36.xsd" MetadataType="Schema" ID="ab237aa7-e4bb-4cd6-b2f9-5faba4001c82" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=HeaderGeneric_v1.0.xsd" />
+    <MetadataFile FileName="item37.xsd" MetadataType="Schema" ID="7446cb90-7763-4056-bf35-6c14fe3b208a" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=AdditionalPartyEntities_v2.xsd" />
+    <MetadataFile FileName="item38.xsd" MetadataType="Schema" ID="46cddad6-1237-45b2-ae69-a561a606a0e8" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=MarketingCampaign_v2.xsd" />
+    <MetadataFile FileName="item39.xsd" MetadataType="Schema" ID="aa0f9190-d776-4078-8667-8fcf539ba89b" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ServiceConfiguration_v2.xsd" />
+    <MetadataFile FileName="item40.xsd" MetadataType="Schema" ID="36da11f8-a91b-4c0d-be78-63397bf4f485" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ResponseStatus_v2.xsd" />
+    <MetadataFile FileName="item41.xsd" MetadataType="Schema" ID="a4deea3c-6ab4-4943-a240-ee598c168461" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerInteraction_v2.xsd" />
+    <MetadataFile FileName="item42.xsd" MetadataType="Schema" ID="19b40335-6a8f-4e12-a971-2e1c8fcec11b" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyOrganization_v2.xsd" />
+    <MetadataFile FileName="item43.xsd" MetadataType="Schema" ID="e4857b0a-0098-40d0-a70f-304091339f22" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=AppliedCustomerBillingRate_v2.xsd" />
+    <MetadataFile FileName="item44.xsd" MetadataType="Schema" ID="bab653a1-5fe1-4807-bd7a-d2bef3293a04" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Project_v2.xsd" />
+    <MetadataFile FileName="item45.xsd" MetadataType="Schema" ID="5490f61e-b634-44d2-b545-d7dfd67e5dc8" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=SalesChannel_v2.xsd" />
+    <MetadataFile FileName="item46.xsd" MetadataType="Schema" ID="5040541e-81bc-428a-9f8b-9d193d5e16d8" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyProfile_v2.xsd" />
+    <MetadataFile FileName="item47.xsd" MetadataType="Schema" ID="aa7a5d01-b243-4f6a-945b-191b16830444" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Party_v2.xsd" />
+    <MetadataFile FileName="item48.xsd" MetadataType="Schema" ID="ad639d2d-2c19-41fd-b03a-ca40458eb20d" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerFacingService_v2.xsd" />
+    <MetadataFile FileName="item49.xsd" MetadataType="Schema" ID="3c61aeda-e38d-4122-9e6d-488ab61f5bc7" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=MarketSegment_v2.xsd" />
+    <MetadataFile FileName="item50.xsd" MetadataType="Schema" ID="e0d0c0d2-97c8-42f4-951a-fdeee7dfa435" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=EnterpriseRisk_v2.xsd" />
+    <MetadataFile FileName="item51.xsd" MetadataType="Schema" ID="b3531e58-8dee-449c-ac5e-73fde8a66d3b" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyProductSpecificationAndOffering_v2.xsd" />
+    <MetadataFile FileName="item52.xsd" MetadataType="Schema" ID="77aa74a2-c11e-4411-add0-bb499ad15fa0" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Resource_v2.xsd" />
+    <MetadataFile FileName="item53.xsd" MetadataType="Schema" ID="089fa1cd-399d-410c-b952-543d5676df7c" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Agreement_v2.xsd" />
+    <MetadataFile FileName="item54.xsd" MetadataType="Schema" ID="dc076916-4e4c-449f-b9e6-64fb66ff56e2" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Service_v2.xsd" />
+    <MetadataFile FileName="item55.xsd" MetadataType="Schema" ID="d3a534e3-4f39-4ef4-8bd7-b289d8dbd289" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ClaroGenericHeaders_v2.xsd" />
+    <MetadataFile FileName="item56.xsd" MetadataType="Schema" ID="9d8fb801-9250-47a3-b815-0d1cf832098b" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyInteraction_v2.xsd" />
+    <MetadataFile FileName="item57.xsd" MetadataType="Schema" ID="c9e42b78-a4ca-4799-9ff7-46f43fa3eae8" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Capacity_v2.xsd" />
+    <MetadataFile FileName="item58.xsd" MetadataType="Schema" ID="68e8daaf-c119-4d1e-94ce-98dd8ebb15c4" SourceId="1" SourceUrl="http://pc-ebarrientos:8585/?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Product_v2.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

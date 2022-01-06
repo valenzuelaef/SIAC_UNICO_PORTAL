@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://claro.com.pe/eai/ws/postventa/numerocontactosclientews/types" xmlns:base="http://claro.com.pe/eai/ws/baseschema" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/numerocontactosclientews/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/NumeroContactosClienteWS/ebsNumeroContactosClienteSB11?xsd=1" namespace="http://claro.com.pe/eai/ws/baseschema" />
+  <xsd:element name="consultarNumerosRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="costumerid" type="xsd:string" />
+        <xsd:element name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="consultarNumerosResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaTelefonos" type="base:listTelefonos" />
+        <xsd:element name="codcli" type="xsd:string" />
+        <xsd:element name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="actualizarNumerosRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="codcli" type="xsd:string" />
+        <xsd:element name="codcnt" type="xsd:string" />
+        <xsd:element name="telefono1" type="xsd:string" />
+        <xsd:element name="telefono2" type="xsd:string" />
+        <xsd:element name="ddd" type="xsd:string" />
+        <xsd:element name="idmedcom" type="xsd:string" />
+        <xsd:element name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="actualizarNumerosResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

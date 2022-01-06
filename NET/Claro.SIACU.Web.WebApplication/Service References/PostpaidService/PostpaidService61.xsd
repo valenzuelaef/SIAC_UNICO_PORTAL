@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetProductosXCustomer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetProductosXCustomer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:complexType name="obtenerProductosXCustomerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idCustomer" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="obtenerProductosXCustomerRequest" nillable="true" type="tns:obtenerProductosXCustomerRequest" />
+  <xs:complexType name="obtenerProductosXCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responseData" nillable="true" type="tns:responseDataProductosXCustomer" />
+      <xs:element minOccurs="0" name="responseStatus" nillable="true" type="tns:responseStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="obtenerProductosXCustomerResponse" nillable="true" type="tns:obtenerProductosXCustomerResponse" />
+  <xs:complexType name="responseDataProductosXCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datosHFC" nillable="true" type="tns:ArrayOfProductosXCustomer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="responseDataProductosXCustomer" nillable="true" type="tns:responseDataProductosXCustomer" />
+  <xs:complexType name="ArrayOfProductosXCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductosXCustomer" nillable="true" type="tns:ProductosXCustomer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductosXCustomer" nillable="true" type="tns:ArrayOfProductosXCustomer" />
+  <xs:complexType name="ProductosXCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="coId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="combo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descuento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="direccionInstalacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="internet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="planTarifario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telefonia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductosXCustomer" nillable="true" type="tns:ProductosXCustomer" />
+  <xs:complexType name="responseStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcionRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="origen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ubicacionError" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="responseStatus" nillable="true" type="tns:responseStatus" />
+</xs:schema>

@@ -1,0 +1,32 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataAccount.AccountAnnotationModel
+
+<div id="ContentAccountAnnotation">
+    <div class="row">
+        <div class="col-md-1">
+            <label class="control-label">Mostrar</label>
+        </div>
+        <div class="col-md-3">
+            <select id="cboTypeAnnotation" class="form-control input-sm">
+                @foreach (var item in Model.lstTypeAnnotation)
+                {
+                    <option value="@item.Code">@item.Description</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-1">
+            <label class="control-label">Criterio</label>
+        </div>
+        <div class="col-md-3 control-label">
+            <p align="left">Abonado</p>
+        </div>
+    </div>
+    <div id="divAccountAnnotationList">
+    </div>
+    <input id="hdiTypeAnnotation" type="hidden" style="visibility:hidden" value="@Model.Type">
+</div>
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataAccount/PostpaidAccountAnnotation")
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+
+
+

@@ -1,0 +1,48 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.WipBinService.CasesByIdResponse
+
+<table id="searchDetailTable">
+    <thead class="claro-bg-primary">
+        <tr>
+            <td>Id</td>
+            <td>Tipificación</td>
+            <td>Fecha creación</td>
+
+            <td>Origen</td>
+            <td>Login agente</td>
+            <td>Nombre agente</td>
+            <td>Apellido agente</td>
+
+            <td>Estado</td>
+            <td>Nro Reporte</td>
+            <td>Nro Reclamo</td>
+            <td>Condición</td>
+            <td>Resultado</td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Cases != null)
+        {
+            foreach (var resultCase in Model.Cases)
+            {
+                <tr>
+                    <td>@resultCase.IdCase</td>
+                    <td>@resultCase.Typification+</td>
+                    <td>@resultCase.CreationDate</td>
+
+                    <td>@resultCase.Origin</td>
+                    <td>@resultCase.Owner</td>
+                    <td>@resultCase.AgentName</td>
+                    <td>@resultCase.AgentLastName</td>
+
+                    <td>@resultCase.State</td>
+                    <td>@resultCase.Report</td>
+                    <td>@resultCase.Complaint</td>
+                    <td>@resultCase.Condition</td>
+                    <td>@resultCase.Result</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

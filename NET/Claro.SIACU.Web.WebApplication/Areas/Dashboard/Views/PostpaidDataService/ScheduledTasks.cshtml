@@ -1,0 +1,96 @@
+﻿@using System.Web.Optimization
+<div id="containerScheduledTasks">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="list-group-item-heading page-header text-info">FILTRAR TAREAS PROGRAMADAS</h4>
+            <br />
+            <div class="form-horizontal">
+                <div class="col-sm-3">
+                    <label for="txtContract" class="control-label">Contrato</label>
+                    <input type="text" class="form-control" id="txtContract" name="txtContract" placeholder="Ingrese el Contrato">
+                </div>
+                <div class="col-sm-3">
+                    <label for="txtAccount" class="control-label">Cuenta</label>
+                    <input type="text" class="form-control" id="txtAccount" name="txtAccount" placeholder="Ingrese la cuenta">
+                </div>
+                <div class="col-sm-3">
+                    <label for="txtPhone" class="control-label">Teléfono</label>
+                    <input type="text" class="form-control" id="txtPhone" name="txtPhone" placeholder="Ingrese el teléfono">
+                </div>
+                <div class="col-sm-3">
+                    <label for="txtInteractionCode" class="control-label">Código de Interacción</label>
+                    <input type="text" class="form-control" id="txtInteractionCode" name="txtInteractionCode" placeholder="Ingrese el código de interacción">
+                </div>
+                <div class="col-sm-3">
+                    <label for="txtAdviser" class="control-label">Asesor</label>
+                    <input type="text" class="form-control" id="txtAdviser" name="txtAdviser" placeholder="Ingrese el asesor">
+                </div>
+                <div class="col-sm-3">
+                    <label id="lblTransaction" for="cboTransaction" class="control-label">Tipo de Transacción</label>
+                </div>
+                <div class="col-sm-3">
+                    <label id="lblState" for="cboState" class="control-label">Estado</label>
+                </div>
+                <div class="col-sm-3">
+                    <label id="lblCacDac" for="cboCacDac" class="control-label">CAC/DAC</label>
+                </div>
+                <div class="col-sm-6">
+
+                    <label class="input-group">Fecha de Programación </label>
+                    <div class="input-daterange input-group" id="containerDateRange">
+                        <input type="text" id="txtStartDate" class="input-sm form-control" name="start" />
+                        <label class="input-group-addon btn" for="txtStartDate">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </label>
+                        <span class="input-group-addon">A</span>
+                        <input type="text" id="txtEndDate" class="input-sm form-control" name="end" />
+                        <label class="input-group-addon btn" for="txtEndDate">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </label>
+                    </div>
+
+                   <!--<label for="txtStartDate" class="control-label">Fecha de Programación</label>
+                    <div class="input-daterange input-group" id="containerDateRange">
+                        <input type="text" id="txtStartDate" class="form-control" name="start" />
+                        <label class="input-group-addon btn" for="txtCallDateFrom">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </label>
+                        <span class="input-group-addon"><label class="control-label">A:</label></span>
+                        <input type="text" id="txtEndDate" class="form-control" name="end" />
+                        <label class="input-group-addon btn" for="txtDateEnd">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </label>
+                    </div>--> 
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="list-group-item-heading page-header text-info">LISTA DE TAREAS PROGRAMADAS</h4>
+            <br />
+            <table id="tblScheduledTasks" class="table table-hover table-bordered table-condensed claro-modal-tabla">
+                <thead>
+                    <tr class="claro-bg-primary">
+                        <td class="text-center">Contrato</td>
+                        <td class="text-center">Id Cliente</td>
+                        <td class="text-center">Fecha Programación</td>
+                        <td class="text-center">Fecha Registro</td>
+                        <td class="text-center">Fecha Ejecución</td>
+                        <td class="text-center">Estado</td>
+                        <td class="text-center">Descripción Servicio</td>
+                        <td class="text-center">Cuenta</td>
+                        <td class="text-center">Tipo Servicio</td>
+                        <td class="text-center">Acción</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="errorScheduledTasks"></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidScheduledTasks")

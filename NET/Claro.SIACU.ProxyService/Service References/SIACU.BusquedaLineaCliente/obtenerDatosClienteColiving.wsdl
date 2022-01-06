@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:header="http://claro.com.pe/esb/data/commonBusinessEntities/claroGenericHeaders/v2/" xmlns:tns="http://claro.com.pe/esb/postventa/BusquedaLineaClienteWS/obtenerDatosClienteColiving/v1/" xmlns:fault="http://claro.com.pe/esb/data/commonBusinessEntities/claroFault/v2/" xmlns:poimsrv1="http://claro.com.pe/esb/message/BusquedaLineaClienteWS/obtenerDatosClienteColiving/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:v1="http://claro.com.pe/generic/messageFormat/v1.0/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://claro.com.pe/esb/postventa/BusquedaLineaClienteWS/obtenerDatosClienteColiving/v1/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="../esquemas/obtenerDatosClienteColiving.xsd" namespace="http://claro.com.pe/esb/message/BusquedaLineaClienteWS/obtenerDatosClienteColiving/v1/" />
+      <xsd:import schemaLocation="../../../../../tecnologia/framework/servicios/esquemas/CommonsException.xsd" namespace="http://claro.com.pe/eai/ebs/xsd/CommonsException" />
+      <xsd:import schemaLocation="../../../../../tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ClaroGenericHeaders_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/claroGenericHeaders/v2/" />
+      <xsd:import schemaLocation="../../../../../tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ClaroFault_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/claroFault/v2/" />
+      <xsd:import schemaLocation="../../../../../tecnologia/framework/servicios/esquemas/HeaderGeneric_v1.0.xsd" namespace="http://claro.com.pe/generic/messageFormat/v1.0/" />
+    </xsd:schema>
+  </types>
+  <message name="obtenerDatosClienteColivingRequestMessage">
+    <part name="obtenerDatosClienteColivingRequest" element="poimsrv1:obtenerDatosClienteColivingMessageRequest" />
+  </message>
+  <message name="obtenerDatosClienteColivingResponseMessage">
+    <part name="obtenerDatosClienteColivingResponse" element="poimsrv1:obtenerDatosClienteColivingMessageResponse" />
+  </message>
+  <message name="claroFault">
+    <part name="claroFault" element="fault:claroFault" />
+  </message>
+  <message name="HeaderRequest">
+    <part name="HeaderRequest" element="v1:HeaderRequest" />
+  </message>
+  <message name="HeaderResponse">
+    <part name="HeaderResponse" element="v1:HeaderResponse" />
+  </message>
+  <message name="headerRequest">
+    <part name="headerRequest" element="header:headerRequest" />
+  </message>
+  <message name="headerResponse">
+    <part name="headerResponse" element="header:headerResponse" />
+  </message>
+  <portType name="obtenerDatosClienteColivingPort">
+    <operation name="obtenerDatosClienteColiving">
+      <input message="tns:obtenerDatosClienteColivingRequestMessage" />
+      <output message="tns:obtenerDatosClienteColivingResponseMessage" />
+      <fault name="claroFault" message="tns:claroFault" />
+    </operation>
+  </portType>
+  <binding name="obtenerDatosClienteColivingPortSOAP11Binding" type="tns:obtenerDatosClienteColivingPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="obtenerDatosClienteColiving">
+      <soap:operation soapAction="http://claro.com.pe/esb/Resourse/BusquedaLineaClienteWS/v1/obtenerDatosClienteColiving" style="document" />
+      <input>
+        <soap:header message="tns:HeaderRequest" part="HeaderRequest" use="literal" />
+        <soap:header message="tns:headerRequest" part="headerRequest" use="literal" />
+        <soap:body use="literal" parts="obtenerDatosClienteColivingRequest" />
+      </input>
+      <output>
+        <soap:header message="tns:HeaderResponse" part="HeaderResponse" use="literal" />
+        <soap:header message="tns:headerResponse" part="headerResponse" use="literal" />
+        <soap:body use="literal" parts="obtenerDatosClienteColivingResponse" />
+      </output>
+      <fault name="claroFault">
+        <soap:fault use="literal" name="claroFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="obtenerDatosClienteColiving">
+    <port name="obtenerDatosClienteColivingPort" binding="tns:obtenerDatosClienteColivingPortSOAP11Binding">
+      <soap:address location="http://127.0.0.1:8909/esb/postventa/obtenerDatosClienteColiving/v1/" />
+    </port>
+  </service>
+</definitions>

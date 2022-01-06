@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfWipBin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WipBin" nillable="true" type="tns:WipBin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWipBin" nillable="true" type="tns:ArrayOfWipBin" />
+  <xs:complexType name="WipBin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Inbox" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WipBin" nillable="true" type="tns:WipBin" />
+  <xs:complexType name="ArrayOfCase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Case" nillable="true" type="tns:Case" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCase" nillable="true" type="tns:ArrayOfCase" />
+  <xs:complexType name="Case">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgentLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Complaint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Condition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coordinate1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coordinate2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coordinate3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdCase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidenceSD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InconvenientDetail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Origin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhaseChangeDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Queue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Report" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Resolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Typification" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Case" nillable="true" type="tns:Case" />
+  <xs:complexType name="ArrayOfQueue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Queue" nillable="true" type="tns:Queue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueue" nillable="true" type="tns:ArrayOfQueue" />
+  <xs:complexType name="Queue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Queue" nillable="true" type="tns:Queue" />
+  <xs:complexType name="CaseNotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CaseNotes" nillable="true" type="tns:CaseNotes" />
+  <xs:complexType name="SubCaseNotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubCaseNotes" nillable="true" type="tns:SubCaseNotes" />
+</xs:schema>

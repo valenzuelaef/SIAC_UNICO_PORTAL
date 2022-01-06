@@ -1,0 +1,54 @@
+﻿@using System.Web.Optimization;
+
+<!DOCTYPE html>
+<html class="Html">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAC UNICO</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <link rel="shortcut icon" href="@Url.Content(" ~ />images/favicon.ico")" />
+    @Styles.Render("~/bundles/bootstrap-addon-css")
+    @Styles.Render("~/bundles/jquery-addon-css")
+    @Styles.Render("~/bundles/site-css")
+    @RenderSection("styles", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery-addon")
+    @Scripts.Render("~/bundles/datepicker")
+    @Scripts.Render("~/bundles/ContactoGrilla")
+    @Scripts.Render("~/bundles/moment-js")
+    @Scripts.Render("~/bundles/Claro")
+    <script>
+        $(document).ready(function () {
+            $.app.setApplicationUrl('@(Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/') + "/")');
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="bodyScroll modal modal-open">
+    <div id="navbar-contenedor">
+        <div id="navbar-body" class="scroll-content">
+            @RenderBody()
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/ClaroLayoutPopup")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var obj;
+
+            if (!!window.opener) {
+                obj = window.opener.dialogArguments;
+            } else {
+                obj = window.parent.dialogArguments;
+            }
+            
+            $('#navbar-body').windowPopup(obj);
+        })
+    </script>
+</body>
+</html>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:entper="http://claro.com.pe/esb/data/commonBusinessEntities/performance/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entres="http://claro.com.pe/esb/data/resource/resource/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entlogres="http://claro.com.pe/esb/data/resource/logicalResource/v2/" xmlns:entuseandrol="http://claro.com.pe/esb/data/commonBusinessEntities/usersAndRoles/v2/" xmlns:entresord="http://claro.com.pe/esb/data/resource/resourceOrder/v2/" xmlns:entser="http://claro.com.pe/esb/data/service/service/v2/" targetNamespace="http://claro.com.pe/esb/data/resource/logicalResource/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Performance_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/performance/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ResourceOrder_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/resourceOrder/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=RootBusinessEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=UsersAndRoles_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/usersAndRoles/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Resource_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/resource/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Service_v2.xsd" namespace="http://claro.com.pe/esb/data/service/service/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="IPAddress">
+    <xs:annotation>
+      <xs:documentation>This class represents an IP address. It can be either in v4 or v6 form, and can be formatted as dotted decimal or CIDR. One or more host aliases can also be supplied.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entlogres:NetworkAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_performanceIPAddress" type="entper:PerformanceIPAddress" />
+          <xs:element minOccurs="0" maxOccurs="1" name="networkNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This contains the network number portion of the IP Address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="hostNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This contains the host number portion of the IP Address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="subnetMask" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is a string attribute that defines the subnet mask for the IP Address of this instance. The IP Address is constructed by concatenating the networkNumber and the hostNumber, forming a dotted decimal IP Address. The subnetMask is formatted according to the appropriate convention as defined in the addressFormat attribute of this object.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LogicalResource">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class for describing different logical aspects of devices (e.g., DeviceInterfaces) that constitute a Product. It has two main purposes: (1) to collect common attributes and relationships for all logical entities, and (2) to provide a convenient, single point where relationships with other managed objects can be defined.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entres:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="lrStatus" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This is an enumerated integer whose value indicates the current status of the object. The following values are defined:
+
+ 0: Unknown
+ 1: OK
+ 2: Initializing
+ 3: Starting
+ 4: Paused
+ 5: Stopping
+ 6: Stopped
+ 7: Degraded
+ 8: Stressed 
+ 9: Predicted Failure
+ 10: Error - General
+ 11: Error - Non Recoverable
+ 12: Not Installed or Not Present
+ 13: In Maintenance
+ 14: Unable To Contact
+ 15: Lost Communications
+
+Stopped indicates that the LogicalResource is known to still exist, but it is no longer operational. However, it has not failed.
+ 
+Stressed indicates that the LogicalResource is functioning, but needs attention (e.g., it may be overheating, or overloaded in some way). This is similar to Predicted Failure, which indicates that this LogicalResource is functioning properly, but is predicting a failure in the near future.
+
+In Maintenance indicates that this LogicalResource is being configured, maintained, or otherwise administered and is NOT available for service.
+
+Unable To Contact indicates that the monitoring system has knowledge of this LogicalResource but has never been able to establish communications with it. In contrast, Lost Commmunications indicates that the LogicalResource has been contacted successfully in the past and is known to still exist; however, it is currently unreachable.
+
+This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="serviceState" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This is an enumerated integer that defines the availability and usage (i.e., the service state) of this LogicalResource. Its values are:
+
+ 0: Unknown
+ 1: In Service
+ 2: Out of Service
+ 3: Testing
+ 4: In Maintenance
+ 5: Not Available
+ 6: Not Applicable
+
+This is an optional attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="isOperational" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>This attribute is used to define the operational status of the object, and is implemented as a Boolean: TRUE means that the object is currently operational, and FALSE means that the object is not currently operational.
+
+This is a REQUIRED attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="resourceFacingService" type="entser:ResourceFacingService" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LogicalResourceRole">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class that defines the concept of various types of roles that can be associated with LogicalResources.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entres:ResourceRole">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NetworkAddress">
+    <xs:annotation>
+      <xs:documentation>This class represents the generic concept of a network address. Its subclasses define different types of addresses of different technologies, such as an IPAddress vs. an IPXAddress. Its utility lies in its ability to serve as a convenient point for sourcing and terminating relationships. This eliminates undue duplication of relationships that interact with the subclasses of NetworkAddress.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entlogres:LogicalResource">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceNumber">
+    <xs:annotation>
+      <xs:documentation>Sub-class of the abstract LogicalResource. This is the main class for numbers that relates to the number portability, but it can contain more general and shared characteristics like the inventory of numbers. It has an ID (inherited), name (inherited), description(inherited), status (inherited) and a dialedNumber (For mobile: MDN, fixed, and IP type of numbers) - escribir más sobre resourceNumber. The association with NumberPortabilityRequest is of one-to-many since a number can have many ports and a port can happen to a specific number. Nevertheless, they are already related through the order, for that reason the relationship they have is derived.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entlogres:LogicalResource">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="dialedNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This attribute called dialedNumber exist to specify the number, for any of those types: mobile like MDN, fixed, and IP type of numbers.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_numberPortabilityRequest" type="entresord:NumberPortabilityRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SecurityInfo">
+    <xs:annotation>
+      <xs:documentation>SecurityInfo is the base class for all security classes. Different types of security settings and semantics are associated with a particular Resource or Service using the DescribedByMgmtInfo aggregation. Subclasses of this class define the detailed characteristics and behavior of this class. Examples of security subclasses include AuthenticationEntity, AuthorizationEntity, and AuditingEntity.
+
+Security settings are implemented and reported on by associating the parent of this class, ManagementInfo, with the ManagementMethodEntity class through a combination of the DescribedByMgmtInfo and the MgmtInfoObtainedBy aggregation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:ManagementInfo">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SoftwareResource">
+    <xs:annotation>
+      <xs:documentation>A generalization that contains all attributes and associations that are common to Sofware and API .  A SoftwareResource is described by a SoftwareResourceSpecficiation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="targetPlatform" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an enumerated integer that defines the target platform that the SoftwareResource will be deployed on. Values include:
+
+
+
+ 0: Independent of Platform
+
+ 1: Other
+
+ 2: Network Device (specified in subclasses)
+
+ 3: Server
+
+ 4: Desktop Computer
+
+ 5: Laptop Computer
+
+ 6: PDA
+
+ 7: Phone
+
+ 8: Other Mobile Device</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="dateValue" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>This attribute contains the value of the current date.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isDistributedCurrent" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>This is a Boolean attribute that, if TRUE, defines this SoftwareResource as being currently distributed across several Resource nodes.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="timeValue" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This attribute contains the value of the current Time.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UserNameResourceRole">
+    <xs:annotation>
+      <xs:documentation>UserNameResourceRole represents the role of a logical resource as user name in a system. User names can be managed in a dedicated specific pool or can be shared with other resource pools in which case phone number or email address can also be used as user names in the system.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entlogres:LogicalResourceRole">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_involvementIdentification" type="entuseandrol:InvolvementIdentification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

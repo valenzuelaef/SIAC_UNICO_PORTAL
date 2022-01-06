@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:entparord="http://claro.com.pe/esb/data/engagedParty/partyOrder/v2/" xmlns:entcusfacser="http://claro.com.pe/esb/data/service/customerFacingService/v2/" xmlns:entres="http://claro.com.pe/esb/data/resource/resource/v2/" xmlns:entprod="http://claro.com.pe/esb/data/product/product/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entprospe="http://claro.com.pe/esb/data/product/productSpecification/v2/" xmlns:entparrev="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" xmlns:entappcusbilrat="http://claro.com.pe/esb/data/customer/appliedCustomerBillingRate/v2/" xmlns:entprooff="http://claro.com.pe/esb/data/product/productOffering/v2/" targetNamespace="http://claro.com.pe/esb/data/product/product/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=AppliedCustomerBillingRate_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/appliedCustomerBillingRate/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyRevenue_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Resource_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/resource/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productOffering/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerFacingService_v2.xsd" namespace="http://claro.com.pe/esb/data/service/customerFacingService/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=RootBusinessEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductSpecification_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productSpecification/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyOrder_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyOrder/v2/" />
+  <xs:complexType name="ComponentProdPrice">
+    <xs:annotation>
+      <xs:documentation>Part of a ProductPrice representing a single element of the price.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entprod:ProductPrice">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="priceType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A category that describes the price, such as recurring, discount, allowance, penalty, and so forth.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="unitofmeasure" type="entbastyp:Quantity">
+            <xs:annotation>
+              <xs:documentation>A number representing the value of this component and units (such as each) of the price. Its meaning depends on the priceType. It could be a price, a rate, or a discount.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="price" type="entbastyp:Money">
+            <xs:annotation>
+              <xs:documentation>The amount of money that characterizes the price.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProdPriceAlteration">
+    <xs:annotation>
+      <xs:documentation>An amount, usually of money, that modifies the price charged for a Product.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entprod:ComponentProdPrice">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_prodPriceCharge" type="entprod:ProdPriceCharge" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProdPriceCharge">
+    <xs:annotation>
+      <xs:documentation>An amount, usually of money, that is asked for when a Product is bought, rented, or leased.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entprod:ComponentProdPrice">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_appliedPartyBillingProductCharge" type="entparrev:AppliedPartyBillingProductCharge" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_prodPriceAlteration" type="entprod:ProdPriceAlteration" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_appliedCustomerBillingProductCharge" type="entappcusbilrat:AppliedCustomerBillingProductCharge" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Product">
+    <xs:annotation>
+      <xs:documentation>A ProductOffering obtained by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="productStatus" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The condition of the product, such as planned, designed, activated, disconnected.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+            <xs:annotation>
+              <xs:documentation>The period during which the product is applicable.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_productSpecification" type="entprospe:ProductSpecification" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerFacingService" type="entcusfacser:CustomerFacingService" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyOrderItem" type="entparord:PartyOrderItem" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_productOffering" type="entprooff:ProductOffering" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_productBundle" type="entprod:ProductBundle" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_businessInteractionItem" type="entbusint:BusinessInteractionItem" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_physicalResource" type="entres:PhysicalResource" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_productPrice" type="entprod:ProductPrice" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_productCharacteristicValue" type="entprod:ProductCharacteristicValue" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProductBundle">
+    <xs:annotation>
+      <xs:documentation>A ProductBundle is an instantiation of BundledProductOffering which keeps the business terms under which the customer purchased the product bundle (using a BundledProductOffering).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:RootEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_product" type="entprod:Product" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProductCharacteristicValue">
+    <xs:annotation>
+      <xs:documentation>A value of a ProductSpecCharacteristic chosen for a Product that further defines what the Product is.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A fact that describes a Product.
+
+Required if the association there is an association with ProductSpecCharacteristic only.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the characteristic value is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_product" type="entprod:Product" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_productSpecCharacteristic" type="entprospe:ProductSpecCharacteristic" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_productSpecCharacteristicValue" type="entprospe:ProductSpecCharacteristicValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductComponent">
+    <xs:annotation>
+      <xs:documentation>A ProductComponent is an instantiation of SimpleProductOffering which keeps the business terms under which the customer purchased the product (using a SimpleProductOffering).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entprod:Product">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProductPrice">
+    <xs:annotation>
+      <xs:documentation>An amount, usually of money, that represents the actual price paid by a Customer for a purchase, a rent or a lease of a Product. The price is valid for a defined period of time.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A short descriptive name such as "affinity discount".</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains in detail the semantics of this component.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the price is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_product" type="entprod:Product" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_productOfferingPrice" type="entprooff:ProductOfferingPrice" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

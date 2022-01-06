@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFeeEquipment" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetFeeEquipment" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="FeeEquipmentRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ErrorId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Errormessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Origin" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FeeEquipmentRequestPostPaid" nillable="true" type="tns:FeeEquipmentRequestPostPaid" />
+  <xs:complexType name="FeeEquipmentResponsePostPaid">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="ListFeeEquipmentccount" nillable="true" type="q2:ArrayOfFeeEquipmentPostPaid" />
+      <xs:element minOccurs="0" name="strSumImporteOriginal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strsumImportePendiente" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FeeEquipmentResponsePostPaid" nillable="true" type="tns:FeeEquipmentResponsePostPaid" />
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetConsumptionDataPacket" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetConsumptionDataPacket" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:complexType name="ConsumptionDataPacketRequestPrePaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" minOccurs="0" name="PackageODCS" nillable="true" type="q2:PackageODCSPrePaid" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsumptionDataPacketRequestPrePaid" nillable="true" type="tns:ConsumptionDataPacketRequestPrePaid" />
+  <xs:complexType name="ConsumptionDataPacketResponsePrePaid">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" minOccurs="0" name="PackageODCSs" nillable="true" type="q3:ArrayOfPackageODCSPrePaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsumptionDataPacketResponsePrePaid" nillable="true" type="tns:ConsumptionDataPacketResponsePrePaid" />
+</xs:schema>

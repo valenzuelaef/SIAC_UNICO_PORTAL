@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2319e4d5-6ad0-459b-949b-dfbdfd800f55" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.19.74.31:8903/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ebsDetalleDocAjusteSB11.xsd" MetadataType="Schema" ID="7e18d83b-db90-4675-a560-a58551b5a28c" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=11" />
+    <MetadataFile FileName="ebsDetalleDocAjusteSB111.xsd" MetadataType="Schema" ID="5f83ee65-bdfc-43e0-b269-4432702f399d" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=7" />
+    <MetadataFile FileName="ebsDetalleDocAjusteSB112.xsd" MetadataType="Schema" ID="9a76799e-0beb-4214-af07-5e6e886fe187" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=6" />
+    <MetadataFile FileName="ebsDetalleDocAjusteSB113.xsd" MetadataType="Schema" ID="327862f0-b565-44ab-aca5-51df9a6044a0" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=5" />
+    <MetadataFile FileName="ebsDetalleDocAjusteSB114.xsd" MetadataType="Schema" ID="c761575b-70fd-4fb6-9c31-c9a0ced2277e" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=4" />
+    <MetadataFile FileName="ebsDetalleDocAjusteSB115.xsd" MetadataType="Schema" ID="d227a8f0-6756-4a0e-9b4b-323c9ee2b3d2" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=3" />
+    <MetadataFile FileName="ebsDetalleDocAjusteSB116.xsd" MetadataType="Schema" ID="07a08929-1264-45b6-8cac-7f254e880b57" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=2" />
+    <MetadataFile FileName="ebsDetalleDocAjusteSB117.xsd" MetadataType="Schema" ID="6c9736b2-3fa3-4cc2-bcae-f4fdea5f39c0" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=1" />
+    <MetadataFile FileName="ebsDetalleDocAjusteSB118.xsd" MetadataType="Schema" ID="074e6e39-326f-4258-97c0-f507c09d8503" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=10" />
+    <MetadataFile FileName="ebsDetalleDocAjuste.wsdl" MetadataType="Wsdl" ID="8527751b-110e-4d3d-aedd-c2ad32201b8a" SourceId="1" SourceUrl="http://172.19.74.31:8903/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?WSDL" />
+    <MetadataFile FileName="ebsDetalleDocAjusteSB119.xsd" MetadataType="Schema" ID="f8c807fe-3000-49d4-9e0d-c1a9a9136d27" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=9" />
+    <MetadataFile FileName="ebsDetalleDocAjusteSB1110.xsd" MetadataType="Schema" ID="8fa6065d-c044-4833-9996-e79ec49f3941" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=8" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

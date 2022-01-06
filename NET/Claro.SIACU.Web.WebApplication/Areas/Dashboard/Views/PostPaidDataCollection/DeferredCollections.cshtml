@@ -1,0 +1,64 @@
+﻿@using System.Web.Optimization;
+
+<div id="modal-content">
+    <div id="DeferredCollections">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-condensed ">
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-4">
+                                <label class="control-label">Código Cliente :</label>
+                                <span id="contratoIdDeferred"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Nombre/Razón Social :</label>
+                                <span id="nameClientDeferred"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Nro. Claro/Servicio :</label>
+                                <span id="numberServicesDeferred"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-4">
+                                <label class="control-label">Total Importe Facturado(con IGV) : </label>
+                                <span id="totalBilledAmount"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Total Importe No Facturado(con IGV) :</label>
+                                <span id="totalAmountNotBilled"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table  table-striped table-hover table-responsive claro-modal-tabla table-bordered" id="tblDeferredCollections">
+                        <thead class="claro-bg-primary">
+                            <tr>
+                                <th class="col-sm-1">Nro</th>
+                                <th class="col-sm-1">Documento</th>
+                                <th class="col-sm-1">Fecha Ingreso</th>
+                                <th class="col-sm-1">Importe(con IGV)</th>
+                                <th class="col-sm-1">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div id="errorDeferredCollections"></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataCollection/DeferredCollections")

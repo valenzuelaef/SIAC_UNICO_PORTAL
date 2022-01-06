@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetListaBloqueoDesbloqueo.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetListaBloqueoDesbloqueo.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RequestListaobtenerBloqueos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="obtenerBloqueosContratoRequest" nillable="true" type="tns:ObtenerBloqueosContratoRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestListaobtenerBloqueos" nillable="true" type="tns:RequestListaobtenerBloqueos" />
+  <xs:complexType name="ObtenerBloqueosContratoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="coIdPub" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoRazon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="listaOpcional" nillable="true" type="tns:ArrayOfListaOpcional" />
+      <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObtenerBloqueosContratoRequest" nillable="true" type="tns:ObtenerBloqueosContratoRequest" />
+  <xs:complexType name="ArrayOfListaOpcional">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListaOpcional" nillable="true" type="tns:ListaOpcional" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListaOpcional" nillable="true" type="tns:ArrayOfListaOpcional" />
+  <xs:complexType name="ListaOpcional">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaOpcional" nillable="true" type="tns:ListaOpcional" />
+</xs:schema>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://claro.com.pe/eai/services/paquetesRoaming/ws/types/schema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://claro.com.pe/eai/services/paquetesRoaming/ws" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" name="PaquetesRoamingWS" targetNamespace="http://claro.com.pe/eai/services/paquetesRoaming/ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://limdeseaiv28.tim.com.pe:8909/PaquetesRoamingWS/ebsPaquetesRoamingSB11?xsd=1" namespace="http://claro.com.pe/eai/services/paquetesRoaming/ws/types/schema" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="listarPaquetesRoamingRequest">
+    <wsdl:part name="listarPaquetesRoamingReq" element="base:listarPaquetesRoamingRequest" />
+  </wsdl:message>
+  <wsdl:message name="listarPaquetesRoamingResponse">
+    <wsdl:part name="listarPaquetesRoamingRes" element="base:listarPaquetesRoamingResponse" />
+  </wsdl:message>
+  <wsdl:message name="serviciosContratoZonaRequest">
+    <wsdl:part name="serviciosContratoZonaReq" element="base:serviciosContratoZonaRequest" />
+  </wsdl:message>
+  <wsdl:message name="serviciosContratoZonaResponse">
+    <wsdl:part name="serviciosContratoZonaRes" element="base:serviciosContratoZonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="actDesacPqtRoamingRequest">
+    <wsdl:part name="actDesacPqtRoamingReq" element="base:actDesacPqtRoamingRequest" />
+  </wsdl:message>
+  <wsdl:message name="actDesacPqtRoamingResponse">
+    <wsdl:part name="actDesacPqtRoamingRes" element="base:actDesacPqtRoamingResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaServicioResetRequest">
+    <wsdl:part name="listaServicioResetReq" element="base:listaServicioResetRequest" />
+  </wsdl:message>
+  <wsdl:message name="listaServicioResetResponse">
+    <wsdl:part name="listaServicioResetResp" element="base:listaServicioResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ejecutarProgPqtRoamingRequest">
+    <wsdl:part name="ejecutarProgPqtRoamingReq" element="base:ejecutarProgPqtRoamingRequest" />
+  </wsdl:message>
+  <wsdl:message name="ejecutarProgPqtRoamingResponse">
+    <wsdl:part name="ejecutarProgPqtRoamingResp" element="base:ejecutarProgPqtRoamingResponse" />
+  </wsdl:message>
+  <wsdl:message name="validarProgPqtRoamingRequest">
+    <wsdl:part name="validarProgPqtRoamingReq" element="base:validarProgPqtRoamingRequest" />
+  </wsdl:message>
+  <wsdl:message name="validarProgPqtRoamingResponse">
+    <wsdl:part name="validarProgPqtRoamingResp" element="base:validarProgPqtRoamingResponse" />
+  </wsdl:message>
+  <wsdl:message name="registrarProgRequest">
+    <wsdl:part name="registrarProgReq" element="base:registrarProgRequest" />
+  </wsdl:message>
+  <wsdl:message name="registrarProgResponse">
+    <wsdl:part name="registrarProgResp" element="base:registrarProgResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PaquetesRoamingPortType">
+    <wsdl:operation name="listarPaquetesRoaming">
+      <wsdl:input message="tns:listarPaquetesRoamingRequest" />
+      <wsdl:output message="tns:listarPaquetesRoamingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="serviciosContratoZona">
+      <wsdl:input message="tns:serviciosContratoZonaRequest" />
+      <wsdl:output message="tns:serviciosContratoZonaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="actDesacPqtRoaming">
+      <wsdl:input message="tns:actDesacPqtRoamingRequest" />
+      <wsdl:output message="tns:actDesacPqtRoamingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listaServicioReset">
+      <wsdl:input message="tns:listaServicioResetRequest" />
+      <wsdl:output message="tns:listaServicioResetResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ejecutarProgPqtRoaming">
+      <wsdl:input message="tns:ejecutarProgPqtRoamingRequest" />
+      <wsdl:output message="tns:ejecutarProgPqtRoamingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="validarProgPqtRoaming">
+      <wsdl:input message="tns:validarProgPqtRoamingRequest" />
+      <wsdl:output message="tns:validarProgPqtRoamingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarProg">
+      <wsdl:input message="tns:registrarProgRequest" />
+      <wsdl:output message="tns:registrarProgResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PaquetesRoamingSOAP11Binding" type="tns:PaquetesRoamingPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listarPaquetesRoaming">
+      <soap11:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/listarPaquetesRoaming" />
+      <wsdl:input>
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="serviciosContratoZona">
+      <soap11:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/serviciosContratoZona" />
+      <wsdl:input>
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actDesacPqtRoaming">
+      <soap11:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/actDesacPqtRoaming" />
+      <wsdl:input>
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaServicioReset">
+      <soap11:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/listaServicioReset" />
+      <wsdl:input>
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ejecutarProgPqtRoaming">
+      <soap11:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/ejecutarProgPqtRoaming" />
+      <wsdl:input>
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarProgPqtRoaming">
+      <soap11:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/validarProgPqtRoaming" />
+      <wsdl:input>
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarProg">
+      <soap11:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/registrarProg" />
+      <wsdl:input>
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PaquetesRoamingSOAP12Binding" type="tns:PaquetesRoamingPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listarPaquetesRoaming">
+      <soap12:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/listarPaquetesRoaming" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="serviciosContratoZona">
+      <soap12:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/serviciosContratoZona" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actDesacPqtRoaming">
+      <soap12:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/actDesacPqtRoaming" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaServicioReset">
+      <soap12:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/listaServicioReset" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ejecutarProgPqtRoaming">
+      <soap12:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/ejecutarProgPqtRoaming" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarProgPqtRoaming">
+      <soap12:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/validarProgPqtRoaming" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarProg">
+      <soap12:operation soapAction="http://claro.com.pe/eai/services/paquetesRoaming/registrarProg" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ebsPaquetesRoaming">
+    <wsdl:port name="ebsPaquetesRoamingSOAP12Port" binding="tns:PaquetesRoamingSOAP12Binding">
+      <soap12:address location="http://limdeseaiv28.tim.com.pe:8909/PaquetesRoamingWS/ebsPaquetesRoamingSB12" />
+    </wsdl:port>
+    <wsdl:port name="ebsPaquetesRoamingSOAP11Port" binding="tns:PaquetesRoamingSOAP11Binding">
+      <soap11:address location="http://limdeseaiv28.tim.com.pe:8909/PaquetesRoamingWS/ebsPaquetesRoamingSB11" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

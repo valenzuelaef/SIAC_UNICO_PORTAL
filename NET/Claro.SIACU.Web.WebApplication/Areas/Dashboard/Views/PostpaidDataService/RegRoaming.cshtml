@@ -1,0 +1,109 @@
+﻿@using System.Web.Optimization
+<div id="ContentPostpaidAccountRelationPlan">
+
+    <div id="modal-content">
+        <div class="row">
+            <div class="col-md-12">
+
+                <table class="table table-condensed">
+                    <tbody>
+
+                        <tr>
+                            <td class="col-md-12">
+                                <div class="col-md-2">
+                                    <label class="control-label">Nro Teléfono :</label>
+                                </div>
+                                <div class="col-md-2"></div>
+
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Tipo de Cliente:</label>
+                                </div>
+                                <div class="col-md-2"></div>
+
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Contacto:</label>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="col-md-12">
+                                <div class="col-md-3">
+                                    <label class="control-label">Acción:</label>
+                                </div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3">
+                                    <label class="control-label">Cuotas:</label>
+                                </div>
+                                <div class="col-md-3"></div>
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td class="col-md-12">
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Enviar por Correo : </label>
+                                </div>
+                                <div class="col-md-2"><input id="chkPost_SendforEmail" type="checkbox" /></div>
+                                <div class="col-md-5">
+                                    <input id="txtPost_SendforEmail" type="text" class="form-control">
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td class="col-md-12">
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Enviar por SMS : </label>
+                                </div>
+                                <div class="col-md-2"><input id="chkPost_SendforSMS" type="checkbox" /></div>
+                                <div class="col-md-5">
+                                    <input id="txtPost_SendforSMS" type="text" class="form-control">
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-12">
+
+                                <div class="col-md-2">
+                                    <label class="control-label">CAC/DAC:</label>
+                                </div>
+
+                                <div class="col-md-7">
+
+                                    <select class="form-control">
+                                        <option value="volvo">Elegir</option>
+                                    </select>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="col-md-12">
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Notas:</label>
+                                </div>
+                                <div class="col-md-12"><textarea rows="9" cols="120" class="form-control"></textarea></div>
+
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N0:definitions xmlns:WL5G3N3="http://ericsson.com/esb/bss/Customer/GetLineConsumption/V1/" xmlns:WL5G3N5="http://ericsson.com/esb/ws/bss/Customer/CustomerManagementFS/V1/" xmlns:WL5G3N6="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N1="http://ericsson.com/esb/data/generico/CommonTypes/v1/" xmlns:WL5G3N2="http://ericsson.com/esb/bss/Customer/GetProducts/V1/" xmlns:WL5G3N4="http://ericsson.com/esb/bss/Customer/GetCustomerConsumption/V1/" targetNamespace="http://ericsson.com/esb/ws/bss/Customer/CustomerManagementFS/V1/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/">
+  <WL5G3N0:types>
+    <xs:schema xmlns:ct="http://ericsson.com/esb/data/generico/CommonTypes/v1/" xmlns:bsscusman="http://ericsson.com/esb/ws/bss/Customer/CustomerManagementFS/V1/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:gp="http://ericsson.com/esb/bss/Customer/GetProducts/V1/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:gcc="http://ericsson.com/esb/bss/Customer/GetCustomerConsumption/V1/" xmlns:glc="http://ericsson.com/esb/bss/Customer/GetLineConsumption/V1/" xmlns:bssactcus="http://ericsson.com/esb/bss/Customer/GetProducts/V1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xsi:import schemaLocation="http://172.19.91.185:10051/esb/ws/bss/Customer/CustomerManagementFS/V1/?SCHEMA%2FBSS_CUSTOMER_MANAGEMENT_FS%2FBSS_CUSTOMER_MANAGEMENT_FS%2FResources%2FXSD%2FGetProducts_V1" namespace="http://ericsson.com/esb/bss/Customer/GetProducts/V1/" />
+      <xsi:import schemaLocation="http://172.19.91.185:10051/esb/ws/bss/Customer/CustomerManagementFS/V1/?SCHEMA%2FBSS_CUSTOMER_MANAGEMENT_FS%2FBSS_CUSTOMER_MANAGEMENT_FS%2FResources%2FXSD%2FCommonTypes_V1" namespace="http://ericsson.com/esb/data/generico/CommonTypes/v1/" />
+      <xsi:import schemaLocation="http://172.19.91.185:10051/esb/ws/bss/Customer/CustomerManagementFS/V1/?SCHEMA%2FBSS_CUSTOMER_MANAGEMENT_FS%2FBSS_CUSTOMER_MANAGEMENT_FS%2FResources%2FXSD%2FGetLineConsumption_V1" namespace="http://ericsson.com/esb/bss/Customer/GetLineConsumption/V1/" />
+      <xsi:import schemaLocation="http://172.19.91.185:10051/esb/ws/bss/Customer/CustomerManagementFS/V1/?SCHEMA%2FBSS_CUSTOMER_MANAGEMENT_FS%2FBSS_CUSTOMER_MANAGEMENT_FS%2FResources%2FXSD%2FGetCustomerConsumption_V1" namespace="http://ericsson.com/esb/bss/Customer/GetCustomerConsumption/V1/" />
+    </xs:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ESBFault">
+    <WL5G3N0:part name="ESBFault" element="WL5G3N1:ESBFault" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="headerRequest">
+    <WL5G3N0:part name="headerReq" element="WL5G3N1:headerRequest" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="headerResponse">
+    <WL5G3N0:part name="headerResp" element="WL5G3N1:headerResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="GetProductsRequest">
+    <WL5G3N0:part name="parameter" element="WL5G3N2:GetProductsRequestMessage" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="GetProductsResponse">
+    <WL5G3N0:part name="parameter" element="WL5G3N2:GetProductsResponseMessage" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="GetLineConsumptionRequest">
+    <WL5G3N0:part name="parameter" element="WL5G3N3:GetLineConsumptionRequestMessage" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="GetLineConsumptionResponse">
+    <WL5G3N0:part name="parameter" element="WL5G3N3:GetLineConsumptionResponseMessage" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="GetCustomerConsumptionRequest">
+    <WL5G3N0:part name="parameter" element="WL5G3N4:GetCustomerConsumptionRequestMessage" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="GetCustomerConsumptionResponse">
+    <WL5G3N0:part name="parameter" element="WL5G3N4:GetCustomerConsumptionResponseMessage" />
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="CustomerManagementFSPort">
+    <WL5G3N0:operation name="GetProducts">
+      <WL5G3N0:input message="WL5G3N5:GetProductsRequest" />
+      <WL5G3N0:output message="WL5G3N5:GetProductsResponse" />
+      <WL5G3N0:fault name="ESBFault" message="WL5G3N5:ESBFault" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetLineConsumption">
+      <WL5G3N0:input message="WL5G3N5:GetLineConsumptionRequest" />
+      <WL5G3N0:output message="WL5G3N5:GetLineConsumptionResponse" />
+      <WL5G3N0:fault name="ESBFault" message="WL5G3N5:ESBFault" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetCustomerConsumption">
+      <WL5G3N0:input message="WL5G3N5:GetCustomerConsumptionRequest" />
+      <WL5G3N0:output message="WL5G3N5:GetCustomerConsumptionResponse" />
+      <WL5G3N0:fault name="ESBFault" message="WL5G3N5:ESBFault" />
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="CustomerManagementFSSoapBinding" type="WL5G3N5:CustomerManagementFSPort">
+    <WL5G3N6:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WL5G3N0:operation name="GetProducts">
+      <WL5G3N6:operation soapAction="http://ericsson.com/esb/bss/Customer/CustomerManagementFS/V1/GetProducts" />
+      <WL5G3N0:input>
+        <WL5G3N6:body use="literal" />
+        <WL5G3N6:header message="WL5G3N5:headerRequest" part="headerReq" use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N6:body use="literal" />
+        <WL5G3N6:header message="WL5G3N5:headerResponse" part="headerResp" use="literal" />
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="ESBFault">
+        <WL5G3N6:fault use="literal" name="ESBFault" namespace="" />
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetLineConsumption">
+      <WL5G3N6:operation soapAction="http://ericsson.com/esb/bss/Customer/CustomerManagementFS/V1/GetLineConsumption" />
+      <WL5G3N0:input>
+        <WL5G3N6:body use="literal" />
+        <WL5G3N6:header message="WL5G3N5:headerRequest" part="headerReq" use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N6:body use="literal" />
+        <WL5G3N6:header message="WL5G3N5:headerResponse" part="headerResp" use="literal" />
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="ESBFault">
+        <WL5G3N6:fault use="literal" name="ESBFault" namespace="" />
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetCustomerConsumption">
+      <WL5G3N6:operation soapAction="http://ericsson.com/esb/bss/Customer/CustomerManagementFS/V1/GetCustomerConsumption" />
+      <WL5G3N0:input>
+        <WL5G3N6:body use="literal" />
+        <WL5G3N6:header message="WL5G3N5:headerRequest" part="headerReq" use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N6:body use="literal" />
+        <WL5G3N6:header message="WL5G3N5:headerResponse" part="headerResp" use="literal" />
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="ESBFault">
+        <WL5G3N6:fault use="literal" name="ESBFault" namespace="" />
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="CustomerManagementFS">
+    <WL5G3N0:documentation>OSB Service</WL5G3N0:documentation>
+    <WL5G3N0:port name="CustomerManagementFSSOAP" binding="WL5G3N5:CustomerManagementFSSoapBinding">
+      <WL5G3N6:address location="http://172.19.91.185:10051/esb/ws/bss/Customer/CustomerManagementFS/V1/" />
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

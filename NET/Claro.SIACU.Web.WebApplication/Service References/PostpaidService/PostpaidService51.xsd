@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRecharges" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRecharges" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="RechargesRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Contract" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrentUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaExpiracion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlagPlataforma" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlagPlatform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StateLine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeCustomer" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RechargesRequestPostPaid" nillable="true" type="tns:RechargesRequestPostPaid" />
+  <xs:complexType name="RechargesResponsePostPaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivationDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ForeColorStateLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageBalanceM2M" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageBalanceM2MVisible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MessageRecharges" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageRechargesVisible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MessageVisible" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="Recharges" nillable="true" type="q2:ArrayOfRechargePostPaid" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="Service" nillable="true" type="q3:ServicePostPaid" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="Services" nillable="true" type="q4:ArrayOfServicePostPaid" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RechargesResponsePostPaid" nillable="true" type="tns:RechargesResponsePostPaid" />
+</xs:schema>

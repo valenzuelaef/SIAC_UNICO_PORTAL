@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:entcusext="http://claro.com.pe/esb/data/customer/customerExtension/v2/" xmlns:entcus="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" targetNamespace="http://claro.com.pe/esb/data/customer/customerExtension/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=RootBusinessEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Customer_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customer/v2/" />
+  <xs:complexType name="AppliedCustomerBillingRateExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of AppliedCustomerBillingRate</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerAccountBalanceExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of CustomerAccountBalance</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="hasDebt" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>is has Debt</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="debtorStatus" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="indebtednessFactor" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>Indebtedness factor</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="renovationFactor" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>Renewal Factor</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="creditScoreAccount" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>It is the credit score of the Account.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerBillingCycleExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of CustomerBillingCycle</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingCycleDay" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Billing Cycle Day</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerCreditProfExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="amountCredit" type="entbastyp:Money" />
+      <xs:element minOccurs="0" maxOccurs="1" name="analysis" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Analysis</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="creditRiskCustomer" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>risk of a person</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="expandCredit" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="isSentRiskCenter" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>is sent to the risk center</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="reason" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>reason</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="scoreOfModel" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Result of the equipment financing model, it is a concatenation of plazoVentaEquipos and limiteCreditoEquipos</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="termOfSales" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Term Of Sales</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isFinancing" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>FLAG FINANCING
+
+The field is displayed 24 hours after the payment was made</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerDiscountExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="amount" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="idRule" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="percentage" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="quantityApplication" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="mail" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="isCustomerVip" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="blackListCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Black List Status Code of Customer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="blackListReason" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Black List Reason of customer.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="whiteListCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerInsurancePolicyExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="deductible" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customer" type="entcus:Customer" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_entitySpecificationAttachment" type="entroobusent:EntitySpecificationAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

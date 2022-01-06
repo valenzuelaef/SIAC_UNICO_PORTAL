@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetCalls" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetCalls" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" />
+  <xs:complexType name="CallsRequestPrePaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlagVisualize" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TelephoneTipi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrafficType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeQuery" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="isTFI" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CallsRequestPrePaid" nillable="true" type="tns:CallsRequestPrePaid" />
+  <xs:complexType name="CallsResponsePrePaid">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" minOccurs="0" name="listCall" nillable="true" type="q2:ArrayOfCallPrePaid" />
+      <xs:element minOccurs="0" name="resultTipi" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CallsResponsePrePaid" nillable="true" type="tns:CallsResponsePrePaid" />
+</xs:schema>

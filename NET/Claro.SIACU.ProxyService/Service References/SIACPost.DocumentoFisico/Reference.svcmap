@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b5b622f5-2cda-4588-a09f-1c97c41c6b7a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.19.74.89:8909/DocumentosFisicoWS_v2/ebsDocumentosFisicoSB11?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ebsDocumentosFisicoSB11.xsd" MetadataType="Schema" ID="f20fef27-b6e7-4f4f-a0c0-6d1d94884daf" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/DocumentosFisicoWS_v2/ebsDocumentosFisicoSB11?xsd=2" />
+    <MetadataFile FileName="ebsDocumentosFisicoSB111.xsd" MetadataType="Schema" ID="5352da05-f565-41ef-ad3f-539e6b9fa920" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/DocumentosFisicoWS_v2/ebsDocumentosFisicoSB11?xsd=3" />
+    <MetadataFile FileName="ebsDocumentosFisicoSB112.xsd" MetadataType="Schema" ID="e55afd21-248b-44ea-9363-5034c5b73cc1" SourceId="1" SourceUrl="http://limdeseaiv19.tim.com.pe:8909/DocumentosFisicoWS_v2/ebsDocumentosFisicoSB11?xsd=1" />
+    <MetadataFile FileName="DocumentosFisicoWS.wsdl" MetadataType="Wsdl" ID="1b3d2378-f378-440e-98ee-ec3c640de883" SourceId="1" SourceUrl="http://172.19.74.89:8909/DocumentosFisicoWS_v2/ebsDocumentosFisicoSB11?WSDL" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

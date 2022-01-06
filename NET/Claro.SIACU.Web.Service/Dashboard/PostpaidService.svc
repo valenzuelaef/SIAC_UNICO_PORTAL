@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Claro.SIACU.Web.Service.Dashboard.PostpaidService" CodeBehind="PostpaidService.svc.cs" %>

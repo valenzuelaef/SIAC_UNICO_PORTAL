@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entprooff="http://claro.com.pe/esb/data/product/productOffering/v2/" xmlns:entparpro="http://claro.com.pe/esb/data/engagedParty/partyProfile/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" targetNamespace="http://claro.com.pe/esb/data/engagedParty/partyProfile/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productOffering/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="PartyProfile">
+    <xs:annotation>
+      <xs:documentation>A match between a Party and a PartyProfileType. It is based on matching PartyDemographics and other Party characteristics, such as use of a product, with the characteristics of a PartyProfileType.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the PartyProfile.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the characteristic is known and distinguished from characteristics.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains what the PartyProfile is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="dateCreated" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The date that the PartyProfile was created.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period during which the PartyProfile is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyProfileType" type="entparpro:PartyProfileType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_party" type="entpar:Party" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyProfileType">
+    <xs:annotation>
+      <xs:documentation>Characteristics used to group Parties for the formulation and targeting of MarketingCampaigns. ProfileTypes can be based on PartyDemographics, GeographicAreas, ProductOfferings, and MarketSegments. User-defined DataPoints can also be specified.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the PartyProfileType.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the characteristic is known and distinguished from characteristics.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains what the PartyProfileType is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="partyProfileTypeCategory" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A classification that groups PartyProfileTypes together because of common characteristics.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period during which the PartyProfileType is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyProfileType" type="entprooff:ProductOffering" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyProfile" type="entparpro:PartyProfile" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRoleSpecification" type="entpar:PartyRoleSpecification" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyProfileTypeCharacteristic" type="entpar:PartyProfileTypeCharacteristic" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

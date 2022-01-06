@@ -1,0 +1,24 @@
+﻿@using System.Web.Optimization
+
+<div id="contenedorTriaciones">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="list-group-item-heading page-header text-info">LISTADO DE TRIACIONES</h5>
+            <table id="tblTriaciones" class="table  table-striped table-hover claro-modal-tabla table-bordered">
+                <thead>
+                    <tr class="claro-bg-primary">
+                        <td>N° Triado</td>
+                        <td>Teléfono</td>
+                        <td>Factor</td>
+                        <td>Destino Triado</td>
+                        <td>Portabilidad</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="errorTriaciones"></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidStriations")

@@ -1,0 +1,163 @@
+﻿@using System.Web.Optimization;
+<div id="ContentPostpaidDataAccount">
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <td class="col-md-1">
+                    <label class="control-label"> Tipo Cliente</label>
+                </td>
+                <td class="col-md-2"><span id="lblPost_CustomerType"></span> </td>
+                <td class="col-md-1"></td>
+                <td class="col-md-1"></td>
+                <td class="col-md-1"></td>
+                <td class="col-md-1"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label">Origen</label>
+                </td>
+                <td><span id="lblPost_Modality"> </span> </td>
+                <td></td>
+
+                <td>
+                    <label class="control-label">Segmento</label>
+                </td>
+                <td><span id="lblPost_Segment"></span> </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="control-label">Ciclo Fact.</label>
+                </td>
+                <td><span id="lblPost_BillingCycle"></span> </td>
+                <td></td>
+                <td>
+                    <label class="control-label">Código del Pago</label>
+                </td>
+                <td><span id="lblCod_Pago"></span> </td>
+                <td></td>         
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="control-label">Estado Cuenta</label>
+                </td>
+                <td><span id="lblPost_AccountStatus"></span> </td>
+                <td></td>
+
+                <td>
+                    <label class="control-label">Responsable Pago</label>
+                </td>
+                <td>
+                    <input id="chkPost_ResponsiblePayment" type="checkbox" disabled="disabled" />
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label">Fecha Activación</label>
+                </td>
+                <td ><span id="lblPost_ActivationDate"></span> </td>
+                <td></td>
+
+                <td>
+                    <label class="control-label">Límite Crédito Abonado</label>
+                </td>
+                <td><span id="lblPost_CreditLimit"></span></td>
+                <td>
+                    <button data-toggle="modal" class="btn claro-btn-info btn-xs" id="btnCreditLimit" profile="SU_ACP_LMC,SU_HFC_LMC,SU_IFI_LMC">...</button>
+                </td>
+            </tr>
+
+
+
+            <tr id="trPostLineService_PinPuk">
+
+                <td>
+                    <label class="control-label">Total Línea/Servicios</label>
+                </td>
+                <td><span id="lblPost_LineTotal"></span></td>
+                <td></td>
+
+
+                <td>
+                    <label class="control-label" id="lbl_PinPuk">Pin y Puk</label>
+                </td>
+                <td>
+                    <button data-toggle="modal" class="btn claro-btn-info btn-xs" id="btnPinPuk" profile="SU_ACP_PPB,SU_IFI_PPB">...</button>
+                </td>
+                <td></td>
+            </tr>
+
+            <tr id="trPostBagShare">
+                <td>
+                    <label class="control-label"> Bolsa compartida</label>
+                </td>
+                <td>
+                    <button data-toggle="modal" class="btn claro-btn-info btn-xs" id="btnSharedBag" profile="SU_ACP_BLC,SU_IFI_BLC">...</button>
+                </td>
+                <td></td>
+
+                <td>
+                    <label class="control-label">Saldo Límite Crédito</label>
+                </td>
+                <td><span id="lblPost_SaldoCreditLimit"></span></td>
+                <td></td>
+                <!--<td colspan="4"></td>-->
+            </tr>
+
+            <!--INICIATIVA 616-->
+            <tr id="trPostBagShareTOBE">
+                <td colspan="3"></td>
+                <td>
+                    <label class="control-label">Saldo Límite Crédito</label>
+                </td>
+                <td><span id="lblPost_SaldoCreditLimitTOBE">0</span></td>
+                <td></td>
+                <!--<td colspan="4"></td>-->
+            </tr>
+            <!--INICIATIVA 616-->
+
+            <tr id="trPostSubAccountsTotal">
+                <td>
+                    <label class="control-label"> Total SubCuentas</label>
+                </td>
+                <td><span id="lblPost_SubAccountsTotal"></span></td>
+                <td>
+                    <button data-toggle="modal" class="btn claro-btn-info btn-xs" id="btnCuentaCliente" profile="SU_ACP_TCT,SU_IFI_TCT">...</button>
+                </td>
+                <td colspan="2"></td>
+                <td></td>
+            </tr>            
+            <tr id="trPostConsult" >
+                <td>
+                    <label class="control-label"> Consultor</label>
+                </td>
+                <td><span id="lblPost_Consultant"></span></td>
+                <td>
+                    
+                </td>
+                <td colspan="2"></td>
+                <td></td>
+            </tr>
+           
+        </tbody>
+    </table>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default" style="padding:1% !important">
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnWarranty" profile="SU_ACP_GAR,SU_HFC_GAR,SU_IFI_GAR">Garantía</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnAnotation" profile="SU_ACP_CNT,SU_HFC_CNT,SU_IFI_CNT">Anotaciones</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnAgreement" profile="SU_ACP_CAC,SU_HFC_CAC,SU_IFI_CAC">Acuerdos</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnRelationshipPlans" profile="SU_ACP_CRP,SU_HFC_CRP,SU_IFI_CRP">Relación de Planes</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnSuspendedContract" profile="SU_ACP_CCS,SU_HFC_CCS,SU_IFI_CCS">Contrato Suspendido</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnRelationshipPlanHFCLTE">Planes por Cuenta</button>
+                
+            </div>
+        </div>
+    </div>  
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Postpaid/PostpaidDataAccount")

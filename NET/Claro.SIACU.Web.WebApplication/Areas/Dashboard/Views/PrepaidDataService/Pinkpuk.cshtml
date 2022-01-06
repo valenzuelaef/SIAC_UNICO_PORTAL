@@ -1,0 +1,26 @@
+﻿@using System.Web.Optimization
+@model  Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataService.PinkPukModel
+
+<div id="containerPinPuk">
+    <div class="panel panel-info">
+        <div class="panel-body claro-modal-contenido-texto">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-inline">
+                        <label class="control-label">Teléfono:</label>
+                        <input id="txtTelefono" type="text" class="form-control input-sm" value="@Model.strTelephone" />&nbsp;&nbsp;
+                        <button id="btnSearchPin" type="button" class="btn claro-btn-info btn-sm">Buscar</button>
+                        <button id="btnClearPin" type="button" class="btn claro-btn-info btn-sm">Limpiar</button>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div id="divPinPuk">
+
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PrepaidDataService/PinPuk")

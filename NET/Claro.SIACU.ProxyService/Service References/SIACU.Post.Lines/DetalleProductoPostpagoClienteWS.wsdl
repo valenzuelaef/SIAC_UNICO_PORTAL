@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://claro.com.pe/eai/ws/postventa/detalleproductopostpagoclientews" xmlns:types="http://claro.com.pe/eai/ws/postventa/detalleproductopostpagoclientews/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" name="DetalleProductoPostpagoClienteWS" targetNamespace="http://claro.com.pe/eai/ws/postventa/detalleproductopostpagoclientews" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/detalleproductopostpagoclientews" />
+    <xsd:schema>
+      <xsd:import schemaLocation="http://limdeseaiv28.tim.com.pe:8909/DetalleProductoPostpagoClienteWS/ebsDetalleProductoPostpagoClienteSB12?xsd=2" namespace="http://claro.com.pe/eai/ws/postventa/detalleproductopostpagoclientews/types" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarDetalleProductoPostpagoRequestMsg">
+    <wsdl:part name="request" element="types:ConsultarDetalleProductoPostpagoRequest" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarDetalleProductoPostpagoResponseMsg">
+    <wsdl:part name="response" element="types:ConsultarDetalleProductoPostpagoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DetalleProductoPostpagoClienteWSPortType">
+    <wsdl:operation name="consultarDetalleProductoPostpago">
+      <wsdl:input message="tns:ConsultarDetalleProductoPostpagoRequestMsg" />
+      <wsdl:output message="tns:ConsultarDetalleProductoPostpagoResponseMsg" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DetalleProductoPostpagoClienteWSPortTypeSOAP11Binding" type="tns:DetalleProductoPostpagoClienteWSPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarDetalleProductoPostpago">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/detalleproductopostpagoclientews/consultarDetalleProductoPostpago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DetalleProductoPostpagoClienteWSPortTypeSOAP12Binding" type="tns:DetalleProductoPostpagoClienteWSPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarDetalleProductoPostpago">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/detalleproductopostpagoclientews/consultarDetalleProductoPostpago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DetalleProductoPostpagoClienteWSService">
+    <wsdl:port name="ebsDetalleProductoPostpagoClienteSB11" binding="tns:DetalleProductoPostpagoClienteWSPortTypeSOAP11Binding">
+      <soap:address location="http://limdeseaiv28.tim.com.pe:8909/DetalleProductoPostpagoClienteWS/ebsDetalleProductoPostpagoClienteSB11" />
+    </wsdl:port>
+    <wsdl:port name="ebsDetalleProductoPostpagoClienteSB12" binding="tns:DetalleProductoPostpagoClienteWSPortTypeSOAP12Binding">
+      <soap12:address location="http://limdeseaiv28.tim.com.pe:8909/DetalleProductoPostpagoClienteWS/ebsDetalleProductoPostpagoClienteSB12" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

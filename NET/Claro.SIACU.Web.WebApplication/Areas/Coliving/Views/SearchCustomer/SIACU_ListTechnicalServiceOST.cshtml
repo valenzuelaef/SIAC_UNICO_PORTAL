@@ -1,0 +1,82 @@
+﻿@using System.Web.Optimization;
+
+<style>
+    table > thead > tr > th {
+        text-align: center !important;
+        vertical-align: middle;
+    }
+
+    .modal-dialog {
+        min-width: 100px !important;
+    }
+
+    .control-label {
+        margin-top: 5px !important;
+    }
+
+    table > tbody > tr > td {
+        vertical-align: middle !important;
+        text-align: center;
+    }
+</style>
+
+<div id="divListTechnicalServiceOST">
+    <div class="row" hidden>
+        <input type="hidden" id="txtHdLineNumber" value="@ViewBag.LineNumber" />
+        <input type="hidden" id="txtHdClientType" value="@ViewBag.ClientType" />
+        <input type="hidden" id="txtHdClient" value="@ViewBag.Client" />
+        <input type="hidden" id="txtHdMigrateStatus" value="@ViewBag.MigrateStatus" />
+        <input type="hidden" id="txtHdUrlDestino" value="@ViewBag.UrlDestino" />
+    </div>
+    <div class="row">
+        <div class="col-sm-2">Nro. línea:</div>
+        <div class="col-sm-2"  id="lbNroLinea" style="font-weight:bold">@ViewBag.LineNumber</div>
+        @*<div class="col-sm-1">Tipo cliente:</div>
+        <div class="col-sm-2"  id="lbTipoCliente" style="font-weight:bold">@ViewBag.ClientType</div>*@
+        <div class="col-sm-1">Cliente:</div>
+        <div class="col-sm-7" id="lbCliente" style="font-weight:bold">@ViewBag.Client</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 table-responsive" style="padding: 1% !important; ">
+            <table class="table table-bordered claro-modal-tabla" id="tListTechnicalServiceOST">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">OST</th>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">CAC</th>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">FECHA GENERACIÓN</th>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">IMEI Equipo</th>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">MARCA</th>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">MODELO</th>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">ORIGEN</th>
+                        <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3">ACCION</th>
+                    </tr>
+                </thead>
+                <tbody id="tbListTechnicalServiceOST"></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <b>Nota:</b> Para consultar, validar cotización y cerrar OST será redireccionado donde se generó el OST
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            Para generar OST clic <a id="lnkAqui" href="#">aquí</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 size-xs">
+            <div class="panel panel-default col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center; padding-top: 1%; padding-bottom: 1%; padding-right: 0px; padding-left: 0px; margin-bottom: 0px !important;">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    @*<button style="min-width:150px" class="btn claro-btn-info btn-sm btn-link" id="btnSelectListService" type="button" data-toggle="modal">Seleccionar</button>*@
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button style="min-width:150px" class="btn claro-btn-info btn-sm btn-link" id="btnClose" type="button" data-toggle="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Coliving/SearchCustomer/SIACU_ListTechnicalServiceOST")

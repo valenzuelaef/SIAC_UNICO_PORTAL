@@ -1,0 +1,50 @@
+﻿@using System.Web.Optimization;
+@{
+    Layout = null;
+}
+
+<div id="contenedor-customerBusinessNames" class="panel panel-default ">
+    <div class="table-responsive">
+        <form class="form-horizontal" role="form">
+            <div class="form-group col-sm-12">
+                <br />
+                <label class="control-label col-sm-2" for="Razón Social">Razón Social:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="NombreBusq" placeholder="Ingrese Razón Social">
+                </div>
+                <div class="col-sm-2 form-inline">
+                    <div class="form-group pull-right">
+                        <button type="button" class="btn claro-btn-info btn-sm " id="btnBuscarPorRazon" data-target="#vistaParcialNombres">Buscar</button>
+                        <button type="button" class="btn claro-btn-info btn-sm " id="btnLimpiar">Limpiar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="table-responsive">
+        <div id="dvistaParcialNombres">
+            <table id="tblDatosCliente" class="table table-hover BusinessNames">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-md-1">
+                            Sel
+                        </th>
+                        <th class="col-md-5">
+                            Nombres y Apellidos / Razón Social
+                        </th>
+                        <th class="col-md-3">
+                            Tipo Documento
+                        </th>
+                        <th class="col-md-3">
+                            Nro. De Documento
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="dvMensajeSeleccion" class="form-group col-sm-12"></div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Home/CustomersBusinessNames")

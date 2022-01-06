@@ -1,0 +1,266 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataCollection.CollectionStatusAccountModel
+@{
+    Layout = null;
+}
+<style>
+    #tblDescription {
+        width: 64% !important;
+        display: none;
+    }
+
+    #tblStatusAccount_filter {
+        display: none;
+    }
+
+    #search-inp {
+        width: 64% !important;
+    }
+
+    .textotip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+        .textotip .textotipmensaje {
+            visibility: hidden;
+            width: 400px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -200px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+            .textotip .textotipmensaje::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #555 transparent transparent transparent;
+            }
+
+        .textotip:hover .textotipmensaje {
+            visibility: visible;
+            opacity: 1;
+        }
+</style>
+<div id="modal-content">
+    <div id="PostpaidStatusAccount">
+        <div class="row">
+            
+            <div id="StatusAccountHeader" class="col-md-12">
+                <table class="table table-condensed ">
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-4">
+                                <label class="control-label">Código Cliente :</label>
+                                <span id="ContratoId"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Nombre/Razón Social :</label>
+                                <span id="NameClient"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Nro Claro / Servicio :</label>
+                                <span id="NumberServices"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="StatusAccountHFCHeader" class="col-md-12">
+                <table class="table table-condensed ">
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-4">
+                                <label class="control-label">Código Cliente :</label>
+                                <span id="ClientId"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Nombre/Razón Social :</label>
+                                <span id="NameClient2"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12"></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div id="search" class="col-md-12">
+                <table class="table table-condensed ">
+                    <tr>
+                        <td class="col-md-12">
+                            <div class="col-md-1">
+                                <label class="control-label">Buscar :</label>
+                            </div>
+                            <div class="col-md-5">
+
+                                <input type="search" id="search-inp" class="form-control input-sm col-md-5" placeholder="Buscar" />
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-12"></td>
+                    </tr>
+                </table>
+            </div>
+            <input type="hidden" id="hdDataDeferredCollections" name="hdDataDeferredCollections"/>
+        </div>
+        <div>
+            <div>
+                <table id="tblDescription">
+                    <thead>
+                        <tr>
+                            <th>Busqueda Sugerida</th>
+                            <th>estado</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-24">
+                <div class="table-responsive">
+                    <table class="table table-hover claro-modal-tabla table-bordered" id="tblStatusAccount">
+                        <thead class="claro-bg-primary">
+                            <tr>
+                                <th style="width:1%" class=" col-sm-1">Nro</th>
+                                <th style="width:2%" class="col-sm-1">Detalle</th>
+                                <th class="col-sm-5">Documento</th>
+                                <th class="col-sm-2">Registro de Ajuste</th>
+                                <th class="col-sm-12">Descripción Pago</th>
+                                <th class="col-sm-1">Fec Registro</th>
+                                <th class="col-sm-1">Fec Emisión</th>
+                                <th class="col-sm-1">Fec Venc</th>
+                                <th class="col-sm-1">Cargo</th>
+                                <th class="col-sm-1">Abono</th>
+                                <th style="width:1%" class="col-sm-1">Importe Pendiente</th>
+                                <th style="width:1%" class="col-sm-1">Monto Reclamado</th>
+                                <th class="col-sm-1">Saldo</th>
+                                <th class="col-sm-1">Anular Documento</th>
+                                <th class="col-sm-1">Estado</th>
+                                <th class="col-sm-1">OnBase</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="StatusTotaal">
+                <table align="center">
+                    <tr>
+                        <td style="text-align:right;" valign="top">
+                            <div class="col-md-12">
+                                <h4>Deuda No Vencida:</h4>
+                            </div>
+                        </td>
+                        <td style="text-align: left;">
+                            <h4>
+                                <label class="control-label">
+                                    <span id="UnpaidDebt">0.00</span>
+                                </label>
+                            </h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;" valign="top">
+                            <div class="col-md-12">
+                                <h4>Deuda Vencida:</h4>
+                            </div>
+                        </td>
+                        <td style="text-align: left;">
+                            <h4>
+                                <label class="control-label">
+                                    <span id="ExpiredDebt">0.00</span>
+                                </label>
+                            </h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; border-top: 1pt solid black;" valign="top">
+                            <div class="col-md-12">
+                                <div class="textotip">
+                                    <h4>Deuda Total:</h4>
+                                    <span id="ToolTipDeudaTotal" class="textotipmensaje"></span>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="text-align: left; border-top: 1pt solid black;">
+                            <h4>
+                                <label class="control-label">
+                                    <span id="TotalDebt">0.00</span>
+                                </label>
+                            </h4>
+                        </td>
+                        <td></td>
+                        <td style="text-align:right;" valign="top">
+                            <div class="col-md-12">
+                                <h4>Monto Reclamado:</h4>
+                            </div>
+                        </td>
+                        <td style="text-align: left;">
+                            <h4>
+                                <label class="control-label">
+                                    <span id="ClaimAmount">0.00</span>
+                                </label>
+                            </h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default" style="padding:1% !important">
+                    <button data-toggle="modal" class="btn claro-btn-info btn-sm" id="StatusAccountLDIlg">
+                        Estado Cuenta LDI
+                    </button>
+                    <button data-toggle="modal" class="btn claro-btn-info btn-sm" id="DueNumberDocumentlg">
+                        Consulta Deuda por Nro.Documento
+                    </button>
+                    <button data-toggle="modal" class="btn claro-btn-info btn-sm" id="BtnFeeEquipment" @*@(Model.IsEnabled ? "" : "disabled")*@>
+                        Consulta Cuotas de Equipo
+                    </button>
+                    <button data-toggle="modal" class="btn claro-btn-info btn-sm" id="btnDeferredCollections" profile="SU_ACP_CDCD" disabled>
+                        Consulta de Cobranzas Diferidas
+                    </button>
+                </div>
+            </div>
+                </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center"><label id="lblMensajeStatusAccount" class="label-red-service"></label></div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataCollection/StatusAccount")
+

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entcusord="http://claro.com.pe/esb/data/customer/customerOrder/v2/" xmlns:entcusext="http://claro.com.pe/esb/data/customer/customerExtension/v2/" xmlns:entaddparent="http://claro.com.pe/esb/data/engagedParty/additionalPartyEntities/v2/" xmlns:entcusint="http://claro.com.pe/esb/data/customer/customerInteraction/v2/" xmlns:entparrev="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entcusbil="http://claro.com.pe/esb/data/customer/customerBill/v2/" xmlns:entcusbilcol="http://claro.com.pe/esb/data/customer/customerBillCollection/v2/" xmlns:entcus="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:entuseandrol="http://claro.com.pe/esb/data/commonBusinessEntities/usersAndRoles/v2/" xmlns:entcombusentext="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" targetNamespace="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=UsersAndRoles_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/usersAndRoles/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CommonBusinessEntitiesExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyRevenue_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerInteraction/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerBill_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerBill/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerOrder_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerOrder/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerBillCollection_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerBillCollection/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=AdditionalPartyEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/additionalPartyEntities/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerExtension/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="CustomerAccountContact">
+    <xs:annotation>
+      <xs:documentation>An individual or organization used as a contact point for a CustomerAccount and accessed via some contact medium.  The contact may be a member of the customer’s organization or a member of some other enterprise, such as the provider who services the customer account.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="contactType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Identifies the relationship of the contact to the account, such as primary, secondary, and emergency contact.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the contact is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerAccount" type="entcus:CustomerAccount" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyRole" type="entpar:PartyRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Customer">
+    <xs:annotation>
+      <xs:documentation>A person or organization that buys products and services from the enterprise or receives free offers or services. This is modeled as a Party playing the role of Customer. A Customer is a type of PartyRole. Customers can also be other service providers who resell the enterprises products, other service providers that lease the enterprise's resources for utilization by the other service provider's products and services, and so forth.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpar:PartyRole">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A unique identifier that enables different instances of a Customer to be distinguished from each other. This is a required attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="customerStatus" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The current condition of a customer, such as unknown, 	active, 	inactive, terminated, 	pending, etc.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="customerRank" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>The relative importance of this Customer compared to other Customers.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerPayment" type="entcusbilcol:CustomerPayment" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerAccount" type="entcus:CustomerAccount" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerCreditProfile" type="entcus:CustomerCreditProfile" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerMetric" type="entcombusentext:CustomerMetric" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_customerExtension" type="entcusext:CustomerExtension" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CustomerAccount">
+    <xs:annotation>
+      <xs:documentation>An arrangement that a customer has with an enterprise that provides products to the customer and collects AppliedCustomerBillingRate that are used to produce CustomerBill.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerOrderItem" type="entcusord:CustomerOrderItem" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customer" type="entcus:Customer" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyAccount" type="entaddparent:PartyAccount" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerAccountBalance" type="entcusbil:CustomerAccountBalance" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerDisputedAmount" type="entcusint:CustomerDisputedAmount" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerBillSpec" type="entcusbil:CustomerBillSpec" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerAccountInteractionRole" type="entbusint:CustomerAccountInteractionRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerBill" type="entcusbil:CustomerBill" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_paymentPlan" type="entparrev:PaymentPlan" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customerPayment" type="entcusbilcol:CustomerPayment" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerAccountContact" type="entcus:CustomerAccountContact" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerOrder" type="entcusord:CustomerOrder" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="involvementRole" type="entuseandrol:InvolvementRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerCreditProfile">
+    <xs:annotation>
+      <xs:documentation>An outline of a Customer's credit worthiness.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier that enables different instances of a CustomerCreditProfile to be distinguished from each other.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="creditProfileDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The date the profile was established.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The period for which the profile is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="creditRiskRating" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>This is an integer whose value is used to rate the risk of this Customer paying late or defaulting versus paying on time.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="creditScore" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>A measure of a person’s or organization’s creditworthiness calculated on the basis of a combination of factors such as their income and credit history.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_customer" type="entcus:Customer" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerCreditProfExtension" type="entcusext:CustomerCreditProfExtension" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

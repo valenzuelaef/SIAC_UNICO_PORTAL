@@ -1,0 +1,44 @@
+﻿@using System.Web.Optimization
+<div id="contenedorHistoricalStriations">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="list-group-item-heading page-header text-info">INFORMACIÓN DEL CLIENTE</h5>
+            <form id="frmDatosCliente" class="form-inline">
+                <div class="form-group col-md-4">
+                    <label id="lblClientCode">Código Cliente:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label id="lblClient">Cliente:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label id="lblTelephoneNumber">No. Teléfono:&nbsp;</label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="list-group-item-heading page-header text-info">LISTA HISTORIAL DE TRIACIONES</h5>
+            <div class="table-responsive" id="divPostpaid" style="text-align:center;">
+                <table id="tblHistoricalStriations" class="table table-hover table-bordered table-condensed claro-modal-tabla">
+                    <thead>
+                        <tr class="claro-bg-primary">
+                            <td class="text-center">Plan</td>
+                            <td class="text-center">Modificación</td>
+                            <td class="text-center">Usuario</td>
+                            <td class="text-center">Fecha</td>
+                            <td class="text-center">Destino</td>
+                            <td class="text-center">Descripción</td>
+                            <td class="text-center">Factor Escalado</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <label id="lblContHistoricalStriations" class="control-label"></label>
+                <div id="errorHistoryStriation"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidHistoricalStriations")

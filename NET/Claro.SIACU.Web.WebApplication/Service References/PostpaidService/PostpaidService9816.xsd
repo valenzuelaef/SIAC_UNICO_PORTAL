@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetParameterTerminalTPI" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetParameterTerminalTPI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:complexType name="ParameterTerminalTPIRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codeParameter" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ParameterTerminalTPIRequestPostPaid" nillable="true" type="tns:ParameterTerminalTPIRequestPostPaid" />
+  <xs:complexType name="ParameterTerminalTPIResponsePostPaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AbrvPermissions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodePlanTariffTFI" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParameterTerminalTPIResponsePostPaid" nillable="true" type="tns:ParameterTerminalTPIResponsePostPaid" />
+</xs:schema>

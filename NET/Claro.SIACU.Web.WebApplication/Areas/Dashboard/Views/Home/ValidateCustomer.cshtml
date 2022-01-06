@@ -1,0 +1,31 @@
+﻿@using System.Web.Optimization;
+<div id="contenedor-validate" class="modal-body">
+    <form id="loginform" class="form-horizontal" role="form">
+
+        <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="login_username" type="text" class="form-control" name="username" value="" placeholder="Usuario">
+        </div>
+
+        <div style="margin-bottom: 1px;" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="login_password" type="password" class="form-control" name="password" placeholder="Password" style="height: inherit;">
+        </div>
+    </form>
+    @*<div class="col-md-12">
+        <div class="claro-modal-contenido-panel">
+
+            <div class="claro-modal-contenido-texto">
+                <div class="col-md-2"><label>Usuario:</label></div>
+                <div class="col-md-4"><input type="text" id="txtUsuario" class="form-control" /></div>
+                <div class="col-md-2"><label>Contraseña:</label></div>
+                <div class="col-md-4"><input type="password" id="txtPass" class="form-control" /></div>
+                <button style="display:block;" id="btnValidar" type="button" class="btn claro-btn-info btn-sm">Validar</button>
+                <button style="display:block;"  id="btnCancelar" type="button" class="btn claro-btn-info btn-sm">Cancelar</button>
+
+            </div>
+        </div>
+    </div>*@
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@System.Web.Optimization.Scripts.Render("~/bundles/Dashboard/Home/ValidateCustomer")

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APELLIDOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APELLIDO_MAT_TOBE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APELLIDO_PAT_TOBE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CARGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CIUDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DISTRITO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOMICILIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_CIVIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_CIVIL_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_NAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FLAG_EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LONG_NRO_DOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LUGAR_NACIMIENTO_DES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LUGAR_NACIMIENTO_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NRO_DOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OCUPACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROVINCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAZON_SOCIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEXO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEF_REFERENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOC_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URBANIZACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZIPCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indicadorCambioNumero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nacionalidadId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfHLR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HLR" nillable="true" type="tns:HLR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHLR" nillable="true" type="tns:ArrayOfHLR" />
+  <xs:complexType name="HLR">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HLR" nillable="true" type="tns:HLR" />
+  <xs:complexType name="StatusTechnologyVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnologyVoLte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnologyVoWifi" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusTechnologyVo" nillable="true" type="tns:StatusTechnologyVo" />
+</xs:schema>

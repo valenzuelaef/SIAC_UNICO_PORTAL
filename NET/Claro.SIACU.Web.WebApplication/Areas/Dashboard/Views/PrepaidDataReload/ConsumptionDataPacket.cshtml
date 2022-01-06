@@ -1,0 +1,35 @@
+﻿@using System.Web.Optimization;
+<div id="containerConsumptionDataPacket">
+    <div class="form-inline">
+        <div class="form-group">
+            <label class="control-label">Fecha Activa:</label>
+            <div class="input-daterange input-group" id="containerConsumptionDataPacket">
+                <input type="text" id="txtDateStartDataPacket" class="input-sm form-control" name="txtDateStartDataPacket" />
+                <span class="input-group-addon"><label class="control-label">A:</label></span>
+                <input type="text" id="txtDateEndDataPacket" class="input-sm form-control" name="txtDateEndDataPacket" />
+            </div>
+        </div>
+        <button type="button" id="btnSearchDataPacket" class="btn claro-btn-info btn-sm">Buscar</button>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table id="tblDataPacket" class="table  table-striped table-hover claro-modal-tabla table-bordered">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th>Paquete</th>
+                        <th>Fecha de Activación</th>
+                        <th>Fecha de Expiración</th>
+                        <th>MB Disponibles</th>
+                        <th>MB Otorgados</th>
+                        <th>MB Consumidos</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="errorConsumptionDataPacket"></div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PrepaidDataReload/ConsumptionDataPacket")

@@ -1,0 +1,39 @@
+﻿@using System.Web.Optimization;
+<div id="containerClosuresAndReclosures">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="list-group-item-heading page-header text-info">GESTIÓN CIERRES REALIZADOS AL CASO NRO. <span id="lblCaso"></span></h5>
+            <table id="tblManagementOfClosures" class="table claro-modal-tabla table-bordered table-hover">
+                <thead>
+                    <tr class="claro-bg-primary">
+                        <td class="text-center">Fecha Cierre</td>
+                        <td class="text-center">Resolución</td>
+                        <td class="text-center">Resultado</td>
+                        <td class="text-center">Estado</td>
+                        <td class="text-center">Envío al Banco</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="errorManagementOfClosures"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="list-group-item-heading page-header text-info">REAPERTURAS REALIZADAS AL CASO</h5>
+            <table id="tblReopenOfTheCase" class="table claro-modal-tabla table-bordered table-hover">
+                <thead>
+                    <tr class="claro-bg-primary">
+                        <td class="text-center">Reapertura</td>
+                        <td class="text-center">Fase Clarify</td>
+                        <td class="text-center">Proceso de Reapertura</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="errorReopenOfTheCase"></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataCollection/ClosuresAndReclosures")
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

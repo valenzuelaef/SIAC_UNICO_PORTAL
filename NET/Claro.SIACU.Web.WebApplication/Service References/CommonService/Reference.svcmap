@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8770d924-4678-4737-ab13-4156d64c8b5e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9593/CommonService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CommonService.disco" MetadataType="Disco" ID="d92eb19c-b103-4517-879c-9d737e900991" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?disco" />
+    <MetadataFile FileName="CommonService.xsd" MetadataType="Schema" ID="0649d770-0388-4123-b25a-088f86e8297f" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CommonService1.xsd" MetadataType="Schema" ID="29cdc64d-cc96-405a-bc41-546469ac9b9d" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CommonService2.xsd" MetadataType="Schema" ID="f53252d3-9e72-4bf1-af61-2759ef56aa4c" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CommonService3.xsd" MetadataType="Schema" ID="0210f51c-e16c-4eef-9d63-eb0461671251" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CommonService4.xsd" MetadataType="Schema" ID="d70f314d-0d95-4703-b584-552e592db925" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd28" />
+    <MetadataFile FileName="CommonService41.xsd" MetadataType="Schema" ID="689e73f8-6287-4c4a-a1b7-db9a35bb2c77" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd29" />
+    <MetadataFile FileName="CommonService42.xsd" MetadataType="Schema" ID="3015df79-70ff-4eab-a64f-aede078cbfb0" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd26" />
+    <MetadataFile FileName="CommonService43.xsd" MetadataType="Schema" ID="12f7253a-c20d-485a-920f-390f505cec01" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd27" />
+    <MetadataFile FileName="CommonService44.xsd" MetadataType="Schema" ID="81c6a0c9-bf08-4fd7-be9f-8bd75328ee08" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd24" />
+    <MetadataFile FileName="CommonService45.xsd" MetadataType="Schema" ID="71888ac5-82cd-4ae9-b121-4bbdc0aedab4" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd25" />
+    <MetadataFile FileName="CommonService10.xsd" MetadataType="Schema" ID="879490ff-7d8f-4e0d-a121-014e106e92e1" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd22" />
+    <MetadataFile FileName="CommonService46.xsd" MetadataType="Schema" ID="d93d06cd-0cbc-46e1-a1e6-b9e6c99e134e" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd23" />
+    <MetadataFile FileName="CommonService.wsdl" MetadataType="Wsdl" ID="9d0a88bb-e359-4413-817c-5334fddfef0e" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?wsdl" />
+    <MetadataFile FileName="CommonService12.xsd" MetadataType="Schema" ID="2bf77b57-1ecc-4e59-941c-26a7f33b34ff" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd21" />
+    <MetadataFile FileName="CommonService61.xsd" MetadataType="Schema" ID="c50bb9a0-e105-40a8-acf4-4d2838c90003" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd32" />
+    <MetadataFile FileName="CommonService62.xsd" MetadataType="Schema" ID="bc27b9c5-67aa-4a06-8cbe-7dc50477aae2" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd33" />
+    <MetadataFile FileName="CommonService5.xsd" MetadataType="Schema" ID="30b637b9-c21a-400f-8a8d-4037d7e6c44b" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd30" />
+    <MetadataFile FileName="CommonService63.xsd" MetadataType="Schema" ID="389cc0c8-e8a7-4fdc-9245-0f3ba02815ae" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd31" />
+    <MetadataFile FileName="CommonService13.xsd" MetadataType="Schema" ID="fc81e8bb-2e23-470d-a894-a32b09b98d96" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd20" />
+    <MetadataFile FileName="CommonService14.xsd" MetadataType="Schema" ID="acdf0d83-a301-44a7-bbf9-c007abc1eab9" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd18" />
+    <MetadataFile FileName="CommonService15.xsd" MetadataType="Schema" ID="7ebce554-4a3a-45a5-b320-609964166aa2" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd19" />
+    <MetadataFile FileName="CommonService16.xsd" MetadataType="Schema" ID="629b4839-b161-4ef7-8ca5-70c25b613944" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd16" />
+    <MetadataFile FileName="CommonService17.xsd" MetadataType="Schema" ID="b9e78d21-f76f-4950-afab-74270f927f1e" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd17" />
+    <MetadataFile FileName="CommonService18.xsd" MetadataType="Schema" ID="e9c6e012-3b48-48f6-bbb8-f7fd9d063a1f" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd14" />
+    <MetadataFile FileName="CommonService19.xsd" MetadataType="Schema" ID="8a4b64c7-baf6-4070-b250-e12f1a05c2af" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd15" />
+    <MetadataFile FileName="CommonService20.xsd" MetadataType="Schema" ID="26a6b5d1-b1f3-45e5-a88c-362458a98446" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd12" />
+    <MetadataFile FileName="CommonService21.xsd" MetadataType="Schema" ID="d9f6d4a6-8f4d-43e9-8051-b010cb4cfa54" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd13" />
+    <MetadataFile FileName="CommonService22.xsd" MetadataType="Schema" ID="3bb627b3-112c-4913-b4c3-902085b4bda7" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd10" />
+    <MetadataFile FileName="CommonService23.xsd" MetadataType="Schema" ID="e3aebeb5-1529-49d8-bb42-e9dd8942b953" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd11" />
+    <MetadataFile FileName="CommonService24.xsd" MetadataType="Schema" ID="d139db90-85b3-48a4-89b0-2d2e767049e5" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd9" />
+    <MetadataFile FileName="CommonService25.xsd" MetadataType="Schema" ID="5b4d4c7c-722d-46a0-8990-612a6c11665f" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd7" />
+    <MetadataFile FileName="CommonService26.xsd" MetadataType="Schema" ID="e43ea81f-549d-41b2-8aa8-8d7f4f8c974e" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CommonService27.xsd" MetadataType="Schema" ID="0ab30512-f54e-4e31-b3a2-f930310a51cc" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd8" />
+    <MetadataFile FileName="CommonService28.xsd" MetadataType="Schema" ID="f28e5707-22d8-4d68-addc-d7bab3d7b50f" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd5" />
+    <MetadataFile FileName="CommonService29.xsd" MetadataType="Schema" ID="cfa4896a-a615-42b6-bb93-6414bf8b13b9" SourceId="1" SourceUrl="http://localhost:9593/CommonService.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

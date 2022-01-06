@@ -1,0 +1,53 @@
+﻿@using System.Web.Optimization;
+@{
+    Layout = null;
+}
+
+<div id="contenedor">
+    <div id="scrollbudy">
+        <div class="tabcontent">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="user-left1">
+                        <div class="panel claro-panel-primary">
+                            <div class="panel-heading"><span class="glyphicon glyphicon-user"></span> Datos del Cliente - Prepago</div>
+                            <div id="divDataCustomer" class="panel-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+
+                    <div class="alert alert-info" id="alertInfoPrepaid">
+                        <marquee onmouseout="this.start()" onmouseover="this.stop()">
+                            <span id="lblPre_BannerMessage"></span>
+                        </marquee>
+                    </div>
+                    <div class="panel-tabs">
+                        <ul id="divDashboardTabs" class="nav nav-tabs" role="tablist" data-tabs="tabs">
+                            <li class="active"><a href="#divDataService" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon glyphicon-th-large"></span> Datos del Servicio</a></li>
+                            <li><a href="#divDataCall" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon glyphicon-earphone"></span> Datos de Llamadas y Consumos</a></li>
+                            <li><a href="#divDataReload" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon glyphicon-tasks"></span> Datos de Recargas y Compras</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="divDataService" class="tab-pane fade  in active">
+
+                            </div>
+                            <div id="divDataCall" class="tab-pane fade">
+
+                            </div>
+                            <div id="divDataReload" class="tab-pane fade">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Prepaid/Prepaid")
+

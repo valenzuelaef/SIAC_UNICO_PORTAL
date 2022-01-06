@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://claro.com.pe/eai/ws/postventa/bloqdesbloqlineapostpagows" xmlns:types="http://claro.com.pe/eai/ws/postventa/bloqdesbloqlineapostpagows/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" name="BloqDesbloqLineaPostpagoWS" targetNamespace="http://claro.com.pe/eai/ws/postventa/bloqdesbloqlineapostpagows" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/bloqdesbloqlineapostpagows" />
+    <xsd:schema>
+      <xsd:import schemaLocation="http://172.17.26.118:20000/BloqDesbloqLineaPostpagoWS/ebsBloqDesbloqLineaPostpagoSB11?xsd=2" namespace="http://claro.com.pe/eai/ws/postventa/bloqdesbloqlineapostpagows/types" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarBloDesbloRequestMsg">
+    <wsdl:part name="request" element="types:consultarBloDesbloRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarBloqDesbloResponseMsg">
+    <wsdl:part name="response" element="types:consultarBloDesbloResponse" />
+  </wsdl:message>
+  <wsdl:message name="registrarBloqueoRequestMsg">
+    <wsdl:part name="request" element="types:registrarBloqueoRequest" />
+  </wsdl:message>
+  <wsdl:message name="registrarBloqueoResponseMsg">
+    <wsdl:part name="response" element="types:registrarBloqueoResponse" />
+  </wsdl:message>
+  <wsdl:message name="registrarDesbloqueoRequestMsg">
+    <wsdl:part name="request" element="types:registrarDesbloqueoRequest" />
+  </wsdl:message>
+  <wsdl:message name="registrarDesbloqueoResponseMsg">
+    <wsdl:part name="response" element="types:registrarDesbloqueoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BloqDesbloqLineaPostpagoWSPortType">
+    <wsdl:operation name="consultarBloDesblo">
+      <wsdl:input message="tns:consultarBloDesbloRequestMsg" />
+      <wsdl:output message="tns:consultarBloqDesbloResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarBloqueo">
+      <wsdl:input message="tns:registrarBloqueoRequestMsg" />
+      <wsdl:output message="tns:registrarBloqueoResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarDesbloqueo">
+      <wsdl:input message="tns:registrarDesbloqueoRequestMsg" />
+      <wsdl:output message="tns:registrarDesbloqueoResponseMsg" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BloqDesbloqLineaPostpagoWSPortTypeSOAP11Binding" type="tns:BloqDesbloqLineaPostpagoWSPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarBloDesblo">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventas/bloqdesbloqlineapostpagows/consultarBloDesblo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarBloqueo">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventas/bloqdesbloqlineapostpagows/registrarBloqueo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarDesbloqueo">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventas/bloqdesbloqlineapostpagows/registrarDesbloqueo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BloqDesbloqLineaPostpagoWSPortTypeSOAP12Binding" type="tns:BloqDesbloqLineaPostpagoWSPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarBloDesblo">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventas/bloqdesbloqlineapostpagows/consultarBloDesblo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarBloqueo">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventas/bloqdesbloqlineapostpagows/registrarBloqueo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarDesbloqueo">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventas/bloqdesbloqlineapostpagows/registrarDesbloqueo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BloqDesbloqLineaPostpagoWSService">
+    <wsdl:port name="ebsBloqDesbloqLineaPostpagoSB11" binding="tns:BloqDesbloqLineaPostpagoWSPortTypeSOAP11Binding">
+      <soap:address location="http://172.17.26.118:20000/BloqDesbloqLineaPostpagoWS/ebsBloqDesbloqLineaPostpagoSB11" />
+    </wsdl:port>
+    <wsdl:port name="ebsBloqDesbloqLineaPostpagoSB12" binding="tns:BloqDesbloqLineaPostpagoWSPortTypeSOAP12Binding">
+      <soap12:address location="http://172.17.26.118:20000/BloqDesbloqLineaPostpagoWS/ebsBloqDesbloqLineaPostpagoSB12" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

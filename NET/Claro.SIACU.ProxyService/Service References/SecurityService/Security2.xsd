@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Claro.Security.Options" elementFormDefault="qualified" targetNamespace="Claro.Security.Options" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55209/Security.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:55209/Security.svc?xsd=xsd0" namespace="Claro.Security" />
+  <xs:complexType name="OptionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element name="userId" type="xs:int" />
+          <xs:element name="applicationId" type="xs:int" />
+          <xs:element name="module" nillable="true" type="xs:string" />
+          <xs:element name="isMenuSU" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OptionsRequest" nillable="true" type="tns:OptionsRequest" />
+  <xs:complexType name="OptionsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="Claro" base="q2:Response">
+        <xs:sequence>
+          <xs:element xmlns:q3="Claro.Security" name="menu" nillable="true" type="q3:ArrayOfOption" />
+          <xs:element xmlns:q4="Claro.Security" name="options" nillable="true" type="q4:ArrayOfOption" />
+          <xs:element xmlns:q5="Claro.Security" name="toolbar" nillable="true" type="q5:ArrayOfOption" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OptionsResponse" nillable="true" type="tns:OptionsResponse" />
+</xs:schema>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ComprarPaquetesDatosRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idTransaccion" type="xs:string" />
+        <xs:element name="ipAplicacion" type="xs:string" />
+        <xs:element name="aplicacion" type="xs:string" />
+        <xs:element name="usrAplicacion" type="xs:string" />
+        <xs:element name="comprarPaquete" type="tns:ComprarPaquete1Type" />
+        <xs:element name="listaRequest" type="tns:ListaRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComprarPaquetesDatosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Audit" type="tns:AuditType" />
+        <xs:element name="listaResponse" type="tns:ListaResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPaquetesAdquiridosRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idTransaccion" type="xs:string" />
+        <xs:element name="ipAplicacion" type="xs:string" />
+        <xs:element name="aplicacion" type="xs:string" />
+        <xs:element name="usrAplicacion" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element minOccurs="0" name="canal" type="xs:string" />
+        <xs:element minOccurs="0" name="codigoPaquete" type="xs:string" />
+        <xs:element minOccurs="0" name="estadoPaquete" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaInicio" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaFin" type="xs:string" />
+        <xs:element minOccurs="0" name="idTipoLinea" type="xs:string" />
+        <xs:element minOccurs="0" name="familiaPaquete" type="xs:string" />
+        <xs:element name="listaRequest" type="tns:ListaRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPaquetesAdquiridosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Audit" type="tns:AuditType" />
+        <xs:element name="ListaPaquetesAdquiridos" type="tns:ListaPaquetesAdquiridosType" />
+        <xs:element name="listaResponse" type="tns:ListaResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPaquetesDisponiblesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idTransaccion" type="xs:string" />
+        <xs:element name="ipAplicacion" type="xs:string" />
+        <xs:element name="aplicacion" type="xs:string" />
+        <xs:element name="usrAplicacion" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element minOccurs="0" name="idTipoSuscripcion" type="xs:string" />
+        <xs:element minOccurs="0" name="idTipoCompra" type="xs:string" />
+        <xs:element name="listaRequest" type="tns:ListaRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPaquetesDisponiblesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Audit" type="tns:AuditType" />
+        <xs:element name="ListaPaquetesDisponibles" type="tns:ListaPaquetesDisponiblesType" />
+        <xs:element name="listaResponse" type="tns:ListaResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarComprarPaquetesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idTransaccion" type="xs:string" />
+        <xs:element name="ipAplicacion" type="xs:string" />
+        <xs:element name="aplicacion" type="xs:string" />
+        <xs:element name="usrAplicacion" type="xs:string" />
+        <xs:element name="comprarPaquete" type="tns:ComprarPaquete2Type" />
+        <xs:element name="listaRequest" type="tns:ListaRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarComprarPaquetesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Audit" type="tns:AuditType" />
+        <xs:element name="listaResponse" type="tns:ListaResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AuditType">
+    <xs:sequence>
+      <xs:element name="txId" type="xs:string" />
+      <xs:element name="errorCode" type="xs:string" />
+      <xs:element name="errorMsg" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComprarPaquete1Type">
+    <xs:sequence>
+      <xs:element name="msisdn" type="xs:string" />
+      <xs:element name="idTipoLinea" type="xs:string" />
+      <xs:element name="codigoPaquete" type="xs:string" />
+      <xs:element name="canal" type="xs:string" />
+      <xs:element minOccurs="0" name="idTipoSuscripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="idTipoCompra" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaqueteAdquiridoType">
+    <xs:sequence>
+      <xs:element name="codigoConvergente" type="xs:string" />
+      <xs:element name="codigoPaquete" type="xs:string" />
+      <xs:element name="descripcion" type="xs:string" />
+      <xs:element name="fechaActivacion" type="xs:string" />
+      <xs:element name="fechaExpiracion" type="xs:string" />
+      <xs:element name="canal" type="xs:string" />
+      <xs:element name="precio" type="xs:string" />
+      <xs:element name="estado" type="xs:string" />
+      <xs:element name="MBComsumidos" type="xs:string" />
+      <xs:element name="MBDisponibles" type="xs:string" />
+      <xs:element name="MBTotales" type="xs:string" />
+      <xs:element name="RatingGroup" type="xs:string" />
+      <xs:element name="zona" type="xs:string" />
+      <xs:element name="tipoCompra" type="xs:string" />
+      <xs:element name="listaPaqueteAdquiridoParametro" type="tns:ListaPaqueteAdquiridoParametroType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListaPaqueteAdquiridoParametroType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="parametro" nillable="true" type="tns:ParametroType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParametroType">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string" />
+      <xs:element name="valor" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComprarPaquete2Type">
+    <xs:sequence>
+      <xs:element name="msisdn" type="xs:string" />
+      <xs:element name="codigoPaquete" type="xs:string" />
+      <xs:element name="canal" type="xs:string" />
+      <xs:element minOccurs="0" name="idTipoSuscripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="idTipoCompra" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListaRequestType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="request" nillable="true" type="tns:ParametroType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListaPaquetesDisponiblesType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaqueteDisponible" type="tns:PaqueteDisponibleType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaqueteDisponibleType">
+    <xs:sequence>
+      <xs:element name="aplicacion" type="xs:string" />
+      <xs:element name="tipoServicio" type="xs:string" />
+      <xs:element name="tipoSuscripcion" type="xs:string" />
+      <xs:element name="tipoCompra" type="xs:string" />
+      <xs:element name="codigoConvergente" type="xs:string" />
+      <xs:element name="plataforma" type="xs:string" />
+      <xs:element name="codigoPaquete" type="xs:string" />
+      <xs:element name="descripcionPaquete" type="xs:string" />
+      <xs:element name="codigoSMS" type="xs:string" />
+      <xs:element name="precio" type="xs:string" />
+      <xs:element name="disponibilidad" type="xs:string" />
+      <xs:element name="vigencia" type="xs:string" />
+      <xs:element name="mbIncluidos" type="xs:string" />
+      <xs:element name="tipoNegocio" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListaResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="response" nillable="true" type="tns:ParametroType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListaPaquetesAdquiridosType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaqueteAdquirido" type="tns:PaqueteAdquiridoType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

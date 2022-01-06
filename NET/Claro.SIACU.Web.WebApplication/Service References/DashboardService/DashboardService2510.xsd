@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetUserProfile" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetUserProfile" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd29" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" />
+  <xs:complexType name="UserProfileRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageRequest" nillable="true" type="tns:UserProfileMessageRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserProfileRequest" nillable="true" type="tns:UserProfileRequest" />
+  <xs:complexType name="UserProfileMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:UserProfileBodyRequest" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Header" nillable="true" type="q2:HeadersRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserProfileMessageRequest" nillable="true" type="tns:UserProfileMessageRequest" />
+  <xs:complexType name="UserProfileBodyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="aplicacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="appCod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ipAplicacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuarioLogin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserProfileBodyRequest" nillable="true" type="tns:UserProfileBodyRequest" />
+  <xs:complexType name="UserProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageResponse" nillable="true" type="tns:UserProfileMessageResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserProfileResponse" nillable="true" type="tns:UserProfileResponse" />
+  <xs:complexType name="UserProfileMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:UserProfileBodyResponse" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Header" nillable="true" type="q3:HeadersResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserProfileMessageResponse" nillable="true" type="tns:UserProfileMessageResponse" />
+  <xs:complexType name="UserProfileBodyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cursorSeguridad" nillable="true" type="tns:ArrayOfCursorSeguridad" />
+      <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="errorMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idTransaccion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserProfileBodyResponse" nillable="true" type="tns:UserProfileBodyResponse" />
+  <xs:complexType name="ArrayOfCursorSeguridad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CursorSeguridad" nillable="true" type="tns:CursorSeguridad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCursorSeguridad" nillable="true" type="tns:ArrayOfCursorSeguridad" />
+  <xs:complexType name="CursorSeguridad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PerfcCod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuacCod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuacCodVenSap" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CursorSeguridad" nillable="true" type="tns:CursorSeguridad" />
+</xs:schema>

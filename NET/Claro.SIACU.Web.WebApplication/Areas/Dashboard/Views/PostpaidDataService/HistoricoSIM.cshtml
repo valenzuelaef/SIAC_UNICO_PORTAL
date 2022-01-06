@@ -1,0 +1,55 @@
+﻿@using System.Web.Optimization
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataService.HistorySIMModel
+<div id="modal-content">
+    <div id="PostpaidHistoricoSIMList">
+
+        <div class="panel panel-default ">
+
+            <div class="table-responsive">
+                <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tbHistoricoSIM">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th class="col-sm-1">Estado</th>
+                            <th class="col-sm-1">Motivo</th>
+                            <th class="col-sm-2">Valido Desde</th>
+                            <th class="col-sm-2">IMSI</th>
+                            <th class="col-sm-1">ICCID</th>
+                            <th class="col-sm-2">Introducido Al</th>
+                            <th class="col-sm-2">Modificado</th>
+                            <th class="col-sm-1">Introducido Por</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @{
+                            if (Model != null)
+                            {
+                                if (Model.lstHistorySIM != null)
+                                {
+                                    foreach (var item in Model.lstHistorySIM)
+                                    {
+                                        <tr>
+
+                                            <td>@item.State </td>
+                                            <td>@item.Reason</td>
+                                            <td>@item.ValidFrom</td>
+                                            <td>@item.IMSI</td>
+                                            <td>@item.ICCID</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    }
+
+                                }
+                            }
+                        }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/HistoricoSIM")
+

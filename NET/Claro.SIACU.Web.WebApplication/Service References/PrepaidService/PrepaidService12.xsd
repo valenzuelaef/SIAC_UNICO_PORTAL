@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:complexType name="ServiceRequestPrePaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IssueSeries" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Matter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionID" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" minOccurs="0" name="objService" nillable="true" type="q2:ServicePrePaid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceRequestPrePaid" nillable="true" type="tns:ServiceRequestPrePaid" />
+  <xs:complexType name="ServiceResponsePrePaid">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" minOccurs="0" name="objService" nillable="true" type="q3:ServicePrePaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponsePrePaid" nillable="true" type="tns:ServiceResponsePrePaid" />
+</xs:schema>

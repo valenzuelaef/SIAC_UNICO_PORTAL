@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="825231a8-ab88-4d64-aa55-87253b99cd77" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9593/Coliving/ColivingService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ColivingService.xsd" MetadataType="Schema" ID="2d4703c9-1e8a-43ec-ac4b-e1e7a9c51755" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd10" />
+    <MetadataFile FileName="ColivingService1.xsd" MetadataType="Schema" ID="84c5aaa2-505c-458c-87de-251544388927" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ColivingService2.xsd" MetadataType="Schema" ID="03292a26-172a-40f1-b98f-bd82778a25a7" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ColivingService3.xsd" MetadataType="Schema" ID="741ee42f-54a7-422f-a0e2-ecda57ee47fd" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ColivingService4.xsd" MetadataType="Schema" ID="9e9ffefe-fa76-42a7-a8b3-d773d0fb62ad" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ColivingService5.xsd" MetadataType="Schema" ID="e26a1292-5e05-45e8-a4a3-b61cb786e10a" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ColivingService6.xsd" MetadataType="Schema" ID="fc9b1774-389d-43ae-9557-37769fd71703" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ColivingService7.xsd" MetadataType="Schema" ID="9f5dc285-28f1-4f61-bb7f-bc2f665d9c05" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd8" />
+    <MetadataFile FileName="ColivingService8.xsd" MetadataType="Schema" ID="f50ac9d2-8e12-488f-ad51-5e53c012e58f" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ColivingService9.xsd" MetadataType="Schema" ID="ee324249-4bc0-46f8-a0ae-c04532758507" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd9" />
+    <MetadataFile FileName="ColivingService.wsdl" MetadataType="Wsdl" ID="dea46a97-feaa-4dda-b0c9-85f0fbdee080" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?wsdl" />
+    <MetadataFile FileName="ColivingService10.xsd" MetadataType="Schema" ID="d9535b6b-54ba-44a0-9e74-574b763bf29f" SourceId="1" SourceUrl="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

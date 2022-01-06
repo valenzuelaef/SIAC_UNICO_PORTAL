@@ -1,0 +1,214 @@
+﻿@using System.Web.Optimization
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataCustomer.CustomerCreateNotUserModel
+@using Claro.SIACU.Web.WebApplication.Areas.Dashboard.Helpers.Prepaid.CustomerCreateNotUseHelper
+@{
+    Layout = null;
+}
+
+<div id="contenedorCreateNotUser">
+    <div class="panel panel-info claro-modal-contenido-panel">
+        <div class="panel-body claro-modal-contenido-texto">
+
+
+            <form method="post" id="formCreateNotUserPrepaid">
+
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td><label class="control-label">Teléfono:</label></td>
+                            <td>
+                                <input id="txtNotUser_Telephone" type="text" class="form-control" readonly />
+                            </td>
+                            <td><label class="control-label">Nombres: <span class="label-red">*</span></label></td>
+                            <td>
+                                <input id="txtNotUser_Name" name="txtNotUser_Name" type="text" class="form-control" required />                                
+                            </td>
+                            <td><label class="control-label">Apellidos: <span class="label-red">*</span></label></td>
+                            <td>
+                                <input id="txtNotUser_LastName" name="txtNotUser_LastName" type="text" class="form-control" required />                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Sexo:</label></td>
+                            <td>
+                                <select class="form-control" id="ddlNotUser_Sex">
+                                    @{
+                                        if (Model.listSex != null)
+                                        {
+                                            foreach (CreateNotUserItem item in Model.listSex)
+                                            {
+                                                <option value="@item.Code" >@item.Description</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td><label class="control-label">Tipo de Doc:</label></td>
+                            <td>
+                                <select class="form-control" id="ddlNotUser_TypeDocument">
+                                    @{
+                                        if (Model.listTypeDocumentCustomer != null)
+                                        {
+                                            foreach (CreateNotUserItem item in Model.listTypeDocumentCustomer)
+                                            {
+                                                <option value="@item.Description" >@item.Description</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td><label class="control-label">Nro Documento:</label></td>
+                            <td>
+                                <input id="txtNotUser_NumberDocument" type="number" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Fecha Nac: <span class="label-red">*</span></label></td>
+                            <td>
+                                <div class="input-group">
+                                    <input id="txtNotUser_DateBirth" name="txtNotUser_DateBirth" type="text" class="form-control" placeholder="(dd/mm/yyyy)" required />
+                                    <label class="input-group-addon btn" for="txtNotUser_DateBirth">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </label>
+                                </div>
+                              
+                            </td>
+                            <td><label class="control-label">Ocupaci&oacute;n:</label></td>
+                            <td>
+                                <select class="form-control" id="ddlNotUser_Occupation">
+                                    @{
+                                        if (Model.listOccupation != null)
+                                        {
+                                            foreach (CreateNotUserItem item in Model.listOccupation)
+                                            {
+                                                <option value="@item.Description" >@item.Description</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td><label class="control-label">Cargo:</label></td>
+                            <td>
+                                <input id="txtNotUser_Position" type="text" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Telef. Refer.:</label></td>
+                            <td>
+                                <input id="txtNotUser_TelephoneReference" type="number" class="form-control" />
+                            </td>
+                            <td><label class="control-label">Fax:</label></td>
+                            <td>
+                                <input id="txtNotUser_Fax" type="text" class="form-control" />
+                            </td>
+                            <td><label class="control-label">Estado Civil:</label></td>
+                            <td>
+                                <select class="form-control" id="ddlNotUser_StateCivil">
+                                    @{
+                                        if (Model.listStateCivil != null)
+                                        {
+                                            foreach (CreateNotUserItem item in Model.listStateCivil)
+                                            {
+                                                <option value="@item.Description" >@item.Description</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Email:</label></td>
+                            <td>
+                                <input id="txtNotUser_Email" type="email" class="form-control" />
+                            </td>
+                            <td><label class="control-label">Confir. Email:</label></td>
+                            <td>
+                                <select class="form-control" id="ddlNotUser_ConfirmMail">
+                                    @{
+                                        if (Model.listConfirmMail != null)
+                                        {
+                                            foreach (CreateNotUserItem item in Model.listConfirmMail)
+                                            {
+                                                <option value="@item.Code" >@item.Description</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td><label class="control-label">Registrado:</label></td>
+                            <td>
+                                <input id="chkNotUser_Registered" type="checkbox" class="checkbox" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Departamento:</label></td>
+                            <td>
+                                <input id="txtNotUser_Department" type="text" class="form-control" />
+                            </td>
+                            <td><label class="control-label">Ciudad:<span class="label-red">*</span></label></td>
+                            <td>
+                                <input id="txtNotUser_City" name="txtNotUser_City" type="text" class="form-control" required />                              
+                            </td>
+                            <td><label class="control-label">Distrito:</label></td>
+                            <td>
+                                <input id="txtNotUser_District" type="text" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Cod. Postal:</label></td>
+                            <td>
+                                <input id="txtNotUser_ZipCode" type="text" class="form-control" />
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td><label class="control-label">Motivo Registro:</label></td>
+                            <td>
+                                <select class="form-control" id="ddlNotUser_MotiveRegister">
+                                    @{
+                                        if (Model.listMotiveRegister != null)
+                                        {
+                                            foreach (CreateNotUserItem item in Model.listMotiveRegister)
+                                            {
+                                                <option value="@item.Code">@item.Description</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Domicilio:<span class="label-red">*</span></label></td>
+                            <td colspan="5">
+                                <input id="txtNotUser_Address" name="txtNotUser_Address" type="text" class="form-control" required />
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Urbanización:</label></td>
+                            <td colspan="5">
+                                <input id="txtNotUser_Urbanization" type="text" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Referencia:</label></td>
+                            <td colspan="5">
+                                <input id="txtNotUser_Reference" type="text" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <label class="control-label label-red"> Campos en (*) debe de ingresarse como obligatorio</label>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PrepaidDataCustomer/CreateNotUser")

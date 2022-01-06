@@ -1,0 +1,96 @@
+﻿@using System.Web.Optimization;
+@model  Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataCustomer.ContactModel
+
+
+    @{
+        var c = 1;
+        foreach (var item in @Model.lstContact)
+        {
+
+            <tr class="@(item.Guid + "_hide")">
+                <td>
+                    <select disabled class="form-control ">
+                        @foreach (var obj in @Model.lstContactType)
+                        {
+                            <option value="@obj.TCCTN_Code" @(obj.TCCTN_Code == item.TCCTN_Code ? "selected='selected'" : "")>@obj.TCCTV_Name</option>
+
+                        }
+                    </select>
+
+                </td>
+                <td>
+                    <div>@item.SPERV_Name</div>
+
+
+                </td>
+                <td>@item.SPERV_PatherLastname</td>
+                <td>@item.SPERV_MotherLastName</td>
+                <td>@item.SPERV_Position</td>
+                <td>
+                    <select disabled class="form-control ">
+                        @foreach (var obj in @Model.lstDocumentType)
+                        {
+                            <option value="@obj.Code" @(obj.Code == item.TDOCC_Code ? "selected='selected'" : "")> @obj.description</option>
+                        }
+                    </select>
+                </td>
+                <td>@item.SPERV_DocumentNumber</td>
+                <td>@item.SPERV_telephone </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true" onclick="Edit1('@(item.Guid)')"></span>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </td>
+            </tr>
+            <tr class="@(item.Guid + "_show")" style="display: none;">
+                <td>
+                    <select class="form-control">
+                        @foreach (var obj in @Model.lstContactType)
+                        {
+                            <option value="@obj.TCCTN_Code" @(obj.TCCTN_Code == item.TCCTN_Code ? "selected='selected'" : "")>@obj.TCCTV_Name</option>
+
+                        }
+                    </select>
+
+                </td>
+                <td>
+                    @*<div >@item.SPERV_Name</div>*@
+
+                    <input type="text" value="@item.SPERV_Name" class="form-control" />
+
+
+                    @*<input type="text" value="@item.SPERV_Name"  />*@
+                </td>
+                <td><input type="text" value="@item.SPERV_PatherLastname" class="form-control " /></td>
+                <td><input type="text" value="@item.SPERV_MotherLastName" class="form-control " /></td>
+                <td><input type="text" value="@item.SPERV_Position" class="form-control " /></td>
+                <td>
+                    <select class="form-control ">
+                        @foreach (var obj in @Model.lstDocumentType)
+                        {
+                            <option value="@obj.Code" @(obj.Code == item.TDOCC_Code ? "selected='selected'" : "")> @obj.description</option>
+                        }
+                    </select>
+                </td>
+                <td><input type="text" value="@item.SPERV_DocumentNumber" class="form-control " /></td>
+                <td><input type="text" value="@item.SPERV_telephone" class="form-control " /> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <span class="glyphicon glyphicon-ban-circle" aria-hidden="true" onclick="Edit2('@(item.Guid)')"></span>
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true" onclick='save(this)'></span>
+                    
+                </td>
+            </tr>
+
+                        c++;
+        }
+    }
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

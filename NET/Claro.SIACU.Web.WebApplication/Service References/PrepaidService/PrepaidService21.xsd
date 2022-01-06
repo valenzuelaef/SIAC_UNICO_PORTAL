@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.CreateContactNotUSer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.CreateContactNotUSer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:complexType name="CreateContactNotUSerRequestPrePaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConfirmMail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateBirth" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Department" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Modality" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MotiveRegister" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumberDocument" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Occupation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Registered" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StateCivil" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TelephoneCustomer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TelephoneReference" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeDocument" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeProcess" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Urbanization" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateContactNotUSerRequestPrePaid" nillable="true" type="tns:CreateContactNotUSerRequestPrePaid" />
+  <xs:complexType name="CreateContactNotUSerResponsePrePaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FlagUpdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Response" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateContactNotUSerResponsePrePaid" nillable="true" type="tns:CreateContactNotUSerResponsePrePaid" />
+</xs:schema>

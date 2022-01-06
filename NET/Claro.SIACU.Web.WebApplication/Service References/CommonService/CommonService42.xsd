@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetCreate" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetCreate" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management" />
+  <xs:complexType name="CreateRequestManagement">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DATE" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FECHA_VIGENCIA_FIN" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FECHA_VIGENCIA_INICIO" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ID_BANNER" type="xs:int" />
+          <xs:element minOccurs="0" name="LOGIN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MENSAJE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ORDEN_PRIORIDAD" type="xs:int" />
+          <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateRequestManagement" nillable="true" type="tns:CreateRequestManagement" />
+  <xs:complexType name="CreateResponseManagement">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management" minOccurs="0" name="ListBanner" nillable="true" type="q2:ArrayOfBannerManagement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateResponseManagement" nillable="true" type="tns:CreateResponseManagement" />
+</xs:schema>

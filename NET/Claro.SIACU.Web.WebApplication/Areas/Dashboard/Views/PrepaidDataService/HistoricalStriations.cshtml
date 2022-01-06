@@ -1,0 +1,47 @@
+﻿@using System.Web.Optimization
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataService.HistoricalTriationRFAModel
+@{
+    Layout = null;
+}
+
+<div id="ContentHistoricalStriations">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-inline">
+                <label class="control-label">Desde:</label>
+                <div class="input-daterange input-group" id="containerDateRange">
+                    <input type="text" id="txtDateStartHT" class="input-sm form-control" name="txtDateStartHT" readonly />
+
+                    <label class="input-group-addon btn" for="txtDateStartHT">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </label>
+                    <span class="input-group-addon"><label class="control-label">A:</label></span>
+                    <input type="text" id="txtDateEndHT" class="input-sm form-control" name="txtDateEndHT" readonly />
+                    <label class="input-group-addon btn" for="txtDateEndHT">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </label>
+                </div>
+                &nbsp;&nbsp;
+                <button type="button" class="btn claro-btn-info btn-sm" id="btnVisualize">Visualizar</button>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive" style="text-align:center;">
+        <table class="table table-hover claro-modal-tabla table-bordered" id="tblHistoricalStriations">
+            <thead class="claro-bg-primary">
+                <tr>
+                    <th class="col-sm-1">Opci&#243;n Triaci&#243;n</th>
+                    <th>Transacci&#243;n</th>
+                    <th>Fecha Registro</th>
+                    <th>Aplicativo</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <label id="lblCountHistoricalStriations" class="control-label"></label>
+    </div>
+    <div id="errorHistoricalStriations"></div>
+        <input type="hidden" id="hidCodePrevious" />
+    </div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PrepaidDataService/HistoricalStriations")

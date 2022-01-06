@@ -1,0 +1,104 @@
+﻿@using System.Web.Optimization;
+@model  Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.Prepaid.DataCallModel
+
+<div id="contenedorDataCall">
+    @{
+        Layout = null;
+
+        <input type="hidden" id="headers" value="@Model.Headers" />
+
+        <div class="table">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table id="tblDataCall" class="table  table-striped table-hover table-responsive claro-modal-tabla table-bordered">
+                            <thead class="claro-bg-primary">
+                                <tr>
+                                    <th>Fecha y Hora</th>
+                                    <th>Teléfono Destino</th>
+                                    <th>Tipo de Tráfico</th>
+                                    <th>Duración</th>
+                                    <th>Consumo</th>
+                                    <th>Coprado / Regalado</th>
+                                    <th>Saldo</th>
+                                    <th>Bolsa ID</th>
+                                    <th>Descripción</th>
+                                    <th>Plan</th>
+                                    <th>Promoción</th>
+                                    <th>Destino</th>
+                                    <th>Operador</th>
+                                    <th>Grupo de Cobro</th>
+                                    <th>Tipo de Red</th>
+                                    <th>IMEI</th>
+                                    <th>Roaming</th>
+                                    <th>Zona Tarifaria</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (Claro.SIACU.Web.WebApplication.Areas.Dashboard.Helpers.Prepaid.DataCallHelper.DataCall item in Model.listDataCallModel)
+                                {
+                                    <tr>
+                                        <td>@item.CallDateTime</td>
+                                        <td>@item.CallTelephoneDestination</td>
+                                        <td>@item.CallTypeTraffic</td>
+                                        <td>@item.CallDuration</td>
+                                        <td>@item.CallUptake</td>
+                                        <td>@item.CallBoughtPresented</td>
+                                        <td>@item.CallBalance</td>
+                                        <td>@item.CallBagId</td>
+                                        <td>@item.CallDescription</td>
+                                        <td>@item.CallPlan</td>
+                                        <td>@item.CallPromotion</td>
+                                        <td>@item.CallDestination</td>
+                                        <td>@item.CallOperator</td>
+                                        <td>@item.CallCobroGroup</td>
+                                        <td>@item.CallNetworkType</td>
+                                        <td>@item.CallImei</td>
+                                        <td>@item.CallRoaming</td>
+                                        <td>@item.CallTariffArea</td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-inline">
+                        <input type="hidden" value="@Model.CallTelephoneCustomer" hidden="hidden" id="hidCallTelephoneCustomer" />
+                        <label class="control-label">Desde:</label>
+                        <div class="input-daterange input-group" id="containerDateRange">
+                            <input type="text" id="txtCallDateFrom" class="input-sm form-control" name="txtCallDateFrom" value="@Model.DateFromCall" readonly />
+                            <label class="input-group-addon btn" for="txtCallDateFrom">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                            <span class="input-group-addon"><label class="control-label">A:</label></span>
+                            <input type="text" id="txtCallDateTo" class="input-sm form-control" name="txtCallDateTo" value="@Model.DateToCall" readonly />
+                            <label class="input-group-addon btn" for="txtCallDateTo">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                        </div>
+                        <button id="btnPrintCall" type="button" class="btn claro-btn-info btn-sm">Imprimir</button>
+                        <button id="btnExcel" type="button" class="btn claro-btn-info btn-sm">Exportar</button>
+                        <button id="btnVisualizeCall" type="button" class="btn claro-btn-info btn-sm">Visualizar</button>
+                        <button id="btnInLine" type="button" class="btn claro-btn-info btn-sm">En Linea</button>
+                    </div>
+                    <div class="form-group form-inline">
+                        <div class="form-group">
+                            <label class="control-label">Tipo de tráfico:</label>
+                            <select id="cboEventType" class="form-control input-sm"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Prepaid/DataCall")
+

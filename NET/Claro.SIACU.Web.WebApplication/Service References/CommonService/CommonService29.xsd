@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetGroupBagList" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetGroupBagList" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity" />
+  <xs:complexType name="GroupBagLisRequestCommon">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GroupBagLisRequestCommon" nillable="true" type="tns:GroupBagLisRequestCommon" />
+  <xs:complexType name="GroupBagListResponseCommon">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity" minOccurs="0" name="ListItem" nillable="true" type="q2:ArrayOfListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupBagListResponseCommon" nillable="true" type="tns:GroupBagListResponseCommon" />
+</xs:schema>

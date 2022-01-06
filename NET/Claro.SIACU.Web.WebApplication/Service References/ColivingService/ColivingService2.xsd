@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getSearchCustomer" />
+  <xs:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getRetrieveSubscriptions" />
+  <xs:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getConsultaLineaCuenta" />
+  <xs:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getObtenerDatosClienteColiving" />
+  <xs:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getCustomerInfo" />
+  <xs:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.Common" />
+  <xs:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getListOST" />
+  <xs:element name="GetSearchCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getSearchCustomer" minOccurs="0" name="oGetCustomerInfoRequest" nillable="true" type="q1:SearchCustomerRequestColiving" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getSearchCustomer" minOccurs="0" name="GetSearchCustomerResult" nillable="true" type="q2:SearchCustomerResponseColiving" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRetrieveSubscriptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getRetrieveSubscriptions" minOccurs="0" name="retrieveSubscriptionRequest" nillable="true" type="q3:RetrieveSubscriptionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRetrieveSubscriptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getRetrieveSubscriptions" minOccurs="0" name="GetRetrieveSubscriptionsResult" nillable="true" type="q4:RetrieveSubscriptionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarLineaCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getConsultaLineaCuenta" minOccurs="0" name="ConsultaLineaRequest" nillable="true" type="q5:ConsultaLineaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarLineaCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getConsultaLineaCuenta" minOccurs="0" name="ConsultarLineaCuentaResult" nillable="true" type="q6:ConsultaLineaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObtenerDatosCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getObtenerDatosClienteColiving" minOccurs="0" name="ObtenerDatosRequest" nillable="true" type="q7:ObtenerDatosClienteRequestColiving" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObtenerDatosClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getObtenerDatosClienteColiving" minOccurs="0" name="GetObtenerDatosClienteResult" nillable="true" type="q8:ObtenerDatosClienteResponseColiving" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getCustomerInfo" minOccurs="0" name="CustomerInfoRequest" nillable="true" type="q9:CustomerInfoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getCustomerInfo" minOccurs="0" name="GetCustomerInfoResult" nillable="true" type="q10:CustomerInfoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountTelephoneCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Transaction" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTypeSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountTelephoneCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAccountTelephoneCustomerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetColivingParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strIdSession" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTransaction" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetColivingParametersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.Common" minOccurs="0" name="GetColivingParametersResult" nillable="true" type="q11:ArrayOfColivingParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOST_Legacy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getListOST" minOccurs="0" name="objListOSTRequest" nillable="true" type="q12:ListOSTRequestColiving" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOST_LegacyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getListOST" minOccurs="0" name="GetListOST_LegacyResult" nillable="true" type="q13:ListOSTResponseColiving" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOST_One">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getListOST" minOccurs="0" name="objListOSTRequest" nillable="true" type="q14:ListOSTRequestColiving" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOST_OneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getListOST" minOccurs="0" name="GetListOST_OneResult" nillable="true" type="q15:ListOSTResponseColiving" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOSTDetails_One">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getListOST" minOccurs="0" name="objListOSTRequest" nillable="true" type="q16:ListOSTRequestColiving" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOSTDetails_OneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getListOST" minOccurs="0" name="GetListOSTDetails_OneResult" nillable="true" type="q17:ListOSTResponseColiving" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

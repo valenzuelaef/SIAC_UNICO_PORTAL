@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://claro.com.pe/eai/ebs/services/paquetedatos/ws" name="EbsPaqueteDatosService" targetNamespace="http://claro.com.pe/eai/ebs/services/paquetedatos/ws" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://limdeseaiv13.tim.com.pe:7909/PaqueteDatosWS/EbsPaqueteDatos?xsd=1" namespace="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" />
+    </xsd:schema>
+  </types>
+  <message name="ConsultarPaquetesDisponibles">
+    <part xmlns:ns1="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" name="request" element="ns1:ConsultarPaquetesDisponiblesRequest" />
+  </message>
+  <message name="ConsultarPaquetesDisponiblesResponse">
+    <part xmlns:ns2="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" name="response" element="ns2:ConsultarPaquetesDisponiblesResponse" />
+  </message>
+  <message name="ComprarPaquetesDatos">
+    <part xmlns:ns3="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" name="request" element="ns3:ComprarPaquetesDatosRequest" />
+  </message>
+  <message name="ComprarPaquetesDatosResponse">
+    <part xmlns:ns4="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" name="response" element="ns4:ComprarPaquetesDatosResponse" />
+  </message>
+  <message name="ValidarComprarPaquetes">
+    <part xmlns:ns5="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" name="request" element="ns5:ValidarComprarPaquetesRequest" />
+  </message>
+  <message name="ValidarComprarPaquetesResponse">
+    <part xmlns:ns6="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" name="response" element="ns6:ValidarComprarPaquetesResponse" />
+  </message>
+  <message name="ConsultarPaquetesAdquiridos">
+    <part xmlns:ns7="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" name="request" element="ns7:ConsultarPaquetesAdquiridosRequest" />
+  </message>
+  <message name="ConsultarPaquetesAdquiridosResponse">
+    <part xmlns:ns8="http://claro.com.pe/eai/ebs/services/paquetedatos/xsd" name="response" element="ns8:ConsultarPaquetesAdquiridosResponse" />
+  </message>
+  <portType name="EbsPaqueteDatos">
+    <operation name="ConsultarPaquetesDisponibles">
+      <input message="tns:ConsultarPaquetesDisponibles" />
+      <output message="tns:ConsultarPaquetesDisponiblesResponse" />
+    </operation>
+    <operation name="ComprarPaquetesDatos">
+      <input message="tns:ComprarPaquetesDatos" />
+      <output message="tns:ComprarPaquetesDatosResponse" />
+    </operation>
+    <operation name="ValidarComprarPaquetes">
+      <input message="tns:ValidarComprarPaquetes" />
+      <output message="tns:ValidarComprarPaquetesResponse" />
+    </operation>
+    <operation name="ConsultarPaquetesAdquiridos">
+      <input message="tns:ConsultarPaquetesAdquiridos" />
+      <output message="tns:ConsultarPaquetesAdquiridosResponse" />
+    </operation>
+  </portType>
+  <binding name="EbsPaqueteDatosSoapPortBinding" type="tns:EbsPaqueteDatos">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ConsultarPaquetesDisponibles">
+      <soap:operation soapAction="http://claro.com.pe/eai/ebs/services/paquetedatos/ws/ConsultarPaquetesDisponibles" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ComprarPaquetesDatos">
+      <soap:operation soapAction="http://claro.com.pe/eai/ebs/services/paquetedatos/ws/ComprarPaquetesDatos" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidarComprarPaquetes">
+      <soap:operation soapAction="http://claro.com.pe/eai/ebs/services/paquetedatos/ws/ValidarComprarPaquetes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ConsultarPaquetesAdquiridos">
+      <soap:operation soapAction="http://claro.com.pe/eai/ebs/services/paquetedatos/ws/ConsultarPaquetesAdquiridos" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EbsPaqueteDatosService">
+    <port name="EbsPaqueteDatosSoapPort" binding="tns:EbsPaqueteDatosSoapPortBinding">
+      <soap:address location="http://limdeseaiv13.tim.com.pe:7909/PaqueteDatosWS/EbsPaqueteDatos" />
+    </port>
+  </service>
+</definitions>

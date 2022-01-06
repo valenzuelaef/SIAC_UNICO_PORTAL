@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APELLIDOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APELLIDO_MAT_TOBE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APELLIDO_PAT_TOBE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CARGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CIUDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DISTRITO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOMICILIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_CIVIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_CIVIL_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_NAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FLAG_EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LONG_NRO_DOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LUGAR_NACIMIENTO_DES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LUGAR_NACIMIENTO_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NRO_DOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OCUPACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROVINCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAZON_SOCIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEXO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEF_REFERENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOC_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URBANIZACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZIPCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indicadorCambioNumero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nacionalidadId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfPortability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Portability" nillable="true" type="tns:Portability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPortability" nillable="true" type="tns:ArrayOfPortability" />
+  <xs:complexType name="Portability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_ESTADO_PROCESO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_OPERADOR_CEDENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_OPERADOR_RECEPTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRPCION_ESTADO_PROCESO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_PROCESO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_EJECUCION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHA_REGISTRO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_CORRELATIVO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INICIO_RANGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_ANEXO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_SOLICITUD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OBSERVACIONES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPERADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESPUESTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_PORTABILIDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_PROCESO_FECHA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_PROCESO_OPERADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USUARIO_CAMBIO_ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USUARIO_CREA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Portability" nillable="true" type="tns:Portability" />
+  <xs:complexType name="ArrayOfInstant">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Instant" nillable="true" type="tns:Instant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInstant" nillable="true" type="tns:ArrayOfInstant" />
+  <xs:complexType name="Instant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COLOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRATO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_REGISTRO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHA_VIGENCIA_FIN" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHA_VIGENCIA_INICIO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_INSTANTANEA" type="xs:int" />
+      <xs:element minOccurs="0" name="LOGIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOGIN_MODIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOGIN_REGISTRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_ARCHIVO_DESCRIPCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_ARCHIVO_INSTANTANEA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NRO" type="xs:int" />
+      <xs:element minOccurs="0" name="TIPOTELEFONO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VIGENCIA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Instant" nillable="true" type="tns:Instant" />
+</xs:schema>

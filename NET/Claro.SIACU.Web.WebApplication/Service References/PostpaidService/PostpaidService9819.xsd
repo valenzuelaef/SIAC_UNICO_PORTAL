@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRelationPlans.RelationPlanCorporate.RegisterSolicitude" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetRelationPlans.RelationPlanCorporate.RegisterSolicitude" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd34" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd36" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common" />
+  <xs:complexType name="RegisterSolicitudeRequests">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageRequest" nillable="true" type="tns:RegisterSolicitudeMessageRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegisterSolicitudeRequests" nillable="true" type="tns:RegisterSolicitudeRequests" />
+  <xs:complexType name="RegisterSolicitudeMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:RegisterSolicitudeBodyRequest" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Header" nillable="true" type="q2:HeadersRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterSolicitudeMessageRequest" nillable="true" type="tns:RegisterSolicitudeMessageRequest" />
+  <xs:complexType name="RegisterSolicitudeBodyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="registrarSolicitud" nillable="true" type="tns:RegisterSolicitudeRequest" />
+      <xs:element minOccurs="0" name="registrarSolicitudPendiente" nillable="true" type="tns:RegisterSolicitudePendingRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterSolicitudeBodyRequest" nillable="true" type="tns:RegisterSolicitudeBodyRequest" />
+  <xs:complexType name="RegisterSolicitudeRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="aplicativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cabeceraReporte" nillable="true" type="tns:HeaderReport" />
+      <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineasActivas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterSolicitudeRequest" nillable="true" type="tns:RegisterSolicitudeRequest" />
+  <xs:complexType name="HeaderReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bolsaPrincipal" nillable="true" type="tns:BagMain" />
+      <xs:element minOccurs="0" name="datosCliente" nillable="true" type="tns:CustomerData" />
+      <xs:element minOccurs="0" name="listaBolsaDetalle" nillable="true" type="tns:ListBagDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HeaderReport" nillable="true" type="tns:HeaderReport" />
+  <xs:complexType name="BagMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cantLineas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cargoFijo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaActivacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="minSol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoBolsa" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BagMain" nillable="true" type="tns:BagMain" />
+  <xs:complexType name="CustomerData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountManager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contactoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contactoFacturas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="direFacturacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="distrito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="envioReciboCorreo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaActivacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="limiteCredito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroAcuerdoPCS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="provincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="razonSocial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="repLegal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tlfReferencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="totalLineasA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerData" nillable="true" type="tns:CustomerData" />
+  <xs:complexType name="ListBagDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bolsaDetalle" nillable="true" type="tns:ArrayOfBagDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListBagDetail" nillable="true" type="tns:ListBagDetail" />
+  <xs:complexType name="ArrayOfBagDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BagDetail" nillable="true" type="tns:BagDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBagDetail" nillable="true" type="tns:ArrayOfBagDetail" />
+  <xs:complexType name="BagDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bolsa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cantidadLineas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cargo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaActivacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="unidades" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BagDetail" nillable="true" type="tns:BagDetail" />
+  <xs:complexType name="RegisterSolicitudePendingRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterSolicitudePendingRequest" nillable="true" type="tns:RegisterSolicitudePendingRequest" />
+  <xs:complexType name="RegisterSolicitudeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageResponse" nillable="true" type="tns:RegisterSolicitudeMessageResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterSolicitudeResponse" nillable="true" type="tns:RegisterSolicitudeResponse" />
+  <xs:complexType name="RegisterSolicitudeMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:RegisterSolicitudeBodyResponse" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Header" nillable="true" type="q3:HeadersResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterSolicitudeMessageResponse" nillable="true" type="tns:RegisterSolicitudeMessageResponse" />
+  <xs:complexType name="RegisterSolicitudeBodyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="registrarSolicitudPendienteResponse" nillable="true" type="tns:RegisterSolicitudePendingResponse" />
+      <xs:element minOccurs="0" name="registrarSolicitudResponse" nillable="true" type="tns:RegisterSolicitude" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common" minOccurs="0" name="responseStatus" nillable="true" type="q4:ResponseStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterSolicitudeBodyResponse" nillable="true" type="tns:RegisterSolicitudeBodyResponse" />
+  <xs:complexType name="RegisterSolicitudePendingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pendiente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="resultado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterSolicitudePendingResponse" nillable="true" type="tns:RegisterSolicitudePendingResponse" />
+  <xs:complexType name="RegisterSolicitude">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idsolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="resultado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterSolicitude" nillable="true" type="tns:RegisterSolicitude" />
+</xs:schema>

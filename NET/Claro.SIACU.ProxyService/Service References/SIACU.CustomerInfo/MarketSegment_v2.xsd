@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entmarseg="http://claro.com.pe/esb/data/marketSales/marketSegment/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entmarcam="http://claro.com.pe/esb/data/marketSales/marketingCampaign/v2/" xmlns:entloc="http://claro.com.pe/esb/data/commonBusinessEntities/location/v2/" xmlns:entprooff="http://claro.com.pe/esb/data/product/productOffering/v2/" targetNamespace="http://claro.com.pe/esb/data/marketSales/marketSegment/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../CommonBusinessEntities/BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="../EngagedParty/Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/Location_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/location/v2/" />
+  <xs:import schemaLocation="MarketingCampaign_v2.xsd" namespace="http://claro.com.pe/esb/data/marketSales/marketingCampaign/v2/" />
+  <xs:import schemaLocation="../Product/ProductOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productOffering/v2/" />
+  <xs:complexType name="MarketSegment">
+    <xs:annotation>
+      <xs:documentation>A grouping of Parties, GeographicAreas, SalesChannels, and so forth. MarketSegments are the target of MarketingCampaigns, ProductOfferings, ProductPromotions, ProductPlacements, and ProductPrograms from both internal and external (Competitors, and other Providers) perspective.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the MarketSegment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which a MarketSegment is known and distinguished from other MarketSegments.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains what the MarketSegment is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="marketSegmentCategory" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A classification of MarketSegments because they share common characteristics. For example a vertical or horizontal MarketSegment. Vertical MarketSegments put a PartyRole in a single segment, while a PartyRole can exist in multiple horizontal MarketSegments</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="marketSegmentSubCategory" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A further classification of MarketSegments because they share common characteristics. For example, a vertical category MarketSegment may be further categorized as consumer, business, or carrier.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period during which the MarketSegment is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_marketingCampaign" type="entmarcam:MarketingCampaign" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOffering" type="entprooff:ProductOffering" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyDemographic" type="entpar:PartyDemographic" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_marketSegmentCharacteristic" type="entmarseg:MarketSegmentCharacteristic" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_marketSegmentCharacteristicValue" type="entmarseg:MarketSegmentCharacteristicValue" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_geographicArea" type="entloc:GeographicArea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MarketSegmentCharacteristic">
+    <xs:annotation>
+      <xs:documentation>A characteristic quality or distinctive feature of a MarketSegment. The characteristic can be take on a discrete value, such as sex, can take on a range of values, (for example, household income of $50,000 - $100,000), or can be derived from a formula (for example, number of households = number of customer party roles).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the MarketSegmentCharacteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the characteristic is known and distinguished from characteristics.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains what the characteristic is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="unique" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies if a value is unique for the specification.
+
+Possible values are; "unique while value is in effect" and "unique whether value is in effect or not"</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A kind of value that the characteristic can take on, such as numeric, text, and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="minCardinality" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The minimum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where zero is the value for the minCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxCardinality" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The maximum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where five is the value for the maxCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="extensible" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies that the values for the characteristic can be extended by adding new values when instantiating a characteristic for an Entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="derivationFormula" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A rule or principle represented in symbols, numbers, or letters, often in the form of an equation used to derive the value of a characteristic value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The period of time for which a characteristic is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_marketSegment" type="entmarseg:MarketSegment" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_marketSegmentCharacteristicValue" type="entmarseg:MarketSegmentCharacteristicValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MarketSegmentCharacteristicValue">
+    <xs:annotation>
+      <xs:documentation>A number or text that can be assigned to a MarketSegmentCharacteristic.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A kind of value that the characteristic can take on, such as numeric, text, and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="default" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Indicates if the value is the default value for a characteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A discrete value that the characteristic can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="unitOfMeasure" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A length, surface, volume, dry measure, liquid measure, money, weight, time, and the like. Iin general, a determinate quantity or magnitude of the kind designated, taken as a standard of comparison for others of the same kind, in assigning to them numerical values, as 1 foot, 1 yard, 1 mile, 1 square foot.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="fromValue" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The low range value that a characteristic can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="toValue" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The upper range value that a characteristic can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="rangeInterval" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies the inclusion or exclusion of the valueFrom and valueTo attributes.
+
+Possible values are "open", "closed", "closedBottom" and "closedTop".</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The period of time for which a value is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_marketSegmentCharacteristic" type="entmarseg:MarketSegmentCharacteristic" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_marketSegment" type="entmarseg:MarketSegment" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

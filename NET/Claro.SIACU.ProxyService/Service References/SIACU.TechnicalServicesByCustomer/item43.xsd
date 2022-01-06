@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entcusext="http://claro.com.pe/esb/data/customer/customerExtension/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entprod="http://claro.com.pe/esb/data/product/product/v2/" xmlns:entcusint="http://claro.com.pe/esb/data/customer/customerInteraction/v2/" xmlns:entcusbil="http://claro.com.pe/esb/data/customer/customerBill/v2/" xmlns:entappcusbilrat="http://claro.com.pe/esb/data/customer/appliedCustomerBillingRate/v2/" targetNamespace="http://claro.com.pe/esb/data/customer/appliedCustomerBillingRate/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerExtension/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Product_v2.xsd" namespace="http://claro.com.pe/esb/data/product/product/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerBill_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerBill/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerInteraction/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=RootBusinessEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" />
+  <xs:complexType name="AppliedCustomerBillingCredit">
+    <xs:annotation>
+      <xs:documentation>A credit assigned to the customer's account in the course or for the purpose of the billing process</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerDisputedAmount" type="entcusint:CustomerDisputedAmount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AppliedCustomerBillingProductCharge">
+    <xs:annotation>
+      <xs:documentation>An amount, usually of money, for which a person or organization is financially liable when a Product is bought, rented, leased, or used in some manner.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_prodPriceCharge" type="entprod:ProdPriceCharge" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_inquiryRequest" type="entbusint:InquiryRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AppliedCustomerBillingRate">
+    <xs:annotation>
+      <xs:documentation>A charge or a credit assigned to the customer's account in the course or for the purpose of the billing process. Subclasses further define these elements.  Information about the type of ACBR (such as description and revenue code) can be via the association to AppliedCustomerBillingRateSpec</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="date" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>A date of creation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="quantity" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>A unit (for example, US Dollars) and number of the applied rate.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A textual description.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_appliedCustomerBillingTaxRate" type="entappcusbilrat:AppliedCustomerBillingTaxRate" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_customerBill" type="entcusbil:CustomerBill" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_appliedCustomerBillingRateSpec" type="entappcusbilrat:AppliedCustomerBillingRateSpec" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_appliedCustomerBillingRateExtension" type="entcusext:AppliedCustomerBillingRateExtension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AppliedCustomerBillingRateSpec">
+    <xs:annotation>
+      <xs:documentation>A detailed description of AppliedCustomerBillingRate entity. This business entity holds the definition of all the characteristics (variant attributes) of AppliedCustomerBillingRate, as well and type attributes such as description (derived from RootEntity) and revenueType.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:EntitySpecification">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="revenueCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The revenue type represented by this AppliedCustomerBillingRateSpec. This attribute has at least 3 valid values:
+
+RC - (for recurring charge)
+
+UC - (for usage charge)
+
+OC - (for one-time charge)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_appliedCustomerBillingRate" type="entappcusbilrat:AppliedCustomerBillingRate" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AppliedCustomerBillingRebate">
+    <xs:annotation>
+      <xs:documentation>An amount, usually of money, which is paid back to a customer's account, for example, because a customer is entitled to a refund.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entappcusbilrat:AppliedCustomerBillingCredit">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AppliedCustomerBillingTaxRate">
+    <xs:annotation>
+      <xs:documentation>An amount of money levied on the price of a Product by a legislative body.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="taxCategory" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A categorization of the tax rate.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_appliedCustomerBillingRate" type="entappcusbilrat:AppliedCustomerBillingRate" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" xmlns:base="http://claro.com.pe/eai/ws/baseschema" xmlns:cc="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=1" namespace="http://claro.com.pe/eai/ws/baseschema" />
+  <xsd:element name="obtenerSubcategoriasRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="numDocAjuste" type="xsd:string" />
+        <xsd:element name="fechaEmisionDoc" type="xsd:string" />
+        <xsd:element name="idCat" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="obtenerSubcategoriasResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element name="listaSubCategorias" type="cc:ListaSubCategoriasType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="ListaSubCategoriasType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="subCategoria" type="cc:SubCategoriaType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SubCategoriaType">
+    <xsd:sequence>
+      <xsd:element name="numServicio" type="xsd:string" />
+      <xsd:element name="idSubCategoria" type="xsd:string" />
+      <xsd:element name="subCategoria" type="xsd:string" />
+      <xsd:element name="importe" type="xsd:string" />
+      <xsd:element name="fechaInicio" type="xsd:string" />
+      <xsd:element name="fechaFin" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

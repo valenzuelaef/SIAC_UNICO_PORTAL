@@ -1,0 +1,67 @@
+﻿@using System.Web.Optimization
+<div id="containerConsumptionBalance">
+    <div id="containerJanus">
+        <div class="row">
+            <div class="col-md-12">
+                <label id="lblTelephoneJanus">Teléfono:&nbsp;</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tblBagPlanIndividual" class="table table-hover table-bordered table-condensed claro-modal-tabla">
+                    <thead>
+                        <tr class="claro-bg-primary">
+                            <td class="text-center">Tipo Bolsa</td>
+                            <td class="text-center">Bolsa</td>
+                            <td class="text-center">Saldo</td>
+                            <td class="text-center">Consumo</td>
+                            <td class="text-center">Unid.Asig</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <table id="tblBagServicesOnTop" class="table table-hover table-bordered table-condensed claro-modal-tabla">
+                    <thead>
+                        <tr class="claro-bg-primary">
+                            <td class="text-center">Tipo Bolsa</td>
+                            <td class="text-center">Bolsa</td>
+                            <td class="text-center">Saldo</td>
+                            <td class="text-center">Consumo</td>
+                            <td class="text-center">Unid.Asig</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <table id="tblBagCoorporativa" class="table table-hover table-bordered table-condensed claro-modal-tabla">
+                    <thead>
+                        <tr class="claro-bg-primary">
+                            <td class="text-center">Tipo Bolsa</td>
+                            <td class="text-center">Bolsa</td>
+                            <td class="text-center">Saldo</td>
+                            <td class="text-center">Consumo</td>
+                            <td class="text-center">Unid.Asig</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+            </div>
+        </div>
+        <div class="row">
+            <table id="tblConsumo" class="table table-hover table-bordered table-condensed claro-modal-tabla">
+                <thead>
+                    <tr class="claro-bg-primary">
+                        <td class="text-center">Código de Consumo</td>
+                        <td class="text-center">Bolsa</td>
+                        <td class="text-center">Consumo</td>
+                        <td class="text-center">Límite</td>
+                        <td class="text-center">Límite Disponible</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </div>
+    @Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+    @Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidBalanceCBIOS")

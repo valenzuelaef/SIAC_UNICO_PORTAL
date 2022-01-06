@@ -1,0 +1,59 @@
+﻿@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataCollection.CollectionPaymentCommitmentModel
+@using System.Web.Optimization;
+@using Claro.SIACU.Web.WebApplication.Areas.Dashboard.Helpers.Postpaid.CollectionStatusAccountHelper
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Paymentcommitment</title>
+</head>
+<body>
+    <div id="modal-content">
+        <div id="contenedorPaymentCommitment">
+            <div class="table">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover claro-modal-tabla table-bordered" id="tblPaymentCommitment">
+                                <thead class="claro-bg-primary">
+                                    <tr>
+                                        <th class="col-sm-1">N°</th>
+                                        <th class="col-sm-1">Monto</th>
+                                        <th class="col-sm-1">Fecha de Vencimiento</th>
+                                        <th class="col-sm-1">Autorizado Por</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        if (Model.listCollectionPaymentCommitment != null)
+                                        {
+                                            var num = 0;
+                                            foreach (CollectionPaymentCommitment item in Model.listCollectionPaymentCommitment)
+                                            {
+                                                num += 1;
+                                                <tr>
+                                                    <td>@num</td>
+                                                    <td>@item.Amount</td>
+                                                    <td>@item.Date</td>
+                                                    <td>@item.Autorize</td>
+                                                </tr>
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataCollection/PaymentCommitment")

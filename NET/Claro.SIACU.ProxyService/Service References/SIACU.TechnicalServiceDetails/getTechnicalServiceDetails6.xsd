@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entser="http://claro.com.pe/esb/data/service/service/v2/" xmlns:entusa="http://claro.com.pe/esb/data/commonBusinessEntities/usage/v2/" xmlns:entserusa="http://claro.com.pe/esb/data/service/serviceUsage/v2/" targetNamespace="http://claro.com.pe/esb/data/service/serviceUsage/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Usage_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/usage/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Service_v2.xsd" namespace="http://claro.com.pe/esb/data/service/service/v2/" />
+  <xs:complexType name="ServiceUsage">
+    <xs:annotation>
+      <xs:documentation>An occurrence of employing a Service for its intended purpose.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entusa:Usage">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_service" type="entser:Service" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

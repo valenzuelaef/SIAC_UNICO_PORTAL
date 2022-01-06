@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getCustomerInfo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getCustomerInfo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:complexType name="CustomerInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerIdTcrm" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerType" type="xs:int" />
+          <xs:element minOccurs="0" name="DocumentNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceIdentifier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubscriptionType" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerInfoRequest" nillable="true" type="tns:CustomerInfoRequest" />
+  <xs:complexType name="CustomerInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeResponse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescriptionResponse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerInfoResponse" nillable="true" type="tns:CustomerInfoResponse" />
+</xs:schema>

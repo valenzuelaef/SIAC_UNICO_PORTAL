@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entressta="http://claro.com.pe/esb/data/commonBusinessEntities/responseStatus/v2/" xmlns:entprospe="http://claro.com.pe/esb/data/product/productSpecification/v2/" xmlns:entcus="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:bssretsub="http://claro.com.pe/esb/message/bssAgreementManagement/retrieveSubscriptions/v2/" targetNamespace="http://claro.com.pe/esb/message/bssAgreementManagement/retrieveSubscriptions/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../../../../../tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Product/ProductSpecification_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productSpecification/v2/" />
+  <xs:import schemaLocation="../../../../../tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/CommonBusinessEntities/ResponseStatus_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/responseStatus/v2/" />
+  <xs:import schemaLocation="../../../../../tecnologia/framework/UT_MODELO_ONTOLOGICO/v2/Entidades/Customer/Customer_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customer/v2/" />
+  <xs:element name="RetrieveSubscriptionsRequestMessage" type="bssretsub:RetrieveSubscriptionsRequestType" />
+  <xs:element name="RetrieveSubscriptionsResponseMessage" type="bssretsub:RetrieveSubscriptionsResponseType" />
+  <xs:complexType name="ResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_subscriptionsType" type="bssretsub:SubscriptionsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetrieveSubscriptionsRequestType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_customer" type="entcus:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetrieveSubscriptionsResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="responseStatus" type="entressta:ResponseStatus" />
+      <xs:element minOccurs="0" maxOccurs="1" name="responseData" type="bssretsub:ResponseData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriptionsType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_customer" type="entcus:Customer" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_productCategory" type="entprospe:ProductCategory" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

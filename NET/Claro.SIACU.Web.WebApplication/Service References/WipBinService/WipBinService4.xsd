@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetWipBinListByUser" />
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCasesByWipBin" />
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetQueuesAll" />
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetQueuesByUser" />
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetQueues" />
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCasesByQueueUser" />
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCaseNotes" />
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetSubCaseNotes" />
+  <xs:import schemaLocation="http://localhost:9593/Cases/WipBinService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCasesById" />
+  <xs:element name="GetWipBinListByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetWipBinListByUser" minOccurs="0" name="objWipBinListByUserRequest" nillable="true" type="q1:WipBinListByUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWipBinListByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetWipBinListByUser" minOccurs="0" name="GetWipBinListByUserResult" nillable="true" type="q2:WipBinListByUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCasesByWipBin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCasesByWipBin" minOccurs="0" name="objCasesByWipBinRequest" nillable="true" type="q3:CasesByWipBinRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCasesByWipBinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCasesByWipBin" minOccurs="0" name="GetCasesByWipBinResult" nillable="true" type="q4:CasesByWipBinResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueuesAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetQueuesAll" minOccurs="0" name="objQueuesAllRequest" nillable="true" type="q5:QueuesAllRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueuesAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetQueuesAll" minOccurs="0" name="GetQueuesAllResult" nillable="true" type="q6:QueuesAllResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueuesByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetQueuesByUser" minOccurs="0" name="objQueuesByUserRequest" nillable="true" type="q7:QueuesByUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueuesByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetQueuesByUser" minOccurs="0" name="GetQueuesByUserResult" nillable="true" type="q8:QueuesByUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetQueues" minOccurs="0" name="objQueuesRequest" nillable="true" type="q9:QueuesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetQueues" minOccurs="0" name="GetQueuesResult" nillable="true" type="q10:QueuesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCasesByQueueUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCasesByQueueUser" minOccurs="0" name="objCasesByQueueUserRequest" nillable="true" type="q11:CasesByQueueUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCasesByQueueUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCasesByQueueUser" minOccurs="0" name="GetCasesByQueueUserResult" nillable="true" type="q12:CasesByQueueUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCaseNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCaseNotes" minOccurs="0" name="objCaseNotesRequest" nillable="true" type="q13:CaseNotesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCaseNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCaseNotes" minOccurs="0" name="GetCaseNotesResult" nillable="true" type="q14:CaseNotesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubCaseNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetSubCaseNotes" minOccurs="0" name="objSubCaseNotesRequest" nillable="true" type="q15:SubCaseNotesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubCaseNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetSubCaseNotes" minOccurs="0" name="GetSubCaseNotesResult" nillable="true" type="q16:SubCaseNotesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCasesById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCasesById" minOccurs="0" name="objCasesByIdRequest" nillable="true" type="q17:CasesByIdRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCasesByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Cases.GetCasesById" minOccurs="0" name="GetCasesByIdResult" nillable="true" type="q18:CasesByIdResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

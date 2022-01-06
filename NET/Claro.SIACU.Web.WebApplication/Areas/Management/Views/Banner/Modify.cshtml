@@ -1,0 +1,70 @@
+﻿@using System.Web.Optimization;
+@{
+    Layout = null;
+}
+<div id="contentBannerModify">
+    <form class="form-horizontal" role="form">
+        <div class="form-group col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-inline">
+                        <label class="text-primary">Mensaje:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="input-daterange input-group" id="containerDateRange">
+                            <textarea id="txtMessage" name="Message" cols="70" maxlength="300" style="width:550px;" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-inline">
+                        <label class="text-primary">Prioridad:</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<select class="input-sm form-control" id="cmbPriority" name="cmbPriority">
+                            <option value="-1" selected>--Seleccionar--</option>
+                            <option value="1">Alta</option>
+                            <option value="2">Media</option>
+                            <option value="3">Baja</option>
+                        </select>
+                    </div>
+                    <br />
+                    <div class="form-inline">
+                        <label class="text-primary">Vigente del:</label>
+                        <div class="input-daterange input-group" id="containerDateRange">
+                            <input type="text" id="txtStart" class="input-sm form-control" name="start" />
+                            <label class="input-group-addon btn" for="txtStart">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                        </div>
+                        <input type="text" id="txtHourStart" class="input-sm form-control" name="hour" style="width:37px" maxlength="2" /> <label class="text-primary">:</label>
+                        <input type="text" id="txtMinuteStart" class="input-sm form-control" name="minute" style="width:37px" maxlength="2" />
+                        <select class="input-sm form-control" name="cmbPeriodStart" id="cmbPeriodStart">
+                            <option selected>---</option>
+                            <option value="a.m.">AM</option>
+                            <option value="p.m.">PM</option>
+                        </select>
+                        &nbsp;
+                        <label class="text-primary">formato de horas => hh:mm AM/PM</label>
+                    </div>
+                    <br />
+                    <div class="form-inline">
+                        <label class="text-primary">Caduca &nbsp;&nbsp;el:</label>
+                        <div class="input-daterange input-group" id="containerDateRange">
+                            <input type="text" id="txtEnd" class="input-sm form-control" name="start" />
+                            <label class="input-group-addon btn" for="txtEnd">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                        </div>
+                        <input type="text" id="txtHourEnd" class="input-sm form-control" name="hour" style="width:37px" maxlength="2" /> <label class="text-primary">:</label>
+                        <input type="text" id="txtMinuteEnd" class="input-sm form-control" name="minute" style="width:37px" maxlength="2" />
+                        <select class="input-sm form-control" name="cmbPeriodEnd" id="cmbPeriodEnd">
+                            <option selected>---</option>
+                            <option value="a.m.">AM</option>
+                            <option value="p.m.">PM</option>
+                        </select>
+                        &nbsp;
+                        <label class="text-primary">formato de horas => hh:mm AM/PM</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Management/Banner/Modify")

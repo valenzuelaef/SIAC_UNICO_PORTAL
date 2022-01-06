@@ -1,0 +1,54 @@
+﻿@using System.Web.Optimization
+<div id="contenedorPeticiones">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="list-group-item-heading page-header text-info">LISTADO DE PETICIONES</h5>            
+            <div class="form-inline">
+                <label class="control-label container-fluid" id="lblNumberPhone">Nro. Teléfono:&nbsp;</label>
+                <label class="control-label container-fluid" id="lblPetitionsType">Estado:&nbsp;</label>
+            </div>
+            <table id="tblPetitions" class="table table-hover claro-modal-tabla table-bordered">
+                <thead>
+                    <tr class="claro-bg-primary text-center">
+                        <td>Fecha oculta</td>
+                        <td>#</td>
+                        <td>Introducido el</td>
+                        <td>Fecha Vencimiento</td>
+                        <td>Estado</td>
+                        <td>Acción</td>
+                        <td>Usuario</td>
+                        <td>Nro de Orden</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div id="errorPetitions"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table id="tblPetitionsHFC" class="table table-hover claro-modal-tabla table-bordered">
+                <thead>
+                    <tr class="claro-bg-primary text-center">
+                        <td>Fecha oculta</td>
+                        <td>#</td>
+                        <td>Acción</td>
+                        <td>Estado</td>
+                        <td>Introducido el</td>
+                        <td>Fecha Vencimiento</td>
+                        <td>usuario</td>
+                        <td>ordenId</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div id="errorPetitionsHFC"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidPetitions")

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste" xmlns:types="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" name="ebsDetalleDocAjuste" targetNamespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste" />
+    <xsd:schema>
+      <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=4" namespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" />
+      <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=5" namespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" />
+      <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=9" namespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" />
+      <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=7" namespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" />
+      <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=8" namespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" />
+      <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=10" namespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" />
+      <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=6" namespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" />
+      <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=11" namespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" />
+      <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=3" namespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="listarTipoDocRequestMsg">
+    <wsdl:part name="request" element="types:listarTipoDocRequest" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoDocResponseMsg">
+    <wsdl:part name="response" element="types:listarTipoDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoDocRefRequestMsg">
+    <wsdl:part name="request" element="types:listarTipoDocRefRequest" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoDocRefResponseMsg">
+    <wsdl:part name="response" element="types:listarTipoDocRefResponse" />
+  </wsdl:message>
+  <wsdl:message name="registrarCategoriasDBTORequestMsg">
+    <wsdl:part name="request" element="types:registrarCategoriasDBTORequest" />
+  </wsdl:message>
+  <wsdl:message name="registrarCategoriasDBTOResponseMsg">
+    <wsdl:part name="response" element="types:registrarCategoriasDBTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerDetalleDocRefRequestMsg">
+    <wsdl:part name="request" element="types:obtenerDetalleDocRefRequest" />
+  </wsdl:message>
+  <wsdl:message name="obtenerDetalleDocRefResponseMsg">
+    <wsdl:part name="response" element="types:obtenerDetalleDocRefResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerSubcategoriasRequestMsg">
+    <wsdl:part name="request" element="types:obtenerSubcategoriasRequest" />
+  </wsdl:message>
+  <wsdl:message name="obtenerSubcategoriasResponseMsg">
+    <wsdl:part name="response" element="types:obtenerSubcategoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="registrarDetalleDocRequestMsg">
+    <wsdl:part name="request" element="types:registrarDetalleDocRequest" />
+  </wsdl:message>
+  <wsdl:message name="registrarDetalleDocResponseMsg">
+    <wsdl:part name="response" element="types:registrarDetalleDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerCACUsuarioRequestMsg">
+    <wsdl:part name="request" element="types:obtenerCACUsuarioRequest" />
+  </wsdl:message>
+  <wsdl:message name="obtenerCACUsuarioResponseMsg">
+    <wsdl:part name="response" element="types:obtenerCACUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="validarAplicaAjusteDocRequestMsg">
+    <wsdl:part name="request" element="types:validarAplicaAjusteDocRequest" />
+  </wsdl:message>
+  <wsdl:message name="validarAplicaAjusteDocResponseMsg">
+    <wsdl:part name="response" element="types:validarAplicaAjusteDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarDetalleDocAjusteRequestMsg">
+    <wsdl:part name="request" element="types:consultarDetalleDocAjusteRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarDetalleDocAjusteResponseMsg">
+    <wsdl:part name="response" element="types:consultarDetalleDocAjusteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ebsDetalleDocAjustePortType">
+    <wsdl:operation name="listarTipoDoc">
+      <wsdl:input message="tns:listarTipoDocRequestMsg" />
+      <wsdl:output message="tns:listarTipoDocResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoDocRef">
+      <wsdl:input message="tns:listarTipoDocRefRequestMsg" />
+      <wsdl:output message="tns:listarTipoDocRefResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarCategoriasDBTO">
+      <wsdl:input message="tns:registrarCategoriasDBTORequestMsg" />
+      <wsdl:output message="tns:registrarCategoriasDBTOResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDetalleDocRef">
+      <wsdl:input message="tns:obtenerDetalleDocRefRequestMsg" />
+      <wsdl:output message="tns:obtenerDetalleDocRefResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerSubcategorias">
+      <wsdl:input message="tns:obtenerSubcategoriasRequestMsg" />
+      <wsdl:output message="tns:obtenerSubcategoriasResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarDetalleDoc">
+      <wsdl:input message="tns:registrarDetalleDocRequestMsg" />
+      <wsdl:output message="tns:registrarDetalleDocResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerCACUsuario">
+      <wsdl:input message="tns:obtenerCACUsuarioRequestMsg" />
+      <wsdl:output message="tns:obtenerCACUsuarioResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="validarAplicaAjusteDoc">
+      <wsdl:input message="tns:validarAplicaAjusteDocRequestMsg" />
+      <wsdl:output message="tns:validarAplicaAjusteDocResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalleDocAjuste">
+      <wsdl:input message="tns:consultarDetalleDocAjusteRequestMsg" />
+      <wsdl:output message="tns:consultarDetalleDocAjusteResponseMsg" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ebsDetalleDocAjustePortTypeSOAP11Binding" type="tns:ebsDetalleDocAjustePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listarTipoDoc">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/listarTipoDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoDocRef">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/listarTipoDocRef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarCategoriasDBTO">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/registrarCategoriasDBTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDetalleDocRef">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/obtenerDetalleDocRef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerSubcategorias">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/obtenerSubcategorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarDetalleDoc">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/registrarDetalleDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerCACUsuario">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/obtenerCACUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarAplicaAjusteDoc">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/validarAplicaAjusteDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalleDocAjuste">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/consultarDetalleDocAjuste" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ebsDetalleDocAjustePortTypeSOAP12Binding" type="tns:ebsDetalleDocAjustePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listarTipoDoc">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/listarTipoDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoDocRef">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/listarTipoDocRef" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarCategoriasDBTO">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/registrarCategoriasDBTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDetalleDocRef">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/obtenerDetalleDocRef" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerSubcategorias">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/obtenerSubcategorias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarDetalleDoc">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/registrarDetalleDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerCACUsuario">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/obtenerCACUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarAplicaAjusteDoc">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/validarAplicaAjusteDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalleDocAjuste">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/consultarDetalleDocAjuste" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ebsDetalleDocAjusteService">
+    <wsdl:port name="ebsDetalleDocAjusteSB12" binding="tns:ebsDetalleDocAjustePortTypeSOAP12Binding">
+      <soap12:address location="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB12" />
+    </wsdl:port>
+    <wsdl:port name="ebsDetalleDocAjusteSB11" binding="tns:ebsDetalleDocAjustePortTypeSOAP11Binding">
+      <soap:address location="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,60 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.DataCustomerModel
+@{
+    Layout = null;
+}
+
+<div id="contenedor-customerNames" class="panel panel-default ">
+    <div class="table-responsive">
+        <form class="form-horizontal" role="form">
+            <div class="form-group col-sm-12">
+                <input type="hidden" id="hdnNameLength" value="@Model.Namelength" />
+                <input type="hidden" id="hdnLastNameLength" value="@Model.LastNamelength" />
+                <br />
+                <label class="control-label col-sm-2" for="Nombre">Nombres:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="NombreBusq" placeholder="Ingrese Nombres" style="text-transform:uppercase">
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <label class="control-label col-sm-2" for="Apellido">Apellidos:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control " id="ApellidoBusq" placeholder="Ingrese Apellidos" style="text-transform:uppercase">
+                </div>
+                <div class="col-sm-2 form-inline">
+                    <div class="form-group pull-right">
+                        <button type="button" class="btn claro-btn-info btn-sm " id="btnBuscarPorNombre" data-target="#vistaParcialNombres">Buscar</button>
+                        <button type="button" class="btn claro-btn-info btn-sm " id="btnLimpiar">Limpiar</button>
+                    </div>
+                </div>
+            </div>
+            <div id="dvMensajeListaCliente" class="form-group col-sm-10" style="color:blue;"></div>
+        </form>
+    </div>
+    <div class="table-responsive">
+        <div id="dvistaParcialNombres">
+            <table id="tblDatosCliente" class="table table-hover Names">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-md-1">
+                            Sel
+                        </th>
+                        <th class="col-md-5">
+                            Nombres y Apellidos / Razón Social
+                        </th>
+                        <th class="col-md-3">
+                            Tipo Documento
+                        </th>
+                        <th class="col-md-3">
+                            Nro. De Documento
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="dvMensajeSeleccion"></div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Home/CustomersNames")

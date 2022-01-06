@@ -1,0 +1,130 @@
+﻿@using System.Web.Optimization;
+@model  Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataService.DebtSaleDuesModel
+@{
+    Layout = null;
+}
+<div id="containerSalesdues">
+    <div class="panel-body claro-modal-contenido-texto">
+        <table class="table table-condensed">
+            <tr>
+                <td class="col-md-1">
+                    <label class="control-label">
+                        Teléfono
+                    </label>
+                </td>
+                <td class="col-md-2">@Model.Telephone</td>
+                <td class="col-md-3"></td>
+                <td class="col-md-1">
+                    <label class="control-label">
+                        Titular
+                    </label>
+                </td>
+                <td class="col-md-2">@Model.Headline</td>
+                <td class="col-md-3"></td>
+            </tr>
+            <tr>
+                <td class="col-md-1">
+                    <label class="control-label">
+                        Modelo
+                    </label>
+                </td>
+                <td class="col-md-2"></td>
+                <td class="col-md-3"></td>
+                <td class="col-md-1">
+                    <label class="control-label">
+                        IMEI
+                    </label>
+                </td>
+                <td class="col-md-2"></td>
+                <td class="col-md-3"></td>
+            </tr>
+            <tr>
+                <td class="col-md-1">
+                    <label class="control-label">
+                        Total
+                    </label>
+                </td>
+                <td class="col-md-2">@(Model.Total == 0 ? Convert.ToDecimal("0.00") : Model.Total)</td>
+                <td class="col-md-3"></td>
+                <td class="col-md-3"></td>
+                <td class="col-md-2"></td>
+                <td class="col-md-1"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#CuotasCanceladas"> Cuotas Canceladas</a>
+            </h4>
+
+        </div>
+        <div id="CuotasCanceladas" class="panel-collapse collapse in table-responsive">
+            <div class="panel-body claro-modal-contenido-texto">
+                <table id="tblCanceledInstallments" class="table  table-striped table-hover table-responsive claro-modal-tabla table-bordered">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th>Cuota</th>
+                            <th>Fecha</th>
+                            <th>Monto</th>
+                            <th>Fecha Cancelación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.listCanceledSaleDues.Count > 0)
+                        {
+                            foreach (var item in Model.listCanceledSaleDues)
+                            {
+                                <tr>
+                                    <td>@item.BKTXT</td>
+                                    <td>@item.FECHA</td>
+                                    <td>@item.MONTO</td>
+                                    <td>@item.FECHAPAGO</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-info ">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                <a data-toggle="collapse" href="#CuotasPendientes">Cuotas Pendientes</a>
+            </h4>
+
+        </div>
+        <div id="CuotasPendientes" class="panel-collapse collapse in table-responsive">
+            <div class="panel-body claro-modal-contenido-texto">
+                <table id="tblOutstandingFees" class="table  table-striped table-hover table-responsive claro-modal-tabla table-bordered">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th>Cuota</th>
+                            <th>Fecha</th>
+                            <th>Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.listPendingSaleDues.Count > 0)
+                        {
+                            foreach (var item in Model.listPendingSaleDues)
+                            {
+                                <tr>
+                                    <td>@item.BKTXT</td>
+                                    <td>@item.FECHA</td>
+                                    <td>@item.MONTO</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PrepaidDataService/Salesdues")

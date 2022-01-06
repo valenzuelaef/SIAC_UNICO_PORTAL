@@ -1,0 +1,38 @@
+﻿@using System.Web.Optimization;
+<div id="containerOnlineRecharge">
+    <div class="form-inline">
+        <div class="form-group">
+            <label class="control-label">Desde:</label>
+            <div class="input-daterange input-group" id="containerDateRangeOnLineRecharge">
+                <input type="text" id="txtDateStartOnlineRecharge" class="input-sm form-control" name="txtDateStartOnLine" />
+                <span class="input-group-addon"><label class="control-label">A:</label></span>
+                <input type="text" id="txtDateEndOnlineRecharge" class="input-sm form-control" name="txtDateEndOnLine" />
+            </div>
+        </div>
+        <div class="form-group">
+            <select id="cboEventTypeRecharge" class="form-control input-sm"></select>
+        </div>
+        <button type="button" id="btnSearchOnlineRecharge" class="btn claro-btn-info btn-sm">Buscar</button>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table id="tblOnlineRecharge" class="table  table-striped table-hover claro-modal-tabla table-bordered">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th>Fecha y Hora</th>
+                        <th>Tipo de Evento</th>
+                        <th>Monto</th>
+                        <th>Saldo Final</th>
+                        <th>Bolsa</th>
+                        <th>Detalle</th>
+                        <th>Fecha expiración recarga</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="errorOnlineRecharge"></div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PrepaidDataReload/OnlineReload")

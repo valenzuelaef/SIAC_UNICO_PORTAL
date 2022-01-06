@@ -1,0 +1,222 @@
+﻿@using System.Web.Optimization
+
+<div id="containerConsumptionBalance">
+    <div id="containerJanus" class="hidden">
+        <div class="row">
+            <div class="col-md-12">
+                <label id="lblTelephoneJanus">Teléfono:&nbsp;</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tblJanus" class="table table-hover table-bordered table-condensed claro-modal-tabla">
+                    <thead>
+                        <tr class="claro-bg-primary">
+                            <td class="text-center">#</td>
+                            <td class="text-center">Grupo de la Bolsa</td>
+                            <td class="text-center">Nombre Comercial de la Bolsa</td>
+                            <td class="text-center">Destino</td>
+                            <td class="text-center">Tipo de Unidad</td>
+                            <td class="text-center">Unidades Asignadas</td>
+                            <td class="text-center">Consumo</td>
+                            <td class="text-center">Saldo</td>
+                            <td class="text-center">Fecha de Expiración</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-right">
+                    <button type="button" class="btn claro-btn-info btn-xs" data-toggle="modal" id="btnPost_ConsumptionBalanceCBIOS" name="btnPost_ConsumptionBalanceCBIOS">Consulta CBIOS</button>
+                </div>
+            </div>
+        </div>
+        <div id="LoadingJanus">
+        </div>
+    </div>
+    @*Inicio Container Janus*@
+    <div id="containerJanusToBe" class="hidden">
+        <div class="form-inline row">
+            <div class="col-md-4">
+                <label id="lblLimitedPlan"> Plan:</label>
+            </div>
+        </div>
+        <div class="form-inline row">
+            <div class="form-group col-md-4">
+                <label id="lblTelephoneJanusToBe">Teléfono:&nbsp;</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblStateLineToBe">Estado de la línea:&nbsp;</label>
+            </div>
+        </div>
+        <div>&nbsp;</div>
+        <div class="row">
+            <div class="col-md-12">
+                <label id="lblInternationalCoverage">Cobertura Internacional:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label id="lblThethering">Thetering:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tblJanusToBe" class="table table-bordered table-condensed claro-modal-tabla">
+                    <thead>
+                        <tr class="claro-bg-primary">
+                            <td class="text-center">Grupo de la Bolsa</td>
+                            <td class="text-center">#</td>
+                            <td class="text-center">Nombre Comercial de la Bolsa</td>
+                            <td class="text-center">Destino</td>
+                            <td class="text-center">Tipo de Unidad</td>
+                            <td class="text-center">Unidades Asignadas</td>
+                            <td class="text-center">Consumo</td>
+                            <td class="text-center">Saldo</td>
+                            <td class="text-center">Fecha de Expiración</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right text-info"><a href='#' id='aLink_Tobe'>Orden de consumo ?</a></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn claro-btn-info btn-xs" data-toggle="modal" id="btnPost_HistoryPackage_Tobe" name="btnPost_HistoryPackage">Histórico de Paquetes</button>
+                <button type="button" class="btn claro-btn-info btn-xs" data-toggle="modal" id="btnPost_HistoryRecharge_Tobe" name="btnPost_HistoryRecharge">Histórico de Recargas</button>
+                <button type="button" class="btn claro-btn-info btn-xs" data-toggle="modal" id="btnPost_QueryBalanceShared_Tobe" name="btnPost_QueryBalanceShared">Consulta Bolsa Compartida</button>
+            </div>
+        </div>
+        <div id="LoadingJanus">
+        </div>
+    </div>
+    @*Fin Container Janus*@
+    <div id="containerPostPaid" class="hidden">
+        <div class="row">
+            <div class="col-md-12">
+                <label id="lblActivationDate"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label id="lblTelephonePost">Teléfono:&nbsp;</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tblPost" class="table table-hover table-bordered table-condensed claro-modal-tabla">
+                    <thead>
+                        <tr class="claro-bg-primary">
+                            <td class="text-center">#</td>
+                            <td class="text-center">Paquete</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="containerB2E" class="hidden">
+        <div class="form-inline row">
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblB2ETelephone">Teléfono:&nbsp;</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblB2EStateLine">Estado de la línea:&nbsp;</label>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tblB2E" class="table table-hover table-bordered  table-condensed claro-modal-tabla ">
+                    <thead>
+                        <tr class="claro-bg-primary">
+                            <td class="text-center">#</td>
+                            <td class="text-center">Grupo de la Bolsa</td>
+                            <td class="text-center">Nombre Comercial de la Bolsa</td>
+                            <td class="text-center">Destino</td>
+                            <td class="text-center">Tipo de Unidad</td>
+                            <td class="text-center">Unidades Asignadas</td>
+                            <td class="text-center">Consumo</td>
+                            <td class="text-center">Saldo Disponible</td>
+                            <td class="text-center">Fecha de Expiración</td>
+
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right" id="divbuttonsb2e"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right text-info"><a href='#' id='aLink'>Orden de consumo ?</a></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <button type="button" class="btn claro-btn-info btn-xs" data-toggle="modal" id="btnPost_HistoryPackage" name="btnPost_HistoryPackage">Histórico de Paquetes</button>
+                <button type="button" class="btn claro-btn-info btn-xs" data-toggle="modal" id="btnPost_HistoryRecharge" name="btnPost_HistoryRecharge">Histórico de Recargas</button>
+                <button type="button" class="btn claro-btn-info btn-xs" data-toggle="modal" id="btnPost_QueryBalanceShared" name="btnPost_QueryBalanceShared">Consulta Bolsa Compartida</button>
+            </div>
+        </div>
+    </div>
+    <div id="containerPrePaid" class="hidden">
+        <div class="form-inline row">
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblPrincipalBalance">Saldo Principal:&nbsp;</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblExpirationDateBalance">Fecha Expira Saldo:&nbsp;</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblStateLine">Estado de la Linea:&nbsp;</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblIdProvider">Id del Proveedor:&nbsp;</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblActivationDate">Fecha de Activación:&nbsp;</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblExpirationDateLine">Fecha Expiración de Linea:&nbsp;</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblFreeTriosChanges">Intentos Recargas Fallidas:&nbsp;</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label container-fluid" id="lblStateImsi">Estado:&nbsp;</label>
+            </div>
+        </div>
+        <table id="tblPre" class="table table-bordered table-condensed claro-modal-tabla">
+            <thead>
+                <tr class="claro-bg-primary text-center">
+                    <td class="text-center">#</td>
+                    <td class="text-center">Cuenta</td>
+                    <td class="text-center">Saldo Unm</td>
+                    <td class="text-center">Fecha Expiración</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><label id="lbl_errorSegmento" class="text-info">Información Referencial</label></div>
+    </div> 
+    <div class="row">
+        <div class="col-md-12">
+        <div class="text-center"><label id="lblMensaje" class="label-red-service"></label></div>
+        <div class="text-center"><label id="lblMensajePaqViajero" class="label-red-service"></label></div>
+        <div class="text-center"><label id="lblMensajeM2M" class="label-red-service"></label></div>
+            </div>
+        </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidConsumptionBalance")

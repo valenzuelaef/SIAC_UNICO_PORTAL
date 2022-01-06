@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:data="http://claro.com.pe/esb/data/generico/responseDataConsultar/v1/" xmlns:status="http://claro.com.pe/esb/data/generico/responseStatus/v1/" xmlns:base="http://claro.com.pe/esb/message/estadoCuenta/consultar/v1/" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/esb/message/estadoCuenta/consultar/v1/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.17.26.51:21000/BSS_EstadoCuenta/SRV_EstadoCuenta/Service/Mediation/MED_EstadoCuentaProxyService?SCHEMA%2FBSS_EstadoCuenta%2FSRV_EstadoCuenta%2FResources%2FXSD%2FresponseDataConsultar_v1" namespace="http://claro.com.pe/esb/data/generico/responseDataConsultar/v1/" />
+  <xs:element name="consultarRequest" type="base:consultarRequestType" />
+  <xs:element name="consultarResponse" type="base:consultarResponseType" />
+  <xs:complexType name="consultarRequestType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="tipoConsulta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="consultarEstadoCuenta" type="base:consultarEstadoCuentaType" />
+      <xs:element minOccurs="1" maxOccurs="1" name="cuenta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="periodo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="numeroDocumentos" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultarEstadoCuentaType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="txId" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pCodAplicacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pUsuarioAplic" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pTipoConsulta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pTipoServicio" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pCliNroCuenta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pNroTelefono" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pFlagSoloSaldo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pFlagSoloDisputa" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pFechaDesde" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pFechaHasta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pTamanoPagina" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pNroPagina" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultarResponseType">
+    <xs:sequence>
+      <xs:element name="responseStatus" type="base:ResponseStatus" />
+      <xs:element name="responseDataConsultar" type="data:ResponseDataConsultarType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponseStatus">
+    <xs:sequence>
+      <xs:element name="estado" type="xs:int" />
+      <xs:element name="codigoRespuesta" type="xs:string" />
+      <xs:element name="descripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" name="ubicacionError" type="xs:string" />
+      <xs:element name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="origen" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

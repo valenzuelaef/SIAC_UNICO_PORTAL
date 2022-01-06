@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://claro.com.pe/eai/services/paquetesRoaming/ws/types/schema" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/services/paquetesRoaming/ws/types/schema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarPaquetesRoamingRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="AuditRequestType" />
+        <xsd:element name="coId" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="listarPaquetesRoamingResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="auditResponse" type="AuditResponseType" />
+        <xsd:element name="listaPaquetesRoaming" type="ListaPaquetesRoamingType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="ListaPaquetesRoamingType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="paqueteRoaming" type="PaqueteRoamingType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PaqueteRoamingType">
+    <xsd:sequence>
+      <xsd:element name="coGrp" type="xsd:string" />
+      <xsd:element name="deGrp" type="xsd:string" />
+      <xsd:element name="IdPaquete" type="xsd:string" />
+      <xsd:element name="DesPaquete" type="xsd:string" />
+      <xsd:element name="coExcl" type="xsd:string" />
+      <xsd:element name="deExcl" type="xsd:string" />
+      <xsd:element name="estado" type="xsd:string" />
+      <xsd:element name="valido" type="xsd:string" />
+      <xsd:element name="precio" type="xsd:string" />
+      <xsd:element name="mbIncluidos" type="xsd:string" />
+      <xsd:element name="vigencia" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="serviciosContratoZonaRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="AuditRequestType" />
+        <xsd:element name="numeroLinea" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="serviciosContratoZonaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="auditResponse" type="AuditResponseType" />
+        <xsd:element name="listaServiciosZona" type="ListaServiciosZonaType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="ListaServiciosZonaType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="servicioZona" type="ServicioZonaType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ServicioZonaType">
+    <xsd:sequence>
+      <xsd:element name="descPaquete" type="xsd:string" />
+      <xsd:element name="descZona" type="xsd:string" />
+      <xsd:element name="consumoPaquete" type="xsd:string" />
+      <xsd:element name="saldoPaquete" type="xsd:string" />
+      <xsd:element name="tipoPaquete" type="xsd:string" />
+      <xsd:element name="fechaExpiracion" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="actDesacPqtRoamingRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="AuditRequestType" />
+        <xsd:element name="coId" type="xsd:string" />
+        <xsd:element name="idPaquete" type="xsd:string" />
+        <xsd:element name="usuario" type="xsd:string" />
+        <xsd:element name="flagAD" type="xsd:string" />
+        <xsd:element name="flagValida" type="xsd:string" />
+        <xsd:element name="flagProgLin" type="xsd:string" />
+        <xsd:element name="listaPaquetes" type="ListaPaquetesType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="actDesacPqtRoamingResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="auditResponse" type="AuditResponseType" />
+        <xsd:element name="listaPaquetesCruzados" type="ListaPaquetesType" />
+        <xsd:element name="flagServRoam" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="ListaPaquetesType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="idPaquete" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaServicioResetRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="AuditRequestType" />
+        <xsd:element name="numeroLinea" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="listaServicioResetResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="auditResponse" type="AuditResponseType" />
+        <xsd:element name="listaServicioReset" type="listaServicioResetType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="listaServicioResetType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="servicioReset" type="servicioResetType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicioResetType">
+    <xsd:sequence>
+      <xsd:element name="codigoEtiqueta" type="xsd:string" />
+      <xsd:element name="codTipoServicio" type="xsd:string" />
+      <xsd:element name="descTipoServicio" type="xsd:string" />
+      <xsd:element name="descServicio" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ejecutarProgPqtRoamingRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="AuditRequestType" />
+        <xsd:element name="codigoProceso" type="xsd:string" />
+        <xsd:element name="fechaEjecucion" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ejecutarProgPqtRoamingResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="AuditResponseType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="validarProgPqtRoamingRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="AuditRequestType" />
+        <xsd:element name="msisdn" type="xsd:string" />
+        <xsd:element name="co_id" type="xsd:string" />
+        <xsd:element name="cod_serv" type="xsd:string" />
+        <xsd:element name="estado" type="xsd:string" />
+        <xsd:element name="cod_paquete" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="validarProgPqtRoamingResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="AuditResponseType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="registrarProgRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="AuditRequestType" />
+        <xsd:element name="msisdn" type="xsd:string" />
+        <xsd:element name="contrato" type="xsd:string" />
+        <xsd:element name="customerId" type="xsd:string" />
+        <xsd:element name="costo" type="xsd:string" />
+        <xsd:element name="motivo" type="xsd:string" />
+        <xsd:element name="numeroDias" type="xsd:string" />
+        <xsd:element name="fidelizacion" type="xsd:string" />
+        <xsd:element name="coSer" type="xsd:string" />
+        <xsd:element name="flagOccApadece" type="xsd:string" />
+        <xsd:element name="montoFidApadece" type="xsd:string" />
+        <xsd:element name="nuevoCF" type="xsd:string" />
+        <xsd:element name="tipoReg" type="xsd:string" />
+        <xsd:element name="cicloFact" type="xsd:string" />
+        <xsd:element name="codServ" type="xsd:string" />
+        <xsd:element name="descServ" type="xsd:string" />
+        <xsd:element name="nroCuenta" type="xsd:string" />
+        <xsd:element name="codigoProceso" type="xsd:string" />
+        <xsd:element name="fechaEjecucion" type="xsd:string" />
+        <xsd:element name="fechaReg" type="xsd:string" />
+        <xsd:element name="idInteraccion" type="xsd:string" />
+        <xsd:element name="tipoServicio" type="xsd:string" />
+        <xsd:element name="usuarioSistema" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="registrarProgResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="auditResponse" type="AuditResponseType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="ListaCamposOpcionalesType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="AuditRequestType">
+    <xsd:sequence>
+      <xsd:element name="idTransaccion" type="xsd:string" />
+      <xsd:element name="ipAplicacion" type="xsd:string" />
+      <xsd:element name="nombreAplicacion" type="xsd:string" />
+      <xsd:element name="usuarioAplicacion" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AuditResponseType">
+    <xsd:sequence>
+      <xsd:element name="idTransaccion" type="xsd:string" />
+      <xsd:element name="codigoRespuesta" type="xsd:string" />
+      <xsd:element name="mensajeRespuesta" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaCamposOpcionalesType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="campoOpcional">
+        <xsd:complexType>
+          <xsd:attribute name="campo" type="xsd:string" />
+          <xsd:attribute name="valor" type="xsd:string" />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,224 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataAccount.AccountRelationPlanHFCLTEModel
+
+
+<div id="ContentPostpaidAccountRelationPlanHFCLTE">
+    <div id="modal-content">
+        <div class="panel panel-info">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                    <a data-toggle="collapse" href="#DatosClaroTVcollapse"> CLARO TV SATELITAL / MERCADO GSM</a>
+                </h4>
+
+            </div>
+            <div id="DatosClaroTVcollapse" class="panel-collapse collapse in table-responsive">
+
+                <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblGSM">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th>Sel</th>
+                            <th>Telefono/Nro. Servicio</th>
+                            <th>Contrato</th>
+                            <th>Estado</th>
+                            <th>Plan Tarifario</th>
+                            <th>Combo</th>
+                            <th>Dirección Instalación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.lstGSM != null)
+                        {
+                            foreach (var item in Model.lstGSM)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@item.Telephone</td>
+                                    <td>@item.Contract</td>
+                                    <td>@item.State</td>
+                                    <td>@item.PlanRate</td>
+                                    <td>@item.Combo</td>
+                                    <td>@item.InstallationAdress</td>
+                                </tr>
+                            }
+
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="panel panel-info ">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                    <a data-toggle="collapse" href="#DatosClaroHogarcollapse">CLARO HOGAR</a>
+                </h4>
+
+            </div>
+            <div id="DatosClaroHogarcollapse" class="panel-collapse collapse in table-responsive ">
+                <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblClaroHogar">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th>Sel</th>
+                            <th>Contrato</th>
+                            <th>Estado</th>
+                            <th>Plan Tarifario</th>
+
+                            @if (@Model.StrAplicacion == "HFC")
+                            {
+                                <th>Dirección Instalación</th>
+                                <th>Combo</th>
+                            }
+                            <th>Telefonia Fija</th>
+                            <th>Internet Fijo</th>
+                            <th>Cable</th>
+
+                            @if (@Model.StrAplicacion == "LTE")
+                            {
+                                <th>Tip. Prod.</th>
+                                <th>Tip. Serv.</th>
+                            }
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.lstHFC != null && Model.lstHFC.Count > 0)
+                        {
+                            foreach (var item in Model.lstHFC)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@item.Contract</td>
+                                    <td>@item.State</td>
+                                    <td>@item.PlanRate</td>
+
+                                    <td>@item.InstallationAdress</td>
+                                    <td>@item.Combo</td>
+                                    @if (@item.TelephoneFixed == "T")
+                                    {
+                                        <td> <span id="lblPost_TelephonyHFC" aria-hidden="true" class="glyphicon glyphicon-ok"></span></td> }
+                                    else
+                                    {
+                                        <td><span id="lblPost_TelephonyHFC" aria-hidden="true" class="glyphicon glyphicon-remove"></span></td> }
+
+                                    @if (@item.InternetFixed == "T")
+                                    {
+                                        <td> <span id="lblPost_InternetFixedHFC" aria-hidden="true" class="glyphicon glyphicon-ok"></span></td> }
+                                    else
+                                    {
+                                        <td><span id="lblPost_InternetFixedHFC" aria-hidden="true" class="glyphicon glyphicon-remove"></span></td> }
+
+                                    @if (@item.ClaroTV == "T")
+                                    {
+                                        <td> <span id="lblPost_ClaroTVHFC" aria-hidden="true" class="glyphicon glyphicon-ok"></span></td> }
+                                    else
+                                    {
+                                        <td><span id="lblPost_ClaroTVHFC" aria-hidden="true" class="glyphicon glyphicon-remove"></span></td> }
+
+                                </tr>
+                            }
+                        }
+                        else if (Model.lstLTE != null && Model.lstLTE.Count > 0)
+                        {
+
+                            foreach (var item in Model.lstLTE)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@item.Contract</td>
+                                    <td>@item.State</td>
+                                    <td>@item.PlanRate</td>
+                                    @if (@item.TelephoneFixed == "T")
+                                    {
+                                        <td> <span id="lblPost_TelephoneFixed" aria-hidden="true" class="glyphicon glyphicon-ok"></span></td> }
+                                    else
+                                    {
+                                        <td><span id="lblPost_TelephoneFixed" aria-hidden="true" class="glyphicon glyphicon-remove"></span></td> }
+
+                                    @if (@item.InternetFixed == "T")
+                                    {
+                                        <td> <span id="lblPost_InternetFixed" aria-hidden="true" class="glyphicon glyphicon-ok"></span></td> }
+                                    else
+                                    {
+                                        <td><span id="lblPost_InternetFixed" aria-hidden="true" class="glyphicon glyphicon-remove"></span></td> }
+
+                                    @if (@item.ClaroTV == "T")
+                                    {
+                                        <td> <span id="lblPost_ClaroTV" aria-hidden="true" class="glyphicon glyphicon-ok"></span></td> }
+                                    else
+                                    {
+                                        <td><span id="lblPost_ClaroTV" aria-hidden="true" class="glyphicon glyphicon-remove"></span></td> }
+
+
+                                    <td>@item.ProducType</td>
+                                    <td>@item.ServiceType</td>
+
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+                <br />
+            </div>
+        </div>
+
+        <div class="panel panel-info ">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                    <a data-toggle="collapse" href="#DatosEquiposcollapse">EQUIPOS</a>
+                </h4>
+
+            </div>
+            <div id="DatosEquiposcollapse" class="panel-collapse collapse in table-responsive ">
+                <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblEquipos">
+                    <thead class="claro-bg-primary">
+                        <tr>
+
+                            <th>Sel</th>
+                            <th>Codigo</th>
+                            <th>Descripcion</th>
+                            <th>Numero Serie</th>
+                            <th>Precio</th>
+                            <th>Campaña</th>
+                            <th>Combo</th>
+                            <th>PDV</th>
+                            <th>Nro Cuota</th>
+                            <th>Monto Cuota</th>
+                            <th>Monto Inicial Cuota</th>
+                            <th>Fecha Venta</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.lstEquiment != null)
+                        {
+                            foreach (var item in Model.lstEquiment)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@item.Code</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.Series</td>
+                                    <td>@item.Price</td>
+                                    <td>@item.Bell</td>
+                                    <td>@item.Combo</td>
+                                    <td>@item.Pdv</td>
+                                    <td>@item.NroQuota</td>
+                                    <td>@item.AmountQuota</td>
+                                    <td>@item.InitialAmountQuota</td>
+                                    <td>@item.DateSale</td>
+
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataAccount/PostpaidAccountRelationPlanHFCLTE")

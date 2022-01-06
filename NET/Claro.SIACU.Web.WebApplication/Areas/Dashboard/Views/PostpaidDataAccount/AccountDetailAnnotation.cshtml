@@ -1,0 +1,59 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataAccount.AccountDetailAnnotationModel
+
+<div id="ContentAccountDetailAnnotation">
+    <div class="modal-body">
+        <div id="modal-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <textarea class="form-control" style="min-width: 100%" rows="15" readonly>@Model.Description</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default ">
+
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <tbody>
+                           <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-4"><label class="control-label">Cerrado</label></div>
+                                    <div class="col-md-4"><label class="control-label">Creado</label></div>
+                                    <div class="col-md-4"><label class="control-label">Modificado</label></div>
+                                </td>
+                            </tr>
+                            <tr class="@ViewBag.hiddenTobe">
+                                <td class="col-md-12">
+                                    <div class="col-md-1">Usuario</div>
+                                    <div class="col-md-3">@Model.User_Closing</div>
+                                    <div class="col-md-1">Usuario</div>
+                                    <div class="col-md-3">@Model.User_Opening</div>
+                                    <div class="col-md-1">Usuario</div>
+                                    <div class="col-md-3">@Model.User_Modification</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-1">Fecha</div>
+                                    <div class="col-md-3">@Model.Date_Closing</div>
+                                    <div class="col-md-1">Fecha</div>
+                                    <div class="col-md-3">@Model.Date_Opening</div>
+                                    <div class="col-md-1">Fecha</div>
+                                    <div class="col-md-3">@Model.Date_Modification</div>
+                                </td>
+
+                            </tr>                           
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

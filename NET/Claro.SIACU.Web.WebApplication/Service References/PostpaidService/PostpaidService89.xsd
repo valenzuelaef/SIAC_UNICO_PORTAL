@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStatusAccount" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetStatusAccount" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="StatusAccountRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OriginType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="csIdPub" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="isHR" type="xs:boolean" />
+          <xs:element minOccurs="0" name="plataformaAT" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StatusAccountRequestPostPaid" nillable="true" type="tns:StatusAccountRequestPostPaid" />
+  <xs:complexType name="StatusAccountResponsePostPaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsEnabled" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="ListStatusAccount" nillable="true" type="q2:ArrayOfStatusAccountAOCPostPaid" />
+      <xs:element minOccurs="0" name="blMessageStatusAccountVisible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="strMessageStatusAccount" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusAccountResponsePostPaid" nillable="true" type="tns:StatusAccountResponsePostPaid" />
+</xs:schema>

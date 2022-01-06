@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b4e66e97-613b-4318-b17d-2f14ebb57434" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9593/Dashboard/PostpaidService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PostpaidService.xsd" MetadataType="Schema" ID="81fe6056-4522-4281-90e2-705c67b40c2a" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd28" />
+    <MetadataFile FileName="PostpaidService1.xsd" MetadataType="Schema" ID="6f50345d-721d-440c-b515-ce67c3a9c929" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd88" />
+    <MetadataFile FileName="PostpaidService9818.xsd" MetadataType="Schema" ID="becfe7b3-d099-41c3-9616-7e1d79bc5d44" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd114" />
+    <MetadataFile FileName="PostpaidService2.xsd" MetadataType="Schema" ID="caeb1bb4-016e-4c78-a0a7-e31b5d1de3c3" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd25" />
+    <MetadataFile FileName="PostpaidService3.xsd" MetadataType="Schema" ID="3b371cd8-3635-4623-8634-69efa642fdc5" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd24" />
+    <MetadataFile FileName="PostpaidService4.xsd" MetadataType="Schema" ID="617dc971-572c-4605-8e5f-8fad4ef38fab" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd27" />
+    <MetadataFile FileName="PostpaidService5.xsd" MetadataType="Schema" ID="15bd00ce-fa49-4504-b508-fb1a0555f5f3" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd26" />
+    <MetadataFile FileName="PostpaidService6.xsd" MetadataType="Schema" ID="5248eedf-557b-47b1-8c78-334fbbd01717" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd21" />
+    <MetadataFile FileName="PostpaidService7.xsd" MetadataType="Schema" ID="c19c13ba-b224-4159-bc87-24c4d29eb3f8" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd20" />
+    <MetadataFile FileName="PostpaidService8.xsd" MetadataType="Schema" ID="dd2beb55-1e86-488d-ab84-73d23a26bc98" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd23" />
+    <MetadataFile FileName="PostpaidService9.xsd" MetadataType="Schema" ID="784c4438-d3fb-4dff-a220-8efab852b41e" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd22" />
+    <MetadataFile FileName="PostpaidService10.xsd" MetadataType="Schema" ID="5809d986-976a-4f83-ade4-3247a1bb4148" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd55" />
+    <MetadataFile FileName="PostpaidService9822.xsd" MetadataType="Schema" ID="6c918731-b3dd-46d0-b72d-5bc6d0043c85" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd118" />
+    <MetadataFile FileName="PostpaidService989.xsd" MetadataType="Schema" ID="82a46ac0-51d0-455c-8bfc-1b9786980426" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd108" />
+    <MetadataFile FileName="PostpaidService11.xsd" MetadataType="Schema" ID="fcfa9dd0-a9d3-4e74-bd0a-3845b175c9f3" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd73" />
+    <MetadataFile FileName="PostpaidService12.xsd" MetadataType="Schema" ID="97544f85-76f2-498f-ab57-8e3f5daa5229" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PostpaidService95.xsd" MetadataType="Schema" ID="5d862f1e-25ff-40e9-b543-505f2e717361" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd95" />
+    <MetadataFile FileName="PostpaidService9815.xsd" MetadataType="Schema" ID="ef2d75ad-9953-4c8e-a31e-95e4be1d12e0" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd110" />
+    <MetadataFile FileName="PostpaidService9827.xsd" MetadataType="Schema" ID="f13a8304-97a2-438f-8e6a-2ad8850a96d8" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd122" />
+    <MetadataFile FileName="PostpaidService13.xsd" MetadataType="Schema" ID="dd478234-cd63-4100-8d41-7a3d7de9c6e3" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd75" />
+    <MetadataFile FileName="PostpaidService9823.xsd" MetadataType="Schema" ID="71839444-6216-4674-b4a9-effe172084a6" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd117" />
+    <MetadataFile FileName="PostpaidService94.xsd" MetadataType="Schema" ID="2966f9ab-836b-4072-bad0-ff86f402d420" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd94" />
+    <MetadataFile FileName="PostpaidService.wsdl" MetadataType="Wsdl" ID="8e105845-94a7-482e-80e4-7ffbe42dcd73" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?wsdl" />
+    <MetadataFile FileName="PostpaidService14.xsd" MetadataType="Schema" ID="1972a73e-5441-4ed6-82b8-b4f81e93ff06" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PostpaidService15.xsd" MetadataType="Schema" ID="2841a650-8fc9-47d1-be81-61b1fb150582" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd84" />
+    <MetadataFile FileName="PostpaidService9819.xsd" MetadataType="Schema" ID="e387d083-288a-4be1-853d-2668bc022473" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd113" />
+    <MetadataFile FileName="PostpaidService16.xsd" MetadataType="Schema" ID="793372d2-338e-4ce4-9cc9-7ae16ac76f21" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd71" />
+    <MetadataFile FileName="PostpaidService17.xsd" MetadataType="Schema" ID="aad58b30-5ce1-4c83-8187-d7babf505372" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PostpaidService18.xsd" MetadataType="Schema" ID="ba56a862-4315-42cf-920d-1d571073cfdb" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd86" />
+    <MetadataFile FileName="PostpaidService19.xsd" MetadataType="Schema" ID="67a7fdef-811e-47e2-b6c5-75de6b50a9eb" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd90" />
+    <MetadataFile FileName="PostpaidService20.xsd" MetadataType="Schema" ID="e7961d16-6177-4f91-98d8-98a83be1bd48" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd80" />
+    <MetadataFile FileName="PostpaidService9810.xsd" MetadataType="Schema" ID="1d660a60-2ab5-4bb7-b961-89ad89c43b1e" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd106" />
+    <MetadataFile FileName="PostpaidService93.xsd" MetadataType="Schema" ID="23b70ba8-e9b4-4262-9b59-33f2d2f842ae" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd93" />
+    <MetadataFile FileName="PostpaidService21.xsd" MetadataType="Schema" ID="5273a6f6-9b91-4ddd-b07e-738b51f4e06a" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd6" />
+    <MetadataFile FileName="PostpaidService22.xsd" MetadataType="Schema" ID="00ff5c3e-6264-491d-8c72-53332f8e1f8c" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd82" />
+    <MetadataFile FileName="PostpaidService23.xsd" MetadataType="Schema" ID="accbd56b-2311-49e1-8742-cd1548b1d5f6" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd79" />
+    <MetadataFile FileName="PostpaidService9811.xsd" MetadataType="Schema" ID="8a97931a-09e5-41cd-ad95-e69e52c2464f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd107" />
+    <MetadataFile FileName="PostpaidService9817.xsd" MetadataType="Schema" ID="ddea04c0-f5a6-4031-990d-91677d7a1661" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd112" />
+    <MetadataFile FileName="PostpaidService981.xsd" MetadataType="Schema" ID="8812ba62-4a30-4712-8dde-90151a9719bf" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd102" />
+    <MetadataFile FileName="PostpaidService24.xsd" MetadataType="Schema" ID="5b88e513-e0b8-4848-89f7-b6545b740c5f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd91" />
+    <MetadataFile FileName="PostpaidService97.xsd" MetadataType="Schema" ID="7e036a94-6693-4a24-abef-4c05064d76dd" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd101" />
+    <MetadataFile FileName="PostpaidService25.xsd" MetadataType="Schema" ID="1086660c-ef50-481c-b577-04f373cc673e" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd19" />
+    <MetadataFile FileName="PostpaidService26.xsd" MetadataType="Schema" ID="2f1416ab-31ac-4e8b-9dda-d4c1ab5c016d" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd18" />
+    <MetadataFile FileName="PostpaidService27.xsd" MetadataType="Schema" ID="372ce25c-5a96-473e-8d61-4fd40fee1bc4" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd78" />
+    <MetadataFile FileName="PostpaidService28.xsd" MetadataType="Schema" ID="2dc5c6b2-82ef-4d12-a5d4-152264cc471c" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd8" />
+    <MetadataFile FileName="PostpaidService29.xsd" MetadataType="Schema" ID="cfc83de3-de20-426a-aee0-a2c25afadc7d" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd15" />
+    <MetadataFile FileName="PostpaidService30.xsd" MetadataType="Schema" ID="014baa82-3f30-4949-908c-5553523ea0aa" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd14" />
+    <MetadataFile FileName="PostpaidService31.xsd" MetadataType="Schema" ID="4d9cc425-5c7a-4428-aa7a-1536aabe7b85" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd17" />
+    <MetadataFile FileName="PostpaidService32.xsd" MetadataType="Schema" ID="7c96a4a0-04a5-4bea-9d91-855a643f5193" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd16" />
+    <MetadataFile FileName="PostpaidService33.xsd" MetadataType="Schema" ID="1d209e09-96fd-4e5d-994c-6dfdd0e6f0d1" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd11" />
+    <MetadataFile FileName="PostpaidService34.xsd" MetadataType="Schema" ID="91850cdc-0287-436d-8b67-fcfa15a34b08" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd10" />
+    <MetadataFile FileName="PostpaidService35.xsd" MetadataType="Schema" ID="0ad4524b-d018-4008-bad7-3fb4f4b49dbc" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd13" />
+    <MetadataFile FileName="PostpaidService36.xsd" MetadataType="Schema" ID="0345883f-ff40-434a-9c2e-6d7d21a263ce" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd12" />
+    <MetadataFile FileName="PostpaidService37.xsd" MetadataType="Schema" ID="6e7199ec-f01e-48cb-b358-cac0378749ce" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd72" />
+    <MetadataFile FileName="PostpaidService38.xsd" MetadataType="Schema" ID="ec604e4c-90dc-468b-bdfc-cdd9e50b1ff2" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd39" />
+    <MetadataFile FileName="PostpaidService39.xsd" MetadataType="Schema" ID="ee90b81a-799a-47e8-84e9-3e84dfceed24" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd38" />
+    <MetadataFile FileName="PostpaidService96.xsd" MetadataType="Schema" ID="01b5a848-aa58-488c-8c7a-fa42397735f9" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd98" />
+    <MetadataFile FileName="PostpaidService40.xsd" MetadataType="Schema" ID="3ac7247b-34fa-4cb7-b9f0-d9133a8cf9bb" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd74" />
+    <MetadataFile FileName="PostpaidService41.xsd" MetadataType="Schema" ID="a4aa0064-e952-48ea-8f45-7068d8671a0d" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd35" />
+    <MetadataFile FileName="PostpaidService42.xsd" MetadataType="Schema" ID="0e9ac95a-d54b-407a-9d7e-6a8ef8cadadc" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd34" />
+    <MetadataFile FileName="PostpaidService43.xsd" MetadataType="Schema" ID="9a4aa806-c6ac-4539-acac-ae9b016d420e" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd37" />
+    <MetadataFile FileName="PostpaidService44.xsd" MetadataType="Schema" ID="5cab8d6a-7d1d-45aa-8710-264bb3774940" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd36" />
+    <MetadataFile FileName="PostpaidService45.xsd" MetadataType="Schema" ID="0911d625-43fa-4c10-be07-2205d8a57812" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd31" />
+    <MetadataFile FileName="PostpaidService46.xsd" MetadataType="Schema" ID="8649643f-b1b0-4535-aedd-51870247b611" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd30" />
+    <MetadataFile FileName="PostpaidService47.xsd" MetadataType="Schema" ID="37cce2c8-3f83-4941-b71a-d5446e2f1b88" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd33" />
+    <MetadataFile FileName="PostpaidService48.xsd" MetadataType="Schema" ID="0788c5ad-ef77-4941-881a-5d1412524a68" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd32" />
+    <MetadataFile FileName="PostpaidService49.xsd" MetadataType="Schema" ID="03e560b1-5584-4f6c-8997-6c35648e89a6" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd92" />
+    <MetadataFile FileName="PostpaidService50.xsd" MetadataType="Schema" ID="8fed486c-5491-45d4-9c61-920fb42a40d8" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd59" />
+    <MetadataFile FileName="PostpaidService51.xsd" MetadataType="Schema" ID="32a2ef1c-6bf6-435f-9c45-29d42e5fad40" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd58" />
+    <MetadataFile FileName="PostpaidService9812.xsd" MetadataType="Schema" ID="75f9c86a-7227-4246-9c80-9bc0f0a61dc3" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd104" />
+    <MetadataFile FileName="PostpaidService52.xsd" MetadataType="Schema" ID="a6e7a251-d000-4238-b9b6-37d4817b719e" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PostpaidService53.xsd" MetadataType="Schema" ID="87df8056-2840-4545-8d14-8b98fc5d1258" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd54" />
+    <MetadataFile FileName="PostpaidService54.xsd" MetadataType="Schema" ID="f2a40087-5ba7-4d19-9588-2a3cbbd4c877" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd57" />
+    <MetadataFile FileName="PostpaidService55.xsd" MetadataType="Schema" ID="3e79ccab-f8f6-47a6-955a-34547d8f9093" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd56" />
+    <MetadataFile FileName="PostpaidService56.xsd" MetadataType="Schema" ID="9be34c3f-a587-4ba0-8508-34b8f62f79f0" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd51" />
+    <MetadataFile FileName="PostpaidService57.xsd" MetadataType="Schema" ID="7a3797ad-bf06-40a1-af23-a548e86888fb" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd50" />
+    <MetadataFile FileName="PostpaidService58.xsd" MetadataType="Schema" ID="ff49c051-a698-4caa-b186-189efbf59f1d" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd53" />
+    <MetadataFile FileName="PostpaidService59.xsd" MetadataType="Schema" ID="2ae7072f-7f69-462a-bab3-95ecf06d31b8" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd52" />
+    <MetadataFile FileName="PostpaidService60.xsd" MetadataType="Schema" ID="37b71bc7-5c46-4272-b68a-e41d0466164f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd76" />
+    <MetadataFile FileName="PostpaidService961.xsd" MetadataType="Schema" ID="0af63dee-e9a5-454b-a06e-4e1f861937b5" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd100" />
+    <MetadataFile FileName="PostpaidService61.xsd" MetadataType="Schema" ID="c5806ebe-36a8-440d-8c93-ad28be90122e" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PostpaidService62.xsd" MetadataType="Schema" ID="f6cf35b0-61e0-4e35-8370-e72f5ac4305b" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd68" />
+    <MetadataFile FileName="PostpaidService9824.xsd" MetadataType="Schema" ID="1516c856-456b-4f60-a25d-ca09d9397990" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd121" />
+    <MetadataFile FileName="PostpaidService982.xsd" MetadataType="Schema" ID="e5275cb8-3c88-46fc-9bf9-658d4c789d83" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd103" />
+    <MetadataFile FileName="PostpaidService63.xsd" MetadataType="Schema" ID="535d3bf2-9545-4b8a-9bff-b8905148a19c" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd70" />
+    <MetadataFile FileName="PostpaidService9821.xsd" MetadataType="Schema" ID="debaf1f7-d1b5-4ddc-b87f-965537f9e712" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd116" />
+    <MetadataFile FileName="PostpaidService64.xsd" MetadataType="Schema" ID="ad30ea15-2245-401d-bf09-a664a588e35c" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd85" />
+    <MetadataFile FileName="PostpaidService9820.xsd" MetadataType="Schema" ID="62fce1f6-e003-4495-b3ee-bd1db43bbf21" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd115" />
+    <MetadataFile FileName="PostpaidService9813.xsd" MetadataType="Schema" ID="eada3558-467f-4781-8765-64e40d3eddc5" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd105" />
+    <MetadataFile FileName="PostpaidService962.xsd" MetadataType="Schema" ID="f46aa069-3095-4b81-932c-3f42cdb109df" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd99" />
+    <MetadataFile FileName="PostpaidService65.xsd" MetadataType="Schema" ID="d72e0827-0749-41e2-962a-20d84fdc095f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd5" />
+    <MetadataFile FileName="PostpaidService9825.xsd" MetadataType="Schema" ID="42d8be6c-66ab-4792-a6c3-d0839c936212" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd120" />
+    <MetadataFile FileName="PostpaidService66.xsd" MetadataType="Schema" ID="f7bb24f9-843c-4dc9-a7d5-9e1ce3077855" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd87" />
+    <MetadataFile FileName="PostpaidService9826.xsd" MetadataType="Schema" ID="db4dc5c4-d2ef-4c1b-aa7f-351d274c5586" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd119" />
+    <MetadataFile FileName="PostpaidService9814.xsd" MetadataType="Schema" ID="8b6f342a-c018-4fed-be9c-c448efb4aba5" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd109" />
+    <MetadataFile FileName="PostpaidService67.xsd" MetadataType="Schema" ID="98ef5104-5842-4275-87c3-1f4442244ffa" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd81" />
+    <MetadataFile FileName="PostpaidService68.xsd" MetadataType="Schema" ID="6134cad5-6c92-4ce5-bae6-6cf1c33a7d12" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd7" />
+    <MetadataFile FileName="PostpaidService69.xsd" MetadataType="Schema" ID="75563050-6967-4517-920b-5d82957c20bb" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd83" />
+    <MetadataFile FileName="PostpaidService70.xsd" MetadataType="Schema" ID="e66139c1-e17d-40e7-a895-970833dc600a" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd89" />
+    <MetadataFile FileName="PostpaidService963.xsd" MetadataType="Schema" ID="7105e50c-d83a-4488-9f34-73b8bddc79c8" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd97" />
+    <MetadataFile FileName="PostpaidService71.xsd" MetadataType="Schema" ID="9d7245e0-0064-4a7f-a781-28074df2c4d0" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd49" />
+    <MetadataFile FileName="PostpaidService72.xsd" MetadataType="Schema" ID="073cefa3-4e35-474d-afc6-d28c2ed65f7c" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd48" />
+    <MetadataFile FileName="PostpaidService73.xsd" MetadataType="Schema" ID="46a8c3c5-d7ce-4286-9bab-8833c3fd0690" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd9" />
+    <MetadataFile FileName="PostpaidService74.xsd" MetadataType="Schema" ID="d4134042-a824-4fdc-a1d4-96874afddf5d" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd45" />
+    <MetadataFile FileName="PostpaidService75.xsd" MetadataType="Schema" ID="2ba0a27c-9c30-484e-b924-8e17885cb2ab" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd44" />
+    <MetadataFile FileName="PostpaidService76.xsd" MetadataType="Schema" ID="8cf23db0-a48f-4fb3-ace5-1e517fd0cf91" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd47" />
+    <MetadataFile FileName="PostpaidService77.xsd" MetadataType="Schema" ID="59eb6c72-5835-4612-89f9-49d99d4910e3" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd46" />
+    <MetadataFile FileName="PostpaidService78.xsd" MetadataType="Schema" ID="1c8f4ba0-7fb5-4fb4-83f1-bea1e6216185" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd41" />
+    <MetadataFile FileName="PostpaidService79.xsd" MetadataType="Schema" ID="d26b9baf-1d45-466d-8f6e-2000efa3d336" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd40" />
+    <MetadataFile FileName="PostpaidService80.xsd" MetadataType="Schema" ID="f9bbaa34-66d9-461e-977c-9e7f66949bef" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd43" />
+    <MetadataFile FileName="PostpaidService81.xsd" MetadataType="Schema" ID="18915f95-c25e-4052-a8c0-91458e1b7e6c" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd42" />
+    <MetadataFile FileName="PostpaidService9816.xsd" MetadataType="Schema" ID="0835a15c-94e2-4655-b3e9-34d4121e2680" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd111" />
+    <MetadataFile FileName="PostpaidService951.xsd" MetadataType="Schema" ID="1398a955-4f92-4934-a14a-f88e144ed9dc" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd96" />
+    <MetadataFile FileName="PostpaidService82.xsd" MetadataType="Schema" ID="2abc46b1-ac4a-4f23-92c6-1a3e02b48f5a" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd69" />
+    <MetadataFile FileName="PostpaidService.disco" MetadataType="Disco" ID="f45ca127-00f7-47a9-80f9-d6cd5e42aba6" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?disco" />
+    <MetadataFile FileName="PostpaidService83.xsd" MetadataType="Schema" ID="67331628-3200-4f8a-b115-832efef07d67" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd65" />
+    <MetadataFile FileName="PostpaidService84.xsd" MetadataType="Schema" ID="1cac5613-ef95-4aeb-812e-4b061d49e1b0" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd64" />
+    <MetadataFile FileName="PostpaidService85.xsd" MetadataType="Schema" ID="418c9229-6de1-45ea-ac10-4f238a74927f" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd67" />
+    <MetadataFile FileName="PostpaidService86.xsd" MetadataType="Schema" ID="578a9629-cfce-46ce-bd06-5ab3be8af668" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd66" />
+    <MetadataFile FileName="PostpaidService87.xsd" MetadataType="Schema" ID="6f312d1a-f93e-41cb-9f6e-255dfceae0b9" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd61" />
+    <MetadataFile FileName="PostpaidService88.xsd" MetadataType="Schema" ID="86e340e5-c30c-41f7-9d4f-95dc2a18e3cf" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd60" />
+    <MetadataFile FileName="PostpaidService89.xsd" MetadataType="Schema" ID="b84d2f47-43e5-44ad-af8e-c0c62050db6d" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd63" />
+    <MetadataFile FileName="PostpaidService90.xsd" MetadataType="Schema" ID="fb6837e7-e440-43d9-b794-81f8931c8a17" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd62" />
+    <MetadataFile FileName="PostpaidService91.xsd" MetadataType="Schema" ID="009de732-b93e-430d-b6ce-40701db8a8d6" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd77" />
+    <MetadataFile FileName="PostpaidService92.xsd" MetadataType="Schema" ID="26772f2f-043d-47c6-9ab0-15bf889bf70d" SourceId="1" SourceUrl="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd29" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

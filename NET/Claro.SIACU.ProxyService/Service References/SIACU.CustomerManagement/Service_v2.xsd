@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entser="http://claro.com.pe/esb/data/service/service/v2/" xmlns:entcusfacser="http://claro.com.pe/esb/data/service/customerFacingService/v2/" xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:entserspe="http://claro.com.pe/esb/data/service/serviceSpecification/v2/" xmlns:entres="http://claro.com.pe/esb/data/resource/resource/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:enttroorprob="http://claro.com.pe/esb/data/commonBusinessEntities/troubleOrProblem/v2/" xmlns:entlogres="http://claro.com.pe/esb/data/resource/logicalResource/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entserusa="http://claro.com.pe/esb/data/service/serviceUsage/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entsercon="http://claro.com.pe/esb/data/service/serviceConfiguration/v2/" xmlns:entcap="http://claro.com.pe/esb/data/commonBusinessEntities/capacity/v2/" xmlns:entserext="http://claro.com.pe/esb/data/service/serviceExtension/v2/" targetNamespace="http://claro.com.pe/esb/data/service/service/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../CommonBusinessEntities/BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/Capacity_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/capacity/v2/" />
+  <xs:import schemaLocation="ServiceConfiguration_v2.xsd" namespace="http://claro.com.pe/esb/data/service/serviceConfiguration/v2/" />
+  <xs:import schemaLocation="ServiceSpecification_v2.xsd" namespace="http://claro.com.pe/esb/data/service/serviceSpecification/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/TroubleOrProblem_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/troubleOrProblem/v2/" />
+  <xs:import schemaLocation="ServiceUsage_v2.xsd" namespace="http://claro.com.pe/esb/data/service/serviceUsage/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:import schemaLocation="../Resource/LogicalResource_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/logicalResource/v2/" />
+  <xs:import schemaLocation="../Resource/Resource_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/resource/v2/" />
+  <xs:import schemaLocation="ServiceExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/service/serviceExtension/v2/" />
+  <xs:import schemaLocation="CustomerFacingService_v2.xsd" namespace="http://claro.com.pe/esb/data/service/customerFacingService/v2/" />
+  <xs:import schemaLocation="../CommonBusinessEntities/RootBusinessEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" />
+  <xs:import schemaLocation="../EngagedParty/Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="CustomerFacingServiceSpec">
+    <xs:annotation>
+      <xs:documentation>A CustomerFacingServiceSpec defines the properties (attributes) common to a particular CustomerFacingService used to realize the associated Product(s). This entity serves as a common basis to build any set of CustomerFacingServices that the service provider needs.
+
+The CustomerFacingServiceSpec represents all the Service Provider’s know-how of non-tangible goods at a functional level. It would be more appropriate to name it KonwHowSpec or ProductFacingServiceSpec, but the name is not changed as it is well known.
+
+The ProductSpecification corresponds to a sub-set of the Service Provider’s know-how according to what marketing people want to sell. Therefore, a ProductSpecification is a restriction of CustomerFacingServiceSpecs.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Represents a user-friendly identifier of an object. It is a (possibly ambiguous) name by which the object is commonly known in some limited scope (such as an organization) and conforms to the naming conventions of the country or culture with which it is associated. It is NOT used as a naming attribute (i.e., to uniquely identify an instance of the object).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This is a string, and defines a textual free-form description of the object.
+
+
+
+Notes:
+
+This attribute doesn’t exist in M.3100. The CIM has two attributes for this purpose, Caption (a short description) and Description.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unambiguously distinguishes different object instances. It is the naming attribute of the object.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceSpecificationType" type="entser:ServiceSpecificationType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_service" type="entser:Service" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceSpecCharacteristic" type="entserspe:ServiceSpecCharacteristic" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceConfigSpec" type="entsercon:ServiceConfigSpec" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerFacingService" type="entcusfacser:CustomerFacingService" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NetworkService">
+    <xs:annotation>
+      <xs:documentation>A Network Service is a composition of Network Functions and defined by its functional and behavioural specification.
+
+
+
+Note: a CFS can be supported by a combination of RFSs and NSs but it should be supported by at least one.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entser:Service">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceFacingService">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class for ResourceFacingServices. A ResourceFacingService is an abstraction that defines the characteristics of a particular Service which support the network/infrastructure facing part of the service. 
+
+ResourceFacingServices are “internal” Services (i.e. technical solutions) that are required to support a CustomerFacingService. The Customer obtains CustomerFacingServices via Products, and is not aware of the ResourceFacingServices which support the CustomerFacingService(s) that is being obtained directly by the Customer via a Product. For example, a VPN is an example of a CustomerFacingService. This particular type of VPN may require BGP to support it. Customers don’t purchase BGP, and hopefully aren’t even aware that BGP is running. Therefore, BGP is an example of a ResourceFacingService. 
+
+
+
+CustomerFacingServices are directly related to Products as well as to ResourceFacingServices. ResourceFacingServices are indirectly related to Products through the relationship between Product and Resource. This enforces the relationship to Products while keeping Services that are not directly obtainable via Products (i.e., ResourceFacingServices) separated from Products.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entser:Service">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="rfsStatus" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This is an enumerated integer that defines the status of this particular ResourceFacingService. Values include:
+
+ 0: Operational and supporting CFS
+ 1: Degraded but supporting CFS
+ 2: In Violation and not supporting CFS
+ 3: Operational but not yet supporting a CFS
+ 4: Being Tested
+ 5: Being Deployed
+ 6: Failed
+
+Value 0 means that this ResourceFacingService is acting per specification, and is also currently supporting one or more CustomerFacingServices.
+
+Value 1 means that this ResourceFacingService is operational, but is currently in a degraded state. This degraded state indicates congestion or some other problem, but has not yet comprimised the operation of its associated CustomerFacingServices.
+
+Value 2 means that this ResourceFacingService is operational, but is currently in violation of its associated specification(s). This in turn means that its associated CustomerFacingServices are violating their contractual specification(s) unless automatic fail-over has been enabled.
+
+Value 3 means that this ResourceFacingService is acting per specification, but is not yet currently supporting one or more CustomerFacingServices.
+
+Value 4 means that this ResourceFacingService is currently being tested, and is not yet ready to support a CustomerFacingService.
+
+Value 5 means that this ResourceFacingService is currently being deployed, and is not yet ready to support a CustomerFacingService.
+
+Value 6 means that this ResourceFacingService has currently failed. The set of actions that should be taken, as well as whether this service can still be billed or not, are determined by its associated Policy for handling service violations.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_resource" type="entres:Resource" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_logicalResource" type="entlogres:LogicalResource" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_physicalResource" type="entres:PhysicalResource" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Service">
+    <xs:annotation>
+      <xs:documentation>This is the base entity for defining the Service hierarchy. All Services are characterized as either being related to Products or Resources. This gives rise to the two subclasses of Service: CustomerFacingService (used to realie a Product) and ResourceFacingService (which support the network/infrastructure facing part of the service).
+
+
+
+Services are defined as being tightly bound to Products. A Product defines the context of the Service, Service and its related entities (e.g., ServiceSpecification, ServiceRole, and so forth) are related to entities in the Resource, Product, and other domains through a set of relationships.
+
+
+
+A Service represents the object that will be instantiated. Each Service instance can be different; therefore, Service is limited to owning just the attributes, relationships, and constraints that are specific to an instance of a Service. The shared attributes, relationships, and constraints that can be instantiated are defined by a ServiceSpecification.
+
+
+
+The purpose of this entity is twofold. First, it is used to define attributes, and relationships that are common to all Services. Second, it provides a convenient point to define how Services interact with other parts business entities.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="isServiceEnabled" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>This is a Boolean attribute that, if TRUE, signifies that this Service has been enabled for use. If the value of this attribute is FALSE, then this means that this particular Service has NOT been enabled for use.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="hasStarted" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>This is a Boolean attribute that, if TRUE, signifies that this Service has already been started. If the value of this attribute is FALSE, then this signifies that this Service has NOT been Started.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="isMandatory" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>This is a Boolean attribute that, if TRUE, signifies that this Service is mandatory (i.e., this Service must be running when the managed environment is in a non-failed state). If the value of this attribute is FALSE, then this means that this Service is not required to run.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="startMode" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This attribute is an enumerated integer that indicates how the Service is started. Values include:
+
+ 0: Unknown
+ 1: Automatically by the managed environment
+ 2: Automatically by the owning device
+ 3: Manually by the Provider of the Service
+ 4: Manually by a Customer of the Provider
+ 5: Any of the above</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="isStateful" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>This is a Boolean attribute that, if TRUE, means that this Service can be changed without affecting any other services.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_serviceExtension" type="entserext:ServiceExtension" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_partyRole" type="entpar:PartyRole" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_businessInteractionItem" type="entbusint:BusinessInteractionItem" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceUsage" type="entserusa:ServiceUsage" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceCharacteristicValue" type="entser:ServiceCharacteristicValue" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceSpecification" type="entser:ServiceSpecification" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceCapacityDemand" type="entcap:ServiceCapacityDemand" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ServiceCharacteristicValue">
+    <xs:annotation>
+      <xs:documentation>A ServiceCharacteristicValue object is used to define a set of attributes, each of which can be assigned to a corresponding set of attributes in a ServiceCharacteristic object. The values of the attributes in the ServiceCharacteristicValue object describe the values of the attributes that a corresponding ServiceCharacteristic object can take on.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A fact that describes an entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the characteristic value is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_service" type="entser:Service" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_serviceSpecCharacteristic" type="entserspe:ServiceSpecCharacteristic" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_resourceCharacteristicValue" type="entres:ResourceCharacteristicValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceOrder">
+    <xs:annotation>
+      <xs:documentation>A type of Request that represents a Customer Order's products decomposed into the services through which the products are realized.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceOrderItem" type="entser:ServiceOrderItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ServiceOrderItem">
+    <xs:annotation>
+      <xs:documentation>The purpose for the ServiceOrder expressed in terms of a ServiceSpecification or a Service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:BusinessInteractionItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_serviceOrder" type="entser:ServiceOrder" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ServiceProblem">
+    <xs:annotation>
+      <xs:documentation>A Service Problem is an indication that a service is no longer functioning according to the agreement with its client(s).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="enttroorprob:Problem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="affectedServiceNumber" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Number of affected services (mandatory, but value can be zero).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_service" type="entser:Service" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ServiceSpecification">
+    <xs:annotation>
+      <xs:documentation>This is the base entity for defining the ServiceSpecification hierarchy. All Services are characterized as either being related to Products or Resources. This gives rise to the two subclasses of ServiceSpecification: CustomerFacingServiceSpec and ResourceFacingServiceSpec. However, each instance of a Service is made up of changeable as well as invariant attributes,  relationships and constraints. A ServiceSpecification defines the shared characteristics of a Service. It can be conceptually thought of as a template that different Service instances can be instantiated from. Each of these Service instances will have the same shared characteristics. However, the other characteristics of the instantiated Service will be specific to each instance.
+
+
+
+This class can be thought of as a template, which represents a generic specification for implementing a particular type of Service. A ServiceSpecification may consist of other ServiceSpecifications supplied together as a collection.  Members of the collection may be offered individually or collectively.  ServiceSpecifications may also exist within groupings, such as within a Product.
+
+
+
+ServiceSpecification inherits from EntitySpecification, which inherits from RootEntity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:EntitySpecification">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceSpecificationType" type="entser:ServiceSpecificationType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_service" type="entser:Service" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceSpecCharacteristic" type="entserspe:ServiceSpecCharacteristic" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceConfigSpec" type="entsercon:ServiceConfigSpec" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ServiceSpecificationType">
+    <xs:annotation>
+      <xs:documentation>The ServiceSpecificationType class defines a generic category of ServiceSpecifications. Each ServiceSpecificationType serves to group a set of particular ServiceSpecifications that share some of the same behavior and other semantics. One result of this is to be able to more efficiently define a set of related Services that can be grouped together to form a higher-level Service. For example, a given higher-level Service might include VPN and QoS Services. If these Services are always used together, then they can be categorized using a common type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:EntitySpecificationType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_serviceSpecification" type="entser:ServiceSpecification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

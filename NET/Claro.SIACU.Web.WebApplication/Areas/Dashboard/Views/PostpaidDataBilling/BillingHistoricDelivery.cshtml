@@ -1,0 +1,68 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataBilling.BillingHistoricDeliveryModel
+@{
+    Layout = null;
+}
+<div id="FormHistoricDelivery">
+  
+        <div id="modal-content">
+         
+                <div class="table-responsive">
+                    <table id="tbDatosCliente2" class="table table-condensed ">
+                        <tr>
+                            <td class="col-md-2">
+                                <label class="control-label">Customer Id</label>
+                            </td>
+                            <td class="col-md-9">
+                                <span id="lblPost_EquipmentsCustomerId"></span>
+                            </td>
+                            <td class="col-md-1"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="control-label">Cuenta</label>
+                            </td>
+                            <td> <span id="lblPost_EquipmentsCuenta"></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="control-label">Cliente</label>
+                            </td>
+                            <td>
+                                <span id="lblPost_EquipmentsCliente"></span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="control-label">Contacto</label>
+                            </td>
+                            <td><span id="lblPost_EquipmentsContacto"></span> </td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+                    <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblHitoricDelivery">
+                        <thead class="claro-bg-primary">
+                            <tr>
+                                <td class="col-sm-1">Recibo</td>
+                                <td class="col-sm-1">Emisión</td>
+                                <td class="col-sm-1">Tipo</td>
+                                <td class="col-sm-1">Courier</td>
+                                <td class="col-sm-1">Estado</td>
+                                <td class="col-sm-1">Motivo</td>
+                                <td class="col-sm-1">Entrega</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div id="LoadingPrepaid">
+                        <div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>
+                    </div>
+                </div>
+           
+        </div>
+    
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataBilling/HistoricDelivery")

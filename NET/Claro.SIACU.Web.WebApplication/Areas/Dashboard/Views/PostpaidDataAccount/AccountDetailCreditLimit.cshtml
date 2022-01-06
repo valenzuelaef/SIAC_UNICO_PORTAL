@@ -1,0 +1,39 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataAccount.AccountDetailCreditLimitModel
+
+<div id="ContentPostpaidCreditLimitDetail">
+
+    @if (Model != null)
+    {
+        <div id="modal-content">
+            <div class="panel panel-default ">
+
+
+                <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblCreditLimit">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th class="col-sm-1">Nro Pac</th>
+                            <th class="col-sm-1">Fecha Pago</th>
+                            <th class="col-sm-1">Monto Pago</th>
+                            <th class="col-sm-1">Banco</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-sm-1">@Model.NumberPac</td>
+                            <td class="col-sm-1">@Model.DatePayment</td>
+                            <td class="col-sm-1">@Model.AmountPac</td>
+                            <td class="col-sm-1">@Model.NumberPac</td>
+                        </tr>
+                   </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger">PAC incorrecto, no hay datos para este Pago.</div>
+
+    }
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

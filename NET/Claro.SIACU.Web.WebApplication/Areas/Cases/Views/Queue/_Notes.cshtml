@@ -1,0 +1,12 @@
+﻿@using System.Web.Optimization;
+@model  Claro.SIACU.Web.WebApplication.WipBinService.CaseNotesResponse
+
+<div class="col-md-12">
+    <textarea rows="10" disabled="disabled" class="textArea">
+        @if (Model != null && Model.CaseNotes != null && Model.CaseNotes.Notes != null)
+        {
+            @Html.Raw(Model.CaseNotes.Notes)
+        }
+    </textarea>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

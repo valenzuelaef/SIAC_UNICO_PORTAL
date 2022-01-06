@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entparorg="http://claro.com.pe/esb/data/engagedParty/partyOrganization/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entengparext="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" xmlns:ententext="http://claro.com.pe/esb/data/enterprise/enterpriseExtension/v2/" xmlns:entmaninf="http://claro.com.pe/esb/data/resource/managementInformation/v2/" targetNamespace="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=EnterpriseExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/enterprise/enterpriseExtension/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyOrganization_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyOrganization/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ManagementInformation_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/managementInformation/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:element name="subscriptionId" type="entengparext:AgreementExtension" />
+  <xs:complexType name="AgreementExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of Agreement</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="age" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>age of agreement</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="statusReason" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="subscriptionId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="subscriptionCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="lastRenewalDate" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Fecha de ultima renovacion</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="activationDate" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>fecha de activacion</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isExtension" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ampliacion de contrato</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AtomicOrganizationExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of AtomicOrganization</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_workforceEmployeePoolExtension" type="ententext:WorkforceEmployeePoolExtension" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_legalRepresentative" type="entengparext:LegalRepresentative" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BankCardPMExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BankExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="binCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="reference" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmployeeIdentificationExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of EmployeeIdentification</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="originId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Assesor TCRM identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_globalConfiguration" type="entmaninf:GlobalConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndividualExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of Individual</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="age" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Age</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isOfAge" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Of age/underage</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isPowerOfAttorney" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Determine if the user creator of case has a "power of attorney letter".</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="jobTitle" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Job Title.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="reniec" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndividualNameExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of IndividualName</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="email" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>email</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="motherLastName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>mother last name</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LanguageExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod" />
+      <xs:element minOccurs="0" maxOccurs="1" name="culture" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ID</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LegalRepresentative">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="role" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>role</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="startDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Start Date of role</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_party" type="entpar:Party" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_atomicOrganization" type="entparorg:AtomicOrganization" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_organizationName" type="entpar:OrganizationName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of Organization</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Assignor code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="location" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Location (Type of resource on which activities can be assigned)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyAccountExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of PartyAccount</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="creditLimitType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="originAccount" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Origin account</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="originCreditLimit" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Returns the value sent by the parameterizer: Origin of the Credit Limit.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isAccountCharge" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyBillSpecExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="amountPaidInvoices" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Amount paid invoices</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="dayLastDebt" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Number of days of the oldest debt the customer has, evaluating their mobile and fixed accounts.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="numberOfBill" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>number of bill</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="billStatus" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>bill status</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of Party</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="identificationType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Identification Type</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="sequence" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>sequence</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isCustomer" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Indicates whether the case creator is customer or not.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="permissions" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Permissions</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyOrderExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of PartyOrder</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="debtAmount" type="entbastyp:Money">
+        <xs:annotation>
+          <xs:documentation>debt Amount</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isBindding" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Public bidding</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="shippingType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>shipping Type</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="comment" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyPaymentExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of PartyPayment</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="guaranteeType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>guarantee Type</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isPendingPayment" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>is Pending Payment</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isAddPayment" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Is Add Payment Bill Next.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="documentsQuantity" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="reference" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="quotaPayment" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="blockingDate" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>block date</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="guaranteeNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyUserExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of PartyUser</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>type of client</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mail" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentPlanExtension">
+    <xs:annotation>
+      <xs:documentation>Extension of PaymentPlan</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="duration" type="entbastyp:Duration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="isLimitAmount" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="quotaAmountUnlocking" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>quota Amount for Unlocking</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="quotaQuantity" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Number of financing quota</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="quotaQuantityMax" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Quota Quantity Max</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="quotaQuantityMin" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="quoteInitial" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Quote Initial</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="cancelDebtCondemnation" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>cancel Debt Condemnation</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="automaticDebit" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>automatic Debit</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isCondemnation" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>debt forgiveness flag</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="quantityThrowbackInstallment" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Quantity Throwback Installment</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="quotaAmount" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" name="installmentsToUnlock" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>installments To Unlock</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isRoaming" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Is Roaming</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="quantity" type="entbastyp:Quantity">
+        <xs:annotation>
+          <xs:documentation>quantity</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="guaranteeType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>guarantee Type</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_attributeValuePair" type="entbastyp:AttributeValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

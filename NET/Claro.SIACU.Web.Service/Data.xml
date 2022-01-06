@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ListaValores>
+  <ListaTipoMovimiento>
+    <item>
+      <codigo></codigo>
+      <descripcion>- Todos -</descripcion>
+    </item>
+    <item>
+      <codigo>RECARGA</codigo>
+      <descripcion>Recarga</descripcion>
+    </item>
+    <item>
+      <codigo>BONO</codigo>
+      <descripcion>Bono</descripcion>
+    </item>
+    <item>
+      <codigo>COBRO</codigo>
+      <descripcion>Cobro</descripcion>
+    </item>
+    <item>
+      <codigo>COMPRA</codigo>
+      <descripcion>Compra</descripcion>
+    </item>
+    <item>
+      <codigo>MASIVA</codigo>
+      <descripcion>Masiva</descripcion>
+    </item>
+  </ListaTipoMovimiento>
+
+  <ListaCreditoDebito>
+    <item>
+      <codigo></codigo>
+      <descripcion>- Todos -</descripcion>
+    </item>
+    <item>
+      <codigo>CREDITO</codigo>
+      <descripcion>Crédito</descripcion>
+    </item>
+    <item>
+      <codigo>DEBITO</codigo>
+      <descripcion>Débito</descripcion>
+    </item>
+  </ListaCreditoDebito>
+  
+  <ListarMailConfirmar>
+    <item>
+      <codigo>-1</codigo>
+      <descripcion>---</descripcion>
+    </item>
+    <item>
+      <codigo>S</codigo>
+      <descripcion>SI</descripcion>
+    </item>
+    <item>
+      <codigo>N</codigo>
+      <descripcion>NO</descripcion>
+    </item>
+  </ListarMailConfirmar>
+  <ListaEstadoLinea>
+    <item>
+      <codigo>0</codigo>
+      <descripcion>Preactivo</descripcion>
+    </item>
+    <item>
+      <codigo>1</codigo>
+      <descripcion>Activo</descripcion>
+    </item>
+    <item>
+      <codigo>2</codigo>
+      <descripcion>Periodo de Gracia</descripcion>
+    </item>
+    <item>
+      <codigo>4</codigo>
+      <descripcion>Desactivo</descripcion>
+    </item>
+    <item>
+      <codigo>5</codigo>
+      <descripcion>Bloqueado</descripcion>
+    </item>
+    <item>
+      <codigo>10</codigo>
+      <descripcion>Por Verificar</descripcion>
+    </item>
+    <item>
+      <codigo>Recycle</codigo>
+      <descripcion>Reciclado</descripcion>
+    </item>
+  </ListaEstadoLinea>
+  <listaTipoTrafico>
+    <item>
+      <codigo></codigo>
+      <descripcion>- Todos -</descripcion>
+    </item>
+    <item>
+      <codigo>VOZ</codigo>
+      <descripcion>VOZ</descripcion>
+    </item>
+    <item>
+      <codigo>SMS</codigo>
+      <descripcion>SMS</descripcion>
+    </item>
+    <item>
+      <codigo>MMS</codigo>
+      <descripcion>MMS</descripcion>
+    </item>
+    <item>
+      <codigo>DATOS</codigo>
+      <descripcion>DATOS</descripcion>
+    </item>
+    <item>
+      <codigo>VAS</codigo>
+      <descripcion>VAS</descripcion>
+    </item>
+    <item>
+      <codigo>USSD</codigo>
+      <descripcion>USSD</descripcion>
+    </item>
+    <item>
+      <codigo>OTROS</codigo>
+      <descripcion>OTROS</descripcion>
+    </item>
+  </listaTipoTrafico>
+  <listaTipoEventoCall>
+    <item>
+      <codigo></codigo>
+      <descripcion>- Todos -</descripcion>
+    </item>
+    <item>
+      <codigo>SMS</codigo>
+      <descripcion>SMS</descripcion>
+    </item>
+    <item>
+      <codigo>MMS</codigo>
+      <descripcion>MMS</descripcion>
+    </item>
+    <item>
+      <codigo>VOZ</codigo>
+      <descripcion>VOZ</descripcion>
+    </item>
+    <item>
+      <codigo>GPRS</codigo>
+      <descripcion>GPRS</descripcion>
+    </item>
+  </listaTipoEventoCall>
+  <listaTipoEventoReload>
+    <item>
+      <codigo></codigo>
+      <descripcion>- Todos -</descripcion>
+    </item>
+    <item>
+      <codigo>Recarga en línea</codigo>
+      <descripcion>Recarga en línea</descripcion>
+    </item>
+    <item>
+      <codigo>Suscripciones y/o Compra de Paquete</codigo>
+      <descripcion>Suscripciones y/o Compra de Paquete</descripcion>
+    </item>
+  </listaTipoEventoReload>
+  <listaBonosComprados>
+    <item>
+      <codigo>0</codigo>
+      <descripcion>- Seleccionar -</descripcion>
+    </item>
+    <item>
+      <codigo>1</codigo>
+      <descripcion>Saldo Voz Fidelización</descripcion>
+    </item>
+    <item>
+      <codigo>2</codigo>
+      <descripcion>Voice 1 Promo Account</descripcion>
+    </item>
+    <item>
+      <codigo>3</codigo>
+      <descripcion>Saldo SMS Fidelización</descripcion>
+    </item>
+    <item>
+      <codigo>4</codigo>
+      <descripcion>Saldo MMS</descripcion>
+    </item>
+    <item>
+      <codigo>5</codigo>
+      <descripcion>Vigencia Claro Directo</descripcion>
+    </item>
+    <item>
+      <codigo>6</codigo>
+      <descripcion>Saldo S/. Promo</descripcion>
+    </item>
+  </listaBonosComprados>
+  <listaTipoBusqueda>
+    <!--<item>
+      <codigo>0</codigo>
+      <descripcion>- Seleccionar -</descripcion>
+    </item>-->
+    <item>
+      <codigo>1</codigo>
+      <descripcion>Teléfono</descripcion>
+    </item>
+    <item>
+      <codigo>2</codigo>
+      <descripcion>Cuenta</descripcion>
+    </item>
+    <item>
+      <codigo>3</codigo>
+      <descripcion>Contrato</descripcion>
+    </item>
+    <item>
+      <codigo>4</codigo>
+      <descripcion>Customer Id</descripcion>
+    </item>
+    <item>
+      <codigo>5</codigo>
+      <descripcion>N° Documento Identidad</descripcion>
+    </item>
+    <item>
+      <codigo>6</codigo>
+      <descripcion>Nombres</descripcion>
+    </item>
+    <item>
+      <codigo>7</codigo>
+      <descripcion>Razón Social</descripcion>
+    </item>
+    <item>
+      <codigo>8</codigo>
+      <descripcion>Número de Recibo</descripcion>
+    </item>
+    <item>
+      <codigo>9</codigo>
+      <descripcion>ICCID (Número de Chip)</descripcion>
+    </item>
+    <item>
+      <codigo>10</codigo>
+      <descripcion>Cintillo</descripcion>
+    </item>
+  </listaTipoBusqueda>
+  <ListaBolsa>
+    <item>
+      <codigo>-1</codigo>
+      <descripcion>-- Seleccionar --</descripcion>
+      <codigo2>0</codigo2>
+    </item>
+    <item>
+      <codigo>OnPeakAccountID</codigo>
+      <descripcion>On Peak (soles)</descripcion>
+      <codigo2>100</codigo2>
+    </item>
+    <item>
+      <codigo>SMSPromoAccountID</codigo>
+      <descripcion>SMS (unidad)</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+    <item>
+      <codigo>Voice1PromoAccountID</codigo>
+      <descripcion>Voice1 Promo. account (segundos)</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+    <item>
+      <codigo>Voice2PromoAccountID</codigo>
+      <descripcion>Voice2 Promo. account (segundos)</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+    <item>
+      <codigo>GPRSPromoAccountID</codigo>
+      <descripcion>GPRS (KB)</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+    <item>
+      <codigo>MMSPromoAccountID</codigo>
+      <descripcion>MMS (unidad)</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+    <item>
+      <codigo>BonusPromoAccountID</codigo>
+      <descripcion>Promo (soles)</descripcion>
+      <codigo2>100</codigo2>
+    </item>
+    <item>
+      <codigo>SMSLoyaltyAccountID</codigo>
+      <descripcion>SMS Fidelizacion (unidad)</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+    <item>
+      <codigo>VoiceLoyaltyAccountID</codigo>
+      <descripcion>Voz Fidelizacion (segundos)</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+    <item>
+      <codigo>Bonus1PromoAccountID</codigo>
+      <descripcion>Promo 1 (soles)</descripcion>
+      <codigo2>100</codigo2>
+    </item>
+    <item>
+      <codigo>Bonus2PromoAccountID</codigo>
+      <descripcion>Promo 2 (soles)</descripcion>
+      <codigo2>100</codigo2>
+    </item>
+    <item>
+      <codigo>BonusCounterAccount54</codigo>
+      <descripcion>Bolsa CMAcc4</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+    <item>
+      <codigo>BonusCounterAccount57</codigo>
+      <descripcion>Bolsa CMAcc7</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+    <item>
+      <codigo>BonusCounterAccount58</codigo>
+      <descripcion>Bolsa CMAcc8</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+    <item>
+      <codigo>BonusCounter_Account52</codigo>
+      <descripcion>Bolsa CMAcc2</descripcion>
+      <codigo2>1</codigo2>
+    </item>
+  </ListaBolsa>
+  <ListaMotivoSuspension>
+    <item>
+      <codigo>0</codigo>
+      <descripcion>-- Todos --</descripcion>
+    </item>
+    <item>
+      <codigo>2</codigo>
+      <descripcion>Suspensión</descripcion>
+    </item>
+    <item>
+      <codigo>17</codigo>
+      <descripcion>Moroso</descripcion>
+    </item>
+    <item>
+      <codigo>27</codigo>
+      <descripcion>A solicitud Cliente</descripcion>
+    </item>
+    <item>
+      <codigo>38</codigo>
+      <descripcion>F01</descripcion>
+    </item>
+    <item>
+      <codigo>39</codigo>
+      <descripcion>F02</descripcion>
+    </item>
+    <item>
+      <codigo>40</codigo>
+      <descripcion>F03</descripcion>
+    </item>
+    <item>
+      <codigo>41</codigo>
+      <descripcion>F04</descripcion>
+    </item>
+    <item>
+      <codigo>47</codigo>
+      <descripcion>Por entregar</descripcion>
+    </item>
+  </ListaMotivoSuspension>
+  <ListaTipoAnotaciones>
+    <item>
+      <codigo></codigo>
+      <descripcion>-- Todos --</descripcion>
+    </item>
+    <item>
+      <codigo>Abierto</codigo>
+      <descripcion>Abierto</descripcion>
+    </item>
+    <item>
+      <codigo>Cerrado</codigo>
+      <descripcion>Cerrado</descripcion>
+    </item>
+    <item>
+      <codigo>Nota</codigo>
+      <descripcion>Nota</descripcion>
+    </item>
+    <item>
+      <codigo>Otros</codigo>
+      <descripcion>Otros</descripcion>
+    </item>
+  </ListaTipoAnotaciones>
+
+  <ListaPeticiones>
+    <item>
+      <codigo></codigo>
+      <descripcion>-- Todos --</descripcion>
+    </item>
+    <item>
+      <codigo>Finalizado OK</codigo>
+      <descripcion>Finalizado OK</descripcion>
+    </item>
+    <item>
+      <codigo>Cancelado</codigo>
+      <descripcion>Cancelado</descripcion>
+    </item>
+    <item>
+      <codigo>Error</codigo>
+      <descripcion>Error</descripcion>
+    </item>
+    <item>
+      <codigo>Insertado</codigo>
+      <descripcion>Insertado</descripcion>
+    </item>
+  </ListaPeticiones>
+
+  <ListaMotivoPrestamoAlquiler>
+    <item>
+      <codigo>IMEI</codigo>
+      <descripcion>IMEI</descripcion>
+    </item>
+    <item>
+      <codigo>SIM</codigo>
+      <descripcion>SIM</descripcion>
+    </item>
+  </ListaMotivoPrestamoAlquiler>
+
+
+  <ListaZonasAlmacen>
+    <item>
+      <codigo>LIMA</codigo>
+      <descripcion>LIMA</descripcion>
+    </item>
+    <item>
+      <codigo>CENTRO</codigo>
+      <descripcion>CENTRO</descripcion>
+    </item>
+    <item>
+      <codigo>SUR</codigo>
+      <descripcion>SUR</descripcion>
+    </item>
+    <item>
+      <codigo>NORTE</codigo>
+      <descripcion>NORTE</descripcion>
+    </item>
+  </ListaZonasAlmacen>
+  <DocumentType>
+    <item>
+      <codigo>0</codigo>
+      <descripcion>Otros Tipos de Documentos</descripcion>
+    </item>
+    <item>
+      <codigo>1</codigo>
+      <descripcion>Documento Nacional de Identidad(DNI)</descripcion>
+    </item>
+    <item>
+      <codigo>2</codigo>
+      <descripcion>Carnet de Fuerzas Policiales</descripcion>
+    </item>
+    <item>
+      <codigo>3</codigo>
+      <descripcion>Carnet de Fuerzas Armadas</descripcion>
+    </item>
+    <item>
+      <codigo>4</codigo>
+      <descripcion>Carnet de Extranjeria</descripcion>
+    </item>
+    <item>
+      <codigo>6</codigo>
+      <descripcion>Registro Único de Contribuyentes(RUC)</descripcion>
+    </item>
+    <item>
+      <codigo>7</codigo>
+      <descripcion>Pasaporte</descripcion>
+    </item>
+    <item>
+      <codigo>8</codigo>
+      <descripcion>Régimen Único Simplificado</descripcion>
+    </item>
+  </DocumentType>
+
+
+
+  <ListaSexo>
+    <item>
+      <codigo>0</codigo>
+      <descripcion>No Precisado</descripcion>
+    </item>
+    <item>
+      <codigo>1</codigo>
+      <descripcion>Masculino</descripcion>
+    </item>
+    <item>
+      <codigo>2</codigo>
+      <descripcion>Femenino</descripcion>
+    </item>
+  </ListaSexo>
+
+  <ListaMailConfirmar>
+    <item>
+      <codigo>-1</codigo>
+      <descripcion>---</descripcion>
+    </item>
+    <item>
+      <codigo>S</codigo>
+      <descripcion>SI</descripcion>
+    </item>
+    <item>
+      <codigo>N</codigo>
+      <descripcion>NO</descripcion>
+    </item>
+  </ListaMailConfirmar>
+  <ListaTipoDeConsumo>
+    <item>
+      <codigo>-1</codigo>
+      <descripcion>Todos</descripcion>
+    </item>
+    <item>
+      <codigo>2</codigo>
+      <descripcion>Megabytes</descripcion>
+    </item>
+    <item>
+      <codigo>3</codigo>
+      <descripcion>Mensajes de Texto</descripcion>
+    </item>
+    <item>
+      <codigo>1</codigo>
+      <descripcion>Minutos con Segundos</descripcion>
+    </item>
+    <item>
+      <codigo>4</codigo>
+      <descripcion>Mensajes Multimedia</descripcion>
+    </item>
+    <item>
+      <codigo>6</codigo>
+      <descripcion>Soles con Céntimos</descripcion>
+    </item>
+  </ListaTipoDeConsumo>
+  <ListaTipoPaquete>
+    <item>
+      <codigo></codigo>
+      <descripcion>Todos</descripcion>
+    </item>
+    <item>
+      <codigo>PREPAGADA</codigo>
+      <descripcion>Prepagada</descripcion>
+    </item>
+    <item>
+      <codigo>FACTURADA</codigo>
+      <descripcion>Facturada</descripcion>
+    </item>
+  </ListaTipoPaquete>
+  <ListaTipoEstadoPaqueteComprado>
+    <item>
+      <codigo>ACT</codigo>
+      <descripcion>ACTIVO</descripcion>
+    </item>
+    <item>
+      <codigo>PEN</codigo>
+      <descripcion>PENDIENTE</descripcion>
+    </item>
+    <item>
+      <codigo>NEST</codigo>
+      <descripcion>PENDIENTE</descripcion>
+    </item>
+    <item>
+      <codigo>EXP</codigo>
+      <descripcion>EXPIRADO</descripcion>
+    </item>
+  </ListaTipoEstadoPaqueteComprado>
+<ListaOrdenConsumo>
+    <item>
+      <codigo>1</codigo>
+      <descripcion>Bono promocionales.</descripcion>
+    </item>
+    <item>
+      <codigo>2</codigo>
+      <descripcion>Servicio ON TOP.</descripcion>
+    </item>
+    <item>
+      <codigo>3</codigo>
+      <descripcion>Componentes incluidos.</descripcion>
+    </item>
+    <item>
+      <codigo>4</codigo>
+      <descripcion>Paquetes prepagados y facturados.</descripcion>
+</item>
+    <item>
+      <codigo>5</codigo>
+      <descripcion>Promoción Internet 4G ilimitado.</descripcion>
+    </item>
+    <item>
+      <codigo>6</codigo>
+      <descripcion>Consumos adicionales.</descripcion>
+    </item>
+    <item>
+      <codigo>7</codigo>
+      <descripcion>Consumos descontados sobre recargas realizadas.</descripcion>
+    </item>
+  </ListaOrdenConsumo>
+</ListaValores>

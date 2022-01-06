@@ -1,0 +1,162 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = null;
+}
+
+<div id="containerCustomerQuery">
+
+    <div id="modal-content">
+        <div class="panel panel-default ">
+
+            <div class="table-responsive">
+
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td><label class="control-label">Nombres:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Name"></span>
+                            </td>
+                            <td><label class="control-label">Apellidos:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Lastname"></span>
+                            </td>
+                            <td><label class="control-label">Modalidad:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Modality"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Tel&eacute;fono:</label></td>
+                            <td>
+                                <span id="lblPreQuery_TelephoneCustomer"></span>
+                            </td>
+                            <td><label class="control-label">Tipo de Doc:</label></td>
+                            <td>
+                                <span id="lblPreQuery_TypeDocument"></span>
+                            </td>
+                            <td><label class="control-label">Nro Documento:</label></td>
+                            <td>
+                                <span id="lblPreQuery_NumberDocument"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Sexo:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Sex"></span>
+                            </td>
+                            <td><label class="control-label">Fecha Nac.:</label></td>
+                            <td>
+                                <span id="lblPreQuery_DateBirth"></span> &nbsp;(dd/mm/yyyy)
+                            </td>
+                            <td><label class="control-label">Lugar Nac.:</label></td>
+                            <td>
+                                <span id="lblPreQuery_PlaceBirth"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Telef. Refer.:</label></td>
+                            <td>
+                                <span id="lblPreQuery_TelephoneReference"></span>
+                            </td>
+                            <td><label class="control-label">Estado civil:</label></td>
+                            <td>
+                                <span id="lblPreQuery_StateCivil"></span>
+                            </td>
+                            <td><label class="control-label">Estado:</label></td>
+                            <td>
+                                <span id="lblPreQuery_State"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Fax:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Fax"></span>
+                            </td>
+                            <td><label class="control-label">Email:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Email"></span>
+                            </td>
+                            <td><label class="control-label">Email Confir.:</label></td>
+                            <td>
+                                <span id="lblPreQuery_EmailConfirmation"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Ocupaci&oacute;n:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Ocupation"></span>
+                            </td>
+                            <td><label class="control-label">Cargo:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Position"></span>
+                            </td>
+                            <td><label class="control-label">Rol:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Role"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Registrado:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Registered"></span>
+                            </td>
+                            <td><label class="control-label">Motivo Registro:</label></td>
+                            <td>
+                                <span id="lblPreQuery_ReasonRegistry"></span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Domicilio:</label></td>
+                            <td colspan="3">
+                                <span id="lblPreQuery_Address"></span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Urbanizaci&oacute;n:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Urbanization"></span>
+                            </td>
+                            <td><label class="control-label">Distrito:</label></td>
+                            <td>
+                                <span id="lblPreQuery_District"></span>
+                            </td>
+                            <td><label class="control-label">Código Postal:</label></td>
+                            <td>
+                                <span id="lblPreQuery_PostalCode"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Ciudad:</label></td>
+                            <td>
+                                <span id="lblPreQuery_City"></span>
+                            </td>
+                            <td><label class="control-label">Departamento:</label></td>
+                            <td>
+                                <span id="lblPreQuery_Department"></span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Referencia:</label></td>
+                            <td colspan="3">
+                                <span id="lblPreQuery_Reference"></span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PrepaidDataCustomer/CustomerQuery")
+

@@ -1,0 +1,61 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PrepaidDataService.PortabilityModel
+
+
+@{
+    Layout = null;
+
+}
+
+
+<div class="modal-body">
+    <div id="modal-content">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td class="col-md-3">
+                                <label class="control-label">
+                                    Nro Solicitud de Portabilidad
+                                </label>
+                            </td>
+                            <td class="col-md-3">@Model.NumberRequest</td>
+                            <td class="col-md-3">
+                                <label class="control-label">
+                                    Estado de Proceso
+                                </label>
+                            </td>
+                            <td class="col-md-3">@Model.DescriptionProcessStatus</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-3">
+                                <label class="control-label">
+                                    Fecha de Ingreso
+                                </label>
+                            </td>
+                            <td class="col-md-3">@Model.RegistrationDate</td>
+                            <td class="col-md-3">
+                                <label class="control-label">
+                                    Fecha de Activación
+                                </label>
+                            </td>
+                            <td class="col-md-3">@Model.ExecutionDate</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-3">
+                                <label class="control-label">
+                                    Operador del que se porto
+                                </label>
+                            </td>
+                            <td class="col-md-3">@Model.Operator</td>
+                            <td class="col-md-3"></td>
+                            <td class="col-md-3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

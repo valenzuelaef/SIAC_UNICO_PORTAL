@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N0:definitions xmlns:WL5G3N5="http://claro.com.pe/esb/data/commonBusinessEntities/claroFault/v2/" xmlns:header="http://claro.com.pe/generic/messageFormat/v1.0/" xmlns:WL5G3N6="http://claro.com.pe/esb/service/bssServiceProblemManagement/v2/" xmlns:WL5G3N7="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N1="http://claro.com.pe/esb/message/bssServiceProblemManagement/getTechnicalServicesByCustomer/v2/" xmlns:WL5G3N2="http://claro.com.pe/esb/message/bssServiceProblemManagement/getTechnicalServiceDetails/v2/" xmlns:WL5G3N3="http://claro.com.pe/esb/message/bssServiceProblemManagement/registerTechnicalServiceQuotationValidation/v2/" xmlns:WL5G3N4="http://claro.com.pe/esb/data/commonBusinessEntities/claroGenericHeaders/v2/" xmlns:v1="http://claro.com.pe/generic/messageFormat/v1.0/" name="BssServiceProblemManagement" targetNamespace="http://claro.com.pe/esb/service/bssServiceProblemManagement/v2/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/">
+  <WL5G3N0:types>
+    <xsd:schema xmlns:segtsdv2="http://claro.com.pe/esb/message/bssServiceProblemManagement/getTechnicalServiceDetails/v2/" xmlns:sertsqv2="http://claro.com.pe/esb/message/bssServiceProblemManagement/registerTechnicalServiceQuotationValidation/v2/" xmlns:segtscv2="http://claro.com.pe/esb/message/bssServiceProblemManagement/getTechnicalServicesByCustomer/v2/" xmlns:hd="http://claro.com.pe/esb/data/commonBusinessEntities/claroGenericHeaders/v2/" xmlns:fault="http://claro.com.pe/esb/data/commonBusinessEntities/claroFault/v2/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://claro.com.pe/esb/service/bssServiceProblemManagement/v2/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=getTechnicalServicesByCustomer.xsd" namespace="http://claro.com.pe/esb/message/bssServiceProblemManagement/getTechnicalServicesByCustomer/v2/" />
+      <xsd:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ClaroFault_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/claroFault/v2/" />
+      <xsd:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ClaroGenericHeaders_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/claroGenericHeaders/v2/" />
+    </xsd:schema>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=HeaderGeneric_v1.0.xsd" namespace="http://claro.com.pe/generic/messageFormat/v1.0/" />
+    </schema>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CommonsException.xsd" namespace="http://claro.com.pe/eai/ebs/xsd/CommonsException" />
+    </schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="responseHeaderMessage">
+    <WL5G3N0:part name="header" element="v1:HeaderResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="requestHeaderMessage">
+    <WL5G3N0:part name="header" element="v1:HeaderRequest" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="headerRequest">
+    <WL5G3N0:part name="headerReq" element="WL5G3N4:headerRequest" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="getTechnicalServicesByCustomerRequestMessage">
+    <WL5G3N0:part name="getTechnicalServicesByCustomerRequestMessage" element="WL5G3N1:GetTechnicalServicesByCustomerRequestMessage" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="headerResponse">
+    <WL5G3N0:part name="headerResp" element="WL5G3N4:headerResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="faultMessage">
+    <WL5G3N0:part name="faultMessage" element="WL5G3N5:claroFault" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="getTechnicalServicesByCustomerResponseMessage">
+    <WL5G3N0:part name="getTechnicalServicesByCustomerResponseMessage" element="WL5G3N1:GetTechnicalServicesByCustomerResponseMessage" />
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="BssServiceProblemManagementPort">
+    <WL5G3N0:operation name="getTechnicalServicesByCustomer">
+      <WL5G3N0:input message="WL5G3N6:getTechnicalServicesByCustomerRequestMessage" />
+      <WL5G3N0:output message="WL5G3N6:getTechnicalServicesByCustomerResponseMessage" />
+      <WL5G3N0:fault name="getTechnicalServicesByCustomerFault" message="WL5G3N6:faultMessage" />
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="BssServiceProblemManagementSoap11Binding" type="WL5G3N6:BssServiceProblemManagementPort">
+    <WL5G3N7:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WL5G3N0:operation name="getTechnicalServicesByCustomer">
+      <WL5G3N7:operation soapAction="getTechnicalServicesByCustomer" style="document" />
+      <WL5G3N0:input>
+        <WL5G3N7:body use="literal" namespace="http://claro.com.pe/esb/message/bssServiceProblemManagement/getTechnicalServicesByCustomer/v2/" />
+        <WL5G3N7:header message="WL5G3N6:headerRequest" part="headerReq" use="literal" />
+        <WL5G3N7:header message="WL5G3N6:requestHeaderMessage" part="header" use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N7:body use="literal" namespace="http://claro.com.pe/esb/message/bssServiceProblemManagement/getTechnicalServicesByCustomer/v2/" />
+        <WL5G3N7:header message="WL5G3N6:headerResponse" part="headerResp" use="literal" />
+        <WL5G3N7:header message="WL5G3N6:responseHeaderMessage" part="header" use="literal" />
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="getTechnicalServicesByCustomerFault">
+        <WL5G3N7:fault use="literal" name="getTechnicalServicesByCustomerFault" namespace="" />
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="BssServiceProblemManagement">
+    <WL5G3N0:documentation>OSB Service</WL5G3N0:documentation>
+    <WL5G3N0:port name="BssServiceProblemManagementPort" binding="WL5G3N6:BssServiceProblemManagementSoap11Binding">
+      <WL5G3N7:address location="http://PC-EBarrientos:8585/" />
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

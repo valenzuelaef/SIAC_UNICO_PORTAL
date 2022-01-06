@@ -1,0 +1,254 @@
+﻿@using System.Web.Optimization;
+<div id="PostpaidDataCustomer" class="panel claro-panel-primary ">
+    <div class="panel-heading">
+        <span class="glyphicon glyphicon-user"></span>
+        <a data-toggle="collapse" href="#DatosClientecollapse" style="color: #fff">
+            Datos del Cliente - Postpago
+        </a>
+    </div>
+
+    <div id="DatosClientecollapse" class="panel-body panel-collapse collapse in">
+        <table id="tbDatosCliente" class="table table-condensed ">
+            <tr>
+                <td class="col-md-2">
+                    <label class="control-label">Cliente</label>
+                </td>
+                <td class="col-md-9">
+
+                    <span id="lblPost_BusinessName"></span>
+
+
+                </td>
+                <td class="col-md-1">
+                    <button id="btnPost_CustomerData" data-toggle="modal" profile="SU_ACP_BCL,SU_HFC_CTDC,SU_IFI_BCL"
+                            class="btn claro-btn-info btn-xs pull-right">
+                        ...
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label">Contacto</label>
+                </td>
+                <td> <span id="lblPost_FullName"></span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label">DNI/RUC</label>
+                </td>
+                <td>
+                    <span id="lblPost_DocumentNumber"></span>
+
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label">Cuenta</label>
+                </td>
+                <td><span id="lblPost_Account"></span> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label">Producto</label>
+                </td>
+                <td><span id="lblPost_ProductType"></span> </td>
+                <td></td>
+            </tr>
+            <tr id="trPostRepresentante">
+                <td>
+                    <label class="control-label">Representante Legal</label>
+                </td>
+                <td><span id="lblPost_LegalAgent"></span> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label"> ID</label>
+                </td>
+                <td>
+                    <a data-toggle="modal" id="HistoricoSegmentaciondlg">
+                        <span id="lblPost_CustomerID" role="button"></span>
+                    </a>
+                </td>
+
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label"> Tel. Referencia 1</label>
+                </td>
+                <td>
+                    <a data-toggle="modal" id="btnPost_PhoneReference">
+                        <span id="lblPost_PhoneReference1" role="button"></span>
+                    </a>
+                </td>
+                <td></td>
+            </tr>
+            @*<tr>
+                <td>
+                    <label class="control-label"> Tel. Referencia 2</label>
+                </td>
+                <td>
+                    <a data-toggle="modal" id="btnPost_PhoneReference">
+                        <span id="lblPost_PhoneReference2" role="button"></span>
+                    </a>
+                </td>
+                <td></td>
+            </tr>*@
+            <tr>
+                <td>
+                    <label class="control-label"> Email</label>
+                </td>
+                <td><span id="lblPost_Email"></span> </td>
+                <td></td>
+            </tr>
+            <tr id="trPostSegmento">
+                <td>
+                    <label class="control-label"> Segmento</label>
+                </td>
+                <td>
+                    <a data-toggle="modal" id="btnPost_SegmentCustomer">
+                        <span id="lblPost_Segment2" role="button"></span>
+
+                    </a>
+                </td>
+                <td></td>
+            </tr>
+
+            @*<tr>
+                <td>
+                    <label class="control-label"> Comprobantes Electrónicos</label>
+                </td>
+                <td>
+                    <input id="chkPost_Membership" type="checkbox" disabled="disabled" />
+
+                </td>
+
+                <td></td>
+            </tr>*@
+            <tr>
+                <td>
+                    <label class="control-label"> Full Claro</label>
+                </td>
+                <td>
+                    <span id="lblFullClaroClient" style="color:red;"></span> 
+                </td>
+
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <table cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td style="width:25%">
+                                <label class="control-label" style="margin-top:3px">APP MI CLARO:</label>
+                            </td>
+                            <td style="width:7%;">
+                                <input id="checkAppMiclaro" type="checkbox" />
+                            </td>
+                            <td style="width: 13%">
+                                <label class="control-label" style="margin-top:3px">Versión:</label>
+                            </td>
+                            <td style="width: 10%;">
+                                <span id="lblVersionAppMiClaro"></span>
+                            </td>
+                            <td style="width: 35%">
+                                <label class="control-label">Fecha última transacción:</label>
+                            </td>
+                            <td style="width: 10%">
+                                <span id="lblFechaUltTranAppMiClaro"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="panel-heading claro-gris">
+        <span class="glyphicon glyphicon-user"></span>
+        <a data-toggle="collapse" href="#DatosFacturacioncollapse" style="color: #fff;">
+            Domicilio de Facturación
+        </a>
+    </div>
+
+
+    <div id="DatosFacturacioncollapse" class="panel-body panel-collapse collapse in">
+        <table class="table table-condensed">
+            <tr>
+                <td class="col-md-2">
+                    <label class="control-label"> Dirección</label>
+                </td>
+                <td class="col-md-9"><span id="lblPost_InvoiceAddress"></span> </td>
+                <td class="col-md-1"></td>
+            </tr>
+            <tr id="trPostPlaneCode">
+                <td class="col-md-2">
+                    <label class="control-label">
+                        <span id="lblPost_PlaneCode"></span>
+                    </label>
+                </td>
+                <td class="col-md-9"><span id="lblPost_CodeCenterPopulate"></span> </td>
+                <td class="col-md-1"></td>
+            </tr>
+            <tr id="trPostHubCode">
+                <td class="col-md-2">
+                    <label class="control-label">
+                        <span id="lblPost_HubCode"></span>
+                    </label>
+                </td>
+                <td class="col-md-9"><span id="lblPost_DescriptionCenterPopulate"></span> </td>
+                <td class="col-md-1"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label"> Urb. / Ref.</label>
+                </td>
+                <td><span id="lblPost_Reference"></span> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label"> Código Postal</label>
+                </td>
+                <td><span id="lblPost_InvoiceCode"></span>  </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="control-label"> Departamento</label>
+                </td>
+                <td><span id="lblPost_Departament"></span> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label"> Provincia</label>
+                </td>
+                <td><span id="lblPost_Province"></span> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="col-md-2">
+                    <label class="control-label"> Distrito</label>
+                </td>
+                <td class="col-md-9"><span id="lblPost_District"></span> </td>
+                <td class="col-md-1">
+                    <button id="btnPost_DireccionCustomer" profile="SU_ACP_BDL,SU_IFI_BDL"
+                            class="btn claro-btn-info btn-xs  pull-right">
+
+                        ...
+                    </button>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Postpaid/PostpaidDataCustomer")

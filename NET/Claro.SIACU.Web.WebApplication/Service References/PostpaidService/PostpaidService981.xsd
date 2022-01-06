@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoricalRecharge" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetHistoricalRecharge" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="HistoricalRechargeRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="objAudit" nillable="true" type="q1:AuditRequest" />
+          <xs:element minOccurs="0" name="strDateEnd" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="strDateStart" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="strFlagPlataform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="strMsisdn" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HistoricalRechargeRequestPostPaid" nillable="true" type="tns:HistoricalRechargeRequestPostPaid" />
+  <xs:complexType name="HistoricalRechargeResponsePostpaid">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="lstHistoricalRecharge" nillable="true" type="q2:ArrayOfHistoricalRechargePostPaid" />
+      <xs:element minOccurs="0" name="strCodigoRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMensajeAlert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMensajeRespuesta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoricalRechargeResponsePostpaid" nillable="true" type="tns:HistoricalRechargeResponsePostpaid" />
+</xs:schema>

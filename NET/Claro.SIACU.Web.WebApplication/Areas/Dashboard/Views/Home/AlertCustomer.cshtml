@@ -1,0 +1,58 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.DataCustomerModel
+
+@{
+    Layout = null;
+}
+
+<div id="contenedor-listCustomerOptional" class="modal-body">
+    <div class="col-md-12">
+        <div class="panel panel-info claro-modal-contenido-panel">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <div class="panel-title claro-modal-contenido-titulo-texto">
+                    <span class="glyphicon glyphicon-th-list"></span>&nbsp;<b>Datos de Cliente No Coinciden</b>
+                </div>
+            </div>
+            <div class="claro-modal-contenido-texto">
+                <table class="table table-responsive">
+                    <tr>
+                        <td class="col-md-2"><label>Cliente Post Pago:</label></td>
+                        <td class="col-md-4"><span id="lblNombresPostpaid"></span>&nbsp;&nbsp;<span id="lblApellidosPostpaid"></span><a id="btnlistpostpago" style="cursor:pointer; float:right !important;">Ver Listado</a></td>
+                        <td class="col-md-1"></td>
+                     </tr>
+                    <tr>
+                        <td class="col-md-2"><label>Cliente Pre Pago:</label></td>
+                        <td class="col-md-4"><span id="lblNombresPrepaid"></span>&nbsp;&nbsp;<span id="lblApellidosPrepaid"></span><a id="btnlistprepago" style="cursor: pointer; float: right !important; ">Ver Listado</a></td>
+                        <td class="col-md-1"></td>
+                     </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <form>
+            <div class="form-group">
+                <div class="panel-group">
+                    <div class="panel panel-info claro-modal-contenido-panel">
+                        <div class="panel-heading claro-modal-contenido-titulo-panel">
+                            <div class="panel-title claro-modal-contenido-titulo-texto">
+                                <a data-toggle="collapse1" href="#collapse1">
+                                    <span class="glyphicon glyphicon-th-list"></span>&nbsp;<b>Listado</b>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="tablebodyPostpaid" class="span3" >
+                            <table class="table table-striped">
+                                <tbody id="updatebody" class="ctbody">
+
+                                </tbody>
+                            </table>
+                        </div>               
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Home/CustomerAlert")

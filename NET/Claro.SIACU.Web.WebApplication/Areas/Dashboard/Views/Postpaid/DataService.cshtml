@@ -1,0 +1,318 @@
+﻿@using System.Web.Optimization;
+<div id="containerDataService">
+    <table class="table table-condensed">
+        <tr id="trPost_CellPhone">
+            <td class="col-md-2">
+                <label class="control-label"> Teléfono</label>
+            </td>
+            <td class="col-md-2">
+                <span id="lblPost_CellPhone"></span>
+            </td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs " data-toggle="modal" id="btnPost_PhoneListPost"> ... </button>
+            </td>
+
+
+
+            <td class="col-md-1">
+                <label id="lblPost_ChangeNum" class="control-label"> Realizó Cambio de Número</label>
+            </td>
+            <td class="col-md-2">
+                <span id="lblPost_ChangeNumber"></span>
+            </td>
+            <td></td>
+        </tr>
+        <tr id="trPost_ServiciosFijos">
+            <td class="col-md-2">
+                <label class="control-label"> Servicios Fijos Alámbricos</label>
+            </td>
+            <td class="col-md-2">
+                <span id="lblPost_ServiceA" aria-hidden="true"></span>
+            </td>
+            <td class="col-md-2"></td>
+            <td class="col-md-2">
+                <label class="control-label"> Servicios Fijos Inalámbricos</label>
+            </td>
+            <td class="col-md-2">
+                <span id="lblPost_ServiceI" aria-hidden="true"></span>
+            </td>
+            <td class="col-md-1"></td>
+        </tr>
+        <tr id="trPost_TelefoniaFija">
+            <td class="col-md-2">
+                <label class="control-label"> Telefonía Fija</label>
+            </td>
+            <td class="col-md-2">
+                <span id="lblPost_Telephony" style="cursor:pointer;" aria-hidden="true"></span>
+            </td>
+            <td class="col-md-2"></td>
+            <td class="col-md-2"></td>
+            <td class="col-md-2"></td>
+            <td class="col-md-2"></td>
+        </tr>
+        <tr id="trPost_InternetFijo">
+            <td class="col-md-2">
+                <label class="control-label"> Internet Fijo</label>
+            </td>
+            <td class="col-md-2">
+                <span id="lblPost_Internet" aria-hidden="true"></span>
+            </td>
+            <td class="col-md-2">
+                <button id="btnPost_PhoneListHFC" class="btn claro-btn-info btn-xs " data-toggle="modal"> ... </button>
+            </td>
+            <td class="col-md-1">
+                <label class="control-label"> Dir. Instalación</label>
+            </td>
+            <td class="col-md-2"></td>
+            <td class="col-md-1">
+                <button class="btn claro-btn-info btn-xs " data-toggle="modal" id="btnPost_Instalacion"> ... </button>
+            </td>
+            <td></td>
+        </tr>
+        <tr id="trPost_CableInstalacion">
+            <td class="col-md-2">
+                <label class="control-label"> Cable</label>
+            </td>
+            <td class="col-md-2">
+                <span id="lblPost_Cable" aria-hidden="true"></span>
+            </td>
+            <td class="col-md-1"></td>
+            <td class="col-md-2"></td>
+            <td class="col-md-2"></td>
+            <td class="col-md-1"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <label class="control-label"> Fecha Activación Servicio</label>
+            </td>
+            <td colspan="2"><span id="lblPost_ServiceActivationDate"></span></td>
+
+            <td class="col-md-2">
+                <label class="control-label"> Full Claro</label>
+            </td>
+            <td class="col-md-2">
+                <span id="lblFullClaroService" style="color:red;"></span>
+            </td>
+            <td class="col-md-2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <label class="control-label"> Plan</label>
+                <div id="lblPost_ServiceTFI" class="label-red-service-xl"></div>
+            </td>
+            <td>
+                <div id="lblPost_ServicePackage" class="label-red-service"></div>
+                <div id="lblPost_Plan"></div>
+                <div id="lblPost_ServiceCombo" class="label-red-service"></div>
+            </td>
+            <td>
+                <button data-toggle="modal" class="btn claro-btn-info btn-xs " profile="SU_ACP_CHP,SU_IFI_CHP" id="btnPost_Plan"> ... </button>
+            </td>
+
+            <td class="col-md-2">
+                <label class="control-label">Tipo de Plan</label> @*CCO*@
+            </td>
+            <td class="col-md-2">
+                <div id="lblPost_ModCon"></div>
+            </td>
+
+            <td></td>
+        </tr>
+        <tr>
+            <td class="col-md-2">
+                <label class="control-label"> Plazo Contrato</label>
+            </td>
+            <td class="col-md-3">
+                <span id="lblPost_TermContract"></span>
+            </td>
+            <td class="col-md-1"></td>
+
+            <td>
+                <label class="control-label">Motivo Estado Inicial</label> @*CCO*@
+            </td>
+            <td>
+                <div id="lblPost_ReasonFirst"></div>
+            </td>
+            <td class="col-md-1"></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="col-md-2">
+                <label class="control-label">Estado Servicio</label>
+            </td>
+            <td class="col-md-3">
+                <span id="lblPost_StateLine"></span>
+            </td>
+            <td class="col-md-1"></td>
+            <td class="col-md-2">
+                <label class="control-label">Ultimo Motivo Estado</label>
+            </td>
+            <td class="col-md-2">
+                <span id="lblPost_Reason"></span>
+            </td>
+            <td class="col-md-1">
+                <button data-toggle="modal" class="btn claro-btn-info btn-xs " profile="SU_ACP_CHL,SU_IFI_CHL" id="btnPost_HistorialLinea"> ... </button>
+            </td>
+            <td></td>
+        </tr>
+        <tr id="trPost_ICCIDIMSI">
+            <td>
+                <label class="control-label">ICCID</label>
+            </td>
+            <td>
+                <span id="lblPost_NroICCID"></span>
+            </td>
+            <td></td>
+            <td>
+                <label class="control-label">Fecha Ultimo Motivo Estado</label>
+            </td>
+            <td>
+                <span id="lblPost_StateDate"></span>
+
+            </td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td>
+                <label class="control-label">Campaña</label>
+            </td>
+            <td>
+                <span id="lblPost_Campaign"></span>
+            </td>
+            <td></td>
+            <td>
+                <label class="control-label">IMSI</label>
+            </td>
+            <td><span id="lblPost_NroIMSI"></span></td>
+
+            <td>
+                <button data-toggle="modal" class="btn claro-btn-info btn-xs" profile="SU_ACP_CHS,SU_IFI_CHS" id="btnPost_HistorySIM"> ... </button>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <label class="control-label">Banca Móvil</label>
+            </td>
+            <td>
+                <span id="lblPost_MobileBanking"></span>
+            </td>
+            <td></td>
+            <td class="td_Tecnologia4G">
+                <label class="control-label">Tecnología</label>
+            </td>
+            <td class="td_Tecnologia4G">
+                <button data-toggle="modal" class="btn claro-btn-info btn-xs " id="btnPost_Consulta4G"> ... </button>
+            </td>
+            <td class="td_Tecnologia4GVacio"></td>
+            <td class="td_Tecnologia4GVacio"></td>
+            <td></td>
+        </tr>
+        <tr id="trPost_SVAIMR">
+            <td class="tdPost_LimitConsume">
+                <label class="control-label">Límite de Consumo</label>
+            </td>
+            <td class="tdPost_LimitConsume">
+                <span id="lblPost_LimitConsume"></span>
+
+            </td>
+            <td></td>
+			 <td>
+                <label class="control-label">IMR</label>
+            </td>
+
+
+
+            <td>
+                <button data-toggle="modal" class="btn claro-btn-info btn-xs " profile="SU_ACP_IMR,SU_IFI_IMR" id="btnPost_IMR"> Calcular </button>
+                <label class="control-label" id="lblPost_IMR"> </label>
+            </td>
+            <td></td>
+            <td class="tdPost_SVA">
+                <label class="control-label">SVA</label>
+            </td>
+            <td class="tdPost_SVA">
+                <span id="lblPost_TypeSolution"></span>
+            </td>
+            <td></td>
+			
+        </tr>
+
+        <tr id="trPost_DiasActivosRoaming">
+            <td>
+                <label class="control-label">Días Activos</label>
+            </td>
+            <td>
+                <button data-toggle="modal" class="btn claro-btn-info btn-xs " id="btnPost_ActiveDays"> ...</button>
+            </td>
+
+            <td></td>
+           
+            <td>
+                <label id="lblRoaming" class="control-label">Roaming</label>
+
+
+
+            </td>
+            <td>
+                <button data-toggle="modal" class="btn claro-btn-info btn-xs" profile="SU_ACP_RGC,SU_IFI_RGC" id="btnPost_RegRoaming"> ... </button>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <label class="control-label">Vendedor</label>
+            </td>
+            <td colspan="2">
+                <span id="lblPost_Seller"></span>
+            </td>
+
+            <td>
+                <label id="lbl_portability" class="control-label">Portabilidad</label>
+            </td>
+            <td>
+                <span id="lblPost_PortabilityState" class="label-red-service"></span>
+                <button data-toggle="modal" class="btn claro-btn-info btn-xs" id="btnPost_Portabilidad"> ... </button>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <label class="control-label">Degradación :</label>
+            </td>
+            <td colspan="2">
+                <span id="lblPostDegradation"></span>
+            </td>
+            <td>
+                <label class="control-label">Comparte Megas :</label>
+            </td>
+            <td colspan="2">
+                <span id="lblPostTethering"></span>
+            </td>
+        </tr>
+    </table>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default" style="padding:1% !important">
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_Services" name="btnPost_Services" profile="SU_ACP_CSE,SU_HFC_CSE,SU_IFI_CSE">Servicios</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_Petition" name="btnPost_Petition" profile="SU_ACP_CPE,SU_HFC_CPE,SU_IFI_CPE">Peticiones</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_Annotations" name="btnPost_Annotations" profile="SU_ACP_CAT,SU_HFC_CAT,SU_IFI_CAT">Anotaciones</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnHFCLTE_Frequently" name="btnHFCLTE_Frequently">Nros. Frecuentes</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_LoanRental" name="btnPost_LoanRental" profile="SU_ACP_CPA,SU_IFI_CPA">Prestamo/Alq</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_LineAgreement" name="btnPost_LineAgreement" profile="SU_ACP_CAE,SU_IFI_CAE">Acuerdo Línea</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_Treason" name="btnPost_Treason" profile="SU_ACP_CTR,SU_IFI_CTR">Triación</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_ConsumptionBalance" name="btnPost_ConsumptionBalance" profile="SU_ACP_CSA,SU_HFC_CSA,SU_IFI_CSA">Consumo/Saldo</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_PinPuk" name="btnPost_PinPuk" profile="SU_ACP_CPP,SU_IFI_CPP">Pin y Puk</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_Calls" name="btnPost_Calls" profile="SU_ACP_CLL,SU_HFC_CLL,SU_IFI_CLL">Llamadas</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnPost_ActionsHistory" name="btnPost_ActionsHistory" profile="SU_ACP_CHA,SU_IFI_CHA">Hist.Acciones</button>
+                <button type="button" class="btn claro-btn-info btn-sm" data-toggle="modal" id="btnHFCLTE_Equipment" name="btnHFCLTE_Equipment">Cons. Equipos</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Postpaid/PostpaidDataService")

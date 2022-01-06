@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8de096a0-439d-4a44-a0d8-6665a35fecf7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MED_OperacionesINU.xsd" MetadataType="Schema" ID="05a9ab72-c03d-4441-9920-fda083b03e2c" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FconsultarTarifaGranel_v1" />
+    <MetadataFile FileName="MED_OperacionesINU1.xsd" MetadataType="Schema" ID="7abb3c56-5a53-44ef-94bd-3031f4bf08f0" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FconsultarTarifaAutomatica_v1" />
+    <MetadataFile FileName="MED_OperacionesINU2.xsd" MetadataType="Schema" ID="49474407-19d7-45fa-b802-ed4692ce0903" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FclaroGenericHeaders_v1" />
+    <MetadataFile FileName="MED_OperacionesINU3.xsd" MetadataType="Schema" ID="f9b8084c-dd92-44fe-8ec8-23618d5bea8c" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FresponseSchema" />
+    <MetadataFile FileName="MED_OperacionesINU4.xsd" MetadataType="Schema" ID="99c6ddee-f856-49fe-b923-055e5fd2ab55" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FresponseDataModificarTarifaAutomatica_v1" />
+    <MetadataFile FileName="MED_OperacionesINU5.xsd" MetadataType="Schema" ID="90fc60ee-2e3b-4eab-848d-d542f89c5c81" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FclaroFault_v1" />
+    <MetadataFile FileName="MED_OperacionesINU6.xsd" MetadataType="Schema" ID="bfd8441c-28f1-4410-97c4-7781a9644de0" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FmodificarTarifaAutomatica_v1" />
+    <MetadataFile FileName="BSS_OperacionesINU.wsdl" MetadataType="Wsdl" ID="783658a7-6d26-4095-b786-e90969317c3b" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?WSDL" />
+    <MetadataFile FileName="MED_OperacionesINU7.xsd" MetadataType="Schema" ID="9df1cb53-6fb6-4dad-b4fe-65985a09f265" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FresponseDataConsultarTarifaAutomatica_v1" />
+    <MetadataFile FileName="MED_OperacionesINU8.xsd" MetadataType="Schema" ID="9a026c05-5c2c-4e48-bc96-0aefe813826e" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FmodificarTarifaGranel_v1" />
+    <MetadataFile FileName="MED_OperacionesINU9.xsd" MetadataType="Schema" ID="a8ad5896-7ac2-4bf3-a3d1-e63823a6251e" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2Fheaders_v1" />
+    <MetadataFile FileName="MED_OperacionesINU10.xsd" MetadataType="Schema" ID="352a3275-2418-4b24-baa8-b958c6550947" SourceId="1" SourceUrl="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2Faudit" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

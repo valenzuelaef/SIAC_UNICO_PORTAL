@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://claro.com.pe/eai/ebs/ws/postventa/ConsultaSegmentoCliente" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://claro.com.pe/eai/ebs/ws/postventa/ConsultaSegmentoCliente" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ebs/ws/postventa/ConsultaSegmentoCliente">
+      <xsd:complexType name="AuditType">
+        <xsd:sequence>
+          <xsd:element name="usrApp" type="xsd:string" />
+          <xsd:element name="ipAplicacion" type="xsd:string" />
+          <xsd:element name="aplicacion" type="xsd:string" />
+          <xsd:element name="idTransaccion" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ConsultaSegmentoRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="audit" type="tns:AuditType" />
+            <xsd:element name="tipoDocumento" type="xsd:string" />
+            <xsd:element name="nroDocumento" type="xsd:string" />
+            <xsd:element name="longitudDocumento" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultaSegmentoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="idTransaccion" type="xsd:string" />
+            <xsd:element name="codigoRespuesta" type="xsd:string" />
+            <xsd:element name="mensajeRespuesta" type="xsd:string" />
+            <xsd:element name="segmento" type="xsd:string" />
+            <xsd:element name="nombreCliente" type="xsd:string" />
+            <xsd:element name="mensaje1" type="xsd:string" />
+            <xsd:element name="mensaje2" type="xsd:string" />
+            <xsd:element name="mensaje3" type="xsd:string" />
+            <xsd:element name="mensaje4" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultXTramRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="tramaConsulta" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultXTramResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="tramaRespuesta" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ListaConsultaSegmHistorico">
+        <xsd:sequence>
+          <xsd:element name="fecInicio" type="xsd:string" />
+          <xsd:element name="nroDocumento" type="xsd:string" />
+          <xsd:element name="segmento" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="consultaSegmHistoricoRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="audit" type="tns:AuditType" />
+            <xsd:element name="tipoDocumento" type="xsd:string" />
+            <xsd:element name="nroDocumento" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaSegmHistoricoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="idTransaccion" type="xsd:string" />
+            <xsd:element name="codigoRespuesta" type="xsd:string" />
+            <xsd:element name="mensajeRespuesta" type="xsd:string" />
+            <xsd:element maxOccurs="unbounded" name="listaConsultaSegmHistorico" type="tns:ListaConsultaSegmHistorico" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="consultaSegmentoRequestMsg">
+    <part name="parameters" element="tns:ConsultaSegmentoRequest" />
+  </message>
+  <message name="consultaSegmenteoResponseMsg">
+    <part name="parameters" element="tns:ConsultaSegmentoResponse" />
+  </message>
+  <message name="consultaSegmHistoricoRequestMsg">
+    <part name="parameters" element="tns:consultaSegmHistoricoRequest" />
+  </message>
+  <message name="consultaSegmHistoricoResponseMsg">
+    <part name="parameters" element="tns:consultaSegmHistoricoResponse" />
+  </message>
+  <message name="consultarSegmentoPorTramaRequestMsg">
+    <part name="parameters" element="tns:ConsultXTramRequest" />
+  </message>
+  <message name="consultarSegmentoPorTramaResponseMsg">
+    <part name="parameters" element="tns:ConsultXTramResponse" />
+  </message>
+  <portType name="ebsConsultaSegmentoPortType">
+    <operation name="consultaSegmento">
+      <input message="tns:consultaSegmentoRequestMsg" />
+      <output message="tns:consultaSegmenteoResponseMsg" />
+    </operation>
+    <operation name="consultarSegmxTrama">
+      <input message="tns:consultarSegmentoPorTramaRequestMsg" />
+      <output message="tns:consultarSegmentoPorTramaResponseMsg" />
+    </operation>
+    <operation name="consultaSegmHistorico">
+      <input message="tns:consultaSegmHistoricoRequestMsg" />
+      <output message="tns:consultaSegmHistoricoResponseMsg" />
+    </operation>
+  </portType>
+  <binding name="ebsConsultaSegmentoPortTypeSOAP11Binding" type="tns:ebsConsultaSegmentoPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="consultaSegmento">
+      <soap:operation soapAction="http://claro.com.pe/eai/ebs/ws/postventa/ConsultaSegmentoCliente/consultaSegmento" style="document" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="parameters" />
+      </output>
+    </operation>
+    <operation name="consultarSegmxTrama">
+      <soap:operation soapAction="http://claro.com.pe/eai/ebs/ws/postventa/ConsultaSegmentoCliente/consultarSegmentoPorTrama" style="document" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="parameters" />
+      </output>
+    </operation>
+    <operation name="consultaSegmHistorico">
+      <soap:operation soapAction="http://claro.com.pe/eai/ebs/ws/postventa/ConsultaSegmentoCliente/consultaSegmHistorico" style="document" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="parameters" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="ebsConsultaSegmentoPortTypeSOAP12Binding" type="tns:ebsConsultaSegmentoPortType">
+    <soap12:binding transport="http://www.w3.org/2003/05/soap/bindings/HTTP/" />
+    <operation name="consultaSegmento">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ebs/ws/postventa/ConsultaSegmentoCliente/consultaSegmento" style="document" />
+      <input>
+        <soap12:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap12:body use="literal" parts="parameters" />
+      </output>
+    </operation>
+    <operation name="consultarSegmxTrama">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ebs/ws/postventa/ConsultaSegmentoCliente/consultarSegmentoPorTrama" style="document" />
+      <input>
+        <soap12:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap12:body use="literal" parts="parameters" />
+      </output>
+    </operation>
+    <operation name="consultaSegmHistorico">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ebs/ws/postventa/ConsultaSegmentoCliente/consultaSegmHistorico" style="document" />
+      <input>
+        <soap12:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap12:body use="literal" parts="parameters" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ebsConsultaSegmentoService">
+    <port name="ebsConsultaSegmento11SB" binding="tns:ebsConsultaSegmentoPortTypeSOAP11Binding">
+      <soap:address location="http://limdeseaiv13.tim.com.pe:7909/ConsultaSegmentoClienteWS/ebsConsultaSegmento11SB" />
+    </port>
+    <port name="ebsConsultaSegmento12SB" binding="tns:ebsConsultaSegmentoPortTypeSOAP12Binding">
+      <soap:address location="http://limdeseaiv13.tim.com.pe:7909/ConsultaSegmentoClienteWS/ebsConsultaSegmento12SB" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,133 @@
+﻿@using System.Web.Optimization;
+@{
+    Layout = null;
+}
+<div id="contenedor-products" class="row">
+    <div class="col-md-12">
+        <div class="panel panel-info claro-modal-contenido-panel">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <div class="panel-title claro-modal-contenido-titulo-texto">
+                    <span class="glyphicon glyphicon-th-list"></span>&nbsp;<b>Datos Generales</b>
+                </div>
+            </div>
+            <div class="claro-modal-contenido-texto">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2"><label>Nombres y Apellidos:</label></div>
+                    <div class="col-md-2 col-sm-2"><span id="lblNombresApellidos"></span></div>
+                    <div class="col-md-2 col-sm-2"><label>Tipos de búsqueda:</label></div>
+                    <div class="col-md-2 col-sm-2"><span id="lbltipoDocIdentidad"></span></div>
+                    <div class="col-md-2 col-sm-2"><label>Nro Documento:</label></div>
+                    <div class="col-md-2 col-sm-2"><span id="lbldocIdentidad"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="panel-group" id="panelPostpaid">
+            <div class="panel panel-info claro-modal-contenido-panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse1"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Servicios POST-PAGO </a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="table-responsive" id="divPostpaid">
+                        <table id="tblPostpaid" class="table table-hover">
+                            <thead class="claro-bg-primary">
+                                <tr>
+                                    <th class="col-md-1">Producto </th>
+                                    <th class="col-md-2">Cuenta</th>
+                                    <th class="col-md-2">Cod. Cliente </th>
+                                    <th class="col-md-2">Tipo Cliente</th>
+                                    <th class="col-md-3">Fecha activación</th>
+                                    <th class="col-md-1">Total Activas</th>
+                                    <th class="col-md-1">Total No Activas</th>
+                                    <th class="col-md-1">ID</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    
+                        <div id="LoadingPostPaid">
+                            @*<div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>*@
+                        </div>
+                    </div>
+                   
+
+                </div>
+            </div>
+        </div>
+        <div class="panel-group" id="panelPrepaid">
+            <div class="panel panel-info claro-modal-contenido-panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse2"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Servicios PRE-PAGO</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse in">
+
+                    <div class="table-responsive" id="divPrepaid">
+                        <table id="tblPrepaid" class="table table-hover">
+                            <thead class="claro-bg-primary">
+                                <tr>
+                                    <th class="col-md-3">Tipo Producto </th>
+                                    <th class="col-md-3">Teléfono</th>
+                                    <th class="col-md-3">Fecha de Activación Cuenta</th>
+                                    <th class="col-md-3">Estado </th>
+                                    <th class="col-md-1">ID</th>
+                                </tr>
+                            </thead>
+                            <tbody class="ctbody"></tbody>
+                        </table>
+                        <div id="LoadingPrepaid">
+                            @*<div align="center"><img src="~/Images/loading2.gif" width="25" height="25" /> Cargando .... </div>*@
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group" id="panelOlo">
+            <div class="panel panel-info claro-modal-contenido-panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse3"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Servicios OLO</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse in">
+
+                    <div class="table-responsive" id="divOlo">
+                        <table id="tblOlo" class="table table-hover">
+                            <thead class="claro-bg-primary">
+                                <tr>
+                                    <th class="col-md-3">Tipo Producto </th>
+                                    <th class="col-md-3">Teléfono</th>
+                                    <th class="col-md-3">Fecha de Activación Cuenta</th>
+                                    <th class="col-md-3">Estado </th>
+                                    <th class="col-md-1">ID</th>
+                                </tr>
+                            </thead>
+                            <tbody class="ctbody"></tbody>
+                        </table>
+                        <div id="LoadingOlo">
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="modal fade" id="myModalll" tabindex="-1" role="dialog"></div>
+<div class="modal fade" role="dialog" id="modalLineasAsociadas"></div>
+    @Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Home/CustomerProducts")
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd2="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" xmlns:xsd4="http://claro.com.pe/esb/data/generico/claroFault/v1/" xmlns="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" xmlns:xsd3="http://claro.com.pe/esb/data/generico/responseStatus/v1/" xmlns:xsd5="http://claro.com.pe/eai/servicecommons/" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FresponseSchema" namespace="http://claro.com.pe/esb/data/generico/responseStatus/v1/" />
+  <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FclaroFault_v1" namespace="http://claro.com.pe/esb/data/generico/claroFault/v1/" />
+  <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FclaroGenericHeaders_v1" namespace="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" />
+  <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2Faudit" namespace="http://claro.com.pe/eai/servicecommons/" />
+  <xsd:complexType name="ListaRequestOpcionalType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="listaRequestOpcional">
+        <xsd:complexType>
+          <xsd:attribute name="campo" type="xsd:string" />
+          <xsd:attribute name="valor" type="xsd:string" />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="modificarTarifaGranelRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="headerRequest" type="xsd2:HeaderRequestType" />
+        <xsd:element name="msisdn" type="xsd:string" />
+        <xsd:element name="offer" type="xsd:string" />
+        <xsd:element name="subscriberstatus" type="xsd:string" />
+        <xsd:element name="subscriptionString" type="xsd:string" />
+        <xsd:element name="accion" type="xsd:string" />
+        <xsd:element name="listaRequestOpcional" type="ListaRequestOpcionalType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="modificarTarifaGranelResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="xsd5:AuditType" />
+        <xsd:element name="listaRequestOpcional" type="ListaRequestOpcionalType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

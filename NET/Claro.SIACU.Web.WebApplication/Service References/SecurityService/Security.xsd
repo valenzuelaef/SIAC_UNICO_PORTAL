@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Claro.Security.Logon" elementFormDefault="qualified" targetNamespace="Claro.Security.Logon" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55209/Security.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:55209/Security.svc?xsd=xsd0" namespace="Claro.Security" />
+  <xs:complexType name="LogonRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element name="userName" nillable="true" type="xs:string" />
+          <xs:element name="applicationId" type="xs:int" />
+          <xs:element name="optionType" nillable="true" type="xs:string" />
+          <xs:element name="isMenuSU" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogonRequest" nillable="true" type="tns:LogonRequest" />
+  <xs:complexType name="LogonResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="Claro" base="q2:Response">
+        <xs:sequence>
+          <xs:element name="employee" nillable="true" type="tns:Employee" />
+          <xs:element xmlns:q3="Claro.Security" name="menu" nillable="true" type="q3:ArrayOfOption" />
+          <xs:element name="profiles" nillable="true" type="tns:ArrayOfProFile" />
+          <xs:element xmlns:q4="Claro.Security" name="options" nillable="true" type="q4:ArrayOfOption" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogonResponse" nillable="true" type="tns:LogonResponse" />
+  <xs:complexType name="Employee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+      <xs:element minOccurs="0" name="sapVendorId" type="xs:int" />
+      <xs:element minOccurs="0" name="accessStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="profileId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" type="xs:int" />
+      <xs:element minOccurs="0" name="areaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="searchUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="profiles" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="optionPermissions" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Employee" nillable="true" type="tns:Employee" />
+  <xs:complexType name="ArrayOfProFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProFile" nillable="true" type="tns:ProFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProFile" nillable="true" type="tns:ArrayOfProFile" />
+  <xs:complexType name="ProFile">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="name" nillable="true" type="xs:string" />
+      <xs:element name="vendorCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProFile" nillable="true" type="tns:ProFile" />
+</xs:schema>

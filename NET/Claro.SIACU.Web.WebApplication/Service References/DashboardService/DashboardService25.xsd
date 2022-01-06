@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" />
+  <xs:complexType name="ArrayOfProductPrePaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductPrePaid" nillable="true" type="tns:ProductPrePaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductPrePaid" nillable="true" type="tns:ArrayOfProductPrePaid" />
+  <xs:complexType name="ProductPrePaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaActivacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ObjId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoProducto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductPrePaid" nillable="true" type="tns:ProductPrePaid" />
+  <xs:complexType name="CustomerPrePaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" base="q1:Person">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AFILIACION" type="xs:boolean" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU" minOccurs="0" name="ApplicationType" type="q2:ApplicationType" />
+          <xs:element minOccurs="0" name="BANNER_MESSAGE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BLACKLIST" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CANT_REG" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CONTINGENCIACLARIFY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CUENTA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMAIL_CONFIRMACION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ESTADO_CONTACTO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ESTADO_CONTRATO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ESTADO_SITE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHAACTIVACION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHA_ACT" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FLAG_REGISTRADO" type="xs:int" />
+          <xs:element minOccurs="0" name="FUNCION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="INTERACCION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LUGAR_NAC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MODALIDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MOTIVOREGISTRO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OBJID_CONTACTO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OBJID_SITE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PUNTO_VENTA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ROL_CONTACTO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SEGMENTO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoProducto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoProductoTelefono" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Transaction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="USUARIO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="oService" nillable="true" type="tns:ServicePrePaid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerPrePaid" nillable="true" type="tns:CustomerPrePaid" />
+  <xs:complexType name="ServicePrePaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertaBloqueo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BancaMovil" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondAmountRFA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondRFA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CNTNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CambiosTarifaGratis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CambiosTriosGratis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionPlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionTypeTriation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiasEstado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsTFI" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EstadoDias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoLinea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoSubscriber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FactorDivision" type="xs:double" />
+      <xs:element minOccurs="0" name="FecActivacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FecDol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FecExpLinea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaExpSelect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaExpiracionSaldo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ICCID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCNTPossible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSelect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoBloqueo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NroCelular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NroFamAmigos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NroIMSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanTarifario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProviderID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponsePortability" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Respuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Saldo" type="xs:double" />
+      <xs:element minOccurs="0" name="SaldoMinutosSelect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaldoPendiente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaldoPrincipal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Segmento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusIMSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusLinea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubscriberStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnologyVoLTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnologyVoWifi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tecnologia4G" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoTriacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transaction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="listAccount" nillable="true" type="tns:ArrayOfAccountPrepaid" />
+      <xs:element minOccurs="0" name="listAccounts" nillable="true" type="tns:ArrayOfAccountPrepaid" />
+      <xs:element minOccurs="0" name="listBalance" nillable="true" type="tns:ArrayOfBalancePrePaid" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" minOccurs="0" name="listPortability" nillable="true" type="q3:ArrayOfPortability" />
+      <xs:element minOccurs="0" name="listTrio" nillable="true" type="tns:ArrayOfTrioPrepaid" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" minOccurs="0" name="oPortability" nillable="true" type="q4:Portability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServicePrePaid" nillable="true" type="tns:ServicePrePaid" />
+  <xs:complexType name="ArrayOfAccountPrepaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountPrepaid" nillable="true" type="tns:AccountPrepaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountPrepaid" nillable="true" type="tns:ArrayOfAccountPrepaid" />
+  <xs:complexType name="AccountPrepaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaExpiracion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orden" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Saldo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountPrepaid" nillable="true" type="tns:AccountPrepaid" />
+  <xs:complexType name="ArrayOfBalancePrePaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BalancePrePaid" nillable="true" type="tns:BalancePrePaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBalancePrePaid" nillable="true" type="tns:ArrayOfBalancePrePaid" />
+  <xs:complexType name="BalancePrePaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommercialName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConstancyOrder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expiration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MovementTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PromotionalBonus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnityIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_Balance" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BalancePrePaid" nillable="true" type="tns:BalancePrePaid" />
+  <xs:complexType name="ArrayOfTrioPrepaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrioPrepaid" nillable="true" type="tns:TrioPrepaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrioPrepaid" nillable="true" type="tns:ArrayOfTrioPrepaid" />
+  <xs:complexType name="TrioPrepaid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrioPrepaid" nillable="true" type="tns:TrioPrepaid" />
+  <xs:complexType name="ArrayOfPaginaOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaginaOption" nillable="true" type="tns:PaginaOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaginaOption" nillable="true" type="tns:ArrayOfPaginaOption" />
+  <xs:complexType name="PaginaOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptionDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaginaOption" nillable="true" type="tns:PaginaOption" />
+</xs:schema>

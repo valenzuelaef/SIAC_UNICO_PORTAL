@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ColivingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IColivingService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getSearchCustomer" />
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd3" namespace="Claro" />
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd4" namespace="AuditService" />
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getRetrieveSubscriptions" />
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getConsultaLineaCuenta" />
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getObtenerDatosClienteColiving" />
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getCustomerInfo" />
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.Common" />
+      <xsd:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getListOST" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IColivingService_GetSearchCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetSearchCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetRetrieveSubscriptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRetrieveSubscriptions" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetRetrieveSubscriptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRetrieveSubscriptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_ConsultarLineaCuenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarLineaCuenta" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_ConsultarLineaCuenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarLineaCuentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetObtenerDatosCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObtenerDatosCliente" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetObtenerDatosCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObtenerDatosClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetCustomerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetCustomerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetAccountTelephoneCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountTelephoneCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetAccountTelephoneCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountTelephoneCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetColivingParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetColivingParameters" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetColivingParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetColivingParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetListOST_Legacy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOST_Legacy" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetListOST_Legacy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOST_LegacyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetListOST_One_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOST_One" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetListOST_One_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOST_OneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetListOSTDetails_One_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOSTDetails_One" />
+  </wsdl:message>
+  <wsdl:message name="IColivingService_GetListOSTDetails_One_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOSTDetails_OneResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IColivingService">
+    <wsdl:operation name="GetSearchCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IColivingService/GetSearchCustomer" message="tns:IColivingService_GetSearchCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IColivingService/GetSearchCustomerResponse" message="tns:IColivingService_GetSearchCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRetrieveSubscriptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IColivingService/GetRetrieveSubscriptions" message="tns:IColivingService_GetRetrieveSubscriptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IColivingService/GetRetrieveSubscriptionsResponse" message="tns:IColivingService_GetRetrieveSubscriptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarLineaCuenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IColivingService/ConsultarLineaCuenta" message="tns:IColivingService_ConsultarLineaCuenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IColivingService/ConsultarLineaCuentaResponse" message="tns:IColivingService_ConsultarLineaCuenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObtenerDatosCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IColivingService/GetObtenerDatosCliente" message="tns:IColivingService_GetObtenerDatosCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IColivingService/GetObtenerDatosClienteResponse" message="tns:IColivingService_GetObtenerDatosCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IColivingService/GetCustomerInfo" message="tns:IColivingService_GetCustomerInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IColivingService/GetCustomerInfoResponse" message="tns:IColivingService_GetCustomerInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountTelephoneCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IColivingService/GetAccountTelephoneCustomer" message="tns:IColivingService_GetAccountTelephoneCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IColivingService/GetAccountTelephoneCustomerResponse" message="tns:IColivingService_GetAccountTelephoneCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColivingParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IColivingService/GetColivingParameters" message="tns:IColivingService_GetColivingParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IColivingService/GetColivingParametersResponse" message="tns:IColivingService_GetColivingParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOST_Legacy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IColivingService/GetListOST_Legacy" message="tns:IColivingService_GetListOST_Legacy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IColivingService/GetListOST_LegacyResponse" message="tns:IColivingService_GetListOST_Legacy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOST_One">
+      <wsdl:input wsaw:Action="http://tempuri.org/IColivingService/GetListOST_One" message="tns:IColivingService_GetListOST_One_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IColivingService/GetListOST_OneResponse" message="tns:IColivingService_GetListOST_One_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOSTDetails_One">
+      <wsdl:input wsaw:Action="http://tempuri.org/IColivingService/GetListOSTDetails_One" message="tns:IColivingService_GetListOSTDetails_One_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IColivingService/GetListOSTDetails_OneResponse" message="tns:IColivingService_GetListOSTDetails_One_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IColivingService" type="tns:IColivingService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IColivingService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSearchCustomer">
+      <soap:operation soapAction="http://tempuri.org/IColivingService/GetSearchCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRetrieveSubscriptions">
+      <soap:operation soapAction="http://tempuri.org/IColivingService/GetRetrieveSubscriptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarLineaCuenta">
+      <soap:operation soapAction="http://tempuri.org/IColivingService/ConsultarLineaCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObtenerDatosCliente">
+      <soap:operation soapAction="http://tempuri.org/IColivingService/GetObtenerDatosCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <soap:operation soapAction="http://tempuri.org/IColivingService/GetCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountTelephoneCustomer">
+      <soap:operation soapAction="http://tempuri.org/IColivingService/GetAccountTelephoneCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColivingParameters">
+      <soap:operation soapAction="http://tempuri.org/IColivingService/GetColivingParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOST_Legacy">
+      <soap:operation soapAction="http://tempuri.org/IColivingService/GetListOST_Legacy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOST_One">
+      <soap:operation soapAction="http://tempuri.org/IColivingService/GetListOST_One" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOSTDetails_One">
+      <soap:operation soapAction="http://tempuri.org/IColivingService/GetListOSTDetails_One" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ColivingService">
+    <wsdl:port name="BasicHttpBinding_IColivingService" binding="tns:BasicHttpBinding_IColivingService">
+      <soap:address location="http://localhost:9593/Coliving/ColivingService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

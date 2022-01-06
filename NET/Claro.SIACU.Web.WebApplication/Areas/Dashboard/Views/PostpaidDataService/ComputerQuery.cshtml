@@ -1,0 +1,53 @@
+﻿@using System.Web.Optimization;
+<div id="containerComputerQuery">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="list-group-item-heading page-header text-info">INFORMACIÓN DEL CLIENTE</h4>
+            <br />
+            <form id="frmDatosCliente" class="form-inline">
+                <div class="form-group col-md-4">
+                    <label id="lblCustomerId">Id Cliente:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label id="lblAccount">Cuenta:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label id="lblCustomer">Cliente:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label id="lblContact">Contacto:&nbsp;</label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="list-group-item-heading page-header text-info">LISTA DE EQUIPOS</h4>
+            <br />
+            <table id="tblComputerQuery" class="table table-hover table-bordered table-condensed">
+                <thead>
+                    <tr class="claro-bg-primary">
+                        <td class="text-center">Cod. Material</td>
+                        <td class="text-center">Cod. SAP</td>
+                        <td class="text-center">Num. Serie</td>
+                        <td class="text-center">Mac Ad.</td>
+                        <td class="text-center">Desc. Material</td>
+                        <td class="text-center">Tipo Equipo</td>
+                        <td class="text-center">Código / Id Producto</td>
+                        <td class="text-center">Modelo</td>
+                        <td class="text-center">Conv. Type</td>
+                        <td class="text-center">Serv/Paque. Principal</td>
+                        <td class="text-center">Head End</td>
+                        <td class="text-center">Perfil</td>
+                        <td class="text-center">Número</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="errorComputerQuery"></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidComputerQuery")

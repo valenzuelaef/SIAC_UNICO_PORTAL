@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Board.GetCustomer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getConsultaLineaCuenta" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" />
+  <xs:complexType name="CustomerRequestDashboard">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlagSearchType" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPostPaid" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPrepaid" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NotEvalState" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TypeSearch" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="ValueSearch" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerRequestDashboard" nillable="true" type="tns:CustomerRequestDashboard" />
+  <xs:complexType name="CustomerResponseDashboard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeResponse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterfaceCustomer" nillable="true" type="xs:anyType" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="ListIndicatorIGV" nillable="true" type="q2:ArrayOfIndicatorIGVPostPaid" />
+      <xs:element minOccurs="0" name="MsjValidation" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getConsultaLineaCuenta" minOccurs="0" name="itm" nillable="true" type="q3:Itm" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" minOccurs="0" name="objOptions" nillable="true" type="q4:OptionsResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerResponseDashboard" nillable="true" type="tns:CustomerResponseDashboard" />
+</xs:schema>

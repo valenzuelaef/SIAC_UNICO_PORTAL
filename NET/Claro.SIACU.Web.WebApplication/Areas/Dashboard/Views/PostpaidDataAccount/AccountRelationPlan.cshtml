@@ -1,0 +1,645 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataAccount.AccountRelationPlanModel
+
+<div id="ContentPostpaidAccountRelationPlan">
+
+    @if (Model != null)
+    {
+        <div id="modal-content">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <table class="table table-condensed">
+                        <tbody>
+
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-6">
+                                        <label class="control-label">Razón Social</label> &nbsp;:&nbsp;@Model.objCustomer.BusinessName
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label">Código Cliente</label>&nbsp;: &nbsp;@Model.objCustomer.Account
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-6">
+                                        <label class="control-label">Dirección Facturación</label>&nbsp;: &nbsp;@Model.objCustomer.InvoiceAddress
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-6">
+                                        <label class="control-label">Distrito</label>&nbsp;: &nbsp;@Model.objCustomer.InvoiceDistrict
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label">Provincia</label>&nbsp;: &nbsp;@Model.objCustomer.InvoiceProvince
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-6">
+                                        <label class="control-label">Contacto para Facturas</label>&nbsp;: &nbsp;@Model.objCustomer.FullName
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label">Fax</label>&nbsp;: &nbsp;@Model.objCustomer.Fax
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-6">
+                                        <label class="control-label">Representante Legal</label>&nbsp;: &nbsp;@Model.objCustomer.LegalAgent
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label">RUC</label>&nbsp;: &nbsp;@Model.objCustomer.DNIRUC
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="col-md-6">
+                                        <label class="control-label">Contacto Cliente</label>&nbsp;: &nbsp;@Model.objCustomer.CustomerContact
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label">Teléfono Referencia</label> &nbsp;@Model.objCustomer.PhoneReference
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="col-md-6">
+                                        <label class="control-label">Límite de Crédito</label>&nbsp;:&nbsp;
+                                        <label>S/.</label> &nbsp;@Model.objCustomer.CreditLimit
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label">E-mail</label>&nbsp;: &nbsp;@Model.objCustomer.Email
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="col-md-6">
+                                        <label class="control-label">Total Líneas Activas</label>&nbsp;: &nbsp;@Model.objCustomer.TotalLines
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label"> Account Manager</label>&nbsp;: &nbsp;@Model.objCustomer.Consultant
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                @if (@Model.objAccountBag.NumberLines != null)
+                {
+                    <div class="col-md-12">
+
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-6">
+                                            <label class="control-label">BOLSA</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Tipo Bolsa</label>
+                                        </div>
+                                        <div class="col-md-4">@Model.objAccountBag.BagType</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Cargo Fijo</label>
+                                        </div>
+                                        <div class="col-md-4">@Model.objAccountBag.FixedCharge</div>
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Min/Sol</label>
+                                        </div>
+                                        <div class="col-md-4">@Model.objAccountBag.MinSol</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Fecha Activación</label>
+                                        </div>
+                                        <div class="col-md-4">@Model.objAccountBag.ActivationDate</div>
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Cantidad de Lineas</label>
+                                        </div>
+                                        <div class="col-md-4">@Model.objAccountBag.NumberLines</div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+            <div class="panel panel-default ">
+                @if (@Model.objAccountBag.FlagBagService == 1)
+                {
+                    <div class="table-responsive">
+                        <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblBagDetail">
+                            <thead class="claro-bg-primary">
+                                <tr>
+                                    <th>Bolsa</th>
+                                    <th>Cargo</th>
+                                    <th>Fecha Activación</th>
+                                    <th>Unidades</th>
+                                    <th>Cant. de lineas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.lstAccountBagDetail != null)
+                                {
+                                    foreach (var item in Model.lstAccountBagDetail)
+                                    {
+                                        <tr>
+                                            <td>@item.BagTypeBagDetail</td>
+                                            <td>@item.FixedChargeBagDetail</td>
+                                            <td>@item.ActivationDateBagDetail</td>
+                                            <td>@item.MinSolBagDetail</td>
+                                            <td>@item.NumberLinesBagDetail</td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+
+            @if (@Model.lstAccountRelationPlan != null && Model.lstAccountRelationPlan.Count > 0)
+            {
+                <div class="panel panel-default ">
+                    <div class="table-responsive">
+                        <table class="table  table-hover  table-bordered claro-modal-tabla" id="tblRelationPlan">
+                            <thead class="claro-bg-primary">
+                                @foreach (var item in @Model.lstAccountRelationPlan)
+                                {
+
+                                    <tr>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        @if (@item.DynamicRows > 0)
+                                        {
+                                        <th style="border: 1px, solid; background-color: #a49c9c" colspan=@item.DynamicRows class="text-center"> Servicios</th>
+                                        }
+                                        @if (@Model.objAccountBag.FlagBagService == 1)
+                                        {
+                                            <th style="border-right:hidden"></th>
+                                        }
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                        <th style="border-right:hidden"></th>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-sm-1">IT</th>
+                                        <th class="col-sm-1">Teléfono</th>
+                                        <th class="col-sm-1">SimCard</th>
+                                        <th class="col-sm-1">NichoID</th>
+                                        <th class="col-sm-1">Plan</th>
+                                        <th class="col-sm-1">Cargo fijo</th>
+                                        <th class="col-sm-1">Fecha Activ.</th>
+
+                                        @if (@item.F_LDI == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">LDI</th>
+                                        }
+
+                                        @if (@item.F_InternationalRoaming == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Roaming Int.</th>
+                                        }
+
+                                        @if (@item.F_TimData == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">ClaroData</th>
+                                        }
+
+                                        @if (@item.F_TimFax == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">ClaroFax</th>
+                                        }
+
+                                        @if (@item.F_SMSPackage == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Paquete SMS</th>
+                                        }
+
+                                        @if (@item.F_DataPackage == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Paquete Data</th>
+                                        }
+
+                                        @if (@item.F_LevelEnablement == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Niv.de Habilt.</th>
+                                        }
+                                        @if (@item.F_RPV == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Tarifa Preferencial RPCe</th>
+                                        }
+                                        @if (@item.F_CostRPV == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Costo por RPCe</th>
+                                        }
+                                        @if (@item.F_CostRPCUnlimited == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Costo RPCe Nacional</th>
+                                        }
+                                        @if (@item.F_Insurance == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Seguro</th>
+                                        }
+                                        @if (@item.F_Loan == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Alquiler/Prestamo</th>
+                                        }
+                                        @if (@item.F_TimProConnection == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Claroconnection</th>
+                                        }
+                                        @if (@item.F_GPRS == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">GPRS</th>
+                                        }
+                                        @if (@item.F_LBS == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">LBS</th>
+                                        }
+                                        @if (@item.F_SolSMS == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Soluciones SMS</th>
+                                        }
+                                        @if (@item.F_RTP == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">RPM</th>
+                                        }
+                                        @if (@item.F_Habilitation == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Habilitación</th>
+                                        }
+                                        @if (@item.F_SMSMail == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Sms Mail</th>
+                                        }
+                                        @if (@item.F_RPCUnlimited == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">RPCe ilimitado</th>
+                                        }
+                                        @if (@item.F_RechargePersonalAccount == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Cuenta Personal Recarga</th>
+                                        }
+                                        @if (@item.F_SMS == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">SMS Send</th>
+                                        }
+                                        @if (@item.F_MMS == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">GPRS MMS</th>
+                                        }
+                                        @if (@item.F_Blackberry == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Blackberry</th>
+                                        }
+                                        @if (@item.F_Reposicion == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Servicio SERC</th>
+                                        }
+
+                                        @if (@item.F_AdditionalConsumptionControl == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Tope Soles Adicionales</th>
+                                        }
+
+                                        @if (@item.F_AdditionalConsumptionControl == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Tope Bolsa / Exacto</th>
+                                        }
+                                        @if (@item.F_DetailedBilling == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Factura Detallada</th>
+                                        }
+                                        @if (@item.F_DetailedBillingModA == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Fact. det. Mod A.</th>
+                                        }
+                                        @if (@item.F_ClaroDirect == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Claro Directo</th>
+                                        }
+                                        @if (@item.F_DetailedBillingCharge == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Cargo fact detallada</th>
+                                        }
+                                        @if (@item.F_ClaroFax == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Claro Fax</th>
+                                        }
+
+                                        @if (@item.F_ClaroData == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Claro Data</th>
+                                        }
+                                        @if (@item.F_Clarobanking == "1")
+                                        {
+                                            <th class="col-sm-2" style="background-color: #a49c9c">Claro Banca</th>
+                                        }
+
+                                        @if (@Model.objAccountBag.FlagBagService == 1)
+                                        {
+                                            <th class="col-sm-1">Bolsa Servicios</th>
+                                        }
+
+                                        <th class="col-sm-1">Con o Sin Equipo</th>
+                                        <th class="col-sm-1">Consultor Business</th>
+                                        <th class="col-sm-1">Código  WF</th>
+                                        <th class="col-sm-1">Estado</th>
+                                        <th class="col-sm-1">Motivo</th>
+                                        <th class="col-sm-1">Consultor Renovación</th>
+                                        <th class="col-sm-1">Fecha Entrega Equipo Renovación</th>
+                                        <th class="col-sm-1">Fecha Activación Renovación</th>
+                                    </tr>
+
+                                        break;
+                                }
+                            </thead>
+                            <tbody>
+                                @foreach (var item in @Model.lstAccountRelationPlan)
+                                {
+
+                                    <tr>
+                                        <td class="col-sm-1">@item.IT</td>
+                                        <td class="col-sm-1">@item.Telephone</td>
+                                        <td class="col-sm-1">@item.SIMCard</td>
+                                        <td class="col-sm-1">@item.NichoID</td>
+                                        <td class="col-sm-1">@item.DescriptionPlan</td>
+                                        <td class="col-sm-1">@item.FixedCharge</td>
+                                        <td class="col-sm-1">@item.ActivationDate</td>
+
+                                        @if (@item.F_LDI == "1")
+                                        {
+                                            <td class="col-sm-2">@item.LDI</td>
+                                        }
+
+                                        @if (@item.F_InternationalRoaming == "1")
+                                        {
+                                            <td class="col-sm-2">@item.InternationalRoaming</td>
+                                        }
+
+                                        @if (@item.F_TimData == "1")
+                                        {
+                                            <td class="col-sm-2">@item.TimData</td>
+                                        }
+
+                                        @if (@item.F_TimFax == "1")
+                                        {
+                                            <td class="col-sm-2">@item.TimFax</td>
+                                        }
+
+                                        @if (@item.F_SMSPackage == "1")
+                                        {
+                                            <td class="col-sm-2">@item.SMSPackage</td>
+                                        }
+
+                                        @if (@item.F_DataPackage == "1")
+                                        {
+                                            <td class="col-sm-2">@item.DataPackage</td>
+                                        }
+                                        @if (@item.F_LevelEnablement == "1")
+                                        {
+                                            <td class="col-sm-2">@item.HabilitacionLevel</td>
+                                        }
+                                        @if (@item.F_RPV == "1")
+                                        {
+                                            <td class="col-sm-2">@item.PreferentialRateRPC</td>
+                                        }
+                                        @if (@item.F_CostRPV == "1")
+                                        {
+                                            <td class="col-sm-2">@item.CostXRPCe</td>
+                                        }
+                                        @if (@item.F_CostRPCUnlimited == "1")
+                                        {
+                                            <td class="col-sm-2">@item.CostRPCUnlimited</td>
+                                        }
+                                        @if (@item.F_Insurance == "1")
+                                        {
+                                            <td class="col-sm-2">@item.Insurance</td>
+                                        }
+                                        @if (@item.F_Loan == "1")
+                                        {
+                                            <td class="col-sm-2">@item.Loan</td>
+                                        }
+                                        @if (@item.F_TimProConnection == "1")
+                                        {
+                                            <td class="col-sm-2">@item.TimProConnection</td>
+                                        }
+                                        @if (@item.F_GPRS == "1")
+                                        {
+                                            <td class="col-sm-2">@item.GPRS</td>
+                                        }
+                                        @if (@item.F_LBS == "1")
+                                        {
+                                            <td class="col-sm-2">@item.LBS</td>
+                                        }
+                                        @if (@item.F_SolSMS == "1")
+                                        {
+                                            <td class="col-sm-2">@item.SolSMS</td>
+                                        }
+                                        @if (@item.F_RTP == "1")
+                                        {
+                                            <td class="col-sm-2">@item.RTP</td>
+                                        }
+                                        @if (@item.F_Habilitation == "1")
+                                        {
+                                            <td class="col-sm-2">@item.Habilitation</td>
+                                        }
+                                        @if (@item.F_SMSMail == "1")
+                                        {
+                                            <td class="col-sm-2">@item.SMSMail</td>
+                                        }
+                                        @if (@item.F_RPCUnlimited == "1")
+                                        {
+                                            <td class="col-sm-2">@item.RPCUnlimited</td>
+                                        }
+                                        @if (@item.F_RechargePersonalAccount == "1")
+                                        {
+                                            <td class="col-sm-2">@item.RechargePersonalAccount</td>
+                                        }
+                                        @if (@item.F_SMS == "1")
+                                        {
+                                            <td class="col-sm-2">@item.SMSSending</td>
+                                        }
+                                        @if (@item.F_MMS == "1")
+                                        {
+                                            <td class="col-sm-2">@item.GPRSMMS</td>
+                                        }
+                                        @if (@item.F_Blackberry == "1")
+                                        {
+                                            <td class="col-sm-2">@item.BlackBerry</td>
+                                        }
+                                        @if (@item.F_Reposicion == "1")
+                                        {
+                                            <td class="col-sm-2">@item.Reposicion</td>
+                                        }
+
+                                        @if (@item.F_AdditionalConsumptionControl == "1")
+                                        {
+                                            <td class="col-sm-2">@item.AdditionalTopBag</td>
+                                        }
+
+                                        @if (@item.F_AdditionalConsumptionControl == "1")
+                                        {
+                                            <td class="col-sm-2">@item.ExactlyTopBag</td>
+                                        }
+                                        @if (@item.F_DetailedBilling == "1")
+                                        {
+                                            <td class="col-sm-2">@item.DetailedBilling</td>
+                                        }
+                                        @if (@item.F_DetailedBillingModA == "1")
+                                        {
+                                            <td class="col-sm-2">@item.DetailedBillingModA</td>
+                                        }
+                                        @if (@item.F_ClaroDirect == "1")
+                                        {
+                                            <td class="col-sm-2">@item.ClaroDirect</td>
+                                        }
+                                        @if (@item.F_DetailedBillingCharge == "1")
+                                        {
+                                            <td class="col-sm-2">@item.DetailedBillingCharge</td>
+                                        }
+                                        @if (@item.F_ClaroFax == "1")
+                                        {
+                                            <td class="col-sm-2">@item.ClaroFax</td>
+                                        }
+
+                                        @if (@item.F_ClaroData == "1")
+                                        {
+                                            <td class="col-sm-2">@item.ClaroData</td>
+                                        }
+                                        @if (@item.F_Clarobanking == "1")
+                                        {
+                                            <td class="col-sm-2">@item.Clarobanking</td>
+                                        }
+
+                                        @if (@Model.objAccountBag.FlagBagService == 1)
+                                        {
+                                            <td class="col-sm-1">@item.BagService</td>
+                                        }
+                                        <td class="col-sm-1">@item.WithNoEquipment</td>
+                                        <td class="col-sm-1">@item.BusinessConsultant</td>
+                                        <td class="col-sm-1">@item.WFCode</td>
+                                        <td class="col-sm-1">@item.State</td>
+                                        <td class="col-sm-1">@item.Reason</td>
+                                        <td class="col-sm-1">@item.ConsultanRenovating</td>
+                                        <td class="col-sm-1">@item.DeliveryDateRenewalTeam</td>
+                                        <td class="col-sm-1">@item.RenovatingActivationDate</td>
+
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <span>Todas las tarifas incluyen IGV</span>
+                </div>
+            }
+            <div id="divCorporativo" class="hide">
+                <p><label id="lblMensaje" class="text-danger"></label></p>
+                <button type="button" class="btn claro-btn-info btn-sm" id="btnGenerateRequest">Generar Solicitud</button>
+                <button type="button" class="btn claro-btn-info btn-sm" id="btnRefresh">Refrescar</button>
+                <table id="tblRequests" class="table table-hover claro-modal-tabla table-bordered" cellspacing="0">
+                    <thead>
+                        <tr class="claro-bg-primary text-center">
+                            <td>ID</td>
+                            <td>Usuario</td>
+                            <td>Aplicativo</td>
+                            <td>Fecha de Solicitud</td>
+                            <td>Fecha de Término</td>                            
+                            <td>Estado</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="panel panel-info ">
+                <div class="panel-heading ">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#Significadocollapse">Significado de Nomenclatura</a>
+                    </h4>
+                </div>
+                <div id="Significadocollapse" class="panel-body panel-collapse collapse in" style="padding-top: 0px;">
+                    <table class="table  table-striped table-hover table-responsive claro-modal-tabla ">
+
+                        <tbody>
+
+                            <tr>
+                                <td class="col-md-1">L1</td>
+                                <td class="col-md-9">Red Privada Claro Empresas</td>
+                            </tr>
+                            <tr>
+                                <td>L2</td>
+                                <td>Red Privada Claro</td>
+                            </tr>
+                            <tr>
+                                <td>L3</td>
+                                <td>Red Privada Claro + todo el mundo Claro</td>
+                            </tr>
+                            <tr>
+                                <td>L3A*</td>
+                                <td>
+                                    Lo mismo que el L3 pero sólo de la localidad en donde se encuentre
+                                    el cliente
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>L4</td>
+                                <td>El N.H. L3 + teléfonos fijos de la provincia</td>
+                            </tr>
+                            <tr>
+                                <td>L5</td>
+                                <td>El N.H. L4 + cualquier celular de la provincia</td>
+                            </tr>
+                            <tr>
+                                <td>L6</td>
+                                <td>Lo mismo que el L5 pero sólo de la localidad sin salida de LDN</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <span>*En el caso de RPCe el cliente se podrá comunicar sin problemas </span>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataAccount/PostpaidAccountRelationPlan")
+
+

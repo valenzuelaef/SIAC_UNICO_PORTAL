@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetFlatCode" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetFlatCode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:complexType name="FlatCodeRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContractId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FlatCodeRequest" nillable="true" type="tns:FlatCodeRequest" />
+  <xs:complexType name="FlatCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FlatCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlatCodeResponse" nillable="true" type="tns:FlatCodeResponse" />
+</xs:schema>

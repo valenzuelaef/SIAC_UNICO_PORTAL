@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.EvaluateAmount" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.EvaluateAmount" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/DashboardService.svc?xsd=xsd29" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" />
+  <xs:complexType name="EvaluateAmountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageRequest" nillable="true" type="tns:EvaluateAmountMessageRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EvaluateAmountRequest" nillable="true" type="tns:EvaluateAmountRequest" />
+  <xs:complexType name="EvaluateAmountMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:EvaluateAmountBodyRequest" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Header" nillable="true" type="q2:HeadersRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EvaluateAmountMessageRequest" nillable="true" type="tns:EvaluateAmountMessageRequest" />
+  <xs:complexType name="EvaluateAmountBodyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="perfil" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoTelefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="unidad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EvaluateAmountBodyRequest" nillable="true" type="tns:EvaluateAmountBodyRequest" />
+  <xs:complexType name="EvaluateAmountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageResponse" nillable="true" type="tns:EvaluateAmountMessageResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EvaluateAmountResponse" nillable="true" type="tns:EvaluateAmountResponse" />
+  <xs:complexType name="EvaluateAmountMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:EvaluateAmountBodyResponse" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDataPower" minOccurs="0" name="Header" nillable="true" type="q3:HeadersResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EvaluateAmountMessageResponse" nillable="true" type="tns:EvaluateAmountMessageResponse" />
+  <xs:complexType name="EvaluateAmountBodyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensajeRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monto" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EvaluateAmountBodyResponse" nillable="true" type="tns:EvaluateAmountBodyResponse" />
+</xs:schema>

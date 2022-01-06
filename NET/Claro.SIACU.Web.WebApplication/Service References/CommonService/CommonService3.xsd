@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetSegments" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetGroupBagList" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetBagList" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetSearchType" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetPortability" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetTypeDocumentCustomer" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetStateCivil" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetSex" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetConfirmMail" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetMotiveRegister" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetOccupation" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetStateType" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetTransactionType" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetCacDacType" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetTelephoneType" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetListInstant" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstantById" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetBanner" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetCreate" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetModify" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd28" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetBannerId" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd29" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetDeactivate" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd30" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDocumentType" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd31" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetEventType" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd32" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetFlatCode" />
+  <xs:import schemaLocation="http://localhost:9593/CommonService.svc?xsd=xsd33" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetParamaterClarify.GetDescriptions" />
+  <xs:element name="GetSegments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetSegments" minOccurs="0" name="objSegmentsRequest" nillable="true" type="q1:SegmentsRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSegmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetSegments" minOccurs="0" name="GetSegmentsResult" nillable="true" type="q2:SegmentsResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupBagList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetGroupBagList" minOccurs="0" name="objGroupBagLisRequest" nillable="true" type="q3:GroupBagLisRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupBagListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetGroupBagList" minOccurs="0" name="GetGroupBagListResult" nillable="true" type="q4:GroupBagListResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBagList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetBagList" minOccurs="0" name="objobjBagListResquest" nillable="true" type="q5:BagListResquestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBagListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetBagList" minOccurs="0" name="GetBagListResult" nillable="true" type="q6:BagListResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchTypeList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetSearchType" minOccurs="0" name="objSearchTypeRequest" nillable="true" type="q7:SearchTypeRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchTypeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetSearchType" minOccurs="0" name="GetSearchTypeListResult" nillable="true" type="q8:SearchTypeResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPortability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetPortability" minOccurs="0" name="objPortabilityRequest" nillable="true" type="q9:PortabilityRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPortabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetPortability" minOccurs="0" name="GetPortabilityResult" nillable="true" type="q10:PortabilityResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTypeDocumentCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetTypeDocumentCustomer" minOccurs="0" name="objTypeDocumentCustomerRequest" nillable="true" type="q11:TypeDocumentCustomerRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTypeDocumentCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetTypeDocumentCustomer" minOccurs="0" name="GetTypeDocumentCustomerResult" nillable="true" type="q12:TypeDocumentCustomerResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStateCivil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetStateCivil" minOccurs="0" name="objStateCivilRequest" nillable="true" type="q13:StateCivilRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStateCivilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetStateCivil" minOccurs="0" name="GetStateCivilResult" nillable="true" type="q14:StateCivilResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetSex" minOccurs="0" name="objSexRequest" nillable="true" type="q15:SexRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetSex" minOccurs="0" name="GetSexResult" nillable="true" type="q16:SexResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfirmMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetConfirmMail" minOccurs="0" name="objConfirmMailRequest" nillable="true" type="q17:ConfirmMailRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfirmMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetConfirmMail" minOccurs="0" name="GetConfirmMailResult" nillable="true" type="q18:ConfirmMailResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMotiveRegister">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetMotiveRegister" minOccurs="0" name="objMotiveRegisterRequest" nillable="true" type="q19:MotiveRegisterRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMotiveRegisterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetMotiveRegister" minOccurs="0" name="GetMotiveRegisterResult" nillable="true" type="q20:MotiveRegisterResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOccupation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetOccupation" minOccurs="0" name="objOccupationRequest" nillable="true" type="q21:OccupationRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOccupationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetOccupation" minOccurs="0" name="GetOccupationResult" nillable="true" type="q22:OccupationResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStateType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetStateType" minOccurs="0" name="objStateTypeRequest" nillable="true" type="q23:StateTypeRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStateTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetStateType" minOccurs="0" name="GetStateTypeResult" nillable="true" type="q24:StateTypeResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetTransactionType" minOccurs="0" name="objTransactionTypeRequest" nillable="true" type="q25:TransactionTypeRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetTransactionType" minOccurs="0" name="GetTransactionTypeResult" nillable="true" type="q26:TransactionTypeResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCacDacType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetCacDacType" minOccurs="0" name="objCacDacTypeRequest" nillable="true" type="q27:CacDacTypeRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCacDacTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetCacDacType" minOccurs="0" name="GetCacDacTypeResult" nillable="true" type="q28:CacDacTypeResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTelephoneType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetTelephoneType" minOccurs="0" name="objTelephoneTypeRequest" nillable="true" type="q29:TelephoneTypeRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTelephoneTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetTelephoneType" minOccurs="0" name="GetTelephoneTypeResult" nillable="true" type="q30:TelephoneTypeResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListInstant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetListInstant" minOccurs="0" name="objListInstantRequestRequest" nillable="true" type="q31:ListInstantRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListInstantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetListInstant" minOccurs="0" name="ListInstantResult" nillable="true" type="q32:ListInstantResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInstant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="objInsertInstantRequest" nillable="true" type="q33:InstantRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInstantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="InsertInstantResult" nillable="true" type="q34:InstantResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetinstantById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstantById" minOccurs="0" name="objInstantByIdRequest" nillable="true" type="q35:InstantByIdRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetinstantByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstantById" minOccurs="0" name="GetinstantByIdResult" nillable="true" type="q36:InstantByIdResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInstant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="objUpdateInstantRequest" nillable="true" type="q37:InstantRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInstantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="UpdateInstantResult" nillable="true" type="q38:InstantResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeactivateInstant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="objDeactivateInstantRequest" nillable="true" type="q39:InstantRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeactivateInstantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="DeactivateInstantResult" nillable="true" type="q40:InstantResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBanner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetBanner" minOccurs="0" name="request" nillable="true" type="q41:BannerRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBannerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetBanner" minOccurs="0" name="GetBannerResult" nillable="true" type="q42:BannerResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCreate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetCreate" minOccurs="0" name="request" nillable="true" type="q43:CreateRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetCreate" minOccurs="0" name="GetCreateResult" nillable="true" type="q44:CreateResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetModify" minOccurs="0" name="request" nillable="true" type="q45:ModifyRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetModify" minOccurs="0" name="GetModifyResult" nillable="true" type="q46:ModifyResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBannerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetBannerId" minOccurs="0" name="request" nillable="true" type="q47:BannerIdRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBannerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetBannerId" minOccurs="0" name="GetBannerIdResult" nillable="true" type="q48:BannerIdResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeactivate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetDeactivate" minOccurs="0" name="request" nillable="true" type="q49:DeactivateRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeactivateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetDeactivate" minOccurs="0" name="GetDeactivateResult" nillable="true" type="q50:DeactivateResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInstants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="objInsertInstantRequest" nillable="true" type="q51:InstantRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInstantsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="InsertInstantsResult" nillable="true" type="q52:InstantResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDocumentType" minOccurs="0" name="request" nillable="true" type="q53:DocumentTypeResquestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetDocumentType" minOccurs="0" name="GetDocumentTypeResult" nillable="true" type="q54:DocumentTypeResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInstantCorrelative">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="objInsertInstantRequest" nillable="true" type="q55:InstantRequestManagement" />
+        <xs:element minOccurs="0" name="strLogin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInstantCorrelativeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="GetInstantCorrelativeResult" nillable="true" type="q56:InstantResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveIntantsMasive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="objInsertInstantRequest" nillable="true" type="q57:InstantRequestManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveIntantsMasiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Management.GetInstant" minOccurs="0" name="SaveIntantsMasiveResult" nillable="true" type="q58:InstantResponseManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetEventType" minOccurs="0" name="objEventTypeRequest" nillable="true" type="q59:EventTypeRequestCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetEventType" minOccurs="0" name="GetEventTypeResult" nillable="true" type="q60:EventTypeResponseCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlatCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetFlatCode" minOccurs="0" name="request" nillable="true" type="q61:FlatCodeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlatCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetFlatCode" minOccurs="0" name="GetFlatCodeResult" nillable="true" type="q62:FlatCodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDescriptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetParamaterClarify.GetDescriptions" minOccurs="0" name="objGetDescriptionsRequest" nillable="true" type="q63:GetDescriptionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDescriptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Common.GetParamaterClarify.GetDescriptions" minOccurs="0" name="GetDescriptionsResult" nillable="true" type="q64:GetDescriptionsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

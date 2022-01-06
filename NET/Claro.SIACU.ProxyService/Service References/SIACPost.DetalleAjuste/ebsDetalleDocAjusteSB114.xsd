@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" xmlns:base="http://claro.com.pe/eai/ws/baseschema" elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/ebsdetalledocajuste/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://limdeseaiv19.tim.com.pe:8909/ebsDetalleDocAjuste/ebsDetalleDocAjusteSB11?xsd=1" namespace="http://claro.com.pe/eai/ws/baseschema" />
+  <xsd:element name="listarTipoDocRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditRequest" type="base:auditRequestType" />
+        <xsd:element name="flagEstadoCuenta" type="xsd:string" />
+        <xsd:element name="tipoDocRef" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="nomDoc" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaRequestOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="listarTipoDocResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="auditResponse" type="base:auditResponseType" />
+        <xsd:element name="listaTiposDocumento" type="ListaTiposDocumentoType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="listaResponseOpcional" type="base:parametrosType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="ListaTiposDocumentoType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="tiposDocumentos" type="DocumentoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DocumentoType">
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:string" />
+      <xsd:element name="nombre" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

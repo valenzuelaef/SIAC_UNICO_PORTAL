@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetCreditLimitDetail" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.GetCreditLimitDetail" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd4" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PostpaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" />
+  <xs:complexType name="CreditLimitDetailRequestPostPaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumberPac" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserApplication" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreditLimitDetailRequestPostPaid" nillable="true" type="tns:CreditLimitDetailRequestPostPaid" />
+  <xs:complexType name="CreditLimitDetailResponsePostPaid">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid" minOccurs="0" name="CreditLimitDetail" nillable="true" type="q2:CreditLimitDetailPostPaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreditLimitDetailResponsePostPaid" nillable="true" type="tns:CreditLimitDetailResponsePostPaid" />
+</xs:schema>

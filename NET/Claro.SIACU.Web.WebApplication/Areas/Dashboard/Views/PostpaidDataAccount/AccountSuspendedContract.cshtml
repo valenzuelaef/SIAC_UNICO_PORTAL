@@ -1,0 +1,76 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataAccount.AccountSuspendedContractModel
+
+@{
+    Layout = null;
+}
+
+<div id="ContentAccountSuspendedContract">
+    <form class="form-horizontal" role="form">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-inline" align="center">
+                    <label class="input-group">Motivo de Suspensión</label>
+
+                    <select id="cboTypeSuspended" class="form-control input-sm">
+                        @foreach (var item in Model.lstTypeSuspendedModel)
+                        {
+                            <option value="@item.Code">@item.Description</option>
+                        }
+                    </select>
+
+                    <label class="input-group">Fecha desde</label>
+                    <div class="input-daterange input-group" id="containerDateRange">
+                        <input type="text" id="txtDateStart" class="input-sm form-control" name="start" />
+                        <label class="input-group-addon btn" for="txtDateStart">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </label>
+                        <span class="input-group-addon">A</span>
+                        <input type="text" id="txtDateEnd" class="input-sm form-control" name="end" />
+                        <label class="input-group-addon btn" for="txtDateEnd">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-default btn-sm btn-sm" id="btnSearchContract">
+                        <span class="glyphicon  glyphicon-search" aria-hidden="true"></span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </form>
+    <div class="row">
+      
+        <div id="tblAccountSuspendedContractList">
+            <table class="table  table-striped table-hover table-responsive claro-modal-tabla" id="tblSuspendedContractList">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th class="col-sm-1">N&#176;</th>
+                        <th class="col-sm-1">C&#243;digo</th>
+                        <th class="col-sm-1">Tipo Cliente</th>
+                        <th class="col-sm-3">Raz&#243;n Social</th>
+                        <th class="col-sm-1">Plan Tarifario</th>
+                        <th class="col-sm-1">Tel&#233;fono</th>
+                        <th class="col-sm-1">SIMCARD</th>
+                        <th class="col-sm-1">Fecha Activaci&#243;n</th>
+                        <th class="col-sm-1">Fecha Suspensi&#243;n</th>
+                        <th class="col-sm-1">Motivo Suspensi&#243;n</th>
+                        <th class="col-sm-1">Usuario</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="LoadingContractList"></div>
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataAccount/PostpaidAccountContract")
+
+
+

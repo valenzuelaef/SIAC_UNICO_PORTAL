@@ -1,0 +1,353 @@
+﻿@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.Postpaid.DataCustomerModel
+
+<div id="modal-content">
+
+
+   
+@if (!(Model.Application != "HFC" && Model.Application != "LTE"))
+{
+    <div class="row" style="text-align:center;">
+        <table class="table table-condensed">
+            <tbody>
+
+                <tr class="col-md-12">
+                    <td class="col-md-1">
+                        <label class="control-label">Contrato:</label>
+                    </td>
+                    <td class="col-md-1">
+
+                        @Model.ContractID
+
+                    </td>
+                    <td class="col-md-1">
+                        <label class="control-label">Tipo de Cliente:</label>
+                    </td>
+                    <td class="col-md-1">
+                        @Model.CustomerType
+                    </td>
+                    <td class="col-md-1">
+                        <label class="control-label">Contacto:</label>
+                    </td>
+                    <td class="col-md-3" style="text-align:left">
+                        @Model.FullName
+                    </td>
+
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+}
+    <div class="panel panel-info ">
+        <div class="panel-heading claro-modal-contenido-titulo-panel">
+            <h4 class="panel-title claro-modal-contenido-titulo-texto">
+
+
+
+                @if (Model.Application != "HFC" && Model.Application != "LTE")
+                {
+                    <a data-toggle="collapse" href="#DataDiectionInscollapse">
+                        Dirección de Instalación
+                    </a>
+                }
+                else
+                {
+
+                    <a data-toggle="collapse" href="#DataDiectionInscollapse">
+                        Datos Actuales del Cliente
+                    </a>
+                }
+            </h4>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                @if (Model.Application != "HFC" && Model.Application != "LTE")
+                {
+                    <table class="table table-condensed">
+                        <tbody>
+
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-2">
+                                        <label class="control-label">Nro Teléfono/Servicio</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.Telephone
+                                    </div>
+                                    <div class="col-md-2">
+
+                                    </div>
+                                    <div class="col-md-4">
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-2">
+                                        <label class="control-label">Dirección</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.Address
+                                    </div>
+                                    <div class="col-md-2">
+
+                                    </div>
+                                    <div class="col-md-4">
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="col-md-12">
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Notas de Dirección</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.AddressNote
+                                    </div>
+                                    <div class="col-md-2">
+
+
+                                    </div>
+                                    <div class="col-md-4">
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="col-md-12">
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">País</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.Country
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Departamento</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.Departament
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+                                <td class="col-md-12">
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Provincia</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.Province
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Distrito</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.District
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+
+                    <table class="table table-condensed">
+                        <tbody>
+
+                         
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-2">
+                                        <label class="control-label">Cliente</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.BusinessName
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Monto Ult. Fact.(IGV)</label>
+                                    </div>
+                                    <div class="col-md-4">
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="col-md-12">
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Contacto</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.FullName
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Fecha Vcto.</label>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.ActivationDate
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="col-md-12">
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">DNI/RUC</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.DocumentNumber
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Ciclo Fact.</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.BillingCycle
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+                                <td class="col-md-12">
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Codigo Edificio</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-4"></div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-2">
+                                        <label class="control-label">Dirección</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Model.InvoiceAddress
+                                        @*@(Model.OfficeAddress == "null" ? "" : Model.OfficeAddress)*@
+                                    </div>
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-4"></div>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="col-md-12">
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Notas de Dirección</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @(Model.LegalUrbanization == "null" ? "" : Model.LegalUrbanization)
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">País</label>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        @(Model.LegalCountry == "null" ? "" : Model.LegalCountry)
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="col-md-12">
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Departamento</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @(Model.LegalDepartament == "null" ? "" : Model.LegalDepartament)
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Provincia</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @(Model.LegalProvince == "null" ? "" : Model.LegalProvince)
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Distrito</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                      
+                                        @(Model.LegalDistrict == "null" ? "" : Model.LegalDistrict)
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Código de Plano</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @(Model.PlaneCodeInstallation == "null" ? "" : Model.PlaneCodeInstallation)
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

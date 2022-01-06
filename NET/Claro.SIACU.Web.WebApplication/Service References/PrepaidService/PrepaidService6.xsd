@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRecharges" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRecharges" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" />
+  <xs:complexType name="RechargesRequestPrePaid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlataformaIT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrafficType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="strMovementType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="strcreditoDebito" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="strtypeQuery" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RechargesRequestPrePaid" nillable="true" type="tns:RechargesRequestPrePaid" />
+  <xs:complexType name="RechargesResponsePrePaid">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" minOccurs="0" name="listRecharge" nillable="true" type="q2:ArrayOfRechargePrePaid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RechargesResponsePrePaid" nillable="true" type="tns:RechargesResponsePrePaid" />
+</xs:schema>

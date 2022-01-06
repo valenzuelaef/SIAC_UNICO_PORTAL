@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://claro.com.pe/eai/services/parametrosclarify/ws/types/schema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://claro.com.pe/eai/services/parametrosclarify/ws" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="ParametroClarifyWS" targetNamespace="http://claro.com.pe/eai/services/parametrosclarify/ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://limdeseaiv25.tim.com.pe:8903/ParametrosClarifyWS/ebsParametrosClarifySOAP11Port?xsd=1" namespace="http://claro.com.pe/eai/services/parametrosclarify/ws/types/schema" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="parametrosClarifyRequest">
+    <wsdl:part name="parametrosClarify" element="base:parametrosClarifyRequest" />
+  </wsdl:message>
+  <wsdl:message name="parametrosClarifyResponse">
+    <wsdl:part name="parametrosClarifyRes" element="base:parametrosClarifyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ParametrosClarifyPortType">
+    <wsdl:operation name="obtenerDescripciones">
+      <wsdl:input message="tns:parametrosClarifyRequest" />
+      <wsdl:output message="tns:parametrosClarifyResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="parametrosClarifySOAP11Binding" type="tns:ParametrosClarifyPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtenerDescripciones">
+      <soap11:operation soapAction="http://claro.com.pe/eai/services/parametrosclarify/parametrosClarify" />
+      <wsdl:input>
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="parametrosClarifySOAP12Binding" type="tns:ParametrosClarifyPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtenerDescripciones">
+      <soap12:operation soapAction="http://claro.com.pe/eai/services/parametrosclarify/parametrosClarify" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ebsParametrosClarify">
+    <wsdl:port name="ebsParametrosClarifySOAP11Port" binding="tns:parametrosClarifySOAP11Binding">
+      <soap11:address location="http://limdeseaiv25.tim.com.pe:8903/ParametrosClarifyWS/ebsParametrosClarifySOAP11Port" />
+    </wsdl:port>
+    <wsdl:port name="ebsParametrosClarifySOAP12Port" binding="tns:parametrosClarifySOAP12Binding">
+      <soap12:address location="http://limdeseaiv25.tim.com.pe:8903/ParametrosClarifyWS/ebsParametrosClarifySOAP12Port" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

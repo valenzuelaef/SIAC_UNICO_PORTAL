@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetValidateCustomer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Postpaid.Legacy.GetValidateCustomer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="GetValidateCustomerRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="validarClienteRequest" nillable="true" type="tns:validarClienteRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetValidateCustomerRequest" nillable="true" type="tns:GetValidateCustomerRequest" />
+  <xs:complexType name="validarClienteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="listaOpcional" nillable="true" type="tns:ArrayOfListaOpcional" />
+      <xs:element minOccurs="0" name="numeroDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="validarClienteRequest" nillable="true" type="tns:validarClienteRequest" />
+  <xs:complexType name="ArrayOfListaOpcional">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListaOpcional" nillable="true" type="tns:ListaOpcional" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListaOpcional" nillable="true" type="tns:ArrayOfListaOpcional" />
+  <xs:complexType name="ListaOpcional">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaOpcional" nillable="true" type="tns:ListaOpcional" />
+  <xs:complexType name="GetValidateCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="validarClienteResponse" nillable="true" type="tns:validarClienteResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetValidateCustomerResponse" nillable="true" type="tns:GetValidateCustomerResponse" />
+  <xs:complexType name="validarClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responseAudit" nillable="true" type="tns:ResponseAudit" />
+      <xs:element minOccurs="0" name="responseData" nillable="true" type="tns:ResponseData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="validarClienteResponse" nillable="true" type="tns:validarClienteResponse" />
+  <xs:complexType name="ResponseAudit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensajeRespuesta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseAudit" nillable="true" type="tns:ResponseAudit" />
+  <xs:complexType name="ResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bonoElegido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bonoLinea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoEtiqueta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreEtiqueta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseData" nillable="true" type="tns:ResponseData" />
+</xs:schema>

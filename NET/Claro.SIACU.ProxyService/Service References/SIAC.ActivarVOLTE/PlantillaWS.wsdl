@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://claro.com.pe/eai/ws/postventa/activavoltews" xmlns:types="http://claro.com.pe/eai/ws/postventa/activavoltews/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" name="PlantillaWS" targetNamespace="http://claro.com.pe/eai/ws/postventa/activavoltews" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://claro.com.pe/eai/ws/postventa/activavoltews" />
+    <xsd:schema>
+      <xsd:import schemaLocation="http://limdeseaiv28.tim.com.pe:8909/ActivarVOLTEWS/ebsActivarVOLTESB11?xsd=1" namespace="http://claro.com.pe/eai/ws/postventa/activavoltews/types" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="activaTecVolteRequestMsg">
+    <wsdl:part name="request" element="types:activaTecVolteRequest" />
+  </wsdl:message>
+  <wsdl:message name="activaTecVolteResponseMsg">
+    <wsdl:part name="response" element="types:activaTecVolteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarTecVoLTERequestMsg">
+    <wsdl:part name="consultarTecVoLTERequest" element="types:consultarTecVoLTERequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarTecVoLTEResponseMsg">
+    <wsdl:part name="consultarTecVoLTEResponse" element="types:consultarTecVoLTEResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ActivarVOLTEWSPortType">
+    <wsdl:operation name="activaTecVolte">
+      <wsdl:input message="tns:activaTecVolteRequestMsg" />
+      <wsdl:output message="tns:activaTecVolteResponseMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTecVoLTE">
+      <wsdl:input message="tns:consultarTecVoLTERequestMsg" />
+      <wsdl:output message="tns:consultarTecVoLTEResponseMsg" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ActivarVOLTEWSPortTypeSOAP11Binding" type="tns:ActivarVOLTEWSPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="activaTecVolte">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/activavoltews/consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTecVoLTE">
+      <soap:operation soapAction="http://claro.com.pe/eai/ws/postventa/activavoltews/consultarTecVoLTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="consultarTecVoLTERequest" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="consultarTecVoLTEResponse" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ActivarVOLTEWSPortTypeSOAP12Binding" type="tns:ActivarVOLTEWSPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="activaTecVolte">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/activavoltews/consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTecVoLTE">
+      <soap12:operation soapAction="http://claro.com.pe/eai/ws/postventa/activavoltews/consultarTecVoLTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="consultarTecVoLTERequest" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="consultarTecVoLTEResponse" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ActivarVOLTEWSService">
+    <wsdl:port name="ebsActivarVOLTESB11" binding="tns:ActivarVOLTEWSPortTypeSOAP11Binding">
+      <soap:address location="http://limdeseaiv28.tim.com.pe:8909/ActivarVOLTEWS/ebsActivarVOLTESB11" />
+    </wsdl:port>
+    <wsdl:port name="ebsActivarVOLTESB12" binding="tns:ActivarVOLTEWSPortTypeSOAP12Binding">
+      <soap12:address location="http://limdeseaiv28.tim.com.pe:8909/ActivarVOLTEWS/ebsActivarVOLTESB12" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

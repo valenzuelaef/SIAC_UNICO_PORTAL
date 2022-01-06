@@ -1,0 +1,49 @@
+﻿@using System.Web.Optimization;
+@Styles.Render("~/bundles/Dashboard/Css/FormatCss-css")
+
+<script>
+    var grdContactos=null;
+    var vintAgregar = 0;
+    var vintContBD = 0;
+    var vintContTemp = 0;
+</script>
+
+<div id="modal-content">
+    <div id="PostpaidContact">
+        <div class="panel panel-info">
+            <div class="panel-heading claro-modal-contenido-titulo-panel">
+                <h4 class="panel-title claro-modal-contenido-titulo-texto">
+                    <a data-toggle="collapse" href="#ContactDcollapse"> Detalle </a>
+                </h4>
+            </div>
+            <input id="hidNroCuenta" type="hidden"  />
+            <input id="hidAccion" type="hidden">
+            <input id="hidPerfil" type="hidden"  />
+            <input id="hidTelefono" type="hidden"  />
+            <input id="hidEditar" type="hidden" />
+            <input id="hidNuevo" type="hidden" />
+            <input id="hidIdEditar" type="hidden" />
+            <input id="hidId" type="hidden" />
+            <input id="hidTipoAccion" type="hidden" />
+            <input id="hidAvailableEmails" type="hidden"  />
+            <input id="hidDocumentTypeDNI" type="hidden"  />
+            <input id="hidDocumentTypeRUC" type="hidden"  />
+            <input id="hidDocumentTypePAS" type="hidden"  />
+            <input id="hidDocumentTypeCEX" type="hidden"  />
+            <input id="hidDocumentTypeCIP" type="hidden"  />
+            <input id="hidDocumentTypeCFA" type="hidden"  />
+            <div id="ContactDcollapse" class="panel-collapse collapse in table-responsive">
+                    <table id="tbContactPost" class="table  table-striped table-hover table-responsive claro-modal-tabla ">
+                    </table>
+
+                
+            </div>
+            <div id="tbContactPostMessage"></div>
+        </div>
+
+
+
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+ @Scripts.Render("~/bundles/Dashboard/PostpaidDataCustomer/Contact")

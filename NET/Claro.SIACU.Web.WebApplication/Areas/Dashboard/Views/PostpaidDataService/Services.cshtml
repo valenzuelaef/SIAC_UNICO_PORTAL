@@ -1,0 +1,98 @@
+﻿@using System.Web.Optimization
+<div id="contenedorServices">
+    <div class="row">
+        <div class="col-md-12" id="dvHeaderServiceHFC">
+            <form id="frmDatosCliente" class="form-inline">
+                <div class="form-group col-md-6">
+                    <label id="lblServiceNumberHFC">Nro. Servicio:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-6">
+                    <label id="lblCustomerTypeHFC">Tipo Cliente:&nbsp;</label>
+                </div>
+                <h5 class="list-group-item-heading page-header text-info">Datos del Cliente</h5>
+                <div class="form-group col-md-8">
+                   <label id="lblCustomerHFC">Cliente:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-8">
+                    <label id="lblPlanHFC">Plan:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-8">
+                    <label id="lblBillingCycleHFC">Ciclo de Facturación:&nbsp;</label>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12" id="dvHeaderServicePostpaid">
+            <form id="frmDatosCliente" class="form-inline">
+                <div class="form-group col-md-4">
+                    <label id="lblServiceNumberPostpaid">Nro. Servicio:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label id="lblCustomerTypePostpaid">Tipo Cliente:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label id="lblBillingCyclePostpaid">Ciclo de Facturación:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label id="lblCustomerPostpaid">Cliente:&nbsp;</label>
+                </div>
+                <div class="form-group col-md-8">
+                    <label id="lblPlanPostpaid">Plan:&nbsp;</label>
+                </div>               
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="list-group-item-heading page-header text-info">LISTA DE CONTRATOS</h5>
+            <table id="tblContratos" class="table  claro-modal-tabla  table-hover table-bordered">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th></th>
+                        <th class="text-center">Cuenta</th>
+                        <th class="text-center">Contrato</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Estado</th>
+                        <th class="text-center">Fecha</th>
+                        <th class="text-center">Motivo</th>
+                        <th class="text-center">CoIdPub</th>
+                        <th class="text-center">FlagMigrado</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="errorContract"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <span class="label label-primary">Grupo de Servicios</span>
+            <span class="label label-success">Activo</span>
+            <span class="label label-danger">Desactivo</span>
+            <span class="label label-warning">Permanente(No se puede desactivar)</span>
+            <span class="label label-default">No vigente (No se puede activar)</span>
+            <span id="spnDefault"  class="label label-default" style="color: black; background-color: #FAFAB1;">No se puede activar ni desactivar</span>
+            <h5 class="list-group-item-heading page-header text-info"> </h5>
+            <h5 class="list-group-item-heading page-header text-info">Servicios Contratados</h5>
+     <table id="tblDetail" class="table claro-modal-tabla table-bordered">
+                <thead>
+                    <tr class="claro-bg-primary">
+                        <th class="text-center">Descripción del Grupo</th>
+                        <th class="text-center">Posición del grupo</th>
+                        <th class="text-center col-sm-2">Grupo/Servicio Comercial</th>
+                        <th class="text-center">Motivo por el que los servicios son excluyentes</th>
+                        <th class="text-center">Estado</th>
+                        <th class="text-center col-sm-2">Válido desde</th>
+                        <th class="text-center" id="SubCharge">Cargo por suscripción al servicio según plan(sin IGV)</th>
+                        <th class="text-center" id="FixedCharge">Cargo fijo mensual al servicio según plan(sin IGV)</th>
+                        <th class="text-center" id="ModifyFee">Cuota modificada (s/.) sin IGV</th>
+                        <th class="text-center">Número de periodos válidos</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="errorDetailContract"></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataService/PostpaidServices")

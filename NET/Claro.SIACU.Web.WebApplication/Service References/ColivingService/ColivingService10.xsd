@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getRetrieveSubscriptions" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Coliving.getRetrieveSubscriptions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9593/Coliving/ColivingService.svc?xsd=xsd3" namespace="Claro" />
+  <xs:complexType name="RetrieveSubscriptionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Claro" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Subcription" nillable="true" type="tns:ArrayOfSubscription" />
+          <xs:element minOccurs="0" name="bundleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="contractId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="productType" type="xs:int" />
+          <xs:element minOccurs="0" name="serviceIdentifier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subscriptionStatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveSubscriptionRequest" nillable="true" type="tns:RetrieveSubscriptionRequest" />
+  <xs:complexType name="ArrayOfSubscription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Subscription" nillable="true" type="tns:Subscription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubscription" nillable="true" type="tns:ArrayOfSubscription" />
+  <xs:complexType name="Subscription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingAccountId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingAccountStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingCycle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BundleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoActivated" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfLastSubscriptionStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Family" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubscriptionStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Technology" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelephonyType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Subscription" nillable="true" type="tns:Subscription" />
+  <xs:complexType name="RetrieveSubscriptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeResponse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionResponse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MigrateOne" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Segment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="Subscriptions" nillable="true" type="tns:ArrayOfSubscription" />
+      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetrieveSubscriptionResponse" nillable="true" type="tns:RetrieveSubscriptionResponse" />
+</xs:schema>

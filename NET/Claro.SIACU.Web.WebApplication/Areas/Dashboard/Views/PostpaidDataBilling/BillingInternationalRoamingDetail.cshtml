@@ -1,0 +1,47 @@
+﻿@using System.Web.Optimization;
+@model Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataBilling.BillingDetailLongDistanceModel
+@{
+    Layout = null;
+}
+<div id="modal-content">
+    <div id="FormInternationalRoamingDetail">
+        <div class="panel panel-info ">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-responsive claro-modal-tabla" id="tblInternationalRoamingDetail">
+                    <thead class="claro-bg-primary">
+                        <tr>
+                            <th class="col-sm-1">Nro. Celular</th>
+                            <th class="col-sm-1">Operador/País</th>
+                            <th class="col-sm-1">Nro. Destino</th>
+                            <th class="col-sm-1">Fecha</th>
+                            <th class="col-sm-1">Hora Inicio</th>
+                            <th class="col-sm-1">Duración</th>
+                            <th class="col-sm-1">Tipo Tráfico</th>
+                            <th class="col-sm-1">Importe (S/.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.listCallDetail != null)
+                        {
+                            foreach (var item in Model.listCallDetail)
+                            {
+                                <tr>
+                                    <td>@item.Msisdn</td>
+                                    <td>@item.CallOrigin</td>
+                                    <td>@item.CallNumber</td>
+                                    <td>@item.CallDate</td>
+                                    <td>@item.CallTime</td>
+                                    <td>@item.CallDuration</td>
+                                    <td>@item.CallType</td>
+                                    <td>@item.CallTotal</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataBilling/InternationalRoamingDetail")

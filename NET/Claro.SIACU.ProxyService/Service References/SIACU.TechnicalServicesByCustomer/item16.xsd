@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entresord="http://claro.com.pe/esb/data/resource/resourceOrder/v2/" targetNamespace="http://claro.com.pe/esb/data/resource/resourceOrder/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:complexType name="NumberPortabilityRequest">
+    <xs:annotation>
+      <xs:documentation>This is the main entity of the diagram (figure) for number portability and a concrete base class formed with NumberPortInRequest, NumberPortOutRequest, NumberPortOverRequest and NumberRetirementRequest. It has the attributes: ID (inherited), name, description (inherited), version, status (inherited), source, ProgramDate and telephonyType. The attribute version exist to manage all kinds of different versions during the whole lifecycle of the portability. This is precisely for cases like; if a client has an instance of a new number portability, exist a following or a trace. This can be approach through versioning. This can happen easily because the portability is associated with rules, many policies can apply for a certain period of time and change over time too, and may not belong necessarily to the same version.  The attribute Source is applied to PortOver and Retirement, because they don’t have a direct relationship with other domains, they go straight directly through other sources. NPT needs a list of numbers to port over or to retire, and a source, that could be external or from any other origin.  And last, Port In and Port Out need a program date (hence the attribute) to port, they both have a relationship with other domains, since they are issued by a customer order. The status attribute allows to see the availability of the request. It also considers the type of telephony for numbers for the portability, like mobile, fixed and IP numbers related to the request through the attribute TelephonyType.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entresord:ResourceOrder">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Name that can be given to the PaymentMethod by the owner.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>To maintain the version of the portability.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="source" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The attribute source is applied to PortOver and Retirement, since they don’t have a direct relationship with other domains, they go straight directly through other sources. They need a list of numbers to port over or to retire, and a source, that could be external or from any other origin.
+
+--&gt;La fuente del atributo se aplica al Puerto Desconexión y Retiro, ya que no tienen una relación directa con otros dominios, sino que pasan directamente a través de otras fuentes. Necesitan una lista de números para trasladar o retirar, y una fuente, que podría ser externa o de cualquier otro origen.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="programDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>This attribute called programDate is used to program the date to port (hence the name) for Port In and Port Out of the portability.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="telephonyType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>It considers the type of telephony for numbers for the portability, like mobile, fixed and IP numbers related to the request.
+
+--&gt;Considera el tipo de telefonía para números para la portabilidad, como el móvil, fijo y números de IP relacionados con la solicitud.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceOrder">
+    <xs:annotation>
+      <xs:documentation>A type of Request that represents a Serivce Order's services decomposed into the resources on which the services will be provisioned.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entbusint:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_resourceOrderItem" type="entresord:ResourceOrderItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceOrderItem">
+    <xs:annotation>
+      <xs:documentation>The purpose for the ResourceOrder expressed in terms of a ResourceSpecification or a Resource.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

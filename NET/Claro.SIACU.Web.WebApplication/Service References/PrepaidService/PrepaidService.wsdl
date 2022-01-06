@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PrepaidService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IPrepaidService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetCalls" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd3" namespace="Claro" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd4" namespace="AuditService" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRecharges" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomer" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPreviousCustomers" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetValidateTelephone" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetService" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRecordTriationRFA" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetDetailTriationRFA" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetHistoricalBonds" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPinPuk" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetInstant" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetPEL" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetSalesData" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetDebt" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.CreateContactNotUSer" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetConsumptionDataPacket" />
+      <xsd:import schemaLocation="http://localhost:9593/Dashboard/PrepaidService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/Claro.SIACU.Entity.Dashboard.Prepaid.GetRateState" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPrepaidService_GetCalls_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalls" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetCalls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCallsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetRecharges_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecharges" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetRecharges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRechargesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetPreviousCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreviousCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetPreviousCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreviousCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetPreviousCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreviousCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetPreviousCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreviousCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetValidateTelephone_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidateTelephone" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetValidateTelephone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidateTelephoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetService_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetService" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetRecordTriationRFA_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTriationRFA" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetRecordTriationRFA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTriationRFAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetDetailTriationRFA_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailTriationRFA" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetDetailTriationRFA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailTriationRFAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetHistoricalBonds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricalBonds" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetHistoricalBonds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricalBondsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetPinPuk_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPinPuk" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetPinPuk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPinPukResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetInstant_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstant" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetInstant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetPEL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPEL" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetPEL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPELResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetSalesDataPEL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesDataPEL" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetSalesDataPEL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesDataPELResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetDebt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebt" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetDebt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_CreateContactNotUSer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateContactNotUSer" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_CreateContactNotUSer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateContactNotUSerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetConsumptionDataPacket_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumptionDataPacket" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetConsumptionDataPacket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumptionDataPacketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetRateState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRateState" />
+  </wsdl:message>
+  <wsdl:message name="IPrepaidService_GetRateState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRateStateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPrepaidService">
+    <wsdl:operation name="GetCalls">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetCalls" message="tns:IPrepaidService_GetCalls_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetCallsResponse" message="tns:IPrepaidService_GetCalls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecharges">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetRecharges" message="tns:IPrepaidService_GetRecharges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetRechargesResponse" message="tns:IPrepaidService_GetRecharges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetPreviousCustomer" message="tns:IPrepaidService_GetPreviousCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetPreviousCustomerResponse" message="tns:IPrepaidService_GetPreviousCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetPreviousCustomers" message="tns:IPrepaidService_GetPreviousCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetPreviousCustomersResponse" message="tns:IPrepaidService_GetPreviousCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateTelephone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetValidateTelephone" message="tns:IPrepaidService_GetValidateTelephone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetValidateTelephoneResponse" message="tns:IPrepaidService_GetValidateTelephone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetService" message="tns:IPrepaidService_GetService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetServiceResponse" message="tns:IPrepaidService_GetService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTriationRFA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetRecordTriationRFA" message="tns:IPrepaidService_GetRecordTriationRFA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetRecordTriationRFAResponse" message="tns:IPrepaidService_GetRecordTriationRFA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailTriationRFA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetDetailTriationRFA" message="tns:IPrepaidService_GetDetailTriationRFA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetDetailTriationRFAResponse" message="tns:IPrepaidService_GetDetailTriationRFA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalBonds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetHistoricalBonds" message="tns:IPrepaidService_GetHistoricalBonds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetHistoricalBondsResponse" message="tns:IPrepaidService_GetHistoricalBonds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPinPuk">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetPinPuk" message="tns:IPrepaidService_GetPinPuk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetPinPukResponse" message="tns:IPrepaidService_GetPinPuk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetInstant" message="tns:IPrepaidService_GetInstant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetInstantResponse" message="tns:IPrepaidService_GetInstant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPEL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetPEL" message="tns:IPrepaidService_GetPEL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetPELResponse" message="tns:IPrepaidService_GetPEL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesDataPEL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetSalesDataPEL" message="tns:IPrepaidService_GetSalesDataPEL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetSalesDataPELResponse" message="tns:IPrepaidService_GetSalesDataPEL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDebt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetDebt" message="tns:IPrepaidService_GetDebt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetDebtResponse" message="tns:IPrepaidService_GetDebt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateContactNotUSer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/CreateContactNotUSer" message="tns:IPrepaidService_CreateContactNotUSer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/CreateContactNotUSerResponse" message="tns:IPrepaidService_CreateContactNotUSer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumptionDataPacket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetConsumptionDataPacket" message="tns:IPrepaidService_GetConsumptionDataPacket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetConsumptionDataPacketResponse" message="tns:IPrepaidService_GetConsumptionDataPacket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRateState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrepaidService/GetRateState" message="tns:IPrepaidService_GetRateState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrepaidService/GetRateStateResponse" message="tns:IPrepaidService_GetRateState_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPrepaidService" type="tns:IPrepaidService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IPrepaidService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCalls">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetCalls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecharges">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetRecharges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetPreviousCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousCustomers">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetPreviousCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateTelephone">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetValidateTelephone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetService">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTriationRFA">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetRecordTriationRFA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailTriationRFA">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetDetailTriationRFA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalBonds">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetHistoricalBonds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPinPuk">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetPinPuk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstant">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetInstant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPEL">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetPEL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesDataPEL">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetSalesDataPEL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDebt">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetDebt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContactNotUSer">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/CreateContactNotUSer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumptionDataPacket">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetConsumptionDataPacket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRateState">
+      <soap:operation soapAction="http://tempuri.org/IPrepaidService/GetRateState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PrepaidService">
+    <wsdl:port name="BasicHttpBinding_IPrepaidService" binding="tns:BasicHttpBinding_IPrepaidService">
+      <soap:address location="http://localhost:9593/Dashboard/PrepaidService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

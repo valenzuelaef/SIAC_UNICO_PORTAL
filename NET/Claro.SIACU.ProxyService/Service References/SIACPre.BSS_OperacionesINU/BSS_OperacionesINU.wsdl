@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N0:definitions xmlns:WL5G3N3="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaGranel/v1/" xmlns:WL5G3N5="http://claro.com.pe/esb/data/generico/claroFault/v1/" xmlns:WL5G3N8="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N6="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" xmlns:WL5G3N7="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/" xmlns:WL5G3N1="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" xmlns:WL5G3N2="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaAutomatica/v1/" xmlns:WL5G3N4="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" name="BSS_OperacionesINU" targetNamespace="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/">
+  <WL5G3N0:types>
+    <xsd:schema xmlns:ns2="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaAutomatica/v1/" xmlns:tns="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaGranel/v1/" xmlns:ef="http://claro.com.pe/esb/data/generico/claroFault/v1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns4="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:he="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" xmlns:ns1="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" xmlns:WL5G3N9="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FconsultarTarifaAutomatica_v1" namespace="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" />
+    </xsd:schema>
+    <xsd:schema xmlns:ns2="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaAutomatica/v1/" xmlns:tns="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaGranel/v1/" xmlns:ef="http://claro.com.pe/esb/data/generico/claroFault/v1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns4="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:he="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" xmlns:ns1="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" xmlns:WL5G3N9="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FmodificarTarifaAutomatica_v1" namespace="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaAutomatica/v1/" />
+    </xsd:schema>
+    <xsd:schema xmlns:ns2="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaAutomatica/v1/" xmlns:tns="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaGranel/v1/" xmlns:ef="http://claro.com.pe/esb/data/generico/claroFault/v1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns4="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:he="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" xmlns:ns1="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" xmlns:WL5G3N9="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FconsultarTarifaGranel_v1" namespace="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaGranel/v1/" />
+    </xsd:schema>
+    <xsd:schema xmlns:ns2="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaAutomatica/v1/" xmlns:tns="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaGranel/v1/" xmlns:ef="http://claro.com.pe/esb/data/generico/claroFault/v1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns4="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:he="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" xmlns:ns1="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" xmlns:WL5G3N9="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FmodificarTarifaGranel_v1" namespace="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" />
+    </xsd:schema>
+    <xsd:schema xmlns:ns2="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaAutomatica/v1/" xmlns:tns="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaGranel/v1/" xmlns:ef="http://claro.com.pe/esb/data/generico/claroFault/v1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns4="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:he="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" xmlns:ns1="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" xmlns:WL5G3N9="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FclaroGenericHeaders_v1" namespace="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" />
+    </xsd:schema>
+    <xsd:schema xmlns:ns2="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaAutomatica/v1/" xmlns:tns="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaGranel/v1/" xmlns:ef="http://claro.com.pe/esb/data/generico/claroFault/v1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns4="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:he="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" xmlns:ns1="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" xmlns:WL5G3N9="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2FclaroFault_v1" namespace="http://claro.com.pe/esb/data/generico/claroFault/v1/" />
+    </xsd:schema>
+    <xsd:schema xmlns:ns2="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaAutomatica/v1/" xmlns:tns="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaGranel/v1/" xmlns:ef="http://claro.com.pe/esb/data/generico/claroFault/v1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns4="http://claro.com.pe/esb/data/BSS_OperacionesINU/modificarTarifaGranel/v1/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:he="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" xmlns:ns1="http://claro.com.pe/esb/data/BSS_OperacionesINU/consultarTarifaAutomatica/v1/" xmlns:WL5G3N9="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU?SCHEMA%2FBSS_OperacionesINU%2FSRV_OperacionesINU%2FResources%2FXSD%2Fheaders_v1" namespace="http://claro.com.pe/esb/data/generico/claroGenericHeader/v1/" />
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="consultarTarifaAutomaticaRequestMsg">
+    <WL5G3N0:part name="consultarTarifaAutomaticaReq" element="WL5G3N1:consultarTarifaAutomaticaRequest" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="consultarTarifaAutomaticaResponseMsg">
+    <WL5G3N0:part name="consultarTarifaAutomaticaRes" element="WL5G3N1:consultarTarifaAutomaticaResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="modificarTarifaAutomaticaRequestMsg">
+    <WL5G3N0:part name="modificarTarifaAutomaticaReq" element="WL5G3N2:modificarTarifaAutomaticaRequest" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="modificarTarifaAutomaticaResponseMsg">
+    <WL5G3N0:part name="modificarTarifaAutomaticaRes" element="WL5G3N2:modificarTarifaAutomaticaResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="consultarTarifaGranelRequestMsg">
+    <WL5G3N0:part name="consultarTarifaGranelRequest" element="WL5G3N3:consultarTarifaGranelRequest" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="consultarTarifaGranelResponseMsg">
+    <WL5G3N0:part name="consultarTarifaGranelResponse" element="WL5G3N3:consultarTarifaGranelResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="modificarTarifaGranelRequestMsg">
+    <WL5G3N0:part name="modificarTarifaGranelRequest" element="WL5G3N4:modificarTarifaGranelRequest" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="modificarTarifaGranelResponseMsg">
+    <WL5G3N0:part name="modificarTarifaGranelResponse" element="WL5G3N4:modificarTarifaGranelResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="claroFault">
+    <WL5G3N0:part name="claroFault" element="WL5G3N5:claroFault" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="headerRequest">
+    <WL5G3N0:part name="headerRequest" element="WL5G3N6:headerRequest" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="headerResponse">
+    <WL5G3N0:part name="headerResponse" element="WL5G3N6:headerResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="OperacionesINUPortType">
+    <WL5G3N0:operation name="modificarTarifaAutomatica">
+      <WL5G3N0:input message="WL5G3N7:modificarTarifaAutomaticaRequestMsg" />
+      <WL5G3N0:output message="WL5G3N7:modificarTarifaAutomaticaResponseMsg" />
+      <WL5G3N0:fault name="fault" message="WL5G3N7:claroFault" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="consultarTarifaAutomatica">
+      <WL5G3N0:input message="WL5G3N7:consultarTarifaAutomaticaRequestMsg" />
+      <WL5G3N0:output message="WL5G3N7:consultarTarifaAutomaticaResponseMsg" />
+      <WL5G3N0:fault name="fault" message="WL5G3N7:claroFault" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="consultarTarifaGranel">
+      <WL5G3N0:input message="WL5G3N7:consultarTarifaGranelRequestMsg" />
+      <WL5G3N0:output message="WL5G3N7:consultarTarifaGranelResponseMsg" />
+      <WL5G3N0:fault name="fault" message="WL5G3N7:claroFault" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="modificarTarifaGranel">
+      <WL5G3N0:input message="WL5G3N7:modificarTarifaGranelRequestMsg" />
+      <WL5G3N0:output message="WL5G3N7:modificarTarifaGranelResponseMsg" />
+      <WL5G3N0:fault name="fault" message="WL5G3N7:claroFault" />
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="OperacionesINUPortTypeSOAP11Binding" type="WL5G3N7:OperacionesINUPortType">
+    <WL5G3N8:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WL5G3N0:operation name="modificarTarifaAutomatica">
+      <WL5G3N8:operation soapAction="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/modificarTarifaAutomatica" style="document" />
+      <WL5G3N0:input>
+        <WL5G3N8:body use="literal" parts="modificarTarifaAutomaticaReq" />
+        <WL5G3N8:header message="WL5G3N7:headerRequest" part="headerRequest" use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N8:body use="literal" parts="modificarTarifaAutomaticaRes" />
+        <WL5G3N8:header message="WL5G3N7:headerResponse" part="headerResponse" use="literal" />
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="fault">
+        <WL5G3N8:fault use="literal" name="fault" namespace="" />
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="consultarTarifaAutomatica">
+      <WL5G3N8:operation soapAction="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/consultarTarifaAutomatica" style="document" />
+      <WL5G3N0:input>
+        <WL5G3N8:body use="literal" parts="consultarTarifaAutomaticaReq" />
+        <WL5G3N8:header message="WL5G3N7:headerRequest" part="headerRequest" use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N8:body use="literal" parts="consultarTarifaAutomaticaRes" />
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="fault">
+        <WL5G3N8:fault use="literal" name="fault" namespace="" />
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="consultarTarifaGranel">
+      <WL5G3N8:operation soapAction="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/consultarTarifaGranel" style="document" />
+      <WL5G3N0:input>
+        <WL5G3N8:body use="literal" parts="consultarTarifaGranelRequest" />
+        <WL5G3N8:header message="WL5G3N7:headerRequest" part="headerRequest" use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N8:body use="literal" parts="consultarTarifaGranelResponse" />
+        <WL5G3N8:header message="WL5G3N7:headerResponse" part="headerResponse" use="literal" />
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="fault">
+        <WL5G3N8:fault use="literal" name="fault" namespace="" />
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="modificarTarifaGranel">
+      <WL5G3N8:operation soapAction="http://claro.com.pe/esb/tarificacionContenido/BSS_OperacionesINU/v1/modificarTarifaGranel" style="document" />
+      <WL5G3N0:input>
+        <WL5G3N8:body use="literal" parts="modificarTarifaGranelRequest" />
+        <WL5G3N8:header message="WL5G3N7:headerRequest" part="headerRequest" use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N8:body use="literal" parts="modificarTarifaGranelResponse" />
+        <WL5G3N8:header message="WL5G3N7:headerResponse" part="headerResponse" use="literal" />
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="fault">
+        <WL5G3N8:fault use="literal" name="fault" namespace="" />
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="OperacionesINUPortTypeSOAP11BindingQSService">
+    <WL5G3N0:documentation>OSB Service</WL5G3N0:documentation>
+    <WL5G3N0:port name="OperacionesINUPortTypeSOAP11BindingQSPort" binding="WL5G3N7:OperacionesINUPortTypeSOAP11Binding">
+      <WL5G3N8:address location="http://172.17.26.155:21000/BSS_OperacionesINU/SRV_OperacionesINU/Service/MED_OperacionesINU" />
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

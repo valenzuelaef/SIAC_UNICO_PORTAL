@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:entcombusentext="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="CommonBusinessEntitiesExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" />
+  <xs:import schemaLocation="../EngagedParty/Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="BillingCapabilitySpecification">
+    <xs:annotation>
+      <xs:documentation>This class defines billing capabilities provided by a system.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:ExternalSystemCapability">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="billingTemplateID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The unique identifier of the billing template to be used for billing an offer.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="billingID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The billing instance identifier for this capability.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="billingType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The billing type determines how a billing capability recognize revenue for a given offer</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CharacteristicSpecification">
+    <xs:annotation>
+      <xs:documentation>A quality or distinctive feature that defines an entity. The characteristic can be take on a discrete value, such as color, can take on a range of values, (for example, sensitivity of 100-240 mV), or can be derived from a formula (for example, usage time (hrs) = 30 - talk time *3).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the CharacteristicSpecification.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the CharacteristicSpecification is known and distinguished from other CharacteristicSpecifications.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains the CharacteristicSpecification.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="unique" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies if a value is unique for the specification.
+
+Possible values are; "unique while value is in effect" and "unique whether value is in effect or not"</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A kind of value that the characteristic can take on, such as numeric, text, and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="minCardinality" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>The minimum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where zero is the value for the minCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxCardinality" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>The maximum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where five is the value for the maxCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="extensible" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies that the values for the characteristic can be extended by adding new values when instantiating a characteristic for an Entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="derivationFormula" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A rule or principle represented in symbols, numbers, or letters, often in the form of an equation used to derive the value of a characteristic value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period of time for which a CharacteristicSpecification is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_characteristicValue" type="entroobusent:CharacteristicValue" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_characteristicSpecValue" type="entroobusent:CharacteristicSpecValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CharacteristicSpecValue">
+    <xs:annotation>
+      <xs:documentation>A number or text that can be assigned to a CharacteristicSpecification.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A kind of value that the characteristic can take on, such as numeric, text, and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isDefault" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Indicates if the value is the default value for a characteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A discrete value that the characteristic can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="unitOfMeasure" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A length, surface, volume, dry measure, liquid measure, money, weight, time, and the like. Iin general, a determinate quantity or magnitude of the kind designated, taken as a standard of comparison for others of the same kind, in assigning to them numerical values, as 1 foot, 1 yard, 1 mile, 1 square foot.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueFrom" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The low range value that a characteristic can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueTo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The upper range value that a characteristic can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="rangeInterval" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies the inclusion or exclusion of the valueFrom and valueTo attributes.
+
+Possible values are "open", "closed", "closedBottom" and "closedTop".</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period of time for which a value is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="characteristicSpecification" type="entroobusent:CharacteristicSpecification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CharacteristicValue">
+    <xs:annotation>
+      <xs:documentation>A value of a CharacteristicSpecifcation chosen or entered (if no values are specified) for a Entity that further defines what the Entity is.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A fact that describes a Entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the characteristic value is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_rootEntity" type="entroobusent:RootEntity" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_characteristicSpecification" type="entroobusent:CharacteristicSpecification" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyRole" type="entpar:PartyRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Entity">
+    <xs:annotation>
+      <xs:documentation>This is an abstract class that extends the RootEntity class in order to represent classes of objects that play a business function. Entities can be either managed or unmanaged. 
+
+If it is managed, then it is further defined by a ManagedEntity, else it has no relationship with ManagedEntity.
+
+More formally, an Entity represents objects that have a separate and distinct existence. They are not just a collection of attributes or an abstraction of behavior.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:RootEntity">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EntityRole">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class that defines the concept of various types of roles for entities that are used to describe Entities.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:Role">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EntitySpecification">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class that is used to define the common characteristics (attributes, constraints, and relationships) of a managed or unmanaged entity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:RootEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_entitySpecificationAttachment" type="entroobusent:EntitySpecificationAttachment" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_externalSystemCapability" type="entroobusent:ExternalSystemCapability" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_entitySpecificationAction" type="entroobusent:EntitySpecificationAction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EntitySpecificationAction">
+    <xs:annotation>
+      <xs:documentation>This is the class representing an action like Add, Disconnect and Modify for an entity specification.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the EntitySpecificationAction is known and distinguished from others.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains in detail what the EntitySpecificationAction represents.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The version given to this item This may include subfileds like major and minor which are separated by a period delimiter.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The period of time during which the EntitySpecificationAction is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="orderItemAction" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The corresponding order item action like Add, Modify, Disconnect if this item is orderable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_entitySpecification" type="entroobusent:EntitySpecification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntitySpecificationAttachment">
+    <xs:annotation>
+      <xs:documentation>This is the class to represent an attachment like document, image or video to an entity specification.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="attachmentLink" type="entbastyp:URI">
+        <xs:annotation>
+          <xs:documentation>A kind of unique resource identifier like a file path or url that points to location of the attachment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the EntitySpecificationAttachment is known and distinguished from others.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains in detail what the EntitySpecificationAttachment represents.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the EntitySpecificationAttachment is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Type of the attachment like Image, Video, Doc</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_entitySpecification" type="entroobusent:EntitySpecification" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_entitySpecAttachExtension" type="entcombusentext:EntitySpecAttachExtension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntitySpecificationDocumentation">
+    <xs:annotation>
+      <xs:documentation>This is a class to represent document information as an attachment to an entity specification.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:EntitySpecificationAttachment">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="documentType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Type of the document like pdf, doc</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExternalSystemCapability">
+    <xs:annotation>
+      <xs:documentation>This abstract class defines capabilities like charging, billing, fulfillment, policy and assurance supported by an external system.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="systemID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique system identifier providing the capability.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="capabilityType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Capability type like policy, charging and so on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The version given to the system capability. This may include subfileds like major and minor which are separated by a period delimiter.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the ExternalSystemCapability is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_entitySpecification" type="entroobusent:EntitySpecification" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_externalSystemCapabilityExtension" type="entcombusentext:ExternalSystemCapabilityExtension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ManagementInfo">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class that is used to represent entities that represent management information obtained in a managed environment . Specifically, in the process of managing an entity, information of various forms are created. This class is the base class for defining different types of management information.
+
+
+
+The design of how management information is obtained uses this class to gather specific type of information, and the ManagementMethodEntity class to obtain the desired data using an appropriate method. This combination of class hierarchies enables different management methods (e.g., CLI vs. SNMP) to be used to gather different types of management data, and is unique to the SID information model.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="mgmtInfoValidFor" type="entbastyp:TimePeriod">
+            <xs:annotation>
+              <xs:documentation>This attribute defines the time period that this management information is valid for. A TimePeriod is a complex datatype, that has a starting time and an ending time.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="retrievalMethodCurrent" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This is an enumerated integer that defines the particular type of method that is currently being used to retrieve the management information. Values include:
+
+ 0: Unknown
+ 1: None
+ 2: CLI
+ 3: SNMP
+ 4: TL1
+ 5: CMIP
+ 6: RMON
+ 7: Proprietary
+
+None could mean that this ManagedEntity performs a set function and is not configurable, as well as mean that this ManagedEntity is not configurable except by the factory.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="retrievalMethodsSupported" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is an array of integers that define the different means of retrieving management methods that are supported by this object. Values include:
+ 
+ 0: Unknown
+ 1: None
+ 2: CLI
+ 3: SNMP
+ 4: TL1
+ 5: CMIP
+ 6: RMON
+ 7: Proprietary
+
+None could mean that this ManagedEntity performs a set function and is not configurable, as well as mean that this ManagedEntity is not configurable except by the factory.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Role">
+    <xs:annotation>
+      <xs:documentation>This is an abstract base class that defines the concept of various types of roles used in the  model.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entroobusent:RootEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="roleCombination" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A roleCombination is an array of string attributes that are used to identify and potentially select one or more policies for a set of managed entities from among a much larger set of available policies.
+
+
+
+Values of this attribute should be entered in comma separated value format; white space should be ignored.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="roleSelectionMethod" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>This is an enumerated integer that defines the precise means used to select one or more entities which map to one or more roles contained in the roleCombination attribute of this object. Values include:
+
+ 0: retrieve all
+ 1: retrieve intersection
+
+For exampe, assume that there is an external query engine that is looking for the roles edge or ethernet. The result of this query will look at the roleCombination and roleSelectionMethod attributes of each managed object that it is querying.
+
+If the value of this attribute is 0, then all managed objects that have their roleCombination set to either {edge}, {ethernet}, or {edge, ethernet} will be retrieved. In contrast, if the value of this attribute is 1, then only those managed objects whose roleCombination attribute is set to {edge, ethernet} will be retrieved.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RootEntity">
+    <xs:annotation>
+      <xs:documentation>This is the top of the SID class hierarchy. The purpose of the RootEntity is to define a set of attributes that are common to all SID entities that derive from it. These properties enable us to name, describe, and identify all objects (manageable and unmanageable) in the environment.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Represents a user-friendly identifier of an object. It is a (possibly ambiguous) name by which the object is commonly known in some limited scope (such as an organization) and conforms to the naming conventions of the country or culture with which it is associated. It is NOT used as a naming attribute (i.e., to uniquely identify an instance of the object).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This is a string, and defines a textual free-form description of the object.
+
+
+
+Notes:
+
+This attribute doesn’t exist in M.3100. The CIM has two attributes for this purpose, Caption (a short description) and Description.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unambiguously distinguishes different object instances. It is the naming attribute of the object.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_characteristicValue" type="entroobusent:CharacteristicValue" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_rootEntityType" type="entroobusent:RootEntityType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RootEntityType">
+    <xs:annotation>
+      <xs:documentation>A SID entity, such as Customer, Product, Service, and so forth.
+//
+Una palabra, término o frase por la cual RootEntityType se conoce y distingue de otros RootEntityTypes.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the RootEntityType is known and distinguished from other RootEntityTypes.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_rootEntity" type="entroobusent:RootEntity" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_rootEntityTypeCharUse" type="entroobusent:RootEntityTypeCharUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RootEntityTypeCharUse">
+    <xs:annotation>
+      <xs:documentation>A use of the CharacteristicSpecification by a RootEntityType to which additional properties (attributes) apply or override the properties of similar properties contained in CharacteristicSpecification.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the CharacteristicSpecification is known and distinguished from other CharacteristicSpecifications.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains the CharacteristicSpecification.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="unique" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies if a value is unique for the specification. Possible values are; "unique while value is in effect" and "unique whether value is in effect or not".</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isPackage" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies that the associated CharacteristicSpecification is a composite.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="canBeOveridden" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies that the CharacteristicSpecValues associated with the 
+CharacteristicSpec cannot be changed when instantiating a CharacteristicValue. 
+For example, a bandwidth of 64 MB cannot be changed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="minCardinality" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The minimum number of instances a CharacteristicValue can take on. For example, 
+zero to five phone numbers in a group calling plan, where zero is the value for the minCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxCardinality" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The maximum number of instances a CharacteristicValue can take on. For example, 
+zero to five phone numbers in a group calling plan, where five is the value for the maxCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="extensible" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies that the values for the characteristic can be extended by adding new values when instantiating a characteristic for an Entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period of time for which the use of the CharacteristicSpecification is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_rootEntityType" type="entroobusent:RootEntityType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntitySpecificationType">
+    <xs:annotation>
+      <xs:documentation>An EntitySpecificationType is a classification that groups EntitySpecifications.
+
+Multiple EntitySpecificationTypes can be related to each other using the association through EntitySpecificationTypeRelationship.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the EntitySpecificationType is known and distinguished from others.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains in detail what the EntitySpecificationType represents.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,59 @@
+﻿@using System.Web.Optimization;
+@model  Claro.SIACU.Web.WebApplication.Areas.Dashboard.Models.PostpaidDataCollection.CollectionMonitoringCasesModel
+
+<div id="PostpaidDetailMonitoringCases">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover claro-modal-tabla table-bordered" id="tblDetailMonitoringCases">
+                <thead class="claro-bg-primary">
+                    <tr>
+                        <th>Id Caso</th>
+                        <th class="col-sm-1">Nro. Caso</th>
+                        <th class="col-sm-1">Fecha Creación</th>
+                        <th class="col-sm-1">Código Cliente</th>
+                        <th class="col-sm-1">Modalidad</th>
+                        <th class="col-sm-1">Segmento</th>
+                        <th class="col-sm-1">Estado</th>
+                        <th class="col-sm-1">Prioridad</th>
+                        <th class="col-sm-1">Tipo</th>
+                        <th class="col-sm-1">Clase</th>
+                        <th class="col-sm-1">Sub Clase</th>
+                        <th class="col-sm-1">Monto</th>
+                        <th class="col-sm-1">Dueño</th>
+                        <th class="col-sm-1">Nombre Dueño</th>
+                        <th class="col-sm-1">Recurrencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (Model.listMonitoringCasesPast != null)
+                        {
+                            foreach (var item in Model.listMonitoringCasesPast)
+                            {
+                                <tr>
+                                    <td>@item.CaseId</td>
+                                    <td>@item.ClarifyCase</td>
+                                    <td>@item.CreationDate</td>
+                                    <td>@item.CustomerId </td>
+                                    <td>@item.Modality</td>
+                                    <td>@item.Segment</td>
+                                    <td>@item.Status</td>
+                                    <td>@item.Priority</td>
+                                    <td>@item.Type</td>
+                                    <td>@item.Class</td>
+                                    <td>@item.SubClass</td>
+                                    <td>@item.Amount</td>
+                                    <td>@item.Owner</td>
+                                    <td>@item.OwnerName</td>
+                                    <td>@item.Recurrence</td>
+                                </tr>
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataCollection/DetailMonitoringCases")

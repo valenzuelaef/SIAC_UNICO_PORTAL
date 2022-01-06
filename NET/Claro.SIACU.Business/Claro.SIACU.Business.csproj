@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4F22956-AF64-4790-A84B-0A6B8AAD30BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Claro.SIACU.Business</RootNamespace>
+    <AssemblyName>Claro.SIACU.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\Framework\Binaries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cases\Search.cs" />
+    <Compile Include="Cases\Shared.cs" />
+    <Compile Include="Cases\Queue.cs" />
+    <Compile Include="Cases\WipBin.cs" />
+    <Compile Include="Coliving\Common.cs" />
+    <Compile Include="Coliving\SearchCustomer.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Dashboard\Dashboard.cs" />
+    <Compile Include="Dashboard\Postpaid.cs" />
+    <Compile Include="Dashboard\Prepaid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Management\Common.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Claro.SIACU.Data\Claro.SIACU.Data.csproj">
+      <Project>{a72f8415-eeea-4c01-94be-cdae11a867ac}</Project>
+      <Name>Claro.SIACU.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Claro.SIACU.Entity\Claro.SIACU.Entity.csproj">
+      <Project>{dd983e71-ed88-4257-bf9b-0cd4bff5be1c}</Project>
+      <Name>Claro.SIACU.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Claro.SIACU.ProxyService\Claro.SIACU.ProxyService.csproj">
+      <Project>{6dfb4824-4372-400f-bfa8-f3c59359982a}</Project>
+      <Name>Claro.SIACU.ProxyService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Claro.SIACU\Claro.SIACU.csproj">
+      <Project>{0b643a37-2757-48e9-a3e7-c15561aa1b86}</Project>
+      <Name>Claro.SIACU</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Claro.Entity\Claro.Entity.csproj">
+      <Project>{5b432611-cd37-4a2b-bcba-7509064e68ba}</Project>
+      <Name>Claro.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Claro.Web\Claro.Web.csproj">
+      <Project>{1630f11c-9caa-4a49-9bb2-7a3ccba1cd17}</Project>
+      <Name>Claro.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Claro\Claro.csproj">
+      <Project>{3126dd91-815a-4367-bb9e-8b241c73f4d0}</Project>
+      <Name>Claro</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entprooff="http://claro.com.pe/esb/data/product/productOffering/v2/" xmlns:entusa="http://claro.com.pe/esb/data/commonBusinessEntities/usage/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/usage/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productOffering/v2/" />
+  <xs:complexType name="Usage">
+    <xs:annotation>
+      <xs:documentation>An occurrence of employing a Product, Service, or Resource for its intended purpose, which is of a billing system's interest and can have charges applied to it. It is comprised of characteristics, which represent attributes of usage.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="usageDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The date the usage was created.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="usageStatus" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The condition of the usage, such as new, processed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_usageSpecification" type="entusa:UsageSpecification" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_productOffering" type="entprooff:ProductOffering" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UsageSpecCharacteristic">
+    <xs:annotation>
+      <xs:documentation>A detailed description of an attribute that defines a particular type of usage, described by its name, category, type, presence and a set of allowed values.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the UsageSpecCharacteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The name of the usage characteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains the usage characteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="unique" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies if a value is unique for the specification.
+
+
+
+Permitted Values: "unique while value is in effect" and "unique whether value is in effect or not"</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A kind of value that the characteristic can take on, such as numeric, text, and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="minCardinality" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The minimum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where zero is the value for the minCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxCardinality" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The maximum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where five is the value for the maxCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="extensible" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies that the values for the characteristic can be extended by adding new values when instantiating a characteristic for an Entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="derivationFormula" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A rule or principle represented in symbols, numbers, or letters, often in the form of an equation used to derive the value of a characteristic value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The period of time for which a characteristic is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_usageSpecification" type="entusa:UsageSpecification" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_usageSpecCharacteristicValue" type="entusa:UsageSpecCharacteristicValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UsageSpecCharacteristicValue">
+    <xs:annotation>
+      <xs:documentation>A value that can be assigned to a UsageSpecCharacteristic.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A kind of value that the characteristic can take on, such as numeric, text, and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="default" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Indicates if the value is the default value for a characteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A discrete value that the characteristic can take on.
+
+
+
+Notes: Value or valueFrom/valueTo must be present</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="unitOfMeasure" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A length, surface, volume, dry measure, liquid measure, money, weight, time, and the like. Iin general, a determinate quantity or magnitude of the kind designated, taken as a standard of comparison for others of the same kind, in assigning to them numerical values, as 1 foot, 1 yard, 1 mile, 1 square foot.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueFrom" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The low range value that a characteristic can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueTo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The upper range value that a characteristic can take on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="rangeInterval" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies the inclusion or exclusion of the valueFrom and valueTo attributes.
+
+
+
+Permitted values:
+
+ "open", "closed", "closedBottom" and "closedTop".</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="vaildFor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The period of time for which a value is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_usageSpecCharacteristic" type="entusa:UsageSpecCharacteristic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UsageSpecification">
+    <xs:annotation>
+      <xs:documentation>A detailed description of a usage event that are of billing system's interest and can have charges applied to it. It is comprised of characteristics, which define all attributes known for a particular type of usage.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The name of the usage specification.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains in detail what the product specification is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="lifecycleStatus" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The condition of the usage specification, such as active, inactive, planned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period for which the usage specification is valid.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_usage" type="entusa:Usage" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_usageSpecCharacteristic" type="entusa:UsageSpecCharacteristic" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

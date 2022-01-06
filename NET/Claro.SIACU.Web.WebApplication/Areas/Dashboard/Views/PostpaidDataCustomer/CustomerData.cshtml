@@ -1,0 +1,500 @@
+﻿@using System.Web.Optimization;
+
+<div id="PospaidDataCustomer">
+
+    <div class="panel-tabs">
+        <ul id="divDashboardTabs" class="nav nav-tabs" role="tablist" data-tabs="tabs">
+            <li class="active"><a href="#tab01Cli" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon "></span> Datos del Cliente </a></li>
+            <li><a href="#tab02Cli" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon "></span> Domicilio de Facturación</a></li>
+            <li id="li03Cli"><a href="#tab03Cli" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon "></span> Domicilio Legal</a></li>
+            <li id="li04Cli"><a href="#tab04Cli" role="tab" data-toggle="tab" data-parent="divDashboardTabs"><span class="glyphicon "></span> Data Historica del Cliente</a></li>
+        </ul>
+
+        <div class="tab-content">
+
+            <div id="tab01Cli" class="tab-pane active" data-parent="divDashboardTabss">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <table class="table table-condensed ">
+                            <tbody>
+
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Cliente</label>
+                                        </div>
+                                        <div class="col-md-4" id="lblPost_BusinessNameDataCustomer"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-1">
+                                            <label class="control-label"> Cuenta</label>
+                                        </div>
+                                        <div class="col-md-3" id="lblPost_AccountDataCustomer"></div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Contacto</label>
+                                        </div>
+                                        <div class="col-md-6" id="lblPost_FullNameDataCustomer"></div>
+                                        <div class="col-md-1">
+                                            <button type="button" id="btnPostContact" profile="SU_ACP_DDC,SU_IFI_DDC"
+                                                    class="btn claro-btn-info btn-xs pull-left">
+                                                Datos Contacto Cliente
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3"> </div>
+
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label">DNI/RUC</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_DocumentNumberDataCustomer"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label">Cargo</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_PositionDataCustomer"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Lugar Nacimiento</label>
+                                        </div>
+
+                                        <div class="col-md-2" id="lblPost_BirthPlaceDataCustomer"></div>
+                                        <div class="col-md-2">
+                                            <label class="control-label">Fecha Nacimiento</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_BirthDateDataCustomer"></div>
+                                        <div class="col-md-2">
+                                            <label class="control-label">Estado Civil</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_CivilStatusDataCustomer"></div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label">Contacto Cliente</label>
+                                        </div>
+                                        <div class="col-md-4" id="lblPost_CustomerContactDataCustomer"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Nombre Comercial</label>
+                                        </div>
+                                        <div class="col-md-4" id="lblPost_TradenameDataCustomer"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Representante Legal</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_LegalAgentDataCustomer"></div>
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Tipo Documento</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_DocumentTypeDataCustomer"></div>
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Nro Documento</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_RepresentativeDocumentNumberDataCustomer"></div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Tel. Referencia 1</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_PhoneContactDataCustomer"></div>
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Tel. Referencia 2</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_PhoneReferenceDataCustomer"></div>
+                                        <div class="col-md-2">
+                                            <label class="control-label"> Fax</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_FaxDataCustomer"></div>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label">  Email Autorizado</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_EmailDataCustomer"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label">  Vendedor</label>
+                                        </div>
+                                        <div class="col-md-10" id="lblPost_SellerDataCustomer"></div>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="col-md-12">
+                                        <div class="col-md-2">
+                                            <label class="control-label">  Asesor</label>
+                                        </div>
+                                        <div class="col-md-2" id="lblPost_AssessorDataCustomer"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"></div>
+                                    </td>
+
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab02Cli" class="tab-pane fade" data-parent="divDashboardTabss">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-condensed">
+                            <tr>
+
+
+                                <td class="col-md-12">
+                                    <div class="col-md-2">
+                                        <label class="control-label">Dirección</label>
+                                    </div>
+                                    <div class="col-md-6" id="lblPost_InvoiceAddressDataCustomer"></div>
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-2">
+                                        <label class="control-label">Urb. / Ref.</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_InvoiceUrbanizationDataCustomer"></div>
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Distrito</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_InvoiceDistrictDataCustomer"></div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Provincia</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_InvoiceProvinceDataCustomer"></div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-2">
+                                        <label class="control-label">Cod Postal</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_InvoiceCodeDataCustomer"></div>
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Departamento</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_InvoiceDepartamentDataCustomer"></div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Pa&iacute;s</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_InvoiceCountryDataCustomer"></div>
+
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab03Cli" class="tab-pane fade" data-parent="divDashboardTabss">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-condensed">
+                            <tr>
+
+
+                                <td class="col-md-12">
+                                    <div class="col-md-2">
+                                        <label class="control-label">Calle</label>
+                                    </div>
+                                    <div class="col-md-6" id="lblPost_LegalAddressDataCustomer"></div>
+
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-2">
+                                        <label class="control-label">Urbanización</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_LegalUrbanizationDataCustomer"></div>
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Distrito</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_LegalDistrictDataCustomer"></div>
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Provincia</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_LegalProvinceDataCustomer"></div>
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="col-md-12">
+                                    <div class="col-md-2">
+                                        <label class="control-label">Cod Postal</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_LegalCodeDataCustomer"></div>
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">Departamento</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_LegalDepartamentDataCustomer"></div>
+
+                                    <div class="col-md-2">
+                                        <label class="control-label">País</label>
+                                    </div>
+                                    <div class="col-md-2" id="lblPost_LegalCountryDataCustomer"></div>
+
+
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab04Cli" class="tab-pane fade" data-parent="divDashboardTabss">
+                <div class="row">
+
+                    <div id="DataCustomerH" class="panel-group" role="tablist" aria-multiselectable="true">
+                        <div class="panel claro-panel-primary">
+                            <div id="customerDataHHead" role="tab" class="panel-heading">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <a data-toggle="collapse" href="#customerDataHCollapse" aria-expanded="true" data-parent="#DataCustomerH" aria-controls="customerDataHCollapse" class="collapsed" style="color: #fff"> Datos del Cliente</a>
+                            </div>
+                            <div id="customerDataHCollapse" class="panel-body panel-collapse collapse in" role="tabpanel" aria-labelledby="customerDataHHead">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60%">
+                                                Datos del Cliente
+                                            </th>
+                                            <th style="width:20%">
+                                                Fecha de Cambio
+                                            </th>
+                                            <th style="width:20%">
+                                                Tipo de cambio
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbDatosCliente"></tbody>
+
+                                </table>
+
+                            </div>
+
+                            <div id="contactDataHHead" role="tab" class="panel-heading">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <a data-toggle="collapse" href="#DatosContactoHcollapse" aria-expanded="false" data-parent="#DataCustomerH" aria-controls="DatosContactoHcollapse" class="collapsed" style="color: #fff"> Datos de Contacto del Cliente</a>
+                            </div>
+                            <div id="DatosContactoHcollapse" class="panel-body panel-collapse collapse in" role="tabpanel" aria-labelledby="contactDataHHead">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60%">
+                                                Datos de Contacto del Cliente
+                                            </th>
+                                            <th style="width:20%">
+                                                Fecha de Cambio
+                                            </th>
+                                            <th style="width:20%">
+                                                Tipo de cambio
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbDatosContacto"></tbody>
+
+                                </table>
+
+                            </div>
+
+                            <div id="addressDataHHead" role="tab" class="panel-heading">
+                                <span class="glyphicon glyphicon-home"></span>
+                                <a data-toggle="collapse" href="#DatosDirLegalcollapse" aria-expanded="false" data-parent="#DataCustomerH" aria-controls="DatosDirLegalcollapse" class="collapsed" style="color: #fff"> Domicilio del Cliente</a>
+                            </div>
+                            <div id="DatosDirLegalcollapse" class="panel-body panel-collapse collapse in" role="tabpanel" aria-labelledby="addressDataHHead">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60%">
+                                        Domicilio del Cliente
+                                    </th>
+                                            <th style="width:20%">
+                                        Fecha de Cambio
+                                    </th>
+                                            <th style="width:20%">
+                                                Tipo de cambio
+                                    </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbDatosDomicilio"></tbody>
+
+                                </table>
+
+                            </div>
+
+                            <div id="addressFactHHead" role="tab" class="panel-heading">
+                                <span class="glyphicon glyphicon-home"></span>
+                                <a data-toggle="collapse" href="#DatosDirFactcollapse" aria-expanded="false" data-parent="#DataCustomerH" aria-controls="DatosDirFactcollapse" class="collapsed" style="color: #fff"> Dirección de Facturación</a>
+                            </div>
+                            <div id="DatosDirFactcollapse" class="panel-body panel-collapse collapse in" role="tabpanel" aria-labelledby="addressFactHHead">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60%">
+                                                Domicilio del Cliente
+                                            </th>
+                                            <th style="width:20%">
+                                                Fecha de Cambio
+                                            </th>
+                                            <th style="width:20%">
+                                                Tipo de cambio
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbDatosFacturacion"></tbody>
+
+                                </table>
+
+                            </div>
+
+                            <div id="RepreLegalHHead" role="tab" class="panel-heading">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <a data-toggle="collapse" href="#DatosRepLegalcollapse" aria-expanded="false" data-parent="#DataCustomerH" aria-controls="DatosRepLegalcollapse" class="collapsed" style="color: #fff"> Datos del Representante Legal</a>
+                            </div>
+                            <div id="DatosRepLegalcollapse" class="panel-body panel-collapse collapse in" role="tabpanel" aria-labelledby="RepreLegalHHead">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60%">
+                                                Datos del Representante Legal
+                                            </th>
+                                            <th style="width:20%">
+                                                Fecha de Cambio
+                                            </th>
+                                            <th style="width:20%">
+                                                Tipo de cambio
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbDatosRepLegal"></tbody>
+
+                                </table>
+
+                            </div>
+
+                            <div id="ContactClientHHead" role="tab" class="panel-heading">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <a data-toggle="collapse" href="#DatosContactClientcollapse" aria-expanded="false" data-parent="#DataCustomerH" aria-controls="DatosContactClientcollapse" class="collapsed" style="color: #fff"> Contacto del Cliente</a>
+                            </div>
+                            <div id="DatosContactClientcollapse" class="panel-body panel-collapse collapse in" role="tabpanel" aria-labelledby="ContactClientHHead">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60%">
+                                                Contacto del Cliente
+                                            </th>
+                                            <th style="width:20%">
+                                                Fecha de Cambio
+                                            </th>
+                                            <th style="width:20%">
+                                                Tipo de cambio
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbDatosContactCliente"></tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/PostpaidDataCustomer/CustomerData")

@@ -1,0 +1,111 @@
+﻿@using System.Web.Optimization;
+
+
+<div id="contenedorDataCustomer">
+
+            <div class="panel-body claro-modal-contenido-texto">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td><label class="control-label">Cliente:</label></td>
+                            <td>
+                                <span id="lblPre_Name"></span>&nbsp;<span id="lblPre_Lastname"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Dirección:</label></td>
+                            <td>
+                                <span id="lblPre_Address"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Nro Documento:</label></td>
+                            <td>
+                                <span id="lblPre_NumberDocument"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="control-label">Producto</label>
+                            </td>
+                            <td><span id="lblPre_ProductType"></span> </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Teléfono de Contacto:</label></td>
+                            <td>
+                                <span id="lblPre_TelephoneCustomer"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Estado:</label></td>
+                            <td>
+                                <span id="lblPre_State"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Segmento Cliente:</label></td>
+                            <td>
+                                <a id="linkSegment">
+                                    <span id="lblPre_Segment" role="button"></span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Comprobantes Electrónicos:</label></td>
+                            <td>
+                                <label>
+                                    <input id="chkPre_Membership" type="checkbox" value="" disabled="disabled">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td style="width:25%">
+                                            <label class="control-label" style="margin-top:3px">APP MI CLARO:</label>
+                                        </td>
+                                        <td style="width:7%;">
+                                            <input id="checkAppMiclaro" type="checkbox" />
+                                        </td>
+                                        <td style="width: 13%">
+                                            <label class="control-label" style="margin-top:3px">Versión:</label>
+                                        </td>
+                                        <td style="width: 10%;">
+                                            <span id="lblVersionAppMiClaro"></span>
+                                        </td>
+                                        <td style="width: 35%">
+                                            <label class="control-label">Fecha última transacción:</label>
+                                        </td>
+                                        <td style="width: 10%">
+                                            <span id="lblFechaUltTranAppMiClaro"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="panel panel-default" style="padding:1% !important">
+                            <button id="btnConsultContact" type="button" class="btn claro-btn-info btn-sm">Consulta de Contacto</button>
+                            <button id="btnCustomersPrevious" type="button" class="btn claro-btn-info btn-sm">Clientes Anteriores</button>
+                            <button id="btnCreateNotUser" type="button" class="btn claro-btn-info btn-sm" profile="SU_SIACA_INTE">Crear No Usuario</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" id="hidTelephoneCustomer" />
+            <input type="hidden" id="hidNumberDocument" />
+            <input type="hidden" id="hidTypeDocument" />
+
+            <input type="hidden" id="hidCustomerCode" />
+   
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/Dashboard/Prepaid/ClaroValidate")
+@Scripts.Render("~/bundles/Dashboard/Prepaid/DataCustomer")

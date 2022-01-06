@@ -1,0 +1,188 @@
+﻿@using System.Web.Optimization;
+@{
+    ViewBag.Title = "WebCasosEspeciales";
+    Layout = null;
+}
+<style>
+    .panel-body div.line:first-child {
+        border-top: none !important;
+    }
+
+    .panel-body {
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+    .control-label {
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+    }
+
+    table > tbody > tr > td {
+        vertical-align: middle !important;
+    }
+    .modal {
+        padding-right: 0px !important;
+    }
+
+        .modal.in.ui-draggable {
+            top: 50% !important;
+            transform: translate(-51%, -50%);
+        }
+</style>
+
+<div class="col-lg-12" id="divContainerSpecialCases">
+    <div class="col-lg-12">
+
+        <div id="AccountDataClient" class="panel claro-panel-primary" style="margin-left:10px;margin-right:10px">
+
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-user"></span>
+                <a data-toggle="collapse" href="#divUserData" style="color: #fff">
+                    Datos del Cliente
+                </a>
+            </div>
+            <div id="divUserData" class="panel-body panel-collapse collapse in claro-modal-tabla">
+                <div class="row line items-center">
+                    <div class="col-xs-2">
+                        <label class="control-label">NRO. DE LINEA  </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-9">
+                            <span class="" id="lbllineNumber"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <label class="control-label">ESTADO DE LA LINEA</label>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-9">
+                            <span id="lblStatusLiner"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row line items-center">
+                    <div class="col-xs-2">
+                        <label class="control-label">TIPO DOC. DE IDENTIDAD </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-9">
+                            <span id="lblTypeDocId"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <label class="control-label">FECHA ACTIVACION </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-9">
+                            <span id="lblActivedate"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row line items-center">
+                    <div class="col-xs-2">
+                        <label class="control-label">NRO DOC. DE IDENTIDAD </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-9">
+                            <span id="lblNumberdocument"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <label class="control-label">CICLO DE FACTURACION </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-9">
+                            <span id="lblbillingcycle"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row line items-center">
+                    <div class="col-xs-2">
+                        <label class="control-label">CLIENTE </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-9">
+                            <span id="lblName"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-2">
+                        <label class="control-label">TIPO ACUERDO </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-9">
+                            <span id="lblTypeagreement"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row line items-center">
+
+
+                    <label class="control-label col-xs-2">PLAN ACTUAL </label>
+
+                    <div class="col-xs-4">
+                        <div class="col-xs-9">
+                            <span id="lblRateplan"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-2">
+                        <label class="control-label">TIPO DE CLIENTE </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-9">
+                            <span id="lblTypeClient"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row line items-center">
+                    <div class="col-xs-2">
+                        <label class="control-label">TIPO DE TRANSACCION: </label>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="col-xs-9">
+                            <select class="form-control input-sm" id="cboTransactionType" name="cboTypeTrans">
+                                <option value="0">SELECCIONAR</option>
+                                <option value="1">Cambio de Tipo de Cliente de Masivo FS a Corporativo</option>
+                                <option value="2">Migración de Postpago FS a Prepago</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divContainerTransactionType">
+    </div>
+
+    <div id="divOptions">
+        <div class="" style="padding-left:25px;padding-right:25px">
+
+            <div class="panel panel-default col-lg-12 col-md-12 col-sm-12 col-xs-12 size-xs-12 " style="text-align: center; padding-top: 1%; padding-bottom: 1%; padding-right: 0px; padding-left: 0px; margin-bottom: 0px !important">
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <button style="width:100%" class="btn claro-btn-info btn-sm btn-link" id="btnconstancia" type="button" data-toggle="modal" disabled="disabled">Constancia</button>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <button style="width: 100%" class="btn claro-btn-info btn-sm btn-link" id="btnGrabarCancelar" type="button" data-toggle="modal">Grabar</button>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <button style="width: 100%" class="btn claro-btn-info btn-sm btn-link" id="btnClose" type="button" data-toggle="modal">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Styles.Render("~/bundles/Coliving/Content/StyleColiving")
+@Scripts.Render("~/bundles/Coliving/SpecialCases/SpecialCasesWeb")

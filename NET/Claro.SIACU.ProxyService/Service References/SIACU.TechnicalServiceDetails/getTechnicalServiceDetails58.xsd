@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entcal="http://claro.com.pe/esb/data/commonBusinessEntities/calendar/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entpro="http://claro.com.pe/esb/data/commonBusinessEntities/project/v2/" xmlns:entcombusentext="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" targetNamespace="http://claro.com.pe/esb/data/commonBusinessEntities/calendar/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Project_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/project/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CommonBusinessEntitiesExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/commonBusinessEntitiesExtension/v2/" />
+  <xs:import schemaLocation="getTechnicalServiceDetails?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Party_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" />
+  <xs:complexType name="Activity">
+    <xs:annotation>
+      <xs:documentation>A small item of work, that aligns to a task in a process</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpro:ProjectElement">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="activityNr" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A unique identifier for the Activity</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="actualCost" type="entbastyp:Money">
+            <xs:annotation>
+              <xs:documentation>The cost actually booked to the activity</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_activitySpec" type="entcal:ActivitySpec" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_activityStatus" type="entcal:ActivityStatus" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_activityEventEntry" type="entcal:ActivityEventEntry" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ActivityEventEntry">
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:CalendarEvent">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_activity" type="entcal:Activity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ActivitySpec">
+    <xs:annotation>
+      <xs:documentation>Specifies characteristics that apply to types of Activities</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:ProjectElementSpec">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="id" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="descr" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="unit" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="specVersionNr" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_activity" type="entcal:Activity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_wBSElementSpec" type="entpro:WBSElementSpec" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ActivityStatus">
+    <xs:annotation>
+      <xs:documentation>The lifecycle flag for the Activity Possible statuses are Proposed, Implemented, Completed, Abandoned and Suspended.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod" />
+      <xs:element minOccurs="0" maxOccurs="1" name="sequenceNr" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_activity" type="entcal:Activity" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_activityStatusExtension" type="entcombusentext:ActivityStatusExtension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Calendar">
+    <xs:annotation>
+      <xs:documentation>A Calendar is "a collection of calendaring and scheduling information" [iCalendar]</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="id" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="calendricalSystem" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The default calendrical system for the Calendar
+
+Note:
+
+CALSCALE [iCalendar]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Records the calendar purpose and any other comments</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_calendarEntry" type="entcal:CalendarEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CalendarActionEntry">
+    <xs:annotation>
+      <xs:documentation>This is an abstract entity that contains common properties and associationsfor CalendarEvents &amp; ToDos
+
+--&gt;Esta es una entidad abstracta que contiene propiedades y asociaciones comunes para CalendarEvents &amp; ToDos</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:CalendarEntry">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+            <xs:annotation>
+              <xs:documentation>The date range that this entry can be considered valid within
+
+Note:
+
+refer to TimePeriod in the Base Types addendum</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="priority" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Allows for overlapping events to be prioritized
+
+
+
+Note:
+
+PRIORITY [Calendar]</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="resources" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The equipment or resource requirements
+
+Note:
+
+RESOURCES [iCalendar]</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_calendarAlarm" type="entcal:CalendarAlarm" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CalendarAlarm">
+    <xs:annotation>
+      <xs:documentation>Is "a reminder or alarm for an event or a to-do. For example, it may be used to define a reminder for a pending event or an overdue to-do." [iCalendar]</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="alarmAction" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The action to be invoked when an alarm is triggered [iCalendar]
+
+Notes
+
+ACTION [iCalendar]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="interval" type="entbastyp:Duration">
+        <xs:annotation>
+          <xs:documentation>The interval between alarm repetitions</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="repeatCount" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The number of times the alarm should be repeated, after the initial trigger [iCalendar]
+
+Notes:
+
+REPEAT [iCalendar]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_calendarActionEntry" type="entcal:CalendarActionEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CalendarEntry">
+    <xs:annotation>
+      <xs:documentation>An entry in a calendar. This is an abstract entity.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="id" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier
+
+Note:
+
+UID [iCalendar]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A complete description of the entry:
+
+
+
+Notes:
+
+DESCRIPTION [iCalendar]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="summary" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A summarized description or subject of the entry</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="versionNr" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A sequence number, showing the version of the entry. It is incremented whenever the entry is modified and saved.
+
+Note:
+
+SEQUENCE [iCalendar]
+
+
+
+Permitted Values:
+
+&gt;0</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="comment" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Comment text about the entry
+
+Note:
+
+COMMENT [iCalendar]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The status of the Event, toDo or Journal entry
+
+Note:
+
+STATUS [iCalendar]
+
+Permitted Value:
+
+refer [iCalendar]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="accessClassification" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>the access intended for this entry
+
+
+
+Permitted Values:
+
+PUBLIC, PRIVATE or CONFIDENTIAL</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isRVSPRequested" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>If an RSVP is expected
+
+Notes:
+
+RVSP [iCalendar]
+
+
+
+Permitted Values:
+
+True, False</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="creationDate" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The DateTime (in UTC time) that the entry was created
+
+note:
+
+CREATED [iCalendar]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="lastModifiedDate" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The DateTime (in UTC time) that the entry was lastModifier
+
+Note:
+
+LAST-MODIFIED [iCalendar]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_calendar" type="entcal:Calendar" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_event" type="entcal:Event" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CalendarEvent">
+    <xs:annotation>
+      <xs:documentation>"represents a scheduled amount of time on a calendar. For example, it can be an activity; such as a one-hour long, department meeting from 8:00 AM to 9:00 AM, tomorrow. Generally, an event will take up time on an individual calendar." [iCalendar]
+
+--&gt;representa una cantidad de tiempo programada en un calendario. Por ejemplo, puede ser una actividad; como una reunión de departamento de una hora de duración de 8:00 a.m. a 9:00 a.m., mañana. Generalmente, un evento tomará tiempo en un calendario individual. "[ICalendar]</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:CalendarActionEntry">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="freeBusyType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Determines the event resource reservation on the Calendar
+
+
+
+Notes:
+TRANSP, FREEBUSY, FBTYPE [iCalendar]
+
+Permitted Values:
+
+FREE, BUSY, BUSY-UNAVAILABLE, BUSY-TENTATIVE</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DateScheduleDefinition">
+    <xs:annotation>
+      <xs:documentation>The date schedule is used to define a schedule that is based on specific dates, such as December 31st 2015, Feberaury 28th 2013, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:RecurringScheduleDefinition">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="scheduledDates" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>The list of dates  when the date schedule definition is active on, e.g.November 1st 2022.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Event">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_calendarEntry" type="entcal:CalendarEntry" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_milestone" type="entcal:Milestone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Milestone">
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:SimpleActivity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_event" type="entcal:Event" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProjectElementSpec">
+    <xs:annotation>
+      <xs:documentation>Specifies characteristics that apply to types of ProjectElements. This is an abstract entity used to hold the attributes and associations common to ProjectSpecification, WBS ElementSpecification and ActivitySpecification. These entities can be used to build standard project templates to aid in Project creation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>short text allowing for easy identification of the element specification</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>descriptive text about the specification</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="expectedDuration" type="entbastyp:Duration">
+        <xs:annotation>
+          <xs:documentation>the normal duration of this standard element</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_projectElement" type="entpro:ProjectElement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RecurringScheduleDefinition">
+    <xs:annotation>
+      <xs:documentation>The RecurringScheduleDefinition entity holds the parameters related to a schedule that defines recurrent executions.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="scheduleDefinitionStartTime" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The Start time of the Schedule Definition. If the attribute is empty the Schedule will be active immediately.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="scheduleDefinitionEndTime" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The Endtime of the Schedule Definition. If the attribute is empty the Schedule run forever, not having a time constraint.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="scheduleDefinitionHoursRange" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>A list of time ranges within a specific day that the schedule will be active on, for example 08:00-12:00, 16:00-19:00.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="recurringFrequency" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A recurring frequency to run a job within day that is included in schedule definition, for example: every 5 minutes, 15 minuute, 30 minutes, 1 hour.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ScheduleStartOffset" type="entbastyp:Duration">
+        <xs:annotation>
+          <xs:documentation>This is an offeset relating  to the recurring interval. For example, if the recurring interval is 1 hour and the offset is 10 minutes, a job will be executed at 1:10, 2:10, 3:10, etc.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_scheduledDuration" type="entcal:ScheduledDuration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ScheduledDuration">
+    <xs:annotation>
+      <xs:documentation>The Scheduled Duration entity defines a set of parameters related to the duration of a job/activity, such as the planned base duration and possible extensions.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="baseDuration" type="entbastyp:Duration">
+        <xs:annotation>
+          <xs:documentation>The expected duration of a job (amount &amp; units).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="extensionDuration" type="entbastyp:Duration">
+        <xs:annotation>
+          <xs:documentation>The duration of the expected extensions.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="meanExtensions" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The mean number of expected extensions.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxExtensions" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The maximal number of expected extensions.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_scheduledDurationExtension" type="entcombusentext:ScheduledDurationExtension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SimpleActivity">
+    <xs:annotation>
+      <xs:documentation>An indivisible item of work, that aligns to a task in a process.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:Activity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="percentComplete" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Indicates how much work has been completed for the Activity
+
+
+
+Permitted Values: 0-100</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="isOnCriticalPath" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>indicates if the Activity is on the Project critical path
+Indicates if the Activity is on the Project critical path</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SimpleCalendar">
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:Calendar">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SimpleTemporalExpression">
+    <xs:annotation>
+      <xs:documentation>This is used when a Calendar Entry has a simple single start and end DateTime.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entcal:TemporalExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="timePeriod" type="entbastyp:TimePeriod">
+            <xs:annotation>
+              <xs:documentation>The TimePeriod that the related entry is for
+
+Note:
+
+Refer to the SID Base Types addendum</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TemporalExpression">
+    <xs:annotation>
+      <xs:documentation>An expression that defines one or more time periods, often periodic in nature. This is an abstract entity that abstracts simple and recurring time periods from the calendar entry. It may also allow reuse of temporal expressions in other parts of the SID model.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="calendricalSystem" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>the calendrical system used to define the dates in this expression
+
+
+
+Note:
+
+CALSCALE [iCalendar]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_timeZone" type="entcal:TimeZone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimeZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="timezoneUrl" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="comment" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="principalLocation" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_temporalExpression" type="entcal:TemporalExpression" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

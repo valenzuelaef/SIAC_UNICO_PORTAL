@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:entprooff="http://claro.com.pe/esb/data/product/productOffering/v2/" xmlns:entcusord="http://claro.com.pe/esb/data/customer/customerOrder/v2/" xmlns:entaddparent="http://claro.com.pe/esb/data/engagedParty/additionalPartyEntities/v2/" xmlns:entmarseg="http://claro.com.pe/esb/data/marketSales/marketSegment/v2/" xmlns:entparord="http://claro.com.pe/esb/data/engagedParty/partyOrder/v2/" xmlns:entlogres="http://claro.com.pe/esb/data/resource/logicalResource/v2/" xmlns:entser="http://claro.com.pe/esb/data/service/service/v2/" xmlns:entparpro="http://claro.com.pe/esb/data/engagedParty/partyProfile/v2/" xmlns:entcal="http://claro.com.pe/esb/data/commonBusinessEntities/calendar/v2/" xmlns:entloc="http://claro.com.pe/esb/data/commonBusinessEntities/location/v2/" xmlns:entbastyp="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" xmlns:entres="http://claro.com.pe/esb/data/resource/resource/v2/" xmlns:entcus="http://claro.com.pe/esb/data/customer/customer/v2/" xmlns:ententris="http://claro.com.pe/esb/data/enterprise/enterpriseRisk/v2/" xmlns:entmet="http://claro.com.pe/esb/data/commonBusinessEntities/metric/v2/" xmlns:entroobusent="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" xmlns:entuseandrol="http://claro.com.pe/esb/data/commonBusinessEntities/usersAndRoles/v2/" xmlns:entpro="http://claro.com.pe/esb/data/commonBusinessEntities/project/v2/" xmlns:entbusint="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" xmlns:entparprospeandoff="http://claro.com.pe/esb/data/engagedParty/partyProductSpecificationAndOffering/v2/" xmlns:entparrev="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" xmlns:entmarcam="http://claro.com.pe/esb/data/marketSales/marketingCampaign/v2/" xmlns:entengparext="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" xmlns:entpar="http://claro.com.pe/esb/data/engagedParty/party/v2/" targetNamespace="http://claro.com.pe/esb/data/engagedParty/party/v2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BaseTypes_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/baseTypes/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=BusinessInteraction_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/businessInteraction/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=LogicalResource_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/logicalResource/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=EnterpriseRisk_v2.xsd" namespace="http://claro.com.pe/esb/data/enterprise/enterpriseRisk/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Project_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/project/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Calendar_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/calendar/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Metric_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/metric/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=MarketSegment_v2.xsd" namespace="http://claro.com.pe/esb/data/marketSales/marketSegment/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Location_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/location/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=MarketingCampaign_v2.xsd" namespace="http://claro.com.pe/esb/data/marketSales/marketingCampaign/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyProductSpecificationAndOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyProductSpecificationAndOffering/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=ProductOffering_v2.xsd" namespace="http://claro.com.pe/esb/data/product/productOffering/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=RootBusinessEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/rootBusinessEntities/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Resource_v2.xsd" namespace="http://claro.com.pe/esb/data/resource/resource/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Service_v2.xsd" namespace="http://claro.com.pe/esb/data/service/service/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=CustomerOrder_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customerOrder/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=Customer_v2.xsd" namespace="http://claro.com.pe/esb/data/customer/customer/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyOrder_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyOrder/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=AdditionalPartyEntities_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/additionalPartyEntities/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyRevenue_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyRevenue/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=EngagedPartyExtension_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/engagedPartyExtension/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=UsersAndRoles_v2.xsd" namespace="http://claro.com.pe/esb/data/commonBusinessEntities/usersAndRoles/v2/" />
+  <xs:import schemaLocation="?WSDL&amp;interface=BssServiceProblemManagementSoap11Binding&amp;part=PartyProfile_v2.xsd" namespace="http://claro.com.pe/esb/data/engagedParty/partyProfile/v2/" />
+  <xs:complexType name="ContactMedium">
+    <xs:annotation>
+      <xs:documentation>A means by which communication may be established with a party (individual or organization).Contact Medium is an abstract concept that should be subclassed as required.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The time period that the Contact Medium is valid for.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyAccountContact" type="entaddparent:PartyAccountContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContractorIdentification">
+    <xs:annotation>
+      <xs:documentation>A document used to identify a contractor.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpar:IndividualIdentification">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="contractorNr" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A number assigned to a contractor used to identify it.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Currency">
+    <xs:annotation>
+      <xs:documentation>Represent the currency in reality. Currency uses 1 or more CurrencyUnits. For example, Currency(code=CNY, symbol= ?) use three CurrencyUnits(Yuan, Jiao, Fen).Currency is associated to CurrencyExchangeRate with CurrencyUsedAsSource and CurrencyUsedAsDestination. Currency can be used in different Countrys.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Represents the code of the currency in the usage for convenience. Generally it is made up of three capital English letters, the first two of which represent the country and the last of which represents the name of the currency. For example, USD represents United State of America Dollar. Usually ISO 4217 is used.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="symbol" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Symbol of a currency, such as $.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_currencyName" type="entpar:CurrencyName" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_currencyExchangeRate" type="entpar:CurrencyExchangeRate" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRoleCurrency" type="entpar:PartyRoleCurrency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CurrencyExchangeRate">
+    <xs:annotation>
+      <xs:documentation>Exchange rate between currencies.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the exchange rate.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="value">
+        <xs:annotation>
+          <xs:documentation>Value of the exchange rate.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An explanation of the CurrencyExchangeRate.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Status of currency exchange rate, such as Normal, Discarded.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period during which the CurrencyExchangeRate is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CurrencyName">
+    <xs:annotation>
+      <xs:documentation>Name of a currency. Under different  languages, a currency has differnent names,  e.g. Renminbi Yuan in English and ???? in Chinese to express the same Chinese currency.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Name of a currency under a language.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_currency" type="entpar:Currency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CurrencyUnit">
+    <xs:annotation>
+      <xs:documentation>Measurement unit of a currency. For CurrencyUnitName Yuan associated to Chinese, rate =1, isStadUnit = True, isMinUnit = False.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the currency unit.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="rate" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The rate between standard currency unit and non-standard currency unit.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isStdUnit" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>A flag to indicate if it is standard unit of a currency.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isMinUnit" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>A flag to indicate if it is minimum unit of a currency.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_currencyUnitName" type="entpar:CurrencyUnitName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CurrencyUnitName">
+    <xs:annotation>
+      <xs:documentation>Name of a currency unit. Under different  languages, a currency unit has differnent names,  e.g. Yuan in English and ? in Chinese to express the same basic currency unit in Chinese currency.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Name of a currency unit.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_currencyUnit" type="entpar:CurrencyUnit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmailContact">
+    <xs:annotation>
+      <xs:documentation>The eMail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="eMailAddress" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A full e-mail address in standard format.
+
+
+
+Notes:
+
+e.g. fred.bloggs@thing.com</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Employee">
+    <xs:annotation>
+      <xs:documentation>An individual employed for wages or salary.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpar:PartyRole">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmployeeIdentification">
+    <xs:annotation>
+      <xs:documentation>A medium, such as a card or document, used to identify an employee.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpar:IndividualIdentification">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="photo" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A picture or likeness obtained by photography.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="employeeNr" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A number assigned to a employee used to identify the individual.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_employeeIdentificationExtension" type="entengparext:EmployeeIdentificationExtension" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FaxNumber">
+    <xs:annotation>
+      <xs:documentation>A number used to communicate information with a printer or other output device.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="number" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A number, often a telephone number. associated with a printer or other output device used to communicate information.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Individual">
+    <xs:annotation>
+      <xs:documentation>Represents a single human being (a man, woman or child).
+
+The individual could be a customer, an employee or any other person that the organization needs to store information about. An Individual is a type of Party.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpar:Party">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="gender" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A socially constructed role that implies behaviours, activities, and attributes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="placeOfBirth" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Note:
+
+Pointer to a Location object
+
+City, town name etc.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="nationality" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Note:
+
+Pointer to a country object</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="maritalStatus" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Permitted Values: married, never married, divorced, widowed</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="skills" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Note:
+
+Probably only used for employees, but is really role independent
+
+This should be modeled as a separate entity but is shown as an attribute for brevity</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="disabilities" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Notes:  Used for legal requirements (special billing, special products, special contact media, such as Braille). This should be modeled as a separate entity but is shown as an attribute for brevity.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="aliveDuring" type="entbastyp:TimePeriod">
+            <xs:annotation>
+              <xs:documentation>Birth date and death date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="_individualExtension" type="entengparext:IndividualExtension" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_individualName" type="entpar:IndividualName" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_individualIdentification" type="entpar:IndividualIdentification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IndividualIdentification">
+    <xs:annotation>
+      <xs:documentation>Individual Identification represents our registration of information used as proof of identity by an Individual</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpar:PartyIdentification">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="_individual" type="entpar:Individual" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IndividualName">
+    <xs:annotation>
+      <xs:documentation>A word, term, or phrase by which an individual is known and distinguished from other individuals.A name is an informal way of identifying an object [Fowler]This entity allows for international naming variations. An IndividualName is a type of PartyName.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="formattedName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Contains, in one string, a fully formatted name with all of its pieces in their proper place. This includes all of the necessary punctuation. This de-normalized form of the name cannot be easily parsed.
+
+
+
+Note:
+
+if NULL, then derive from the other fields using name policy</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="legalName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Contains, in one string, a fully formatted name with all of its pieces in their proper place. This includes all of the necessary punctuation
+
+
+
+Note:
+
+if NULL, then derive from the other fields using name policy</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="aristocraticTitle" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A name that describes someone's aristocratic position, such as Baron, Graf, Earl, and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="formOfAddress" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Contains the Salutation,e.g. Mr., Mrs., Hon., Dr.,Major, etc
+
+
+
+Note:
+
+Also known as person title
+
+Also includes. Miss, Ms,</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="generation" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An abbreviation or word that pertains to the generation in a family history, such as Sr., Jr., III (the third), and so forth.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="givenNames" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Note:
+
+Also known as Christian name, chosen name, first name 
+
+Multiple fields may be entered with a delimiter in-between or stored in a collection</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="preferredGivenName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Contains the chosen name by which the person prefers to be addressed. Note: This name may be a name other than a given name, such as a nickname</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="middleNames" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Middle name(s) or initial(s)
+
+Note:
+
+Multiple fields may be entered with a delimiter in-between or stored in a collection</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="familyNamePrefix" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Notes:
+
+e.g. Van den, Von etc.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="familyNames" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Contains the non-chosen or inherited name. Also known as a person's last name in the Western context.
+
+
+
+Notes:
+
+Also known as surname 
+
+Multiple fields may be entered with a delimiter in-between</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="familyGeneration" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An abbreviation or word that pertains to the generation in a family, such Sr, Jr.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="qualifications" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Contains the letters used to describe academic or other type qualifications held by a person and/or the distinctions conferred upon them. e.g. PhD, MD, CPA, MCSD, etc
+
+
+
+Note:
+
+also known as orders, decorations, honors, awards and distinctions</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_individualNameExtension" type="entengparext:IndividualNameExtension" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_individual" type="entpar:Individual" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Language">
+    <xs:annotation>
+      <xs:documentation>Represents a spoken and/or written language.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="alphabetName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The alphabet name use for the language
+
+Note:
+
+ISO standard ?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="dialectNames" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A list of the dialects of the language
+
+Note:
+
+ISO standard ?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_languageExtension" type="entengparext:LanguageExtension" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyIdentification" type="entpar:PartyIdentification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NationalIdentityCardIdentification">
+    <xs:annotation>
+      <xs:documentation>A portable document, typically a plasticized card with digitally-embedded information, that someone is required or encouraged to carry as a means of confirming their identity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpar:IndividualIdentification">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="cardNr" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A number assigned to a NationalIdentityCard used to identify it.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Organization">
+    <xs:annotation>
+      <xs:documentation>A group of people identified by shared interests or purpose. Examples include business, department, enterprise.Because of the complex nature of many businesses, both organizations and organization units are represented by the same business entity in this model. An Organization is a type of Party</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="entpar:Party">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="isLegalEntity" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Permitted Values:
+
+TRUE or FALSE</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="existsDuring" type="entbastyp:TimePeriod">
+            <xs:annotation>
+              <xs:documentation>Incorporation date to disincorporation date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The type of organization
+
+
+
+Notes:
+
+Club, Society, …</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_organizationName" type="entpar:OrganizationName" />
+          <xs:element minOccurs="0" maxOccurs="1" name="_organizationExtension" type="entengparext:OrganizationExtension" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_organizationIdentification" type="entpar:OrganizationIdentification" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyIdentification" type="entpar:PartyIdentification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OrganizationIdentification">
+    <xs:annotation>
+      <xs:documentation>Organization Identification represents our registration of information used as proof of identity by an Organization</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="_organization" type="entpar:Organization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationName">
+    <xs:annotation>
+      <xs:documentation>A word, term, or phrase by which an organization is known and distinguished from other organizations.A name is an informal way of identifying an object [Fowler]An OrganizationName is a type of PartyName.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="tradingName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The name that the organization (unit) trades under</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="nameType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Co., Inc., Ltd., Pty Ltd. , Plc., Gmbh</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_organization" type="entpar:Organization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Party">
+    <xs:annotation>
+      <xs:documentation>Represents an  individual, organization or organization unit.Party is an abstract concept that should be used in places where the business says something can be an organization , organization unit or an individual</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="partyId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier for Party</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The time period that the Party is valid for</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyExtension" type="entengparext:PartyExtension" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyProfile" type="entparpro:PartyProfile" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyUser" type="entuseandrol:PartyUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyDemographic">
+    <xs:annotation>
+      <xs:documentation>A feature or quality used to make recognizable or to define a Party playing a PartyRole, such as age, income, education, revenue, and so forth.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the PartyDemographic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains what the PartyDemographic is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="partyDemographicSource" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The origin of the PartyDemographic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="dateCreated" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The date on which the PartyDemographic was created.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period during which the PartyDemographic is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyRole" type="entpar:PartyRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_geographicArea" type="entloc:GeographicArea" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_marketSegment" type="entmarseg:MarketSegment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyIdentification">
+    <xs:annotation>
+      <xs:documentation>Party Identification represents our registration of information used as proof of identity by a Party.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="issueDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The date that the identification was produced / printed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The time period that the Party Identification is valid for
+
+Note:
+
+The validitity start date may not necessarily equal the issue date (e.g. credit cards are only valid some time after thay are issued)
+
+
+
+Permitted Values:
+
+Refer Time Period class</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="scan" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A scan of the identification paper
+
+Note:
+
+May be used to get a copy of the photo to help in identification</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_organization" type="entpar:Organization" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_language" type="entpar:Language" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyProfileTypeCharacteristic">
+    <xs:annotation>
+      <xs:documentation>A characteristic quality or distinctive feature of a PartyProfileType. The characteristic can be take on a discrete value, such as age, can take on a range of values, (for example, investment portfolio value of $50,000 - $100,000), or can be derived from a formula (for example, number of households = number of customer party roles).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains what the PartyProfileTypeCharacteristic is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="extensible" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies that the values for the characteristic can be extended by adding new values when instantiating a characteristic for an Entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier for the PartyProfileTypeCharacteristic.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxCardinality" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The maximum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where five is the value for the maxCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A kind of value that the characteristic can take on, such as numeric, text, and so forth.
+
+
+
+Note:
+
+Required, if the specification is not a composite</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="minCardinality" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The minimum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where zero is the value for the minCardinality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the characteristic is known and distinguished from characteristics.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="unique" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>An indicator that specifies if a value is unique for the specification.
+
+Possible values are; "unique while value is in effect" and "unique whether value is in effect or not"</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="derivationFormula" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A rule or principle represented in symbols, numbers, or letters, often in the form of an equation used to derive the value of a characteristic value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period of time for which a characteristic is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyProfileType" type="entparpro:PartyProfileType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyRole">
+    <xs:annotation>
+      <xs:documentation>The part played by a party in a given context with any characteristics, such as expected pattern of behavior, attributes, and/or associations that it entails.PartyRole is an abstract concept that should be used in places where the business refers to a Party playing a Role</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="partyRoleId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier for PartyRoles</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Used to track the lifecycle status, e.g. existing, prospective or former customers.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The time period that the PartyRole is valid for</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the PartyRole is known and distinguished from other PartyRoles.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyPayment" type="entparrev:PartyPayment" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyOrderItem" type="entparord:PartyOrderItem" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_paymentMethod" type="entparrev:PaymentMethod" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyAccount" type="entaddparent:PartyAccount" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_service" type="entser:Service" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerOrder" type="entcusord:CustomerOrder" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_party" type="entpar:Party" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customerAccount" type="entcus:CustomerAccount" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_resource" type="entres:Resource" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRoleCategory" type="entpar:PartyRoleCategory" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRoleProductOffering" type="entparprospeandoff:PartyRoleProductOffering" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRoleProductSpecification" type="entparprospeandoff:PartyRoleProductSpecification" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerOrderItem" type="entcusord:CustomerOrderItem" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyRoleSpecification" type="entpar:PartyRoleSpecification" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyOrder" type="entparord:PartyOrder" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyProfile" type="entparpro:PartyProfile" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyDemographic" type="entpar:PartyDemographic" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_characteristicValue" type="entroobusent:CharacteristicValue" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_place" type="entloc:Place" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_administrativeArea" type="entloc:AdministrativeArea" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_metricMeasurementObservation" type="entmet:MetricMeasurementObservation" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_calendarEntry" type="entcal:CalendarEntry" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_workOrder" type="entpro:WorkOrder" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_customerAccountContact" type="entcus:CustomerAccountContact" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_productOffering" type="entprooff:ProductOffering" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyRoleGroup" type="entpar:PartyRoleGroup" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_additionalPartyAttributes" type="entaddparent:AdditionalPartyAttributes" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_contactMedium" type="entpar:ContactMedium" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyRoleSecurityEntity" type="ententris:PartyRoleSecurityEntity" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_softwareResource" type="entlogres:SoftwareResource" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_businessInteractionVersion" type="entbusint:BusinessInteractionVersion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRoleCurrency" type="entpar:PartyRoleCurrency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyRoleCategory">
+    <xs:annotation>
+      <xs:documentation>This is an entity that can be used to provide simple grouping or categorization of PartyRoles. In some cases this is done in a more specific manner (e.g. Customer demographics).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="categoryName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The name of the category</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyRoleCurrency">
+    <xs:annotation>
+      <xs:documentation>Represents the currency that PartyRole may use.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="precision" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Precision of a currency.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isDefault" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>A flag to indicate if the currency is default in System.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_partyRole" type="entpar:PartyRole" />
+      <xs:element minOccurs="0" maxOccurs="1" name="_currency" type="entpar:Currency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyRoleGroup">
+    <xs:annotation>
+      <xs:documentation>Parties may play PartyRoles in a specific context. This context is represented by a PartyRoleGroup that groups PartyRoles. A PartyRoleGroup might be a Family, a Club, a Friends' group...
+
+A PartyRoleGroup may or may not represent an Organization that has a legal standing or not, meaning they may not have a formal means to identify them (think Facebook groups).
+
+A PartyRoleGroup is described by a unique PartyRoleGroupSpecification.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="partyRoleGroupId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier for PartyRolesGroup</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the PartyRoleGroup is known and distinguished from other PartyRoleGroups.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains what the PartyRoleGroup is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The time period that the PartyRoleGroup is valid for</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartyRoleSpecification">
+    <xs:annotation>
+      <xs:documentation>The definition of a role a party may play.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A word, term, or phrase by which the PartyRoleSpecification is known and distinguished from other PartyRoleSpecifications.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A narrative that explains what the PartyRoleSpecification is.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFor" type="entbastyp:TimePeriod">
+        <xs:annotation>
+          <xs:documentation>The period during which the PartyRoleSpecification is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyRole" type="entpar:PartyRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_marketingCampaign" type="entmarcam:MarketingCampaign" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_partyProfileType" type="entparpro:PartyProfileType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TelephoneNumber">
+    <xs:annotation>
+      <xs:documentation>A number and type of number assigned to a particular telephone and used in making connections to it.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="number" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A number assigned to a particular telephone and used in making connections to it.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The kind of telephone number, such as mobile, home, office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
